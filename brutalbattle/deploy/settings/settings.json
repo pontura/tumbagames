@@ -1,0 +1,50 @@
+{
+	"character1": 
+	{
+		"speed":10,
+		"power":4,
+		"defense":80,
+		"separation": 160,
+		"attackDelay": 24,
+		"defenseDelay": 24
+	},
+	
+	"character2": 
+	{
+		"speed":15,
+		"power":2,
+		"defense":70,
+		"separation": 320,
+		"attackDelay": 10,
+		"defenseDelay": 10
+	},
+	
+	"character3":
+	{
+		"speed":5,
+		"power":15,
+		"defense":70,
+		"separation": 160,
+		"attackDelay": 24,
+		"defenseDelay": 24
+	},	
+	"character4": 
+	{
+		"speed":10,
+		"power":6,
+		"defense":80,
+		"separation": 200,
+		"attackDelay": 24,
+		"defenseDelay": 24
+	},
+	
+	"character5":
+	{
+		"speed":10,
+		"power":4,
+		"defense":80,
+		"separation": 200,
+		"attackDelay": 14,
+		"defenseDelay": 14
+	}
+}

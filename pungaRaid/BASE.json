@@ -1,0 +1,93 @@
+{
+	"users":
+	[
+		{
+			"facebookID": "",
+			"playerName": ""
+		}
+	],
+	"challenges":
+	[
+		{
+			"facebookID": "",
+			"playerName": "",
+			"op_facebookID": "",
+			"op_playerName": "",
+			"score": 0,
+			"score2": 0,
+			"notificated": false
+		}
+	],
+	"level1":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level2":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level3":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level4":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level5":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level6":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level7":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level8":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	],
+	"level9":
+	[	
+		{
+			"playerName": "",
+			"facebookID":"",
+			"score":0
+		}
+	]
+}

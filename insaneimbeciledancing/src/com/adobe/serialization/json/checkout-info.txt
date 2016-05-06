@@ -1,0 +1,8 @@
+Checkout from:
+   http://as3corelib.googlecode.com/svn/trunk/src/com/adobe/serialization/json
+
+Last update:
+  20/2/2009
+
+Revision:
+  83

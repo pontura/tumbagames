@@ -1,0 +1,23 @@
+{
+texts:
+[
+	{	
+		text: "Sos punga y venis a hacer guita"
+	},
+	{	
+		text: "Haces guita de los caretitas estos"
+	},
+	{	
+		text: "Pero esquivalos si no queres ir preso..."
+	},
+	{	
+		text: "También esquivate a este..."
+	},
+	{	
+		text: "Si te acorralan <TAP> y la zafas..."
+	},
+	{	
+		text: "Bien! Ya estás listo para jugar, gato!"
+	}
+]
+}

@@ -1,0 +1,25 @@
+{
+texts:
+[
+	{	
+		zone:2,
+		item:0,
+		text: "Desbloqueas La Boca!"
+	},
+	{	
+		zone:0,
+		item:1,
+		text: "+1 vida para la próxima carrera. Bancatela más con el casco deportivo."
+	},
+	{	
+		zone:0,
+		item:2,
+		text: "+1 vida para la próxima carrera. Alto Viquingo, ehh!"
+	},
+	{	
+		zone:0,
+		item:3,
+		text: "+1 vida para la próxima carrera. Un guerrero con armadura, gato."
+	}
+]
+}

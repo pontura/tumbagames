@@ -1,0 +1,44 @@
+{
+	"voices":
+	{
+	
+		"start":
+		[
+			{"eng":"Kill or die!", "esp":"Pelea o muere!", "sound":"Kill or die"}
+		],
+		
+		"good":
+		[
+			{"eng":"You are sick!", "esp":"Eres enfermo!", "sound":"Youre sick"},
+			{"eng":"Love this shit!", "esp":"Amo esta excremento!", "sound":"I love this shit"},
+			{"eng":"Give me more!", "esp":"Deme más!", "sound":"Gimme more"},
+			{"eng":"Have no mercy!", "esp":"Ten no piedad!", "sound":"Have no mercy"},
+			{"eng":"Gore is fun!", "esp":"El Gore está divertido!", "sound":"Gore is fun"},
+			{"eng":"More gore!", "esp":"Deme más gore!", "sound":"More gore"}
+		],
+		
+		"bad":
+		[
+			{"eng":"You suck!", "esp":"Pelea!", "sound":"You suck"},
+			{"eng":"You fight like a homosexual on a wheelchair!", "esp":"Pelea como una persona homosexual en silla de ruedas!", "sound":"You fight like a homosexual on"}
+		],
+		
+		"win":
+		[
+			{"eng":"Destroy his spine!", "esp":"Acaba con él!", "sound":"Destroy his spine"}
+		],
+		
+		"die":
+		[
+			{"eng":"Prepare to die!", "esp":"Prepara tu muerte!", "sound":"Prepare to die"}
+		],
+		
+		"lose":
+		[
+			{"eng":"Are you a homosexual?", "esp":"Estas una persona homosexual?!", "sound":"Are you a homosexual"}
+		]
+		
+	
+	}
+
+}

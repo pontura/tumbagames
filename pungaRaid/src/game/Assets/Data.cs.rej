@@ -1,0 +1,9 @@
+diff a/game/Assets/Data.cs b/game/Assets/Data.cs	(rejected hunks)
+@@ -54,7 +54,6 @@
+ 
+         gameData = GetComponent<GameData>();
+         GetComponent<WordsData>().Init(1,1,1);
+-        GetComponent<UserData>().Init();
+ 
+ //        Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
+ //        Events.OnSoundsVolumeChanged += OnSoundsVolumeChanged;
