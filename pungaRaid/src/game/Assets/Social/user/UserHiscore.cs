@@ -97,7 +97,7 @@ public class UserHiscore : MonoBehaviour {
     }
     public int GetHiscore()
     {
-        return GetHiscore(Data.Instance.moodsManager.currentMood);
+        return GetHiscore( Data.Instance.moodsManager.GetCurrentMoodID() );
     }
     public int GetHiscore(int levelID)
     {
@@ -144,17 +144,17 @@ public class UserHiscore : MonoBehaviour {
 
     void OnNewHiscore(int score)
     {
-         int levelID = Data.Instance.moodsManager.currentMood;
+         int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
 
-        if (GetHiscore(Data.Instance.moodsManager.currentMood) < score)
-            SetHiscore(Data.Instance.moodsManager.currentMood, score);
+         if (GetHiscore(levelID) < score)
+             SetHiscore(levelID, score);
 
         if (!SocialManager.Instance.userData.logged) return;
 
         string dbID = GetLevelScore(levelID).dbID;
 
         if (dbID == "")
-            AddNewHiscore(Data.Instance.moodsManager.currentMood, score);
+            AddNewHiscore(levelID, score);
         else
             UpdateScore(dbID, score);
     }
@@ -186,7 +186,7 @@ public class UserHiscore : MonoBehaviour {
     }
     protected void UpdateScore(string id, int score)
     {
-        int levelID = Data.Instance.moodsManager.currentMood;
+        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
         print("__update score id: " + id + " score: " + score);
 
         Hashtable data = new Hashtable();
