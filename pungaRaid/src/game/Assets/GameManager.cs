@@ -112,7 +112,6 @@ public class GameManager : MonoBehaviour {
     void OnChangeSpeed(float _speed, bool accelerating)
     {
         speed *= _speed;
-        print(speed);
         if (!accelerating)
            realSpeed = speed;
     }

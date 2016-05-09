@@ -11,12 +11,12 @@ public class Obstacle : Enemy
         CRASHED
     }
     private int randObstacleID = -1;
-    public GameObject[] obstaclesFreeLanes;
-    public GameObject[] obstaclesLane4;
-    private GameObject[] obstacles;
+    public GameObject[] obstacles;
 
     private string currentAnim;
     private BoxCollider2D collider2d;
+
+    private int laneId;
 
     override public void Enemy_Activate()
     {
@@ -25,23 +25,24 @@ public class Obstacle : Enemy
     }
     override public void Enemy_Init(EnemySettings settings, int laneId)
     {
-        foreach (GameObject goToInactive in obstaclesFreeLanes)
+        this.laneId = laneId;
+
+        foreach (GameObject goToInactive in obstacles)
             goToInactive.SetActive(false);
-        foreach (GameObject goToInactive in obstaclesLane4)
-            goToInactive.SetActive(false);
 
-        GameObject go = null;
-
-        if (laneId == 4)
-            go = obstaclesLane4[Random.Range(0, obstaclesLane4.Length)];  
-        else
-            go = obstaclesFreeLanes[Random.Range(0, obstaclesFreeLanes.Length)];
-
+        GameObject go = GetRandomGameObjects();
 
         go.SetActive(true);
         anim = go.GetComponent<Animator>();
 
         anim.Play("idle",0,0);
+    }
+    private GameObject GetRandomGameObjects()
+    {
+        foreach (GameObject go in obstacles)
+            if (go.GetComponent<ObjectFilter>().CanBeAdded(Data.Instance.moodsManager.currentMood, laneId))
+                return go;
+        return obstacles[Random.Range(0, obstacles.Length)];
     }
     override public void Enemy_Pooled()
     {

@@ -104,7 +104,7 @@ public class Ranking : MonoBehaviour {
     }
     void OnNewHiscore(int score)
     {
-        int levelID = Data.Instance.moodsManager.currentMood;
+        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
 
         if (!SocialManager.Instance.userData.logged) return;
 

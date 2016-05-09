@@ -4,12 +4,19 @@ using System.Collections.Generic;
 
 public class MoodsManager : MonoBehaviour {
 
-    public int currentMood;
+    public moods currentMood;
 
     public List<int> unblocked;
 
-    public GameObject mood1;
-    public GameObject mood2;
+    public GameObject mood_belgrano;
+    public GameObject mood_madero;
+
+    public enum moods
+    {
+        GENERIC,
+        BELGRANO,
+        MADERO
+    }
 
     void Start()
     {
@@ -31,16 +38,27 @@ public class MoodsManager : MonoBehaviour {
                 unblocked.Add(a);
         }
 	}
+    public int GetCurrentMoodID()
+    {
+        switch (currentMood)
+        {
+            case moods.BELGRANO:    return 1;
+            case moods.MADERO: return 2; 
+        }
+        return 1;
+    }
     public void SetCurrentMood(int id)
     {
-        currentMood = id;
+        switch (id)
+        {
+            case 1: currentMood = moods.BELGRANO; break;
+            case 2: currentMood = moods.MADERO; break;
+        }
     }
     public void UnlockMood(int id)
     {        
         foreach (int mood in unblocked)
             if (id == mood) return;
-
-        Debug.Log("UnlockMood:::: " + id);
 
         PlayerPrefs.SetInt("mood" + id, 1);
         unblocked.Add(id);
@@ -49,9 +67,10 @@ public class MoodsManager : MonoBehaviour {
     {
         switch (currentMood)
         {
-            case 2: return mood2;
-            default: return mood1;
+            case moods.BELGRANO: return mood_belgrano;
+            case moods.MADERO: return mood_madero; 
         }
+        return mood_belgrano; 
     }
     public bool IsMoodUnlocked(int id)
     {

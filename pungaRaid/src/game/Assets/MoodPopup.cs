@@ -20,7 +20,7 @@ public class MoodPopup : MonoBehaviour {
         panel.SetActive(true);
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn",0,0);
-        int moodID = Data.Instance.moodsManager.currentMood;
+        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
         TextsMoods.Data data =  Data.Instance.texts.moods.GetDataById(moodID);
 
         title.text = data.title;

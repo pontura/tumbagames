@@ -167,7 +167,6 @@ package
 					score = hiscores[a].score;
 					hiscores[a].username = newUsername;
 					hiscores[a].score = newScore;
-					
 				} else
 				if(hiscores[a].score<hiscore)
 				{
