@@ -117,7 +117,8 @@ public class CharacterCollider : MonoBehaviour {
                     }
                     else
                     {
-                        Events.OnHeroDie();
+                        character.OnCollisionWithBlocker(blocker, type);
+                        //Events.OnHeroDie();
                     }
                 }
                 return;
@@ -149,8 +150,8 @@ public class CharacterCollider : MonoBehaviour {
                 victim.StealLoopEnd_Gil();
             }
             return;
-        } 
-        if (lastBlocker == other.GetComponent<Blocker>())
+        }
+        if (lastBlocker != null && lastBlocker == other.GetComponent<Blocker>())
         {
             if (type == types.TOP)
                 character.CantMoveUp = false;

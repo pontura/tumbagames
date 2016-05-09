@@ -153,6 +153,7 @@ public class Character : MonoBehaviour {
         Events.OnSoundFX("changeLane");
         TweenParms parms = new TweenParms();
         parms.Prop("localPosition", new Vector3(0,_y,0));
+        
         parms.Ease(EaseType.Linear);
 
         parms.OnComplete(OnChangeLaneComplete);
@@ -250,8 +251,18 @@ public class Character : MonoBehaviour {
         if (hero.state == Hero.states.JUMP) return;
         if (blocker.laneId == Game.Instance.gameManager.characterManager.lanes.laneActiveID)
         {
-            Die();
-            Game.Instance.gameManager.realSpeed = 0;
+            if (blocker.laneId > 2)
+            {
+                CantMoveUp = true;
+                Events.OnSwipe(SwipeDetector.directions.DOWN);
+            }
+            else
+            {
+                CantMoveDown = true;
+                Events.OnSwipe(SwipeDetector.directions.UP);
+            }
+            //Die();
+            //Game.Instance.gameManager.realSpeed = 0;
             return;
         }
         else
