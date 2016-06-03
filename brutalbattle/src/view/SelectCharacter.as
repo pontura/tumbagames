@@ -19,6 +19,7 @@ package view
 			this.selector2.next.addEventListener(MouseEvent.CLICK, next2);
 			this.selector1.prev.addEventListener(MouseEvent.CLICK, prev1);
 			this.selector2.prev.addEventListener(MouseEvent.CLICK, prev2);
+			
 			this.playBtn.addEventListener(MouseEvent.CLICK, start);
 			this.help.addEventListener(MouseEvent.CLICK, openHelp);
 			this.credits.addEventListener(MouseEvent.CLICK, openCredits);
@@ -84,6 +85,7 @@ package view
 				case 37:
 					prev1(null);
 					break;
+				case 13:
 				case 32:
 					start(null);
 					break;

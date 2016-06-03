@@ -1,0 +1,41 @@
+2015/10/24 21:49:16.560 Info   Starting JoyToKey Ver5.6
+2015/10/24 21:49:16.560 Info   ExeFile=D:\_projects\tumbagames\suicide\deploy\JoyToKey.exe
+2015/10/24 21:49:16.560 Info   ConfigDir=D:\_projects\tumbagames\suicide\deploy\
+2015/10/24 21:49:16.560 Info   IniFile=D:\_projects\tumbagames\suicide\deploy\JoyToKey.ini
+2015/10/24 21:49:16.560 Info   Windows Version = 6.2
+2015/10/24 21:49:16.574 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#199)
+2015/10/24 21:49:16.606 Info   LicenseKey "" is not valid
+2015/10/24 21:49:17.168 Info   Found a joystick: {B75736B0-001B-11E3-8002-444553540000}, Controller (Xbox 360 Wireless Receiver for Windows), Controller (Xbox 360 Wireless Receiver for Windows)
+2015/10/24 21:49:17.168 Info   Preferred number = -1
+2015/10/24 21:49:17.168 Info   numAxis = 5
+2015/10/24 21:49:17.168 Info   numPOVs = 1
+2015/10/24 21:49:17.168 Info   numButtons = 10
+2015/10/24 21:49:17.168 Info   EnumDeviceObject: Axis offset=0 type=102 name=Y Axis
+2015/10/24 21:49:17.168 Info   EnumDeviceObject: Axis offset=4 type=2 name=X Axis
+2015/10/24 21:49:17.168 Info   EnumDeviceObject: Axis offset=8 type=402 name=Y Rotation
+2015/10/24 21:49:17.168 Info   EnumDeviceObject: Axis offset=12 type=302 name=X Rotation
+2015/10/24 21:49:17.168 Info   EnumDeviceObject: Axis offset=16 type=202 name=Z Axis
+2015/10/24 21:49:17.169 Info   DetectJoysticks: Detected 1 joystick(s)
+2015/10/24 21:49:17.174 Info   Joystick 1: Controller (Xbox 360 Wireless Receiver for Windows)
+2015/10/24 21:49:17.174 Info   1 joysticks are detected (Joystick.cpp#109)
+2015/10/24 21:49:17.194 Info   ConfigDir=D:\_projects\tumbagames\suicide\deploy\*.cfg (ConfigFileManager.cpp#43)
+2015/10/24 21:49:17.194 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
+2015/10/24 21:49:17.243 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2015/10/24 21:54:50.867 Info   Received PBT_APMSUSPEND: Disabling a timer... (Main.cpp#396)
+2015/10/25 01:53:16.353 Info   Received PBT_APMSUSPEND: Disabling a timer... (Main.cpp#396)
+2015/10/25 12:01:41.829 Info   Received PBT_APMRESUMESUSPEND: Reinitializing joysticks... (Main.cpp#401)
+2015/10/25 12:01:44.211 Info   0 joysticks are detected (Joystick.cpp#109)
+2015/10/25 12:01:44.212 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2015/10/25 13:56:00.904 Info   Received PBT_APMSUSPEND: Disabling a timer... (Main.cpp#396)
+2015/10/25 17:50:09.842 Info   Received PBT_APMRESUMESUSPEND: Reinitializing joysticks... (Main.cpp#401)
+2015/10/25 17:50:09.849 Info   0 joysticks are detected (Joystick.cpp#109)
+2015/10/25 17:50:09.849 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2015/10/25 18:00:15.418 Error  Access is denied.
+ (Utils\Utils.cpp#446)
+2015/10/25 18:23:08.298 Error  Access is denied.
+ (Utils\Utils.cpp#446)
+2015/10/25 18:23:14.810 Error  Access is denied.
+ (Utils\Utils.cpp#446)
+2015/10/25 18:23:15.610 Error  Access is denied.
+ (Utils\Utils.cpp#446)
+2015/10/25 19:04:09.817 Info   Application terminated (Utils\LogFile.cpp#20)

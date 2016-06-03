@@ -15,13 +15,13 @@
 		public function ArcadePlayer()
 		{	
 			fscommand("trapallkeys", "True");
-			fscommand("fullscreen", "true");
+			//fscommand("fullscreen", "true");
 			Mouse.hide();
-			Security.allowDomain("*");
+			//Security.allowDomain("*");
 			if(ExternalInterface.available) {
 				ExternalInterface.call("flashLoaded");
 			}
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDowns);
+			//stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDowns);
 		}
 		private function keyDowns(e:KeyboardEvent):void{
 			if(exiting) return;

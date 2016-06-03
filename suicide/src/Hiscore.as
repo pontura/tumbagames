@@ -14,7 +14,7 @@ package
 		public function Hiscore()
 		{
 			trace("Hiscore");
-			Main.I.stage.focus = inputField;
+			//Main.I.stage.focus = inputField;
 			Main.I.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 			btn.addEventListener(MouseEvent.CLICK, Closed);
 			//this.btn.visible = false;

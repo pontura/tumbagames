@@ -20,7 +20,6 @@ package
 		}
  		public function shoot():void
 		{
-			trace("shootshootshootshootshootshoot");
 			if(paused) return
 			gotoAndStop("idle");
 			

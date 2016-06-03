@@ -17,7 +17,7 @@ package ui
 		public function end():void
 		{
 			Game.I._ui.visible = true;
-			Game.I.refreshGame();
+			Game.I.loseGame();
 			flashlib.utils.DisplayUtil.dispose(this);
 		}
 	}

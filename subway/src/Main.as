@@ -22,13 +22,15 @@ package {
 
 	[SWF(width='760', height = '460', backgroundColor = '0x000000', frameRate = '12')]
 	
-	public class Main extends MovieClip
+	public class Main extends Arcade
 	{
 		private var debbuging:Boolean = false;
 		private var game:Game;
 		public var loseScreenLoaded:LoseScreenLoaded;
 		public var winScreenLoaded:WinScreenLoaded;
 		public var introScreenLoaded:IntroScreenLoaded;
+		
+		public var score:int;
 		
 		private static const SOUNDS:Array = ["loop1", "sfx_punguear", "sfx_robaritem", "sfx_scream"];
 		
@@ -38,7 +40,6 @@ package {
 		}
 		private function loadSounds():void
 		{
-			
 			audio = new AudioPlayer('sfx/');
 			
 			var sounds:Parallel = new Parallel();
@@ -130,9 +131,14 @@ package {
 		{
 			
 		}
+		public function WinScreenAnimationReady():void
+		{
+			SaveNewHiscore("SD", score);
+		}
 		public function refreshGame():void
 		{
-			ExternalInterface.call("history.go", 0);
+			SaveNewHiscore("SD", score);
+			//ExternalInterface.call("history.go", 0);
 		}
 	}
 }

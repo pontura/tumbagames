@@ -18,8 +18,12 @@ package ui
 			var remove:String;
 			
 			 switch (keyEvent.keyCode) {
-			 	
-			 	
+				 
+				 case 32://space para el arcade
+					 remove = "space";
+					 break;
+				 
+				 //space
 			 	case 80 ://left arrow
 		            remove = "p";
 		            break;
@@ -47,7 +51,7 @@ package ui
 		            remove = "w";
 		            Game.I.board.character1.idle(true)
 		            break;
-				case 32:
+				
 		    	case 83 ://left arrow
 		            remove = "s";
 		             Game.I.board.character1.idle(true)
@@ -76,7 +80,9 @@ package ui
 			
 			var add:String;
 		    switch (keyEvent.keyCode) {
-		    	
+				case 32://space para el arcade
+					add = "space";
+					break;
 		    	case 80 ://left arrow
 		            add = "p";
 		            break;
@@ -101,7 +107,7 @@ package ui
 		        case 87 ://left arrow
 		            add = "w";
 		            break;
-				case 32:
+				
 		    	case 83 ://left arrow
 		            add = "s";
 		            break;

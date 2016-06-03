@@ -16,6 +16,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>[source path] arcade</name>
+			<type>2</type>
+			<location>D:/_projects/tumbagames/arcade</location>
+		</link>
+		<link>
 			<name>[source path] libs</name>
 			<type>2</type>
 			<location>D:/_projects/flashlib3/libs</location>

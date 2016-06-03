@@ -1,12 +1,15 @@
 package
 {
-	
 	import flash.display.MovieClip;
+	import flash.display.NativeWindow;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageDisplayState;
 	import flash.display.StageScaleMode;
 	import flash.external.ExternalInterface;
+	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
+	import flash.filesystem.FileStream;
 	import flash.net.FileReference;
 	import flash.net.SharedObject;
 	import flash.system.fscommand;
@@ -24,8 +27,8 @@ package
 	[SWF(width='480', height='600', backgroundColor='0x0000', frameRate='20')]
 	
 	
-	//public class Main extends ArcadePlayer
-	public class Main extends MovieClip
+	public class Main extends Arcade
+	//public class Main extends MovieClip
 	{
 		private var loading:LoadingMC;
 		public static var I:Main;
@@ -53,11 +56,16 @@ package
 		private var so:SharedObject;
 		public function Main()
 		{
-			//fscommand("fullscreen", "true");
-			//fscommand("allowscale", "true");
+			//Init();
+		}
+		public function Init():void
+		{
 			
-			stage.displayState = StageDisplayState.FULL_SCREEN;
-			stage.scaleMode = StageScaleMode.EXACT_FIT;
+			//fscommand("fullscreen", "true");
+		//	fscommand("allowscale", "true");
+			
+			//stage.displayState = StageDisplayState.FULL_SCREEN;
+			//stage.scaleMode = StageScaleMode.EXACT_FIT;
 			
 			so = SharedObject.getLocal("hiscoresData");
 			this.settings = new Settings();
@@ -65,6 +73,7 @@ package
 			I = this;
 			loadSounds();
 			keyboardEvents = new KeyboardEvents();
+			stage.focus = this;
 		}
 		public function stageW():int{
 			//150 es el tamaño de facebook
@@ -94,7 +103,6 @@ package
 		}
 		private function addIntro(e:TaskEvent = null):void
 		{
-			
 			removeChild(loading);
 			loading = null;
 			this.addChild( new MensajeHigienico );
@@ -112,26 +120,15 @@ package
 		}
 		public function gameOver():void
 		{
-			//getHiscores();
-			
-			for (var b:int = 0; b<10; b++)
-			{
-				trace(b+1 + "________hiscore:" + hiscores[b].username + " score: " + hiscores[b].score);
-			}
+			keyboardEvents.RemoveListener();
 			hiscore = Main.I.board.ui.points;
 			
-			
-			trace("game Over score: " + hiscore );
-			//facebook.saveScore(board.ui.points)
 			tasks.stop();
 			tasks = null;
 			
 			board.boom.gotoAndStop(1)
 			board.shooter.death();
 			
-			
-			board.reset();	
-			board = null;
 			
 			audio.stop("SStheme1");
 			
@@ -140,17 +137,24 @@ package
 			{
 				if(hiscores[a].score<hiscore)
 				{
-					addChild( new Hiscore );
-					return;
+					//addChild( new Hiscore );
+					//return;
 				}
 			}
 			//ELSE
-			addChild( new Summary );
-			setTimeout(refreshGame, 3000);
+			//addChild( new Summary );
+			setTimeout(refreshGame, 2000);
+		}
+		public function refreshGame():void
+		{
+			board.reset();	
+			board = null;
+			SaveNewHiscore("SS", hiscore);
+			//	ExternalInterface.call("history.go", 0);
 		}
 		public function SetNewHiscore(MyUsername:String):void
 		{
-			trace("SetNewHiscore: " + username + " score: "+ hiscore);
+			return;
 			
 			var username:String = "";
 			var score:int = 0;
@@ -180,7 +184,6 @@ package
 			saveFile(str);
 			var rankingLine:Object = {"username":username, "score":hiscore};
 			hiscores.push(rankingLine);
-			
 		}
 		private function saveFile(str:String):void
 		{
@@ -207,9 +210,6 @@ package
 			}
 			
 		}
-		public function refreshGame():void
-		{
-		//	ExternalInterface.call("history.go", 0);
-		}
+		
 	}
 }

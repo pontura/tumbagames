@@ -88,6 +88,8 @@ package view
 			this.state = "hit";
 			goto("hitDown");
 			audio.play("kick" + Math.ceil(Math.random()*2));
+			if(this.settings.id == 1)
+				Game.I.board.score+=1;
 		}
 		public function hitUp():void
 		{
@@ -96,6 +98,8 @@ package view
 			this.state = "hit";
 			goto("hitUp");
 			audio.play("punch" + Math.ceil(Math.random()*2));
+			if(this.settings.id == 1)
+				Game.I.board.score+=1;
 		}
 		public function celebrate():void
 		{
@@ -107,11 +111,15 @@ package view
 			
 			this.state = "celebrate";
 			goto("celebrate");
+			if(this.settings.id == 1)
+				Game.I.board.score+=100;
 		}
 		public function die():void
 		{
 			this.state = "dead";
 			goto("die");
+			if(this.settings.id == 1)
+				Game.I.board.score-=10;
 		}
 		
 		public function defenseUp():void
@@ -121,6 +129,8 @@ package view
 			this.state = "defense";
 			goto("defenseUp");
 			audio.play("agachar");
+			if(this.settings.id == 1)
+				Game.I.board.score++;
 		}
 		public function defenseDown():void
 		{
@@ -129,6 +139,8 @@ package view
 			this.state = "defense";
 			goto("defenseDown");
 			audio.play("jump");
+			if(this.settings.id == 1)
+				Game.I.board.score++;
 		}
 		public function hit():void
 		{
@@ -141,10 +153,15 @@ package view
 			if(hitsSequence>2)
 			{
 				if(this.settings.id == 1)
+				{
 					Game.I.gui.tips.addGood();
+					Game.I.board.score+=57;
+				}
 				else
+				{
 					Game.I.gui.tips.addBad();
-					
+					Game.I.board.score-=6;
+				}
 				hitsSequence = 0;
 			}
 			//trace (this.settings.id + " seq: " + hitsSequence);

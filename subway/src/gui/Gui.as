@@ -70,6 +70,7 @@ package gui
 		{
 			_level.time+=2;
 			points+=2;
+			
 			this.score_txt.text = String(points);
 			moveProgress( _level.time );
 			if(_level.time > settings["level" + _level.levelNumber].duration/1000)
@@ -88,7 +89,8 @@ package gui
 			this.points += _points;
 			this.score_txt.text = String(points);
 			this.pesosProgressBar.setProgress(_points);	
-			pesos_txt.text = String("$" + points + " / " + "$" + settings["level" + _level.levelNumber].pesos)		
+			pesos_txt.text = String("$" + points + " / " + "$" + settings["level" + _level.levelNumber].pesos);
+			_level._game._main.score += _points;
 		}
 		public function reset():void
 		{

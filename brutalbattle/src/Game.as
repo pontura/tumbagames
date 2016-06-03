@@ -31,7 +31,7 @@ package {
 
 	[SWF(width='640', height='480', backgroundColor='0x000000', frameRate='25')]
 	
-	public class Game extends MovieClip
+	public class Game extends Arcade
 	{
 		public static var I:Game; 
 		
@@ -58,9 +58,15 @@ package {
 		private var cs1:CharacterSettings;
 		private var cs2:CharacterSettings;
 		
+		private var hiscore:int;
+		
 		public var taskRunner:TaskRunner;
 
 		public function Game()
+		{
+			//Init();
+		}
+		public function Init():void
 		{
 			I = this;	
 			loading();
@@ -155,14 +161,21 @@ package {
 			taskRunner.stop();
 			taskRunner.dispose();			
 		}
-		public function winLevel():void
+		public function win(_hiscore:int):void
 		{
-			reset();
-			DisplayUtil.dispose(board);
-			characterSelector();
+			this.hiscore = _hiscore;
+		}
+		public function lose():void
+		{
+			hiscore = 0;
 		}
 		public function restart():void
 		{
+			if(hiscore>0)
+			{
+				SaveNewHiscore("BB", hiscore);
+				return;
+			}
 			audio.stop();
 			Game.I.taskRunner.stop();
 			reset();
@@ -219,10 +232,7 @@ package {
 		}
 		public function endGame():void
 		{
-			board.reset();
-			gui.reset();
-			disposeSounds();
-			//close(gui.score.totalPoints);
+			
 		}
 		
 	}

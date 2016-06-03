@@ -17,6 +17,7 @@ package view
 	
 	public class Board extends MovieClip
 	{
+		public var score:int;
 		public var state:String = "playing";
 		public var paused:Boolean;
 		public var character1:Character;
@@ -71,13 +72,15 @@ package view
 			var loser:Character;
 			if(win)
 			{
-				winner = character1
+				Game.I.win(score);
+				winner = character1;
 				loser = character2;
 				Game.I.gui.tips.addDie();
 			} else
 			{
-				winner = character2
-				loser = character1
+				Game.I.lose();
+				winner = character2;
+				loser = character1;
 			}
 			
 			
@@ -153,6 +156,13 @@ package view
 			{
 				switch (pressed) {
 					
+					//para el arcade que se juega solo con space:
+					case "space":
+						if(Math.floor(Math.random()*10)<5)
+							character1.hitUp();
+						else 
+							character1.hitDown();
+						break;
 					
 					
 					case "p":

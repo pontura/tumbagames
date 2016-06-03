@@ -14,17 +14,27 @@ package
 		
 		public function KeyboardEvents()
 		{
-			Main.I.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);/*
+			Init();	
+		}
+		public function Init():void
+		{
+			Main.I.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+			
+			/*
 			if ( GameInput.isSupported && GameInput.numDevices > 0 )
 			{
-				trace("hay joystick");
-				var gid:GameInputDevice = GameInput.getDeviceAt(0);
-				var gic:GameInputControl = gid.getControlAt(0);
-				gic.addEventListener(Event.CHANGE, buttonPressed);
+			trace("hay joystick");
+			var gid:GameInputDevice = GameInput.getDeviceAt(0);
+			var gic:GameInputControl = gid.getControlAt(0);
+			gic.addEventListener(Event.CHANGE, buttonPressed);
 			}	*/		
 		}
+		public function RemoveListener():void
+		{
+			Main.I.stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+		}
 		private function buttonPressed(e:Event):void{
-			trace(e.currentTarget);
+			//trace(e.currentTarget);
 		}
 		private function keyDown(e:KeyboardEvent):void{
 			if(Main.I.board)

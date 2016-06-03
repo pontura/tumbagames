@@ -31,7 +31,7 @@ package gui
 			mainMenuBtn.field.text = "MAIN MENU";*/
 			
 			
-			//setTimeout(_game._main.exit, 33000);
+			setTimeout(_game._main.WinScreenAnimationReady, 33000);
 			
 		}
 		private function replay(e:MouseEvent):void

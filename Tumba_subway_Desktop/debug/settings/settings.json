@@ -1,0 +1,337 @@
+{
+
+	"tipos":
+	[
+		{
+			"id":1, 
+			"asset":"tipoMC1", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":250,
+			"inventario": 
+			[
+				{"name":"pantalon", "points":50}, 
+				{"name":"zapatos", "points":70},
+				{"name":"remera", "points":150},
+				{"name":"medias", "points":100}
+			]
+		},
+		{
+			"id":2, 
+			"asset":"tipoMC2", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario":
+			[
+				{"name":"cartera", "points":10}, 
+				{"name":"ropaInterior", "points":50}, 
+				{"name":"pantalon", "points":40},
+				{"name":"remera", "points":40},
+				{"name":"zapatos", "points":20}
+			]
+		},
+		{
+			"id":3, 
+			"asset":"tipoMC3", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario":
+			[
+				{"name":"peluca", "points":30}, 
+				{"name":"cartera", "points":120}, 
+				{"name":"collar", "points":40},
+				{"name":"vestido", "points":40},
+				{"name":"medias", "points":20},
+				{"name":"tanga", "points":80}
+			]
+		},
+		{
+			"id":4, 
+			"asset":"tipoMC4", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"tejido", "points":100}, 
+				{"name":"chaleco", "points":250}, 
+				{"name":"pantuflas", "points":400}, 
+				{"name":"vestido", "points":150}, 
+				{"name":"camison", "points":800}
+			]
+		},
+		{
+			"id":5, 
+			"asset":"tipoMC5", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"altazapas", "points":100}, 
+				{"name":"altainterior", "points":250}, 
+				{"name":"altalompa", "points":400}, 
+				{"name":"altacartera", "points":150}, 
+				{"name":"altaremera", "points":800}
+			]
+		},
+		{
+			"id":6, 
+			"asset":"tipoMC6", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"mochila", "points":100}, 
+				{"name":"remera", "points":120}, 
+				{"name":"pantalones", "points":250}, 
+				{"name":"slip", "points":400}
+			]
+		},
+		{
+			"id":7, 
+			"asset":"tipoMC7", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"arma", "points":100}, 
+				{"name":"gorra", "points":100}, 
+				{"name":"remera", "points":120}, 
+				{"name":"pantalones", "points":250}, 
+				{"name":"slip", "points":400},
+				{"name":"zapatos", "points":400}
+			]
+		},
+		{
+			"id":8, 
+			"asset":"tipoMC8", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"zapatillas", "points":150}, 
+				{"name":"remera", "points":200}, 
+				{"name":"pantalon", "points":220}, 
+				{"name":"ropita", "points":500}
+			]
+		},
+		{
+			"id":9, 
+			"asset":"tipoMC9", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"mochila", "points":150}, 
+				{"name":"zapas", "points":200}, 
+				{"name":"pollera", "points":160}, 
+				{"name":"camisa", "points":350}, 
+				{"name":"ropita", "points":600}
+			]
+		},
+		{
+			"id":10, 
+			"asset":"tipoMC10", 
+			"reaccion":[1000,5000], 
+			"dificultad":40, 
+			"duracionAmague":300, 
+			"miraAlrededor":[1000,5000], 
+			"duracionMirada":300,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"zapatos", "points":300}, 
+				{"name":"vestido", "points":300}, 
+				{"name":"adornos", "points":360}, 
+				{"name":"medias", "points":750}, 
+				{"name":"ropita", "points":1200},
+				{"name":"pluma", "points":1200}
+			]
+		},
+        
+        
+        {
+			"id":16, 
+			"asset":"tipoMC6", 
+			"reaccion":[1000,3000], 
+			"dificultad":80, 
+			"duracionAmague":100, 
+			"miraAlrededor":[2000,8000], 
+			"duracionMirada":600,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"mochila", "points":100}, 
+				{"name":"remera", "points":120}, 
+				{"name":"pantalones", "points":250}, 
+				{"name":"slip", "points":400}
+			]
+		},
+        
+        
+        {
+			"id":17, 
+			"asset":"tipoMC7", 
+			"reaccion":[1000,3000],  
+			"dificultad":80, 
+			"duracionAmague":100, 
+			"miraAlrededor":[2000,8000], 
+			"duracionMirada":600,  
+			"area":150,
+			"inventario": 
+			[
+				{"name":"arma", "points":100}, 
+				{"name":"gorra", "points":100}, 
+				{"name":"remera", "points":120}, 
+				{"name":"pantalones", "points":250}, 
+				{"name":"slip", "points":400},
+				{"name":"zapatos", "points":400}
+			]
+		}
+	],
+	
+	
+	 
+	"level1":
+		{ 
+		"duration":100000,
+		"pesos":3000,
+		"wagons":1,
+		"tipos": 
+			[
+				1,1,2,3,3,4,5
+			],
+		"distractores": 
+			[
+				
+                            
+            ]
+		 },
+         
+            
+                
+    "level2":
+		{ 
+		"duration":150000,
+		"pesos":5000,
+		"wagons":3,
+		"tipos":[ 1,2,2,3,4,4,8,9,10],
+		"distractores": 
+			[
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]}
+			]
+		 },
+	
+		 
+	"level3":
+		{ 
+		"duration":200000,
+		"pesos":7000,
+		"wagons":2,
+		"tipos": 
+			[
+				1,2,3,4,5,8,9,10
+			],
+		"distractores": 
+			[
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]}
+			]
+		 },	
+
+	"level4":
+		{ 
+		"duration":300000,
+		"pesos":9000,
+		"wagons":3,
+		"tipos": 
+			[
+				9,9,9,9,9,9,9,9,9,9,1,6,5,9,4,3,1,2,10,10,10
+			],
+		"distractores": 
+			[
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]}
+			]
+		 },	
+	"level5":
+		{ 
+		"duration":200000,
+		"pesos":10000,
+		"wagons":3,
+		"tipos": 
+			[
+				16,17,16,17,16,17,16,17,16,17
+			],
+		"distractores": 
+			[
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]}
+			]
+		 },	
+
+	"level6":
+		{ 
+		"duration":100000,
+		"pesos":20000,
+		"wagons":7,
+		"tipos": 
+			[
+				1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,7,7,7,8,8,8,8,8,8,8,8,8,9,9,9,9,9,9,9,9,10,10,10,10,10,10,10,16,16,16,17,17,17
+			],
+		"distractores": 
+			[
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]},
+				{ "tipo":2, "rango":600, "speed":20, "intervalos":[3000,6000]},
+				{ "tipo":3, "rango":600, "speed":30, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]},
+				{ "tipo":1, "rango":600, "speed":10, "intervalos":[3000,6000]}
+			]
+		 },	
+		 
+	"areaDeRobo": 20,
+	"afanoSpeed" : 0.12,
+	"sospechaSpeed" : 2,
+	"poongaSpeed": 15
+}

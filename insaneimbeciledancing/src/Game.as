@@ -1,18 +1,19 @@
 package {
 	import clock.Clock;
-	import flash.display.StageAlign;
-	import flash.display.StageDisplayState;
-	import flash.display.StageScaleMode;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
+	import flash.display.StageAlign;
+	import flash.display.StageDisplayState;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.external.ExternalInterface;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
+	import flash.net.sendToURL;
 	import flash.text.StyleSheet;
 	import flash.ui.Keyboard;
 	import flash.utils.setTimeout;
@@ -46,7 +47,7 @@ package {
 	
 	[SWF(width='1000', height='700', backgroundColor='0x000', frameRate='30')]	
 	
-	public class Game extends MovieClip {
+	public class Game extends Arcade {
 		
 		private var VIRTUAL_VIEW:Boolean = false;
 		private var 		VIEW:Boolean = true;
@@ -62,13 +63,15 @@ package {
 		public var levelNum:int = 0;
 		public var currentLevel:MovieClip;
 		public var spriteSheet:SpriteSheet;
+		private var hiscore:int;
 		
-		public function Game() {
-			
-			stage.displayState = StageDisplayState.FULL_SCREEN;
-			stage.scaleMode = StageScaleMode.EXACT_FIT;
-			
-			stage.focus = this; 
+		public function Game() {			
+			//stage.displayState = StageDisplayState.FULL_SCREEN;
+			//stage.scaleMode = StageScaleMode.EXACT_FIT;
+			//stage.focus = this; 
+			//Init();			
+		}
+		public function Init():void {
 			/*var myStarling:Starling = new Starling(SpriteSheetExample,stage);
 			myStarling.start();
 			return;*/
@@ -180,7 +183,7 @@ package {
 			)
 			tasks.add(enterFrameTask);
 			
-			trace("levelNum " + levelNum);
+			//trace("levelNum " + levelNum);
 		}
 		public function win():void
 		{
@@ -191,7 +194,7 @@ package {
 		public function setNextLevel():void
 		{
 			
-			trace("setNextLevel  levelNum " + levelNum);
+			//trace("setNextLevel  levelNum " + levelNum);
 			levelNum++;
 			if(levelNum == 1)
 				currentLevel = new Level1MC();
@@ -236,7 +239,8 @@ package {
 			tasks.stop();
 			tasks.dispose();
 			show.stop();
-			addChild(new WinScreen(_ui.points));
+			hiscore = _ui.points;
+			addChild(new WinScreen(hiscore));
 		}
 		public function reset():void
 		{
@@ -258,14 +262,20 @@ package {
 			//show = null;			
 		}
 		public function restart():void
-		{
-			trace("restart");
+		{			
+			//trace("restart");
 			show.play();
 			addViews();			
 		}
+		public function loseGame():void
+		{
+			Quit();
+			//ExternalInterface.call("history.go", 0);
+		}
 		public function refreshGame():void
 		{
-			ExternalInterface.call("history.go", 0);
+			SaveNewHiscore("IID", hiscore);			
+			//ExternalInterface.call("history.go", 0);
 		}
 		
 	}

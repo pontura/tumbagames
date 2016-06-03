@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Tumba_brutalBattle_Desktop</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.apollonature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] arcade</name>
+			<type>2</type>
+			<location>D:/_projects/tumbagames/arcade</location>
+		</link>
+		<link>
+			<name>[source path] brutalbattle-src</name>
+			<type>2</type>
+			<location>D:/_projects/tumbagames/brutalbattle/src</location>
+		</link>
+		<link>
+			<name>[source path] flashlib2-src</name>
+			<type>2</type>
+			<location>D:/_projects/flashlib2/src</location>
+		</link>
+		<link>
+			<name>[source path] libs</name>
+			<type>2</type>
+			<location>D:/_projects/flashlib2/libs</location>
+		</link>
+	</linkedResources>
+</projectDescription>

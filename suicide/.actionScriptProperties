@@ -4,6 +4,7 @@
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="D:/_projects/flashlib3/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="D:/_projects/flashlib3/libs"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="D:/_projects/tumbagames/arcade"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
