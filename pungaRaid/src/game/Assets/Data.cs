@@ -6,6 +6,8 @@ public class Data : MonoBehaviour
 {
     public GameData gameData;
 
+    public bool isArcade;
+
     //malisimo
     public bool MainMenuPopupOn;
 
@@ -50,8 +52,10 @@ public class Data : MonoBehaviour
             return mInstance;
         }
     }
+    public string currentLevel;
     public void LoadLevel(string aLevelName)
     {
+        this.currentLevel = aLevelName;
         Time.timeScale = 1;
         Application.LoadLevel(aLevelName);
     }

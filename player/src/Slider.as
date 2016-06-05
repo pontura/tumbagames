@@ -29,8 +29,8 @@ package
 			else 
 				activeID++;
 			
-			if(activeID==0) activeID=4;
-			else if (activeID==5) activeID = 1;
+			if(activeID==0) activeID=5;
+			else if (activeID==6) activeID = 1;
 			
 			Main.I.board.hideTexts();
 			canMove = false;

@@ -17,8 +17,8 @@ package
 	import flash.system.Security;
 	import flash.system.System;
 	import flash.system.fscommand;
-	import flash.utils.setTimeout;
 	import flash.ui.Mouse;
+	import flash.utils.setTimeout;
 	
 	import org.osmf.media.URLResource;
 	
@@ -31,6 +31,8 @@ package
 		private var framesToLoadTheFukinLoading				:int = 140;
 		public var board:Board;
 		public var tasks:TaskRunner;
+		private var disclaimer:disclaimerMC;
+		private var openingGame:Boolean;
 		
 		public function Main()
 		{
@@ -57,16 +59,20 @@ package
 				case 2: url = "insaneImbecileDancing.bat"; break;
 				case 3: url = "brutal.bat"; break;
 				case 4: url = "subway.bat"; break;
-				case 5: url = "pungaRaid.bat"; break;
+				case 5: url = "PR.exe"; break;
 			}
 			fscommand("exec", url);
 			//navigateToURL(new URLRequest(url), "_self");
 		}
+		private function KillAll():void
+		{
+			fscommand("exec", "killAll.bat");
+		}
 		private function setEvents():void
 		{
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, checkForEsc);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownDone);
 		}
-		private function checkForEsc(e:KeyboardEvent):void{
+		private function keyDownDone(e:KeyboardEvent):void{
 			if(openingGame) return;
 			
 			switch (e.keyCode) 	
@@ -95,7 +101,7 @@ package
 					break;
 			}
 		}
-		private function setOn():void{
+		private function setOnAgain():void{
 			openingGame = false;
 			removeChild(disclaimer);
 			//fscommand("quit", "true");			
@@ -103,25 +109,26 @@ package
 		private function setOff():void{
 			visible = false;
 		}
-		private var disclaimer:disclaimerMC;
-		private var openingGame:Boolean;
+		
 		private function open():void
-		{
-			if(!openingGame)
-			{
-				openingGame = true;
-				openGame(board.slider.activeID);
-				
-				disclaimer = new disclaimerMC;
-				addChild(disclaimer);
-				
-				Main.I.tasks.add(
-					new Sequence(
-						new Wait(4000),
-						new Func(setOn)
-					)
+		{	
+			openingGame = true;
+			disclaimer = new disclaimerMC;
+			addChild(disclaimer);
+			
+			Main.I.tasks.add(
+				new Sequence(
+					new Func(KillAll),
+					new Wait(2000),
+					new Func(OpenDelay),
+					new Wait(5000),
+					new Func(setOnAgain)
 				)
-			}
+			)
+		}
+		private function OpenDelay():void
+		{
+			openGame(board.slider.activeID);			
 		}
 		private function fullscreenOff(e:MouseEvent):void
 		{

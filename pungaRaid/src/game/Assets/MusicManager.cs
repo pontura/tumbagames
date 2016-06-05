@@ -18,6 +18,12 @@ public class MusicManager : MonoBehaviour {
         Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
         Events.OnMusicChange += OnMusicChange;
         Events.OnMusicOff += OnMusicOff;
+
+#if UNITY_STANDALONE
+        disabled = false;
+        volume = 1;
+        OnMusicVolumeChanged(volume);
+#endif
 	}
     void OnDestroy()
     {

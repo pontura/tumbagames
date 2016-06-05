@@ -12,21 +12,30 @@ public class Main : MonoBehaviour {
     public ScoreLine scoreLine;
     public Transform container;
 
-    public Text gameField;
     public Text titleField;
     public Text puestoField;
     public Text field;
+
+    public Data data;
+    public LeterChanger[] letters;
+    public int lettersID;
+    public LeterChanger letterActive;
+    public int puesto;
+
     string fileName_data = "C:\\tumbagames\\hiscores\\data.txt";
     string fileName_ss = "C:\\tumbagames\\hiscores\\SS.txt";
     string fileName_iid = "C:\\tumbagames\\hiscores\\IID.txt";
     string fileName_bb = "C:\\tumbagames\\hiscores\\BB.txt";
     string fileName_sd = "C:\\tumbagames\\hiscores\\SD.txt";
-    
-    public Data data;
+    string fileName_pr = "C:\\tumbagames\\hiscores\\PR.txt";
 
-    public LeterChanger[] letters;
-    public int lettersID;
-    public LeterChanger letterActive;
+    public GameObject poster_ss;
+    public GameObject poster_iid;
+    public GameObject poster_bb;
+    public GameObject poster_sd;
+    public GameObject poster_pr;
+
+    public GameObject newTop15Hiscore;
 
     [Serializable]
     public class Data
@@ -48,6 +57,15 @@ public class Main : MonoBehaviour {
 
 
 	void Start () {
+        Cursor.visible = false;
+        newTop15Hiscore.SetActive(false);
+        poster_ss.SetActive(false);
+        poster_iid.SetActive(false);
+        poster_bb.SetActive(false);
+        poster_sd.SetActive(false);
+        poster_pr.SetActive(false);
+
+        puesto = 1;
         Screen.fullScreen = true;
         var sr = new StreamReader(fileName_data);
         var fileContents = sr.ReadToEnd();
@@ -58,20 +76,26 @@ public class Main : MonoBehaviour {
         data.prefix = lines[0];
         switch ( data.prefix )
         {
-            case "SS": data.title = "SUICIDE SNIPER"; data.url = fileName_ss; break;
-            case "IID": data.title = "INSANE IMBECILE DANCING"; data.url = fileName_iid; break;
-            case "BB": data.title = "BRUTAL BATTLE"; data.url = fileName_bb; break;
-            case "SD": data.title = "SUBWAY DOMINATOR"; data.url = fileName_sd; break;
+            case "SS": data.title = "SUICIDE SNIPER"; data.url = fileName_ss;               poster_ss.SetActive(true); break;
+            case "IID": data.title = "INSANE IMBECILE DANCING"; data.url = fileName_iid;    poster_iid.SetActive(true); break;
+            case "BB": data.title = "BRUTAL BATTLE"; data.url = fileName_bb;                poster_bb.SetActive(true); break;
+            case "SD": data.title = "SUBWAY DOMINATOR"; data.url = fileName_sd;             poster_sd.SetActive(true); break;
+            case "PR": data.title = "PUNGA RAID"; data.url = fileName_pr;                   poster_pr.SetActive(true); break;
         }        
 
-        gameField.text = data.title;
+        //gameField.text = data.title;
         field.text = data.hiscore.ToString();
 
         //////////////va a la primer letra:
         lettersID = -1;  SetLetterActive(true);
 
         LoadHiscores(data.url);
-       // SaveNew(data.url, "CACA", 1233);
+        puestoField.text = "PUESTO " + puesto;
+        if (puesto < 16)
+        {
+            NewTop15HiscoreOn();
+        }
+       // SaveNew(data.url, "CACA", 1233);PUESTO
 	}
     void Update()
     {
@@ -79,7 +103,7 @@ public class Main : MonoBehaviour {
             letterActive.ChangeLetter(false);
         else if (Input.GetKeyUp(KeyCode.RightArrow))
             letterActive.ChangeLetter(true);
-        else if (Input.GetKeyUp(KeyCode.Return))
+        else if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
             SetLetterActive(true);
         else if (Input.GetKeyUp(KeyCode.Alpha1))
             SetLetterActive(false);
@@ -109,6 +133,15 @@ public class Main : MonoBehaviour {
         letterActive.SetActivate(true);
         letterActive.GetComponent<Animation>().Play("letterOn");
     }
+    void NewTop15HiscoreOn()
+    {
+        newTop15Hiscore.SetActive(true);
+        Invoke("hoscoreOff", 4);
+    }
+    void hoscoreOff()
+    {
+        newTop15Hiscore.SetActive(false);
+    }
     void LoadHiscores(string fileName)
     {
             String[] arrLines = File.ReadAllLines(fileName);
@@ -120,13 +153,17 @@ public class Main : MonoBehaviour {
                 hiscore.username = lines[0];
                 hiscore.hiscore = int.Parse(lines[1]);
                 hiscores.Add(hiscore);
-
-                ScoreLine newScoreLine = Instantiate(scoreLine);
-                
-                newScoreLine.Init(num, hiscore.username, hiscore.hiscore);
                 num++;
-                newScoreLine.transform.SetParent(container);
-                newScoreLine.transform.localScale = Vector3.one;
+                if(num<16)
+                {
+                    ScoreLine newScoreLine = Instantiate(scoreLine);                
+                    newScoreLine.Init(num, hiscore.username, hiscore.hiscore);               
+                    newScoreLine.transform.SetParent(container);
+                    newScoreLine.transform.localScale = Vector3.one;
+                }
+
+                if (hiscore.hiscore > data.hiscore)
+                    puesto = num;
             } 
             // 
      }
