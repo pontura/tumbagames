@@ -1,0 +1,23 @@
+{
+	"crashes_with_border":20,
+	"seconds_before_end_to_reset":5,
+	"seconds_before_end_to_win":10,
+	"speed":70,
+	"streetLength": 20000,
+	"startProbabilityOfObejcts": 6,
+	"startDistance":450,
+	"tileSeparation": 25,
+	"curveDistance":1600,
+	"curveProbability":1,
+	"levels":
+	[
+		{"seconds":91, "agregaMotoSegundos":2500},
+		{"seconds":92, "agregaMotoSegundos":2000},
+		{"seconds":104, "agregaMotoSegundos":1500},
+		{"seconds":200, "agregaMotoSegundos":60000}
+	],
+	"objects":
+	[
+		
+	]
+}

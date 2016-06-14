@@ -52,7 +52,7 @@ package
 		private function openGame(id:int):void
 		{
 			var url:String;
-			
+						
 			switch(id)
 			{
 				case 1: url = "suicide.bat"; break;
@@ -60,6 +60,8 @@ package
 				case 3: url = "brutal.bat"; break;
 				case 4: url = "subway.bat"; break;
 				case 5: url = "PR.exe"; break;
+				case 6: url = "MR.exe"; break;
+				case 7: url = "eg.bat"; break;
 			}
 			fscommand("exec", url);
 			//navigateToURL(new URLRequest(url), "_self");

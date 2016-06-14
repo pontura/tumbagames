@@ -26,6 +26,7 @@ public class MainMenu : MonoBehaviour {
     private bool isDead;
     void Start()
     {
+        PlayerPrefs.SetString("tutorialReady", "true");
         Events.OnHeroDie += OnHeroDie;
     }
     void OnHeroDie()
@@ -49,6 +50,7 @@ public class MainMenu : MonoBehaviour {
     }
     public void SaveNew()
     {
+        Events.OnLoadingPanel();
         isDead = false;
         string[] content = new string[] { "PR_" + Game.Instance.gameManager.score };
         File.WriteAllLines("C:\\tumbagames\\hiscores\\data.txt", content);

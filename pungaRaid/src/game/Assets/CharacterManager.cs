@@ -32,10 +32,16 @@ public class CharacterManager : MonoBehaviour {
        pos.x = _x;
        character.transform.position = pos;
     }
+    private float lastKeyPressedTime;
     void OnSwipe(SwipeDetector.directions direction)
     {
         if (Game.Instance.gameManager.state == GameManager.states.TUTORIAL) return;
         if ( Game.Instance.state != Game.states.PLAYING ) return;
+
+        float Diff = (Time.time - lastKeyPressedTime);
+        print("DIFF: " + Diff);
+        lastKeyPressedTime = Time.time;
+        if (Diff < 0.1f) return;
 
         switch (direction)
         {

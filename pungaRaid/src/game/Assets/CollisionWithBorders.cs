@@ -10,7 +10,7 @@ public class CollisionWithBorders : MonoBehaviour {
         pos.z = -10;
         hits = Physics.RaycastAll(pos, transform.forward, 100.0F);
 
-        print(pos +  " transform.forward: " + transform.forward + " hits: " + hits.Length);
+        return;
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit hit = hits[i];

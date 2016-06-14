@@ -16,6 +16,7 @@
 	{
 		public function Arcade()
 		{	
+			fscommand("fullscreen", "true");
 			//fscommand("exec",".\\ACQ\\Acq.exe");
 			setTimeout(setEvents, 1000);
 			//fscommand("fullscreen", "true");

@@ -9,6 +9,7 @@ using System.Linq;
 
 public class Main : MonoBehaviour {
 
+    public ScoreLine scoreLineNewHiscore;
     public ScoreLine scoreLine;
     public Transform container;
 
@@ -28,14 +29,18 @@ public class Main : MonoBehaviour {
     string fileName_bb = "C:\\tumbagames\\hiscores\\BB.txt";
     string fileName_sd = "C:\\tumbagames\\hiscores\\SD.txt";
     string fileName_pr = "C:\\tumbagames\\hiscores\\PR.txt";
+    string fileName_mr = "C:\\tumbagames\\hiscores\\MR.txt";
 
     public GameObject poster_ss;
     public GameObject poster_iid;
     public GameObject poster_bb;
     public GameObject poster_sd;
     public GameObject poster_pr;
+    public GameObject poster_mr;
 
     public GameObject newTop15Hiscore;
+    public GameObject cargando;
+    public GameObject grabando;
 
     [Serializable]
     public class Data
@@ -54,9 +59,14 @@ public class Main : MonoBehaviour {
         public string username;
         public int hiscore;       
     }
-
-
 	void Start () {
+        grabando.SetActive(false);
+        cargando.SetActive(true);
+        Invoke("Init", 2);
+    }
+    void Init()
+    {
+        cargando.SetActive(false);
         Cursor.visible = false;
         newTop15Hiscore.SetActive(false);
         poster_ss.SetActive(false);
@@ -64,6 +74,7 @@ public class Main : MonoBehaviour {
         poster_bb.SetActive(false);
         poster_sd.SetActive(false);
         poster_pr.SetActive(false);
+        poster_mr.SetActive(false);
 
         puesto = 1;
         Screen.fullScreen = true;
@@ -81,6 +92,7 @@ public class Main : MonoBehaviour {
             case "BB": data.title = "BRUTAL BATTLE"; data.url = fileName_bb;                poster_bb.SetActive(true); break;
             case "SD": data.title = "SUBWAY DOMINATOR"; data.url = fileName_sd;             poster_sd.SetActive(true); break;
             case "PR": data.title = "PUNGA RAID"; data.url = fileName_pr;                   poster_pr.SetActive(true); break;
+            case "MR": data.title = "MAD ROLLERS TRASH!"; data.url = fileName_mr;           poster_mr.SetActive(true); break;
         }        
 
         //gameField.text = data.title;
@@ -142,6 +154,7 @@ public class Main : MonoBehaviour {
     {
         newTop15Hiscore.SetActive(false);
     }
+    private bool yaAgrego;
     void LoadHiscores(string fileName)
     {
             String[] arrLines = File.ReadAllLines(fileName);
@@ -153,17 +166,32 @@ public class Main : MonoBehaviour {
                 hiscore.username = lines[0];
                 hiscore.hiscore = int.Parse(lines[1]);
                 hiscores.Add(hiscore);
-                num++;
+
+                if (hiscore.hiscore < data.hiscore && !yaAgrego)
+                {
+                    yaAgrego = true;
+                    puesto = num;
+                    if (num < 16)
+                    {
+                        ScoreLine newScoreLine = Instantiate(scoreLineNewHiscore);
+                        newScoreLine.Init(num, "XXXXX", data.hiscore);
+                        newScoreLine.transform.SetParent(container);
+                        newScoreLine.transform.localScale = Vector3.one;
+                        num++;
+                    }                    
+                }
+
                 if(num<16)
                 {
                     ScoreLine newScoreLine = Instantiate(scoreLine);                
                     newScoreLine.Init(num, hiscore.username, hiscore.hiscore);               
                     newScoreLine.transform.SetParent(container);
                     newScoreLine.transform.localScale = Vector3.one;
-                }
+                }               
 
-                if (hiscore.hiscore > data.hiscore)
-                    puesto = num;
+                num++;
+
+                
             } 
             // 
      }
@@ -172,7 +200,9 @@ public class Main : MonoBehaviour {
         string username = "";
         foreach (LeterChanger letterChanger in letters)
         {
-            username += letterChanger.field.text;
+            string letra = letterChanger.field.text;
+            if (letra == "_") letra = " ";
+            username += letra;
         }
         SaveNew(data.url, username, data.hiscore);
     }
@@ -194,6 +224,11 @@ public class Main : MonoBehaviour {
             a++;
         }
         File.WriteAllLines(fileName, arrLines);
+        Invoke("grabaEnd", 2);
+        grabando.SetActive(true);
+    }
+    void grabaEnd()
+    {
         Application.Quit();
     }
     List<Hiscore> OrderByHiscore(List<Hiscore> hs)
