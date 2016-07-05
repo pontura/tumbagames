@@ -1,0 +1,4 @@
+sceneSetups:
+- path: src/game/Assets/Scenes/01_Splash.unity
+  isLoaded: 1
+  isActive: 1

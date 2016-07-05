@@ -3,18 +3,18 @@ texts:
 	[
 		{	
 			id:1,
-			title:"Zona norte",
-			text: "Zona norte Zona norte Zona norteZona norte"
+			title:"CABILDO & TRIUNVIRATO",
+			text: "Mucho gil con teléfono regalado y yuta."
 		},
 		{	
 			id:2,
-			title:"La Boca",
-			text: "La BocaLa BocaLa BocaLa Boca norte Zona norte Zona norteZona norte"
+			title:"PUERTO MAMERTO",
+			text: "Ta yeno de cheto."
 		},
 		{	
 			id:3,
-			title:"La XXX",
-			text: "La x xx xx xBocaLa BocaLa BocaLa Boca norte Zona norte Zona norteZona norte"
+			title:"LA BOSTA",
+			text: "Ta piola para pungueá unos gringo y unos chino."
 		}
 	]
 }
