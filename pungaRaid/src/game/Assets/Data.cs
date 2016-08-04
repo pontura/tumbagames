@@ -70,6 +70,8 @@ public class Data : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+        if(isArcade)
+            Cursor.visible = false;
 
         DontDestroyOnLoad(this.gameObject);
 
