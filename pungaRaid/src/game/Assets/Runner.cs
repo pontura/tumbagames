@@ -37,7 +37,8 @@ public class Runner : Enemy
     override public void OnCrashed()
     {
         if (state == states.CRASHED) return;
-        anim.Play("hit");
+        state = states.CRASHED;
+        anim.Play("pung");
     }
     override public void OnExplote()
     {

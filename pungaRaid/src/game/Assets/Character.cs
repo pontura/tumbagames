@@ -219,6 +219,10 @@ public class Character : MonoBehaviour {
                     Events.OnSetSpecialItem(101, true);
                     Events.OnChangeSpeed(1.4f, true);
                 }
+                hero.ResetState();
+                hero.OnHeroDash();
+                Time.timeScale = 0.2f;
+                Invoke("RalentaReset", 0.25f);
             }
             else if (powerupManager.type == PowerupManager.types.GIL || powerupManager.type == PowerupManager.types.CHUMBO)
             {
@@ -245,6 +249,10 @@ public class Character : MonoBehaviour {
                 enemy.GetComponent<Victim>().Steal();
             }
         }
+    }
+    void RalentaReset()
+    {
+        Time.timeScale = 1;
     }
     public void OnCollisionWithBlocker(Blocker blocker, CharacterCollider.types type)
     {

@@ -6,7 +6,7 @@ public class Hero : MonoBehaviour {
     private Animator animator;
     public states state;
     public SpriteRenderer casco;
-    public SpriteRenderer transport;
+    public GameObject skateAsset;
     public GameObject oops;
 
     public enum states
@@ -110,9 +110,14 @@ public class Hero : MonoBehaviour {
         if (Game.Instance.state != Game.states.PLAYING) return;
         if (state == states.DASH) return;
         if (state == states.CRASH) return;
+        
         state = states.DASH;
         animator.SetBool(state.ToString(), true);
-        animator.Play("pungaDash", 0, 0);
+
+        if (Data.Instance.specialItems.type == SpecialItemsManager.types.TRANSPORT)
+            animator.Play("pungaSkateDash", 0, 0);
+        else
+            animator.Play("pungaDash", 0, 0);
     }
     public void OnSorete()
     {
