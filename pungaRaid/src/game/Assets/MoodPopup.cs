@@ -25,7 +25,7 @@ public class MoodPopup : MonoBehaviour {
 
         title.text = data.title;
         desc.text = data.text;
-        hiscore.text = "$" + SocialManager.Instance.userHiscore.GetHiscore(data.id) + " guita";
+        hiscore.text = "$" + SocialManager.Instance.userHiscore.GetHiscore(data.id) + "pe";
 
         ranking.Init(moodID);
     }

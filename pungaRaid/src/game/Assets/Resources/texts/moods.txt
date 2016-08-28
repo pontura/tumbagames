@@ -3,7 +3,7 @@ texts:
 	[
 		{	
 			id:1,
-			title:"CABILDO & TRIUNVIRATO",
+			title:"BELGRUÑEZ",
 			text: "Mucho gil con teléfono regalado y yuta."
 		},
 		{	
