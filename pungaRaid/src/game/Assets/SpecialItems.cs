@@ -38,10 +38,12 @@ public class SpecialItems : MonoBehaviour {
     {
         if (active)
         {
-         //   hero.transport.gameObject.SetActive(true);
-         //   hero.transport.sprite = Resources.Load("transports/" + id, typeof(Sprite)) as Sprite;
+            //   hero.transport.gameObject.SetActive(true);
+            //   hero.transport.sprite = Resources.Load("transports/" + id, typeof(Sprite)) as Sprite;
         }
         else
-            hero.transport.gameObject.SetActive(false);
+        {
+            //  hero.transport.gameObject.SetActive(false);
+        }
     }
 }
