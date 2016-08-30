@@ -14,7 +14,7 @@ public class TextsMoods {
     {
         public int id;
         public string title;
-        public string text;
+        public List<Seccional> seccional;
     }
 
     public void Init(JSONNode content)
@@ -24,7 +24,21 @@ public class TextsMoods {
             Data dataNew = new Data();
             dataNew.id = int.Parse(content[a]["id"]);
             dataNew.title = content[a]["title"];
-            dataNew.text = content[a]["text"];
+            int seccionalID = 0;
+            dataNew.seccional = new List<Seccional>();
+            for (int b = 0; b < content[a]["seccionales"].Count; b++ )
+            {
+                Seccional seccional = new Seccional();
+                seccional.id = seccionalID;
+                seccional.name = content[a]["seccionales"][b]["text"];
+                seccional.price = int.Parse(content[a]["seccionales"][b]["price"]);
+
+                if (PlayerPrefs.GetInt("mood" + a + b) > 0 || (a==0 && b==0) )
+                    seccional.unlocked = true;
+
+                seccionalID++;
+                dataNew.seccional.Add(seccional);
+            }
             data.Add(dataNew);
         }
     }

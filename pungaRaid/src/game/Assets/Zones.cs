@@ -14,14 +14,13 @@ public class Zones : MonoBehaviour {
             if(Data.Instance.moodsManager.IsMoodUnlocked( button.id))
                 unlocked = true;
 
-            string title = Data.Instance.texts.moods.GetDataById(button.id).title;
-            button.Init(unlocked, title);
+            //string title = Data.Instance.texts.moods.GetDataById(button.id).title;
+            button.Init(unlocked, "");
             id++;
         }
     }
     public void Clicked(int id)
     {
-        Data.Instance.moodsManager.SetCurrentMood(id);
-        GetComponent<MoodPopup>().Open();
+        GetComponent<Seccionales>().Init(id);
     }
 }

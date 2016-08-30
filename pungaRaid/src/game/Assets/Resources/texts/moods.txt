@@ -4,17 +4,91 @@ texts:
 		{	
 			id:1,
 			title:"BELGRUÑEZ",
-			text: "Mucho gil con teléfono regalado y yuta."
+			seccionales:
+			[
+				{
+					id:1,
+					title:"CABILDO",
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:1500
+				},
+				{
+					id:2,
+					title:"ASSA",
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:2000
+				},
+				{
+					id:3,
+					title:"ADAD",
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:2500
+				},
+				{
+					id:4,
+					title:"AFFAFA",
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:3500
+				}
+			]
 		},
 		{	
 			id:2,
 			title:"PUERTO MAMERTO",
-			text: "Ta yeno de cheto."
+			seccionales:
+			[
+				{
+					id:1,
+					title:"GDDG",
+					text: "Ta yeno de cheto.",
+					price:1500
+				},
+				{
+					id:2,
+					title:"FGHG",
+					text: "Ta yeno de cheto.",
+					price:2000
+				},
+				{
+					id:3,
+					title:"JHGJGHJGHJ",
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:2500
+				},
+				{
+					id:4,
+					title:"DGDFGD GDDF GD",
+					text: "Ta yeno de cheto.",
+					price:3500
+				}
+			]
 		},
 		{	
 			id:3,
 			title:"LA BOSTA",
-			text: "Ta piola para pungueá unos gringo y unos chino."
+			seccionales:
+			[
+				{
+					id:1,
+					text: "Ta piola para pungueá unos gringo y unos chino.",
+					price:1500
+				},
+				{
+					id:2,
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:2000
+				},
+				{
+					id:3,
+					text: "Ta piola para pungueá unos gringo y unos chino.",
+					price:2500
+				},
+				{
+					id:4,
+					text: "Mucho gil con teléfono regalado y yuta.",
+					price:3500
+				}
+			]
 		}
 	]
 }
