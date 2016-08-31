@@ -63,7 +63,7 @@ public class ChallengesLine : MonoBehaviour
         this.objectID = playerData.objectID;
         this.facebookID = playerData.facebookID;
 
-        username = Data.Instance.gameSettings.GetUsername(playerData.playerName);
+        //username = Data.Instance.gameSettings.GetUsername(playerData.playerName);
         usernameLabel.text = username;
         
 

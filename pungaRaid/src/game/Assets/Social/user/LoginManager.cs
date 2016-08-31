@@ -12,19 +12,30 @@ public class LoginManager : MonoBehaviour {
 
     void Awake()
     {
+        Debug.Log("Login Manager AWAKE");
         FB.Init(SetInit, OnHideUnity);
+        SocialEvents.OnFacebookLogout += OnFacebookLogout;
+    }
+    void Start()
+    {
+        if (!FB.IsLoggedIn)
+        {
+            SocialEvents.OnFacebookLoginPressed += OnFacebookLoginPressed;
+        }
+    }
+    void OnFacebookLogout()
+    {
+        FB.LogOut();
     }
     void SetInit()
     {
         if (FB.IsLoggedIn) {
             Debug.Log ("FB is logged in");
-            FB.API("/me?fields=name", HttpMethod.GET, DisplayUsername);
-            SocialManager.Instance.facebookFriends.GetFriends();
+            FB.API("/me?fields=name", HttpMethod.GET, LogInDone);           
         } else {
             Debug.Log ("FB is not logged in");
         }
     }
-
     void OnHideUnity(bool isGameShown)
     {
         if (!isGameShown) {
@@ -34,11 +45,11 @@ public class LoginManager : MonoBehaviour {
         }
     }
 
-    public void FBLogin()
+    public void OnFacebookLoginPressed()
     {
+        if (FB.IsLoggedIn) return;
 
-        List<string> permissions = new List<string> ();
-        permissions.Add ("public_profile");
+        List<string> permissions = new List<string>() { "public_profile", "email", "user_friends" };
 
         FB.LogInWithReadPermissions (permissions, AuthCallBack);
     }
@@ -50,68 +61,24 @@ public class LoginManager : MonoBehaviour {
         } else {
             SetInit();
         }
-    }   
- 
-    void DisplayUsername(IResult result)
+    }
+    void LogInDone(IResult result)
     {
         facebookID = result.ResultDictionary["id"].ToString();
         username = result.ResultDictionary["name"].ToString();
         Debug.Log("facebookID: " + facebookID + " username:" + username  );
-        CheckIfUserExists(facebookID);
+        Invoke("SetDataDelayed", 0.25f);
+        Invoke("Delay", 2);
     }
-
-    protected void CheckIfUserExists(string facebookID)
+    void SetDataDelayed()
     {
-        Debug.Log("CheckIfUserExists: " + facebookID + username);
-
-
-        string url = SocialManager.Instance.FIREBASE + "/users.json?orderBy=\"facebookID\"&equalTo=\"" + facebookID + "\"";
-
-        Debug.Log(url);
-
-        HTTP.Request someRequest = new HTTP.Request("get", url);
-        someRequest.Send((request) =>
-        {
-            Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
-
-            if (decoded == null)
-            {
-                
-                Debug.Log("no existe el user or malformed response ):");
-                return;
-            }
-            else if (decoded.Count == 0)
-            {
-                AddNewUser(facebookID);
-            }
-            else
-            {
-                SocialEvents.OnUserReady(username, facebookID);
-            }            
-        });
+        SocialEvents.OnFacebookLogin(facebookID, username, "");
     }
-    protected void AddNewUser(string facebookID)
+    bool friendsLogged;
+    void Delay()
     {
-        Debug.Log("AddNewUser" + facebookID + username);
-
-        Hashtable data = new Hashtable();
-
-        data.Add("playerName", username);
-        data.Add("facebookID", facebookID);
-
-        HTTP.Request theRequest = new HTTP.Request("post", SocialManager.Instance.FIREBASE + "/users.json", data);
-        theRequest.Send((request) =>
-        {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-            else
-            {
-                Debug.Log("nuevo usuario!!");
-                SocialEvents.OnUserReady(username, facebookID);
-            }
-        });
+        if (friendsLogged) return;
+        friendsLogged = true;
+        SocialManager.Instance.facebookFriends.GetFriends();
     }
 }

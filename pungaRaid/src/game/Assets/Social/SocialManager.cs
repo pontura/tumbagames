@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class SocialManager : MonoBehaviour
 {
+    const string PREFAB_PATH = "SocialManager";
     static SocialManager mInstance = null;
-    public string FIREBASE = "https://punga.firebaseio.com";
 
     [HideInInspector]
     public UserData userData;
@@ -14,18 +14,25 @@ public class SocialManager : MonoBehaviour
     [HideInInspector]
     public FacebookFriends facebookFriends;
     [HideInInspector]
-    public UserHiscore userHiscore;
-    [HideInInspector]
     public Ranking ranking;
     [HideInInspector]
     public ChallengersManager challengesManager;
     [HideInInspector]
-    public ChallengeData challengeData;  
+    public ChallengeData challengeData;
+    [HideInInspector]
+    public UserHiscore userHiscore;
 
     public static SocialManager Instance
     {
         get
         {
+            mInstance = FindObjectOfType<SocialManager>();
+            if (mInstance == null)
+            {
+                GameObject go = Instantiate(Resources.Load<GameObject>(PREFAB_PATH)) as GameObject;
+                mInstance = go.GetComponent<SocialManager>();
+                go.transform.localPosition = new Vector3(0, 0, 0);
+            }
             return mInstance;
         }
     }
@@ -49,10 +56,10 @@ public class SocialManager : MonoBehaviour
         loginManager = GetComponent<LoginManager>();
         facebookFriends = GetComponent<FacebookFriends>();
         userData = GetComponent<UserData>();
-        userHiscore = GetComponent<UserHiscore>();
         ranking = GetComponent<Ranking>();
         challengesManager = GetComponent<ChallengersManager>();
         challengeData = GetComponent<ChallengeData>();
+        userHiscore = GetComponent<UserHiscore>();
         userData.Init();
 
     }

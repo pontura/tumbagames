@@ -17,7 +17,7 @@ public class ObjectFilter : MonoBehaviour {
         if(filters.Length == 0)
             return true;
 
-        print(mood);
+       // print(mood);
 
         foreach (Filter f in filters)
         {
@@ -25,7 +25,7 @@ public class ObjectFilter : MonoBehaviour {
             {
                 if (f.mood == mood)
                 {
-                    print("este objeti: " + f.mood);
+                   // print("este objeti: " + f.mood);
                     return true;
                 }
             }

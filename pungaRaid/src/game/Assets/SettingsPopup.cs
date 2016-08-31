@@ -18,7 +18,7 @@ public class SettingsPopup : MonoBehaviour {
         
         panel.SetActive(false);
         Events.OnSettings += OnSettings;
-        SocialEvents.OnFacebookNotConnected += OnFacebookNotConnected;
+      //  SocialEvents.OnFacebookNotConnected += OnFacebookNotConnected;
 
         SetMusicLabel();
         SetSFXLabel();
@@ -27,7 +27,7 @@ public class SettingsPopup : MonoBehaviour {
     void OnDestroy()
     {
         Events.OnSettings -= OnSettings;
-        SocialEvents.OnFacebookNotConnected -= OnFacebookNotConnected;
+       // SocialEvents.OnFacebookNotConnected -= OnFacebookNotConnected;
     }
     void OnSettings()
     {

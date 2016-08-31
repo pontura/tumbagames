@@ -14,6 +14,7 @@ public class TextsMoods {
     {
         public int id;
         public string title;
+        public bool unlocked;
         public List<Seccional> seccional;
     }
 
@@ -26,14 +27,19 @@ public class TextsMoods {
             dataNew.title = content[a]["title"];
             int seccionalID = 0;
             dataNew.seccional = new List<Seccional>();
+
+            if (PlayerPrefs.GetInt("mood" + dataNew.id) > 0 || dataNew.id == 1)
+                dataNew.unlocked = true;
+
             for (int b = 0; b < content[a]["seccionales"].Count; b++ )
             {
                 Seccional seccional = new Seccional();
                 seccional.id = seccionalID;
+                seccional.title = content[a]["seccionales"][b]["title"];
                 seccional.name = content[a]["seccionales"][b]["text"];
                 seccional.price = int.Parse(content[a]["seccionales"][b]["price"]);
 
-                if (PlayerPrefs.GetInt("mood" + a + b) > 0 || (a==0 && b==0) )
+                if (PlayerPrefs.GetInt("mood" + a + b) > 0 || b==0 )
                     seccional.unlocked = true;
 
                 seccionalID++;

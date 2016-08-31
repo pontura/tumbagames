@@ -23,7 +23,7 @@ public class ChallengerCreator : MonoBehaviour {
 
     void Start()
     {
-        Init(1, SocialManager.Instance.userHiscore.GetHiscore());
+       // Init(1, SocialManager.Instance.userHiscore.GetHiscore());
     }
     void Init(int levelId, int myScore)
     {
@@ -69,7 +69,7 @@ public class ChallengerCreator : MonoBehaviour {
     }
     public void Challenge(string _username, string _facebookID)
     {
-        SocialEvents.OnChallengeCreate(_username, _facebookID,  SocialManager.Instance.userHiscore.GetHiscore());
+       // SocialEvents.OnChallengeCreate(_username, _facebookID,  SocialManager.Instance.userHiscore.GetHiscore());
         lastSelectedFacebookId = facebookFriendId;
     }
     

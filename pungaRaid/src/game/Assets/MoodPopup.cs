@@ -7,8 +7,10 @@ public class MoodPopup : MonoBehaviour {
     public Text title;
     public Text desc;
     public Text hiscore;
+    public Text priceField;
 
     public RankingMood ranking;
+    public GameObject locker;
 
     public GameObject panel;
 
@@ -21,13 +23,21 @@ public class MoodPopup : MonoBehaviour {
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn",0,0);
         int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
-        TextsMoods.Data data =  Data.Instance.texts.moods.GetDataById(moodID);
+        Seccional seccional = Data.Instance.moodsManager.GetCurrentSeccional();
 
-        title.text = data.title;
-       // desc.text = data.text;
-        hiscore.text = "$" + SocialManager.Instance.userHiscore.GetHiscore(data.id) + "pe";
+        if (seccional.unlocked)
+            locker.SetActive(false);
+        else
+        {
+            priceField.text = "$" + seccional.price + "pe";
+            locker.SetActive(true);
+        }
 
-        ranking.Init(moodID);
+        title.text = seccional.title;
+        desc.text = seccional.name;
+        hiscore.text = "$" + seccional.price + "pe";
+
+        ranking.Init(moodID, seccional.id);
     }
     public void Go()
     {
@@ -42,5 +52,9 @@ public class MoodPopup : MonoBehaviour {
     void CloseOff()
     {
         panel.SetActive(false);
+    }
+    public void Unlock()
+    {
+
     }
 }

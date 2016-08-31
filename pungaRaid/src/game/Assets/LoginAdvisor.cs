@@ -11,7 +11,7 @@ public class LoginAdvisor : MonoBehaviour {
      //   panel.transform.localScale = Data.Instance.screenManager.scale;
         panel.SetActive(false);
         Events.OnLoginAdvisor += OnLoginAdvisor;
-        SocialEvents.OnFacebookLoginCanceled += OnFacebookLoginCanceled;
+        //SocialEvents.OnFacebookLoginCanceled += OnFacebookLoginCanceled;
 	}
     void OnLoginAdvisor()
     {
@@ -24,8 +24,9 @@ public class LoginAdvisor : MonoBehaviour {
         
     }
     public void LoginToFacebook()
-    {        
-        SocialManager.Instance.loginManager.FBLogin();
+    {
+        SocialManager.Instance.loginManager.OnFacebookLoginPressed();
+       // SocialManager.Instance.loginManager.FBLogin();
         Data.Instance.LoadLevel("03_Connecting");
         Close();
         

@@ -10,7 +10,7 @@ public class Seccionales : MonoBehaviour {
     {
         seccionalesContainer.SetActive(false);
     }
-    public void Init(int seccionalID)
+    public void Init(int moodID)
     {
         seccionalesContainer.SetActive(true);
 
@@ -18,7 +18,7 @@ public class Seccionales : MonoBehaviour {
         foreach (ZoneButton button in container.GetComponentsInChildren<ZoneButton>())
         {
             bool unlocked = false;
-            TextsMoods.Data data = Data.Instance.texts.moods.data[seccionalID];
+            TextsMoods.Data data = Data.Instance.moodsManager.data.data[moodID-1];
 
             unlocked = data.seccional[id].unlocked;
 
@@ -29,7 +29,7 @@ public class Seccionales : MonoBehaviour {
     }
     public void Clicked(int id)
     {
-        Data.Instance.moodsManager.SetCurrentMood(id);
+        Data.Instance.moodsManager.SetCurrentSeccional(id);
         GetComponent<MoodPopup>().Open();
     }
     public void Back()

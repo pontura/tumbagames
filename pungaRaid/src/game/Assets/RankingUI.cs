@@ -19,23 +19,23 @@ public class RankingUI : MonoBehaviour {
 
         if (SocialManager.Instance.facebookFriends.all.Count==0) return;
 
-        if (SocialManager.Instance.ranking.data.Count > 0)
-        {
-            SocialEvents.OnRefreshRanking();
-            loaded = true;
-            foreach(Ranking.RankingData data in  SocialManager.Instance.ranking.data)
-            {
-                RankingButton newButton = Instantiate(button);
+        //if (SocialManager.Instance.ranking.data.Count > 0)
+        //{
+        //    SocialEvents.OnRefreshRanking();
+        //    loaded = true;
+        //    foreach(Ranking.RankingData data in  SocialManager.Instance.ranking.data)
+        //    {
+        //        RankingButton newButton = Instantiate(button);
                
-                newButton.transform.SetParent(container.transform);
-                newButton.Init(data.facebookID, data.score, data.playerName);
+        //        newButton.transform.SetParent(container.transform);
+        //        newButton.Init(data.facebookID, data.score, data.playerName);
 
-                newButton.transform.localScale = Vector2.one;
+        //        newButton.transform.localScale = Vector2.one;
 
-                if (data.isYou)
-                    newButton.IsYou();
-            }
-        }
+        //        if (data.isYou)
+        //            newButton.IsYou();
+        //    }
+        //}
 	}
     public void Back()
     {

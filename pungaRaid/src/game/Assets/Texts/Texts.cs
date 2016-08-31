@@ -10,7 +10,6 @@ public class Texts :MonoBehaviour {
 
     public List<string> tutorial;
     public TextsRuleta ruleta;
-    public TextsMoods moods;
 
     string json_tutorials_Url = "texts/tutorial";
     string json_ruleta_Url = "texts/ruleta";
@@ -29,7 +28,7 @@ public class Texts :MonoBehaviour {
         ruleta.Init( SimpleJSON.JSON.Parse(file.text)["texts"]);
 
         file = Resources.Load(json_moods_Url) as TextAsset;
-        moods.Init(SimpleJSON.JSON.Parse(file.text)["texts"]);
+        GetComponent<MoodsManager>().data.Init(SimpleJSON.JSON.Parse(file.text)["texts"]);
     }
     public void LoadDataMinigames(string json_data)
     {

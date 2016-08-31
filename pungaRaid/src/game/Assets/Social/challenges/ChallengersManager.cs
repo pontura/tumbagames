@@ -42,7 +42,7 @@ public class ChallengersManager : MonoBehaviour {
         //Invoke("LoadReceived", 1);
        // LoadMade();
     }
-    void OnFacebookLogin()
+    void OnFacebookLogin(string facebookID, string username, string email)
     {
         LoadReceived();
         LoadMade();
@@ -51,70 +51,70 @@ public class ChallengersManager : MonoBehaviour {
     {
         received_state = state.LOADING;
         received.Clear();
-        string url = SocialManager.Instance.FIREBASE + "/challenges.json";
-            //?orderBy=\"time\"&limitToLast=30";
-        url += "?orderBy=\"op_facebookID\"&equalTo=\"" + SocialManager.Instance.userData.facebookID + "\"";
-        Debug.Log("LoadReceived: " + url);
-        HTTP.Request someRequest = new HTTP.Request("get", url);
-        someRequest.Send((request) =>
-        {
-            Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (decoded == null)
-            {
-                Debug.LogError("server returned null or     malformed response ):");
-                return;
-            }
+        //string url = SocialManager.Instance.FIREBASE + "/challenges.json";
+        //    //?orderBy=\"time\"&limitToLast=30";
+        //url += "?orderBy=\"op_facebookID\"&equalTo=\"" + SocialManager.Instance.userData.facebookID + "\"";
+        //Debug.Log("LoadReceived: " + url);
+        //HTTP.Request someRequest = new HTTP.Request("get", url);
+        //someRequest.Send((request) =>
+        //{
+        //    Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (decoded == null)
+        //    {
+        //        Debug.LogError("server returned null or     malformed response ):");
+        //        return;
+        //    }
 
-            foreach (DictionaryEntry json in decoded)
-            {
-                Hashtable jsonObj = (Hashtable)json.Value;
-                PlayerData newData = new PlayerData();
-                newData.objectID = (string)json.Key;
-                newData.facebookID = (string)jsonObj["facebookID"];
-                newData.playerName = (string)jsonObj["playerName"];
-                newData.score = (int)jsonObj["score"];
-                newData.score2 = (int)jsonObj["score2"];
-                newData.winner = (string)jsonObj["winner"];
-                newData.notificated = (bool)jsonObj["notificated"];
-                received.Add(newData);
-            }
-            received_state = state.READY;
-        });
+        //    foreach (DictionaryEntry json in decoded)
+        //    {
+        //        Hashtable jsonObj = (Hashtable)json.Value;
+        //        PlayerData newData = new PlayerData();
+        //        newData.objectID = (string)json.Key;
+        //        newData.facebookID = (string)jsonObj["facebookID"];
+        //        newData.playerName = (string)jsonObj["playerName"];
+        //        newData.score = (int)jsonObj["score"];
+        //        newData.score2 = (int)jsonObj["score2"];
+        //        newData.winner = (string)jsonObj["winner"];
+        //        newData.notificated = (bool)jsonObj["notificated"];
+        //        received.Add(newData);
+        //    }
+        //    received_state = state.READY;
+        //});
     }
     public void LoadMade()
     {
         made_state = state.LOADING;
         made.Clear();
-        string url = SocialManager.Instance.FIREBASE + "/challenges.json";
-            //?orderBy=\"time\"&limitToLast=30";
-        url += "?orderBy=\"facebookID\"&equalTo=\"" + SocialManager.Instance.userData.facebookID + "\"";
+        //string url = SocialManager.Instance.FIREBASE + "/challenges.json";
+        //    //?orderBy=\"time\"&limitToLast=30";
+        //url += "?orderBy=\"facebookID\"&equalTo=\"" + SocialManager.Instance.userData.facebookID + "\"";
 
-        Debug.Log("LoadMade: " + url);
-        HTTP.Request someRequest = new HTTP.Request("get", url);
-        someRequest.Send((request) =>
-        {
-            Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (decoded == null)
-            {
-                Debug.LogError("server returned null or     malformed response ):");
-                return;
-            }
+        //Debug.Log("LoadMade: " + url);
+        //HTTP.Request someRequest = new HTTP.Request("get", url);
+        //someRequest.Send((request) =>
+        //{
+        //    Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (decoded == null)
+        //    {
+        //        Debug.LogError("server returned null or     malformed response ):");
+        //        return;
+        //    }
 
-            foreach (DictionaryEntry json in decoded)
-            {
-                Hashtable jsonObj = (Hashtable)json.Value;
-                PlayerData newData = new PlayerData();
-                newData.objectID = (string)json.Key;
-                newData.facebookID = (string)jsonObj["op_facebookID"];
-                newData.playerName = (string)jsonObj["op_playerName"];
-                newData.score = (int)jsonObj["score"];
-                newData.score2 = (int)jsonObj["score2"];
-                newData.winner = (string)jsonObj["winner"];
-                newData.notificated = (bool)jsonObj["notificated"];
-                made.Add(newData);
-            }
-            made_state = state.READY;
-        });
+        //    foreach (DictionaryEntry json in decoded)
+        //    {
+        //        Hashtable jsonObj = (Hashtable)json.Value;
+        //        PlayerData newData = new PlayerData();
+        //        newData.objectID = (string)json.Key;
+        //        newData.facebookID = (string)jsonObj["op_facebookID"];
+        //        newData.playerName = (string)jsonObj["op_playerName"];
+        //        newData.score = (int)jsonObj["score"];
+        //        newData.score2 = (int)jsonObj["score2"];
+        //        newData.winner = (string)jsonObj["winner"];
+        //        newData.notificated = (bool)jsonObj["notificated"];
+        //        made.Add(newData);
+        //    }
+        //    made_state = state.READY;
+        //});
     }
 
     //void LoadChallenge(bool _received, ParseQuery<ParseObject> query)
@@ -202,18 +202,18 @@ public class ChallengersManager : MonoBehaviour {
         time.Add(".sv", "timestamp");
         data.Add("time", time);
 
-        HTTP.Request theRequest = new HTTP.Request("post", SocialManager.Instance.FIREBASE + "/challenges.json", data);
+        //HTTP.Request theRequest = new HTTP.Request("post", SocialManager.Instance.FIREBASE + "/challenges.json", data);
 
-        theRequest.Send((request) =>
-        {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-            Debug.Log("__OnChallengeCreated!");
-            LoadMade();
-        });
+        //theRequest.Send((request) =>
+        //{
+        //    Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (jsonObj == null)
+        //    {
+        //        Debug.LogError("server returned null or malformed response ):");
+        //    }
+        //    Debug.Log("__OnChallengeCreated!");
+        //    LoadMade();
+        //});
     }
     public void OnChallengeClose(string objectID, string op_facebookID, string winner, float newScore)
     {
@@ -223,16 +223,16 @@ public class ChallengersManager : MonoBehaviour {
         data.Add("winner", winner);
         data.Add("score2", newScore);
 
-        HTTP.Request theRequest = new HTTP.Request("patch", SocialManager.Instance.FIREBASE + "/challenges/" + objectID + "/.json", data);
-        theRequest.Send((request) =>
-        {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-            Debug.Log("challenge updated: " + request.response.Text);
-        });
+        //HTTP.Request theRequest = new HTTP.Request("patch", SocialManager.Instance.FIREBASE + "/challenges/" + objectID + "/.json", data);
+        //theRequest.Send((request) =>
+        //{
+        //    Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (jsonObj == null)
+        //    {
+        //        Debug.LogError("server returned null or malformed response ):");
+        //    }
+        //    Debug.Log("challenge updated: " + request.response.Text);
+        //});
     }
     public int GetNewChallenges()
     {

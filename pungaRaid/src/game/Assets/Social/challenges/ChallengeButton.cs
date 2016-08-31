@@ -9,16 +9,16 @@ public class ChallengeButton : MonoBehaviour {
     public string facebookID;
     public string username;
 
-	public void Init (ChallengesUI master,  string facebookID, string username, bool challenged) {
-        if (challenged) field.text = "LISTO: ";
-        field.text += username.ToString();
-        profilePicture.setPicture(facebookID);
+    //public void Init (ChallengesUI master,  string facebookID, string username, bool challenged) {
+    //    if (challenged) field.text = "LISTO: ";
+    //    field.text += username.ToString();
+    //    profilePicture.setPicture(facebookID);
 
-        this.facebookID = facebookID;
-        this.username = username;
+    //    this.facebookID = facebookID;
+    //    this.username = username;
 
-	}
-    public void  Clicked() { 
-        SocialEvents.OnChallengeCreate(username, facebookID, 43); 
-    }
+    //}
+    //public void  Clicked() { 
+    //    SocialEvents.OnChallengeCreate(username, facebookID, 43); 
+    //}
 }

@@ -4,23 +4,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public class Ranking : MonoBehaviour {
 
-    public List<RankingData> data;
     public List<LevelData> levels;
-
-    private string TABLE = "Ranking";
 
     [Serializable]
     public class LevelData
     {
+        public string id;
         public List<RankingData> data;
     }
 
     [Serializable]
     public class RankingData
-    {
+    {        
         public int score;
         public string facebookID;
         public string playerName;
@@ -29,74 +28,81 @@ public class Ranking : MonoBehaviour {
     }
     void Start()
     {
-        OnFacebookFriends();
         SocialEvents.OnNewHiscore += OnNewHiscore;
-        //SocialEvents.OnFacebookFriends += OnFacebookFriends;
         SocialEvents.OnRefreshRanking += OnRefreshRanking;
     }
     void OnDestroy()
     {
         SocialEvents.OnNewHiscore -= OnNewHiscore;
-       // SocialEvents.OnFacebookFriends -= OnFacebookFriends;
         SocialEvents.OnRefreshRanking -= OnRefreshRanking;
     }
-    public void OnFacebookFriends()
+    public LevelData GetRanking(int moodID, int seccionalID)
     {
-        data.Clear();
-
-        for (int a = 0; a < levels.Count; a++ )
-            LoadRanking(a+1);
-    }
-    public void LoadRanking(int levelID)
-    {
-        string url = SocialManager.Instance.FIREBASE + "/level" + levelID + ".json?orderBy=\"score\"&limitToLast=30";
-        Debug.Log("LoadRanking: " + url);
-        HTTP.Request someRequest = new HTTP.Request("get", url);
-        someRequest.Send((request) =>
+        foreach (LevelData data in levels)
         {
-            Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (decoded == null || decoded.Count == 0)
-            {
-                Debug.LogError("server returned null or     malformed response ):");
+            if (data.id == moodID + "_" + seccionalID)
+                return data;
+        }
+        return null;
+    }
+    public void OnUserReady(string facebookID, string username, string email)
+    {
+    }
+    int moodID;
+    int seccionalID;
+    public void LoadRanking(int moodID, int seccionalID)
+    {
+        this.moodID = moodID;
+        this.seccionalID = seccionalID;
+        foreach (LevelData data in levels)
+        {
+            if (data.id == moodID + "_" + seccionalID)
                 return;
-            }
-            foreach (DictionaryEntry json in decoded)
-            {
-                Hashtable jsonObj = (Hashtable)json.Value;
-                RankingData newData = new RankingData(); 
-               // s.id = (string)json.Key;
-                newData.playerName = (string)jsonObj["playerName"];
-                newData.score = (int)jsonObj["score"];
-                newData.facebookID = (string)jsonObj["facebookID"];
-                levels[levelID - 1].data.Add(newData);
-            }
-            levels[levelID - 1].data = OrderByScore(levels[levelID - 1].data);
-        });
+        }
+        SocialEvents.OnGetRanking(RankingReady, moodID, seccionalID);
+    }
+
+    void RankingReady(string result, int moodID, int seccionalID)
+    {
+        LevelData levelData = new LevelData();
+        levelData.id = moodID + "_" + seccionalID;
+        string[] allData = Regex.Split(result, "</n>");
+        levelData.data = new List<RankingData>();
+        for (var i = 0; i < allData.Length - 1; i++)
+        {
+            RankingData rankingData = new RankingData();
+            string[] userData = allData[i].Split(":"[0]);
+
+            rankingData.facebookID = userData[1];
+            rankingData.playerName = userData[2];
+            rankingData.score = int.Parse(userData[3]);
+            levelData.data.Add(rankingData);
+        }
+        levels.Add(levelData);
     }
     void OnRefreshRanking()
     {
-        int hiscore = SocialManager.Instance.userHiscore.GetHiscore();
-
-        bool userExistsInRanking = false;
-        foreach(RankingData rankingData in data)
-        {
-            if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
-            {
-                rankingData.score = hiscore;
-                userExistsInRanking = true;
-                rankingData.isYou = true;
-            }
-        }
-        if (!userExistsInRanking)
-        {
-            RankingData rankingData = new RankingData();
-            rankingData.facebookID =  SocialManager.Instance.userData.facebookID;
-            rankingData.score =  hiscore;
-            rankingData.playerName =  SocialManager.Instance.userData.username;
-            rankingData.isYou = true;
-            data.Add(rankingData);
-        }
-        //OrderByScore();
+        //int hiscore = 0;
+        //bool userExistsInRanking = false;
+        //foreach(RankingData rankingData in data)
+        //{
+        //    if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
+        //    {
+        //        rankingData.score = hiscore;
+        //        userExistsInRanking = true;
+        //        rankingData.isYou = true;
+        //    }
+        //}
+        //if (!userExistsInRanking)
+        //{
+        //    RankingData rankingData = new RankingData();
+        //    rankingData.facebookID =  SocialManager.Instance.userData.facebookID;
+        //    rankingData.score =  hiscore;
+        //    rankingData.playerName =  SocialManager.Instance.userData.username;
+        //    rankingData.isYou = true;
+        //    data.Add(rankingData);
+        //}
+        ////OrderByScore();
     }
     List<RankingData> OrderByScore(List<RankingData> rankingData)
     {
@@ -104,7 +110,10 @@ public class Ranking : MonoBehaviour {
     }
     void OnNewHiscore(int score)
     {
-        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
+        return;
+
+        int levelID = 0;
+        //int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
 
         if (!SocialManager.Instance.userData.logged) return;
 

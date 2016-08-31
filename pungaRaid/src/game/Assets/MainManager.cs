@@ -17,7 +17,7 @@ public class MainManager : MonoBehaviour {
 
 	void Start () {
         Events.OnMusicChange("Raticity");
-        score.text = "$" + SocialManager.Instance.userHiscore.totalScore;
+       // score.text = "$" + SocialManager.Instance.userHiscore.totalScore;
 
         if (SocialManager.Instance.userData.logged)
             profilePicture.setPicture(SocialManager.Instance.userData.facebookID);

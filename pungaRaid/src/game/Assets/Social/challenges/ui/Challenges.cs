@@ -50,7 +50,6 @@ public class Challenges : MonoBehaviour {
     public void Back()
     {
         gameObject.SetActive(false);
-        Events.OnMusicVolumeChanged(1);
     }
     public void Switch()
     {

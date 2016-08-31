@@ -16,38 +16,44 @@ public class UserHiscore : MonoBehaviour {
     [Serializable]
     public class LevelScore
     {
-        public int id;
-        public string dbID;
+        public string id;
         public int hiscore;
-    }
-    
+    }    
 
 	void Start () {
         SocialEvents.OnNewHiscore += OnNewHiscore;
         SocialEvents.OnAddToTotalScore += OnAddToTotalScore;
         SocialEvents.OnSetToTotalBarScore += OnSetToTotalBarScore;
-        SocialEvents.OnFacebookLogin += OnFacebookLogin;
+        SocialEvents.OnUserReady += OnUserReady;
         SocialEvents.ResetApp += ResetApp;
-        int levelID = 1; 
-        foreach(LevelScore scoreData in levelsHiscore)
-        {
-            scoreData.hiscore = PlayerPrefs.GetInt("UserHiscoreLevel" + levelID, 0);
-            levelID++;
-        }
+       
         totalScore = PlayerPrefs.GetInt("totalScore", 0);
         barProgress = PlayerPrefs.GetInt("barProgress", 0);
+
+        Invoke("LoadHiscores", 0.5f);
 	}
-    void OnFacebookLogin()
+    void LoadHiscores()
     {
-        if (!isLoaded)
+        int levelID = 1;
+        foreach (TextsMoods.Data data in Data.Instance.moodsManager.data.data)
         {
-            int levelID = 1;
-            foreach (LevelScore scoreData in levelsHiscore)
+            int seccionalID = 1;
+            foreach (Seccional seccional in data.seccional)
             {
-                LoadHiscoreFromDB(levelID);
-                levelID++;
-            }            
+                LevelScore levelScore = new LevelScore();
+                levelScore.id = levelID + "_" + seccionalID;
+                int hiscore = PlayerPrefs.GetInt("level_" + levelScore.id, 0);
+                levelScore.hiscore = hiscore;
+                levelsHiscore.Add(levelScore);
+                seccionalID++;
+            }
+
+            levelID++;
         }
+    }
+    void OnUserReady(string facebookID, string username, string email)
+    {
+
     }
     void OnAddToTotalScore(int qty)
     {
@@ -69,94 +75,57 @@ public class UserHiscore : MonoBehaviour {
         foreach(LevelScore data in levelsHiscore)
             data.hiscore = 0;
     }
-    void SetHiscore(int levelID, int score)
+    void SetHiscore(int moodID, int seccionalID, int score)
     {
-        foreach (LevelScore data in levelsHiscore)
-            if (data.id == levelID)
-            {
-                data.hiscore = score;
-                PlayerPrefs.SetInt("UserHiscoreLevel" + levelID, score);
-                return;
-            }
+        print("SetHiscore " + moodID + " seccionalID: " + seccionalID);
+        PlayerPrefs.SetInt("level_" + moodID + "_" + seccionalID, score);
+        foreach (LevelScore _levelsHiscore in levelsHiscore)
+        {
+            if (_levelsHiscore.id == moodID + "_" + seccionalID)
+                _levelsHiscore.hiscore = score;
+        }
     }
     void SetDB_ID(int levelID, string dbID)
     {
-        foreach (LevelScore data in levelsHiscore)
-            if (data.id == levelID)
-            {
-                data.dbID = dbID;
-                return;
-            }
+        //foreach (LevelScore data in levelsHiscore)
+        //    if (data.id == levelID)
+        //    {
+        //        data.dbID = dbID;
+        //        return;
+        //    }
     }
-    public LevelScore GetLevelScore(int levelID)
+    //public LevelScore GetLevelScore(int levelID)
+    //{
+    //    foreach (LevelScore data in levelsHiscore)
+    //        if (data.id == levelID)
+    //            return data;
+    //    return null;
+    //}
+    public int GetHiscore(int levelID, int seccionalID)
     {
-        foreach (LevelScore data in levelsHiscore)
-            if (data.id == levelID)
-                return data;
-        return null;
+        return PlayerPrefs.GetInt("level_" + levelID + "_" + seccionalID, 0);
     }
-    public int GetHiscore()
-    {
-        return GetHiscore( Data.Instance.moodsManager.GetCurrentMoodID() );
-    }
-    public int GetHiscore(int levelID)
-    {
-        foreach (LevelScore data in levelsHiscore)
-            if (data.id == levelID)
-                return data.hiscore;
-        return 0;
-    }
-    void LoadHiscoreFromDB(int LevelID)
-    {
-        string url = SocialManager.Instance.FIREBASE + "/level" + LevelID + ".json?orderBy=\"facebookID\"&equalTo=\"" + SocialManager.Instance.userData.facebookID + "\"";
-
-        Debug.Log(url);
-
-        HTTP.Request someRequest = new HTTP.Request("get", url);
-        someRequest.Send((request) =>
-        {
-            Hashtable decoded = (Hashtable)JSON.JsonDecode(request.response.Text);
-
-            isLoaded = true;
-            if (decoded == null)
-            {
-                Debug.Log("no existe el user or malformed response ):");
-                return;
-            }
-            else if (decoded.Count == 0)
-            {
-                SetHiscore(LevelID, 0 );
-            }
-            else
-            {
-                foreach (DictionaryEntry json in decoded)
-                {
-                    Hashtable jsonObj = (Hashtable)json.Value;
-                    //Score s = new Score();
-                    string id = (string)json.Key.ToString();
-                    SetDB_ID(LevelID, id);
-                    int hiscore = (int)jsonObj["score"];
-                    SetHiscore(LevelID, hiscore);
-                }
-            }
-        });
-    }
-
     void OnNewHiscore(int score)
     {
-         int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
+        print("________OnNewHiscore" + score);
 
-         if (GetHiscore(levelID) < score)
-             SetHiscore(levelID, score);
+        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
+        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id+1;
+
+        if (GetHiscore(levelID, seccionalID) < score)
+        {
+            SocialEvents.OnSaveNewHiscore(levelID, seccionalID, score);
+            SetHiscore(levelID, seccionalID, score);
+        }
 
         if (!SocialManager.Instance.userData.logged) return;
 
-        string dbID = GetLevelScore(levelID).dbID;
+        //string dbID = GetLevelScore(levelID).dbID;
 
-        if (dbID == "")
-            AddNewHiscore(levelID, score);
-        else
-            UpdateScore(dbID, score);
+        //if (dbID == "")
+        //    AddNewHiscore(levelID, score);
+        //else
+        //    UpdateScore(dbID, score);
     }
     protected void AddNewHiscore(int levelID, int score)
     {
@@ -169,39 +138,40 @@ public class UserHiscore : MonoBehaviour {
         time.Add(".sv", "timestamp");
         data.Add("time", time);
 
-        HTTP.Request theRequest = new HTTP.Request("post", SocialManager.Instance.FIREBASE  + "/level" + levelID + ".json", data);
+        //HTTP.Request theRequest = new HTTP.Request("post", SocialManager.Instance.FIREBASE  + "/level" + levelID + ".json", data);
 
-        theRequest.Send((request) =>
-        {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-            Debug.Log("GRABO NUVEO SCORE");
-            SetHiscore(levelID,  score);
-            //vuelve a levantarlo para grabar el id:
-            LoadHiscoreFromDB(levelID);
-        });
+        //theRequest.Send((request) =>
+        //{
+        //    Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (jsonObj == null)
+        //    {
+        //        Debug.LogError("server returned null or malformed response ):");
+        //    }
+        //    Debug.Log("GRABO NUVEO SCORE");
+        //    SetHiscore(levelID,  score);
+        //    //vuelve a levantarlo para grabar el id:
+        //    LoadHiscoreFromDB(levelID);
+        //});
     }
     protected void UpdateScore(string id, int score)
     {
-        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
+        int levelID = 0;
+       // levelID = Data.Instance.moodsManager.GetCurrentMoodID();
         print("__update score id: " + id + " score: " + score);
 
         Hashtable data = new Hashtable();
         data.Add("score", score);
 
-        HTTP.Request theRequest = new HTTP.Request("patch", SocialManager.Instance.FIREBASE + "/level" + levelID + "/" + id + "/.json", data);
-        theRequest.Send((request) =>
-        {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-            Debug.Log("score updated: " + request.response.Text + " level: " + levelID + " score: " + score);
-            SetHiscore(levelID, score);
-        });
+        //HTTP.Request theRequest = new HTTP.Request("patch", SocialManager.Instance.FIREBASE + "/level" + levelID + "/" + id + "/.json", data);
+        //theRequest.Send((request) =>
+        //{
+        //    Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
+        //    if (jsonObj == null)
+        //    {
+        //        Debug.LogError("server returned null or malformed response ):");
+        //    }
+        //    Debug.Log("score updated: " + request.response.Text + " level: " + levelID + " score: " + score);
+        //    SetHiscore(levelID, score);
+        //});
     }
 }

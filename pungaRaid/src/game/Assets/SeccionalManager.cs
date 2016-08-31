@@ -6,9 +6,4 @@ public class SeccionalManager : MonoBehaviour {
 
     public List<Seccional> seccionales;
 
-    void Start()
-    {
-
-    }
-
 }

@@ -14,13 +14,19 @@ public class Zones : MonoBehaviour {
             if(Data.Instance.moodsManager.IsMoodUnlocked( button.id))
                 unlocked = true;
 
-            //string title = Data.Instance.texts.moods.GetDataById(button.id).title;
-            button.Init(unlocked, "");
+            string title = Data.Instance.moodsManager.data.GetDataById(button.id).title;
+            button.Init(unlocked, title);
             id++;
         }
     }
     public void Clicked(int id)
     {
+        if (!Data.Instance.moodsManager.data.GetDataById(id).unlocked)
+        {
+            Events.OnGenericPopup("Ande vas?", "Primero tenés que desbloquearlo, gato");
+            return;
+        }
         GetComponent<Seccionales>().Init(id);
+        Data.Instance.moodsManager.SetCurrentMood(id);
     }
 }

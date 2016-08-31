@@ -6,11 +6,12 @@ using System;
 public class MoodsManager : MonoBehaviour {
 
     public moods currentMood;
-
-    public List<int> unblocked;
+    public TextsMoods data;
 
     public GameObject mood_belgrano;
     public GameObject mood_madero;
+
+    private int currentSeccionalID;
 
     public enum moods
     {
@@ -29,15 +30,15 @@ public class MoodsManager : MonoBehaviour {
     }
     void ResetApp()
     {
-        unblocked.Clear();
-        unblocked.Add(1);
+      //  unblocked.Clear();
+       // unblocked.Add(1);
     }
 	public void Init () {
-        for(int a=1; a<10; a++)
-        {
-            if (PlayerPrefs.GetInt("mood" + a) == 1)
-                unblocked.Add(a);
-        }
+        //for(int a=1; a<10; a++)
+        //{
+        //    if (PlayerPrefs.GetInt("mood" + a) == 1)
+        //        unblocked.Add(a);
+        //}
 	}
     public int GetCurrentMoodID()
     {
@@ -48,6 +49,15 @@ public class MoodsManager : MonoBehaviour {
         }
         return 1;
     }
+    public Seccional GetCurrentSeccional()
+    {
+        int moodID = GetCurrentMoodID();
+        return data.data[moodID - 1].seccional[currentSeccionalID-1];
+    }
+    public void SetCurrentSeccional(int id)
+    {
+        currentSeccionalID = id;
+    }
     public void SetCurrentMood(int id)
     {
         switch (id)
@@ -57,12 +67,11 @@ public class MoodsManager : MonoBehaviour {
         }
     }
     public void UnlockMood(int id)
-    {        
-        foreach (int mood in unblocked)
-            if (id == mood) return;
+    {
+        foreach (TextsMoods.Data moodData in data.data)
+            if (moodData.id == id) moodData.unlocked = true;
 
         PlayerPrefs.SetInt("mood" + id, 1);
-        unblocked.Add(id);
     }
     public GameObject GetCurrentMoodAsset()
     {
@@ -75,8 +84,8 @@ public class MoodsManager : MonoBehaviour {
     }
     public bool IsMoodUnlocked(int id)
     {
-        foreach (int mood in unblocked)
-            if (id == mood) return true;
+        foreach (TextsMoods.Data moodData in data.data)
+            if (moodData.id == id) return moodData.unlocked;
         return false;
     }
 }

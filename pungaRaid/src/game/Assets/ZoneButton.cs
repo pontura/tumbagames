@@ -21,7 +21,7 @@ public class ZoneButton : MonoBehaviour {
         }
         else
         {
-            GetComponent<Button>().interactable = false;
+           // GetComponent<Button>().interactable = false;
             iconLock.SetActive(true);
             iconUnlock.SetActive(false);
             title.color = Color.black;

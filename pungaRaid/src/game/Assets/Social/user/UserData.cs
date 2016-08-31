@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
-//using Soomla.Store;
-
 
 public class UserData : MonoBehaviour {
 
@@ -28,7 +26,10 @@ public class UserData : MonoBehaviour {
         return;
 #endif
         if (PlayerPrefs.GetString("username") != "" && PlayerPrefs.GetString("facebookID") != "")
+        {
             SetUser(PlayerPrefs.GetString("username"), PlayerPrefs.GetString("facebookID"));
+            SocialManager.Instance.GetComponent<DataController>().LoadDataForExistingUser(facebookID);
+        }
 
 	}
     void SetUser(string username, string facebookID)
@@ -37,15 +38,15 @@ public class UserData : MonoBehaviour {
         this.username = username;
         if (username.Length > 1)
         {
-            print("::::::::::::::" + username + " logged: " + logged);
+            print("UserData SetUser ::::::::::::::" + username + " logged: " + logged);
             logged = true;
         }
-        SocialEvents.OnFacebookLogin();
     }
-    public void OnUserReady(string username, string facebookID)
+    public void OnUserReady(string facebookID, string username, string nick)
     {
-        PlayerPrefs.SetString("username", username);
         PlayerPrefs.SetString("facebookID", facebookID);
+        PlayerPrefs.SetString("username", username);
+        PlayerPrefs.SetString("nick", nick);
         SetUser(username, facebookID);
     }
     public void Reset()

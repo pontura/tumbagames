@@ -52,17 +52,21 @@ public class Summary : MonoBehaviour {
         panel.SetActive(true);
        // panel.GetComponent<Animator>().Play("PopupOn");
         score = Game.Instance.gameManager.score;
-        if (score > SocialManager.Instance.userHiscore.GetHiscore())
-        {
-            SendHiscore((int)score);
-            hiscoreStaticField.text = "NUEVO RECORD! $" + score;
-        }
-        else
-        {
+
+        SendHiscore((int)score);
+
+        //if (score > SocialManager.Instance.userHiscore.GetHiscore())
+        //{
+        //    SendHiscore((int)score);
+        //    hiscoreStaticField.text = "NUEVO RECORD! $" + score;
+        //}
+        //else
+        //{
             hiscoreStaticField.text = "Hicites $" + score;
-        }
-        total_from = SocialManager.Instance.userHiscore.totalScore;
-        total_bar_from = SocialManager.Instance.userHiscore.barProgress;
+       // }
+            total_from = 0; // SocialManager.Instance.userHiscore.totalScore;
+            total_bar_from = 0;// SocialManager.Instance.userHiscore.barProgress;
+
         total_to = (int)total_from + (int)score;
         total_bar_to = (int)total_bar_from + (int)score;
         SocialEvents.OnAddToTotalScore((int)score);

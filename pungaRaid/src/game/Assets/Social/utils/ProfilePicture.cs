@@ -37,6 +37,7 @@ public class ProfilePicture : MonoBehaviour
         if (receivedData.error == null)
         {
             SetPicture(receivedData.texture);
+            SocialManager.Instance.facebookFriends.SetProfilePicture(facebookID, receivedData.texture);
         }
         else
         {

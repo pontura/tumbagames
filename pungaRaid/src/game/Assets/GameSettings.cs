@@ -7,7 +7,7 @@ public class GameSettings : MonoBehaviour  {
 
     public void Login()
     {
-        SocialEvents.OnFacebookNotConnected();
+        //SocialEvents.OnFacebookNotConnected();
     }
     public string GetUsername(string _username)
     {
