@@ -19,7 +19,7 @@ public class CountDown : MonoBehaviour {
     }
     void OnStartCountDown()
     {
-        Invoke("waitToSay", 0.5f);
+        Invoke("waitToSay", 0.7f);
     }
 
     void waitToSay()

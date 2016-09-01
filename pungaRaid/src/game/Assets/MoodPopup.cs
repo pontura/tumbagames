@@ -14,6 +14,9 @@ public class MoodPopup : MonoBehaviour {
 
     public GameObject panel;
 
+    private  int moodID ;
+    private Seccional seccional;
+
 	void Start () {
         panel.SetActive(false);    
 	}
@@ -22,25 +25,26 @@ public class MoodPopup : MonoBehaviour {
         panel.SetActive(true);
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn",0,0);
-        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
-        Seccional seccional = Data.Instance.moodsManager.GetCurrentSeccional();
+        moodID = Data.Instance.moodsManager.GetCurrentMoodID();
+        seccional = Data.Instance.moodsManager.GetCurrentSeccional();
 
         if (seccional.unlocked)
             locker.SetActive(false);
         else
         {
-            priceField.text = "$" + seccional.price + "pe";
+            priceField.text = Utils.IntToMoney(seccional.price);
             locker.SetActive(true);
         }
 
         title.text = seccional.title;
         desc.text = seccional.name;
-        hiscore.text = "$" + seccional.price + "pe";
+        hiscore.text = Utils.IntToMoney(seccional.price);
 
         ranking.Init(moodID, seccional.id);
     }
     public void Go()
     {
+        Events.OnLoadCurrentAreas();
         Data.Instance.LoadLevel("03_PreloadingGame");
     }
     public void Close()
@@ -55,6 +59,16 @@ public class MoodPopup : MonoBehaviour {
     }
     public void Unlock()
     {
-
+        if (SocialManager.Instance.userHiscore.money < seccional.price)
+        {
+            Events.OnGenericPopup("No te hagas el vivo", "No tenés tantos belgranos para desbloquear esto");
+        }
+        else
+        {
+            SocialEvents.OnUpdateMoney(-seccional.price);
+            Events.OnGenericPopup("¡Listo Pibe!", "Ponete un texto gracioso...");
+            Events.UnlockSeccional(moodID, seccional.id);
+            CloseOff();
+        }
     }
 }

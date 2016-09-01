@@ -11,7 +11,7 @@ public class RankingButton : MonoBehaviour {
 	public void Init (string facebookID, int score, string username) {
 
         if (scoreField)
-        scoreField.text = "$" + score.ToString();
+        scoreField.text = Utils.IntToMoney(score);
 
         if (usernameField)
             usernameField.text = username.ToUpper();

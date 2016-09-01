@@ -15,7 +15,7 @@ public class Zones : MonoBehaviour {
                 unlocked = true;
 
             string title = Data.Instance.moodsManager.data.GetDataById(button.id).title;
-            button.Init(unlocked, title);
+            button.Init(unlocked, title, id, 0);
             id++;
         }
     }

@@ -110,29 +110,35 @@ public class Ranking : MonoBehaviour {
     }
     void OnNewHiscore(int score)
     {
-        return;
-
-        int levelID = 0;
-        //int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
-
         if (!SocialManager.Instance.userData.logged) return;
 
-        List<RankingData> currentLevelData = levels[levelID - 1].data;
-
-        foreach (RankingData rankingData in currentLevelData)
+        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
+        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
+        
+        foreach (LevelData levelData in levels)
         {
-            if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
+            if (levelData.id == moodID + "_" + seccionalID)
             {
-                rankingData.score = score;
-                return;
+                List<RankingData> currentLevelData = levelData.data;
+
+                foreach (RankingData rankingData in currentLevelData)
+                {
+                    if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
+                    {
+                        rankingData.score = score;
+                        levelData.data = OrderByScore(currentLevelData);
+                        return;
+                    }
+                }
+                RankingData newData = new RankingData();
+                newData.facebookID = SocialManager.Instance.userData.facebookID;
+                newData.isYou = true;
+                newData.playerName = SocialManager.Instance.userData.username;
+                newData.score = score;
+                currentLevelData.Add(newData);
+                levelData.data = OrderByScore(currentLevelData);
+
             }
-        }
-        RankingData newData = new RankingData();
-        newData.facebookID = SocialManager.Instance.userData.facebookID;
-        newData.isYou = true;
-        newData.playerName = SocialManager.Instance.userData.username;
-        newData.score = score;
-        currentLevelData.Add(newData);
-        levels[levelID - 1].data = OrderByScore(currentLevelData);
+        }        
     }
 }

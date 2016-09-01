@@ -27,8 +27,8 @@ public static class SocialEvents {
 
     public static System.Action<int, int, int> OnSaveNewHiscore = delegate { };
     public static System.Action<int> OnNewHiscore = delegate { };
-    public static System.Action<int> OnAddToTotalScore = delegate { };
-    public static System.Action<int> OnSetToTotalBarScore = delegate { };
+    public static System.Action<int> OnUpdateMoney = delegate { };
+    public static System.Action<int> OnSetToTotalBarScore = delegate { };   
     
     public static System.Action OnRefreshRanking = delegate { };
     public static System.Action<System.Action<string, int, int>, int, int> OnGetRanking = delegate { };

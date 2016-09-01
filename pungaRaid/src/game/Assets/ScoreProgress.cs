@@ -17,6 +17,6 @@ public class ScoreProgress : MonoBehaviour {
     }
     public void OnRefreshScore(int score)
     {
-        label.text = "$" + score.ToString();
+        label.text = Utils.IntToMoney(score);
     }
 }

@@ -9,10 +9,14 @@ public class RankingMood : MonoBehaviour {
     private int moodID;
     private int seccionalID;
 
+    void OnEnable()
+    {
+        Utils.RemoveAllChildsIn(container);
+    }
     public void Init(int moodID, int seccionalID)
     {
         this.moodID = moodID;
-        this.seccionalID = seccionalID+1;
+        this.seccionalID = seccionalID;
 
         loaded = false;
         SocialManager.Instance.ranking.LoadRanking(this.moodID, this.seccionalID);
@@ -23,9 +27,7 @@ public class RankingMood : MonoBehaviour {
 
         if (SocialManager.Instance.ranking.GetRanking(moodID, seccionalID) == null) return;
 
-        loaded = true;
-        foreach (Transform childTransform in container.transform)
-            Destroy(childTransform.gameObject);
+        loaded = true;        
 
         foreach (Ranking.RankingData data in SocialManager.Instance.ranking.GetRanking(moodID, seccionalID).data)
         {

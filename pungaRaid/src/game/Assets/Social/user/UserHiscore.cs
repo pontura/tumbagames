@@ -7,7 +7,7 @@ using System;
 public class UserHiscore : MonoBehaviour {
 
     private string TABLE = "Ranking";
-    public int totalScore;
+    public int money;
     public int barProgress;
     //public int hiscore;
     public bool isLoaded;
@@ -22,12 +22,12 @@ public class UserHiscore : MonoBehaviour {
 
 	void Start () {
         SocialEvents.OnNewHiscore += OnNewHiscore;
-        SocialEvents.OnAddToTotalScore += OnAddToTotalScore;
+        SocialEvents.OnUpdateMoney += OnUpdateMoney;
         SocialEvents.OnSetToTotalBarScore += OnSetToTotalBarScore;
         SocialEvents.OnUserReady += OnUserReady;
         SocialEvents.ResetApp += ResetApp;
-       
-        totalScore = PlayerPrefs.GetInt("totalScore", 0);
+
+        money = PlayerPrefs.GetInt("money", 0);
         barProgress = PlayerPrefs.GetInt("barProgress", 0);
 
         Invoke("LoadHiscores", 0.5f);
@@ -55,10 +55,11 @@ public class UserHiscore : MonoBehaviour {
     {
 
     }
-    void OnAddToTotalScore(int qty)
+    void OnUpdateMoney(int qty)
     {
-        totalScore += qty;
-        PlayerPrefs.SetInt("totalScore", totalScore);
+        money += qty;
+        PlayerPrefs.SetInt("money", money);
+        Events.OnMoneyUpated(money);
     }
     void OnSetToTotalBarScore(int total)
     {
@@ -67,7 +68,7 @@ public class UserHiscore : MonoBehaviour {
     }
     void ResetApp()
     {
-        totalScore = 0;
+        money = 0;
         ResetHiscores();
     }
     void ResetHiscores()
@@ -101,6 +102,16 @@ public class UserHiscore : MonoBehaviour {
     //            return data;
     //    return null;
     //}
+    public int GetCurrentHiscore()
+    {
+        int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
+        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
+      
+        string str = "level_" + levelID + "_" + seccionalID;
+        Debug.Log("CurrentHiscore : " + str + " = " + PlayerPrefs.GetInt(str, 0));
+
+        return PlayerPrefs.GetInt(str, 0);
+    }
     public int GetHiscore(int levelID, int seccionalID)
     {
         return PlayerPrefs.GetInt("level_" + levelID + "_" + seccionalID, 0);
@@ -110,7 +121,7 @@ public class UserHiscore : MonoBehaviour {
         print("________OnNewHiscore" + score);
 
         int levelID = Data.Instance.moodsManager.GetCurrentMoodID();
-        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id+1;
+        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
 
         if (GetHiscore(levelID, seccionalID) < score)
         {

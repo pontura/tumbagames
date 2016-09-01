@@ -10,25 +10,25 @@ texts:
 					id:1,
 					title:"CABILDO",
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:1500
+					price:150000
 				},
 				{
 					id:2,
 					title:"ASSA",
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:2000
+					price:200000
 				},
 				{
 					id:3,
 					title:"ADAD",
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:2500
+					price:250000
 				},
 				{
 					id:4,
 					title:"AFFAFA",
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:3500
+					price:350000
 				}
 			]
 		},
@@ -41,25 +41,25 @@ texts:
 					id:1,
 					title:"GDDG",
 					text: "Ta yeno de cheto.",
-					price:1500
+					price:150000
 				},
 				{
 					id:2,
 					title:"FGHG",
 					text: "Ta yeno de cheto.",
-					price:2000
+					price:200000
 				},
 				{
 					id:3,
 					title:"JHGJGHJGHJ",
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:2500
+					price:250000
 				},
 				{
 					id:4,
 					title:"DGDFGD GDDF GD",
 					text: "Ta yeno de cheto.",
-					price:3500
+					price:350000
 				}
 			]
 		},
@@ -71,22 +71,22 @@ texts:
 				{
 					id:1,
 					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:1500
+					price:150000
 				},
 				{
 					id:2,
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:2000
+					price:200000
 				},
 				{
 					id:3,
 					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:2500
+					price:250000
 				},
 				{
 					id:4,
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:3500
+					price:350000
 				}
 			]
 		}

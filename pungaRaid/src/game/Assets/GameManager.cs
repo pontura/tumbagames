@@ -29,14 +29,14 @@ public class GameManager : MonoBehaviour {
     private CombosManager combosManager;
 
     private float SPEED_ACCELERATION = 0.008f;
-    public float DEFAULT_SPEED = 0.09f;
+    public float DEFAULT_SPEED = 0.075f;
 
     
     public void Init()
     {
         combosManager = Data.Instance.combosManager;
 
-        Events.OnScoreAdd += OnScoreAdd;
+        Events.OnScoreUpdate += OnScoreUpdate;
         Events.OnHeroDie += OnHeroDie;
         Events.StartGame += StartGame;
         Events.OnExplotion += OnExplotion;
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
     }
     void OnDestroy()
     {
-        Events.OnScoreAdd -= OnScoreAdd;
+        Events.OnScoreUpdate -= OnScoreUpdate;
         Events.OnHeroDie -= OnHeroDie;
         Events.StartGame -= StartGame;
         Events.OnExplotion -= OnExplotion;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour {
 
         combosManager = null;
     }
-    public void OnScoreAdd(int _score)
+    public void OnScoreUpdate(int _score)
     {
         score += _score * combosManager.comboID;
         Events.OnRefreshScore(score);

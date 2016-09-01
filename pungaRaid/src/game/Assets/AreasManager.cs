@@ -8,12 +8,28 @@ public class AreasManager : MonoBehaviour {
     public List<AreaSet> areaSets;
 
 	void Start () {
-        GameObject[] thisAreaSets = Resources.LoadAll<GameObject>("areas");
+        Events.OnLoadCurrentAreas += OnLoadCurrentAreas;
+    }
+    void OnLoadCurrentAreas()
+    {
+        areaSets.Clear();
+        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
+        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
+
+        GameObject[] thisAreaSets = Resources.LoadAll<GameObject>("areas/" + moodID + "_" + seccionalID);
         foreach (GameObject go in thisAreaSets)
         {
             AreaSet thisAreaSet = go.GetComponent<AreaSet>() as AreaSet;
             if (thisAreaSet) areaSets.Add(thisAreaSet);
         }
+
+        thisAreaSets = Resources.LoadAll<GameObject>("areas/" + moodID);
+        foreach (GameObject go in thisAreaSets)
+        {
+            AreaSet thisAreaSet = go.GetComponent<AreaSet>() as AreaSet;
+            if (thisAreaSet) areaSets.Add(thisAreaSet);
+        }
+
         RandomizeAreaSetsByPriority();
 	}
     public void RandomizeAreaSetsByPriority()

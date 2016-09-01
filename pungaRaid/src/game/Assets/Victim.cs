@@ -104,7 +104,7 @@ public class Victim : Enemy {
 
         int mnultiplayerStolen = clothes.Undress();
 
-        Events.OnScoreAdd((Random.Range(5, 10) * 10) * mnultiplayerStolen);
+        Events.OnScoreUpdate((Random.Range(5, 10) * 10) * mnultiplayerStolen);
 
         Events.OnAddCoins(laneId, transform.localPosition.x, mnultiplayerStolen*10);
     }

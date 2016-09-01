@@ -6,7 +6,10 @@ public static class Events {
     public static System.Action OnSettings = delegate { };
     public static System.Action OnLoginAdvisor = delegate { };
 
+    public static System.Action OnLoadCurrentAreas = delegate { };    
 
+    public static System.Action<int, int> UnlockSeccional = delegate { };
+    public static System.Action<int> OnMoneyUpated = delegate { };
     public static System.Action<int, float> OnNewHiscore = delegate { };
     public static System.Action<GameObject> OnUIClicked = delegate { };
 
@@ -68,7 +71,8 @@ public static class Events {
     //laneID, distance
     public static System.Action<int, int> OnAddExplotion = delegate { };
 
-    public static System.Action<int> OnScoreAdd = delegate { };
+    public static System.Action<int> OnBuy = delegate { };
+    public static System.Action<int> OnScoreUpdate = delegate { };
     public static System.Action<int> OnRefreshScore = delegate { };
     public static System.Action OnStartCountDown = delegate { };
     public static System.Action<PowerupManager.types> OnBarInit = delegate { };

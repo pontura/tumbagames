@@ -177,7 +177,7 @@ public class Character : MonoBehaviour {
 
                 int money = coins.money;
                 Events.OnCombo(enemy.transform.position.x);
-                Events.OnScoreAdd(25);
+                Events.OnScoreUpdate(25);
                 Events.OnAddCoins(enemy.laneId, enemy.transform.localPosition.x, 1);
                 coins.Activate();
             }

@@ -25,7 +25,7 @@ public class TextsMoods {
             Data dataNew = new Data();
             dataNew.id = int.Parse(content[a]["id"]);
             dataNew.title = content[a]["title"];
-            int seccionalID = 0;
+            int seccionalID = 1;
             dataNew.seccional = new List<Seccional>();
 
             if (PlayerPrefs.GetInt("mood" + dataNew.id) > 0 || dataNew.id == 1)
@@ -38,8 +38,8 @@ public class TextsMoods {
                 seccional.title = content[a]["seccionales"][b]["title"];
                 seccional.name = content[a]["seccionales"][b]["text"];
                 seccional.price = int.Parse(content[a]["seccionales"][b]["price"]);
-
-                if (PlayerPrefs.GetInt("mood" + a + b) > 0 || b==0 )
+                string unlockPref = "mood_" + (int)(a + 1) + "_" + (int)(b + 1);
+                if (PlayerPrefs.GetInt(unlockPref) > 0 || b == 0)
                     seccional.unlocked = true;
 
                 seccionalID++;

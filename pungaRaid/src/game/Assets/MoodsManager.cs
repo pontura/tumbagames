@@ -6,12 +6,12 @@ using System;
 public class MoodsManager : MonoBehaviour {
 
     public moods currentMood;
+    public int currentSeccionalID;
+
     public TextsMoods data;
 
     public GameObject mood_belgrano;
-    public GameObject mood_madero;
-
-    private int currentSeccionalID;
+    public GameObject mood_madero;    
 
     public enum moods
     {
@@ -22,10 +22,12 @@ public class MoodsManager : MonoBehaviour {
 
     void Start()
     {
+        Events.UnlockSeccional += UnlockSeccional;
         SocialEvents.ResetApp += ResetApp;
     }
     void OnDestroy()
     {
+        Events.UnlockSeccional -= UnlockSeccional;
         SocialEvents.ResetApp -= ResetApp;
     }
     void ResetApp()
@@ -72,6 +74,23 @@ public class MoodsManager : MonoBehaviour {
             if (moodData.id == id) moodData.unlocked = true;
 
         PlayerPrefs.SetInt("mood" + id, 1);
+    }
+    public void UnlockSeccional(int moodID, int seccionalID)
+    {
+        foreach (TextsMoods.Data moodData in data.data)
+        {
+            if (moodData.id == moodID)
+            {
+                foreach (Seccional seccional in moodData.seccional)
+                {
+                    if(seccional.id == seccionalID)
+                        seccional.unlocked = true;
+                }
+            }
+        }
+        string saver = "mood_" + moodID + "_" + seccionalID;
+        print("UnlockSeccional saver: " + saver);
+        PlayerPrefs.SetInt(saver, 1);
     }
     public GameObject GetCurrentMoodAsset()
     {

@@ -17,7 +17,8 @@ public class MainManager : MonoBehaviour {
 
 	void Start () {
         Events.OnMusicChange("Raticity");
-       // score.text = "$" + SocialManager.Instance.userHiscore.totalScore;
+
+        Events.OnMoneyUpated += OnMoneyUpated;
 
         if (SocialManager.Instance.userData.logged)
             profilePicture.setPicture(SocialManager.Instance.userData.facebookID);
@@ -27,9 +28,23 @@ public class MainManager : MonoBehaviour {
         if (SocialManager.Instance.userData.logged)
             username.text = SocialManager.Instance.userData.username;
 
+        SetScore(SocialManager.Instance.userHiscore.money); 
+
         Map();
         mapButton.Select();
 	}
+    void OnDestroy()
+    {
+        Events.OnMoneyUpated -= OnMoneyUpated;
+    }
+    void OnMoneyUpated(int newScore)
+    {
+        SetScore(newScore);
+    }
+    void SetScore(int money)
+    {
+        score.text = Utils.IntToMoney(money);
+    }
     public void Clicked(int id)
     {
         switch(id)
