@@ -6,11 +6,14 @@ using System;
 public class Achievement  {
 
     public string title;
+    public string data;
     public types type;
     public enum types
     {
         MISSION_COMPLETE,
-        DISTANCE
+        DISTANCE,
+        POWERUP,
+        AREA
     }
     public string image;
     public int id;

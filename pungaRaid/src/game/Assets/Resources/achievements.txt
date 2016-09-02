@@ -1,0 +1,33 @@
+﻿{
+	"achievements":
+	[
+		{
+			"title": "Correr x metros",
+			"type": "POWERUP",
+			"data": "CHUMBO",
+			"pointsToBeReady": 1,
+			"image":"1"			
+		},
+		{
+			"title": "Desbloqueá Puerto Mamerto",
+			"type": "AREA",
+			"data": 2,
+			"pointsToBeReady": 1,
+			"image":"2"			
+		},
+		{
+			"title": "Pungueate un skate",
+			"type": "POWERUP",
+			"data":	"SKATE",
+			"pointsToBeReady": 1,
+			"image":"3"		
+		},
+		{
+			"title": "Subite a un raticiclo",
+			"type": "POWERUP",
+			"data": "MOTO",
+			"pointsToBeReady": 1,
+			"image":"4"		
+		}
+	]
+}

@@ -12,6 +12,7 @@ public class MainManager : MonoBehaviour {
     public StoreManager storeManager;
     public Zones zones;
     public AchievementUI achievements;
+    public Text achievementsCount;
 
     public Button mapButton;
 
@@ -32,6 +33,8 @@ public class MainManager : MonoBehaviour {
 
         Map();
         mapButton.Select();
+
+        achievementsCount.text = AchievementsManager.Instance.GetTotalReady() + "/" +  AchievementsManager.Instance.achievements.Count;
 	}
     void OnDestroy()
     {

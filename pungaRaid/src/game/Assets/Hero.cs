@@ -156,6 +156,7 @@ public class Hero : MonoBehaviour {
         {
             state = states.RUN;
             animator.Play("pungaSkate", 0, 0);
+            AchievementsEvents.OnPowerUp("SKATE");
         } else
         if (
             Game.Instance.characterManager.character.powerupManager.type == PowerupManager.types.NONE

@@ -39,7 +39,6 @@ public class CharacterManager : MonoBehaviour {
         if ( Game.Instance.state != Game.states.PLAYING ) return;
 
         float Diff = (Time.time - lastKeyPressedTime);
-        print("DIFF: " + Diff);
         lastKeyPressedTime = Time.time;
         if (Diff < 0.1f) return;
 

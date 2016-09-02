@@ -7,6 +7,7 @@ using SimpleJSON;
 public class AchievementsManager : MonoBehaviour
 {
     public List<Achievement> achievements;
+    public int totalAchievements;
     string jsonUrl = "achievements";
 
     const string PREFAB_PATH = "AchievementsManager";
@@ -30,7 +31,15 @@ public class AchievementsManager : MonoBehaviour
             return mInstance;
         }
     }
-  
+    public int GetTotalReady()
+    {
+        int total = 0;
+        foreach ( Achievement ach in achievements)
+        {
+            if(ach.ready) total++;
+        }
+        return total;
+    }
     void Awake()
     {
         if (!mInstance)
@@ -48,10 +57,9 @@ public class AchievementsManager : MonoBehaviour
     }
     void Start()
     {
-        //string filepath = (Application.dataPath + jsonUrl);
-        //TextAsset file = Resources.Load(jsonUrl) as TextAsset;
-        //LoadDataromServer(file.text);
-        //SocialEvents.ResetApp += ResetApp;
+        TextAsset file = Resources.Load(jsonUrl) as TextAsset;
+        LoadDataromServer(file.text);
+        SocialEvents.ResetApp += ResetApp;
     }
     void ResetApp()
     {
@@ -67,29 +75,38 @@ public class AchievementsManager : MonoBehaviour
         achievements = new List<Achievement>(Json[arrayName].Count);
         for (int a = 0; a < Json[arrayName].Count; a++)
         {
+            totalAchievements++;
             string type = Json[arrayName][a]["type"];
 
             switch (type)
             {
-                case "MISSION": 
-                    AchievementMission achievement_mission = new AchievementMission();
-                    achievement_mission.title = Json[arrayName][a]["title"];
-                    achievement_mission.id = a;
-                    achievement_mission.progress = int.Parse(Json[arrayName][a]["progress"]);
-                    achievement_mission.image = Json[arrayName][a]["image"];
-                    achievement_mission.mission = int.Parse(Json[arrayName][a]["mission"]);
-                    achievement_mission.Init();
-                    achievements.Add(achievement_mission);
-                    break;
                 case "DISTANCE":
                     AchievementDistance achievement_distance = new AchievementDistance();
                     achievement_distance.title = Json[arrayName][a]["title"];
                     achievement_distance.id = a;
-                    achievement_distance.progress = int.Parse(Json[arrayName][a]["progress"]);
                     achievement_distance.image = Json[arrayName][a]["image"];
-                    achievement_distance.pointsToBeReady = int.Parse(Json[arrayName][a]["distance"]);
+                    achievement_distance.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
                     achievement_distance.Init();
                     achievements.Add(achievement_distance);
+                    break;
+                case "POWERUP":
+                    AchievementPowerup achievement_powerup = new AchievementPowerup();
+                    achievement_powerup.title = Json[arrayName][a]["title"];
+                    achievement_powerup.id = a;
+                    achievement_powerup.image = Json[arrayName][a]["image"];
+                    achievement_powerup.data = Json[arrayName][a]["data"];
+                    achievement_powerup.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
+                    achievement_powerup.Init();
+                    achievements.Add(achievement_powerup);
+                    break;
+                case "AREA":
+                    AchievementArea achievement_area = new AchievementArea();
+                    achievement_area.title = Json[arrayName][a]["title"];
+                    achievement_area.id = a;
+                    achievement_area.image = Json[arrayName][a]["image"];
+                    achievement_area.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
+                    achievement_area.Init();
+                    achievements.Add(achievement_area);
                     break;
             }
         }
