@@ -4,31 +4,24 @@ using System.Collections.Generic;
 
 public class VeredaRandomItems : MonoBehaviour {
 
-    public GameObject[] randomItems;
+    public List<GameObject> randomItems;
 
 	void OnEnable () {
-        if (randomItems.Length > 0)
+
+        List<GameObject> newArray = new List<GameObject>();
+        MoodsManager.moods mood = Data.Instance.moodsManager.currentMood;
+
+        foreach (ObjectFilter of in GetComponentsInChildren<ObjectFilter>())
         {
-            List<GameObject> newArray = new List<GameObject>();
-            MoodsManager.moods mood = Data.Instance.moodsManager.currentMood;
-
-            foreach (GameObject item in randomItems)
-            {
-                if (item.GetComponent<ObjectFilter>())
-                {
-                    if (item.GetComponent<ObjectFilter>().CanBeAdded(mood, 0))
-                        newArray.Add(item);
-                }
-                else
-                {
-                    newArray.Add(item);
-                }
-            }
-
-            foreach (GameObject items in randomItems)
-                items.SetActive(false);
-
-            newArray[Random.Range(0, newArray.Count)].SetActive(true);
+            if (of.CanBeAdded(mood, 0))
+                newArray.Add(of.gameObject);
+            else
+                of.gameObject.SetActive(false);
         }
+
+        print("agrega: " + newArray.Count);
+
+        if (newArray.Count > 0)
+            newArray[Random.Range(0, newArray.Count)].SetActive(true);
 	}
 }

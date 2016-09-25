@@ -27,7 +27,7 @@ public class AreasManager : MonoBehaviour {
             AreaSet thisAreaSet = go.GetComponent<AreaSet>() as AreaSet;
             if (thisAreaSet) areaSets.Add(thisAreaSet);
         }
-        foreach (GameObject go in Resources.LoadAll<GameObject>("areas/0"))
+        foreach (GameObject go in Resources.LoadAll<GameObject>("areas/0_genericas"))
         {
             AreaSet thisAreaSet = go.GetComponent<AreaSet>() as AreaSet;
             if (thisAreaSet) areaSets.Add(thisAreaSet);
