@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class LevelsManager : MonoBehaviour {
 
@@ -11,7 +12,6 @@ public class LevelsManager : MonoBehaviour {
     //    public int distance;
     //    public Level[] levels;
     //}
-    public int activeGroupId = 0;
     private float startingGroupDistance;
     public Lanes lanes;
     public Level StartingLevel;
@@ -43,25 +43,16 @@ public class LevelsManager : MonoBehaviour {
 
         if (distance < nextLevelDistance) return;
 
-        
+        AreaSet areaSet = Data.Instance.areasManager.GetActiveAreaSet();
 
-      //  if (distance < offset+10)
-      //  if (distance < offset + 10)
-         //    activeLevel = StartingLevel;
-       // else
-       // {
-            
-       // }
-
-        if ((int)distance > (int)Data.Instance.areasManager.areaSets[activeGroupId].distance)
+        if ((int)distance > (int)areaSet.distance)
         {
             startingGroupDistance += distance;
-            activeGroupId++;
            // print("_ cambia grupo " + activeGroupId + " startingGroupDistance: " + startingGroupDistance + " distanc: " + distance);
         }
 
-        int rand = UnityEngine.Random.Range(0, Data.Instance.areasManager.areaSets[activeGroupId].levels.Length);
-        activeLevel = Data.Instance.areasManager.areaSets[activeGroupId].levels[rand];
+        int rand = UnityEngine.Random.Range(0, areaSet.levels.Length);
+        activeLevel = areaSet.levels[rand];
 
        // print("nextLevelDistance " + nextLevelDistance + " distance " + distance + " activeGroupId: " + activeGroupId + "  GROUP: " + groups[activeGroupId].name + " activeLevel.length " + activeLevel.length + "  activeLevel.NAME " + activeLevel.name);
         LoadLevelAssets(nextLevelDistance);
