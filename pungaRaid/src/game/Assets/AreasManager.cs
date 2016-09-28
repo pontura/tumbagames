@@ -24,7 +24,6 @@ public class AreasManager : MonoBehaviour {
     {
         public List<AreaSet> areaSets;
     }
-
 	void Start () {
         Events.OnLoadCurrentAreas += OnLoadCurrentAreas;
     }
@@ -51,14 +50,15 @@ public class AreasManager : MonoBehaviour {
     }
     void OnLoadCurrentAreas()
     {
+        genericAreas.Clear();
         foreach (MoodAreas moodArea in moodAreas)
-        {
             moodArea.areaSets.Clear();
-        }
+
         int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
         int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
 
         AddAreasToSeccional(moodID, seccionalID);
+        AddOtherUnlockedAreas(moodID, seccionalID);
         AddGenericAreas(moodID);       
 
         RandomizeAreaSetsByPriority();
@@ -76,6 +76,15 @@ public class AreasManager : MonoBehaviour {
         }
         moodAreas.Add(moodArea);
     }
+    void AddOtherUnlockedAreas(int moodID, int seccionalID)
+    {
+        MoodAreas moodArea = new MoodAreas();
+        moodArea.areaSets = new List<AreaSet>();
+
+        foreach (Seccional seccional in Data.Instance.moodsManager.data.data[moodID - 1].seccional )
+            if (seccional.id != seccionalID &&  seccional.unlocked)
+                AddAreasToSeccional(moodID, seccional.id);
+    }
     void AddGenericAreas(int moodID)
     {
         foreach (GameObject go in Resources.LoadAll<GameObject>("areas/0_genericas"))
@@ -92,6 +101,8 @@ public class AreasManager : MonoBehaviour {
             moodArea.areaSets = moodArea.areaSets.OrderBy(x => x.competitionsPriority).ToList();
             moodArea.areaSets.Reverse();
         }
+        genericAreas = genericAreas.OrderBy(x => x.competitionsPriority).ToList();
+        genericAreas.Reverse();
     }
     private List<AreaSet> Randomize(List<AreaSet> toRandom)
     {
