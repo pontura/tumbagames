@@ -8,25 +8,25 @@ texts:
 			[
 				{
 					id:1,
-					title:"CABILDO",
-					text: "Mucho gil con teléfono regalado y yuta.",
+					title:"AV. RECAMIER",
+					text: "Mucho gato aspirasional que no yega a Patio Bullshit.",
 					price:150000
 				},
 				{
 					id:2,
-					title:"ASSA",
-					text: "Mucho gil con teléfono regalado y yuta.",
+					title:"BARRIO NORCOREANO",
+					text: "Con el mariscal todo bien, pero al resto pin pan pun.",
 					price:200000
 				},
 				{
 					id:3,
-					title:"ADAD",
-					text: "Mucho gil con teléfono regalado y yuta.",
+					title:"RIVERSIDE PLATE",
+					text: "Tené chetos y pibes que van aprendé a la UVA.",
 					price:250000
 				},
 				{
 					id:4,
-					title:"AFFAFA",
+					title:"PUENTE ZABECA",
 					text: "Mucho gil con teléfono regalado y yuta.",
 					price:350000
 				}
@@ -34,31 +34,31 @@ texts:
 		},
 		{	
 			id:2,
-			title:"PUERTO MAMERTO",
+			title:"EPICENTRO",
 			seccionales:
 			[
 				{
 					id:1,
-					title:"GDDG",
+					title:"PUERTO MAMERTO",
 					text: "Ta yeno de cheto.",
 					price:150000
 				},
 				{
 					id:2,
-					title:"FGHG",
-					text: "Ta yeno de cheto.",
+					title:"DILDO CENTRAL",
+					text: "E como un pene en el medio de la siudá con gile alrededón.",
 					price:200000
 				},
 				{
 					id:3,
-					title:"JHGJGHJGHJ",
-					text: "Mucho gil con teléfono regalado y yuta.",
+					title:"PLAZA DE JUNIO",
+					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
 					price:250000
 				},
 				{
 					id:4,
-					title:"DGDFGD GDDF GD",
-					text: "Ta yeno de cheto.",
+					title:"RESERVA ERÓTICA",
+					text: "E una selva donde a la noche podés ir con una guacha re piola.",
 					price:350000
 				}
 			]
