@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GenericVictim : Enemy
 {
     public states state;
     public float speed;
 
-    public GameObject[] obstacles;
+    public ObjectFilter[] obstacles;
 
     public enum states
     {
@@ -24,22 +25,38 @@ public class GenericVictim : Enemy
     }
     override public void Enemy_Init(EnemySettings settings, int laneId)
     {
-        foreach (GameObject goToInactive in obstacles)
-            goToInactive.SetActive(false);
 
-        GameObject go = GetRandomGameObjects();
+        List<GameObject> newArray = new List<GameObject>();
+        MoodsManager.moods mood = Data.Instance.moodsManager.currentMood;
 
-        go.SetActive(true);
-        anim = go.GetComponentInChildren<Animator>();
 
-        anim.Play("idle", 0, 0);
-    }
-    private GameObject GetRandomGameObjects()
-    {
-        foreach (GameObject go in obstacles)
-            if (go.GetComponent<ObjectFilter>().CanBeAdded(Data.Instance.moodsManager.currentMood, laneId))
-                return go;
-        return obstacles[Random.Range(0, obstacles.Length)];
+        foreach (ObjectFilter of in obstacles)
+        {
+            if (of.CanBeAdded(mood, 0))
+                newArray.Add(of.gameObject);
+            else
+                of.gameObject.SetActive(false);
+        }
+
+        if (newArray.Count > 0)
+        {
+            int rand = Random.Range(0, newArray.Count);
+            int id = 0;
+            foreach (GameObject go in newArray)
+            {
+                if (id == rand)
+                {
+                    anim = go.GetComponentInChildren<Animator>();
+                    anim.Play("idle", 0, 0);
+                    go.SetActive(true);
+                }
+                else
+                    go.SetActive(false);
+                id++;
+            }
+        }
+        
+
     }
     override public void Enemy_Pooled()
     {
