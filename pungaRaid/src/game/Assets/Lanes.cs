@@ -103,6 +103,9 @@ public class Lanes : MonoBehaviour {
             case "Skate":
                 enemy = Data.Instance.enemiesManager.GetEnemy("Skate");
                 break;
+            case "GenericVictim":
+                enemy = Data.Instance.enemiesManager.GetEnemy("GenericVictim");
+                break;
             case "ObstacleGeneric":
                 enemy = Data.Instance.enemiesManager.GetEnemy("ObstacleGeneric");
                 break;

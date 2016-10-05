@@ -14,7 +14,7 @@ public class LevelsManager : MonoBehaviour {
     private int offset = 40;
     private AreaSet areaSet;
 
-    private float distanceToNextSeccional = 120;
+    private float distanceToNextSeccional = 700;
    
     public void Init()
     {

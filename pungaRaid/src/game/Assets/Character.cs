@@ -203,7 +203,7 @@ public class Character : MonoBehaviour {
             {
                 enemy.GetComponent<PowerDown>().Activate();
             }
-            else if (hero.state == Hero.states.DASH && enemy.GetComponent<Victim>())
+            else if (hero.state == Hero.states.DASH && (enemy.GetComponent<Victim>() || enemy.GetComponent<GenericVictim>()))
             {
                 int rand = Random.Range(1, 3);
                 Events.OnSoundFX("Dashed" + rand);
@@ -247,6 +247,11 @@ public class Character : MonoBehaviour {
             {
                 Events.OnCombo(enemy.transform.localPosition.x);
                 enemy.GetComponent<Victim>().Steal();
+            }
+            else if (enemy.GetComponent<GenericVictim>())
+            {
+                Events.OnCombo(enemy.transform.localPosition.x);
+                enemy.GetComponent<GenericVictim>().Steal();
             }
         }
     }

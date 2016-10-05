@@ -81,6 +81,10 @@ public class EnemiesManager : MonoBehaviour {
                         if (enemy.GetComponent<Obstacle>())
                             return enemy;
                         break;
+                    case "GenericVictim":
+                        if (enemy.GetComponent<GenericVictim>())
+                            return enemy;
+                        break;
                     case "Victim":
                         if (enemy.GetComponent<Victim>())
                             return enemy;
