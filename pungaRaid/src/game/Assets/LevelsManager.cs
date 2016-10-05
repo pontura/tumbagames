@@ -5,37 +5,32 @@ using System.Collections.Generic;
 
 public class LevelsManager : MonoBehaviour {
 
-    //[Serializable]
-    //public class Group
-    //{
-    //    public string name;
-    //    public int distance;
-    //    public Level[] levels;
-    //}
     private float startingGroupDistance;
     public Lanes lanes;
     public Level StartingLevel;
 
-   // public Group[] groups;
-
     public Level activeLevel;
     private int nextLevelDistance;
     private int offset = 40;
+    private AreaSet areaSet;
+
+    private float distanceToNextSeccional = 120;
    
     public void Init()
     {
-        //  activeLevel = StartingLevel;
-        // nextLevelDistance = StartingLevel.length;
-        // activeGroupId = -1;
-       // Invoke("Continue", 0.2f);
+        NewAreaSet();
         CheckForNewLevel(0);
     }
-    public void Continue()
+    public void NewAreaSet()
     {
-        //  activeLevel = StartingLevel;
-        // nextLevelDistance = StartingLevel.length;
-        // activeGroupId = -1;
-        
+        areaSet = Data.Instance.areasManager.GetActiveAreaSet();
+        startingGroupDistance += areaSet.distance;
+    }
+    public void NewSeccionalAreaSet()
+    {
+        areaSet = Data.Instance.areasManager.GetNextSeccionalAreaSet();
+        distanceToNextSeccional += distanceToNextSeccional;
+        print("________________________________________________ distanceToNextSeccional: " + distanceToNextSeccional);
     }
     public void CheckForNewLevel(float distance)
     {
@@ -43,18 +38,21 @@ public class LevelsManager : MonoBehaviour {
 
         if (distance < nextLevelDistance) return;
 
-        AreaSet areaSet = Data.Instance.areasManager.GetActiveAreaSet();
-
-        if ((int)distance > (int)areaSet.distance)
+        if (distance > distanceToNextSeccional)
         {
-            startingGroupDistance += distance;
-           // print("_ cambia grupo " + activeGroupId + " startingGroupDistance: " + startingGroupDistance + " distanc: " + distance);
+            NewSeccionalAreaSet();
+            startingGroupDistance = distance;
+        }
+        else if (distance > startingGroupDistance)
+        {
+            //  print("_____________ cambia _____________distance: " + distance + " startingGroupDistance " + startingGroupDistance);
+            NewAreaSet();
         }
 
-        int rand = UnityEngine.Random.Range(0, areaSet.levels.Length);
-        activeLevel = areaSet.levels[rand];
+        //int rand = UnityEngine.Random.Range(0, areaSet.levels.Length);
+        activeLevel = areaSet.GetLevel();
 
-       // print("nextLevelDistance " + nextLevelDistance + " distance " + distance + " activeGroupId: " + activeGroupId + "  GROUP: " + groups[activeGroupId].name + " activeLevel.length " + activeLevel.length + "  activeLevel.NAME " + activeLevel.name);
+        print("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);
         LoadLevelAssets(nextLevelDistance);
         
         nextLevelDistance += activeLevel.length;
@@ -62,8 +60,6 @@ public class LevelsManager : MonoBehaviour {
     }
     private void LoadLevelAssets(int nextLevelDistance)
     {
-        //print("nextLevelDistance" + nextLevelDistance);
-        //print("activeLevel" + activeLevel);
         Lanes laneData = activeLevel.GetComponent<Lanes>();
         lanes.AddBackground(laneData.vereda, nextLevelDistance, activeLevel.length);
 
@@ -80,9 +76,7 @@ public class LevelsManager : MonoBehaviour {
 
                 lanes.AddObjectToLane(t.gameObject.name, lane.id, (int)(nextLevelDistance + t.transform.localPosition.x), settings);
             }
-        }
-
-        
+        }        
     }
 	public void LoadNext () {
 	    

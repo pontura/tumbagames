@@ -7,10 +7,9 @@ public class AreaSet : MonoBehaviour
     public int competitionsPriority;
     public bool randomize = true;
     public Level[] levels;
-    public int distance;
+    public float distance;
 
-    [HideInInspector]
-    public int id = 0;
+    private int id = 0;
 
     public Vector3 getCameraOrientation()
     {
@@ -21,17 +20,17 @@ public class AreaSet : MonoBehaviour
     {
         Level level;
 
-        Random.seed = (int)System.DateTime.Now.Ticks;
-
         if (randomize)
             level = levels[Random.Range(0, levels.Length)];
         else
             level = levels[id];
 
-        //Debug.Log(randomize + " area name: " + area.name + " id : " + num + " areas length: " + areas.Length);
+     //   Debug.Log("level: " + level.name + " id: " + id + " randomize: " + randomize);
 
         if (id < levels.Length - 1)
             id++;
+        else
+            id = 0;
 
         return level;
     }

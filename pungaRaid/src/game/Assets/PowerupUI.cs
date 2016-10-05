@@ -52,7 +52,7 @@ public class PowerupUI : MonoBehaviour {
     }
     void SetOff()
     {
-        print("powerupUI setOff");
+       // print("powerupUI setOff");
         OnHeroPowerUpOff();
         Events.OnHeroPowerUpOff();
     }

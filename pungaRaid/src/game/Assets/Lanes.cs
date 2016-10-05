@@ -60,7 +60,6 @@ public class Lanes : MonoBehaviour {
     }
     public void AddBackground(Vereda _vereda, int _x, int _sceneWidth)
     {
-        //print(_vereda.name + "    : AddBackground  in " + _x);
         Vereda vereda = Data.Instance.enemiesManager.GetEnemy(_vereda.name) as Vereda;
         GameObject go = vereda.gameObject;
         go.transform.SetParent(transform);
@@ -72,18 +71,6 @@ public class Lanes : MonoBehaviour {
         if (vereda.blockLane3) AddBlocker(3, _x, _sceneWidth);
         if (vereda.blockLane4) AddBlocker(4, _x, _sceneWidth);
        
-
-
-        //GameObject go = Instantiate(Resources.Load<GameObject>("backgrounds/" + name)) as GameObject;
-        //backgrounds.Add(go);
-        //go.transform.SetParent(background.transform);
-        //go.transform.localPosition = new Vector3(_x, 0, 0);
-        //if (backgrounds.Count > 2)
-        //{
-        //    GameObject b = backgrounds[0];
-        //    Destroy(b);
-        //    backgrounds.RemoveAt(0);
-        //}
     }
     void AddBlocker(int laneID, int _x, int _width)
     {

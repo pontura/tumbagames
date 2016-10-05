@@ -133,12 +133,11 @@ public class EnemiesManager : MonoBehaviour {
                         break;
                     case "veredaIntro":
                         if (enemy.name == "veredaIntro" || enemy.name == "veredaIntro(Clone)")
-                        {
-                            if (firstSceneShowed)
-                                return GetPooled("vereda_2_pastos");
-                            firstSceneShowed = true;
                             return enemy;
-                        }
+                        break;
+                    case "veredaIntro2":
+                        if (enemy.name == "veredaIntro2" || enemy.name == "veredaIntro2(Clone)")
+                            return enemy;
                         break;
                     case "vereda_10mts_5lanes":
                         if (enemy.name == "vereda_10mts_5lanes" || enemy.name == "vereda_10mts_5lanes(Clone)")

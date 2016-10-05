@@ -15,11 +15,12 @@ public class Vereda : Enemy {
     }
     override public void Enemy_Init(EnemySettings settings, int laneId) 
     {
-       SpriteRenderer[] sps = GetComponentsInChildren<SpriteRenderer>();
-       foreach (SpriteRenderer sp in sps)
-       {
-          // sp.sortingOrder = -1;
-          // sp.sortingLayerName = "Default"; 
-       }
+        SendMessage("OnInit", SendMessageOptions.DontRequireReceiver);
+       //SpriteRenderer[] sps = GetComponentsInChildren<SpriteRenderer>();
+       //foreach (SpriteRenderer sp in sps)
+       //{
+       //   // sp.sortingOrder = -1;
+       //   // sp.sortingLayerName = "Default"; 
+       //}
     }
 }

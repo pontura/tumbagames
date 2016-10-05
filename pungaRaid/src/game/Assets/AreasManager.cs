@@ -17,36 +17,73 @@ public class AreasManager : MonoBehaviour {
     public List<AreaSet> activeAreaSet;
 
     public int seccionalActiveID;
+
+    /// del area de seccionales avctivas:
+    public int seccionalActiveIDArray;
+
     public int activeAreaID;
 
     [Serializable]
     public class MoodAreas
     {
         public List<AreaSet> areaSets;
+        public int seccionalID;
     }
 	void Start () {
         Events.OnLoadCurrentAreas += OnLoadCurrentAreas;
+        Events.OnHeroDie += OnHeroDie;
     }
+    void OnDestroy()
+    {
+        Events.OnLoadCurrentAreas -= OnLoadCurrentAreas;
+        Events.OnHeroDie -= OnHeroDie;
+    }
+    void OnHeroDie()
+    {
+        seccionalActiveID = Data.Instance.moodsManager.currentSeccionalID;
+        seccionalActiveIDArray = 0;
+        areasToAdd = areasType.SECCIONAL_ID;
+        activeAreaID = 0;
+    }
+    public AreaSet GetNextSeccionalAreaSet()
+    {
+        if (moodAreas.Count > seccionalActiveIDArray + 1)
+        {
+            activeAreaID = 0;
+            seccionalActiveIDArray++;
+            seccionalActiveID = GetCurrentArea().seccionalID;
+            print("________________ moodAreas.Count : " + moodAreas.Count + " seccionalActiveIDArray:  " + seccionalActiveIDArray + "   GetNextSeccionalAreaSet " + seccionalActiveIDArray);
+            areaSet = GetCurrentArea().areaSets[activeAreaID];
+            areasToAdd = areasType.SECCIONAL_ID;
+        }
+        //else
+        //    return GetActiveAreaSet();
+
+      //  AreaSet areaSet = GetCurrentArea().areaSets[activeAreaID];        
+        return areaSet;
+    }
+    AreaSet areaSet;
     public AreaSet GetActiveAreaSet()
     {
-        if (areasToAdd == areasType.SECCIONAL_ID && activeAreaID == moodAreas[seccionalActiveID].areaSets.Count)
+        if (areasToAdd == areasType.SECCIONAL_ID && activeAreaID == moodAreas[seccionalActiveIDArray].areaSets.Count)
         {
+            print("GO TO GENERICS " + activeAreaID + " seccionalActiveIDArray: " + seccionalActiveIDArray);
             areasToAdd = areasType.GENERIC;
             activeAreaID = 0;
         }
-        AreaSet areaSet = null;
         if (areasToAdd == areasType.GENERIC)
             areaSet = genericAreas[activeAreaID];
         else
             areaSet = GetCurrentArea().areaSets[activeAreaID];
 
+        //print(areaSet + " areaSet name: " + areaSet.name + "   - " + areasToAdd + "   activeAreaID: " + activeAreaID + " de (Count): " + GetCurrentArea().areaSets.Count);
         activeAreaID++;
 
         return areaSet;
     }
     public MoodAreas GetCurrentArea()
     {
-        return moodAreas[seccionalActiveID];
+        return moodAreas[seccionalActiveIDArray];
     }
     void OnLoadCurrentAreas()
     {
@@ -54,18 +91,22 @@ public class AreasManager : MonoBehaviour {
         foreach (MoodAreas moodArea in moodAreas)
             moodArea.areaSets.Clear();
 
-        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
-        int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
+        moodAreas.Clear();
 
-        AddAreasToSeccional(moodID, seccionalID);
-        AddOtherUnlockedAreas(moodID, seccionalID);
+        int moodID = Data.Instance.moodsManager.GetCurrentMoodID();
+        seccionalActiveID = Data.Instance.moodsManager.GetCurrentSeccional().id;
+
+        AddAreasToSeccional(moodID, seccionalActiveID);
+        AddOtherUnlockedAreas(moodID, seccionalActiveID);
         AddGenericAreas(moodID);       
 
         RandomizeAreaSetsByPriority();
 	}
     void AddAreasToSeccional(int moodID, int seccionalID)
     {
+        
         MoodAreas moodArea = new MoodAreas();
+        moodArea.seccionalID = seccionalID;
         moodArea.areaSets = new List<AreaSet>();
 
         GameObject[] thisAreaSets = Resources.LoadAll<GameObject>("areas/" + moodID + "_" + seccionalID);
