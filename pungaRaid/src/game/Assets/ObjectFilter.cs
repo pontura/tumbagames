@@ -13,7 +13,6 @@ public class ObjectFilter : MonoBehaviour {
     }
     public Filter[] filters;
 
-
     public bool CanBeAdded(MoodsManager.moods mood, int landID)
     {
         if(filters.Length == 0)
@@ -27,7 +26,7 @@ public class ObjectFilter : MonoBehaviour {
             if (f.forceToLaneID == 0 || f.forceToLaneID == landID)
             {
               //  Debug.Log(name + " este objeto se agrega: " + f.mood + "   de seccional: " + f.seccionalID);
-                if (f.mood == mood && (f.seccionalID == 0 || f.seccionalID == currentSeccionalID))
+                if (f.mood == mood && (f.seccionalID == currentSeccionalID))
                 {
                     return true;
                 }

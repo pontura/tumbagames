@@ -52,7 +52,7 @@ public class AreasManager : MonoBehaviour {
             activeAreaID = 0;
             seccionalActiveIDArray++;
             seccionalActiveID = GetCurrentArea().seccionalID;
-            print("________________ moodAreas.Count : " + moodAreas.Count + " seccionalActiveIDArray:  " + seccionalActiveIDArray + "   GetNextSeccionalAreaSet " + seccionalActiveIDArray);
+            //print("________________ moodAreas.Count : " + moodAreas.Count + " seccionalActiveIDArray:  " + seccionalActiveIDArray + "   GetNextSeccionalAreaSet " + seccionalActiveIDArray);
             areaSet = GetCurrentArea().areaSets[activeAreaID];
             areasToAdd = areasType.SECCIONAL_ID;
         }
@@ -67,7 +67,7 @@ public class AreasManager : MonoBehaviour {
     {
         if (areasToAdd == areasType.SECCIONAL_ID && activeAreaID == moodAreas[seccionalActiveIDArray].areaSets.Count)
         {
-            print("GO TO GENERICS " + activeAreaID + " seccionalActiveIDArray: " + seccionalActiveIDArray);
+          //  print("GO TO GENERICS " + activeAreaID + " seccionalActiveIDArray: " + seccionalActiveIDArray);
             areasToAdd = areasType.GENERIC;
             activeAreaID = 0;
         }

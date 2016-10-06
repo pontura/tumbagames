@@ -14,7 +14,7 @@ public class LevelsManager : MonoBehaviour {
     private int offset = 40;
     private AreaSet areaSet;
 
-    private float distanceToNextSeccional = 700;
+    private float distanceToNextSeccional = 500;
    
     public void Init()
     {
@@ -30,7 +30,6 @@ public class LevelsManager : MonoBehaviour {
     {
         areaSet = Data.Instance.areasManager.GetNextSeccionalAreaSet();
         distanceToNextSeccional += distanceToNextSeccional;
-        print("________________________________________________ distanceToNextSeccional: " + distanceToNextSeccional);
     }
     public void CheckForNewLevel(float distance)
     {
@@ -52,7 +51,7 @@ public class LevelsManager : MonoBehaviour {
         //int rand = UnityEngine.Random.Range(0, areaSet.levels.Length);
         activeLevel = areaSet.GetLevel();
 
-        print("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);
+     //   Debug.Log("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);
         LoadLevelAssets(nextLevelDistance);
         
         nextLevelDistance += activeLevel.length;
