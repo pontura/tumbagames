@@ -9,6 +9,8 @@ public class MoodPopup : MonoBehaviour {
     public Text hiscore;
     public Text priceField;
 
+    public Image BannerContainer;
+
     public RankingMood ranking;
     public GameObject locker;
 
@@ -27,6 +29,8 @@ public class MoodPopup : MonoBehaviour {
         panel.GetComponent<Animator>().Play("PopupOn",0,0);
         moodID = Data.Instance.moodsManager.GetCurrentMoodID();
         seccional = Data.Instance.moodsManager.GetCurrentSeccional();
+
+        BannerContainer.sprite = Resources.Load("seccionales/" + moodID + "_" + seccional.id, typeof(Sprite)) as Sprite;
 
         if (seccional.unlocked)
             locker.SetActive(false);
