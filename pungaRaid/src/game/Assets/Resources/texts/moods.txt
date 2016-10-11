@@ -20,13 +20,13 @@ texts:
 				},
 				{
 					id:3,
-					title:"RIVERSIDE PLATE",
+					title:"PUENTE ZABECA",
 					text: "Tené chetos y pibes que van aprendé a la UVA.",
 					price:250000
 				},
 				{
 					id:4,
-					title:"PUENTE ZABECA",
+					title:"--",
 					text: "Mucho gil con teléfono regalado y yuta.",
 					price:350000
 				}
