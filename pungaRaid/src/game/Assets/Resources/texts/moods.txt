@@ -51,15 +51,9 @@ texts:
 				},
 				{
 					id:3,
-					title:"PLAZA DE JUNIO",
+					title:"PUERTO RETIRO",
 					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
 					price:250000
-				},
-				{
-					id:4,
-					title:"RESERVA ERÓTICA",
-					text: "E una selva donde a la noche podés ir con una guacha re piola.",
-					price:350000
 				}
 			]
 		},
