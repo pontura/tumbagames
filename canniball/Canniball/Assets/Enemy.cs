@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour
     {
         RUNNING,
         JUMPING,
-        IN_FLOOR
+        IN_FLOOR,
+        COMIO
     }
     public void Init(Game game, bool right)
     {
@@ -39,12 +40,38 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        if (state != states.IN_FLOOR)
+        if (game.state == Game.states.READY) return;
+
+        if (game.state == Game.states.COMIDO)
         {
-            if (!right && transform.localPosition.x > -5)
-                Jump();
-            if (right && transform.localPosition.x < 5)
-                Jump();
+            if (state != states.RUNNING)
+            {
+                anim.Play("run");
+                state = states.RUNNING;
+            }
+            transform.localScale = new Vector2(1, 1);
+            speed = 6;
+            right = false;
+            Positionate(Time.deltaTime * speed);
+        }
+        else if (state != states.IN_FLOOR)
+        {
+            if (game.state == Game.states.DEAD)
+            {
+                if (transform.localPosition.x < 1 && transform.localPosition.x > -1)
+                {
+                    Events.OnHeroComido();
+                    state = states.COMIO;
+                    anim.Play("run");
+                }
+            }
+            else
+            {
+                if (!right && transform.localPosition.x > -5)
+                    Jump();
+                if (right && transform.localPosition.x < 5)
+                    Jump();
+            }
             Positionate(Time.deltaTime * speed);
         }
         else
@@ -59,6 +86,7 @@ public class Enemy : MonoBehaviour
     }
     void Floor()
     {
+        if (game.state == Game.states.COMIDO || game.state == Game.states.DEAD) return;
         anim.Play("floor");
         state = states.IN_FLOOR;
     }

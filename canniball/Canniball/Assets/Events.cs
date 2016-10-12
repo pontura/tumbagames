@@ -5,7 +5,7 @@ public static class Events {
 
     //The game:
     public static System.Action StartGame = delegate { };
-    public static System.Action OnGameOver = delegate { };
+    public static System.Action Restart = delegate { };
     public static System.Action OnLevelComplete = delegate { };    
 
     public static System.Action<float, float> OnSaveVolumes = delegate { };
@@ -16,9 +16,9 @@ public static class Events {
     public static System.Action<string> OnMusicChange = delegate { };
 
     public static System.Action OnHeroDie = delegate { };
-    public static System.Action OnHeroCrash = delegate { };
+    public static System.Action OnHeroComido = delegate { };
     public static System.Action OnHeroCelebrate = delegate { };
 
     public static System.Action<bool> OnGamePaused = delegate { };
-
+    public static System.Action GameOver = delegate { };
 }

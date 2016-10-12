@@ -20,19 +20,78 @@ public class Game : MonoBehaviour {
     public float distanceBetweenEnemies = 40;
     public float speedInFloor = 50;
 
+    public states state;
+    public enum states
+    {
+        PLAYING,
+        DEAD,
+        COMIDO,
+        READY
+    }
+    bool gameOver;
+
 	void Start () {
         distanceToEnemy = 80;
+        Events.OnHeroDie += OnHeroDie;
+        Events.OnHeroComido += OnHeroComido;
+        Events.GameOver += GameOver;
+        Events.OnLevelComplete += OnLevelComplete;
 	}
+    void OnDestroy()
+    {
+        Events.OnHeroDie -= OnHeroDie;
+        Events.OnHeroComido -= OnHeroComido;
+        Events.GameOver -= GameOver;
+        Events.OnLevelComplete -= OnLevelComplete;
+    }
+    void GameOver()
+    {
+        gameOver = true;
+    }
+    void OnHeroComido()
+    {
+        state = states.COMIDO;
+    }
+    void OnHeroDie()
+    {
+        state = states.DEAD;
+        Invoke("Restart", 4);
+    }
+    void Restart()
+    {
+        if (gameOver) return;
+        Utils.RemoveAllChildsIn(container);
+        character.Idle();
+        state = states.PLAYING;
+    }
+    void OnLevelComplete()
+    {
+        Utils.RemoveAllChildsIn(container);
+        state = states.READY;
+    }
     public void Run()
     {
+        if (state == states.DEAD) return;
+        if (state == states.COMIDO) return;
         speed += 0.6f;
     }
-	void Update () {
+    void Update()
+    {
+        if (state == states.READY)
+        {
+            if (speed > 0) speed -= Time.deltaTime;
+            if (speed < 0) speed = 0;
+        } else
+        if (state == states.DEAD || state == states.COMIDO)
+        {
+            if (speed > 0) speed -= Time.deltaTime;
+            if (speed < 0) speed = 0;
+        }
         if (speed > 0) speed -= Time.deltaTime * desaceleration;
         if (speed < 0) speed = 0;
         else if (speed > MAX_SPEED) speed = MAX_SPEED;
 
-        character.SetSpeed(speed);       
+        character.SetSpeed(speed);
 
         foreach (Scrolleable sc in scrolleables)
             sc.Move(speed);
@@ -40,7 +99,7 @@ public class Game : MonoBehaviour {
         foreach (Obstacle sc in obstacles)
             sc.Move(speed / speedInFloor);
 
-        distance += speed/10;
+        distance += speed / 10;
 
         if (distance > distanceToEnemy)
         {
@@ -48,7 +107,7 @@ public class Game : MonoBehaviour {
             AddEnemies();
         }
 
-	}
+    }
     void AddEnemies()
     {
         Enemy enemyNew = Instantiate(enemy);
@@ -58,4 +117,5 @@ public class Game : MonoBehaviour {
             right = true;
         enemyNew.Init(this, right);
     }
+
 }

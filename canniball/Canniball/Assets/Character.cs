@@ -10,15 +10,35 @@ public class Character : MonoBehaviour {
         WALKING,
         RUNNING,
         JUMPING,
-        DIE
+        DIE,
+        READY
     }
     private Animator anim;
     void Start()
     {
+        Events.OnHeroComido += OnHeroComido;
+        Events.OnLevelComplete += OnLevelComplete;
         anim = GetComponent<Animator>();
+    }
+    void OnDestroy()
+    {
+        Events.OnLevelComplete -= OnLevelComplete;
+        Events.OnHeroComido -= OnHeroComido;
+    }
+    void OnLevelComplete()
+    {
+        if (state == states.READY) return;
+        state = states.READY;
+        anim.Play("tryJump");
+    }
+    void OnHeroComido()
+    {
+        print("Comido");
+        anim.Play("dead");
     }
     public void SetSpeed(float speed)
     {
+        if (state == states.READY) return;
         if (state == states.DIE) return;
         if (state == states.JUMPING) return;
         if (speed == 0 ) Idle();
@@ -27,6 +47,7 @@ public class Character : MonoBehaviour {
     }
     public void Idle()
     {
+        if (state == states.READY) return;
         if (state == states.IDLE) return;
         state = states.IDLE;
         anim.Play("idle");
@@ -34,6 +55,7 @@ public class Character : MonoBehaviour {
     public void Die()
     {
         if (state == states.DIE) return;
+        Events.OnHeroDie();
         state = states.DIE;
         anim.Play("die");
     }
@@ -59,11 +81,13 @@ public class Character : MonoBehaviour {
     }
     void ResetJump()
     {
+        if (state == states.READY) return;
         if (state == states.DIE) return;
         state = states.IDLE;
     }
 
      void OnTriggerEnter2D(Collider2D other) {
+         if (state == states.JUMPING) return;
          Die();
     }
 }
