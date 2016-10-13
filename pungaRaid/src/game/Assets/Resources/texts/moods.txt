@@ -76,11 +76,6 @@ texts:
 					id:3,
 					text: "Ta piola para pungueá unos gringo y unos chino.",
 					price:250000
-				},
-				{
-					id:4,
-					text: "Mucho gil con teléfono regalado y yuta.",
-					price:350000
 				}
 			]
 		}

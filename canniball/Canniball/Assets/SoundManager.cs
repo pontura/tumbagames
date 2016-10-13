@@ -47,7 +47,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
         if (volume == 0) return;
-        audioSource.PlayOneShot(Resources.Load("sound/" + soundName) as AudioClip);
+        audioSource.PlayOneShot(Resources.Load("sonidos/" + soundName) as AudioClip);
 
     }
 }

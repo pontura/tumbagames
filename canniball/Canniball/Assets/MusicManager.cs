@@ -42,7 +42,7 @@ public class MusicManager : MonoBehaviour {
     {
         if (soundName == "") audioSource.Stop();
         if (audioSource.clip && audioSource.clip.name == soundName) return;
-        audioSource.clip = Resources.Load("music/" + soundName) as AudioClip;
+        audioSource.clip = Resources.Load("sonidos/" + soundName) as AudioClip;
         audioSource.Play();
 
         if (soundName == "victoryMusic" || soundName == "gameOverTemp")

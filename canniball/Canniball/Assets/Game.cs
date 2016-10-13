@@ -31,12 +31,28 @@ public class Game : MonoBehaviour {
     bool gameOver;
 
 	void Start () {
+        scrolleables[2].gameObject.SetActive(false);
         distanceToEnemy = 80;
         Events.OnHeroDie += OnHeroDie;
         Events.OnHeroComido += OnHeroComido;
         Events.GameOver += GameOver;
         Events.OnLevelComplete += OnLevelComplete;
+        Invoke("Init", 0.1f);
 	}
+    void Init()
+    {
+        if (gameOver) return;
+        Utils.RemoveAllChildsIn(container);
+        
+        if (Data.Instance.GetComponent<LevelsData>().level == 2)
+            scrolleables[2].gameObject.SetActive(true);
+
+        foreach (Obstacle sc in obstacles)
+            sc.Init();
+        Events.OnMusicChange("win_rugby3");
+        character.Restart();
+        state = states.PLAYING;
+    }
     void OnDestroy()
     {
         Events.OnHeroDie -= OnHeroDie;
@@ -47,6 +63,11 @@ public class Game : MonoBehaviour {
     void GameOver()
     {
         gameOver = true;
+        Invoke("MainMenu", 5);
+    }
+    void MainMenu()
+    {
+        Data.Instance.LoadScene("Intro");
     }
     void OnHeroComido()
     {
@@ -55,19 +76,21 @@ public class Game : MonoBehaviour {
     void OnHeroDie()
     {
         state = states.DEAD;
-        Invoke("Restart", 4);
+        Invoke("Init", 4);
     }
     void Restart()
     {
-        if (gameOver) return;
-        Utils.RemoveAllChildsIn(container);
-        character.Idle();
-        state = states.PLAYING;
+        Events.Restart();
+        gameOver = false;
+        distance = 0;
+        distanceToEnemy = 0;
+        Init();
     }
     void OnLevelComplete()
     {
         Utils.RemoveAllChildsIn(container);
         state = states.READY;
+        Invoke("Restart", 5);
     }
     public void Run()
     {

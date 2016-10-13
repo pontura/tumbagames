@@ -29,6 +29,8 @@ public class Character : MonoBehaviour {
     {
         if (state == states.READY) return;
         state = states.READY;
+        Events.OnMusicChange("");
+        Events.OnSoundFX("try");
         anim.Play("tryJump");
     }
     void OnHeroComido()
@@ -45,6 +47,11 @@ public class Character : MonoBehaviour {
         else if (speed > 4) Run();
         else if (speed > 0) Walk();
     }
+    public void Restart()
+    {
+        state = states.IDLE;
+        anim.Play("idle");
+    }
     public void Idle()
     {
         if (state == states.READY) return;
@@ -54,7 +61,11 @@ public class Character : MonoBehaviour {
     }
     public void Die()
     {
+        if (state == states.READY) return;
+        if (state == states.JUMPING) return;
         if (state == states.DIE) return;
+        Events.OnMusicChange("");
+        Events.OnSoundFX("clavado");
         Events.OnHeroDie();
         state = states.DIE;
         anim.Play("die");
@@ -73,11 +84,13 @@ public class Character : MonoBehaviour {
     }
     public void Jump()
     {
+        if (state == states.READY) return;
         if (state == states.DIE) return;
         if (state == states.JUMPING) return;
+        Events.OnSoundFX("jump");
         state = states.JUMPING;
         anim.Play("jump");
-        Invoke("ResetJump", 0.8f);
+        Invoke("ResetJump", 0.73f);
     }
     void ResetJump()
     {

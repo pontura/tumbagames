@@ -10,14 +10,22 @@ public class UI : MonoBehaviour {
     public float progress;
     public float totalLength = 1000;
     public Game game;
+    public GameObject gameOver;
 
 	void Start () {
         Events.OnHeroDie += OnHeroDie;
+        Events.Restart += Restart;
 	}
 	
 	void OnDestroy () {
         Events.OnHeroDie -= OnHeroDie;
+        Events.Restart -= Restart;
 	}
+    void Restart()
+    {
+        progress = 0;
+        progressBar.fillAmount = 0;
+    }
     void OnHeroDie()
     {
         vidas--;
@@ -31,6 +39,7 @@ public class UI : MonoBehaviour {
         if (vidas == 0)
         {
             Events.GameOver();
+            gameOver.SetActive(true);
         }
     }
     void Update()
