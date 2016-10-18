@@ -38,6 +38,7 @@ public class MoodPopup : MonoBehaviour {
         {
             priceField.text = Utils.IntToMoney(seccional.price);
             locker.SetActive(true);
+            Invoke("ComisarioOn", 0.5f);
         }
 
         title.text = seccional.title;
@@ -45,6 +46,11 @@ public class MoodPopup : MonoBehaviour {
         hiscore.text = Utils.IntToMoney(seccional.price);
 
         ranking.Init(moodID, seccional.id);
+        
+    }
+    void ComisarioOn()
+    {
+        panel.GetComponent<Animator>().Play("comisario", 0, 0);
     }
     public void Go()
     {
@@ -53,9 +59,7 @@ public class MoodPopup : MonoBehaviour {
     }
     public void Close()
     {
-        panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
-        panel.GetComponent<Animator>().Play("PopupOff", 0, 0);
-        Invoke("CloseOff", 0.2f);
+        CloseOff();
     }
     void CloseOff()
     {
@@ -63,6 +67,7 @@ public class MoodPopup : MonoBehaviour {
     }
     public void Unlock()
     {
+        print("unlok seccional.price: " + seccional.price);
         if (SocialManager.Instance.userHiscore.money < seccional.price)
         {
             Events.OnGenericPopup("No te hagas el vivo", "No tenés tantos belgranos para desbloquear esto");

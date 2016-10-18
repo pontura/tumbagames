@@ -11,22 +11,22 @@ public class Zones : MonoBehaviour {
         foreach (ZoneButton button in container.GetComponentsInChildren<ZoneButton>())
         {
             bool unlocked = false;
-            if(Data.Instance.moodsManager.IsMoodUnlocked( button.id))
-                unlocked = true;
+            //if(Data.Instance.moodsManager.IsMoodUnlocked( button.id))
+            //    unlocked = true;
 
-            string title = Data.Instance.moodsManager.data.GetDataById(button.id).title;
-            button.Init(unlocked, title, id, 0);
+            //string title = Data.Instance.moodsManager.data.GetDataById(button.id).title;
+          //  button.Init(unlocked, title, id, 0);
             id++;
         }
     }
-    public void Clicked(int id)
-    {
-        if (!Data.Instance.moodsManager.data.GetDataById(id).unlocked)
-        {
-            Events.OnGenericPopup("Ande vas?", "Primero tenés que desbloquearlo, gato");
-            return;
-        }
-        GetComponent<Seccionales>().Init(id);
-        Data.Instance.moodsManager.SetCurrentMood(id);
-    }
+    //public void Clicked(int id)
+    //{
+    //    if (!Data.Instance.moodsManager.data.GetDataById(id).unlocked)
+    //    {
+    //        Events.OnGenericPopup("Ande vas?", "Primero tenés que desbloquearlo, gato");
+    //        return;
+    //    }
+    //    GetComponent<Seccionales>().Init(id);
+    //    Data.Instance.moodsManager.SetCurrentMood(id);
+    //}
 }

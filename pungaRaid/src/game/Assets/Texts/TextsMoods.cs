@@ -39,7 +39,7 @@ public class TextsMoods {
                 seccional.name = content[a]["seccionales"][b]["text"];
                 seccional.price = int.Parse(content[a]["seccionales"][b]["price"]);
                 string unlockPref = "mood_" + (int)(a + 1) + "_" + (int)(b + 1);
-                if (PlayerPrefs.GetInt(unlockPref) > 0 || b == 0)
+                if (PlayerPrefs.GetInt(unlockPref) > 0 || (dataNew.id == 1 && b == 0))
                     seccional.unlocked = true;
 
                 seccionalID++;
