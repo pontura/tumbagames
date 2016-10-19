@@ -10,25 +10,19 @@ texts:
 					id:1,
 					title:"AV. RECAMIER",
 					text: "Mucho gato aspirasional que no yega a Patio Bullshit.",
-					price:150000
+					price:15000
 				},
 				{
 					id:2,
 					title:"BARRIO NORCOREANO",
 					text: "Con el mariscal todo bien, pero al resto pin pan pun.",
-					price:200000
+					price:15590
 				},
 				{
 					id:3,
 					title:"PUENTE ZABECA",
 					text: "Tené chetos y pibes que van aprendé a la UVA.",
-					price:250000
-				},
-				{
-					id:4,
-					title:"--",
-					text: "Mucho gil con teléfono regalado y yuta.",
-					price:350000
+					price:16299
 				}
 			]
 		},
@@ -41,19 +35,19 @@ texts:
 					id:1,
 					title:"PUERTO MAMERTO",
 					text: "Ta yeno de cheto.",
-					price:150000
+					price:20065
 				},
 				{
 					id:2,
 					title:"DILDO CENTRAL",
 					text: "E como un pene en el medio de la siudá con gile alrededón.",
-					price:200000
+					price:22098
 				},
 				{
 					id:3,
 					title:"PUERTO RETIRO",
 					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
-					price:250000
+					price:23299
 				}
 			]
 		},
@@ -65,17 +59,17 @@ texts:
 				{
 					id:1,
 					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:150000
+					price:20000
 				},
 				{
 					id:2,
 					text: "Mucho gil con teléfono regalado y yuta.",
-					price:200000
+					price:20000
 				},
 				{
 					id:3,
 					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:250000
+					price:20000
 				}
 			]
 		}
