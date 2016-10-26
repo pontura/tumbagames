@@ -32,12 +32,12 @@ namespace Facebook.Unity.Editor
         public EditorFacebookMockDialog()
         {
             this.modalRect = new Rect(10, 10, Screen.width - 20, Screen.height - 20);
-            Texture2D texture = new Texture2D(1, 1);
-            texture.SetPixel(0, 0, new Color(0.2f, 0.2f, 0.2f, 1.0f));
-            texture.Apply();
+           // Texture2D texture = new Texture2D(1, 1);
+           // texture.SetPixel(0, 0, new Color(0.2f, 0.2f, 0.2f, 1.0f));
+            //texture.Apply();
            // this.modalStyle = new GUIStyle(GUI.skin.window);
             this.modalStyle = new GUIStyle(); 
-            this.modalStyle.normal.background = texture;
+         //   this.modalStyle.normal.background = texture;
         }
 
         public delegate void OnComplete(string result);

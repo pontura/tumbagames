@@ -81,7 +81,7 @@ public class Hero : MonoBehaviour {
         oops.SetActive(false);
         state = states.DEAD;
         animator.SetBool(state.ToString(), true);
-        print("OnHeroDie");
+       // print("OnHeroDie");
         animator.Play("pungaDeath", 0, 0);
     }
     public void ResetState()

@@ -8,6 +8,7 @@ public class MoodPopup : MonoBehaviour {
     public Text desc;
     public Text hiscore;
     public Text priceField;
+    public GameObject hsicorePanel;
 
     public Image BannerContainer;
 
@@ -33,9 +34,20 @@ public class MoodPopup : MonoBehaviour {
         BannerContainer.sprite = Resources.Load("seccionales/" + moodID + "_" + seccional.id, typeof(Sprite)) as Sprite;
 
         if (seccional.unlocked)
+        {
             locker.SetActive(false);
+            int myHiscore = SocialManager.Instance.userHiscore.GetHiscore(moodID, seccional.id);
+            if (myHiscore > 0)
+            {
+                hsicorePanel.SetActive(true);
+                hiscore.text = Utils.IntToMoney(myHiscore);
+            }
+            else
+                hsicorePanel.SetActive(false);
+        }
         else
         {
+            hsicorePanel.SetActive(false);
             priceField.text = Utils.IntToMoney(seccional.price);
             locker.SetActive(true);
             Invoke("ComisarioOn", 0.5f);
@@ -43,7 +55,8 @@ public class MoodPopup : MonoBehaviour {
 
         title.text = seccional.title;
         desc.text = seccional.name;
-        hiscore.text = Utils.IntToMoney(seccional.price);
+
+       
 
         ranking.Init(moodID, seccional.id);
         

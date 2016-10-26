@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Obstacle : Enemy
 {
@@ -39,9 +40,14 @@ public class Obstacle : Enemy
     }
     private GameObject GetRandomGameObjects()
     {
+        List<GameObject> gameObjectsToAdd = new List<GameObject>();
         foreach (GameObject go in obstacles)
             if (go.GetComponent<ObjectFilter>().CanBeAdded(Data.Instance.moodsManager.currentMood, laneId))
-                return go;
+                gameObjectsToAdd.Add(go.gameObject);
+
+        if (gameObjectsToAdd.Count >0)
+            return gameObjectsToAdd[Random.Range(0, gameObjectsToAdd.Count)];
+
         return obstacles[Random.Range(0, obstacles.Length)];
     }
     override public void Enemy_Pooled()
