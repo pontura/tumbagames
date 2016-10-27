@@ -38,6 +38,7 @@ public class RuletaPopup : MonoBehaviour {
     }
     public void Map()
     {
-        Data.Instance.LoadLevel("02_Main");
+        GameObject.Destroy(gameObject);
+       // Data.Instance.LoadLevel("02_Main");
     }
 }

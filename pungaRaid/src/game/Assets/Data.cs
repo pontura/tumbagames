@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Data : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class Data : MonoBehaviour
     {
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
-        Application.LoadLevel(aLevelName);
+        SceneManager.LoadScene(aLevelName);
     }
     void Awake()
     {

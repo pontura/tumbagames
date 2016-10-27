@@ -8,9 +8,12 @@ public class Summary : MonoBehaviour {
     public GameObject ruletaContainer;
 
     public GameObject panel;
+
     public Text hiscoreStaticField;
+    public Text yourHiscoreField;
     public Text hiscoreField;
     public Text totalScore;
+
    // public RankingUI ranking;
    // public GameObject challengeButton;
 
@@ -23,6 +26,11 @@ public class Summary : MonoBehaviour {
     private int total_bar_to;
     private bool ready;
 
+    public ProfilePicture winnerProfilePicture;
+    public Text winnerScoreField;
+    public Text winnerNameField;
+    public GameObject buttons;
+
     public states state;
     public enum states
     {
@@ -33,10 +41,29 @@ public class Summary : MonoBehaviour {
 
     void Start()
     {
+        buttons.SetActive(false);
         panel.SetActive(false);
     }
     public void Init()
-    {
+    {        
+        yourHiscoreField.text = Utils.IntToMoney(SocialManager.Instance.userHiscore.GetCurrentHiscore());
+        Ranking.LevelData levelData = SocialManager.Instance.ranking.GetCurrentRanking();
+        if(levelData != null)
+        {
+            Ranking.RankingData data = levelData.data[0];
+            string winnerFacebookID = data.facebookID;
+            string winnerName = data.playerName;
+            int winnerScore = data.score;
+
+            winnerProfilePicture.setPicture(winnerFacebookID);
+            winnerNameField.text = winnerName;
+            winnerScoreField.text = Utils.IntToMoney((int)winnerScore);
+
+        }
+       
+
+       
+
         Events.OnMusicChange("Raticity");
         Events.OnPoolAllItemsInScene();
         //if (SocialManager.Instance.userData.logged)
@@ -57,12 +84,14 @@ public class Summary : MonoBehaviour {
         string scoreToMoney = Utils.IntToMoney((int)score);
         if (score > SocialManager.Instance.userHiscore.GetCurrentHiscore())
         {
+            // nuevo hiscore:
             SendHiscore((int)score);
-            hiscoreStaticField.text = "NUEVO RECORD! " + scoreToMoney;
+            hiscoreStaticField.text = scoreToMoney;
+            yourHiscoreField.text = scoreToMoney;
         }
         else
         {
-            hiscoreStaticField.text = "Hicites " + scoreToMoney;
+            hiscoreStaticField.text = scoreToMoney;
         }
         total_from = SocialManager.Instance.userHiscore.money;
         total_bar_from = SocialManager.Instance.userHiscore.barProgress;
@@ -100,7 +129,9 @@ public class Summary : MonoBehaviour {
                 total_bar_from = totalToWin;
             }
             totalScore.text = Utils.IntToMoney((int)total_from);
-            hiscoreField.text = Utils.IntToMoney((int)score);
+
+            if(score>0)
+                hiscoreField.text = Utils.IntToMoney((int)score);
                 
 
             bar.fillAmount = total_bar_from / totalToWin;
@@ -128,6 +159,7 @@ public class Summary : MonoBehaviour {
     }
     void CheckedIfShowRuleta()
     {
+        buttons.SetActive(true);
         if ((int)total_bar_from >= totalToWin)
             AddRuleta();
     }

@@ -6,6 +6,7 @@ public class LoadingPanel : MonoBehaviour {
     public GameObject panel;
 
 	void Start () {
+        Events.OnFade(true);
         Events.OnLoadingPanel += OnLoadingPanel;
         panel.SetActive(false);
 	}

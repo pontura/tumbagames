@@ -3,6 +3,7 @@ using System.Collections;
 
 public static class Events {
 
+    public static System.Action<bool> OnFade = delegate { };
     public static System.Action OnSettings = delegate { };
     public static System.Action OnLoginAdvisor = delegate { };
 

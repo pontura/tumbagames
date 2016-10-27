@@ -36,6 +36,10 @@ public class Ranking : MonoBehaviour {
         SocialEvents.OnNewHiscore -= OnNewHiscore;
         SocialEvents.OnRefreshRanking -= OnRefreshRanking;
     }
+    public LevelData GetCurrentRanking()
+    {
+        return GetRanking(Data.Instance.moodsManager.GetCurrentMoodID(), Data.Instance.moodsManager.GetCurrentSeccional().id);
+    }
     public LevelData GetRanking(int moodID, int seccionalID)
     {
         foreach (LevelData data in levels)

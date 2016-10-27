@@ -27,19 +27,21 @@ public class RankingMood : MonoBehaviour {
 
         if (SocialManager.Instance.ranking.GetRanking(moodID, seccionalID) == null) return;
 
-        loaded = true;        
-
+        loaded = true;
+        bool firstPlayer = true;
         foreach (Ranking.RankingData data in SocialManager.Instance.ranking.GetRanking(moodID, seccionalID).data)
         {
             RankingButton newButton = Instantiate(button);
                
             newButton.transform.SetParent(container.transform);
-            newButton.Init(data.facebookID, data.score, data.playerName);
+            newButton.Init(data.facebookID, data.score, data.playerName, firstPlayer);
 
             newButton.transform.localScale = Vector2.one;
 
             if (data.isYou)
                 newButton.IsYou();
+
+            firstPlayer = false;
         }
 	}
 }
