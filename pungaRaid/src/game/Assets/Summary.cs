@@ -48,7 +48,7 @@ public class Summary : MonoBehaviour {
     {        
         yourHiscoreField.text = Utils.IntToMoney(SocialManager.Instance.userHiscore.GetCurrentHiscore());
         Ranking.LevelData levelData = SocialManager.Instance.ranking.GetCurrentRanking();
-        if(levelData != null)
+        if(levelData != null && levelData.data.Count>0)
         {
             Ranking.RankingData data = levelData.data[0];
             string winnerFacebookID = data.facebookID;
@@ -58,9 +58,7 @@ public class Summary : MonoBehaviour {
             winnerProfilePicture.setPicture(winnerFacebookID);
             winnerNameField.text = winnerName;
             winnerScoreField.text = Utils.IntToMoney((int)winnerScore);
-
-        }
-       
+        }     
 
        
 
