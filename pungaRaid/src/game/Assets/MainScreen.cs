@@ -17,7 +17,7 @@ public class MainScreen : MonoBehaviour {
         }
         else
         {
-            ranking.gameObject.SetActive(false);
+            //ranking.gameObject.SetActive(false);
             connect.gameObject.SetActive(true);
         }
     }
