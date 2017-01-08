@@ -3,9 +3,9 @@ using System.Collections;
 
 public class CombosManager : MonoBehaviour {
 
-    private float distanceInCombo = 4;
+    private float distanceInCombo = 0.4f;
     private int MAX_COMBOS = 5;
-    private float lastDistance;
+    private float lastTime;
     public int comboID;
 
 	void Start () {
@@ -16,22 +16,32 @@ public class CombosManager : MonoBehaviour {
     {
         comboID = 0;
     }
+    public int GetMultiplier()
+    {
+        if (comboID < 4)
+            return 1;
+        else 
+            return 2 - comboID;
+    }
     void OnCombo (float distance)
     {
-        float diffDistance = distance - lastDistance;
+       // print("OnCombo time " + Time.time + "     lastTime: " + lastTime);
+        float diffTime = Time.time - lastTime;
 
-        if (diffDistance > distanceInCombo)
+        if (diffTime > distanceInCombo)
             ResetCombo();
-        else comboID++;
 
-        if (comboID > MAX_COMBOS) comboID = MAX_COMBOS;
+        comboID++;
+        int comboSound = comboID;
+        if (comboSound > MAX_COMBOS) comboSound = MAX_COMBOS;
 
-        lastDistance = distance;
-        
-        Events.OnSoundFX("CoinX" + comboID);
+        lastTime = Time.time;
+
+        Events.OnComboDone(comboID);
+        Events.OnSoundFX("CoinX" + comboSound);
 	}
     void ResetCombo()
     {
-        comboID = 1;
+        comboID = 0;
     }
 }

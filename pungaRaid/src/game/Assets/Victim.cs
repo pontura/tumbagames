@@ -35,7 +35,7 @@ public class Victim : Enemy {
         clothes.Restart();
 
         distance = Game.Instance.gameManager.distance;
-        speed = settings.speed;
+        speed = settings.speed/2;
         Vector3 scale = new Vector3(0.5f, 0.5f, 0.5f);
 
         if (speed < 0)

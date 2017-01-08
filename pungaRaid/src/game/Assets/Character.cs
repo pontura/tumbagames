@@ -176,7 +176,7 @@ public class Character : MonoBehaviour {
                 Coins coins = enemy.GetComponent<Coins>();                
 
                 int money = coins.money;
-                Events.OnCombo(enemy.transform.position.x);
+                Events.OnCombo(enemy.transform.localPosition.x);
                 Events.OnScoreUpdate(25);
                 Events.OnAddCoins(enemy.laneId, enemy.transform.localPosition.x, 1);
                 coins.Activate();
@@ -191,6 +191,8 @@ public class Character : MonoBehaviour {
                 Resorte asset = enemy.GetComponent<Resorte>();
                 if (powerupManager.type == PowerupManager.types.CHUMBO)
                     Jump("pungaJumpMegachumbo");
+                else if (Data.Instance.specialItems.type == SpecialItemsManager.types.TRANSPORT)
+                    Jump("pungaJumpSkate");
                 else
                     Jump("pungaJump2");
                 asset.Activate();

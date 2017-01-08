@@ -25,6 +25,7 @@ package
 				case 5: mc = new game5MC; break;
 				case 6: mc = new game6MC; break;
 				case 7: mc = new game7MC; break;
+				case 8: mc = new game8MC; break;
 			}
 			ph.addChild(mc);
 		}

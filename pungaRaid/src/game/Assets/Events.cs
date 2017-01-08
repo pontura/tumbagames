@@ -80,7 +80,7 @@ public static class Events {
     public static System.Action OnBarReady = delegate { };
 
     public static System.Action<float> OnCombo = delegate { };
-
+    public static System.Action<int> OnComboDone = delegate { };
 
     //zones:
     public static System.Action<int> OnUnlockZone = delegate { };

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>tumbagames_player</name>
+	<name>Tumba_Player</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -10,16 +10,17 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.adobe.flexbuilder.project.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
 	<linkedResources>
-		<link>
-			<name>[source path] arcade</name>
-			<type>2</type>
-			<location>D:/_projects/tumbagames/arcade</location>
-		</link>
 		<link>
 			<name>[source path] libs</name>
 			<type>2</type>
@@ -29,11 +30,6 @@
 			<name>[source path] src</name>
 			<type>2</type>
 			<location>D:/_projects/tumbagames/flashlib2/src</location>
-		</link>
-		<link>
-			<name>bin-release</name>
-			<type>2</type>
-			<location>C:/tumbagames</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
         {
             Pool();
         }
-        else if (pos.x < Game.Instance.gameManager.distance + 20)
+        else if (pos.x < Game.Instance.gameManager.distance + 25)
         {
             //isActivated = solo cuando entra dentro del area activa
             if (!isActivated)

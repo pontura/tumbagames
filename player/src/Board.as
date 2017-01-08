@@ -16,7 +16,8 @@ package
 {id:4, prefix:"SD", name:"METRO PUNGA", 				desc:"Help Punga Punga, a teenage outlaw from the third world get rid of the fucking middle class by punging their stuff in the subway trains."},
 {id:5, prefix:"PR", name:"PUNGA RAID", 				desc:"Pungueá todo lo que logres antes que te agarren los ratis."},
 {id:6, prefix:"MR", name:"(*) MAD ROLLERS TRASH", 	desc:""},
-{id:7, prefix:"", name:"(*) ELECTRIC GIGOLO", 		desc:""}
+{id:7, prefix:"EG", name:"(*) ELECTRIC GIGOLO", 		desc:""},
+{id:8, prefix:"WC", name:"WINTER-CANNIBALL", 		desc:"After a plane crash in the Andes the best rugby teams of all times created a fascinating and dynamic sport, so extreme only the bravest can play it. Are you hungry enough to play WINTER CANNIBALL?"}
 				
 		]
 		public function Board()

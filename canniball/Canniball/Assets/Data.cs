@@ -59,9 +59,13 @@ public class Data : MonoBehaviour
         GetComponent<MusicManager>().Init();
         GetComponent<SoundManager>().Init();
 
-//#if UNITY_ANDROID || UNITY_IPHONE
-       // Handheld.PlayFullScreenMovie(movPath, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFill);
-//#endif
 
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Application.Quit();
+        }
     }
 }

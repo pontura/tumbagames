@@ -20,7 +20,7 @@ public class AchievementPowerup : Achievement
     }
     void OnPowerUp(string type)
     {
-        Debug.Log("AchievementPowerup OnPowerUp: " + type.ToString() + " data: " + data);
+       // Debug.Log("AchievementPowerup OnPowerUp: " + type.ToString() + " data: " + data);
         if (type.ToString() == data)
         {
             Debug.Log("Achievement READY " + variable);

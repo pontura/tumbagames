@@ -62,6 +62,7 @@ package
 				case 5: url = "PR.exe"; break;
 				case 6: url = "MR.exe"; break;
 				case 7: url = "eg.bat"; break;
+				case 8: url = "WC.bat"; break;
 			}
 			fscommand("exec", url);
 			//navigateToURL(new URLRequest(url), "_self");

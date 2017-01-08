@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour {
     }
     public void OnScoreUpdate(int _score)
     {
-        score += _score * combosManager.comboID;
+        score += _score * combosManager.GetMultiplier();
         Events.OnRefreshScore(score);
     }
     void StartGame()
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour {
     }
     void OnChangeSpeed(float _speed, bool accelerating)
     {
-        speed *= _speed;
+        speed = DEFAULT_SPEED * _speed;
         if (!accelerating)
            realSpeed = speed;
     }
