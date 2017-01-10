@@ -12,7 +12,7 @@ public class Texts :MonoBehaviour {
     public TextsRuleta ruleta;
     public List<string> combos;
     public List<string> unlocked_levels;
-    
+    public List<string> cutscene_final;
 
     string json_tutorials_Url = "texts/tutorial";
     string json_ruleta_Url = "texts/ruleta";
@@ -37,6 +37,7 @@ public class Texts :MonoBehaviour {
         file = Resources.Load(json_genericTexts_Url) as TextAsset;
         fillSimpleTexts(combos, SimpleJSON.JSON.Parse(file.text)["combos"]);
         fillSimpleTexts(unlocked_levels, SimpleJSON.JSON.Parse(file.text)["unlocked_levels"]);
+        fillSimpleTexts(cutscene_final, SimpleJSON.JSON.Parse(file.text)["cutscene_final"]);
     }
     public void LoadDataMinigames(string json_data)
     {
