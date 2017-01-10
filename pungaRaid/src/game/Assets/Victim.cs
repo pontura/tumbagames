@@ -35,7 +35,7 @@ public class Victim : Enemy {
         clothes.Restart();
 
         distance = Game.Instance.gameManager.distance;
-        speed = settings.speed/2;
+        speed = settings.speed;
         Vector3 scale = new Vector3(0.5f, 0.5f, 0.5f);
 
         if (speed < 0)
@@ -52,7 +52,7 @@ public class Victim : Enemy {
         if (state == states.CRASHED) return;
         if (state == states.STOLEN) return;
 
-        pos.x -= speed;
+        pos.x -= (speed*50)*(Time.deltaTime);
         transform.localPosition = pos;
     }
     override public void Enemy_Pooled()

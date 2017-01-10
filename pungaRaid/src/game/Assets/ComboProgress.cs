@@ -45,7 +45,7 @@ public class ComboProgress : MonoBehaviour
     void Update()
     {
         if (comboID == 0) return;
-        if (Time.time > lastTimeCombo + 2)
+        if (Time.time > lastTimeCombo + 1)
             Reset();
     }
     void Reset()

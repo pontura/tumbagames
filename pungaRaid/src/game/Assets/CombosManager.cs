@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CombosManager : MonoBehaviour {
 
-    private float distanceInCombo = 0.4f;
+    private float distanceInCombo = 0.45f;
     private int MAX_COMBOS = 5;
     private float lastTime;
     public int comboID;
@@ -21,7 +21,7 @@ public class CombosManager : MonoBehaviour {
         if (comboID < 4)
             return 1;
         else 
-            return 2 - comboID;
+            return comboID -2;
     }
     void OnCombo (float distance)
     {
