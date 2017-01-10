@@ -7,6 +7,7 @@ public class CutsceneFinal : MonoBehaviour {
     public GameObject panel;
     private Animation anim;
     public Text field;
+    bool isReady;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class CutsceneFinal : MonoBehaviour {
     }
     void SetOn()
     {
+        if (isReady) return;
         panel.SetActive(true);
         anim.Play("on");
         field.text = Data.Instance.texts.GetRandomText(Data.Instance.texts.cutscene_final);        
@@ -39,6 +41,7 @@ public class CutsceneFinal : MonoBehaviour {
     }
     void OnPoolAllItemsInScene()
     {
+        isReady = true;
         panel.SetActive(false);
     }
 }

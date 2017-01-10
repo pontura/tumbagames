@@ -12,13 +12,13 @@ public class MainScreen : MonoBehaviour {
 
         if (SocialManager.Instance.userData.logged)
         {
-            ranking.gameObject.SetActive(true);
-            connect.gameObject.SetActive(false);
+          //  ranking.gameObject.SetActive(true);
+           // connect.gameObject.SetActive(false);
         }
         else
         {
             //ranking.gameObject.SetActive(false);
-            connect.gameObject.SetActive(true);
+           // connect.gameObject.SetActive(true);
         }
     }
 }
