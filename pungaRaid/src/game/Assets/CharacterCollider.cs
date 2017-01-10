@@ -95,7 +95,7 @@ public class CharacterCollider : MonoBehaviour {
             if (victim && !victim.loopStealing)
                 victim.StealLoop_Gil();
         } else
-        if (type == types.GUN && victim != null)
+        if (type == types.GUN && enemy != null)
         {
             enemy.Explote();
             return;

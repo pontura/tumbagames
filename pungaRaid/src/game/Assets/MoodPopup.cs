@@ -8,6 +8,7 @@ public class MoodPopup : MonoBehaviour {
     public Text desc;
     public Text hiscore;
     public Text priceField;
+    public Text unlocked_levels_field;
     public GameObject hsicorePanel;
 
     public Image BannerContainer;
@@ -36,7 +37,10 @@ public class MoodPopup : MonoBehaviour {
         if (seccional.unlocked)
         {
             locker.SetActive(false);
+
             int myHiscore = SocialManager.Instance.userHiscore.GetHiscore(moodID, seccional.id);
+            
+
             if (myHiscore > 0)
             {
                 hsicorePanel.SetActive(true);
@@ -47,6 +51,7 @@ public class MoodPopup : MonoBehaviour {
         }
         else
         {
+            unlocked_levels_field.text = Data.Instance.texts.GetRandomText(Data.Instance.texts.unlocked_levels);
             hsicorePanel.SetActive(false);
             priceField.text = Utils.IntToMoney(seccional.price);
             locker.SetActive(true);

@@ -14,6 +14,7 @@ public class ZoneButton : MonoBehaviour {
 
     public void Init(bool unlocked, Seccionales seccionales)
     {
+        GetComponent<Animator>().enabled = false;
         this.seccionales = seccionales;
         this.unlocked = unlocked;
         if (unlocked)
@@ -23,6 +24,7 @@ public class ZoneButton : MonoBehaviour {
     }
     public void Unlock()
     {
+        GetComponent<Animator>().enabled = true;
         iconLock.SetActive(false);
         iconUnlock.SetActive(true);
     }

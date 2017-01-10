@@ -64,11 +64,13 @@ public class PowerupManager : MonoBehaviour {
     }
     void Chumbo()
     {
+        Events.OnResetSpeed();
         type = types.CHUMBO;
         character.PowerupActivated(type);
     }
     void Gil()
     {
+        Events.OnResetSpeed();
         Events.OnSoundFXLoop("GilPowa");
         powerUpGil.SetActive(true);
         type = types.GIL;
@@ -76,6 +78,7 @@ public class PowerupManager : MonoBehaviour {
     }
     void Moto()
     {
+        Events.OnResetSpeed();
         type = types.MOTO;
         powerUp = Instantiate(powerUp1) as PowerUpOn;
         powerUp.transform.SetParent(powerUpsContainer.transform);

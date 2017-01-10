@@ -33,14 +33,18 @@ public class ComboProgress : MonoBehaviour
     void SetField()
     {
         if (comboID == 4)
-            label.text = "Bien!";
+            label.text = GetRandomText();
         else if (comboID == 5)
-            label.text = "Excelente!";
+            label.text = "SUPER " + GetRandomText();
         else if (comboID > 5)
         {
-            int newNum = 5 - comboID;
-            label.text = "x" + newNum + "!";
+            int newNum = comboID - 5;
+            label.text = "x" + newNum;
         }   
+    }
+    string GetRandomText()
+    {
+        return Data.Instance.texts.GetRandomText(Data.Instance.texts.combos);
     }
     void Update()
     {

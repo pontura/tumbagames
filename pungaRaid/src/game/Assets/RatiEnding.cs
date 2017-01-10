@@ -28,13 +28,13 @@ public class RatiEnding : MonoBehaviour {
     void ShootAgain()
     {
         Events.OnEndingShot();
-        if (transform.localScale.x < 0)
-        {
-            Vector3 rot = particles.gameObject.transform.localEulerAngles;
-            rot.x = 24;
-            rot.y = 45;
-            particles.gameObject.transform.localEulerAngles = rot;
-        }
+        //if (transform.localScale.x < 0)
+        //{
+        //    Vector3 rot = particles.gameObject.transform.localEulerAngles;
+        //    rot.x = 24;
+        //    rot.y = 45;
+        //    particles.gameObject.transform.localEulerAngles = rot;
+        //}
         particles.Play();
         Invoke("ShootAgain", 1);
         Events.OnSoundFX("Gunshot");
