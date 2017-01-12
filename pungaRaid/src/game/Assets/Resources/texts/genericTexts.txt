@@ -1,7 +1,7 @@
 ﻿{
 	intros:
 	[
-		"Juntá platita para desbloquear nuevas zonas de la C.A.B.A.",
+		"Juntá platita para sobornar a la yuta y desbloquear nuevos barrios para robarle al prójimo.",
 		"Cuidado con lo sorete: ¡REFALAN!",
 		"Para ARRIBA y para ABAJO te movés. ¡Haciendo TAP te zarpás y la RE DASHEÁS, papá!",
 		"La gorra de escudo no se mueve pero la gorra de palo te salta encima y te asesina. ",
