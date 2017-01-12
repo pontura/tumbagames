@@ -2,22 +2,22 @@
 texts:
 [
 	{	
-		text: "Sos punga y venis a hacer guita"
+		text: "SOS PUNGA PUNGA, UN ALEGRE Y DESPREOCUPADO CACO."
 	},
 	{	
-		text: "Haces guita de los caretitas estos"
+		text: "LES ROBÁS DINERO Y COSAS A LOS PANCHOS ESTOS."
 	},
 	{	
-		text: "Pero esquivalos si no queres ir preso..."
+		text: "PERO ESQUIVALOS SI NO QUERÉS IR EN CANA. PASALES POR AL LADO."
 	},
 	{	
-		text: "También esquivate a este..."
+		text: "TAMBIÉN ESQUIVATE AL ANTICHORRO. LOS METROCOPS TE MATAN."
 	},
 	{	
-		text: "Si te acorralan <TAP> y la zafas..."
+		text: "SI TE ACORRALAN LOS PANCHOS <TAP> Y FLASHÁS DASH."
 	},
 	{	
-		text: "Bien! Ya estás listo para jugar, gato!"
+		text: "LISTO, YA TENÉS TODOS LOS BERRETINES. ¡A JUGAR!"
 	}
 ]
 }
