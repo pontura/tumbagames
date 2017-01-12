@@ -1,4 +1,15 @@
 ﻿{
+	intros:
+	[
+		"Juntá platita para desbloquear nuevas zonas de la C.A.B.A.",
+		"Cuidado con lo sorete: ¡REFALAN!",
+		"Para ARRIBA y para ABAJO te movés. ¡Haciendo TAP te zarpás y la RE DASHEÁS, papá!",
+		"La gorra de escudo no se mueve pero la gorra de palo te salta encima y te asesina. ",
+		"Para punguear a un logi, pasale por al lado.",
+		"Haciendo DASH zarpás a los logis, pero con la gorra te re cabió. Los METROCOPS son a prueba de DASH.",
+		"Solo podrás matar METROCOPS (cobanis) usando el Mega-Chumbo™ o el Rati-Ciclo™. Sino mejor esquivalos.",
+		"El Gauchito Gil™ te hace aparecé una magia alrededó y EXTRA PUNGUEÁS a todo lo que entra en esa cosa mágica del Gauchito Gil™."		
+	]
 	combos:
 	[
 		"RE CACO!",

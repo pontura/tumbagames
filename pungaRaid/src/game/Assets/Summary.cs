@@ -158,7 +158,7 @@ public class Summary : MonoBehaviour {
     void CheckedIfShowRuleta()
     {
         buttons.SetActive(true);
-       // if ((int)total_bar_from >= totalToWin)
+        if ((int)total_bar_from >= totalToWin)
             Invoke("AddRuleta", 0.2f);
     }
     void AddRuleta()

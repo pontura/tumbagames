@@ -11,6 +11,7 @@ public class Texts : MonoBehaviour
 
     public List<string> tutorial;
     public TextsRuleta ruleta;
+    public List<string> intros;
     public List<string> combos;
     public List<string> unlocked_levels;
     public List<string> cutscene_final;
@@ -37,6 +38,7 @@ public class Texts : MonoBehaviour
 
         file = Resources.Load(json_genericTexts_Url) as TextAsset;
         fillSimpleTexts(combos, SimpleJSON.JSON.Parse(file.text)["combos"]);
+        fillSimpleTexts(intros, SimpleJSON.JSON.Parse(file.text)["intros"]);
         fillSimpleTexts(unlocked_levels, SimpleJSON.JSON.Parse(file.text)["unlocked_levels"]);
         fillSimpleTexts(cutscene_final, SimpleJSON.JSON.Parse(file.text)["cutscene_final"]);
     }

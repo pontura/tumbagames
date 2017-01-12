@@ -3,14 +3,13 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PreloadingGame : MonoBehaviour {
-
-    public string[] randomTexts;
+    
     public Text field;
 
 	void Start () {
         Invoke("StartGame", 5);
         Resources.UnloadUnusedAssets();
-        field.text = randomTexts[Random.Range(0, randomTexts.Length)];
+        field.text = Data.Instance.texts.GetRandomText(Data.Instance.texts.intros);
 	}
     void StartGame()
     {
