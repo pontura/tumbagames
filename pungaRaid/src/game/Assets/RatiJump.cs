@@ -18,6 +18,7 @@ public class RatiJump : Enemy
 
     override public void Enemy_Init(EnemySettings settings, int laneId)
     {
+        MoveHeadForward();
         moved = false;
         anim.Play("idle");
         heads.sprite = Data.Instance.enemiesManager.GetRandomHead();
@@ -48,8 +49,19 @@ public class RatiJump : Enemy
 
             Lane newLane = Game.Instance.gameManager.characterManager.lanes.all[characterLane];
             Game.Instance.gameManager.characterManager.lanes.changeEnemyLane(this, newLane);
-
+            Invoke("MoveHeadBackwards", 1f);
         }
-
+    }
+    void MoveHeadBackwards()
+    {
+        Vector3 headScale = heads.gameObject.transform.localScale;
+        headScale.x = -1;
+        heads.gameObject.transform.localScale = headScale;
+    }
+    void MoveHeadForward()
+    {
+        Vector3 headScale = heads.gameObject.transform.localScale;
+        headScale.x = 1;
+        heads.gameObject.transform.localScale = headScale;
     }
 }

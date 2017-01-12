@@ -36,8 +36,12 @@ public class Ruleta : MonoBehaviour {
     public float offsetY;
     public float repositionTo;
 
+    public Animator rulaAnimator;
+    private Animator anim;
+
 	public void Init () {
-        
+        rulaAnimator.Play("rula_idle");
+        anim = GetComponent<Animator>();
         offsetY = container.transform.localPosition.y;
 
         items.Clear();
@@ -69,6 +73,7 @@ public class Ruleta : MonoBehaviour {
     }
     public void RuletaOn()
     {
+        rulaAnimator.Play("rula_pull");
         InitialSpeed = UnityEngine.Random.Range(15, 50);
         speed = InitialSpeed;
         state = states.ROLLING;
@@ -129,12 +134,18 @@ public class Ruleta : MonoBehaviour {
     }
     void Ready()
     {
-        container.transform.localPosition = new Vector3(0, repositionTo, 0);
+        // container.transform.localPosition = new Vector3(0, repositionTo, 0);
+        rulaAnimator.Play("rula_idle");
+        Invoke("Done", 1);
         state = states.FINISH;
         GetComponent<RuletaPopup>().Open(items[selectedID]);
     }
+    void Done()
+    {
+        anim.Play("ruletaOff");
+    }
     void ResetPosition()
     {
-        container.transform.localPosition = new Vector3(0, offsetY, 0);
+        container.transform.localPosition = new Vector3(0, offsetY, 0);        
     }
 }

@@ -150,8 +150,11 @@ public class Lanes : MonoBehaviour {
     public void sortInLayersByLane(GameObject go, int laneId)
     {
          SpriteRenderer[] renderers = go.GetComponentsInChildren<SpriteRenderer>(true);
-         foreach (SpriteRenderer sr in renderers)
-             sr.sortingLayerName = "lane" + laneId;
+        foreach (SpriteRenderer sr in renderers)
+        {
+            if(sr.gameObject.name != "blueLine")
+                sr.sortingLayerName = "lane" + laneId;
+        }
     }
     public void changeEnemyLane(Enemy enemy, Lane lane)
     {

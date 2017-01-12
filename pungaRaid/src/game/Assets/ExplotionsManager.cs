@@ -14,6 +14,7 @@ public class ExplotionsManager : MonoBehaviour {
 
     void OnAddExplotion(int laneID, int distance)
     {
+        Events.OnSoundFX("Explosion");
         Lanes lanes = Game.Instance.GetComponent<LevelsManager>().lanes;
         EnemySettings settings = new EnemySettings();
         lanes.AddObjectToLane("ExplosionRatis", laneID, distance, settings);

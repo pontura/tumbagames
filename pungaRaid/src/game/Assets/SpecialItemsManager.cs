@@ -11,6 +11,10 @@ public class SpecialItemsManager : MonoBehaviour {
         TRANSPORT
     }
     public int id;
+
+    private types lastType;
+    private int last_id;
+
 	void Start () {
         Events.OnSetSpecialItem += OnSetSpecialItem;
 	}
@@ -25,13 +29,35 @@ public class SpecialItemsManager : MonoBehaviour {
             if (_id < 100)
                 type = types.CASCO;
             else
+            {
+                if(type == types.CASCO)
+                {
+                    lastType = type;
+                    last_id = id;
+                }
                 type = types.TRANSPORT;
+            }
             this.id = _id;
         } else
         {
+            if(lastType == types.CASCO)
+            {               
+                Invoke("ReloadLastSpecialItem", 0.1f);
+            }
             Events.OnResetSpeed();
             type = types.NONE;
             this.id = 0;
         }
+    }
+    void ReloadLastSpecialItem()
+    {
+        this.id = last_id;
+        type = lastType;
+
+        Events.OnSetSpecialItem(last_id, true);
+
+        lastType = types.NONE;
+        last_id = 0;
+        
     }
 }

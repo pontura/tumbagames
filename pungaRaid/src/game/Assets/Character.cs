@@ -228,11 +228,12 @@ public class Character : MonoBehaviour {
             }
             else if (powerupManager.type == PowerupManager.types.GIL || powerupManager.type == PowerupManager.types.CHUMBO)
             {
-                //Debug.Log("con powerup choco: " + powerupManager.type);
+                Debug.Log("con powerup choco: " + powerupManager.type);
                 Events.OnHeroPowerUpOff();
             }
             else if (Data.Instance.specialItems.type == SpecialItemsManager.types.CASCO || Data.Instance.specialItems.type == SpecialItemsManager.types.TRANSPORT)
             {
+                Debug.Log("OnSpecialItemOff");
                 Events.OnSpecialItemOff();
                 Events.OnSetSpecialItem(Data.Instance.specialItems.id, false);
             }
@@ -294,7 +295,7 @@ public class Character : MonoBehaviour {
     void OnSpecialItemOff()
     {
         Idle();
-        Debug.Log("OnSpecialItemOff");
+        Debug.Log("character OnSpecialItemOff");
         hero.ResetState();
         Events.OnHeroCrash();
         Invoke("ResetCrash", 0.9f);
