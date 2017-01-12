@@ -88,12 +88,12 @@ public class MoodPopup : MonoBehaviour {
         print("unlok seccional.price: " + seccional.price);
         if (SocialManager.Instance.userHiscore.money < seccional.price)
         {
-            Events.OnGenericPopup("No te hagas el vivo", "No tenés tantos belgranos para desbloquear esto");
+            Events.OnGenericPopup("No te hagas el vivo", "No tenés tantos belgranos para desbloquear este barrio");
         }
         else
         {
             SocialEvents.OnUpdateMoney(-seccional.price);
-            Events.OnGenericPopup("¡Listo Pibe!", "Ponete un texto gracioso...");
+            Events.OnGenericPopup("¡Listo Pibe!", "Gracias por la colaboración. Que disfrutes el nuevo barrio");
             Events.UnlockSeccional(moodID, seccional.id);
             CloseOff();
         }

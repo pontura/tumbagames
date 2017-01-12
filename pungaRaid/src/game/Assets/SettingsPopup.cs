@@ -11,6 +11,8 @@ public class SettingsPopup : MonoBehaviour {
     public GameObject panel;
     private GraphicRaycaster graphicRaycaster;
     private float timescale = 1;
+    public GameObject tutorialButton;
+    public Button connectButton;
 
 	void Start () {
      //   panel.transform.localScale = Data.Instance.screenManager.scale;
@@ -31,8 +33,15 @@ public class SettingsPopup : MonoBehaviour {
     }
     void OnSettings()
     {
-       // SetLoginField(FB.IsLoggedIn);
-        if(!Data.Instance.musicManager.disabled)
+        if(SocialManager.Instance.userData.facebookID != "")
+        {
+            connectButton.interactable = false;
+        }
+        if (Application.loadedLevelName == "04_Game")
+            tutorialButton.SetActive(false);
+
+        // SetLoginField(FB.IsLoggedIn);
+        if (!Data.Instance.musicManager.disabled)
           Events.OnMusicVolumeChanged(0.2f);
 
         graphicRaycaster = GetComponentInChildren<GraphicRaycaster>();
@@ -48,11 +57,17 @@ public class SettingsPopup : MonoBehaviour {
     public void Tutorial()
     {
         PlayerPrefs.SetString("tutorialReady", "false");
+        Data.Instance.moodsManager.currentSeccionalID = 1;
 
-        if(Application.loadedLevelName == "04_Game")
+        if (Application.loadedLevelName == "04_Game")
             Game.Instance.gameManager.RePlayTutorial();
         else
-            Data.Instance.LoadLevel("04_Game");
+        {            
+            Events.OnLoadCurrentAreas();
+            Data.Instance.LoadLevel("03_PreloadingGame");
+          //  Data.Instance.LoadLevel("04_Game");
+        }
+        Close();
     }
     public void FBLoginInOut()
     {
