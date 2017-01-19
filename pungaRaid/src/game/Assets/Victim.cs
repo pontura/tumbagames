@@ -57,6 +57,7 @@ public class Victim : Enemy {
     }
     override public void Enemy_Pooled()
     {
+        clothes.Restart();
         anim.SetBool("WALK", false);
         state = states.IDLE;
         loopStealing = false;
