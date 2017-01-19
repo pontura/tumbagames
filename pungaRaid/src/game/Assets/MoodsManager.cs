@@ -77,20 +77,30 @@ public class MoodsManager : MonoBehaviour {
     }
     public void UnlockSeccional(int moodID, int seccionalID)
     {
+        string seccional_name = "";
         foreach (TextsMoods.Data moodData in data.data)
         {
             if (moodData.id == moodID)
             {
                 foreach (Seccional seccional in moodData.seccional)
                 {
-                    if(seccional.id == seccionalID)
+                    if (seccional.id == seccionalID)
+                    {
                         seccional.unlocked = true;
+                        seccional_name = seccional.title;
+                    }
+                    
                 }
             }
         }
+        SetCurrentSeccional(seccionalID);
+        SetCurrentMood(moodID);
+
         string saver = "mood_" + moodID + "_" + seccionalID;
         print("UnlockSeccional saver: " + saver);
+        
         PlayerPrefs.SetInt(saver, 1);
+        StatsManager.TrackEvent("Unlock_" + seccional_name, moodID);
     }
     public GameObject GetCurrentMoodAsset()
     {
@@ -106,5 +116,18 @@ public class MoodsManager : MonoBehaviour {
         foreach (TextsMoods.Data moodData in data.data)
             if (moodData.id == id) return moodData.unlocked;
         return false;
+    }
+    public Seccional GetNextSeccionalToBuy()
+    {
+        int money = SocialManager.Instance.userHiscore.money;
+        foreach(TextsMoods.Data d in data.data)
+        {
+            foreach (Seccional seccional in d.seccional)
+            {
+                if (!seccional.unlocked && seccional.price < money)
+                    return seccional;
+            }
+        }
+        return null;
     }
 }

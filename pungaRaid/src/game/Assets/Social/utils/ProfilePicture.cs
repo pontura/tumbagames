@@ -4,17 +4,19 @@ using System.Collections;
 
 public class ProfilePicture : MonoBehaviour
 {
-    //public void Init(Hiscores.Hiscore data)
-    //{
-    //    setPicture(data.facebookID);
-    //}
+    private Coroutine coroutine;
+    
+    void OnDestroy()
+    {
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+    }
     public void SetDefaultPicture(Sprite defaultSprite)
     {
         GetComponent<Image>().sprite = defaultSprite;
     }
     public void setPicture(string facebookID)
     {
-       // if (!this.gameObject.activeInHierarchy) return;
         Texture2D texture = SocialManager.Instance.facebookFriends.GetProfilePicture(facebookID);
         if (texture != null)
         {
@@ -22,7 +24,7 @@ public class ProfilePicture : MonoBehaviour
         }
         else
         {
-            StartCoroutine(GetPicture(facebookID));
+            coroutine = StartCoroutine(GetPicture(facebookID));
         }
     }
     IEnumerator GetPicture(string facebookID)
@@ -47,6 +49,12 @@ public class ProfilePicture : MonoBehaviour
     }
     void SetPicture(Texture2D texture)
     {
-        GetComponent<Image>().sprite = Sprite.Create(texture, new Rect(0, 0, 128, 128), Vector2.zero);
+        try
+        {
+            GetComponent<Image>().sprite = Sprite.Create(texture, new Rect(0, 0, 128, 128), Vector2.zero);
+        } catch
+        {
+            Debug.Log("otro tamanio de imagen de FB");
+        }
     }
 }

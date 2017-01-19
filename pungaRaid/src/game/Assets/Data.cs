@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Data : MonoBehaviour
 {
     public GameData gameData;
-
+    public bool ResetGame;
     public bool isArcade;
 
     //malisimo
@@ -91,6 +91,9 @@ public class Data : MonoBehaviour
         GetComponent<MusicManager>().Init();
         GetComponent<SoundManager>().Init();
         moodsManager.Init();
+
+        if (ResetGame)
+            PlayerPrefs.DeleteAll();
 
 //#if UNITY_ANDROID || UNITY_IPHONE
        // Handheld.PlayFullScreenMovie(movPath, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFill);

@@ -22,7 +22,7 @@ texts:
 					id:3,
 					title:"PUENTE ZABECA",
 					text: "Tené chetos y pibes que van aprendé a la UVA.",
-					price:16299
+					price:19299
 				}
 			]
 		},
@@ -35,19 +35,19 @@ texts:
 					id:1,
 					title:"PUERTO MAMERTO",
 					text: "Ta yeno de cheto.",
-					price:20065
+					price:30065
 				},
 				{
 					id:2,
 					title:"DILDO CENTRAL",
 					text: "E como un pene en el medio de la siudá con gile alrededón.",
-					price:22098
+					price:60098
 				},
 				{
 					id:3,
 					title:"PUERTO RETIRO",
 					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
-					price:23299
+					price:120299
 				}
 			]
 		},

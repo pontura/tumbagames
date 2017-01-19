@@ -8,30 +8,49 @@ public class ZoneButton : MonoBehaviour {
     public int moodID;
     public int seccionalID;
     public bool unlocked;
+    public bool canBePaid;
     public GameObject iconLock;
     public GameObject iconUnlock;
     private Seccionales seccionales;
 
-    public void Init(bool unlocked, Seccionales seccionales)
+    Animator anim;
+
+    void Awake()
     {
-        GetComponent<Animator>().enabled = false;
+        anim = GetComponent<Animator>();
+    }
+    void Start()
+    {
+        SetState();
+    }
+    public void Init(bool unlocked, Seccionales seccionales, bool canBePaid)
+    {
+        this.canBePaid = canBePaid;
         this.seccionales = seccionales;
         this.unlocked = unlocked;
+       
+        Invoke("SetState", 0.1f);
+    }
+    void SetState()
+    {
         if (unlocked)
             Unlock();
+        else if (canBePaid)
+            CanBePaid();
         else
             Lock();
     }
     public void Unlock()
     {
-        GetComponent<Animator>().enabled = true;
-        iconLock.SetActive(false);
-        iconUnlock.SetActive(true);
+        anim.Play("unlocked");
     }
-    public void Lock()
+    void Lock()
     {
-        iconLock.SetActive(true);
-        iconUnlock.SetActive(false);
+        anim.Play("off");
+    }
+    void CanBePaid()
+    {
+        anim.Play("on");
     }
     public void Clicked()
     {

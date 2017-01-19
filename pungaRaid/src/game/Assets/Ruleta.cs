@@ -20,6 +20,7 @@ public class Ruleta : MonoBehaviour {
     {
         public Color color;
         public int item;
+        public string ropa;
         public int zone;
         public string text;
     }
@@ -40,6 +41,7 @@ public class Ruleta : MonoBehaviour {
     private Animator anim;
 
 	public void Init () {
+        StatsManager.TrackEvent("Ruleta");
         rulaAnimator.Play("rula_idle");
         anim = GetComponent<Animator>();
         offsetY = container.transform.localPosition.y;
@@ -53,7 +55,8 @@ public class Ruleta : MonoBehaviour {
             item.item = data.item;
             item.zone = data.zone;
             item.text = data.text;
-            item.color = colors[id];
+            item.color = Color.white;
+            item.ropa = data.ropa;
             items.Add(item);
             id++;
         }

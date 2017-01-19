@@ -119,7 +119,7 @@ public class Summary : MonoBehaviour {
                 state = states.READY;
                 total_from = total_to;
                 score = 0;
-                CheckedIfShowRuleta();
+                CheckedIfCanBuy();
                 hiscoreField.text = "";
             }
             if (total_bar_from > totalToWin)
@@ -141,10 +141,12 @@ public class Summary : MonoBehaviour {
     }
     public void Restart()
     {
+        StatsManager.TrackEvent("Summary_Restart");
         Data.Instance.LoadLevel("04_Game");
     }
     public void Map()
     {
+        StatsManager.TrackEvent("Summary_toMap");
         Data.Instance.LoadLevel("02_Main");
     }
     public void LoginAdvisor()
@@ -155,10 +157,22 @@ public class Summary : MonoBehaviour {
     {
         Data.Instance.LoadLevel("08_ChallengesCreator");
     }
-    void CheckedIfShowRuleta()
+    void CheckedIfCanBuy()
+    {
+        Seccional newxtSeccionalToBuy = Data.Instance.moodsManager.GetNextSeccionalToBuy();
+
+        if (newxtSeccionalToBuy != null)
+        {
+            print("__________" + newxtSeccionalToBuy.name);
+            GetComponent<BuySignal>().Init(newxtSeccionalToBuy);
+        }
+        else
+            CheckedIfShowRuleta();
+    }
+    public void CheckedIfShowRuleta()
     {
         buttons.SetActive(true);
-        if ((int)total_bar_from >= totalToWin)
+        //if ((int)total_bar_from >= totalToWin)
             Invoke("AddRuleta", 0.2f);
     }
     void AddRuleta()

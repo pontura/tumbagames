@@ -21,10 +21,12 @@ public class LoginAdvisor : MonoBehaviour {
         panel.SetActive(true);
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn");
-        
+
+        StatsManager.TrackEvent("Register_advisor_open");
     }
     public void LoginToFacebook()
     {
+        StatsManager.TrackEvent("FB_Login_done");
         SocialManager.Instance.loginManager.OnFacebookLoginPressed();
        // SocialManager.Instance.loginManager.FBLogin();
         Data.Instance.LoadLevel("03_Connecting");

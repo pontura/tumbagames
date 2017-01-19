@@ -37,9 +37,12 @@ public class Seccionales : MonoBehaviour {
 
             unlocked = data.seccional[button.seccionalID-1].unlocked;
 
-         //   string title = data.seccional[button.seccionalID - 1].title;
+            int price = data.seccional[button.seccionalID - 1].price;
+            bool canBePaid = false;
+            if (price < SocialManager.Instance.userHiscore.money)
+                canBePaid = true;
 
-            button.Init(unlocked, this);            
+            button.Init(unlocked, this, canBePaid);            
         }
     }
     void OnDestroy()

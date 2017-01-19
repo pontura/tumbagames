@@ -2,19 +2,46 @@
 texts:
 [
 	{	
+		ropa:"",
 		zone:0,
 		item:1,
 		text: "+1 vida para la próxima carrera. Bancátela más con el casco deportivo."
 	},
 	{	
+		ropa:"",
 		zone:0,
 		item:2,
 		text: "+1 vida para la próxima carrera. Alto Viquingo, ehh!"
 	},
 	{	
+		ropa:"",
 		zone:0,
 		item:3,
 		text: "+1 vida para la próxima carrera. Un guerrero con armadura, gato."
+	},
+	{	
+		ropa:"Boca",
+		zone:0,
+		item:0,
+		text: "Jugate una partidita con la bostera si sos guapo"
+	},
+	{	
+		ropa:"River",
+		zone:0,
+		item:0,
+		text: "Jugate una partidita con la millonaria si te la bancas..."
+	},
+	{	
+		ropa:"Arsenal",
+		zone:0,
+		item:0,
+		text: "Jugate una partidita con la de arsenal si te la bancas..."
+	},
+	{	
+		ropa:"Argentinos",
+		zone:0,
+		item:0,
+		text: "Jugate una partidita con la de argentinos si sos guapo"
 	}
 ]
 }

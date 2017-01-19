@@ -32,6 +32,9 @@ public static class Events {
     public static System.Action OnSpecialItemOff = delegate { };
     public static System.Action<bool> OnVulnerability = delegate { };
     public static System.Action<bool> OnOooops = delegate { };
+
+    public static System.Action<string> OnClothes = delegate { };
+    public static System.Action OnResetClothes = delegate { };
     
 
     //The game:

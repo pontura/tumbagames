@@ -15,6 +15,7 @@ public class TextsRuleta {
         public int zone;
         public int item;
         public string text;
+        public string ropa;
     }
 
     public void Init(JSONNode content)
@@ -24,6 +25,7 @@ public class TextsRuleta {
             Data dataNew = new Data();
             dataNew.zone = int.Parse(content[a]["zone"]);
             dataNew.item = int.Parse(content[a]["item"]);
+            dataNew.ropa = content[a]["ropa"];
             dataNew.text = content[a]["text"];
             data.Add(dataNew);
         }

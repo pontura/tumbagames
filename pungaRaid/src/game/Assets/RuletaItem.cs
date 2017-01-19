@@ -9,15 +9,20 @@ public class RuletaItem : MonoBehaviour {
     
     public void Init(Ruleta.Item item,  int height)
     {
-        if (item.item>0)
+        if (item.ropa != "" && item.ropa != null)
         {
-            image.sprite = Resources.Load("helmets/" + item.item, typeof(Sprite)) as Sprite;
+            print("ropa" + item.ropa);
+            image.sprite = Resources.Load("ropa_thumbs/" + item.ropa, typeof(Sprite)) as Sprite;
         }
         else if (item.zone > 0)
         {
             image.sprite = Resources.Load("zones/" + item.zone, typeof(Sprite)) as Sprite;
         }
-        GetComponent<Image>().color = item.color;
+        else if (item.item > 0)
+        {
+            image.sprite = Resources.Load("helmets/" + item.item, typeof(Sprite)) as Sprite;
+        }
+        GetComponent<Image>().color = Color.white;  //item.color;
         GetComponent<LayoutElement>().minHeight = height;
     }
 }

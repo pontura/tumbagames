@@ -17,6 +17,10 @@ public class RuletaPopup : MonoBehaviour {
 
         Data.Instance.moodsManager.UnlockMood(2);
 
+        if (item.ropa != "" && item.ropa != null)
+        {
+            icon.sprite = Resources.Load("ropa_thumbs/" + item.ropa, typeof(Sprite)) as Sprite;
+        } else
         if (item.item > 0)
         {
             icon.sprite = Resources.Load("helmets/" + item.item, typeof(Sprite)) as Sprite;
@@ -28,8 +32,12 @@ public class RuletaPopup : MonoBehaviour {
         }
         Invoke("OpenDelay", 0.5f);
         desc.text = item.text;
-        if (item.item != 0)
+
+        if (item.ropa != "")
+            Events.OnClothes(item.ropa);
+        else if (item.item != 0)
             Events.OnSetSpecialItem(item.item, true);
+
 	}
     public void OpenDelay()
     {
