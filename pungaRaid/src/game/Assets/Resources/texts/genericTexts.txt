@@ -4,11 +4,15 @@
 		"Juntá platita para sobornar a la yuta y desbloquear nuevos barrios para robarle al prójimo.",
 		"Cuidado con lo sorete: ¡REFALAN!",
 		"Para ARRIBA y para ABAJO te movés. ¡Haciendo TAP te zarpás y la RE DASHEÁS, papá!",
+		"Cada vez que llenás la barra de PUNGA TIMBA™ te aparece una tragamonedas y te da un premio.",
+		"Si te ganás un casco en PUNGA TIMBA™ en el próximo partido tenés +1vida.",
 		"La gorra de escudo no se mueve pero la gorra de palo te salta encima y te asesina. ",
 		"Para punguear a un logi, pasale por al lado.",
 		"Haciendo DASH zarpás a los logis, pero con la gorra te re cabió. Los METROCOPS son a prueba de DASH.",
-		"Solo podrás matar METROCOPS (cobanis) usando el Mega-Chumbo™ o el Rati-Ciclo™. Sino mejor esquivalos.",
-		"El Gauchito Gil™ te hace aparecé una magia alrededó y EXTRA PUNGUEÁS a todo lo que entra en esa cosa mágica del Gauchito Gil™."		
+		"Las alcantarillas te hacen saltar. Pisalas.",
+		"Si DASHEÁS a cualquier RADIOPUNK™ le birlás el skate. El skate te da +1 vida y +velocidad",
+		"Solo podrás matar METROCOPS (cobanis) usando el MEGA-CHUMBO™ o el RATI-CICLO™. Sino mejor esquivalos.",
+		"El GAUCHITO GIL™ te hace aparecé una magia alrededó y EXTRA PUNGUEÁS a todo lo que entra en esa cosa mágica del GAUCHITO GIL™."		
 	]
 	combos:
 	[
