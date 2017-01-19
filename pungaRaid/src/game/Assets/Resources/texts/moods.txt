@@ -16,13 +16,13 @@ texts:
 					id:2,
 					title:"BARRIO NORCOREANO",
 					text: "Con el mariscal todo bien, pero al resto pin pan pun.",
-					price:40525
+					price:21525
 				},
 				{
 					id:3,
 					title:"PUENTE ZABECA",
 					text: "Tené chetos y pibes que van aprendé a la UVA.",
-					price:80315
+					price:61475
 				}
 			]
 		},
@@ -47,7 +47,7 @@ texts:
 					id:3,
 					title:"PUERTO RETIRO",
 					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
-					price:275000
+					price:175000
 				}
 			]
 		},

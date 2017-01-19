@@ -5,19 +5,19 @@ texts:
 		ropa:"",
 		zone:0,
 		item:1,
-		text: "+1 vida para la próxima carrera. Bancátela más con el casco deportivo."
+		text: "+1 aguante para la próxima carrera. Bancátela más con el casco deportivo."
 	},
 	{	
 		ropa:"",
 		zone:0,
 		item:2,
-		text: "+1 vida para la próxima carrera. Alto Viquingo, ehh!"
+		text: "+1 huevos para la próxima carrera. Alto Viquingo, ehh!"
 	},
 	{	
 		ropa:"",
 		zone:0,
 		item:3,
-		text: "+1 vida para la próxima carrera. Un guerrero con armadura, gato."
+		text: "+1 aguante para la próxima carrera. Un guerrero con armadura, gato."
 	},
 	{	
 		ropa:"Boca",
@@ -35,13 +35,13 @@ texts:
 		ropa:"Arsenal",
 		zone:0,
 		item:0,
-		text: "Jugate una partidita con la de arsenal si te la bancas..."
+		text: "Jugate una partidita con la de Arsenal si te la bancas..."
 	},
 	{	
 		ropa:"Argentinos",
 		zone:0,
 		item:0,
-		text: "Jugate una partidita con la de argentinos si sos guapo"
+		text: "¡Aguante Argentinos Juniors carajo!"
 	}
 ]
 }
