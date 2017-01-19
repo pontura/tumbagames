@@ -16,13 +16,13 @@ texts:
 					id:2,
 					title:"BARRIO NORCOREANO",
 					text: "Con el mariscal todo bien, pero al resto pin pan pun.",
-					price:15590
+					price:40525
 				},
 				{
 					id:3,
 					title:"PUENTE ZABECA",
 					text: "Tené chetos y pibes que van aprendé a la UVA.",
-					price:19299
+					price:80315
 				}
 			]
 		},
@@ -35,19 +35,19 @@ texts:
 					id:1,
 					title:"PUERTO MAMERTO",
 					text: "Ta yeno de cheto.",
-					price:30065
+					price:350405
 				},
 				{
 					id:2,
 					title:"DILDO CENTRAL",
 					text: "E como un pene en el medio de la siudá con gile alrededón.",
-					price:60098
+					price:620775
 				},
 				{
 					id:3,
 					title:"PUERTO RETIRO",
 					text: "Sarpada en metrocops, pero con mucho pagüeráx.",
-					price:120299
+					price:275000
 				}
 			]
 		},
