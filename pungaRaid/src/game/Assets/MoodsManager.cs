@@ -122,10 +122,15 @@ public class MoodsManager : MonoBehaviour {
         int money = SocialManager.Instance.userHiscore.money;
         foreach(TextsMoods.Data d in data.data)
         {
+            int id=0;
             foreach (Seccional seccional in d.seccional)
             {
-                if (!seccional.unlocked && seccional.price < money)
+                if (seccional.unlocked == false && seccional.price < money)
+                {
+                    print("SI: " + seccional.title + "seccional "+ seccional.price + " id: " + id);
                     return seccional;
+                }
+                id++;
             }
         }
         return null;

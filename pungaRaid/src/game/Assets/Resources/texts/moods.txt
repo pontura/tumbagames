@@ -50,28 +50,6 @@ texts:
 					price:175000
 				}
 			]
-		},
-		{	
-			id:3,
-			title:"LA BOSTA",
-			seccionales:
-			[
-				{
-					id:1,
-					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:20000
-				},
-				{
-					id:2,
-					text: "Mucho gil con teléfono regalado y yuta.",
-					price:20000
-				},
-				{
-					id:3,
-					text: "Ta piola para pungueá unos gringo y unos chino.",
-					price:20000
-				}
-			]
 		}
 	]
 }

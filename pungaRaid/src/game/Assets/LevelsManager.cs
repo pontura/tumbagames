@@ -8,11 +8,13 @@ public class LevelsManager : MonoBehaviour {
     private float startingGroupDistance;
     public Lanes lanes;
     public Level StartingLevel;
+    public AreaSet MiamiAreaSet;
 
     public Level activeLevel;
     private int nextLevelDistance;
     private int offset = 40;
     private AreaSet areaSet;
+    public bool inMiamiMode;
 
     private float distanceToNextSeccional = 500;
    
@@ -20,6 +22,22 @@ public class LevelsManager : MonoBehaviour {
     {
         NewAreaSet();
         CheckForNewLevel(0);
+        Events.OnPowerUp += OnPowerUp;
+        Events.OnHeroPowerUpOff += OnHeroPowerUpOff;
+    }
+    void OnDestroy()
+    {
+        Events.OnPowerUp -= OnPowerUp;
+        Events.OnHeroPowerUpOff -= OnHeroPowerUpOff;
+    }
+    void OnHeroPowerUpOff()
+    {
+        inMiamiMode = false;
+    }
+    void OnPowerUp(PowerupManager.types type)
+    {
+        if (type == PowerupManager.types.RICKYFORT)
+            inMiamiMode = true;
     }
     public void NewAreaSet()
     {
@@ -33,10 +51,15 @@ public class LevelsManager : MonoBehaviour {
     }
     public void CheckForNewLevel(float distance)
     {
-        distance += offset;    
-
+        distance += offset;
+        
         if (distance < nextLevelDistance) return;
 
+        if (inMiamiMode)
+        {
+            areaSet = MiamiAreaSet;
+            startingGroupDistance = distance;
+        } else
         if (distance > distanceToNextSeccional)
         {
             NewSeccionalAreaSet();
@@ -48,7 +71,6 @@ public class LevelsManager : MonoBehaviour {
             NewAreaSet();
         }
 
-        //int rand = UnityEngine.Random.Range(0, areaSet.levels.Length);
         activeLevel = areaSet.GetLevel();
 
      //   Debug.Log("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);

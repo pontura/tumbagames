@@ -33,6 +33,10 @@ public class PowerupSign : MonoBehaviour {
                 title.text = "RATI-CICLO";
                 desc.text = "APLASTA COBANIS Y CIVILES + 1 AGUANTE";
                 break;
+            case PowerupManager.types.RICKYFORT:
+                title.text = "MIAMI MODE";
+                desc.text = "CON RICKY TODO FULL GUITA!";
+                break;
         }
         Time.timeScale = 0.05f;
     }

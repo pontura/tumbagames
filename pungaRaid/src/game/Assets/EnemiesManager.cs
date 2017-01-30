@@ -52,6 +52,11 @@ public class EnemiesManager : MonoBehaviour {
     public Enemy GetEnemy(string type)
     {
         Enemy enemy = GetPooled(type);
+        if(enemy == null)
+        {
+            Debug.Log("__________No hay más " + type);
+            return null;
+        }
         enemy.gameObject.SetActive(true);
         enemy.Init(new EnemySettings(), 0);
         pool.Remove(enemy);
@@ -171,8 +176,7 @@ public class EnemiesManager : MonoBehaviour {
                 }                
             }
         }
-        print("FALTAN:  " + type + " -  pool.Count : " +  pool.Count);
-        return pool[0];
+        return null;
     }
     public void Pool(Enemy enemy)
     {  

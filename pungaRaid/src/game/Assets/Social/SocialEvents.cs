@@ -21,6 +21,7 @@ public static class SocialEvents {
 
     public static System.Action OnFacebookLogout = delegate { };
     public static System.Action<string, string, string> OnFacebookLogin = delegate { };
+    public static System.Action OnFacebookLoginError = delegate { };
     public static System.Action<string, string> AddFacebookFriend = delegate { }; 
 
     //Hiscores:

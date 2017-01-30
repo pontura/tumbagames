@@ -33,6 +33,7 @@ public class LoginManager : MonoBehaviour {
             Debug.Log ("FB is logged in");
             FB.API("/me?fields=name", HttpMethod.GET, LogInDone);           
         } else {
+            SocialEvents.OnFacebookLoginError();
             Debug.Log ("FB is not logged in");
         }
     }
@@ -49,7 +50,7 @@ public class LoginManager : MonoBehaviour {
     {
         if (FB.IsLoggedIn) return;
 
-        List<string> permissions = new List<string>() { "public_profile", "email", "user_friends" };
+        List<string> permissions = new List<string>() { "user_friends" };
 
         FB.LogInWithReadPermissions (permissions, AuthCallBack);
     }
@@ -57,6 +58,7 @@ public class LoginManager : MonoBehaviour {
     void AuthCallBack(IResult result)
     {
         if (result.Error != null) {
+            SocialEvents.OnFacebookLoginError();
             Debug.Log (result.Error);
         } else {
             SetInit();
@@ -64,6 +66,11 @@ public class LoginManager : MonoBehaviour {
     }
     void LogInDone(IResult result)
     {
+        if(result.Error != null)
+        {
+            SocialEvents.OnFacebookLoginError();
+            return;
+        }
         facebookID = result.ResultDictionary["id"].ToString();
         username = result.ResultDictionary["name"].ToString();
         Debug.Log("facebookID: " + facebookID + " username:" + username  );

@@ -21,7 +21,8 @@ public class PowerupManager : MonoBehaviour {
         NONE,
         MOTO,
         CHUMBO,
-        GIL
+        GIL,
+        RICKYFORT
     }
     void Start()
     {
@@ -51,6 +52,7 @@ public class PowerupManager : MonoBehaviour {
             case types.MOTO: Moto(); break;
             case types.CHUMBO: Chumbo(); break;
             case types.GIL: Gil(); break;
+            case types.RICKYFORT: RickyFort(); break;
         }
         PlayParticles();
     }
@@ -61,6 +63,16 @@ public class PowerupManager : MonoBehaviour {
         {
             ps.Play();
         }
+    }
+    void RickyFort()
+    {
+        Events.OnResetSpeed();
+        //le da un skate:
+        Events.OnSetSpecialItem(101, true);
+        Events.OnChangeSpeed(1.4f, true);
+        /////////////////
+       //
+        type = types.RICKYFORT;
     }
     void Chumbo()
     {
@@ -102,6 +114,10 @@ public class PowerupManager : MonoBehaviour {
 
         Events.OnSoundFX("PowerUpOff");
 
+        if(type == types.RICKYFORT)
+        {
+            Events.OnSetSpecialItem(101, false);
+        }
         if (type == types.MOTO)
         {
             Events.OnSoundFXLoop("");

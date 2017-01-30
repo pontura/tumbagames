@@ -24,12 +24,21 @@ public class Enemy : MonoBehaviour {
             shadow.transform.localPosition = Vector3.zero;
         }
         Events.OnHeroDie += OnHeroDie;
+        Events.OnPowerUp += OnPowerUp;
     }
     void OnDestroy()
     {
         Events.OnHeroDie -= OnHeroDie;
+        Events.OnPowerUp -= OnPowerUp;
     }
-   
+    void OnPowerUp(PowerupManager.types type)
+    {
+        if (type != PowerupManager.types.RICKYFORT) return;
+        if (isPooled) return;
+        if (GetComponent<Coins>() != null) return;
+        Game.Instance.gameManager.characterManager.lanes.AddObjectToLane("Coin", laneId, (int)transform.localPosition.x, null);
+        Pool();
+    }
     public void Init(EnemySettings settings, int laneId)
     {
         if (shadow != null) shadow.SetActive(true);

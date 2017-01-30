@@ -161,9 +161,9 @@ public class Summary : MonoBehaviour {
     {
         Seccional newxtSeccionalToBuy = Data.Instance.moodsManager.GetNextSeccionalToBuy();
 
-        if (newxtSeccionalToBuy != null)
+        if (newxtSeccionalToBuy != null && newxtSeccionalToBuy.price > 0)
         {
-            print("__________" + newxtSeccionalToBuy.name);
+            print(newxtSeccionalToBuy + " newxtSeccionalToBuy __________" + newxtSeccionalToBuy.title);
             GetComponent<BuySignal>().Init(newxtSeccionalToBuy);
         }
         else

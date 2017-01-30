@@ -12,6 +12,8 @@ public class PowerupUI : MonoBehaviour {
     public GameObject bar;
     private float percent;
     public bool isOn;
+    private int TimeToReset;
+    public GameObject PowerUpRickyFort_UI;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class PowerupUI : MonoBehaviour {
         panel.SetActive(false);
         Events.OnBarInit += OnBarInit;
         Events.OnHeroPowerUpOff += OnHeroPowerUpOff;
+        PowerUpRickyFort_UI.SetActive(false);
     }
     void OnDestroy()
     {
@@ -29,9 +32,11 @@ public class PowerupUI : MonoBehaviour {
     {
         switch (type)
         {
-            case PowerupManager.types.CHUMBO: title.text = "MEGA-CHUMBO"; break;
-            case PowerupManager.types.GIL: title.text = "GIL-POWA"; break;
-            case PowerupManager.types.MOTO: title.text = "RATI-CICLO"; break;
+            case PowerupManager.types.CHUMBO: title.text = "MEGA-CHUMBO"; TimeToReset = 10; break;
+            case PowerupManager.types.GIL: title.text = "GIL-POWA"; TimeToReset = 10; break;
+            case PowerupManager.types.MOTO: title.text = "RATI-CICLO"; TimeToReset = 10; break;
+            case PowerupManager.types.RICKYFORT:
+                PowerUpRickyFort_UI.SetActive(true); title.text = "MIAMI MODE"; TimeToReset = 14; break;
         }
         panel.SetActive(true);
         isOn = true;
@@ -46,7 +51,7 @@ public class PowerupUI : MonoBehaviour {
         if (Game.Instance.gameManager.state == GameManager.states.ENDING) return;
 
         OnSetBar();
-        percent -= Time.deltaTime/10;
+        percent -= Time.deltaTime/ TimeToReset;
         if (percent < 0)
             SetOff();
     }
@@ -60,6 +65,7 @@ public class PowerupUI : MonoBehaviour {
     {
         isOn = false;
         panel.SetActive(false);
+        PowerUpRickyFort_UI.SetActive(false);
     }
     void OnSetBar()
     {

@@ -33,7 +33,7 @@ public class RuletaPopup : MonoBehaviour {
         Invoke("OpenDelay", 0.5f);
         desc.text = item.text;
 
-        if (item.ropa != "")
+        if (item.ropa != "" && item.ropa != null)
             Events.OnClothes(item.ropa);
         else if (item.item != 0)
             Events.OnSetSpecialItem(item.item, true);
