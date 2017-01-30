@@ -88,8 +88,6 @@ public class LevelsManager : MonoBehaviour {
         else
             activeLevel = areaSet.GetLevel();
 
-        print("AreasToPowerUpID " + AreasToPowerUpID);
-
      //   Debug.Log("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);
         LoadLevelAssets(nextLevelDistance);
         

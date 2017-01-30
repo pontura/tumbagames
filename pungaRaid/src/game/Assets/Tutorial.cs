@@ -33,8 +33,6 @@ public class Tutorial : MonoBehaviour {
         simpleButtonTitle.text = title;
         Time.timeScale = 0;
 
-        print("direction" + direction);
-
         if (direction == SwipeDetector.directions.UP)
         {
             hand.gameObject.SetActive(true);
@@ -68,17 +66,20 @@ public class Tutorial : MonoBehaviour {
 	}
     void OnSwipe(SwipeDetector.directions dir)
     {
+        if (Game.Instance.gameManager.state != GameManager.states.TUTORIAL) return;
         Lanes lanes = Game.Instance.GetComponent<LevelsManager>().lanes;
         if (dir.ToString() == direction.ToString())
         {
             if (dir == SwipeDetector.directions.UP)
             {
+                if (lanes.laneActiveID != 2) return;
                 lanes.TryToChangeLane(true);
                 character.MoveUP();
                 hand.gameObject.SetActive(false);
             }
             else if (dir == SwipeDetector.directions.DOWN)
             {
+                if (lanes.laneActiveID != 3) return;
                 lanes.TryToChangeLane(false);
                 character.MoveDown();
                 hand.gameObject.SetActive(false);
