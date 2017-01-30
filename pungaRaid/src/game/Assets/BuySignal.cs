@@ -17,8 +17,8 @@ public class BuySignal : MonoBehaviour {
         panel.SetActive(true);
         int money = SocialManager.Instance.userHiscore.money;
         field.text = Utils.IntToMoney(money) + " pesito... Es hora de ir ampliando el negocio... no, nene?... Que decí?... Te abrimo " + seccional.title + "? por $" + Utils.IntToMoney(seccional.price);
-
-        moodID = Data.Instance.moodsManager.GetCurrentMoodID();
+        
+        this.moodID = seccional.moodID;
 
         this.seccional = seccional;
 
@@ -26,7 +26,7 @@ public class BuySignal : MonoBehaviour {
     }	
 	public void Sobornar()
     {
-        print("________mood     " + moodID);
+        print("Sobornar    seccional:  " + seccional.id + " mood: " + moodID);
         SocialEvents.OnUpdateMoney(-seccional.price);
         Events.OnGenericPopup("¡Listo Pibe!", "Gracias por la colaboración. Que disfrutes " + seccional.title);
         Events.UnlockSeccional(moodID, seccional.id);

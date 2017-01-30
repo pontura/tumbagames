@@ -10,5 +10,6 @@ public class Seccional  {
     public int id;
     public bool unlocked;
     public int price;
+    public int moodID;
 
 }

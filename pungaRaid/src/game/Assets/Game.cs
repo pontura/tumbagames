@@ -89,4 +89,15 @@ public class Game : MonoBehaviour {
             Time.timeScale = 1;
         }
     }
+    int lastPowerUPID = 0;
+    public int GetNewPowerUpID()
+    {
+        int id = Random.Range(1, 5);
+        if (id != lastPowerUPID)
+        {
+            lastPowerUPID = id;
+            return id;
+        }            
+        else return GetNewPowerUpID();
+    }
 }

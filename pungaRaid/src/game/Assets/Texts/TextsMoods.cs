@@ -43,6 +43,7 @@ public class TextsMoods {
                     seccional.unlocked = true;
 
                 seccionalID++;
+                seccional.moodID = dataNew.id;
                 dataNew.seccional.Add(seccional);
             }
             data.Add(dataNew);

@@ -9,17 +9,21 @@ public class LevelsManager : MonoBehaviour {
     public Lanes lanes;
     public Level StartingLevel;
     public AreaSet MiamiAreaSet;
+    public Level[] PowerUpLevels;
 
     public Level activeLevel;
     private int nextLevelDistance;
     private int offset = 40;
     private AreaSet areaSet;
     public bool inMiamiMode;
+    private int AreasToPowerUp = 7;
+    public int AreasToPowerUpID;
 
     private float distanceToNextSeccional = 500;
    
     public void Init()
     {
+        AreasToPowerUp += UnityEngine.Random.Range(0, 3);
         NewAreaSet();
         CheckForNewLevel(0);
         Events.OnPowerUp += OnPowerUp;
@@ -44,6 +48,12 @@ public class LevelsManager : MonoBehaviour {
         areaSet = Data.Instance.areasManager.GetActiveAreaSet();
         startingGroupDistance += areaSet.distance;
     }
+    Level AddPowerUpArea()
+    {
+        AreasToPowerUp += UnityEngine.Random.Range(4, 10);
+        AreasToPowerUpID = 0;
+        return PowerUpLevels[UnityEngine.Random.Range(0, PowerUpLevels.Length)];
+    }
     public void NewSeccionalAreaSet()
     {
         areaSet = Data.Instance.areasManager.GetNextSeccionalAreaSet();
@@ -54,7 +64,7 @@ public class LevelsManager : MonoBehaviour {
         distance += offset;
         
         if (distance < nextLevelDistance) return;
-
+        
         if (inMiamiMode)
         {
             areaSet = MiamiAreaSet;
@@ -67,11 +77,18 @@ public class LevelsManager : MonoBehaviour {
         }
         else if (distance > startingGroupDistance)
         {
+           
             //  print("_____________ cambia _____________distance: " + distance + " startingGroupDistance " + startingGroupDistance);
             NewAreaSet();
         }
 
-        activeLevel = areaSet.GetLevel();
+        AreasToPowerUpID++;
+        if (AreasToPowerUpID == AreasToPowerUp)
+            activeLevel = AddPowerUpArea();
+        else
+            activeLevel = areaSet.GetLevel();
+
+        print("AreasToPowerUpID " + AreasToPowerUpID);
 
      //   Debug.Log("seccionalActiveID: " + Data.Instance.areasManager.seccionalActiveID + " " +  startingGroupDistance + "   areaSet " + areaSet + "  distance " + distance + "  activeLevel: " + activeLevel.name + "    areaSet.distance : " + areaSet.distance + "    activeLevel.length " + activeLevel.length);
         LoadLevelAssets(nextLevelDistance);
