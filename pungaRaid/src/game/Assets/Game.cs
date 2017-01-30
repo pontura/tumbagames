@@ -92,7 +92,12 @@ public class Game : MonoBehaviour {
     int lastPowerUPID = 0;
     public int GetNewPowerUpID()
     {
-        int id = Random.Range(1, 5);
+        int id = 0;
+        if(Data.Instance.moodsManager.GetCurrentMoodID() == 1)
+            id = Random.Range(1, 4);
+        else
+            id = Random.Range(1, 5);
+
         if (id != lastPowerUPID)
         {
             lastPowerUPID = id;
