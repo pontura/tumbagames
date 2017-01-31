@@ -36,7 +36,7 @@ public class PowerupUI : MonoBehaviour {
             case PowerupManager.types.GIL: title.text = "GIL-POWA"; TimeToReset = 10; break;
             case PowerupManager.types.MOTO: title.text = "RATI-CICLO"; TimeToReset = 10; break;
             case PowerupManager.types.RICKYFORT:
-                PowerUpRickyFort_UI.SetActive(true); title.text = "MIAMI MODE"; TimeToReset = 14; break;
+                PowerUpRickyFort_UI.SetActive(true); title.text = "MODO MIAMI"; TimeToReset = 14; break;
         }
         panel.SetActive(true);
         isOn = true;
