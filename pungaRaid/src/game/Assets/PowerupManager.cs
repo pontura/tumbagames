@@ -66,6 +66,7 @@ public class PowerupManager : MonoBehaviour {
     }
     void RickyFort()
     {
+        Events.OnMusicChange("miami");
         Events.OnResetSpeed();
         //le da un skate:
         Events.OnSetSpecialItem(101, true);
@@ -116,6 +117,7 @@ public class PowerupManager : MonoBehaviour {
 
         if(type == types.RICKYFORT)
         {
+            Events.OnMusicChange("Gameplay");
             Events.OnSetSpecialItem(101, false);
         }
         if (type == types.MOTO)
