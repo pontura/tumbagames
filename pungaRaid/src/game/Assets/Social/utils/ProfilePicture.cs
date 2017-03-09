@@ -24,6 +24,7 @@ public class ProfilePicture : MonoBehaviour
         }
         else
         {
+			print ("facebookID " + facebookID);
             coroutine = StartCoroutine(GetPicture(facebookID));
         }
     }

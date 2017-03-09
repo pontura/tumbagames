@@ -108,7 +108,6 @@ public class UserHiscore : MonoBehaviour {
         int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional().id;
       
         string str = "level_" + levelID + "_" + seccionalID;
-        Debug.Log("CurrentHiscore : " + str + " = " + PlayerPrefs.GetInt(str, 0));
 
         return PlayerPrefs.GetInt(str, 0);
     }

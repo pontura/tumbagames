@@ -14,6 +14,8 @@ public class Summary : MonoBehaviour {
     public Text hiscoreField;
     public Text totalScore;
 
+	public Text barrioField;
+
    // public RankingUI ranking;
    // public GameObject challengeButton;
 
@@ -59,7 +61,7 @@ public class Summary : MonoBehaviour {
             winnerNameField.text = winnerName;
             winnerScoreField.text = Utils.IntToMoney((int)winnerScore);
         }     
-
+		barrioField.text = Data.Instance.moodsManager.GetCurrentSeccional().title;
        
 
         Events.OnMusicChange("Raticity");

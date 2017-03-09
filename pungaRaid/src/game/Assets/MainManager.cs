@@ -98,4 +98,8 @@ public class MainManager : MonoBehaviour {
         storeManager.gameObject.SetActive(false);
         achievements.gameObject.SetActive(false);
     }
+	public void OpenAlbum()
+	{
+		Data.Instance.LoadLevel ("10_Achivements");
+	}
 }

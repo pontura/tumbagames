@@ -2,32 +2,95 @@
 	"achievements":
 	[
 		{
-			"title": "Correr x metros",
-			"type": "POWERUP",
-			"data": "CHUMBO",
+			"title": "Punguá en AV. RECAMIER",
+			"type": "AREA",
+			"data": 0,
+			"pointsToBeReady": 1,
+			"image":"0"			
+		},
+		{
+			"title": "Punguá en BARRIO NORCOREANO",
+			"type": "AREA",
+			"data": 1,
 			"pointsToBeReady": 1,
 			"image":"1"			
 		},
 		{
-			"title": "Desbloqueá Puerto Mamerto",
+			"title": "Punguá en PUENTE ZABECA",
 			"type": "AREA",
 			"data": 2,
 			"pointsToBeReady": 1,
 			"image":"2"			
 		},
 		{
+			"title": "Punguá en PUERTO MAMERTO",
+			"type": "AREA",
+			"data": 3,
+			"pointsToBeReady": 1,
+			"image":"3"			
+		},
+		{
+			"title": "Punguá en DILDO CENTRAL",
+			"type": "AREA",
+			"data": 4,
+			"pointsToBeReady": 1,
+			"image":"4"			
+		},
+		{
+			"title": "Punguá en PUERTO RETIRO",
+			"type": "AREA",
+			"data": 5,
+			"pointsToBeReady": 1,
+			"image":"5"			
+		},
+		{
+			"title": "Usar Mega-chumbo",
+			"type": "POWERUP",
+			"data": "CHUMBO",
+			"pointsToBeReady": 1,
+			"image":"6"			
+		},
+		{
 			"title": "Pungueate un skate",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 1,
-			"image":"3"		
+			"image":"7"		
 		},
 		{
 			"title": "Subite a un raticiclo",
 			"type": "POWERUP",
 			"data": "MOTO",
 			"pointsToBeReady": 1,
-			"image":"4"		
+			"image":"8"		
+		},
+		{
+			"title": "Pisate un sorete",
+			"type": "POWERUP",
+			"data": "CACA",
+			"pointsToBeReady": 1,
+			"image":"9"		
+		},
+		{
+			"title": "Gauchito Gil te cuida",
+			"type": "POWERUP",
+			"data": "GAUCHITO",
+			"pointsToBeReady": 1,
+			"image":"10"		
+		},
+		{
+			"title": "Gauchito Gil te cuida",
+			"type": "POWERUP",
+			"data": "GAUCHITO",
+			"pointsToBeReady": 1,
+			"image":"10"		
+		},
+		{
+			"title": "Ricky Fort",
+			"type": "POWERUP",
+			"data": "MIAMI",
+			"pointsToBeReady": 1,
+			"image":"11"		
 		}
 	]
 }
