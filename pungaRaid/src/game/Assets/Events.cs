@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class Events {
 
-	public static System.Action<int, int, int> OnShareNewHiscore = delegate { };
+	public static System.Action<string, string> OnShowAchievementSignal = delegate { };
     public static System.Action<bool> OnFade = delegate { };
     public static System.Action OnSettings = delegate { };
     public static System.Action OnLoginAdvisor = delegate { };

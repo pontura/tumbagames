@@ -8,18 +8,21 @@ public class AchievementButton : MonoBehaviour {
 	private Image image;
 	public Color inactiveColor;
 	private Achievements achievements;
-	private int id;
+	private Achievement achievement;
 
-	public void Init(Achievements achievements,  int id, bool ready) {
-		this.id = id;
+	public void Init(Achievements achievements,  Achievement _achievement, bool ready) {
+		this.achievement = _achievement;
 		this.achievements = achievements;
 		image = GetComponentInChildren<Image> ();
 
 		if(!ready)
 			image.color = inactiveColor;
+
+		Button btn = GetComponent<Button>();
+		btn.onClick.AddListener(Clicked);
 	}
 	public void Clicked()
 	{
-		achievements.Selected(id);
+		achievements.Selected(achievement);
 	}
 }

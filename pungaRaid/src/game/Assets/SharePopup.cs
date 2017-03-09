@@ -6,38 +6,38 @@ public class SharePopup : MonoBehaviour {
 
 	public GameObject popup;
 	public Text field;
-	public Image BannerContainer;
+	public Image medal;
 	public GameObject button;
+	public GameObject closeButton;
 
 	void Start()
 	{
-		Events.OnShareNewHiscore += OnShareNewHiscore;
+		Events.OnShowAchievementSignal += OnShowAchievementSignal;
 		Events.OnScreenShotReady += OnScreenShotReady;
 		popup.SetActive (false);
 	}
 	void OnDestroy()
 	{
-		Events.OnShareNewHiscore -= OnShareNewHiscore;
+		Events.OnShowAchievementSignal -= OnShowAchievementSignal;
 		Events.OnScreenShotReady -= OnScreenShotReady;
 	}
 	void OnScreenShotReady()
 	{
 		Invoke("Close", 0.5f);
 	}
-	void OnShareNewHiscore(int moodID, int seccionalID, int score)
-	{		
-		string barrio = Data.Instance.moodsManager.data.data [moodID - 1].seccional [seccionalID - 1].title;
-		string _score = Utils.IntToMoney (score);
-		string fieldText = "Levanté " + _score + " laburando en " + barrio + ", vó?";
-		field.text = fieldText;
+	void OnShowAchievementSignal(string medalName, string _text)
+	{				
+		field.text = _text;
 		popup.SetActive (true);
 		button.SetActive (true);
-		BannerContainer.sprite = Resources.Load("seccionales/" + moodID + "_" + seccionalID, typeof(Sprite)) as Sprite;
+		closeButton.SetActive (true);
+		medal.sprite = Resources.Load("achievements/" + medalName, typeof(Sprite)) as Sprite;
 	}
 	public void Share()
 	{
-		GetComponent<ShareScreenshot> ().TakeScreenshot ();
 		button.SetActive (false);
+		closeButton.SetActive (false);
+		GetComponent<ShareScreenshot> ().TakeScreenshot ();
 	}
 	public void Close()
 	{

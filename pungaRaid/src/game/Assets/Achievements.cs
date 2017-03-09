@@ -25,13 +25,13 @@ public class Achievements : MonoBehaviour {
 	{
 		Data.Instance.LoadLevel ("02_Main");
 	}
-	public void Selected(int id)
+	public void Selected(Achievement achievement)
 	{
-
+		Events.OnShowAchievementSignal (achievement.image, achievement.title);
 	}
 	void SetAchievements()
 	{
-		belgrano.Init (this,0, true);
+		belgrano.Init (this,AchievementsManager.Instance.achievements[0], true);
 
 		foreach (Achievement ach in AchievementsManager.Instance.achievements) {
 			print("____________   " + ach.ready);
@@ -39,26 +39,26 @@ public class Achievements : MonoBehaviour {
 			{
 			case Achievement.types.AREA:
 				
-				if (ach.id == 1) norco.Init (this, ach.id, ach.ready);
-				if (ach.id == 2) zabeca.Init (this, ach.id, ach.ready);
-				if (ach.id == 3) mamerto.Init (this, ach.id, ach.ready);
-				if (ach.id == 4) centro.Init (this, ach.id, ach.ready);
-				if (ach.id == 5) puerto.Init (this, ach.id, ach.ready);
+				if (ach.id == 1) norco.Init (this, ach, ach.ready);
+				if (ach.id == 2) zabeca.Init (this, ach, ach.ready);
+				if (ach.id == 3) mamerto.Init (this, ach, ach.ready);
+				if (ach.id == 4) centro.Init (this, ach, ach.ready);
+				if (ach.id == 5) puerto.Init (this, ach, ach.ready);
 					break;
 
 			case Achievement.types.POWERUP:
 				if (ach.data == "CHUMBO")
-					megachumbo.Init (this, ach.id, ach.ready);
+					megachumbo.Init (this, ach, ach.ready);
 				if (ach.data == "SKATE")
-					skate.Init (this, ach.id, ach.ready);
+					skate.Init (this, ach, ach.ready);
 				if (ach.data == "MOTO")
-					raticiclo.Init (this, ach.id, ach.ready);
+					raticiclo.Init (this, ach, ach.ready);
 				if (ach.data == "GAUCHITO")
-					gauchito.Init (this, ach.id, ach.ready);
+					gauchito.Init (this, ach, ach.ready);
 				if (ach.data == "CACA")
-					caca.Init (this, ach.id, ach.ready);
+					caca.Init (this, ach, ach.ready);
 				if (ach.data == "MIAMI")
-					fortuna.Init (this, ach.id, ach.ready);
+					fortuna.Init (this, ach, ach.ready);
 				break;
 			}
 		}
