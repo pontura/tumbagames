@@ -15,20 +15,8 @@ public class Seccionales : MonoBehaviour {
      
     void Init()
     {
-        //switch (moodID)
-        //{
-        //    case 1: container = seccional1; break;
-        //    default: container = seccional2; break;
-        //}
-
-        //seccional1.SetActive(false);
-        //seccional2.SetActive(false);
-
-        //container.SetActive(true);
-
         foreach (ZoneButton button in container.GetComponentsInChildren<ZoneButton>())
         {
-            print(button.seccionalID);
             bool unlocked = false;
 
             int moodID = button.moodID - 1;

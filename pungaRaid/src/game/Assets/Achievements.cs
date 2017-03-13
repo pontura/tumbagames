@@ -27,23 +27,23 @@ public class Achievements : MonoBehaviour {
 	}
 	public void Selected(Achievement achievement)
 	{
-		Events.OnShowAchievementSignal (achievement.image, achievement.title);
+		List<Achievement> achm = AchievementsManager.Instance.GetAchievementsByListID (achievement.listID);
+		Events.OnShowAchievementList (achm);
 	}
 	void SetAchievements()
 	{
 		belgrano.Init (this,AchievementsManager.Instance.achievements[0], true);
 
 		foreach (Achievement ach in AchievementsManager.Instance.achievements) {
-			print("____________   " + ach.ready);
 			switch(ach.type)
 			{
 			case Achievement.types.AREA:
 				
-				if (ach.id == 1) norco.Init (this, ach, ach.ready);
-				if (ach.id == 2) zabeca.Init (this, ach, ach.ready);
-				if (ach.id == 3) mamerto.Init (this, ach, ach.ready);
-				if (ach.id == 4) centro.Init (this, ach, ach.ready);
-				if (ach.id == 5) puerto.Init (this, ach, ach.ready);
+				if (ach.seccionalID == 2 && ach.moodID == 1) norco.Init (this, ach, ach.ready);
+				if (ach.seccionalID == 3 && ach.moodID == 1) zabeca.Init (this, ach, ach.ready);
+				if (ach.seccionalID == 1 && ach.moodID == 2) mamerto.Init (this, ach, ach.ready);
+				if (ach.seccionalID == 2 && ach.moodID == 2) centro.Init (this, ach, ach.ready);
+				if (ach.seccionalID == 3 && ach.moodID == 2) puerto.Init (this, ach, ach.ready);
 					break;
 
 			case Achievement.types.POWERUP:

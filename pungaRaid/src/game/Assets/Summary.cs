@@ -80,6 +80,12 @@ public class Summary : MonoBehaviour {
        // panel.GetComponent<Animator>().Play("PopupOn");
         score = Game.Instance.gameManager.score;
 
+		int moodID = Data.Instance.moodsManager.GetCurrentSeccional ().moodID;
+		int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional ().id;
+
+		AchievementsEvents.OnNewDistance (moodID, seccionalID, Game.Instance.gameManager.distance);
+		AchievementsEvents.OnCheckScore (moodID,seccionalID , score);
+
        // SendHiscore((int)score);
         string scoreToMoney = Utils.IntToMoney((int)score);
         if (score > SocialManager.Instance.userHiscore.GetCurrentHiscore())
@@ -165,7 +171,7 @@ public class Summary : MonoBehaviour {
 
         if (newxtSeccionalToBuy != null && newxtSeccionalToBuy.price > 0)
         {
-            print(newxtSeccionalToBuy + " newxtSeccionalToBuy __________" + newxtSeccionalToBuy.title);
+           // print(newxtSeccionalToBuy + " newxtSeccionalToBuy __________" + newxtSeccionalToBuy.title);
             GetComponent<BuySignal>().Init(newxtSeccionalToBuy);
         }
         else

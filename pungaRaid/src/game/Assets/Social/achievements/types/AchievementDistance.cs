@@ -5,20 +5,20 @@ public class AchievementDistance : Achievement {
 
     public int missionID;
 
-	public void Init () {
+	public override void OnInit () {
         this.type = types.DISTANCE;
-
-        //if (pointsToBeReady < Data.Instance.userData.distanceTraveled)
-        //    Ready();
-        //else
-        //    AchievementsEvents.OnNewDistance += OnNewDistance;
+        AchievementsEvents.OnNewDistance += OnNewDistance;
     }
-    void OnNewDistance(int distanceTraveled)
+	void OnNewDistance(int _moodID, int _seccionalID, float distanceTraveled)
     {
-        if (distanceTraveled > pointsToBeReady)
-        {
-            Ready();
-            AchievementsEvents.OnNewDistance -= OnNewDistance;
-        }
+		if (_moodID == moodID && _seccionalID == seccionalID) {
+		//	Debug.Log ("DISTANCE ACH_______ : " + distanceTraveled);
+			if (distanceTraveled > pointsToBeReady) {
+			//	Debug.Log ("DISTANCE READY !!!!!!!!!!! ");
+				Ready ();
+				Save ((int)distanceTraveled);
+				AchievementsEvents.OnNewDistance -= OnNewDistance;
+			}
+		}
     }
 }

@@ -127,7 +127,6 @@ public class MoodsManager : MonoBehaviour {
             {
                 if (seccional.unlocked == false && seccional.price < money)
                 {
-                    print("SI: " + seccional.title + "seccional "+ seccional.price + " id: " + id);
                     return seccional;
                 }
                 id++;

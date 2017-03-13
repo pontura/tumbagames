@@ -24,7 +24,7 @@ public class ProfilePicture : MonoBehaviour
         }
         else
         {
-			print ("facebookID " + facebookID);
+			if(isActiveAndEnabled)
             coroutine = StartCoroutine(GetPicture(facebookID));
         }
     }

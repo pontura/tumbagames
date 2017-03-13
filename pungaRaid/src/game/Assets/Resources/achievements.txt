@@ -2,88 +2,143 @@
 	"achievements":
 	[
 		{
-			"title": "Punguá en AV. RECAMIER",
+			"title": "Pungueá en AV. RECAMIER",
 			"type": "AREA",
-			"data": 0,
 			"pointsToBeReady": 1,
-			"image":"achivements_RECAMIER_1"			
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
 		},
 		{
-			"title": "Punguá en BARRIO NORCOREANO",
-			"type": "AREA",
-			"data": 1,
-			"pointsToBeReady": 1,
-			"image":"achivements_NORCO_1"			
+			"title": "Zafala por 100 metros en AV. RECAMIER",
+			"type": "DISTANCE",
+			"pointsToBeReady": 100,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
 		},
 		{
-			"title": "Punguá en PUENTE ZABECA",
+			"title": "Hacé 25 pesitos en AV. RECAMIER",
+			"type": "MONEY",
+			"pointsToBeReady": 250,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "Hacé 100 pesitos en AV. RECAMIER",
+			"type": "MONEY",
+			"pointsToBeReady": 10000,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "Hacé 500 pesitos en AV. RECAMIER",
+			"type": "MONEY",
+			"pointsToBeReady": 50000,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "Pungueá en BARRIO NORCOREANO",
+			"type": "AREA",
+			"pointsToBeReady": 1,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Pungueá en PUENTE ZABECA",
 			"type": "AREA",
 			"data": 2,
 			"pointsToBeReady": 1,
-			"image":"achivements_ZABECA_1"			
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"	
 		},
 		{
-			"title": "Punguá en PUERTO MAMERTO",
+			"title": "Pungueá en PUERTO MAMERTO",
 			"type": "AREA",
-			"data": 3,
 			"pointsToBeReady": 1,
-			"image":"achivements_MAMERTO_1"			
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"			
 		},
 		{
-			"title": "Punguá en DILDO CENTRAL",
+			"title": "Pungueá en DILDO CENTRAL",
 			"type": "AREA",
-			"data": 4,
 			"pointsToBeReady": 1,
-			"image":"achivements_DILDO_1"			
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"			
 		},
 		{
-			"title": "Punguá en PUERTO RETIRO",
+			"title": "Pungueá en PUERTO RETIRO",
 			"type": "AREA",
-			"data": 5,
 			"pointsToBeReady": 1,
-			"image":"achivements_PUERTO_1"			
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"				
 		},
 		{
 			"title": "Usar Mega-chumbo",
 			"type": "POWERUP",
 			"data": "CHUMBO",
 			"pointsToBeReady": 1,
-			"image":"achivements_MEGACHUMBO_1"			
+			"image":"achivements_MEGACHUMBO_1",
+			"listID": "CHUMBO"		
 		},
 		{
 			"title": "Pungueate un skate",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 1,
-			"image":"achivements_SKATE_1"		
+			"image":"achivements_SKATE_1"	,
+			"listID": "SKATE"	
 		},
 		{
 			"title": "Subite a un raticiclo",
 			"type": "POWERUP",
 			"data": "MOTO",
 			"pointsToBeReady": 1,
-			"image":"achivements_RATICICLO_1"		
+			"image":"achivements_RATICICLO_1",
+			"listID": "MOTO"	
 		},
 		{
 			"title": "Pisate un sorete",
 			"type": "POWERUP",
 			"data": "CACA",
 			"pointsToBeReady": 1,
-			"image":"achivements_CACA_1"		
+			"image":"achivements_CACA_1",
+			"listID": "CACA"	
 		},
 		{
 			"title": "Gauchito Gil te cuida",
 			"type": "POWERUP",
 			"data": "GAUCHITO",
 			"pointsToBeReady": 1,
-			"image":"achivements_DEVOTO_1"		
+			"image":"achivements_DEVOTO_1",
+			"listID": "GAUCHITO"	
 		},
 		{
 			"title": "Ricky Fort",
 			"type": "POWERUP",
 			"data": "MIAMI",
 			"pointsToBeReady": 1,
-			"image":"achivements_FORTUNA_1"		
+			"image":"achivements_FORTUNA_1",
+			"listID": "MIAMI"
 		}
 	]
 }
