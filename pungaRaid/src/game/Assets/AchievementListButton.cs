@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AchievementListButton : MonoBehaviour {
 
+	public GameObject doneGO;
 	public Text field;
 	private AchievementListsPopup popup;
 
@@ -12,5 +13,9 @@ public class AchievementListButton : MonoBehaviour {
 	{
 		this.popup = popup;
 		this.field.text = ach.title;
+		if (ach.ready)
+			doneGO.SetActive (true);
+		else
+			doneGO.SetActive (false);
 	}
 }

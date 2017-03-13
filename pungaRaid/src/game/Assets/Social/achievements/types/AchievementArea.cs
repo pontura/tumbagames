@@ -3,21 +3,16 @@ using System.Collections;
 
 public class AchievementArea : Achievement {
 
-   // public int mission;
-
-	public void Init () {
+	public override void OnInit () {
         this.type = types.AREA;
-
-        //if (mission < Data.Instance.userData.missionActive)
-        //    Ready();
-        //else
-        //    AchievementsEvents.OnMissionComplete += OnMissionComplete;
+		AchievementsEvents.OnAreaPlayed += OnAreaPlayed;
 	}
-    void OnMissionComplete(int missionID)
-    {
-       // Debug.Log("missionActive" + mission + " missionID: " + missionID);
-
-      //  if (mission == missionID)
-            Ready();
+	void OnAreaPlayed(int _moodID, int _seccionalID)
+	{
+		if (_moodID == moodID && _seccionalID == seccionalID) {
+			Ready ();
+			Save (1);
+			AchievementsEvents.OnAreaPlayed -= OnAreaPlayed;
+		}
     }
 }

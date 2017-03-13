@@ -3,8 +3,6 @@ using System.Collections;
 
 public class AchievementDistance : Achievement {
 
-    public int missionID;
-
 	public override void OnInit () {
         this.type = types.DISTANCE;
         AchievementsEvents.OnNewDistance += OnNewDistance;
