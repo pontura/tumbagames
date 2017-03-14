@@ -98,4 +98,6 @@ public static class Events {
 
 	public static System.Action OnScreenShotReady = delegate { };
 
+	public static System.Action OnCloseSharePopup = delegate { };
+
 }

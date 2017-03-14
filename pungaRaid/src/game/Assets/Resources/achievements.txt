@@ -13,16 +13,16 @@
 		{
 			"title": "Zafala por 100 metros en AV. RECAMIER",
 			"type": "DISTANCE",
-			"pointsToBeReady": 100,
+			"pointsToBeReady": 200,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé 25 pesitos en AV. RECAMIER",
+			"title": "Hacé 10 pesitos en AV. RECAMIER",
 			"type": "MONEY",
-			"pointsToBeReady": 250,
+			"pointsToBeReady": 1000,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,

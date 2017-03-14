@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MoodPopup : MonoBehaviour {
 
@@ -20,6 +21,9 @@ public class MoodPopup : MonoBehaviour {
 
     private  int moodID ;
     private Seccional seccional;
+	private int seccionalID;
+
+	public Image medal;
 
 	void Start () {
         panel.SetActive(false);    
@@ -30,7 +34,8 @@ public class MoodPopup : MonoBehaviour {
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn",0,0);
         moodID = Data.Instance.moodsManager.GetCurrentMoodID();
-        seccional = Data.Instance.moodsManager.GetCurrentSeccional();
+		seccional = Data.Instance.moodsManager.GetCurrentSeccional();
+		seccionalID = seccional.id;
 
         BannerContainer.sprite = Resources.Load("seccionales/" + moodID + "_" + seccional.id, typeof(Sprite)) as Sprite;
 
@@ -64,6 +69,22 @@ public class MoodPopup : MonoBehaviour {
        
 
         ranking.Init(moodID, seccional.id);
+
+		string medalName = "";
+		if (moodID == 1 && seccionalID == 1)
+			medalName = "achivements_RECAMIER_1";
+		else if (moodID == 1 && seccionalID == 2)
+			medalName = "achivements_NORCO_1";
+		else if (moodID == 1 && seccionalID == 3)
+			medalName = "achivements_ZABECA_1";
+		else if (moodID == 2 && seccionalID == 1)
+			medalName = "achivements_MAMERTO_1";
+		else if (moodID == 2 && seccionalID == 2)
+			medalName = "achivements_DILDO_1";
+		else if (moodID == 2 && seccionalID == 3)
+			medalName = "achivements_PUERTO_1";
+		
+		medal.sprite = Resources.Load("achievements/" + medalName, typeof(Sprite)) as Sprite;
         
     }
     void ComisarioOn()
@@ -98,4 +119,23 @@ public class MoodPopup : MonoBehaviour {
             CloseOff();
         }
     }
+	public void MedalClicked()
+	{
+		string listID = "";
+		if (moodID == 1 && seccionalID == 1)
+			listID = "RECAMIER";
+		else if (moodID == 1 && seccionalID == 2)
+			listID = "NORCOREANO";
+		else if (moodID == 1 && seccionalID == 3)
+			listID = "ZABECA";
+		else if (moodID == 2 && seccionalID == 1)
+			listID = "MAMERTO";
+		else if (moodID == 2 && seccionalID == 2)
+			listID = "CENTRAL";
+		else if (moodID == 2 && seccionalID == 3)
+			listID = "RETIRO";
+
+		List<Achievement> achievementList = AchievementsManager.Instance.GetAchievementsByListID (listID);
+		Events.OnShowAchievementList (achievementList);
+	}
 }

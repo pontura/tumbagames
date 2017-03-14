@@ -41,6 +41,7 @@ public class Achievement  {
     public void Ready()
     {
         this.ready = true;
+		AchievementsEvents.OnAchievementReady (this);
     }
 	void CheckState()
 	{

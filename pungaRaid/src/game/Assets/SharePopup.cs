@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SharePopup : MonoBehaviour {
 
 	public GameObject popup;
 	public Text field;
 	public Image medal;
-	public GameObject button;
-	public GameObject closeButton;
+	public GameObject hideInShare;
+	public GameObject newAchievement;
 
 	void Start()
 	{
@@ -27,20 +28,24 @@ public class SharePopup : MonoBehaviour {
 	}
 	void OnShowAchievementSignal(string medalName, string _text)
 	{				
+		if (SceneManager.GetActiveScene ().name == "04_Game")
+			newAchievement.SetActive (true);
+		else
+			newAchievement.SetActive (false);
+		
 		field.text = _text;
 		popup.SetActive (true);
-		button.SetActive (true);
-		closeButton.SetActive (true);
+		hideInShare.SetActive (true);
 		medal.sprite = Resources.Load("achievements/" + medalName, typeof(Sprite)) as Sprite;
 	}
 	public void Share()
 	{
-		button.SetActive (false);
-		closeButton.SetActive (false);
+		hideInShare.SetActive (false);
 		GetComponent<ShareScreenshot> ().TakeScreenshot ();
 	}
 	public void Close()
 	{
+		Events.OnCloseSharePopup ();
 		popup.SetActive (false);
 	}
 }

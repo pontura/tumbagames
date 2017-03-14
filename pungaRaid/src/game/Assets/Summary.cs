@@ -84,8 +84,7 @@ public class Summary : MonoBehaviour {
 		int seccionalID = Data.Instance.moodsManager.GetCurrentSeccional ().id;
 
 		AchievementsEvents.OnAreaPlayed (moodID, seccionalID);
-		AchievementsEvents.OnNewDistance (moodID, seccionalID, Game.Instance.gameManager.distance);
-		AchievementsEvents.OnCheckScore (moodID,seccionalID , score);
+
 
        // SendHiscore((int)score);
         string scoreToMoney = Utils.IntToMoney((int)score);
