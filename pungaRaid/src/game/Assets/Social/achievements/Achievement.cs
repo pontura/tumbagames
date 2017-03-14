@@ -17,7 +17,6 @@ public class Achievement  {
         MISSION_COMPLETE,
         DISTANCE,
         POWERUP,
-        AREA,
 		MONEY
     }
     public string image;

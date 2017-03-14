@@ -38,6 +38,9 @@ public class AchievementsInGameManager : MonoBehaviour {
 
 		Events.OnShowAchievementSignal (medalName, text);
 		Invoke ("Delayed", 0.1f);
+
+		if(Data.Instance.musicManager.volume==1)
+			Events.OnMusicVolumeChanged(0.2f);
 	}
 	void Delayed()
 	{
@@ -65,6 +68,8 @@ public class AchievementsInGameManager : MonoBehaviour {
 	}
 	void OnCloseSharePopup()
 	{
+		if(Data.Instance.musicManager.volume==0.2f)
+			Events.OnMusicVolumeChanged(1);
 		Time.timeScale = lastTimeScale;
 	}
 }

@@ -10,12 +10,14 @@ public class SharePopup : MonoBehaviour {
 	public Image medal;
 	public GameObject hideInShare;
 	public GameObject newAchievement;
+	public Animator anim;
 
 	void Start()
 	{
 		Events.OnShowAchievementSignal += OnShowAchievementSignal;
 		Events.OnScreenShotReady += OnScreenShotReady;
 		popup.SetActive (false);
+		anim.updateMode = AnimatorUpdateMode.UnscaledTime;
 	}
 	void OnDestroy()
 	{
@@ -28,10 +30,14 @@ public class SharePopup : MonoBehaviour {
 	}
 	void OnShowAchievementSignal(string medalName, string _text)
 	{				
-		if (SceneManager.GetActiveScene ().name == "04_Game")
-			newAchievement.SetActive (true);
-		else
-			newAchievement.SetActive (false);
+		if (SceneManager.GetActiveScene ().name == "04_Game") {
+			Events.OnSoundFX("PowerUpItem");
+			anim.Play ("achievementWonInGame");
+			if(Data.Instance.musicManager.volume==1)
+				Events.OnMusicVolumeChanged(0.2f);
+		} else {
+			anim.Play ("achievementPopup");
+		}
 		
 		field.text = _text;
 		popup.SetActive (true);

@@ -27,6 +27,7 @@ public class Achievements : MonoBehaviour {
 	}
 	public void Selected(Achievement achievement)
 	{
+		print ("Seleccion: " + achievement.title);
 		List<Achievement> achm = AchievementsManager.Instance.GetAchievementsByListID (achievement.listID);
 		Events.OnShowAchievementList (achm);
 	}
@@ -37,7 +38,7 @@ public class Achievements : MonoBehaviour {
 		foreach (Achievement ach in AchievementsManager.Instance.achievements) {
 			switch(ach.type)
 			{
-			case Achievement.types.AREA:
+			case Achievement.types.DISTANCE:
 				
 				if (ach.seccionalID == 2 && ach.moodID == 1) norco.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 3 && ach.moodID == 1) zabeca.Init (this, ach, ach.ready);

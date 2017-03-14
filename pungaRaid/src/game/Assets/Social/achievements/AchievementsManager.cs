@@ -86,10 +86,7 @@ public class AchievementsManager : MonoBehaviour
 			} else if (type == "POWERUP") {
 				achievement = new AchievementPowerup ();
 				achievement.type = Achievement.types.POWERUP;
-			} else if (type == "AREA") {
-				achievement = new AchievementArea ();
-				achievement.type = Achievement.types.AREA;
-			}else if (type == "MONEY") {
+			} else if (type == "MONEY") {
 				achievement = new AchievementMoney ();
 				achievement.type = Achievement.types.MONEY;
 			}

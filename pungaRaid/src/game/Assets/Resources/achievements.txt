@@ -2,16 +2,7 @@
 	"achievements":
 	[
 		{
-			"title": "Pungueá en AV. RECAMIER",
-			"type": "AREA",
-			"pointsToBeReady": 1,
-			"image":"achivements_RECAMIER_1",
-			"seccional": 1,
-			"mood": 1,
-			"listID": "RECAMIER"
-		},
-		{
-			"title": "Zafala por 100 metros en AV. RECAMIER",
+			"title": "Zafala por 200 metros en AV. RECAMIER",
 			"type": "DISTANCE",
 			"pointsToBeReady": 200,
 			"image":"achivements_RECAMIER_1",
@@ -20,9 +11,9 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé 10 pesitos en AV. RECAMIER",
+			"title": "Hacé 20 pesitos en AV. RECAMIER",
 			"type": "MONEY",
-			"pointsToBeReady": 1000,
+			"pointsToBeReady": 2000,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,
@@ -65,46 +56,64 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Pungueá en BARRIO NORCOREANO",
-			"type": "AREA",
-			"pointsToBeReady": 1,
+			"title": "Hacé $1000 en AV. RECAMIER",
+			"type": "MONEY",
+			"pointsToBeReady": 100000,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "Corré 500 metros en BARRIO NORCOREANO",
+			"type": "DISTANCE",
+			"pointsToBeReady": 500,
 			"image":"achivements_NORCO_1",
 			"seccional": 2,
 			"mood": 1,
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Pungueá en PUENTE ZABECA",
-			"type": "AREA",
+			"title": "Hacé $50.00 en BARRIO NORCOREANO",
+			"type": "MONEY",
+			"pointsToBeReady": 5000,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Corré 600 metros en PUENTE ZABECA",
+			"type": "DISTANCE",
 			"data": 2,
-			"pointsToBeReady": 1,
+			"pointsToBeReady": 600,
 			"image":"achivements_ZABECA_1",
 			"seccional": 3,
 			"mood": 1,
 			"listID": "ZABECA"	
 		},
 		{
-			"title": "Pungueá en PUERTO MAMERTO",
-			"type": "AREA",
-			"pointsToBeReady": 1,
+			"title": "Corré 700 metros en PUERTO MAMERTO",
+			"type": "DISTANCE",
+			"pointsToBeReady": 700,
 			"image":"achivements_MAMERTO_1",
 			"seccional": 1,
 			"mood": 2,
 			"listID": "MAMERTO"			
 		},
 		{
-			"title": "Pungueá en DILDO CENTRAL",
-			"type": "AREA",
-			"pointsToBeReady": 1,
+			"title": "Corré 800 metros en DILDO CENTRAL",
+			"type": "DISTANCE",
+			"pointsToBeReady": 800,
 			"image":"achivements_DILDO_1",
 			"seccional": 2,
 			"mood": 2,
 			"listID": "CENTRAL"			
 		},
 		{
-			"title": "Pungueá en PUERTO RETIRO",
-			"type": "AREA",
-			"pointsToBeReady": 1,
+			"title": "Corré 1000 metros en PUERTO RETIRO",
+			"type": "DISTANCE",
+			"pointsToBeReady": 1000,
 			"image":"achivements_PUERTO_1",
 			"seccional": 3,
 			"mood": 2,
