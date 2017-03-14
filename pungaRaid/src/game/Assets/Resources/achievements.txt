@@ -2,9 +2,9 @@
 	"achievements":
 	[
 		{
-			"title": "Zafala por 200 metros en AV. RECAMIER",
+			"title": "Zafala por 300 metros en AV. RECAMIER",
 			"type": "DISTANCE",
-			"pointsToBeReady": 200,
+			"pointsToBeReady": 300,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,

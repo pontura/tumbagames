@@ -33,13 +33,11 @@ public class Achievements : MonoBehaviour {
 	}
 	void SetAchievements()
 	{
-		belgrano.Init (this,AchievementsManager.Instance.achievements[0], true);
-
 		foreach (Achievement ach in AchievementsManager.Instance.achievements) {
 			switch(ach.type)
 			{
 			case Achievement.types.DISTANCE:
-				
+				if (ach.seccionalID == 1 && ach.moodID == 1) belgrano.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 2 && ach.moodID == 1) norco.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 3 && ach.moodID == 1) zabeca.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 1 && ach.moodID == 2) mamerto.Init (this, ach, ach.ready);
