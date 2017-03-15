@@ -47,7 +47,12 @@ public class SharePopup : MonoBehaviour {
 	public void Share()
 	{
 		hideInShare.SetActive (false);
+		Invoke ("ReOpen", 1);
 		GetComponent<ShareScreenshot> ().TakeScreenshot ();
+	}
+	void ReOpen()
+	{
+		hideInShare.SetActive (true);
 	}
 	public void Close()
 	{

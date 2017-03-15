@@ -37,6 +37,7 @@ public class AchievementListsPopup : MonoBehaviour {
 			medalName = ach.image;
 			b.Init (this, ach);
 			b.transform.SetParent (container);
+			b.transform.localPosition = Vector3.one;
 			b.GetComponent<Button>().onClick.AddListener(() => { Open(ach); });
 			if (ach.ready)
 				ready++;
