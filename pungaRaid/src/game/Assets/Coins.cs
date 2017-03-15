@@ -61,6 +61,8 @@ public class Coins : Enemy {
             {
                 if (rand > 8)
                     SetAsset(2);
+				else
+					SetAsset(1);				
             }
             else
             {

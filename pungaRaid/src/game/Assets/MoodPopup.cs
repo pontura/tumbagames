@@ -114,6 +114,7 @@ public class MoodPopup : MonoBehaviour {
         else
         {
             SocialEvents.OnUpdateMoney(-seccional.price);
+			AchievementsEvents.OnUnlock (moodID, seccional.id);
             Events.OnGenericPopup("¡Listo Pibe!", "Gracias por la colaboración. Que disfrutes el nuevo barrio");
             Events.UnlockSeccional(moodID, seccional.id);
             CloseOff();

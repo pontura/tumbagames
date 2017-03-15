@@ -14,6 +14,10 @@ public class NewRecordSignal : MonoBehaviour {
 		Events.OnHeroDie -= OnHeroDie;
 	}
 	void OnHeroDie () {
+		
+		if(PlayerPrefs.GetString("tutorialReady") !=  "true") 
+			return;
+		 
 		int score = Game.Instance.gameManager.score;
 		int hiscore = SocialManager.Instance.userHiscore.GetCurrentHiscore();
 		if(score>hiscore)

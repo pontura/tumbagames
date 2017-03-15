@@ -10,9 +10,7 @@ public class AchievementDistance : Achievement {
 	void OnNewDistance(int _moodID, int _seccionalID, float distanceTraveled)
     {
 		if (_moodID == moodID && _seccionalID == seccionalID) {
-		//	Debug.Log ("DISTANCE ACH_______ : " + distanceTraveled);
 			if (distanceTraveled > pointsToBeReady) {
-			//	Debug.Log ("DISTANCE READY !!!!!!!!!!! ");
 				Ready ();
 				Save ((int)distanceTraveled);
 				AchievementsEvents.OnNewDistance -= OnNewDistance;

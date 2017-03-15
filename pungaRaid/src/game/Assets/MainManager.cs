@@ -34,7 +34,7 @@ public class MainManager : MonoBehaviour {
         Map();
         mapButton.Select();
 
-        achievementsCount.text = AchievementsManager.Instance.GetTotalReady() + "/" +  AchievementsManager.Instance.achievements.Count;
+        achievementsCount.text = "DELITOS: " + AchievementsManager.Instance.GetTotalReady() + "/" +  AchievementsManager.Instance.achievements.Count;
 	}
     void OnDestroy()
     {

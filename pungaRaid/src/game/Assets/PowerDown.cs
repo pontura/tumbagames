@@ -21,7 +21,11 @@ public class PowerDown : Enemy
 
         switch (id)
         {
-            case 1: sorete.SetActive(true); type = PowerdownManager.types.SORETE; break;
+            case 1: 
+			sorete.SetActive(true); 
+			type = PowerdownManager.types.SORETE;
+			AchievementsEvents.OnPowerUp("SORETE");
+			break;
         }
     }
 

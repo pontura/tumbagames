@@ -2,6 +2,52 @@
 	"achievements":
 	[
 		{
+			"title": "Ganate el barrio chino",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Ganate el Puente de los tirapiedras",
+			"type": "UNLOCK",
+			"data": 2,
+			"pointsToBeReady": 1,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"	
+		},
+		{
+			"title": "Ganate el Puerto más cheto de CABA",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"			
+		},
+		{
+			"title": "Ampliá tu negocio al micro-centro",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"			
+		},
+		{
+			"title": "Ampliá tu negocio a Retiro",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"				
+		},
+		{
 			"title": "Zafala por 300 metros en AV. RECAMIER",
 			"type": "DISTANCE",
 			"pointsToBeReady": 300,
@@ -56,7 +102,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé $1000 en AV. RECAMIER",
+			"title": "Hacé $1000.00 en AV. RECAMIER",
 			"type": "MONEY",
 			"pointsToBeReady": 100000,
 			"image":"achivements_RECAMIER_1",
@@ -65,18 +111,18 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Corré 500 metros en BARRIO NORCOREANO",
-			"type": "DISTANCE",
-			"pointsToBeReady": 500,
+			"title": "Hacé $50.00 en BARRIO NORCOREANO",
+			"type": "MONEY",
+			"pointsToBeReady": 5000,
 			"image":"achivements_NORCO_1",
 			"seccional": 2,
 			"mood": 1,
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Hacé $50.00 en BARRIO NORCOREANO",
-			"type": "MONEY",
-			"pointsToBeReady": 5000,
+			"title": "Corré 500 metros en BARRIO NORCOREANO",
+			"type": "DISTANCE",
+			"pointsToBeReady": 500,
 			"image":"achivements_NORCO_1",
 			"seccional": 2,
 			"mood": 1,
@@ -144,28 +190,60 @@
 			"listID": "MOTO"	
 		},
 		{
-			"title": "Pisate un sorete",
+			"title": "Te embadurno el mundo con un sorete",
 			"type": "POWERUP",
-			"data": "CACA",
+			"data": "SORETE",
 			"pointsToBeReady": 1,
 			"image":"achivements_CACA_1",
-			"listID": "CACA"	
+			"listID": "SORETE"	
+		},
+		{
+			"title": "10 sorete para marcar la cancha",
+			"type": "POWERUP",
+			"data": "SORETE",
+			"pointsToBeReady": 10,
+			"image":"achivements_CACA_1",
+			"listID": "SORETE"	
+		},
+		{
+			"title": "20 sorete para vó gato!",
+			"type": "POWERUP",
+			"data": "SORETE",
+			"pointsToBeReady": 20,
+			"image":"achivements_CACA_1",
+			"listID": "SORETE"	
+		},
+		{
+			"title": "100 sorete son ustede! Politícos!",
+			"type": "POWERUP",
+			"data": "SORETE",
+			"pointsToBeReady": 100,
+			"image":"achivements_CACA_1",
+			"listID": "SORETE"
 		},
 		{
 			"title": "Gauchito Gil te cuida",
 			"type": "POWERUP",
-			"data": "GAUCHITO",
+			"data": "GIL",
 			"pointsToBeReady": 1,
 			"image":"achivements_DEVOTO_1",
-			"listID": "GAUCHITO"	
+			"listID": "GIL"	
+		},
+		{
+			"title": "con 4 Giles de tu lado sos una aspiradora de billetes",
+			"type": "POWERUP",
+			"data": "GIL",
+			"pointsToBeReady": 4,
+			"image":"achivements_DEVOTO_1",
+			"listID": "GIL"	
 		},
 		{
 			"title": "Ricky Fort",
 			"type": "POWERUP",
-			"data": "MIAMI",
+			"data": "RICKYFORT",
 			"pointsToBeReady": 1,
 			"image":"achivements_FORTUNA_1",
-			"listID": "MIAMI"
+			"listID": "RICKYFORT"
 		}
 	]
 }

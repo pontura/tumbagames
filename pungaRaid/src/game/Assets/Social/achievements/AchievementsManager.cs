@@ -70,6 +70,7 @@ public class AchievementsManager : MonoBehaviour
 	}
 	public void LoadDataromServer(string json_data)
 	{
+		print (json_data);
 		var Json = SimpleJSON.JSON.Parse(json_data);
 		string arrayName = "achievements";
 		achievements = new List<Achievement>(Json[arrayName].Count);
@@ -79,7 +80,10 @@ public class AchievementsManager : MonoBehaviour
 			string type = Json[arrayName][a]["type"];
 
 			Achievement achievement = null;
-
+			if (type == "UNLOCK") {
+				achievement = new AchievementUnlock ();   
+				achievement.type = Achievement.types.UNLOCK;
+			} else
 			if (type == "DISTANCE") {
 				achievement = new AchievementDistance ();   
 				achievement.type = Achievement.types.DISTANCE;

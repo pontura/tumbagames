@@ -27,7 +27,6 @@ public class Achievements : MonoBehaviour {
 	}
 	public void Selected(Achievement achievement)
 	{
-		print ("Seleccion: " + achievement.title);
 		List<Achievement> achm = AchievementsManager.Instance.GetAchievementsByListID (achievement.listID);
 		Events.OnShowAchievementList (achm);
 	}
@@ -36,7 +35,9 @@ public class Achievements : MonoBehaviour {
 		foreach (Achievement ach in AchievementsManager.Instance.achievements) {
 			switch(ach.type)
 			{
+			case Achievement.types.UNLOCK:
 			case Achievement.types.DISTANCE:
+			case Achievement.types.MONEY:
 				if (ach.seccionalID == 1 && ach.moodID == 1) belgrano.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 2 && ach.moodID == 1) norco.Init (this, ach, ach.ready);
 				if (ach.seccionalID == 3 && ach.moodID == 1) zabeca.Init (this, ach, ach.ready);
@@ -52,11 +53,11 @@ public class Achievements : MonoBehaviour {
 					skate.Init (this, ach, ach.ready);
 				if (ach.data == "MOTO")
 					raticiclo.Init (this, ach, ach.ready);
-				if (ach.data == "GAUCHITO")
+				if (ach.data == "GIL")
 					gauchito.Init (this, ach, ach.ready);
-				if (ach.data == "CACA")
+				if (ach.data == "SORETE")
 					caca.Init (this, ach, ach.ready);
-				if (ach.data == "MIAMI")
+				if (ach.data == "RICKYFORT")
 					fortuna.Init (this, ach, ach.ready);
 				break;
 			}

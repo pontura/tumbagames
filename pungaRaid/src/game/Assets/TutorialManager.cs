@@ -25,12 +25,22 @@ public class TutorialManager : MonoBehaviour {
             return;
         }
 
-        Events.StartGame += StartGame;        
+        Events.StartGame += StartGame;       
+		Events.OnHeroDie += OnHeroDie;
 	}
     void OnDestroy()
     {
         Events.StartGame -= StartGame;    
+		Events.OnHeroDie -= OnHeroDie;
     }
+	void OnHeroDie()
+	{
+		Invoke ("TutorialDone", 0.5f);	
+	}
+	void TutorialDone()
+	{
+		PlayerPrefs.SetString("tutorialReady", "true");
+	}
     void StartGame()
     {
         tutorialID = 0;
@@ -57,7 +67,7 @@ public class TutorialManager : MonoBehaviour {
 
         if (tutorialID >= all.Length)
         {
-            PlayerPrefs.SetString("tutorialReady", "true");
+           
             Game.Instance.gameManager.state = GameManager.states.ACTIVE;
             ready = true;
             return;

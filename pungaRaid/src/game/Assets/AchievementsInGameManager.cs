@@ -63,13 +63,12 @@ public class AchievementsInGameManager : MonoBehaviour {
 		AchievementsEvents.OnNewDistance (moodID, seccionalID, distance);
 		AchievementsEvents.OnCheckMoney (moodID,seccionalID , score);
 
-		print ("Loop");
-
 	}
 	void OnCloseSharePopup()
 	{
 		if(Data.Instance.musicManager.volume==0.2f)
 			Events.OnMusicVolumeChanged(1);
-		Time.timeScale = lastTimeScale;
+		
+		Time.timeScale = 1;
 	}
 }

@@ -44,7 +44,10 @@ public class PowerupSign : MonoBehaviour {
     {
         if (Data.Instance.musicManager.volume == 0.2f)
             Events.OnMusicVolumeChanged(1f);
-        Time.timeScale = 1;
+		
+		if( Time.timeScale == 0.05f)
+        	Time.timeScale = 1;
+		
         gameObject.SetActive(false);
     }
 }
