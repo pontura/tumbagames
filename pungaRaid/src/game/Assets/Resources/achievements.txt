@@ -182,6 +182,14 @@
 			"listID": "SKATE"	
 		},
 		{
+			"title": "Pungueate 7 skates y hacelos guita",
+			"type": "POWERUP",
+			"data":	"SKATE",
+			"pointsToBeReady": 7,
+			"image":"achivements_SKATE_1",
+			"listID": "SKATE"	
+		},
+		{
 			"title": "Subite a un raticiclo",
 			"type": "POWERUP",
 			"data": "MOTO",
@@ -190,23 +198,15 @@
 			"listID": "MOTO"	
 		},
 		{
-			"title": "Te embadurno el mundo con un sorete",
+			"title": "Te embadurno el mundo con 5 sorete",
 			"type": "POWERUP",
 			"data": "SORETE",
-			"pointsToBeReady": 1,
+			"pointsToBeReady": 5,
 			"image":"achivements_CACA_1",
 			"listID": "SORETE"	
 		},
 		{
-			"title": "10 sorete para marcar la cancha",
-			"type": "POWERUP",
-			"data": "SORETE",
-			"pointsToBeReady": 10,
-			"image":"achivements_CACA_1",
-			"listID": "SORETE"	
-		},
-		{
-			"title": "20 sorete para vó gato!",
+			"title": "20 sorete para marcar la cancha",
 			"type": "POWERUP",
 			"data": "SORETE",
 			"pointsToBeReady": 20,
@@ -214,10 +214,18 @@
 			"listID": "SORETE"	
 		},
 		{
-			"title": "100 sorete son ustede! Politícos!",
+			"title": "69 sorete para vó gato!",
 			"type": "POWERUP",
 			"data": "SORETE",
-			"pointsToBeReady": 100,
+			"pointsToBeReady": 69,
+			"image":"achivements_CACA_1",
+			"listID": "SORETE"	
+		},
+		{
+			"title": "666 sorete son ustede! Politícos!",
+			"type": "POWERUP",
+			"data": "SORETE",
+			"pointsToBeReady": 666,
 			"image":"achivements_CACA_1",
 			"listID": "SORETE"
 		},
