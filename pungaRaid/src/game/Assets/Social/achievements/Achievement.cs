@@ -95,7 +95,7 @@ public class Achievement  {
 	}
 	public void SaveInt(int qty)
 	{
-		Debug.Log ("Achievement _____________ SaveInt " +  data + " points: " + qty);
+		//Debug.Log ("Achievement _____________ SaveInt " +  data + " points: " + qty);
 		PlayerPrefs.SetInt(data,  qty);
 	}
 	public void SaveMultipleData()

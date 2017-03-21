@@ -10,6 +10,7 @@ public static class AchievementsEvents
     public static System.Action<string> OnPowerUp = delegate { };
     public static System.Action<Enemy> OnDie = delegate { };
 	public static System.Action<Enemy> OnDash = delegate { };
+	public static System.Action<string> OnSpecialEnemyPung = delegate { };
     public static System.Action<Achievement> OnAchievementReady = delegate { };
 
 	public static System.Action<AchievementsMultipleManager.dashTypes> OnNewDashComputed = delegate { };

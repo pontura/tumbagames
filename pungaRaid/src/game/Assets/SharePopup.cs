@@ -75,6 +75,7 @@ public class SharePopup : MonoBehaviour {
 	public void Close()
 	{
 		Events.OnCloseSharePopup ();
+		Time.timeScale = 1;
 		popup.SetActive (false);
 	}
 }

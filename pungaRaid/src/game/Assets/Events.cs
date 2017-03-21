@@ -64,7 +64,8 @@ public static class Events {
     
     public static System.Action<string> OnMusicChange = delegate { };
 
-    public static System.Action<bool> OnGamePaused = delegate { };
+	public static System.Action<bool> OnGamePaused = delegate { };
+	public static System.Action OnGameStart = delegate { };
     public static System.Action OnGameRestart = delegate { };
     public static System.Action<float, bool> OnChangeSpeed = delegate { };
     public static System.Action OnResetSpeed = delegate { };

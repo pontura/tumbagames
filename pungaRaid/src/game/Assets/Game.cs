@@ -35,7 +35,7 @@ public class Game : MonoBehaviour {
     }
     void Start  ()
     {
-        
+		Events.OnGameStart ();
         Events.OnGamePaused += OnGamePaused;
         Events.OnLevelComplete += OnLevelComplete;
         Events.StartGame += StartGame;

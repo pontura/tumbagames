@@ -72,11 +72,14 @@ public class GenericVictim : Enemy
         if (state == states.CRASHED) return;
         state = states.CRASHED;
         anim.Play("pung");
+
     }
     override public void OnExplote()
     {
         if (state == states.CRASHED) return;
         state = states.CRASHED;
+
+		AchievementsEvents.OnSpecialEnemyPung (anim.gameObject.name);
 
         Events.OnAddExplotion(laneId, (int)transform.localPosition.x);
 
@@ -86,6 +89,8 @@ public class GenericVictim : Enemy
     {
         if (Game.Instance.gameManager.state == GameManager.states.ENDING) return;
         
+		AchievementsEvents.OnSpecialEnemyPung (anim.gameObject.name);
+
         anim.Play("pung", 0, 0);
 
         Events.OnScoreUpdate((Random.Range(5, 10) * 10) );

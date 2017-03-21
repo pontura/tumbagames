@@ -29,7 +29,6 @@ public class Achievements : MonoBehaviour {
 	}
 	public void Selected(Achievement achievement)
 	{
-		print ("Selected " + achievement.type);
 		List<Achievement> achm = AchievementsManager.Instance.GetAchievementsByListID (achievement.listID);
 		Events.OnShowAchievementList (achm);
 	}
