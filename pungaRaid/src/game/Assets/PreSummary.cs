@@ -24,9 +24,16 @@ public class PreSummary : MonoBehaviour
     void TimeOut()
     {
         panel.SetActive(true);
+		Loop ();
     }
+	void Loop()
+	{
+		Invoke ("Loop", 1);
+		AchievementsEvents.NewSecondKilled ();
+	}
     public void Ready()
     {
+		CancelInvoke ();
         GetComponent<Summary>().Init();
         panel.SetActive(false);
     }

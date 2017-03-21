@@ -36,7 +36,7 @@ public class AchievementsInGameManager : MonoBehaviour {
 		string medalName = ach.image;
 		string text = ach.title;
 
-		Events.OnShowAchievementSignal (medalName, text);
+		Events.OnShowAchievementSignal (medalName, text, true);
 		Invoke ("Delayed", 0.1f);
 
 		if(Data.Instance.musicManager.volume==1)

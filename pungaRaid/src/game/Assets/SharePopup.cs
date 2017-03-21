@@ -10,7 +10,10 @@ public class SharePopup : MonoBehaviour {
 	public Image medal;
 	public GameObject hideInShare;
 	public GameObject newAchievement;
+	public GameObject logos;
 	public Animator anim;
+	public GameObject PlayButton;
+	public GameObject shareButton;
 
 	void Start()
 	{
@@ -28,14 +31,28 @@ public class SharePopup : MonoBehaviour {
 	{
 		Invoke("Close", 0.5f);
 	}
-	void OnShowAchievementSignal(string medalName, string _text)
+	void OnShowAchievementSignal(string medalName, string _text, bool isReady)
 	{				
+		Vector3 pos = PlayButton.transform.localPosition;
+		if (isReady) {
+			shareButton.SetActive (true);
+			pos.x = 110; 
+		} else {
+			shareButton.SetActive (false);
+			pos.x = 0;
+		}
+		PlayButton.transform.localPosition = pos;
+
 		if (SceneManager.GetActiveScene ().name == "04_Game") {
+			logos.SetActive (true);
+			newAchievement.SetActive (true);
 			Events.OnSoundFX("PowerUpItem");
 			anim.Play ("achievementWonInGame");
 			if(Data.Instance.musicManager.volume==1)
 				Events.OnMusicVolumeChanged(0.2f);
 		} else {
+			logos.SetActive (false);
+			newAchievement.SetActive (false);
 			anim.Play ("achievementPopup");
 		}
 		
@@ -46,6 +63,7 @@ public class SharePopup : MonoBehaviour {
 	}
 	public void Share()
 	{
+		logos.SetActive (true);
 		hideInShare.SetActive (false);
 		Invoke ("ReOpen", 1);
 		GetComponent<ShareScreenshot> ().TakeScreenshot ();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class Events {
 
-	public static System.Action<string, string> OnShowAchievementSignal = delegate { };
+	public static System.Action<string, string, bool> OnShowAchievementSignal = delegate { };
 	public static System.Action<List<Achievement>> OnShowAchievementList = delegate { };
 
     public static System.Action<bool> OnFade = delegate { };

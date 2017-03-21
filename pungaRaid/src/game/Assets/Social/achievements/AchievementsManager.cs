@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,10 +9,11 @@ public class AchievementsManager : MonoBehaviour
 	public List<Achievement> achievements;
 	public int totalAchievements;
 	string jsonUrl = "achievements";
+	string jsonUrl2 = "achievementsMultiple";
 
 	const string PREFAB_PATH = "AchievementsManager";
 	static AchievementsManager mInstance = null;
-
+	public AchievementsMultipleManager achievementsMultipleManager;
     
 
     public static AchievementsManager Instance
@@ -61,7 +62,13 @@ public class AchievementsManager : MonoBehaviour
 	{
 		TextAsset file = Resources.Load(jsonUrl) as TextAsset;
 		LoadDataromServer(file.text);
+
+		TextAsset file2 = Resources.Load(jsonUrl2) as TextAsset;
+		LoadDataromServer(file2.text);
+
 		SocialEvents.ResetApp += ResetApp;
+
+		achievementsMultipleManager = GetComponent<AchievementsMultipleManager> ();
 	}
 	void ResetApp()
 	{
@@ -72,10 +79,10 @@ public class AchievementsManager : MonoBehaviour
 	}
 	public void LoadDataromServer(string json_data)
 	{
-		print (json_data);
+		//print (json_data);
 		var Json = SimpleJSON.JSON.Parse(json_data);
 		string arrayName = "achievements";
-		achievements = new List<Achievement>(Json[arrayName].Count);
+		//achievements = new List<Achievement>(Json[arrayName].Count);
 		for (int a = 0; a < Json[arrayName].Count; a++)
 		{
 			totalAchievements++;
@@ -96,10 +103,11 @@ public class AchievementsManager : MonoBehaviour
 				achievement = new AchievementMoney ();
 				achievement.type = Achievement.types.MONEY;
 			}
-            else if (type == "DEAD")
+            else if (type == "MULTIPLE")
             {
-                achievement = new AchievementDead();
-                achievement.type = Achievement.types.DEAD;
+				achievement = new AchievementMultiple();
+				achievement.type = Achievement.types.MULTIPLE;
+				achievement.SetMultiple( Json[arrayName][a]["multipleData"] );
             }
             else if (type == "NISMAN")
             {
@@ -109,7 +117,10 @@ public class AchievementsManager : MonoBehaviour
 
             achievement.title = Json[arrayName][a]["title"];
 			achievement.image = Json[arrayName][a]["image"];
-			achievement.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
+
+			if(Json[arrayName][a]["pointsToBeReady"] != null)
+				achievement.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
+			
 			achievement.listID = Json[arrayName][a]["listID"];
 
 			if(Json[arrayName][a]["data"] != null)

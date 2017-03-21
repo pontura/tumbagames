@@ -47,7 +47,7 @@ public class AchievementListsPopup : MonoBehaviour {
 	}
 	public void Open(Achievement ach)
 	{
-		Events.OnShowAchievementSignal (ach.image, ach.title);
+		Events.OnShowAchievementSignal (ach.image, ach.title, ach.ready);
 	}
 	public void Close()
 	{

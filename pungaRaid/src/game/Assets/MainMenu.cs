@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour {
         Events.OnLoginAdvisor();
     }
 	public void GotoGame () {
+		print ("tutorialReady =  " + PlayerPrefs.GetString ("tutorialReady"));
 		if (PlayerPrefs.GetString ("tutorialReady") == "true")
 			Data.Instance.LoadLevel ("02_Main");
 		else {

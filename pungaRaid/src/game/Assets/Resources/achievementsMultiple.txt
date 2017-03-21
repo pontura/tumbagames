@@ -1,0 +1,61 @@
+{
+	"achievements":
+	[
+		{
+			"title": "Te llevaste puesto a 2",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=2",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Rayaste el escudo de un rati con tu jeta",
+			"type": "MULTIPLE",
+			"multipleData": "DEAD_escudo=1",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Despeinaste a un poli que te cayó arriba",
+			"type": "MULTIPLE",
+			"multipleData": "DEAD_jump=1",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Hiciste gastar 40 balas a la policía federal argentina",
+			"type": "MULTIPLE",
+			"multipleData": "TIME-KILLED_time=15",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Hiciste gastar 169 balas a la policía federal argentina",
+			"type": "MULTIPLE",
+			"multipleData": "TIME-KILLED_time=40",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Hiciste gastar 5500 balas a la policía federal argentina",
+			"type": "MULTIPLE",
+			"multipleData": "TIME-KILLED_time=300",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Te llevaste puesto a 5 y te saltó un rati encima",
+			"type": "MULTIPLE",
+			"multipleData": "DEAD_jump=1,DASH_guy=5",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Le choripaneaste un mango al fiscal.",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_nisman=1",
+			"image":"achivements_NISMAN",
+			"listID": "NISMAN"
+		}
+	]
+}

@@ -92,8 +92,10 @@ public class Data : MonoBehaviour
         GetComponent<SoundManager>().Init();
         moodsManager.Init();
 
-        if (ResetGame)
-            PlayerPrefs.DeleteAll();
+		if (ResetGame) {
+			print ("<<<<<<<<<<<<<< Reset ALL >>>>>>>>>>>>>>>>");
+			PlayerPrefs.DeleteAll ();
+		}
 
 //#if UNITY_ANDROID || UNITY_IPHONE
        // Handheld.PlayFullScreenMovie(movPath, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFill);

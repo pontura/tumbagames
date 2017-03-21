@@ -48,6 +48,6 @@ public class NewRecordSignal : MonoBehaviour {
 		string fieldText = "Levanté " + _score + " laburando en " + barrio + ", vó?";
 
 
-		Events.OnShowAchievementSignal (medalName, fieldText);
+		Events.OnShowAchievementSignal (medalName, fieldText, true);
 	}
 }

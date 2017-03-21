@@ -39,6 +39,7 @@ public class TutorialManager : MonoBehaviour {
 	}
 	void TutorialDone()
 	{
+		print ("___________TutorialDone ");
 		PlayerPrefs.SetString("tutorialReady", "true");
 	}
     void StartGame()

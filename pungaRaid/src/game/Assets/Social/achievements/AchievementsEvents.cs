@@ -9,6 +9,12 @@ public static class AchievementsEvents
     public static System.Action<int, int> OnUnlock = delegate { };
     public static System.Action<string> OnPowerUp = delegate { };
     public static System.Action<Enemy> OnDie = delegate { };
+	public static System.Action<Enemy> OnDash = delegate { };
     public static System.Action<Achievement> OnAchievementReady = delegate { };
-    public static System.Action<AchievementsDeadManager.deadTypes> OnNewDeadComputed = delegate { };
+
+	public static System.Action<AchievementsMultipleManager.dashTypes> OnNewDashComputed = delegate { };
+	public static System.Action<AchievementsMultipleManager.deadTypes> OnNewDeadComputed = delegate { };
+
+	public static System.Action NewSecondKilled = delegate { };
+
 }

@@ -10,7 +10,7 @@ public class AchievementDead : Achievement
         this.type = types.DEAD;
         AchievementsEvents.OnNewDeadComputed += OnNewDeadComputed;
     }
-    void OnNewDeadComputed(AchievementsDeadManager.deadTypes type)
+	void OnNewDeadComputed(AchievementsMultipleManager.deadTypes type)
     {
         Debug.Log("AchievementDead : ___________________" + type);
 

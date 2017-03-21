@@ -29,6 +29,7 @@ public class Achievements : MonoBehaviour {
 	}
 	public void Selected(Achievement achievement)
 	{
+		print ("Selected " + achievement.type);
 		List<Achievement> achm = AchievementsManager.Instance.GetAchievementsByListID (achievement.listID);
 		Events.OnShowAchievementList (achm);
 	}
@@ -48,12 +49,10 @@ public class Achievements : MonoBehaviour {
 				if (ach.seccionalID == 3 && ach.moodID == 2) puerto.Init (this, ach, ach.ready);
 					break;
 
-            case Achievement.types.DEAD:
-                if (ach.data == "DEAD_ESCUDO")
+			case Achievement.types.MULTIPLE:
+				if (ach.listID == "RATIS")
                     ratis.Init(this, ach, ach.ready);
-                break;
-            case Achievement.types.NISMAN:
-                if (ach.data == "NISMAN")
+				else if (ach.listID == "NISMAN")
                     nisman.Init(this, ach, ach.ready);
                 break;
 

@@ -80,6 +80,7 @@ public class Enemy : MonoBehaviour {
     }
     public void Explote()
     {
+		AchievementsEvents.OnDash (this);
         OnExplote();
         if (shadow != null) shadow.SetActive(false);
     }
