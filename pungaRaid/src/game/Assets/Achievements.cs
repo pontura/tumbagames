@@ -16,8 +16,10 @@ public class Achievements : MonoBehaviour {
 	public AchievementButton caca ;
 	public AchievementButton skate ;
 	public AchievementButton zabeca ;
+    public AchievementButton ratis;
+    public AchievementButton nisman;
 
-	void Start()
+    void Start()
 	{
 		SetAchievements ();
 	}
@@ -46,9 +48,18 @@ public class Achievements : MonoBehaviour {
 				if (ach.seccionalID == 3 && ach.moodID == 2) puerto.Init (this, ach, ach.ready);
 					break;
 
-			case Achievement.types.POWERUP:
-				if (ach.data == "CHUMBO")
-					megachumbo.Init (this, ach, ach.ready);
+            case Achievement.types.DEAD:
+                if (ach.data == "DEAD_ESCUDO")
+                    ratis.Init(this, ach, ach.ready);
+                break;
+            case Achievement.types.NISMAN:
+                if (ach.data == "NISMAN")
+                    nisman.Init(this, ach, ach.ready);
+                break;
+
+            case Achievement.types.POWERUP:
+                if (ach.data == "CHUMBO")
+			      megachumbo.Init (this, ach, ach.ready);
 				if (ach.data == "SKATE")
 					skate.Init (this, ach, ach.ready);
 				if (ach.data == "MOTO")

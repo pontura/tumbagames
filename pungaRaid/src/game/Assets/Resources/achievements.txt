@@ -252,6 +252,22 @@
 			"pointsToBeReady": 1,
 			"image":"achivements_FORTUNA_1",
 			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Rompiste el escudo de un rati con tu jeta",
+			"type": "DEAD",
+			"data": "DEAD_ESCUDO",
+			"pointsToBeReady": 1,
+			"image":"achivements_RATI",
+			"listID": "DEAD"
+		},
+		{
+			"title": "Te la diste con el fiscal en la cara.",
+			"type": "NISMAN",
+			"data": "NISMAN",
+			"pointsToBeReady": 1,
+			"image":"achivements_NISMAN",
+			"listID": "NISMAN"
 		}
 	]
 }

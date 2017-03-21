@@ -13,7 +13,9 @@ public class AchievementsManager : MonoBehaviour
 	const string PREFAB_PATH = "AchievementsManager";
 	static AchievementsManager mInstance = null;
 
-	public static AchievementsManager Instance
+    
+
+    public static AchievementsManager Instance
 	{
 		get
 		{
@@ -94,8 +96,18 @@ public class AchievementsManager : MonoBehaviour
 				achievement = new AchievementMoney ();
 				achievement.type = Achievement.types.MONEY;
 			}
-			
-			achievement.title = Json[arrayName][a]["title"];
+            else if (type == "DEAD")
+            {
+                achievement = new AchievementDead();
+                achievement.type = Achievement.types.DEAD;
+            }
+            else if (type == "NISMAN")
+            {
+                achievement = new AchievementDead();
+                achievement.type = Achievement.types.NISMAN;
+            }
+
+            achievement.title = Json[arrayName][a]["title"];
 			achievement.image = Json[arrayName][a]["image"];
 			achievement.pointsToBeReady = int.Parse(Json[arrayName][a]["pointsToBeReady"]);
 			achievement.listID = Json[arrayName][a]["listID"];

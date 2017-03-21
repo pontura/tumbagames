@@ -239,6 +239,7 @@ public class Character : MonoBehaviour {
             }
             else 
             {
+                AchievementsEvents.OnDie(enemy);
                 Events.OnSoundFX("Crash");
                 enemy.Crashed();
                 Die();

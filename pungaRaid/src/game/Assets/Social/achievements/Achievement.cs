@@ -18,7 +18,9 @@ public class Achievement  {
         DISTANCE,
         POWERUP,
 		MONEY,
-		UNLOCK
+		UNLOCK,
+        DEAD,
+        NISMAN
     }
     public string image;
     public bool ready;
