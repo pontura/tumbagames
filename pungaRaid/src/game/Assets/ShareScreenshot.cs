@@ -65,9 +65,6 @@ public class ShareScreenshot : MonoBehaviour {
 		// currentActivity.Call("startActivity", intentObject);
 
 		//}
-
-
-
 	}
 
 }

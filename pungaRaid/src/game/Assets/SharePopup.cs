@@ -29,7 +29,7 @@ public class SharePopup : MonoBehaviour {
 	}
 	void OnScreenShotReady()
 	{
-		//Invoke("Close", 0.5f);
+		ShowButtons ();
 	}
 	void OnShowAchievementSignal(string medalName, string _text, bool isReady)
 	{				
@@ -67,16 +67,19 @@ public class SharePopup : MonoBehaviour {
 		hideInShare.SetActive (false);
 		Invoke ("ReOpen", 1);
 		GetComponent<ShareScreenshot> ().TakeScreenshot ();
-		Invoke("Close", 1);
 	}
 	void ReOpen()
 	{
 		hideInShare.SetActive (true);
 	}
+	void ShowButtons()
+	{
+		shareButton.SetActive (true);
+		hideInShare.SetActive (true);
+	}
 	public void Close()
 	{
 		Events.OnCloseSharePopup ();
-		Time.timeScale = 1;
 		popup.SetActive (false);
 	}
 }
