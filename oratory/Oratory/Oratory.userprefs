@@ -1,20 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SpeechToText\Scripts\SpeechToTextServices\WatsonStreamingSpeechToTextService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FrostweepGames\GoogleCloudSpeechRecognition\Examples\Example.cs">
     <Files>
-      <File FileName="Assets\SpeechToText\README.md" Line="26" Column="134" />
-      <File FileName="Assets\SpeechToText\Scripts\SpeechToTextServices\GoogleNonStreamingSpeechToTextService.cs" Line="77" Column="45" />
-      <File FileName="Assets\SpeechToText\Scripts\SpeechToTextServices\WatsonNonStreamingSpeechToTextService.cs" Line="62" Column="51" />
-      <File FileName="Assets\SpeechToText\Scripts\SpeechToTextServices\WatsonSpeechToTextComponent.cs" Line="57" Column="14" />
-      <File FileName="Assets\SpeechToText\Scripts\SpeechToTextServices\WatsonStreamingSpeechToTextService.cs" Line="117" Column="18" />
+      <File FileName="Assets\FrostweepGames\GoogleCloudSpeechRecognition\Scripts\SpeechRecognitionModule.cs" Line="112" Column="36" />
+      <File FileName="Assets\FrostweepGames\GoogleCloudSpeechRecognition\Scripts\Utilites\RuntimeSpeechDetection.cs" Line="162" Column="1" />
+      <File FileName="Assets\FrostweepGames\GoogleCloudSpeechRecognition\Examples\Example.cs" Line="91" Column="12" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="Oratory" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
