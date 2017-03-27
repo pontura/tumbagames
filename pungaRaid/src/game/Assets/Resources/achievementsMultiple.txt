@@ -2,63 +2,91 @@
 	"achievements":
 	[
 		{
-			"title": "Te llevaste puesto a 2",
+			"title": "Me llevé puesto a 5 gato",
 			"type": "MULTIPLE",
-			"multipleData": "DASH_guy=2",
+			"multipleData": "DASH_guy=5",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Rayaste el escudo de un rati con tu jeta",
+			"title": "Rayé el escudo de un rati con tu jeta",
 			"type": "MULTIPLE",
 			"multipleData": "DEAD_escudo=1",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Despeinaste a un poli que te cayó arriba",
+			"title": "Despeiné a un poli que me cayó arriba",
 			"type": "MULTIPLE",
 			"multipleData": "DEAD_jump=1",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Hiciste gastar 40 balas a la policía federal argentina",
+			"title": "Hice gastar 40 balas a la policía federal argentina",
 			"type": "MULTIPLE",
 			"multipleData": "TIME-KILLED_time=15",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Te llevaste puesto a 5 y te saltó un rati encima",
+			"title": "Me llevé puesto a 20 pibe",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=20",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Me llevé puesto a 60 pibe",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=60",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Me llevé puesto a 5 y me saltó un rati encima",
 			"type": "MULTIPLE",
 			"multipleData": "DEAD_jump=1,DASH_guy=5",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Hiciste gastar 169 balas a la policía federal argentina",
+			"title": "Hice gastar 169 balas a la policía federal argentina",
 			"type": "MULTIPLE",
 			"multipleData": "TIME-KILLED_time=40",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Te llevaste puesto a 25 y le rayaste el escudo a un poli",
+			"title": "Me llevé puesto a 20 pibe",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=20",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Me llevé puesto a 25 y le rayé el escudo a un poli",
 			"type": "MULTIPLE",
 			"multipleData": "DEAD_escudo=1,DASH_guy=25",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Hiciste gastar 5500 balas a la policía federal argentina",
+			"title": "Me llevé puesto a 60 pibe",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=60",
+			"image":"achivements_RATI",
+			"listID": "RATIS"
+		},
+		{
+			"title": "Hice gastar 5500 balas a la policía federal argentina",
 			"type": "MULTIPLE",
 			"multipleData": "TIME-KILLED_time=300",
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
 		{
-			"title": "Le choripaneaste un mango al fiscal.",
+			"title": "Le choripanié un mango al fiscal",
 			"type": "MULTIPLE",
 			"multipleData": "DASH_nisman=1",
 			"image":"achivements_NISMAN",

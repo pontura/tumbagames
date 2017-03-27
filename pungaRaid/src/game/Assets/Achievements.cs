@@ -1,8 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Achievements : MonoBehaviour {
+
+	public Image bar;
+
+	public Text field1;
+	public Text field2;
 
 	public AchievementButton megachumbo ;
 	public AchievementButton norco ;
@@ -22,10 +28,30 @@ public class Achievements : MonoBehaviour {
     void Start()
 	{
 		SetAchievements ();
+		int totalRangos = AchievementsManager.Instance.rangos.Count;
+
+		float myAchDone = AchievementsManager.Instance.GetTotalReady();
+		float all = AchievementsManager.Instance.achievements.Count;
+
+		float percent = (myAchDone / all) * totalRangos;
+		float fillAmount = (myAchDone / all);
+		bar.fillAmount = fillAmount;
+
+		int id = 0;
+		string rangoReal = "";
+		foreach (string rango in AchievementsManager.Instance.rangos) {
+			if (id <= percent)
+				rangoReal = rango;
+			id++;
+		}
+
+		field1.text = "Rango: " + rangoReal;
+		field2.text = "Delitos: " + myAchDone + "/" + all;
 	}
 	public void Close()
 	{
 		Data.Instance.LoadLevel ("02_Main");
+
 	}
 	public void Selected(Achievement achievement)
 	{

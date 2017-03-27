@@ -59,7 +59,7 @@ public class Achievement  {
 
     public void Ready()
     {
-		Debug.Log ("Ready: " + type.ToString () );
+		//Debug.Log ("Ready: " + type.ToString () );
         this.ready = true;
 		AchievementsEvents.OnAchievementReady (this);
     }

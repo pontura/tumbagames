@@ -6,6 +6,7 @@ using SimpleJSON;
 
 public class AchievementsManager : MonoBehaviour
 {
+	public List<string> rangos;
 	public List<Achievement> achievements;
 	public int totalAchievements;
 	string jsonUrl = "achievements";

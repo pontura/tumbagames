@@ -2,7 +2,7 @@
 	"achievements":
 	[
 		{
-			"title": "Ganate el barrio chino",
+			"title": "Gané el barrio chino",
 			"type": "UNLOCK",
 			"pointsToBeReady": 1,
 			"image":"achivements_NORCO_1",
@@ -11,7 +11,7 @@
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Ganate el Puente de los tirapiedras",
+			"title": "Gané el Puente de los tirapiedra",
 			"type": "UNLOCK",
 			"data": 2,
 			"pointsToBeReady": 1,
@@ -21,7 +21,7 @@
 			"listID": "ZABECA"	
 		},
 		{
-			"title": "Ganate el Puerto más cheto de CABA",
+			"title": "Gané el Puerto más cheto de CABA",
 			"type": "UNLOCK",
 			"pointsToBeReady": 1,
 			"image":"achivements_MAMERTO_1",
@@ -30,7 +30,7 @@
 			"listID": "MAMERTO"			
 		},
 		{
-			"title": "Ampliá tu negocio al micro-centro",
+			"title": "Amplié mi negocio al micro-centro",
 			"type": "UNLOCK",
 			"pointsToBeReady": 1,
 			"image":"achivements_DILDO_1",
@@ -39,7 +39,7 @@
 			"listID": "CENTRAL"			
 		},
 		{
-			"title": "Ampliá tu negocio a Retiro",
+			"title": "Amplié mi negocio a Retiro",
 			"type": "UNLOCK",
 			"pointsToBeReady": 1,
 			"image":"achivements_PUERTO_1",
@@ -48,7 +48,7 @@
 			"listID": "RETIRO"				
 		},
 		{
-			"title": "Zafala por 300 metros en AV. RECAMIER",
+			"title": "Zafé por 300 metros en AV. RECAMIER",
 			"type": "DISTANCE",
 			"pointsToBeReady": 300,
 			"image":"achivements_RECAMIER_1",
@@ -57,7 +57,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé 20 pesitos en AV. RECAMIER",
+			"title": "Hice 20 pesitos en AV. RECAMIER",
 			"type": "MONEY",
 			"pointsToBeReady": 2000,
 			"image":"achivements_RECAMIER_1",
@@ -66,7 +66,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé 100 pesitos en AV. RECAMIER",
+			"title": "Zafé 100 pesitos en AV. RECAMIER",
 			"type": "MONEY",
 			"pointsToBeReady": 10000,
 			"image":"achivements_RECAMIER_1",
@@ -75,7 +75,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Zafala por 500 metros en AV. RECAMIER",
+			"title": "Zafé por 500 metros en AV. RECAMIER",
 			"type": "DISTANCE",
 			"pointsToBeReady": 500,
 			"image":"achivements_RECAMIER_1",
@@ -84,7 +84,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Zafala por 1000 metros en AV. RECAMIER",
+			"title": "Zafé por 1000 metros en AV. RECAMIER",
 			"type": "DISTANCE",
 			"pointsToBeReady": 1000,
 			"image":"achivements_RECAMIER_1",
@@ -93,7 +93,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé 500 pesitos en AV. RECAMIER",
+			"title": "Hice 500 pesitos en AV. RECAMIER",
 			"type": "MONEY",
 			"pointsToBeReady": 50000,
 			"image":"achivements_RECAMIER_1",
@@ -102,7 +102,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé $1000.00 en AV. RECAMIER",
+			"title": "Hice $1000.00 en AV. RECAMIER",
 			"type": "MONEY",
 			"pointsToBeReady": 100000,
 			"image":"achivements_RECAMIER_1",
@@ -111,7 +111,7 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hacé $50.00 en BARRIO NORCOREANO",
+			"title": "Hice $50.00 en BARRIO NORCOREANO",
 			"type": "MONEY",
 			"pointsToBeReady": 5000,
 			"image":"achivements_NORCO_1",
@@ -120,7 +120,7 @@
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Corré 500 metros en BARRIO NORCOREANO",
+			"title": "Corrí 500 metros en BARRIO NORCOREANO",
 			"type": "DISTANCE",
 			"pointsToBeReady": 500,
 			"image":"achivements_NORCO_1",
@@ -129,7 +129,7 @@
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Corré 600 metros en PUENTE ZABECA",
+			"title": "Corrí 600 metros en PUENTE ZABECA",
 			"type": "DISTANCE",
 			"data": 2,
 			"pointsToBeReady": 600,
@@ -139,7 +139,7 @@
 			"listID": "ZABECA"	
 		},
 		{
-			"title": "Corré 700 metros en PUERTO MAMERTO",
+			"title": "Corrí 700 metros en PUERTO MAMERTO",
 			"type": "DISTANCE",
 			"pointsToBeReady": 700,
 			"image":"achivements_MAMERTO_1",
@@ -148,7 +148,7 @@
 			"listID": "MAMERTO"			
 		},
 		{
-			"title": "Corré 800 metros en DILDO CENTRAL",
+			"title": "Corrí 800 metros en DILDO CENTRAL",
 			"type": "DISTANCE",
 			"pointsToBeReady": 800,
 			"image":"achivements_DILDO_1",
@@ -157,7 +157,7 @@
 			"listID": "CENTRAL"			
 		},
 		{
-			"title": "Corré 1000 metros en PUERTO RETIRO",
+			"title": "Corrí 1000 metros en PUERTO RETIRO",
 			"type": "DISTANCE",
 			"pointsToBeReady": 1000,
 			"image":"achivements_PUERTO_1",
@@ -166,7 +166,7 @@
 			"listID": "RETIRO"				
 		},
 		{
-			"title": "Usar Mega-chumbo",
+			"title": "Usé el Mega-chumbo con ustedes!",
 			"type": "POWERUP",
 			"data": "CHUMBO",
 			"pointsToBeReady": 1,
@@ -174,7 +174,7 @@
 			"listID": "CHUMBO"		
 		},
 		{
-			"title": "Pungueate un skate",
+			"title": "Punguié un skate",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 1,
@@ -182,7 +182,7 @@
 			"listID": "SKATE"	
 		},
 		{
-			"title": "Pungueate 7 skates y hacelos guita",
+			"title": "Punguié 7 skates y hacelos guita",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 7,
@@ -190,7 +190,7 @@
 			"listID": "SKATE"	
 		},
 		{
-			"title": "Subite a un raticiclo",
+			"title": "Me subí a un raticiclo",
 			"type": "POWERUP",
 			"data": "MOTO",
 			"pointsToBeReady": 1,
@@ -198,7 +198,7 @@
 			"listID": "MOTO"	
 		},
 		{
-			"title": "Te embadurno el mundo con 5 sorete",
+			"title": "Te embadurné el mundo con 5 sorete",
 			"type": "POWERUP",
 			"data": "SORETE",
 			"pointsToBeReady": 5,
@@ -230,7 +230,7 @@
 			"listID": "SORETE"
 		},
 		{
-			"title": "Gauchito Gil te cuida",
+			"title": "Lo ví al Gauchito Gil y me dió abundancia",
 			"type": "POWERUP",
 			"data": "GIL",
 			"pointsToBeReady": 1,
@@ -238,7 +238,7 @@
 			"listID": "GIL"	
 		},
 		{
-			"title": "con 4 Giles de tu lado sos una aspiradora de billetes",
+			"title": "Con 4 Giles de tu lado soy una aspiradora de billetes",
 			"type": "POWERUP",
 			"data": "GIL",
 			"pointsToBeReady": 4,
@@ -246,10 +246,42 @@
 			"listID": "GIL"	
 		},
 		{
-			"title": "Ricky Fort",
+			"title": "Se me apareció Ricky Fort y me baño en Marrocs",
 			"type": "POWERUP",
 			"data": "RICKYFORT",
 			"pointsToBeReady": 1,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Superé los 100 pesos en una jornada laboral",
+			"type": "MONEY",
+			"data": "100pe",
+			"pointsToBeReady": 10000,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Hice $200.00 pé laburando",
+			"type": "MONEY",
+			"data": "200pe",
+			"pointsToBeReady": 20000,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Levanté $500.00 pé en una jornada",
+			"type": "MONEY",
+			"data": "500pe",
+			"pointsToBeReady": 50000,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Hice 1 luquita laburando las calles",
+			"type": "MONEY",
+			"data": "1000pe",
+			"pointsToBeReady": 100000,
 			"image":"achivements_FORTUNA_1",
 			"listID": "RICKYFORT"
 		}

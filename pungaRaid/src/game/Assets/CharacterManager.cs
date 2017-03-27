@@ -28,6 +28,8 @@ public class CharacterManager : MonoBehaviour {
     }
     public void UpdatePosition(float _x)
     {
+		if (character == null)
+			return;
        Vector3 pos = character.transform.position;
        pos.x = _x;
        character.transform.position = pos;
