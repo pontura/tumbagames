@@ -7,6 +7,7 @@ public class AchievementsInGameManager : MonoBehaviour {
 	bool ready;
 	private int moodID;
 	private int seccionalID;
+	bool closing;
 
 	void Start () {
 		Events.OnHeroDie += OnHeroDie;
@@ -37,7 +38,7 @@ public class AchievementsInGameManager : MonoBehaviour {
 		string text = ach.title;
 
 		Events.OnShowAchievementSignal (medalName, text, true);
-		Invoke ("Delayed", 0.1f);
+		Invoke ("Delayed", 0.01f);
 
 		if(Data.Instance.musicManager.volume==1)
 			Events.OnMusicVolumeChanged(0.2f);
@@ -45,7 +46,7 @@ public class AchievementsInGameManager : MonoBehaviour {
 	void Delayed()
 	{
 		lastTimeScale = Time.timeScale;
-		Time.timeScale = 0;
+		Time.timeScale = 0f;
 	}
 	void Loop () {
 		
@@ -68,7 +69,19 @@ public class AchievementsInGameManager : MonoBehaviour {
 	{
 		if(Data.Instance.musicManager.volume==0.2f)
 			Events.OnMusicVolumeChanged(1);
-		
-		Time.timeScale = 1;
+
+		closing = true;
+		Time.timeScale = 0.025f;
+	}
+	float speed = 1.5f;
+	void Update()
+	{
+		if (!closing)
+			return;
+		Time.timeScale += Time.deltaTime * speed;
+		if (Time.timeScale > 0.95f) {
+			Time.timeScale = 1;
+			closing = false;
+		}
 	}
 }
