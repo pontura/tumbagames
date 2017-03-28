@@ -28,6 +28,11 @@ public class RankingButton : MonoBehaviour {
             usernameField.text = username.ToUpper();
 
         profilePicture.setPicture(facebookID);
+
+		GetComponent<Button>().onClick.AddListener(() => { 
+			Vector3 pos = Input.mousePosition;
+			Events.OnAvatarSignal(pos, username);
+		});
 	}
     public void IsYou()
     {
