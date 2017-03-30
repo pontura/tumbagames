@@ -446,6 +446,14 @@
 			"listID": "CHUMBO"		
 		},
 		{
+			"title": "Chumbo Zen: teniendo el MEGACHUMBO disparé 0 VECES",
+			"type": "ACTION_WHILE_POWERUP",
+			"data": "ZERO_SHOOTS_WHILE_CHUMBO",
+			"pointsToBeReady": 1,
+			"image":"achivements_MEGACHUMBO_1",
+			"listID": "CHUMBO"		
+		},
+		{
 			"title": "¡Estado de emoción violenta! Disparé 37 VECES el MEGACHUMBO.",
 			"type": "MULTIPLE",
 			"multipleData": "SHOOT_megachumbo=37",
@@ -469,7 +477,7 @@
 			"listID": "SKATE"	
 		},
 		{
-			"title": "Yo maté a un policía motorizado",
+			"title": "Yo maté a un policía motorizado (y le afané el RATICICLO)",
 			"type": "POWERUP",
 			"data": "MOTO",
 			"pointsToBeReady": 1,
@@ -481,6 +489,14 @@
 			"type": "ACTION_WHILE_POWERUP",
 			"data": "CRASH_WHILE_MOTO",
 			"pointsToBeReady": 35,
+			"image":"achivements_RATICICLO_1",
+			"listID": "MOTO"	
+		},
+		{
+			"title": "Pato, ¿¡estás jugando vos!? Masacré a 70 GILES con el RATICICLO.",
+			"type": "ACTION_WHILE_POWERUP",
+			"data": "CRASH_WHILE_MOTO_70",
+			"pointsToBeReady": 70,
 			"image":"achivements_RATICICLO_1",
 			"listID": "MOTO"	
 		},

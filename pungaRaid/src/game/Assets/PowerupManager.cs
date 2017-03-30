@@ -111,7 +111,7 @@ public class PowerupManager : MonoBehaviour {
         PlayParticles();
         character.Idle();
 
-       // Debug.Log("OnHeroPowerUpOff termino : " + type);
+		AchievementsEvents.OnPowerupOff (type);
 
         Events.OnSoundFX("PowerUpOff");
 

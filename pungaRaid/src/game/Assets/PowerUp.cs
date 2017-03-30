@@ -17,7 +17,7 @@ public class PowerUp : Enemy {
     public void InitPowerUp()
     {
         int id = Game.Instance.GetNewPowerUpID();
-		id = 1;
+
         moto.SetActive(false);
         chumbo.SetActive(false);
         gil.SetActive(false);
