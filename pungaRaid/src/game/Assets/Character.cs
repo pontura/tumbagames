@@ -184,6 +184,7 @@ public class Character : MonoBehaviour {
             }
             else if (powerupManager.type == PowerupManager.types.MOTO)
             {
+				AchievementsEvents.OnCrash_While_Moto ();
                 enemy.Explote();
                 Events.OnSoundFX("Explosion");
             }
@@ -208,6 +209,11 @@ public class Character : MonoBehaviour {
             }
             else if (hero.state == Hero.states.DASH && (enemy.GetComponent<Victim>() || enemy.GetComponent<GenericVictim>()))
             {
+				if (powerupManager.type == PowerupManager.types.GIL)
+					AchievementsEvents.OnDash_While_Gil ();
+				else
+					AchievementsEvents.OnDash (enemy);
+				
                 int rand = Random.Range(1, 3);
                 Events.OnSoundFX("Dashed" + rand);
                 enemy.Explote();

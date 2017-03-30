@@ -469,10 +469,18 @@
 			"listID": "SKATE"	
 		},
 		{
-			"title": "Me subí a un raticiclo",
+			"title": "Yo maté a un policía motorizado",
 			"type": "POWERUP",
 			"data": "MOTO",
 			"pointsToBeReady": 1,
+			"image":"achivements_RATICICLO_1",
+			"listID": "MOTO"	
+		},
+		{
+			"title": "¡Alto chano el Punga Punga! Pisé a 35 GILES con el RATICICLO",
+			"type": "ACTION_WHILE_POWERUP",
+			"data": "CRASH_WHILE_MOTO",
+			"pointsToBeReady": 35,
 			"image":"achivements_RATICICLO_1",
 			"listID": "MOTO"	
 		},
@@ -526,12 +534,22 @@
 			"listID": "GIL"	
 		},
 		{
-			"title": "¡Gedencia y bendición! Me punguié 20 LOGIS bajo efectos de GIL POWER.",
-			"type": "STEAL_WHILE_GIL",
-			"pointsToBeReady": 20,
+			"title": "¡Gedencia y bendición! Me punguié 16 LOGIS bajo efectos de GIL POWER.",
+			"type": "ACTION_WHILE_POWERUP",
+			"data": "STEAL_WHILE_GIL",
+			"pointsToBeReady": 16,
 			"image":"achivements_DEVOTO_1",
 			"listID": "GIL"
 		},
+		{
+			"title": "¡Turbogil! Hicistes 10 DASH con el GIL POWER puesto.",
+			"type": "ACTION_WHILE_POWERUP",
+			"data": "DASH_WHILE_GIL",
+			"pointsToBeReady": 10,
+			"image":"achivements_DEVOTO_1",
+			"listID": "GIL"
+		},
+
 
 ////////////
 		{

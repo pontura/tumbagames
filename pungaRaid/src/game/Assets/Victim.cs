@@ -88,11 +88,6 @@ public class Victim : Enemy {
     {
         if (Game.Instance.gameManager.state == GameManager.states.ENDING) return;
 
-		if (Game.Instance.characterManager.character.powerupManager.type == PowerupManager.types.GIL)
-			AchievementsEvents.OnPung_While_Gil ();
-		else
-			AchievementsEvents.OnPung ();
-
         if(loopStealing) 
         {
             Invoke("Steal", 0.5f);
@@ -114,6 +109,12 @@ public class Victim : Enemy {
         Events.OnScoreUpdate((Random.Range(5, 10) * 10) * mnultiplayerStolen);
 
         Events.OnAddCoins(laneId, transform.localPosition.x, mnultiplayerStolen*10);
+
+		if (Game.Instance.characterManager.character.powerupManager.type == PowerupManager.types.GIL)
+			AchievementsEvents.OnPung_While_Gil ();
+		else
+			AchievementsEvents.OnPung ();
+		
     }
     override public void OnCrashed()
     {

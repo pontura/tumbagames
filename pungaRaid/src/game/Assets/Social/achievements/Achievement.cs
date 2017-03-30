@@ -24,7 +24,7 @@ public class Achievement  {
 		SHOOT,
 		DASH,
 		STEAL,
-		STEAL_WHILE_GIL,
+		ACTION_WHILE_POWERUP,
 		TIMEKILLED,
         NISMAN,
 		MULTIPLE,
@@ -69,8 +69,7 @@ public class Achievement  {
     }
 	void CheckState()
 	{
-		if (type == types.MULTIPLE) {
-			//Debug.Log ("Chequea_ : " + data + " resultado: " + PlayerPrefs.GetInt (data));
+		if (type == types.MULTIPLE || type == types.ACTION_WHILE_POWERUP) {
 
 			if (PlayerPrefs.GetInt (data) == 1)
 				Ready ();
@@ -113,6 +112,8 @@ public class Achievement  {
 		//Debug.Log ("GetQty " + data +  " es: " + PlayerPrefs.GetInt(data));
 		return PlayerPrefs.GetInt(data);
 	}
+	public virtual void SetAction(string _action) {}
+
 	public void SetMultiple(string data)
 	{
 		this.data = data;

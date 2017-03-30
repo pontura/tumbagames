@@ -93,8 +93,7 @@ public class AchievementsManager : MonoBehaviour
 			if (type == "UNLOCK") {
 				achievement = new AchievementUnlock ();   
 				achievement.type = Achievement.types.UNLOCK;
-			} else
-			if (type == "DISTANCE") {
+			} else if (type == "DISTANCE") {
 				achievement = new AchievementDistance ();   
 				achievement.type = Achievement.types.DISTANCE;
 			} else if (type == "POWERUP") {
@@ -103,26 +102,20 @@ public class AchievementsManager : MonoBehaviour
 			} else if (type == "MONEY") {
 				achievement = new AchievementMoney ();
 				achievement.type = Achievement.types.MONEY;
-			}
-            else if (type == "MULTIPLE")
-            {
-				achievement = new AchievementMultiple();
+			} else if (type == "MULTIPLE") {
+				achievement = new AchievementMultiple ();
 				achievement.type = Achievement.types.MULTIPLE;
-				achievement.SetMultiple( Json[arrayName][a]["multipleData"] );
-            }
-            else if (type == "NISMAN")
-            {
-                achievement = new AchievementDead();
-                achievement.type = Achievement.types.NISMAN;
-            }
-			else if (type == "STEAL")
-			{
-				achievement = new AchievementSteal();
+				achievement.SetMultiple (Json [arrayName] [a] ["multipleData"]);
+			} else if (type == "NISMAN") {
+				achievement = new AchievementDead ();
+				achievement.type = Achievement.types.NISMAN;
+			} else if (type == "STEAL") {
+				achievement = new AchievementSteal ();
 				achievement.type = Achievement.types.STEAL;
-			} else if (type == "STEAL_WHILE_GIL")
-			{
-				achievement = new AchievementStealWhileGil();
-				achievement.type = Achievement.types.STEAL_WHILE_GIL;
+			} else if (type == "ACTION_WHILE_POWERUP") {
+				achievement = new AchievementActionWhilePowerup ();
+				achievement.type = Achievement.types.ACTION_WHILE_POWERUP;
+				achievement.SetAction (Json[arrayName][a]["data"]);
 			}
 
             achievement.title = Json[arrayName][a]["title"];
