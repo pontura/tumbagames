@@ -10,8 +10,6 @@ public class AchievementPowerup : Achievement
 	}
 	void OnPowerUp(string type)
 	{
-		Debug.Log ("___________________" + type);
-
 		if (type.ToString () == data) {
 			qty++;
 			SaveInt (qty);

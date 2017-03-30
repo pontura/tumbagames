@@ -87,6 +87,12 @@ public class Victim : Enemy {
     public void Steal()
     {
         if (Game.Instance.gameManager.state == GameManager.states.ENDING) return;
+
+		if (Game.Instance.characterManager.character.powerupManager.type == PowerupManager.types.GIL)
+			AchievementsEvents.OnPung_While_Gil ();
+		else
+			AchievementsEvents.OnPung ();
+
         if(loopStealing) 
         {
             Invoke("Steal", 0.5f);

@@ -14,7 +14,7 @@ public class ClothesInPunga : MonoBehaviour {
             foreach (SpriteRenderer sr in go.GetComponentsInChildren<SpriteRenderer>())
                 parts.Add(sr);
         }
-        string specialCloth = Data.Instance.GetComponent<ClothItemsManager>().ClothesWearing;
+		string specialCloth = Data.Instance.clothItemsManager.ClothesWearing;
         if (specialCloth != "")
             ChangeCloth(specialCloth);
     }

@@ -60,6 +60,7 @@ public class SharePopup : MonoBehaviour {
 		popup.SetActive (true);
 		hideInShare.SetActive (true);
 		medal.sprite = Resources.Load("achievements/" + medalName, typeof(Sprite)) as Sprite;
+		medal.transform.localEulerAngles = new Vector3 (0, 0, Random.Range (0, 80) - 40);
 	}
 	public void Share()
 	{

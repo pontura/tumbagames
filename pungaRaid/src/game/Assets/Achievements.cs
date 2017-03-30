@@ -23,7 +23,7 @@ public class Achievements : MonoBehaviour {
 	public AchievementButton skate ;
 	public AchievementButton zabeca ;
     public AchievementButton ratis;
-    public AchievementButton nisman;
+    public AchievementButton futbol;
 
     void Start()
 	{
@@ -77,8 +77,8 @@ public class Achievements : MonoBehaviour {
 			case Achievement.types.MULTIPLE:
 				if (ach.listID == "RATIS")
                     ratis.Init(this, ach, ach.ready);
-				else if (ach.listID == "NISMAN")
-                    nisman.Init(this, ach, ach.ready);
+				else if (ach.listID == "FUTBOL")
+					futbol.Init(this, ach, ach.ready);
                 break;
 
             case Achievement.types.POWERUP:

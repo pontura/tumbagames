@@ -21,10 +21,14 @@ public class Achievement  {
 		MONEY,
 		UNLOCK,
         DEAD,
+		SHOOT,
 		DASH,
+		STEAL,
+		STEAL_WHILE_GIL,
 		TIMEKILLED,
         NISMAN,
-		MULTIPLE
+		MULTIPLE,
+		FUTBOL
     }
     public string image;
     public bool ready;
@@ -134,6 +138,18 @@ public class Achievement  {
 					break;
 				case "TIME-KILLED":
 					mData.type = types.TIMEKILLED;
+					break;
+				case "FUTBOL":
+					mData.type = types.FUTBOL;
+					break;
+				case "POWERUP":
+					mData.type = types.POWERUP;
+					break;
+				case "SHOOT":
+					mData.type = types.SHOOT;
+					break;
+				case "STEAL":
+					mData.type = types.STEAL;
 					break;
 			}
 			mData.data = dataName;

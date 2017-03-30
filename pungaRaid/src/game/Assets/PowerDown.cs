@@ -24,13 +24,15 @@ public class PowerDown : Enemy
             case 1: 
 			sorete.SetActive(true); 
 			type = PowerdownManager.types.SORETE;
-			AchievementsEvents.OnPowerUp("SORETE");
 			break;
         }
     }
 
     public void Activate()
     {
+		
+		AchievementsEvents.OnPowerUp("SORETE");
+		
         Events.OnPowerDown(type);
         sorete.GetComponent<Animator>().Play("shitSplat",0,0);
         Invoke("PoolIt", 0.6f);

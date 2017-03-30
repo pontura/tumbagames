@@ -115,6 +115,15 @@ public class AchievementsManager : MonoBehaviour
                 achievement = new AchievementDead();
                 achievement.type = Achievement.types.NISMAN;
             }
+			else if (type == "STEAL")
+			{
+				achievement = new AchievementSteal();
+				achievement.type = Achievement.types.STEAL;
+			} else if (type == "STEAL_WHILE_GIL")
+			{
+				achievement = new AchievementStealWhileGil();
+				achievement.type = Achievement.types.STEAL_WHILE_GIL;
+			}
 
             achievement.title = Json[arrayName][a]["title"];
 			achievement.image = Json[arrayName][a]["image"];

@@ -95,6 +95,7 @@ public class Character : MonoBehaviour {
         if (powerupManager.type == PowerupManager.types.CHUMBO)
         {
             hero.ChumboFire();
+			AchievementsEvents.OnShoot ();
             Events.OnPowerUpShoot(PowerupManager.types.CHUMBO);
         } else 
             if (hero.state != Hero.states.DASH && powerupManager.type != PowerupManager.types.MOTO)

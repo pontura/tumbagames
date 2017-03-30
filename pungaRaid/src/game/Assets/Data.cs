@@ -31,6 +31,8 @@ public class Data : MonoBehaviour
     public CombosManager combosManager;
     [HideInInspector]
     public SpecialItemsManager specialItems;
+	[HideInInspector]
+	public ClothItemsManager clothItemsManager;
     [HideInInspector]
     public MoodsManager moodsManager;
     [HideInInspector]
@@ -86,6 +88,7 @@ public class Data : MonoBehaviour
         combosManager = GetComponent<CombosManager>();
         specialItems = GetComponent<SpecialItemsManager>();
         moodsManager = GetComponent<MoodsManager>();
+		clothItemsManager = GetComponent<ClothItemsManager> ();
         texts = GetComponent<Texts>();
 
         GetComponent<MusicManager>().Init();

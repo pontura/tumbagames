@@ -32,9 +32,14 @@ public class AchievementListsPopup : MonoBehaviour {
 		popup.SetActive (true);
 		int ready = 0;
 		string medalName = "";
+
+		if (list [0].listID == "FUTBOL")
+			medalName = "achivements_FUTBOL_GENERICO";
+		else
+			medalName = list[0].image;
+		
 		foreach (Achievement ach in list) {
 			AchievementListButton b = Instantiate (button);
-			medalName = ach.image;
 			b.Init (this, ach);
 			b.transform.SetParent (container);
 			b.transform.localPosition = Vector3.zero;

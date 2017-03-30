@@ -85,12 +85,76 @@
 			"image":"achivements_RATI",
 			"listID": "RATIS"
 		},
+
+
 		{
-			"title": "Le choripanié un mango al fiscal",
+			"title": "Con la del millo puesta, tiré 15 tiros en PUERTO MAMERTO",
 			"type": "MULTIPLE",
-			"multipleData": "DASH_nisman=1",
-			"image":"achivements_NISMAN",
-			"listID": "NISMAN"
+			"seccional": 1,
+			"mood": 2,
+			"multipleData": "SHOOT_megachumbo=15,FUTBOL_remera=2",
+			"image":"achivements_FUTBOL_RIVER",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "¡Altos huevos! Laburá con la de BOCA en PUENTE ZABECA si so piola.",
+			"type": "MULTIPLE",
+			"seccional": 3,
+			"mood": 1,
+			"multipleData": "FUTBOL_remera=1",
+			"image":"achivements_FUTBOL_BOCA",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "¡Fiebre Millonaria! Cargáte a 15 con la de RIVER en AV. RECAMIER",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=15,FUTBOL_remera=2",
+			"image":"achivements_FUTBOL_RIVER",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "Llevate puesto a 20 con la de BOCA en el BARRIO NORKOREANO y mostrá quien manda",
+			"type": "MULTIPLE",
+			"seccional": 3,
+			"mood": 1,
+			"multipleData": "DASH_guy=20,FUTBOL_remera=1",
+			"image":"achivements_FUTBOL_BOCA",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "¡Inmunda bosteridá! Pisar 6 SORETE con la de BOCA puesta.",
+			"type": "MULTIPLE",
+			"multipleData": "FUTBOL_remera=1,POWERUP_sorete=6",
+			"image":"achivements_FUTBOL_BOCA",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "Artillería pesada: dispará 20 TIRO con el MEGACHUMBO con la casaca de ARSENAL puesta.",
+			"type": "MULTIPLE",
+			"multipleData": "FUTBOL_remera=3,SHOOT_megachumbo=20",
+			"image":"achivements_FUTBOL_ARSENAL",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "Hoy salgo a laburá con altas llantas y la de ARSENAL.",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=2,FUTBOL_remera=3",
+			"image":"achivements_FUTBOL_ARSENAL",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "El prósimo tiki tiki lo hago con la de ARGENTINOS JRS.",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=2,FUTBOL_remera=4",
+			"image":"achivements_FUTBOL_ARGENJUNIORS",
+			"listID": "FUTBOL"
+		},
+		{
+			"title": "¡Alto semillero! Me llevé puesto a 15 con la de ARGENTINOS JRS.",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_guy=15,FUTBOL_remera=4",
+			"image":"achivements_FUTBOL_ARGENJUNIORS",
+			"listID": "FUTBOL"
 		}
 	]
 }

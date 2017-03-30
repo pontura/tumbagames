@@ -2,71 +2,34 @@
 	"achievements":
 	[
 		{
-			"title": "Gané el barrio chino",
-			"type": "UNLOCK",
-			"pointsToBeReady": 1,
-			"image":"achivements_NORCO_1",
-			"seccional": 2,
-			"mood": 1,
-			"listID": "NORCOREANO"
-		},
-		{
-			"title": "Gané el Puente de los tirapiedra",
-			"type": "UNLOCK",
-			"data": 2,
-			"pointsToBeReady": 1,
-			"image":"achivements_ZABECA_1",
-			"seccional": 3,
-			"mood": 1,
-			"listID": "ZABECA"	
-		},
-		{
-			"title": "Gané el Puerto más cheto de CABA",
-			"type": "UNLOCK",
-			"pointsToBeReady": 1,
-			"image":"achivements_MAMERTO_1",
-			"seccional": 1,
-			"mood": 2,
-			"listID": "MAMERTO"			
-		},
-		{
-			"title": "Amplié mi negocio al micro-centro",
-			"type": "UNLOCK",
-			"pointsToBeReady": 1,
-			"image":"achivements_DILDO_1",
-			"seccional": 2,
-			"mood": 2,
-			"listID": "CENTRAL"			
-		},
-		{
-			"title": "Amplié mi negocio a Retiro",
-			"type": "UNLOCK",
-			"pointsToBeReady": 1,
-			"image":"achivements_PUERTO_1",
-			"seccional": 3,
-			"mood": 2,
-			"listID": "RETIRO"				
-		},
-		{
-			"title": "Zafé por 300 metros en AV. RECAMIER",
+			"title": "¡Frenesí de delito y descontrol! 1000 METRO a puro crimen en AV. RECAMIER.",
 			"type": "DISTANCE",
-			"pointsToBeReady": 300,
+			"pointsToBeReady": 1000,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Hice 20 pesitos en AV. RECAMIER",
-			"type": "MONEY",
-			"pointsToBeReady": 2000,
+			"title": "¡Alto bondi en AV. RECAMIER! 1500 METRO de delito, ritmo y gedencia.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 1500,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Zafé 100 pesitos en AV. RECAMIER",
+			"title": "¡Descontrol en AV. RECAMIER! 1800 METRO de mala leche con la p*ta clase media.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 1800,
+			"image":"achivements_RECAMIER_1",
+			"seccional": 1,
+			"mood": 1,
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 100 PESITO a lo vecino de AV. RECAMIER y me gustó.",
 			"type": "MONEY",
 			"pointsToBeReady": 10000,
 			"image":"achivements_RECAMIER_1",
@@ -75,98 +38,407 @@
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Zafé por 500 metros en AV. RECAMIER",
-			"type": "DISTANCE",
-			"pointsToBeReady": 500,
+			"title": "Con lo 250 PESITO que junté en AV. RECAMIER voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 25000,
 			"image":"achivements_RECAMIER_1",
 			"seccional": 1,
 			"mood": 1,
 			"listID": "RECAMIER"
 		},
 		{
-			"title": "Zafé por 1000 metros en AV. RECAMIER",
+			"title": "Cabí a 100 GILES en AV. RECAMIER.",
+			"type": "STEAL",
+			"pointsToBeReady": 100,
+			"seccional": 1,
+			"mood": 1,
+			"image":"achivements_RECAMIER_1",
+			"listID": "RECAMIER"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 250 GILES en AV. RECAMIER.",
+			"type": "STEAL",
+			"pointsToBeReady": 250,
+			"seccional": 1,
+			"mood": 1,
+			"image":"achivements_RECAMIER_1",
+			"listID": "RECAMIER"
+		},
+//////////////////////////////////////////
+		{
+			"title": "Ya soborné a la gorra del BARRIO NORKOREANO. ¡A delinquir!",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "¡Frenesí de delito y descontrol! 1000 METRO a puro crimen en BARRIO NORKOREANO.",
 			"type": "DISTANCE",
 			"pointsToBeReady": 1000,
-			"image":"achivements_RECAMIER_1",
-			"seccional": 1,
-			"mood": 1,
-			"listID": "RECAMIER"
-		},
-		{
-			"title": "Hice 500 pesitos en AV. RECAMIER",
-			"type": "MONEY",
-			"pointsToBeReady": 50000,
-			"image":"achivements_RECAMIER_1",
-			"seccional": 1,
-			"mood": 1,
-			"listID": "RECAMIER"
-		},
-		{
-			"title": "Hice $1000.00 en AV. RECAMIER",
-			"type": "MONEY",
-			"pointsToBeReady": 100000,
-			"image":"achivements_RECAMIER_1",
-			"seccional": 1,
-			"mood": 1,
-			"listID": "RECAMIER"
-		},
-		{
-			"title": "Hice $50.00 en BARRIO NORCOREANO",
-			"type": "MONEY",
-			"pointsToBeReady": 5000,
 			"image":"achivements_NORCO_1",
 			"seccional": 2,
 			"mood": 1,
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Corrí 500 metros en BARRIO NORCOREANO",
+			"title": "¡Alto bondi en BARRIO NORKOREANO! 1500 METRO de delito, ritmo y gedencia.",
 			"type": "DISTANCE",
-			"pointsToBeReady": 500,
+			"pointsToBeReady": 1500,
 			"image":"achivements_NORCO_1",
 			"seccional": 2,
 			"mood": 1,
 			"listID": "NORCOREANO"
 		},
 		{
-			"title": "Corrí 600 metros en PUENTE ZABECA",
+			"title": "¡Descontrol en BARRIO NORKOREANO! 2500 METRO de mala leche con la p*ta clase media.",
 			"type": "DISTANCE",
+			"pointsToBeReady": 2500,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 110 PESITO a lo vecino de BARRIO NORKOREANO y me gustó.",
+			"type": "MONEY",
+			"pointsToBeReady": 11000,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Con lo 300 PESITO que junté en BARRIO NORKOREANO voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 30000,
+			"image":"achivements_NORCO_1",
+			"seccional": 2,
+			"mood": 1,
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "Cabí a 120 GILES en BARRIO NORKOREANO.",
+			"type": "STEAL",
+			"pointsToBeReady": 120,
+			"seccional": 2,
+			"mood": 1,
+			"image":"achivements_NORCO_1",
+			"listID": "NORCOREANO"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 250 GILES en BARRIO NORKOREANO.",
+			"type": "STEAL",
+			"pointsToBeReady": 250,
+			"seccional": 2,
+			"mood": 1,
+			"image":"achivements_NORCO_1",
+			"listID": "NORCOREANO"
+		},
+//////////////////////////////////////////
+		{
+			"title": "Si no querés que te re piolee en PUENTE ZABECA mejor bajate del lado de provincia.",
+			"type": "UNLOCK",
 			"data": 2,
-			"pointsToBeReady": 600,
+			"pointsToBeReady": 1,
 			"image":"achivements_ZABECA_1",
 			"seccional": 3,
 			"mood": 1,
 			"listID": "ZABECA"	
 		},
 		{
-			"title": "Corrí 700 metros en PUERTO MAMERTO",
+			"title": "¡Frenesí de delito y descontrol! 1250 METRO a puro crimen en PUENTE ZABECA.",
 			"type": "DISTANCE",
-			"pointsToBeReady": 700,
+			"pointsToBeReady": 1250,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"
+		},
+		{
+			"title": "¡Alto bondi en PUENTE ZABECA! 2000 METRO de delito, ritmo y gedencia.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 2000,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"
+		},
+		{
+			"title": "¡Descontrol en PUENTE ZABECA! 3500 METRO de mala leche con la p*ta clase media.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 3500,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 140 PESITO a lo vecino de PUENTE ZABECA y me gustó.",
+			"type": "MONEY",
+			"pointsToBeReady": 14000,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"
+		},
+		{
+			"title": "Con lo 300 PESITO que junté en PUENTE ZABECA voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 30000,
+			"image":"achivements_ZABECA_1",
+			"seccional": 3,
+			"mood": 1,
+			"listID": "ZABECA"
+		},
+		{
+			"title": "Cabí a 120 GILES en PUENTE ZABECA.",
+			"type": "STEAL",
+			"pointsToBeReady": 120,
+			"seccional": 3,
+			"mood": 1,
+			"image":"achivements_ZABECA_1",
+			"listID": "ZABECA"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 250 GILES en PUENTE ZABECA.",
+			"type": "STEAL",
+			"pointsToBeReady": 250,
+			"seccional": 3,
+			"mood": 1,
+			"image":"achivements_ZABECA_1",
+			"listID": "ZABECA"
+		},
+
+//////////
+
+		{
+			"title": "El comisario de PUERTO MAMERTO me dió la grin car pa salir a caber yankis y proyankis.",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
 			"image":"achivements_MAMERTO_1",
 			"seccional": 1,
 			"mood": 2,
 			"listID": "MAMERTO"			
 		},
 		{
-			"title": "Corrí 800 metros en DILDO CENTRAL",
+			"title": "¡Frenesí de delito y descontrol! 1500 METRO a puro crimen en PUERTO MAMERTO.",
 			"type": "DISTANCE",
-			"pointsToBeReady": 800,
+			"pointsToBeReady": 1500,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "¡Alto bondi en PUERTO MAMERTO! 2000 METRO de delito, ritmo y gedencia.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 2000,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "¡Descontrol en PUERTO MAMERTO! 2666 METRO de mala leche con la p*ta clase media.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 2666,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 100 PESITO a lo vecino de PUERTO MAMERTO y me gustó.",
+			"type": "MONEY",
+			"pointsToBeReady": 10000,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood": 2,
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "Con lo 300 PESITO que junté en PUERTO MAMERTO voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 30000,
+			"image":"achivements_MAMERTO_1",
+			"seccional": 1,
+			"mood":2,
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "Cabí a 100 GILES en PUERTO MAMERTO.",
+			"type": "STEAL",
+			"pointsToBeReady": 100,
+			"seccional": 1,
+			"mood": 2,
+			"image":"achivements_MAMERTO_1",
+			"listID": "MAMERTO"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 270 GILES en PUERTO MAMERTO.",
+			"type": "STEAL",
+			"pointsToBeReady": 270,
+			"seccional": 1,
+			"mood": 2,
+			"image":"achivements_MAMERTO_1",
+			"listID": "MAMERTO"
+		},
+
+/////////
+
+		{
+			"title": "Lo ma lindo de tener zona liberada en DILDO CENTRAL es ver la foto de guacha en bola que hay en lo tiatro.",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
 			"image":"achivements_DILDO_1",
 			"seccional": 2,
 			"mood": 2,
-			"listID": "CENTRAL"			
+			"listID": "CENTRAL"
 		},
 		{
-			"title": "Corrí 1000 metros en PUERTO RETIRO",
+			"title": "¡Frenesí de delito y descontrol! 1600 METRO a puro crimen en DILDO CENTRAL.",
 			"type": "DISTANCE",
-			"pointsToBeReady": 1000,
+			"pointsToBeReady": 1600,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "¡Alto bondi en DILDO CENTRAL! 2400 METRO de delito, ritmo y gedencia.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 2400,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "¡Descontrol en DILDO CENTRAL! 3000 METRO de mala leche con la p*ta clase media.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 3000,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 100 PESITO a lo vecino de DILDO CENTRAL y me gustó.",
+			"type": "MONEY",
+			"pointsToBeReady": 10000,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood": 2,
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "Con lo 300 PESITO que junté en DILDO CENTRAL voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 30000,
+			"image":"achivements_DILDO_1",
+			"seccional": 2,
+			"mood":2,
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "Cabí a 100 GILES en DILDO CENTRAL.",
+			"type": "STEAL",
+			"pointsToBeReady": 100,
+			"seccional": 2,
+			"mood": 2,
+			"image":"achivements_DILDO_1",
+			"listID": "CENTRAL"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 270 GILES en DILDO CENTRAL.",
+			"type": "STEAL",
+			"pointsToBeReady": 270,
+			"seccional": 2,
+			"mood": 2,
+			"image":"achivements_DILDO_1",
+			"listID": "CENTRAL"
+		},
+/////////
+
+		{
+			"title": "No se por que soborné al cobani de PUERTO RETIRO. Alta baranda a pescado, amigo.",
+			"type": "UNLOCK",
+			"pointsToBeReady": 1,
 			"image":"achivements_PUERTO_1",
 			"seccional": 3,
 			"mood": 2,
 			"listID": "RETIRO"				
 		},
 		{
-			"title": "Usé el Mega-chumbo con ustedes!",
+			"title": "¡Frenesí de delito y descontrol! 1300 METRO a puro crimen en PUERTO RETIRO.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 1300,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"
+		},
+		{
+			"title": "¡Alto bondi en PUERTO RETIRO! 2500 METRO de delito, ritmo y gedencia.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 2500,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"
+		},
+		{
+			"title": "¡Descontrol en PUERTO RETIRO! 4000 METRO de mala leche con la p*ta clase media.",
+			"type": "DISTANCE",
+			"pointsToBeReady": 4000,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"
+		},
+		{
+			"title": "Con todo respeto: ya le cabí 200 PESITO a lo vecino de PUERTO RETIRO y me gustó.",
+			"type": "MONEY",
+			"pointsToBeReady": 20000,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood": 2,
+			"listID": "RETIRO"
+		},
+		{
+			"title": "Con lo 400 PESITO que junté en PUERTO RETIRO voy a hacé algo bien malo para tu clase social.",
+			"type": "MONEY",
+			"pointsToBeReady": 40000,
+			"image":"achivements_PUERTO_1",
+			"seccional": 3,
+			"mood":2,
+			"listID": "RETIRO"
+		},
+		{
+			"title": "Cabí a 150 GILES en PUERTO RETIRO.",
+			"type": "STEAL",
+			"pointsToBeReady": 150,
+			"seccional": 3,
+			"mood": 2,
+			"image":"achivements_PUERTO_1",
+			"listID": "RETIRO"
+		},
+		{
+			"title": "¡Reincidencia, gedencia y pasión! Rechiflé a 350 GILES en PUERTO RETIRO.",
+			"type": "STEAL",
+			"pointsToBeReady": 350,
+			"seccional": 3,
+			"mood": 2,
+			"image":"achivements_PUERTO_1",
+			"listID": "RETIRO"
+		},
+
+/////////
+		{
+			"title": "¡Alguna vez tuve el Mega-Chumbo!",
 			"type": "POWERUP",
 			"data": "CHUMBO",
 			"pointsToBeReady": 1,
@@ -174,15 +446,22 @@
 			"listID": "CHUMBO"		
 		},
 		{
+			"title": "¡Estado de emoción violenta! Disparé 37 VECES el MEGACHUMBO.",
+			"type": "MULTIPLE",
+			"multipleData": "SHOOT_megachumbo=37",
+			"image":"achivements_MEGACHUMBO_1",
+			"listID": "CHUMBO"
+		},
+		{
 			"title": "Punguié un skate",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 1,
-			"image":"achivements_SKATE_1"	,
-			"listID": "SKATE"	
+			"image":"achivements_SKATE_1",
+			"listID": "SKATE"
 		},
 		{
-			"title": "Punguié 7 skates y hacelos guita",
+			"title": "Punguié 7 skates y los hice guita",
 			"type": "POWERUP",
 			"data":	"SKATE",
 			"pointsToBeReady": 7,
@@ -198,7 +477,7 @@
 			"listID": "MOTO"	
 		},
 		{
-			"title": "Te embadurné el mundo con 5 sorete",
+			"title": "Me enbadurné el mundo con 5 sorete",
 			"type": "POWERUP",
 			"data": "SORETE",
 			"pointsToBeReady": 5,
@@ -206,34 +485,35 @@
 			"listID": "SORETE"	
 		},
 		{
-			"title": "20 sorete para marcar la cancha",
+			"title": "¡Refalarse con 25 SORETE trae suerte!",
 			"type": "POWERUP",
 			"data": "SORETE",
-			"pointsToBeReady": 20,
+			"pointsToBeReady": 25,
 			"image":"achivements_CACA_1",
 			"listID": "SORETE"	
 		},
 		{
-			"title": "69 sorete para vó gato!",
+			"title": "¡Que suerte de mierda! Ya me refalé con 50 SORETE!",
 			"type": "POWERUP",
 			"data": "SORETE",
-			"pointsToBeReady": 69,
+			"pointsToBeReady": 50,
 			"image":"achivements_CACA_1",
 			"listID": "SORETE"	
 		},
 		{
-			"title": "666 sorete son ustede! Politícos!",
+			"title": "Aprendé a esquivar lo SORETE, gato. ¡Ya me hicites patinar con 100!",
 			"type": "POWERUP",
 			"data": "SORETE",
-			"pointsToBeReady": 666,
+			"pointsToBeReady": 100,
 			"image":"achivements_CACA_1",
 			"listID": "SORETE"
 		},
+
 		{
-			"title": "Lo ví al Gauchito Gil y me dió abundancia",
+			"title": "Devoto del gaucho: Agarré 15 GIL POWER.",
 			"type": "POWERUP",
 			"data": "GIL",
-			"pointsToBeReady": 1,
+			"pointsToBeReady": 15,
 			"image":"achivements_DEVOTO_1",
 			"listID": "GIL"	
 		},
@@ -246,7 +526,16 @@
 			"listID": "GIL"	
 		},
 		{
-			"title": "Se me apareció Ricky Fort y me baño en Marrocs",
+			"title": "¡Gedencia y bendición! Me punguié 20 LOGIS bajo efectos de GIL POWER.",
+			"type": "STEAL_WHILE_GIL",
+			"pointsToBeReady": 20,
+			"image":"achivements_DEVOTO_1",
+			"listID": "GIL"
+		},
+
+////////////
+		{
+			"title": "¡Mis primero 70 PESITO en MODO MIAMI!",
 			"type": "POWERUP",
 			"data": "RICKYFORT",
 			"pointsToBeReady": 1,
@@ -254,34 +543,41 @@
 			"listID": "RICKYFORT"
 		},
 		{
-			"title": "Superé los 100 pesos en una jornada laboral",
+			"title": "¿Quién so? ¿Lagomarsino? ¡Te cabiste 5 FISCALE en PUERTO MAMERTO!",
+			"type": "MULTIPLE",
+			"multipleData": "DASH_nisman=5",
+			"image":"achivements_NISMAN",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Superé los 800 pesos en una jornada laboral",
 			"type": "MONEY",
-			"data": "100pe",
-			"pointsToBeReady": 10000,
+			"data": "800pe",
+			"pointsToBeReady": 80000,
 			"image":"achivements_FORTUNA_1",
 			"listID": "RICKYFORT"
 		},
 		{
-			"title": "Hice $200.00 pé laburando",
-			"type": "MONEY",
-			"data": "200pe",
-			"pointsToBeReady": 20000,
-			"image":"achivements_FORTUNA_1",
-			"listID": "RICKYFORT"
-		},
-		{
-			"title": "Levanté $500.00 pé en una jornada",
-			"type": "MONEY",
-			"data": "500pe",
-			"pointsToBeReady": 50000,
-			"image":"achivements_FORTUNA_1",
-			"listID": "RICKYFORT"
-		},
-		{
-			"title": "Hice 1 luquita laburando las calles",
+			"title": "Hice una luquita laburando y le dejé una propinita a un rati.",
 			"type": "MONEY",
 			"data": "1000pe",
 			"pointsToBeReady": 100000,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Levanté $1500.00 pé en una jornada",
+			"type": "MONEY",
+			"data": "1500pe",
+			"pointsToBeReady": 150000,
+			"image":"achivements_FORTUNA_1",
+			"listID": "RICKYFORT"
+		},
+		{
+			"title": "Hice 2 luquita laburando las calles",
+			"type": "MONEY",
+			"data": "2000pe",
+			"pointsToBeReady": 200000,
 			"image":"achivements_FORTUNA_1",
 			"listID": "RICKYFORT"
 		}
