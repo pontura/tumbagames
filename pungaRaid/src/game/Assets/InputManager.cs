@@ -15,12 +15,14 @@ public class InputManager : MonoBehaviour {
             Events.OnPowerUp(PowerupManager.types.MOTO);
         else if (Input.GetKeyDown(KeyCode.D))
             Events.OnPowerUp(PowerupManager.types.GIL);
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-            Events.OnSwipe(SwipeDetector.directions.UP);
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-            Events.OnSwipe(SwipeDetector.directions.DOWN);
-        else if (Input.GetKeyDown(KeyCode.Space))
-            Events.OnSwipe(SwipeDetector.directions.RIGHT);
+		if (Input.GetKeyDown (KeyCode.UpArrow))
+			Events.OnSwipe (SwipeDetector.directions.UP);
+		else if (Input.GetKeyDown (KeyCode.DownArrow))
+			Events.OnSwipe (SwipeDetector.directions.DOWN);
+		else if (Input.GetKeyDown (KeyCode.Space))
+			Events.OnSwipe (SwipeDetector.directions.RIGHT);
+		else if (Input.GetKeyDown (KeyCode.Q))
+			Events.OnAddRunner ();
 
         //RaycastHit hit;
         //Ray ray;

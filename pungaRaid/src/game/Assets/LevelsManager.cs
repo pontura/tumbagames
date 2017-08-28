@@ -104,11 +104,16 @@ public class LevelsManager : MonoBehaviour {
             Transform[] allObjectsInLane = lane.transform.GetComponentsInChildren<Transform>(true);
             foreach (Transform t in allObjectsInLane)
             {
-                 EnemySettings settings = new EnemySettings();
                 
-                settings.speed = 0.05f;
-                if(t.transform.localScale.x < 0)
-                    settings.speed = -0.05f;
+				EnemySettings settings = new EnemySettings();
+                
+				if (t.gameObject.name == "Skate")
+					settings.speed = 0;
+				else {
+					settings.speed = 0.05f;
+					if (t.transform.localScale.x < 0)
+						settings.speed = -0.05f;
+				}
 
                 lanes.AddObjectToLane(t.gameObject.name, lane.id, (int)(nextLevelDistance + t.transform.localPosition.x), settings);
             }

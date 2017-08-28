@@ -54,6 +54,21 @@ public class Lanes : MonoBehaviour {
             Data.Instance.enemiesManager.Pool(enemy);
         }
     }
+	public int GetNextFreeLane (int laneID, float distance)
+	{
+		if (laneID == 2) {
+			if (Random.Range (0, 10) > 5)
+				laneID++;
+			else
+				laneID--;
+		}
+		else if (laneID > 2)
+			laneID--;
+		else
+			laneID++;
+
+		return laneID;
+	}
     public Lane GetActivetLane()
     {
         return all[laneActiveID];
@@ -112,6 +127,9 @@ public class Lanes : MonoBehaviour {
             case "Victim":
                 enemy = Data.Instance.enemiesManager.GetEnemy("Victim");
                 break;
+			case "Runner":
+				enemy = Data.Instance.enemiesManager.GetEnemy("Runner");
+				break;
             case "RatiJump":
                 enemy = Data.Instance.enemiesManager.GetEnemy("RatiJump");
                 break;

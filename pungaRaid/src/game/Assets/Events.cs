@@ -81,6 +81,7 @@ public static class Events {
     //laneID, distance
     public static System.Action<int, int> OnAddExplotion = delegate { };
 
+	public static System.Action OnAddRunner = delegate { };
     public static System.Action<int> OnBuy = delegate { };
 	public static System.Action<Vector3, string> OnAvatarSignal = delegate { };
     public static System.Action<int> OnScoreUpdate = delegate { };

@@ -54,7 +54,6 @@ public class EnemiesManager : MonoBehaviour {
         Enemy enemy = GetPooled(type);
         if(enemy == null)
         {
-            Debug.Log("__________No hay más " + type);
             return null;
         }
         enemy.gameObject.SetActive(true);
@@ -79,7 +78,7 @@ public class EnemiesManager : MonoBehaviour {
                 switch (type)
                 {
                     case "Skate":
-                        if (enemy.GetComponent<Runner>())
+						if (enemy.GetComponent<Skate>())
                             return enemy;
                         break;
                     case "ObstacleGeneric":
@@ -102,6 +101,10 @@ public class EnemiesManager : MonoBehaviour {
                         if (enemy.GetComponent<Rati>())
                             return enemy;
                         break;
+					case "Runner":
+						if (enemy.GetComponent<Runner>())
+							return enemy;
+						break;
                     case "PowerUp":
                         if (enemy.GetComponent<PowerUp>())
                         {

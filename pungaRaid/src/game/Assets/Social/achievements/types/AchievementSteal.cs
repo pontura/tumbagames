@@ -21,8 +21,8 @@ public class AchievementSteal : Achievement {
 			}
 		} else if (_moodID == moodID && _seccionalID == seccionalID) {
 
-			Debug.Log ("OnCheckScore moodID: " + moodID + " secicon: " + seccionalID);
-			Debug.Log ("score: " + pungs + " tenias que hacer: " + pointsToBeReady);
+			//Debug.Log ("OnCheckScore moodID: " + moodID + " secicon: " + seccionalID);
+			//Debug.Log ("score: " + pungs + " tenias que hacer: " + pointsToBeReady);
 
 			if (pungs > pointsToBeReady) {
 				Done (pungs);

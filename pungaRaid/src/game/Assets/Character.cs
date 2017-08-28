@@ -218,7 +218,7 @@ public class Character : MonoBehaviour {
                 Events.OnSoundFX("Dashed" + rand);
                 enemy.Explote();
             }
-            else if (hero.state == Hero.states.DASH && enemy.GetComponent<Runner>())
+            else if (hero.state == Hero.states.DASH && enemy.GetComponent<Skate>())
             {
                 int rand = Random.Range(1, 3);
                 Events.OnSoundFX("Dashed" + rand);
