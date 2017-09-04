@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class InputManager : MonoBehaviour {
-		
+
 	public int HorizontalDirection;
 	public int VerticalDirection;
 
@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour {
 			HorizontalDirection = 1;
 		else
 			HorizontalDirection = 0;
-		
+
 		if (Input.GetKey (KeyCode.DownArrow) )
 			VerticalDirection = -1;
 		else if (Input.GetKey (KeyCode.UpArrow))
@@ -26,11 +26,11 @@ public class InputManager : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
-			
+			Events.OnCharacterHit (1,1);
 		}
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
 		{
-			
+			Events.OnCharacterHit (1,2);
 		}
 
 	}
