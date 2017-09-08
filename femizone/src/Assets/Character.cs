@@ -4,57 +4,67 @@ using UnityEngine;
 
 public class Character : SceneObject {
 	
-	private InputManager inputManager;
 	public Animator anim;
 	public float speed = 10;
 	public states state;
 	public int HorizontalDirection;
+	public CharacterStats stats;
+
 	public enum states
 	{
 		IDLE,
 		WALK,
-		HIT
+		HITTING,
+		HITTED
 	}
-	void Start () {
-		inputManager = GetComponent<InputManager> ();	
-		Events.OnCharacterHit += OnCharacterHit;
+
+	public virtual void OnStart() { }
+	public virtual void OnUpdate() { }
+
+	void Start () {	
+		stats = GetComponent<CharacterStats> ();	
+		OnStart ();
 	}
 	void Update () {
-		if ((inputManager.HorizontalDirection != 0 || inputManager.VerticalDirection != 0)) {			
-			if(state != states.WALK)
-				Walk ();
-		}
-		else if (state == states.WALK)
-			Idle ();
-
-		if (inputManager.HorizontalDirection < 0)
-			transform.localScale = new Vector3 (-1, 1, 1);
-		else if (inputManager.HorizontalDirection > 0)
-			transform.localScale = new Vector3 (1, 1, 1);
-		
+		OnUpdate ();
+	}
+	public void MoveTo(int horizontal, int vertical)
+	{
 		Vector3 pos = transform.localPosition;
-		pos.x += inputManager.HorizontalDirection * Time.deltaTime * speed;
-		pos.z += inputManager.VerticalDirection * Time.deltaTime * (speed*10);
+		pos.x += horizontal * Time.deltaTime * speed;
+		pos.z += vertical * Time.deltaTime * (speed*10);
 		transform.localPosition = pos;
 	}
-	void OnCharacterHit(int playerID, int hitID)
+	public void OnCharacterHit(int playerID, int hitID)
 	{
-		print ("pega playerID" + playerID + " hit: " + hitID);
+		if (state == states.HITTING)
+			return;
+		
 		if(hitID==1)
 			anim.Play ("punch_1");
 		else if(hitID==2)
 			anim.Play ("punch_2");
-		state = states.HIT;
+		state = states.HITTING;
 		Invoke ("Idle", 0.3f);
 	}
-	void Walk()
+	public void Walk()
 	{
+		if (state == states.HITTING)
+			return;
 		state = states.WALK;
 		anim.Play ("walk");
 	}
-	void Idle()
+	public void Idle()
 	{
 		state = states.IDLE;
 		anim.Play ("idle");
+	}
+	public void ReceiveHit(int force)
+	{
+		if (state == states.HITTED)
+			return;
+		state = states.HITTED;
+		anim.Play ("hit_punch");
+		Invoke ("Idle", 0.3f);
 	}
 }

@@ -32,6 +32,6 @@ public class InputManager : MonoBehaviour {
 		{
 			Events.OnCharacterHit (1,2);
 		}
-
 	}
+
 }

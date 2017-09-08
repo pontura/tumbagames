@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SceneObject : MonoBehaviour {
 
-	public Camera camera;
+	Camera camera;
+
 	void Start () {
+		camera = World.Instance.camera;
 		transform.LookAt (camera.transform);
 	}
 }
