@@ -7,8 +7,7 @@ public class Hero : Character {
 	private InputManager inputManager;
 
 	public override void OnStart() {
-		inputManager = GetComponent<InputManager> ();	
-		Events.OnCharacterHit += OnCharacterHit;
+		inputManager = GetComponent<InputManager> ();
 	}
 	public override void OnUpdate () {
 		if (state == states.HITTING)

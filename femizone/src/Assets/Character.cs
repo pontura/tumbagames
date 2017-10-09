@@ -9,6 +9,7 @@ public class Character : SceneObject {
 	public states state;
 	public int HorizontalDirection;
 	public CharacterStats stats;
+	public CharacterHitsManager hitsManager;
 
 	public enum states
 	{
@@ -22,6 +23,7 @@ public class Character : SceneObject {
 	public virtual void OnUpdate() { }
 
 	void Start () {	
+		hitsManager = GetComponent<CharacterHitsManager> ();
 		stats = GetComponent<CharacterStats> ();	
 		OnStart ();
 	}
@@ -34,18 +36,6 @@ public class Character : SceneObject {
 		pos.x += horizontal * Time.deltaTime * speed;
 		pos.z += vertical * Time.deltaTime * (speed*10);
 		transform.localPosition = pos;
-	}
-	public void OnCharacterHit(int playerID, int hitID)
-	{
-		if (state == states.HITTING)
-			return;
-		
-		if(hitID==1)
-			anim.Play ("punch_1");
-		else if(hitID==2)
-			anim.Play ("punch_2");
-		state = states.HITTING;
-		Invoke ("Idle", 0.3f);
 	}
 	public void Walk()
 	{
