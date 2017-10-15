@@ -9,7 +9,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		HIT,
 		HIT_BACK,
 		KICK,
-		KICKBACK
+		KICKBACK,
+		UPPER
 	}
 	Character character;
 
@@ -24,7 +25,9 @@ public class CharacterHitsManager : MonoBehaviour {
 	{
 		if (character.state == Character.states.HITTING)
 			return;
-		
+		if (type == types.UPPER) {
+			character.anim.Play ("upper");
+		} else
 		if (type == types.HIT_BACK) {
 			character.anim.Play ("retro_punch");
 		} else if (type == types.HIT) {

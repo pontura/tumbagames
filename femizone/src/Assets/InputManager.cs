@@ -28,6 +28,8 @@ public class InputManager : MonoBehaviour {
 		{
 			if(justTurned)
 				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
+			else if(VerticalDirection == 1)
+				character.hitsManager.SetOn (CharacterHitsManager.types.UPPER);
 			else
 				character.hitsManager.SetOn (CharacterHitsManager.types.HIT);
 			newDirection = 0;
