@@ -47,7 +47,7 @@ public class Character : SceneObject {
 	public void Idle()
 	{
 		state = states.IDLE;
-		anim.Play ("idle");
+		//anim.Play ("idle");
 	}
 	public void ReceiveHit(int force)
 	{
@@ -55,6 +55,6 @@ public class Character : SceneObject {
 			return;
 		state = states.HITTED;
 		anim.Play ("hit_punch");
-		Invoke ("Idle", 0.3f);
+		Invoke ("Idle", 0.05f);
 	}
 }
