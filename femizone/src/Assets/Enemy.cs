@@ -8,16 +8,33 @@ public class Enemy : Character {
 	public ProgressBar progressBar;
 	CharacterStats stats;
 
-	public void Init()
+
+	public void Init(GameObject theAsset)
 	{
-		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
+		asset = Instantiate (theAsset);
+		asset.transform.SetParent (transform);
+		asset.transform.localPosition = Vector3.zero;
+		asset.transform.localScale = Vector3.one;
+		asset.transform.localEulerAngles = new Vector3 (45, 0, 0);
+
+		anim = asset.GetComponent<Animator> ();
 		stats = GetComponent<CharacterStats> ();
+
+		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>())
+			ha.character = this;
+		
+		foreach (Transform go in asset.gameObject.GetComponentsInChildren<Transform>())
+			if (go.name == "bar") {
+				bar = go;
+			}
+		
+		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 	}
 	public override void ReceiveHit(HitArea.types type, int force)
 	{
-		if (state == states.HITTED)
-			return;
-		print ("ReceiveHit " + type);
+		//if (state == states.HITTED)
+		//	return;
+
 		string hitName = "hit_punch";
 
 		switch (type) {

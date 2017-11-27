@@ -14,14 +14,20 @@ public class HeroesManager : MonoBehaviour {
 		hero.transform.localPosition = new Vector3(-8,0,0);
 		all.Add (hero);
 	}
-	public Vector3 CheckIfHeroIsClose(Vector3 _pos)
+	public Vector3 CheckIfHeroIsClose(Character character)
 	{
 		Vector3 pos = Vector3.zero;
 		float distance = 1000;
 		foreach (Hero hero in all) {
-			float newDistance = Vector3.Distance(hero.transform.position, _pos);
-			if (newDistance < distance && newDistance>4)
-				pos = hero.transform.position;
+			float newDistance = Vector3.Distance(hero.transform.position, character.transform.position);
+			if (newDistance < distance) {
+				if (hero.transform.position.x < character.transform.position.x)
+					character.LookAt (true);
+				else
+					character.LookAt (false);
+				if(newDistance > 4)
+					pos = hero.transform.position;
+			}
 		}
 		return pos;
 	}

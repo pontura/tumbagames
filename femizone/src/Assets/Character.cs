@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : SceneObject {
-	
+
+	public GameObject asset;
 	public Animator anim;
 	public float speed = 10;
 	public states state;
@@ -52,4 +53,11 @@ public class Character : SceneObject {
 		anim.Play ("idle");
 	}
 	public virtual void ReceiveHit(HitArea.types type,  int force) { }
+	public void LookAt(bool left)
+	{
+		if(left)
+			asset.transform.localScale = new Vector3 (1, 1, 1);
+		else
+			asset.transform.localScale = new Vector3 (-1, 1, 1);
+	}
 }
