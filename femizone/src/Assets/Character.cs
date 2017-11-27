@@ -13,10 +13,12 @@ public class Character : SceneObject {
 
 	public enum states
 	{
+		SLEEP,
 		IDLE,
 		WALK,
 		HITTING,
-		HITTED
+		HITTED,
+		DEAD
 	}
 
 	public virtual void OnStart() { }
@@ -34,7 +36,7 @@ public class Character : SceneObject {
 	{
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
-		pos.z += vertical * Time.deltaTime * (speed*10);
+		pos.z += vertical * Time.deltaTime * speed;
 		transform.localPosition = pos;
 	}
 	public void Walk()

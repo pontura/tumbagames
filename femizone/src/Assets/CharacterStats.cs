@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour {
 	public int force;
 	public int speed;
 	public int defense;
+	public Vector2 time_to_GoTo_Target = new Vector2 (0.5f, 3);
 
 	public void ReceiveHit(int force)
 	{

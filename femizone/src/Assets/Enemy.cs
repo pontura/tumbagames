@@ -37,7 +37,7 @@ public class Enemy : Character {
 
 		state = states.HITTED;
 		anim.Play (hitName);
-		Invoke ("Idle", 0.4f);
+		Invoke ("Idle", 0.5f);
 		stats.ReceiveHit (force);
 		progressBar.SetProgress ((float)stats.life/10);
 	}

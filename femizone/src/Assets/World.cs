@@ -7,6 +7,8 @@ public class World : MonoBehaviour
 {
 	static World mInstance = null;
 	public Camera camera;
+	public EnemiesManager enemiesManager;
+	public HeroesManager heroesManager;
 
 	public static World Instance
 	{
@@ -20,5 +22,8 @@ public class World : MonoBehaviour
 	{
 		if (!mInstance)
 			mInstance = this;
+
+		heroesManager = GetComponent<HeroesManager>();
+		enemiesManager = GetComponent<EnemiesManager>();
 	}
 }

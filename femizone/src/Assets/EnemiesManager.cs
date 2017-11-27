@@ -11,5 +11,6 @@ public class EnemiesManager : MonoBehaviour {
 		Enemy enemy = Instantiate (enemy_to_instantiate);
 		enemy.transform.SetParent (container);
 		enemy.Init ();
+		enemy.transform.localPosition = Vector3.zero;
 	}
 }
