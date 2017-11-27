@@ -8,19 +8,26 @@ public class HitArea : MonoBehaviour {
 	public types type;
 	public enum types
 	{
-		HIT,
+		HIT_UPPER,
+		HIT_FRONT,
+		HIT_BACK,
+		HIT_DOWN,
 		RECEIVE_HIT
 	}
 
 	public void OnTriggerEnter(Collider col)
 	{
-		HitArea hitArea = col.gameObject.GetComponent<HitArea> ();
-		if ( hitArea != null) 
+		HitArea punchHitArea = col.gameObject.GetComponent<HitArea> ();
+		if ( punchHitArea != null) 
 		{
-			if (hitArea.character == character)
+			if (punchHitArea.character == character)
 				return;
-			if (hitArea.type == types.RECEIVE_HIT)
-				hitArea.character.ReceiveHit (1);
+			if (punchHitArea.type == types.RECEIVE_HIT)
+				punchHitArea.character.ReceiveHit (type, 1);
 		}
+	}
+	public void SetType(types _type)
+	{
+		type = _type;
 	}
 }

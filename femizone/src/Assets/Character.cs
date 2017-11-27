@@ -47,14 +47,7 @@ public class Character : SceneObject {
 	public void Idle()
 	{
 		state = states.IDLE;
-		//anim.Play ("idle");
+		anim.Play ("idle");
 	}
-	public void ReceiveHit(int force)
-	{
-		if (state == states.HITTED)
-			return;
-		state = states.HITTED;
-		anim.Play ("hit_punch");
-		Invoke ("Idle", 0.05f);
-	}
+	public virtual void ReceiveHit(HitArea.types type,  int force) { }
 }
