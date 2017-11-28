@@ -31,4 +31,29 @@ public class Hero : Character {
 		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
 	}
+	public override void ReceiveHit(HitArea.types type, int force)
+	{
+		print ("ReceiveHit " + type);
+		string hitName = "hit_punch";
+
+		switch (type) {
+		case HitArea.types.HIT_FRONT:
+			hitName = "hit_punch";
+			break;
+		case HitArea.types.HIT_DOWN:
+			hitName = "hit_punch";
+			break;
+		case HitArea.types.HIT_BACK:
+			hitName = "hit_punch_back";
+			break;
+		case HitArea.types.HIT_UPPER:
+			hitName = "hit_upper";
+			break;
+		}
+
+		state = states.HITTED;
+		anim.Play (hitName);
+		Invoke ("Idle", 0.5f);
+		//stats.ReceiveHit (force);
+	}
 }

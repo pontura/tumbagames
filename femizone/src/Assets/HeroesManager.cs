@@ -19,13 +19,14 @@ public class HeroesManager : MonoBehaviour {
 		Vector3 pos = Vector3.zero;
 		float distance = 1000;
 		foreach (Hero hero in all) {
-			float newDistance = Vector3.Distance(hero.transform.position, character.transform.position);
-			if (newDistance < distance) {
+			float _x = Mathf.Abs(hero.transform.position.x -character.transform.position.x);
+			float _z = Mathf.Abs(hero.transform.position.z -character.transform.position.z);
+			if (_x+_z < distance) {
 				if (hero.transform.position.x < character.transform.position.x)
 					character.LookAt (true);
 				else
 					character.LookAt (false);
-				if(newDistance > 4)
+				if(_x > 1 || _z > 0.5f)
 					pos = hero.transform.position;
 			}
 		}

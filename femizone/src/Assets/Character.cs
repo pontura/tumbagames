@@ -27,7 +27,6 @@ public class Character : SceneObject {
 
 	void Start () {	
 		hitsManager = GetComponent<CharacterHitsManager> ();
-		stats = GetComponent<CharacterStats> ();	
 		OnStart ();
 	}
 	void Update () {
@@ -47,11 +46,25 @@ public class Character : SceneObject {
 		state = states.WALK;
 		anim.Play ("walk");
 	}
+	public void Die()
+	{
+		if (state == states.DEAD)
+			return;
+		state = states.DEAD;
+	}
 	public void Idle()
 	{
 		state = states.IDLE;
 		anim.Play ("idle");
+		OnIdle();
 	}
+	public void Attack()
+	{
+		state = states.HITTING;
+		OnAttack ();
+	}
+	public virtual void OnIdle() { }
+	public virtual void OnAttack() { }
 	public virtual void ReceiveHit(HitArea.types type,  int force) { }
 	public void LookAt(bool left)
 	{

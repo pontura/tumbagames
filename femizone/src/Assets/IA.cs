@@ -4,83 +4,118 @@ using UnityEngine;
 
 public class IA : MonoBehaviour {
 
-	Character character;
+	Enemy enemy;
 	public states state;
 	public Vector3 destination;
 	public enum states
 	{
-		SLEEP,
+		SLEEP,	
+		IDLE,
 		LOOKING_FOR_TARGET,
 		READY_FOR_FIGHT,
-		MOVEING
+		MOVEING,
+		HITTED
 	}
 
 	void Start () {
-		character = GetComponent<Character> ();
+		enemy = GetComponent<Character> ().GetComponent<Enemy>();
 	}
-
+	public void ReceiveHit()
+	{
+		state = states.HITTED;
+		Invoke ("Idle", 0.5f);
+	}
+	void Idle()
+	{
+		CancelInvoke ();
+		enemy.Idle ();
+		state = states.IDLE;
+	}
 	void Update() {
 		
-		if (character.state == Character.states.SLEEP || character.state == Character.states.DEAD) 
+		if (enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
-		if (state == states.LOOKING_FOR_TARGET)
-			return;
-		if (state == states.MOVEING)
-			Move();
-		if (character.state == Character.states.IDLE)
-			LookTarget ();
+		if (state == states.IDLE) {
+			Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
+			if (newPos == Vector3.zero)
+				Fight ();
+			else
+				LookTarget ();
+		} else if (state == states.MOVEING)
+			Move ();
+	}
+	void Fight()
+	{
+		state = states.READY_FOR_FIGHT;
+		enemy.Idle ();
+		Invoke ("Punch",GetRandom(enemy.stats.time_to_Punch));
 	}
 	void LookTarget()
 	{
 		state = states.LOOKING_FOR_TARGET;
-		Invoke ("GoToNearestTarget",GetRandom(character.stats.time_to_GoTo_Target));
+		enemy.Idle ();
+		Invoke ("GoToNearestTarget",GetRandom(enemy.stats.time_to_GoTo_Target));
 	}
 	float GetRandom(Vector2 v)
 	{
 		return Random.Range(v.x,v.y);
 	}
+	float recalculateDelay = 0.8f;
+	float recalculateTime;
 	void GoToNearestTarget()
 	{
-		Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (character);
-		if (newPos == Vector3.zero)
-			Fight ();
+		recalculateTime = 0;
+		LookToTarget ();
+
+		if (destination.x > transform.position.x)
+			destination.x -= 3f;
 		else
-			MoveTo (newPos);
-	}
-	void MoveTo(Vector3 _destination)
-	{
-		if (destination.x > transform.position.x) {
-			character.asset.transform.localScale = new Vector3 (-1, 1, 1);
-			_destination.x -= 3f;
-		} else {
-			character.asset.transform.localScale = new Vector3 (1, 1, 1);
-			_destination.x += 3f;
-		}
-		this.destination = _destination;
+			destination.x += 3f;
+		
 		state = states.MOVEING;
-		character.Walk ();
+		enemy.Walk ();
+	}
+	void LookToTarget()
+	{
+		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
+
+		if (destination.x > transform.position.x)
+			enemy.LookAt (false);
+		else
+			enemy.LookAt (true);
 	}
 	void Move()
 	{
-		Vector3 pos = transform.position;
-		if (Vector3.Distance (pos, destination) < 0.5f) {
+		recalculateTime += Time.deltaTime;
+		if (recalculateTime > recalculateDelay) {
+			LookToTarget ();
 			GoToNearestTarget ();
 			return;
 		}
+		Vector3 pos = transform.position;
+		float _x = Mathf.Abs(pos.x - destination.x);
+		float _z = Mathf.Abs(pos.z - destination.z);
+		if (_x < 0.2f && _z < 0.2f) {
+			Fight ();
+			return;
+		}
+		float speed = enemy.stats.speed * Time.deltaTime;
 		if (pos.x < destination.x)
-			pos.x += character.stats.speed * Time.deltaTime;
+			pos.x += speed;
 		else if (pos.x > destination.x)
-			pos.x -= character.stats.speed * Time.deltaTime;
+			pos.x -= speed;
 		if (pos.z < destination.z)
-			pos.z += character.stats.speed * Time.deltaTime;
+			pos.z += speed;
 		else if (pos.z > destination.z)
-			pos.z -= character.stats.speed * Time.deltaTime;
+			pos.z -= speed;
 
 		transform.position = pos;	
 	}
-	void Fight()
+
+	void Punch()
 	{
-		state = states.READY_FOR_FIGHT;
-		character.Idle ();
+		LookToTarget ();
+		enemy.GetComponent<Enemy>().Attack();
+		Invoke ("Idle", 1f);
 	}
 }

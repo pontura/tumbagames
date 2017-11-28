@@ -14,5 +14,11 @@ public class EnemiesManager : MonoBehaviour {
 		enemy.transform.SetParent (container);
 		enemy.Init (warnesMan);
 		enemy.transform.localPosition = Vector3.zero;
+
+		enemy = Instantiate (enemy_to_instantiate);
+		enemy.transform.SetParent (container);
+		enemy.Init (warnesMan);
+		enemy.transform.localPosition = new Vector3(4,0,0);
+
 	}
 }

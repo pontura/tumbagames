@@ -6,8 +6,15 @@ public class Enemy : Character {
 
 	public Transform bar;
 	public ProgressBar progressBar;
-	CharacterStats stats;
+	public EnemyAttackManager enemyAttackManager;
+	public IA ia;
+	public HitArea hitArea;
 
+	void Start()
+	{
+		enemyAttackManager = GetComponent<EnemyAttackManager> ();
+		ia = GetComponent<IA> ();
+	}
 
 	public void Init(GameObject theAsset)
 	{
@@ -18,10 +25,13 @@ public class Enemy : Character {
 		asset.transform.localEulerAngles = new Vector3 (45, 0, 0);
 
 		anim = asset.GetComponent<Animator> ();
-		stats = GetComponent<CharacterStats> ();
+		stats = asset.GetComponent<CharacterStats> ();
 
-		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>())
+		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>()) {
+			if (ha.name == "HitArea")
+				hitArea = ha;
 			ha.character = this;
+		}
 		
 		foreach (Transform go in asset.gameObject.GetComponentsInChildren<Transform>())
 			if (go.name == "bar") {
@@ -32,6 +42,7 @@ public class Enemy : Character {
 	}
 	public override void ReceiveHit(HitArea.types type, int force)
 	{
+		ia.ReceiveHit ();
 		//if (state == states.HITTED)
 		//	return;
 
@@ -57,5 +68,14 @@ public class Enemy : Character {
 		Invoke ("Idle", 0.5f);
 		stats.ReceiveHit (force);
 		progressBar.SetProgress ((float)stats.life/10);
+		if (stats.life <= 0) {
+			Die ();
+			Destroy (progressBar.gameObject);
+			Destroy (this.gameObject);
+		}
+	}
+	public override void OnAttack() 
+	{
+		enemyAttackManager.Attack ();
 	}
 }
