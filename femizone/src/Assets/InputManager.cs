@@ -69,8 +69,11 @@ public class InputManager : MonoBehaviour {
 	}
 	void ResetJustTurned()
 	{
-		if(newDirection !=0) 
+
+		if (newDirection != 0) {
 			HorizontalDirection = newDirection;
+			character.transform.localScale = new Vector3 (newDirection, 1, 1);
+		}
 		
 		justTurned = false;
 	}
