@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour {
 
 	public GameObject warnesMan;
+	public GameObject ceoMan;
 
 	public Enemy enemy_to_instantiate;
 	public Transform container;
@@ -17,8 +18,8 @@ public class EnemiesManager : MonoBehaviour {
 
 		enemy = Instantiate (enemy_to_instantiate);
 		enemy.transform.SetParent (container);
-		enemy.Init (warnesMan);
-		enemy.transform.localPosition = new Vector3(4,0,0);
+		enemy.Init (ceoMan);
+		enemy.transform.localPosition = new Vector3 (4, 0, 0);
 
 	}
 }

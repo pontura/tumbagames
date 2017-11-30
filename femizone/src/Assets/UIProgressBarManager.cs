@@ -15,4 +15,5 @@ public class UIProgressBarManager : MonoBehaviour {
 		all.Add (progressBar);
 		return progressBar;
 	}
+
 }

@@ -17,15 +17,16 @@ public class Enemy : Character {
 	}
 
 	public void Init(GameObject theAsset)
-	{
+	{		
 		asset = Instantiate (theAsset);
-		asset.transform.SetParent (transform);
-		asset.transform.localPosition = Vector3.zero;
-		asset.transform.localScale = Vector3.one;
-		asset.transform.localEulerAngles = new Vector3 (45, 0, 0);
 
 		anim = asset.GetComponent<Animator> ();
 		stats = asset.GetComponent<CharacterStats> ();
+
+		asset.transform.SetParent (transform);
+		asset.transform.localPosition = stats.offset;
+		asset.transform.localScale = Vector3.one;
+		asset.transform.localEulerAngles = new Vector3 (45, 0, 0);	
 
 		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>()) {
 			if (ha.name == "HitArea")
@@ -39,9 +40,15 @@ public class Enemy : Character {
 			}
 		
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
+		progressBar.Hide ();
 	}
+
 	public override void ReceiveHit(HitArea.types type, int force)
 	{
+		
+		if(!progressBar.isOn)
+			progressBar.Show ();
+		
 		ia.ReceiveHit ();
 		//if (state == states.HITTED)
 		//	return;

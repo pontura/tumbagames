@@ -11,12 +11,9 @@ public class EnemyAttackManager : MonoBehaviour {
 	}
 	public void Attack()
 	{
-		if (Random.Range (0, 10) < 5) {
-			enemy.hitArea.type = HitArea.types.HIT_UPPER;
-			enemy.anim.Play ("upper");
-		} else {
-			enemy.hitArea.type = HitArea.types.HIT_DOWN;
-			enemy.anim.Play ("punch");
-		}
+		int attacksQty = enemy.stats.attacks.Count;
+		AttackStyle attack = enemy.stats.attacks [Random.Range (0, attacksQty)];
+		enemy.hitArea.type = attack.type;
+		enemy.anim.Play (attack.animName);
 	}
 }

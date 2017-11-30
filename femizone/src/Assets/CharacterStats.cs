@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
+	public Vector3 offset;
 	public int life;
 	public int force;
 	public int speed;
@@ -15,4 +16,6 @@ public class CharacterStats : MonoBehaviour {
 	{
 		life -= force;
 	}
+
+	public List<AttackStyle> attacks;
 }
