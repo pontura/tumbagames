@@ -14,7 +14,8 @@ public class IA : MonoBehaviour {
 		LOOKING_FOR_TARGET,
 		READY_FOR_FIGHT,
 		MOVEING,
-		HITTED
+		HITTED,
+		DEFENDING
 	}
 
 	void Start () {
@@ -33,7 +34,7 @@ public class IA : MonoBehaviour {
 	}
 	void Update() {
 		
-		if (enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
+		if (enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
 			Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
@@ -48,22 +49,23 @@ public class IA : MonoBehaviour {
 	{
 		state = states.READY_FOR_FIGHT;
 		enemy.Idle ();
-		Invoke ("Punch",GetRandom(enemy.stats.time_to_Punch));
+		Invoke ("READY_FOR_FIGHT",GetRandom(enemy.stats.time_to_Punch));
 	}
 	void LookTarget()
 	{
 		state = states.LOOKING_FOR_TARGET;
 		enemy.Idle ();
-		Invoke ("GoToNearestTarget",GetRandom(enemy.stats.time_to_GoTo_Target));
+		Invoke ("LOOKING_FOR_TARGET",GetRandom(enemy.stats.time_to_GoTo_Target));
 	}
-	float GetRandom(Vector2 v)
-	{
-		return Random.Range(v.x,v.y);
-	}
+
+
 	float recalculateDelay = 0.8f;
 	float recalculateTime;
-	void GoToNearestTarget()
+	void LOOKING_FOR_TARGET()
 	{
+		//if (state != states.LOOKING_FOR_TARGET)
+		//	return;
+		
 		recalculateTime = 0;
 		LookToTarget ();
 
@@ -79,17 +81,19 @@ public class IA : MonoBehaviour {
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 
-		if (destination.x > transform.position.x)
-			enemy.LookAt (false);
-		else
+		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
+
+		if (hero.transform.position.x < transform.position.x)
 			enemy.LookAt (true);
+		else
+			enemy.LookAt (false);
 	}
 	void Move()
 	{
 		recalculateTime += Time.deltaTime;
 		if (recalculateTime > recalculateDelay) {
 			LookToTarget ();
-			GoToNearestTarget ();
+			LOOKING_FOR_TARGET ();
 			return;
 		}
 		Vector3 pos = transform.position;
@@ -112,10 +116,17 @@ public class IA : MonoBehaviour {
 		transform.position = pos;	
 	}
 
-	void Punch()
+	void READY_FOR_FIGHT()
 	{
+		if (state != states.READY_FOR_FIGHT)
+			return;
 		LookToTarget ();
 		enemy.GetComponent<Enemy>().Attack();
 		Invoke ("Idle", 1f);
+	}
+
+	float GetRandom(Vector2 v)
+	{
+		return Random.Range(v.x,v.y);
 	}
 }
