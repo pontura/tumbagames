@@ -23,7 +23,7 @@ public class HitArea : MonoBehaviour {
 			if (punchHitArea.character == character)
 				return;
 			if (punchHitArea.type == types.RECEIVE_HIT)
-				punchHitArea.character.ReceiveHit (type, 1);
+				punchHitArea.character.ReceiveHit (this, 1);
 		}
 	}
 	public void SetType(types _type)

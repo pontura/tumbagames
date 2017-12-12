@@ -14,6 +14,6 @@ public class EnemyAttackManager : MonoBehaviour {
 		int attacksQty = enemy.stats.attacks.Count;
 		AttackStyle attack = enemy.stats.attacks [Random.Range (0, attacksQty)];
 		enemy.hitArea.type = attack.type;
-		enemy.anim.Play (attack.animName);
+		enemy.anim.Play (attack.animClip.name);
 	}
 }

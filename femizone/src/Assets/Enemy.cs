@@ -26,7 +26,7 @@ public class Enemy : Character {
 		asset.transform.SetParent (transform);
 		asset.transform.localPosition = stats.offset;
 		asset.transform.localScale = Vector3.one;
-		asset.transform.localEulerAngles = new Vector3 (45, 0, 0);	
+		asset.transform.localEulerAngles = new Vector3 (30, 0, 0);	
 
 		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>()) {
 			if (ha.name == "HitArea")
@@ -43,7 +43,7 @@ public class Enemy : Character {
 		progressBar.Hide ();
 	}
 
-	public override void ReceiveHit(HitArea.types type, int force)
+	public override void OnReceiveHit(HitArea.types type, int force)
 	{
 		
 		if(!progressBar.isOn)
@@ -53,22 +53,15 @@ public class Enemy : Character {
 		//if (state == states.HITTED)
 		//	return;
 
-		string hitName = "hit_punch";
+		string hitName = "";
 
-		switch (type) {
-		case HitArea.types.HIT_FRONT:
-			hitName = "hit_punch";
-			break;
-		case HitArea.types.HIT_DOWN:
-			hitName = "hit_punch";
-			break;
-		case HitArea.types.HIT_BACK:
-			hitName = "hit_punch_back";
-			break;
-		case HitArea.types.HIT_UPPER:
-			hitName = "hit_upper";
-			break;
+		print ("recive: " + type);
+		foreach (AttackStyle attackStyle in stats.receivedAttacks) {
+			print (attackStyle.type + " - " + attackStyle.animClip.name);
+			if (attackStyle.type == type)
+				hitName = attackStyle.animClip.name;
 		}
+		print ("hace: " + hitName);
 
 		state = states.HITTED;
 		anim.Play (hitName);

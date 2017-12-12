@@ -24,8 +24,9 @@ public class CharacterHitsManager : MonoBehaviour {
 	}
 	public void SetOn(types type)
 	{
-		if (character.state == Character.states.HITTING)
+		if (character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return;
+		
 		if (type == types.UPPER) {
 			character.anim.Play ("upper");
 			hitArea.SetType (HitArea.types.HIT_UPPER);

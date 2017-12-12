@@ -7,6 +7,6 @@ using System;
 public class AttackStyle {
 
 	public HitArea.types type;
-	public string animName;
+	public AnimationClip animClip;
 
 }

@@ -30,7 +30,10 @@ public class Character : SceneObject {
 		OnStart ();
 	}
 	void Update () {
-		OnUpdate ();
+		if (state == states.HITTED)
+			Hitted ();
+		else
+			OnUpdate ();
 	}
 	public void MoveTo(int horizontal, int vertical)
 	{
@@ -63,14 +66,41 @@ public class Character : SceneObject {
 		state = states.HITTING;
 		OnAttack ();
 	}
+	public void ReceiveHit(HitArea hitArea,  int force) 
+	{ 
+		StartHit(hitArea);
+		OnReceiveHit (hitArea.type,force);
+	}
+
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }
-	public virtual void ReceiveHit(HitArea.types type,  int force) { }
+	public virtual void OnReceiveHit(HitArea.types type,  int force) { }
 	public void LookAt(bool left)
 	{
 		if(left)
 			asset.transform.localScale = new Vector3 (1, 1, 1);
 		else
 			asset.transform.localScale = new Vector3 (-1, 1, 1);
+	}
+
+
+	float _hittedPower;
+	float hittedDirection = 1;
+	void StartHit(HitArea hitArea) 
+	{ 
+		if (hitArea.character.transform.position.x > transform.position.x)
+			hittedDirection = -1;
+		else
+			hittedDirection = 1;
+		_hittedPower = hitArea.character.stats.hittedPower;
+	}
+	void Hitted()
+	{
+		Vector3 pos = transform.position;
+		_hittedPower /= 1.15f;
+		if (_hittedPower < 0)
+			return;
+		pos.x += (_hittedPower * Time.deltaTime ) * hittedDirection;
+		transform.position = pos;
 	}
 }

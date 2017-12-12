@@ -28,8 +28,17 @@ public class HeroesManager : MonoBehaviour {
 			float _x = Mathf.Abs(closestHero.transform.position.x -character.transform.position.x);
 			float _z = Mathf.Abs(closestHero.transform.position.z -character.transform.position.z);
 
-			if(_x > 3.5f || _z > 1f)
+			if (_x < 2 && _z < 0.5f) {
+				Vector3 newPos = transform.position;
+				if (closestHero.transform.position.x < character.transform.position.x)
+					newPos.x += 3;
+				else
+					newPos.x -= 3;
+				return newPos;
+			}
+			else if(_x > 3.5f || _z > 1f)
 				return closestHero.transform.position;
+				
 		}
 		return Vector3.zero;
 	}
