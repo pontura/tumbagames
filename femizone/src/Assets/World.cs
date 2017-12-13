@@ -26,4 +26,19 @@ public class World : MonoBehaviour
 		heroesManager = GetComponent<HeroesManager>();
 		enemiesManager = GetComponent<EnemiesManager>();
 	}
+	public List<int> arr;
+	void Start()
+	{
+		Random.InitState (2);
+		for (int a = 0; a < 100; a++) {
+			arr.Add(a);
+		}
+		for(int n=0; n<1000; n++)
+		{
+			int firstNum = arr [0];
+			int randomNum = arr [Random.Range(1,arr.Count-1)];
+			arr [0] = arr[randomNum];
+			arr [randomNum] = firstNum;
+		}
+	}
 }
