@@ -6,14 +6,17 @@ public class InputManager : MonoBehaviour {
 	public int HorizontalDirection;
 	public int VerticalDirection;
 	Character character;
-	public bool justTurned;
+
+	bool justTurnedHorizontal;
+	bool justForwardHorizontal;
+	int newHorizontalDirection;
 
 	void Start()
 	{
 		character = GetComponent<Character> ();
 	}
-	public int newDirection;
-	float timeOut = 0.085f;
+
+	float timeOut = 0.1f;
 	void Update () {
 		
 
@@ -26,56 +29,64 @@ public class InputManager : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
-			if(justTurned)
+			if(justTurnedHorizontal)
 				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
-			else if(VerticalDirection == 1)
-				character.hitsManager.SetOn (CharacterHitsManager.types.UPPER);
+			else if(justForwardHorizontal)
+				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_FORWARD);
 			else
 				character.hitsManager.SetOn (CharacterHitsManager.types.HIT);
-			newDirection = 0;
+			newHorizontalDirection = 0;
 		}
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
 		{
-			if(justTurned)
-				character.hitsManager.SetOn (CharacterHitsManager.types.KICKBACK);
+			if(justTurnedHorizontal)
+				character.hitsManager.SetOn (CharacterHitsManager.types.KICK_BACK);
+			else if(justForwardHorizontal)
+				character.hitsManager.SetOn (CharacterHitsManager.types.KICK_FOWARD);
 			else
 				character.hitsManager.SetOn (CharacterHitsManager.types.KICK);
-			newDirection = 0;
+			newHorizontalDirection = 0;
 		}
 
-		if (justTurned)
+		if (justTurnedHorizontal || justForwardHorizontal)
 			return;
+		
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			if (character.transform.localScale.x > 0 && HorizontalDirection ==0) {				
-				justTurned = true;
+			if (character.transform.localScale.x > 0 && HorizontalDirection == 0) {				
+				justTurnedHorizontal = true;
 				Invoke ("ResetJustTurned", timeOut);
-				newDirection = -1;
-			} else {
+				newHorizontalDirection = -1;
+			} else  {	
+				justForwardHorizontal = true;
+				Invoke ("ResetJustTurned", timeOut);
 				HorizontalDirection = -1;
 			}
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
 			if (character.transform.localScale.x < 0 && HorizontalDirection ==0) {
-				justTurned = true;
+				justTurnedHorizontal = true;
 				CancelInvoke ();
 				Invoke ("ResetJustTurned", timeOut);
-				newDirection = 1;
-			} else {
+				newHorizontalDirection = 1;
+			} else {	
+				justForwardHorizontal = true;
+				Invoke ("ResetJustTurned", timeOut);
 				HorizontalDirection = 1;
 			}
 		} else {
-			newDirection = 0;
+			newHorizontalDirection = 0;
 			HorizontalDirection = 0;
 		}
 	}
 	void ResetJustTurned()
 	{
 
-		if (newDirection != 0) {
-			HorizontalDirection = newDirection;
-			character.transform.localScale = new Vector3 (newDirection, 1, 1);
+		if (newHorizontalDirection != 0) {
+			HorizontalDirection = newHorizontalDirection;
+			character.transform.localScale = new Vector3 (newHorizontalDirection, 1, 1);
 		}
 		
-		justTurned = false;
+		justTurnedHorizontal = false;
+		justForwardHorizontal = false;
 	}
 
 }
