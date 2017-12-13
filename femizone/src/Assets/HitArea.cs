@@ -17,13 +17,26 @@ public class HitArea : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider col)
 	{
-		HitArea punchHitArea = col.gameObject.GetComponent<HitArea> ();
-		if ( punchHitArea != null) 
+		
+		HitArea otherHitArea = col.gameObject.GetComponent<HitArea> ();
+
+		if (otherHitArea == null)
+			return;
+		
+		if (type == types.RECEIVE_HIT && otherHitArea.type == types.RECEIVE_HIT) {
+			if(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
+				otherHitArea.character.ReceiveHit (this, 1);
+			return;
+		}
+
+		print ("AAAAAAA" + col.name);
+
+		if ( otherHitArea != null) 
 		{
-			if (punchHitArea.character == character)
+			if (otherHitArea.character == character)
 				return;
-			if (punchHitArea.type == types.RECEIVE_HIT)
-				punchHitArea.character.ReceiveHit (this, 1);
+			if (otherHitArea.type == types.RECEIVE_HIT)
+				otherHitArea.character.ReceiveHit (this, 1);
 		}
 	}
 	public void SetType(types _type)
