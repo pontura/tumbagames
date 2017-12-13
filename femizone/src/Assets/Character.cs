@@ -11,6 +11,7 @@ public class Character : SceneObject {
 	public int HorizontalDirection;
 	public CharacterStats stats;
 	public CharacterHitsManager hitsManager;
+	private Vector2 limits_Z;
 
 	public enum states
 	{
@@ -26,6 +27,7 @@ public class Character : SceneObject {
 	public virtual void OnUpdate() { }
 
 	void Start () {	
+		limits_Z = Data.Instance.settings.limits_z;
 		hitsManager = GetComponent<CharacterHitsManager> ();
 		OnStart ();
 	}
@@ -40,6 +42,13 @@ public class Character : SceneObject {
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
 		pos.z += vertical * Time.deltaTime * speed;
+
+		if (pos.z > limits_Z [1])
+			pos.z = limits_Z [1];
+		else
+		if (pos.z < limits_Z [0])
+			pos.z = limits_Z [0];
+		
 		transform.localPosition = pos;
 	}
 	public void Walk()

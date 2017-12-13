@@ -11,6 +11,7 @@ public class Data : MonoBehaviour
     const string PREFAB_PATH = "Data";
     
     static Data mInstance = null;
+	public Settings settings;
 
     public static Data Instance
     {
@@ -54,7 +55,7 @@ public class Data : MonoBehaviour
 
        
         GetComponent<MusicManager>().Init();
-
+		settings = GetComponent<Settings> ();
 
     }
     void Update()
