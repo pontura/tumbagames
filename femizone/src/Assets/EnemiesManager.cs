@@ -12,6 +12,7 @@ public class EnemiesManager : MonoBehaviour {
 	public Transform container;
 
 	void Start () {
+		return;
 		Enemy enemy = Instantiate (enemy_to_instantiate);
 		enemy.transform.SetParent (container);
 		enemy.Init (warnesMan);

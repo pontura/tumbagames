@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero : Character {
-	
+
+	public int id;
 	private InputManager inputManager;
 
 	public override void OnStart() {

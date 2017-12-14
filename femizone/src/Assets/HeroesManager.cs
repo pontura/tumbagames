@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class HeroesManager : MonoBehaviour {
 
-	public Hero hero_to_instantiate;
+	public Hero hero1;
+	public Hero hero2;
+	public Hero hero3;
+	public Hero hero4;
+
 	public Transform container;
 	public List<Hero> all;
 
 	void Start () {
-		Hero hero = Instantiate (hero_to_instantiate);
+		Hero hero;
+		hero = Instantiate (hero1);
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-8,0,0);
+		all.Add (hero);
+
+		hero = Instantiate (hero2);
+		hero.transform.SetParent (container);
+		hero.transform.localPosition = new Vector3(-4,0,0);
 		all.Add (hero);
 	}
 

@@ -23,6 +23,7 @@ public class CharacterHitsManager : MonoBehaviour {
 	void Start()
 	{
 		character = GetComponent<Character> ();
+		hitArea.character = character;
 	}
 	public void SetOn(types type)
 	{

@@ -14,7 +14,13 @@ public class HitArea : MonoBehaviour {
 
 		if (otherHitArea == null)
 			return;
+
+		if (otherHitArea.character == null)
+			return;
 		
+		if (otherHitArea.character == character)
+			return;
+
 		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
 			if(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
 				otherHitArea.character.ReceiveHit (this, 1);
