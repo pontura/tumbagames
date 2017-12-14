@@ -43,7 +43,7 @@ public class Enemy : Character {
 		progressBar.Hide ();
 	}
 
-	public override void OnReceiveHit(HitArea.types type, int force)
+	public override void OnReceiveHit(CharacterHitsManager.types type, int force)
 	{
 		
 		if(!progressBar.isOn)

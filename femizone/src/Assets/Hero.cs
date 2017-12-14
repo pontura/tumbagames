@@ -31,22 +31,22 @@ public class Hero : Character {
 		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
 	}
-	public override void OnReceiveHit(HitArea.types type, int force)
+	public override void OnReceiveHit(CharacterHitsManager.types type, int force)
 	{
 		print ("ReceiveHit " + type);
 		string hitName = "hit_punch";
 
 		switch (type) {
-		case HitArea.types.HIT_FRONT:
+		case CharacterHitsManager.types.HIT_FORWARD:
 			hitName = "hit_punch";
 			break;
-		case HitArea.types.HIT_DOWN:
+		case CharacterHitsManager.types.KICK_BACK:
 			hitName = "hit_punch";
 			break;
-		case HitArea.types.HIT_BACK:
+		case CharacterHitsManager.types.HIT_BACK:
 			hitName = "hit_punch_back";
 			break;
-		case HitArea.types.HIT_UPPER:
+		case CharacterHitsManager.types.HIT:
 			hitName = "hit_upper";
 			break;
 		}

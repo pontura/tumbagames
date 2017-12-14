@@ -12,6 +12,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		KICK_BACK,
 		HIT_FORWARD,
 		KICK_FOWARD,
+		RECEIVE_HIT,
+		HIT_UPPER
 	}
 	Character character;
 
@@ -30,25 +32,25 @@ public class CharacterHitsManager : MonoBehaviour {
 		
 		if (type == types.HIT_FORWARD) {
 			character.anim.Play ("upper");
-			hitArea.SetType (HitArea.types.HIT_UPPER);
+			hitArea.SetType (CharacterHitsManager.types.HIT_UPPER);
 		} else if (type == types.HIT_BACK) {
 			character.anim.Play ("retro_punch");
-			hitArea.SetType (HitArea.types.HIT_BACK);
+			hitArea.SetType (CharacterHitsManager.types.HIT_BACK);
 		} else if (type == types.HIT) {
 			punchHitID++;
 			if (punchHitID > 2) {
-				hitArea.SetType (HitArea.types.HIT_FRONT);
+				hitArea.SetType (CharacterHitsManager.types.HIT_FORWARD);
 				punchHitID = 1;
 			} else {
-				hitArea.SetType (HitArea.types.HIT_FRONT);
+				hitArea.SetType (CharacterHitsManager.types.HIT_FORWARD);
 			}
 			character.anim.Play ("punch_" + punchHitID);
 		} else if (type == types.KICK_BACK) {
 			character.anim.Play ("retro_kick");
-			hitArea.SetType (HitArea.types.HIT_BACK);
-		} else if (type == types.KICK_FOWARD) {
+			hitArea.SetType (CharacterHitsManager.types.KICK_BACK);
+		} else if (type == CharacterHitsManager.types.KICK_FOWARD) {
 			character.anim.Play ("kick_1");
-			hitArea.SetType (HitArea.types.HIT_BACK);
+			hitArea.SetType (CharacterHitsManager.types.HIT_BACK);
 		}  else if (type ==  types.KICK) {
 			character.anim.Play ("kick_2");
 		}

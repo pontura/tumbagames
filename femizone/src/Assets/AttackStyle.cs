@@ -6,7 +6,7 @@ using System;
 [Serializable]
 public class AttackStyle {
 
-	public HitArea.types type;
+	public CharacterHitsManager.types type;
 	public AnimationClip animClip;
 
 }

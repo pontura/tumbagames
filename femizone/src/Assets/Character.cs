@@ -83,7 +83,7 @@ public class Character : SceneObject {
 
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }
-	public virtual void OnReceiveHit(HitArea.types type,  int force) { }
+	public virtual void OnReceiveHit(CharacterHitsManager.types type,  int force) { }
 	public void LookAt(bool left)
 	{
 		if(left)

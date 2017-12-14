@@ -5,15 +5,7 @@ using UnityEngine;
 public class HitArea : MonoBehaviour {
 
 	public Character character;
-	public types type;
-	public enum types
-	{
-		HIT_UPPER,
-		HIT_FRONT,
-		HIT_BACK,
-		HIT_DOWN,
-		RECEIVE_HIT
-	}
+	public CharacterHitsManager.types type;
 
 	public void OnTriggerEnter(Collider col)
 	{
@@ -23,7 +15,7 @@ public class HitArea : MonoBehaviour {
 		if (otherHitArea == null)
 			return;
 		
-		if (type == types.RECEIVE_HIT && otherHitArea.type == types.RECEIVE_HIT) {
+		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
 			if(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
 				otherHitArea.character.ReceiveHit (this, 1);
 			return;
@@ -35,11 +27,11 @@ public class HitArea : MonoBehaviour {
 		{
 			if (otherHitArea.character == character)
 				return;
-			if (otherHitArea.type == types.RECEIVE_HIT)
+			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT)
 				otherHitArea.character.ReceiveHit (this, 1);
 		}
 	}
-	public void SetType(types _type)
+	public void SetType(CharacterHitsManager.types _type)
 	{
 		type = _type;
 	}
