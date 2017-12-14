@@ -32,9 +32,9 @@ public class InputManager : MonoBehaviour {
 			if(justTurnedHorizontal)
 				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
 			else if(justForwardHorizontal)
-				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_FORWARD);
+				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_UPPER);
 			else
-				character.hitsManager.SetOn (CharacterHitsManager.types.HIT);
+				character.hitsManager.SetOn (CharacterHitsManager.types.HIT_FORWARD);
 			newHorizontalDirection = 0;
 		}
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
 			else if(justForwardHorizontal)
 				character.hitsManager.SetOn (CharacterHitsManager.types.KICK_FOWARD);
 			else
-				character.hitsManager.SetOn (CharacterHitsManager.types.KICK);
+				character.hitsManager.SetOn (CharacterHitsManager.types.KICK_DOWN);
 			newHorizontalDirection = 0;
 		}
 

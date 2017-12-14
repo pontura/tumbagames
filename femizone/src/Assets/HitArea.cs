@@ -21,14 +21,14 @@ public class HitArea : MonoBehaviour {
 			return;
 		}
 
-		print ("AAAAAAA" + col.name);
 
 		if ( otherHitArea != null) 
 		{
 			if (otherHitArea.character == character)
 				return;
-			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT)
+			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
 				otherHitArea.character.ReceiveHit (this, 1);
+			}
 		}
 	}
 	public void SetType(CharacterHitsManager.types _type)

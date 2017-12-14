@@ -46,7 +46,7 @@ public class Hero : Character {
 		case CharacterHitsManager.types.HIT_BACK:
 			hitName = "hit_punch_back";
 			break;
-		case CharacterHitsManager.types.HIT:
+		case CharacterHitsManager.types.HIT_UPPER:
 			hitName = "hit_upper";
 			break;
 		}
