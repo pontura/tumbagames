@@ -6,14 +6,13 @@ public class CharacterHitsManager : MonoBehaviour {
 	
 	public enum types
 	{
-		HIT,
-		HIT_BACK,
-		KICK,
-		KICK_BACK,
-		HIT_FORWARD,
-		KICK_FOWARD,
 		RECEIVE_HIT,
-		HIT_UPPER
+		HIT_FORWARD,
+		HIT_BACK,
+		HIT_UPPER,
+		KICK_FOWARD,
+		KICK_BACK,
+		KICK_DOWN
 	}
 	Character character;
 
@@ -30,28 +29,28 @@ public class CharacterHitsManager : MonoBehaviour {
 		if (character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return;
 		
-		if (type == types.HIT_FORWARD) {
+		if (type == types.HIT_UPPER) {
 			character.anim.Play ("upper");
-			hitArea.SetType (CharacterHitsManager.types.HIT_UPPER);
+			hitArea.SetType (types.HIT_UPPER);
 		} else if (type == types.HIT_BACK) {
 			character.anim.Play ("retro_punch");
-			hitArea.SetType (CharacterHitsManager.types.HIT_BACK);
-		} else if (type == types.HIT) {
+			hitArea.SetType (types.HIT_BACK);
+		} else if (type == types.HIT_FORWARD) {
 			punchHitID++;
 			if (punchHitID > 2) {
-				hitArea.SetType (CharacterHitsManager.types.HIT_FORWARD);
+				hitArea.SetType (types.HIT_FORWARD);
 				punchHitID = 1;
 			} else {
-				hitArea.SetType (CharacterHitsManager.types.HIT_FORWARD);
+				hitArea.SetType (types.HIT_FORWARD);
 			}
 			character.anim.Play ("punch_" + punchHitID);
 		} else if (type == types.KICK_BACK) {
 			character.anim.Play ("retro_kick");
-			hitArea.SetType (CharacterHitsManager.types.KICK_BACK);
-		} else if (type == CharacterHitsManager.types.KICK_FOWARD) {
+			hitArea.SetType (types.KICK_BACK);
+		} else if (type == types.KICK_FOWARD) {
 			character.anim.Play ("kick_1");
-			hitArea.SetType (CharacterHitsManager.types.HIT_BACK);
-		}  else if (type ==  types.KICK) {
+			hitArea.SetType (types.KICK_FOWARD);
+		}  else if (type == types.KICK_DOWN) {
 			character.anim.Play ("kick_2");
 		}
 		character.state = Character.states.HITTING;
