@@ -5,18 +5,30 @@ using UnityEngine;
 public class LevelsManager : MonoBehaviour {
 
     EnemiesManager enemiesManager;
-    public Level level1;
+	BackgroundsManager backgroundsManager;
+	Levels levels;
+    public Level[] all;
+	int levelsWidth;
+	Vector3 offset;
 
 	void Start () {
+		levels = GetComponent<Levels> ();
         enemiesManager = GetComponent<EnemiesManager>();
-        LoadNewLevel();
+		backgroundsManager = GetComponent<BackgroundsManager> ();
+		levelsWidth = Data.Instance.settings.LevelsWidth;
     }
-	
-	void LoadNewLevel () {
-		foreach(SceneObjectData data in level1.GetComponentsInChildren<SceneObjectData>())
+	public void AddNewLevel (int id) {
+		offset = new Vector3 (id * levelsWidth, 0, 0);
+		Load(all[id]);
+	}
+	void Load (Level level) {
+		
+		foreach(SceneObjectData data in level.GetComponentsInChildren<SceneObjectData>())
         {
-            data.pos = data.transform.position;
+			data.pos = data.transform.position + offset;
             enemiesManager.InstantiateSceneOject(data);
         }
+		backgroundsManager.AddBackground (level.background, offset);
+
 	}
 }

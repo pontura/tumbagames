@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Level : MonoBehaviour {
 
-	// Use this for initialization
+	public GameObject background;
+
 	void Start () {
 		
 	}

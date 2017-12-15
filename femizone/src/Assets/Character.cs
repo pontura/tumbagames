@@ -12,6 +12,8 @@ public class Character : SceneObject {
 	public CharacterStats stats;
 	public CharacterHitsManager hitsManager;
 	private Vector2 limits_Z;
+	private int limit_to_walk;
+	WorldCamera worldCamera;
 
 	public enum states
 	{
@@ -27,7 +29,9 @@ public class Character : SceneObject {
 	public virtual void OnUpdate() { }
 
 	void Start () {	
+		worldCamera = World.Instance.worldCamera;
 		limits_Z = Data.Instance.settings.limits_z;
+		limit_to_walk = Data.Instance.settings.limit_to_walk;
 		hitsManager = GetComponent<CharacterHitsManager> ();
 		OnStart ();
 	}
@@ -41,6 +45,7 @@ public class Character : SceneObject {
 	{
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
+		pos = CheckPositionPosible (pos);
 		pos.z += vertical * Time.deltaTime * speed;
 
 		if (pos.z > limits_Z [1])
@@ -50,6 +55,16 @@ public class Character : SceneObject {
 			pos.z = limits_Z [0];
 		
 		transform.localPosition = pos;
+	}
+	Vector3 CheckPositionPosible(Vector3 pos)
+	{
+		float limitX = worldCamera.transform.position.x;
+		if (pos.x < limitX - limit_to_walk)
+			pos.x = limitX - limit_to_walk;
+		else
+			if (pos.x > limitX + limit_to_walk)
+				pos.x = limitX + limit_to_walk;
+		return pos;			
 	}
 	public void Walk()
 	{
@@ -63,6 +78,7 @@ public class Character : SceneObject {
 		if (state == states.DEAD)
 			return;
 		state = states.DEAD;
+		Events.OnCharacterDie (this);
 	}
 	public void Idle()
 	{

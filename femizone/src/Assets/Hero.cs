@@ -28,7 +28,6 @@ public class Hero : Character {
 			transform.localScale = new Vector3 (-1, 1, 1);
 		else if (inputManager.HorizontalDirection > 0)
 			transform.localScale = new Vector3 (1, 1, 1);
-
 		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
 	}

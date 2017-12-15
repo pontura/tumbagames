@@ -11,11 +11,21 @@ public class EnemiesManager : MonoBehaviour {
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
+	public List<Enemy> all;
 
 	void Start () {
-        
-
+		Events.OnCharacterDie += OnCharacterDie;
     }
+	void OnCharacterDie(Character character)
+	{
+		Enemy enemy = character.GetComponent<Enemy> ();
+		if (enemy == null)
+			return;
+		all.Remove (enemy);
+		if (all.Count == 0) {
+			World.Instance.levels.StageClear ();
+		}
+	}
     public void InstantiateSceneOject(SceneObjectData data)
     {
         GameObject so = ceoMan;
@@ -39,5 +49,6 @@ public class EnemiesManager : MonoBehaviour {
         enemy.Init(so);
         data.pos.y = 0;
         enemy.transform.localPosition = data.pos;
+		all.Add (enemy);
     }
 }

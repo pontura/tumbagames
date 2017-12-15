@@ -21,4 +21,8 @@ public static class Events {
 
     public static System.Action<bool> OnGamePaused = delegate { };
     public static System.Action GameOver = delegate { };
+
+
+	public static System.Action<Character> OnCharacterDie = delegate { };
+
 }

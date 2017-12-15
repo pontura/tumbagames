@@ -5,10 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour
 {
+	public states state;
+	public enum states
+	{
+		FIGHTING,
+		LEVEL_CLEAR
+	}
 	static World mInstance = null;
 	public Camera camera;
 	public EnemiesManager enemiesManager;
 	public HeroesManager heroesManager;
+	public WorldCamera worldCamera;
+	public Levels levels;
 
 	public static World Instance
 	{
@@ -25,20 +33,29 @@ public class World : MonoBehaviour
 
 		heroesManager = GetComponent<HeroesManager>();
 		enemiesManager = GetComponent<EnemiesManager>();
+		levels = GetComponent<Levels> ();
 	}
-	public List<int> arr;
-	void Start()
+	public int newXLimit;
+	public void LevelClear()
 	{
-		Random.InitState (2);
-		for (int a = 0; a < 100; a++) {
-			arr.Add(a);
-		}
-		for(int n=0; n<1000; n++)
-		{
-			int firstNum = arr [0];
-			int randomNum = arr [Random.Range(1,arr.Count-1)];
-			arr [0] = arr[randomNum];
-			arr [randomNum] = firstNum;
+		state = states.LEVEL_CLEAR;
+		newXLimit = (levels.activeLevelID * Data.Instance.settings.LevelsWidth);
+	}
+	void Update()
+	{
+		if (state == states.FIGHTING)
+			return;
+		
+		if (state == states.LEVEL_CLEAR) {
+			print(heroesManager.GetMostAdvancedPosition ());
+			float pos = heroesManager.GetMostAdvancedPosition ();
+			//print (pos);
+			if (worldCamera.transform.position.x >= newXLimit) {
+				pos = newXLimit;
+				state = states.FIGHTING;
+			} else if(pos>10){
+				worldCamera.UpdatePosition (1);
+			}
 		}
 	}
 }

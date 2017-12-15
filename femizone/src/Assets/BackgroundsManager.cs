@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class BackgroundsManager : MonoBehaviour {
 
-	public GameObject[] backgrounds;
 	public Transform container;
 
-	void Start () {
-		
+	public void AddBackground (GameObject go, Vector3 offset) {
+		GameObject newBG = Instantiate(go);
+		newBG.transform.SetParent (container);
+		newBG.transform.localScale = new Vector3 (1.1f, 1.1f, 1.1f);
+		newBG.transform.localEulerAngles = Vector3.zero;
+		newBG.transform.localPosition = offset;
 	}
 
 }

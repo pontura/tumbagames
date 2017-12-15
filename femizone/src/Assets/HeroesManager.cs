@@ -87,4 +87,19 @@ public class HeroesManager : MonoBehaviour {
 		}
 		return pos;
 	}
+	public float GetMostAdvancedPosition()
+	{
+		float biggest_x = 0;
+		float lowest_x = 1000;
+		foreach (Hero hero in all) {
+			if (hero.transform.position.x > biggest_x)
+				biggest_x = hero.transform.position.x;
+			else
+				if (hero.transform.position.x < lowest_x)
+					lowest_x = hero.transform.position.x;
+		}
+		if (biggest_x - lowest_x > 5)
+			return 0;
+		return biggest_x;
+	}
 }
