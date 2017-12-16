@@ -13,6 +13,7 @@ public class SceneObjectData : MonoBehaviour {
         WARNES_MAN,
         OPUS,
         CEO,
-        COP
+        COP,
+		COP_GUN
     }
 }

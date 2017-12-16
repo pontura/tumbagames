@@ -8,6 +8,7 @@ public class EnemiesManager : MonoBehaviour {
 	public GameObject ceoMan;
 	public GameObject opusMan;
     public GameObject cop;
+	public GameObject cop_gun;
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
@@ -43,6 +44,9 @@ public class EnemiesManager : MonoBehaviour {
             case SceneObjectData.types.COP:
                 so = cop;
                 break;
+			case SceneObjectData.types.COP_GUN:
+				so = cop_gun;
+				break;
         }
         Enemy enemy = Instantiate(enemy_to_instantiate);
         enemy.transform.SetParent(container);
