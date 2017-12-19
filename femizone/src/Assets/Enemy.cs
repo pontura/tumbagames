@@ -45,20 +45,23 @@ public class Enemy : Character {
 		progressBar.Hide ();
 	}
 
-	public override void OnReceiveHit(CharacterHitsManager.types type, int force)
+	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
-		
+
 		if(!progressBar.isOn)
 			progressBar.Show ();
+
+		if (ia.CheckForDefense () == true) {
+			StartHit (hitArea);
+			return;
+		}
 		
 		ia.ReceiveHit ();
-		//if (state == states.HITTED)
-		//	return;
 
 		string hitName = "";
 
 		foreach (AttackStyle attackStyle in stats.receivedAttacks) {
-			if (attackStyle.type == type)
+			if (attackStyle.type == hitArea.type)
 				hitName = attackStyle.animClip.name;
 		}
 

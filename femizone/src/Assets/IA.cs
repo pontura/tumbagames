@@ -21,6 +21,15 @@ public class IA : MonoBehaviour {
 	void Start () {
 		enemy = GetComponent<Character> ().GetComponent<Enemy>();
 	}
+	public bool CheckForDefense()
+	{
+		if (Random.Range (0, 10) < 3) {
+			enemy.Defense ();
+			Invoke ("Idle", 1f);
+			return true;
+		} else
+			return false;
+	}
 	public void ReceiveHit()
 	{
 		state = states.HITTED;
@@ -34,7 +43,7 @@ public class IA : MonoBehaviour {
 	}
 	void Update() {
 		
-		if (enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
+		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
 			Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);

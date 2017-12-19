@@ -22,7 +22,8 @@ public class Character : SceneObject {
 		WALK,
 		HITTING,
 		HITTED,
-		DEAD
+		DEAD,
+		DEFENDING
 	}
 
 	public virtual void OnStart() { }
@@ -36,8 +37,8 @@ public class Character : SceneObject {
 		OnStart ();
 	}
 	void Update () {
-		if (state == states.HITTED)
-			Hitted ();
+		if (state == states.HITTED || state == states.DEFENDING)
+			Retrocede ();
 		else
 			OnUpdate ();
 	}
@@ -86,6 +87,11 @@ public class Character : SceneObject {
 		anim.Play ("idle");
 		OnIdle();
 	}
+	public void Defense()
+	{
+		state = states.DEFENDING;
+		anim.Play ("defense");
+	}
 	public void Attack()
 	{
 		state = states.HITTING;
@@ -94,12 +100,12 @@ public class Character : SceneObject {
 	public void ReceiveHit(HitArea hitArea,  int force) 
 	{ 
 		StartHit(hitArea);
-		OnReceiveHit (hitArea.type,force);
+		OnReceiveHit (hitArea,force);
 	}
 
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }
-	public virtual void OnReceiveHit(CharacterHitsManager.types type,  int force) { }
+	public virtual void OnReceiveHit(HitArea hitArea,  int force) { }
 	public void LookAt(bool left)
 	{
 		if(left)
@@ -111,7 +117,7 @@ public class Character : SceneObject {
 
 	float _hittedPower;
 	float hittedDirection = 1;
-	void StartHit(HitArea hitArea) 
+	public void StartHit(HitArea hitArea) 
 	{ 
 		if (hitArea.character.transform.position.x > transform.position.x)
 			hittedDirection = -1;
@@ -119,7 +125,7 @@ public class Character : SceneObject {
 			hittedDirection = 1;
 		_hittedPower = hitArea.character.stats.hittedPower;
 	}
-	void Hitted()
+	void Retrocede()
 	{
 		Vector3 pos = transform.position;
 		_hittedPower /= 1.15f;

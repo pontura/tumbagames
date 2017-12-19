@@ -31,12 +31,12 @@ public class Hero : Character {
 		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
 	}
-	public override void OnReceiveHit(CharacterHitsManager.types type, int force)
+	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
-		print ("ReceiveHit " + type);
+		print ("ReceiveHit " + hitArea.type);
 		string hitName = "hit_punch";
 
-		switch (type) {
+		switch (hitArea.type) {
 		case CharacterHitsManager.types.HIT_FORWARD:
 			hitName = "hit_punch";
 			break;
