@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelsManager : MonoBehaviour {
 
     EnemiesManager enemiesManager;
+	PowerupsManager powerupsManager;
+
 	BackgroundsManager backgroundsManager;
 	Levels levels;
     public Level[] all;
@@ -15,6 +17,7 @@ public class LevelsManager : MonoBehaviour {
 		levels = GetComponent<Levels> ();
         enemiesManager = GetComponent<EnemiesManager>();
 		backgroundsManager = GetComponent<BackgroundsManager> ();
+		powerupsManager = GetComponent<PowerupsManager> ();
 		levelsWidth = Data.Instance.settings.LevelsWidth;
     }
 	public void AddNewLevel (int id) {
@@ -22,13 +25,26 @@ public class LevelsManager : MonoBehaviour {
 		Load(all[id]);
 	}
 	void Load (Level level) {
-		
-		foreach(SceneObjectData data in level.GetComponentsInChildren<SceneObjectData>())
+
+		SceneObjectData[] allSceneObjectData = level.GetComponentsInChildren<SceneObjectData> ();
+		foreach(SceneObjectData data in allSceneObjectData)
         {
 			data.pos = data.transform.position + offset;
-            enemiesManager.InstantiateSceneOject(data);
+
+			if (data.type == SceneObjectData.types.ENERGY)
+				powerupsManager.InstantiateSceneOject(data);
+			else
+				enemiesManager.InstantiateSceneOject(data);
         }
+
 		backgroundsManager.AddBackground (level.background, offset);
 
+		if (enemiesManager.all.Count == 0)
+			World.Instance.levels.StageClear ();
+
+	}
+	void StageClearDelay()
+	{
+		World.Instance.levels.StageClear ();
 	}
 }

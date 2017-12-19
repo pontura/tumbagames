@@ -14,6 +14,17 @@ public class CharacterUI : MonoBehaviour {
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
 		Events.OnHeroHitted += OnHeroHitted;
+		Events.GrabPowerUp += GrabPowerUp;
+	}
+	void GrabPowerUp(Hero hero, Powerup powerup)
+	{
+		if (hero.id != heroID)
+			return;
+		life += 50;
+		if (life >100) {
+			life = 100;
+		} 
+		bar.fillAmount = ((float)life)/100;
 	}
 	void OnCharacterDie(Character character)
 	{

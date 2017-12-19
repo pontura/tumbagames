@@ -5,6 +5,7 @@ using UnityEngine;
 public class Levels : MonoBehaviour {
 
     LevelsManager levelsManager;
+
 	public int activeLevelID;
 
 	void Start () {
