@@ -15,6 +15,7 @@ public static class Events {
     public static System.Action<string> OnSoundFX = delegate { };
     public static System.Action<string> OnMusicChange = delegate { };
 
+	public static System.Action<int, int> OnHeroHitted = delegate { };
     public static System.Action OnHeroDie = delegate { };
     public static System.Action OnHeroComido = delegate { };
     public static System.Action OnHeroCelebrate = delegate { };

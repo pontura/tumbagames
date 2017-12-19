@@ -54,6 +54,8 @@ public class Hero : Character {
 		state = states.HITTED;
 		anim.Play (hitName);
 		Invoke ("Idle", 0.7f);
+
+		Events.OnHeroHitted (id, force);
 		//stats.ReceiveHit (force);
 	}
 }

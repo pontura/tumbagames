@@ -9,9 +9,11 @@ public class Enemy : Character {
 	public EnemyAttackManager enemyAttackManager;
 	public IA ia;
 	public HitArea hitArea;
+	int totalLife;
 
 	void Start()
 	{
+		totalLife = stats.life;
 		enemyAttackManager = GetComponent<EnemyAttackManager> ();
 		ia = GetComponent<IA> ();
 	}
@@ -55,19 +57,16 @@ public class Enemy : Character {
 
 		string hitName = "";
 
-		print ("recive: " + type);
 		foreach (AttackStyle attackStyle in stats.receivedAttacks) {
-			print (attackStyle.type + " - " + attackStyle.animClip.name);
 			if (attackStyle.type == type)
 				hitName = attackStyle.animClip.name;
 		}
-		print ("hace: " + hitName);
 
 		state = states.HITTED;
 		anim.Play (hitName);
 		Invoke ("Idle", 0.5f);
 		stats.ReceiveHit (force);
-		progressBar.SetProgress ((float)stats.life/10);
+		progressBar.SetProgress ((float)stats.life/totalLife);
 		if (stats.life <= 0) {
 			Die ();
 			Destroy (progressBar.gameObject);

@@ -30,30 +30,19 @@ public class CharacterHitsManager : MonoBehaviour {
 		if (character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return;
 		
-		if (type == types.HIT_UPPER) {
-			character.anim.Play ("upper");
-			hitArea.SetType (types.HIT_UPPER);
-		} else if (type == types.HIT_BACK) {
-			character.anim.Play ("retro_punch");
-			hitArea.SetType (types.HIT_BACK);
-		} else if (type == types.HIT_FORWARD) {
+		AttackStyle attackStyle = character.stats.GetAttackByType (type);
+		string clipName = attackStyle.animClip.name;
+
+		if (type == types.HIT_FORWARD) {
 			punchHitID++;
-			if (punchHitID > 2) {
-				hitArea.SetType (types.HIT_FORWARD);
+			if (punchHitID > 2) 				
 				punchHitID = 1;
-			} else {
-				hitArea.SetType (types.HIT_FORWARD);
-			}
-			character.anim.Play ("punch_" + punchHitID);
-		} else if (type == types.KICK_BACK) {
-			character.anim.Play ("retro_kick");
-			hitArea.SetType (types.KICK_BACK);
-		} else if (type == types.KICK_FOWARD) {
-			character.anim.Play ("kick_1");
-			hitArea.SetType (types.KICK_FOWARD);
-		}  else if (type == types.KICK_DOWN) {
-			character.anim.Play ("kick_2");
+			clipName = "punch_" + punchHitID;
 		}
+
+		character.anim.Play (clipName);
+		hitArea.SetType (type, attackStyle.force);
+
 		character.state = Character.states.HITTING;
 		Invoke ("Reset", 0.2f);
 	}

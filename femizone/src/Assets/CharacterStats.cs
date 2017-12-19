@@ -21,4 +21,13 @@ public class CharacterStats : MonoBehaviour {
 	public List<AttackStyle> attacks;
 
 	public List<AttackStyle> receivedAttacks;
+
+	public AttackStyle GetAttackByType(CharacterHitsManager.types type)
+	{
+		foreach (AttackStyle attack in attacks) {
+			if (attack.type == type)
+				return attack;
+		}
+		return null;
+	}
 }

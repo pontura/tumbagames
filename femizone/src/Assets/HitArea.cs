@@ -6,6 +6,7 @@ public class HitArea : MonoBehaviour {
 
 	public Character character;
 	public CharacterHitsManager.types type;
+	public int force;
 
 	public void OnTriggerEnter(Collider col)
 	{
@@ -23,9 +24,14 @@ public class HitArea : MonoBehaviour {
 
 		if (otherHitArea.character.GetComponent<Hero>()  && character.GetComponent<Hero>())
 			return;
-		
-		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
-			if(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
+
+		//primer golpecito
+		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT			
+			&&
+			(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
+		)
+		{
+			if(otherHitArea.character.GetComponent<Enemy>().progressBar.bar.fillAmount == 1)
 				otherHitArea.character.ReceiveHit (this, 1);
 			return;
 		}
@@ -36,12 +42,14 @@ public class HitArea : MonoBehaviour {
 			if (otherHitArea.character == character)
 				return;
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
-				otherHitArea.character.ReceiveHit (this, 1);
+				if(type != CharacterHitsManager.types.RECEIVE_HIT)
+					otherHitArea.character.ReceiveHit (this, force);
 			}
 		}
 	}
-	public void SetType(CharacterHitsManager.types _type)
+	public void SetType(CharacterHitsManager.types _type, int _force)
 	{
 		type = _type;
+		this.force = _force;
 	}
 }

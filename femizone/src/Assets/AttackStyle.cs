@@ -8,5 +8,6 @@ public class AttackStyle {
 
 	public CharacterHitsManager.types type;
 	public AnimationClip animClip;
+	public int force;
 
 }
