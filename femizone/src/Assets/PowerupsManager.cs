@@ -6,7 +6,6 @@ public class PowerupsManager : MonoBehaviour {
 
 	public Powerup energyAsset;
 
-	public Enemy powerup_to_instantiate;
 	public Transform container;
 	public List<Powerup> all;
 

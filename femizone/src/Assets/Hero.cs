@@ -12,7 +12,7 @@ public class Hero : Character {
 		inputManager = GetComponent<InputManager> ();
 	}
 	public override void OnUpdate () {
-		if (state == states.HITTING || state == states.HITTED)
+		if (state == states.DEAD  || state == states.HITTING || state == states.HITTED)
 			return;
 		if ((inputManager.HorizontalDirection != 0 || inputManager.VerticalDirection != 0)) {			
 			if(state != states.WALK)
@@ -34,7 +34,6 @@ public class Hero : Character {
 	}
 	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
-		print ("ReceiveHit " + hitArea.type);
 		string hitName = "hit_punch";
 
 		switch (hitArea.type) {
@@ -54,9 +53,20 @@ public class Hero : Character {
 
 		state = states.HITTED;
 		anim.Play (hitName);
-		Invoke ("Idle", 0.7f);
+		Invoke ("GotoIdleAfterBeingHitted", 0.7f);
 
 		Events.OnHeroHitted (id, force);
 		//stats.ReceiveHit (force);
+	}
+	public override void OnDie ()
+	{
+		base.OnDie ();
+		CancelInvoke ();
+	}
+	void GotoIdleAfterBeingHitted()
+	{
+		if (state == states.DEAD)
+			return;
+		Idle ();
 	}
 }

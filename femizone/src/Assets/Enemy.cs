@@ -72,6 +72,7 @@ public class Enemy : Character {
 		progressBar.SetProgress ((float)stats.life/totalLife);
 		if (stats.life <= 0) {
 			Die ();
+			Events.OnCharacterDie (this);
 			Destroy (progressBar.gameObject);
 			Destroy (this.gameObject);
 		}

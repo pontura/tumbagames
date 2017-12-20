@@ -13,8 +13,12 @@ public class World : MonoBehaviour
 	}
 	static World mInstance = null;
 	public Camera camera;
+
+	[HideInInspector]
 	public EnemiesManager enemiesManager;
+	[HideInInspector]
 	public HeroesManager heroesManager;
+
 	public WorldCamera worldCamera;
 	public Levels levels;
 

@@ -8,6 +8,21 @@ public class HitArea : MonoBehaviour {
 	public CharacterHitsManager.types type;
 	public int force;
 
+	void Start()
+	{
+		Events.OnHeroDie += OnHeroDie;
+	}
+	void OnDestroy()
+	{
+		Events.OnHeroDie -= OnHeroDie;
+	}
+	void OnHeroDie(int id)
+	{
+		Hero hero = character.GetComponent<Hero>();
+		if (hero == null || hero.id != id)
+			return;
+		this.enabled = false;
+	}
 	public void OnTriggerEnter(Collider col)
 	{
 		
@@ -42,7 +57,7 @@ public class HitArea : MonoBehaviour {
 			if (otherHitArea.character == character)
 				return;
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
-				if(type != CharacterHitsManager.types.RECEIVE_HIT)
+				if(type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD)
 					otherHitArea.character.ReceiveHit (this, force);
 			}
 		}

@@ -91,7 +91,8 @@ public class IA : MonoBehaviour {
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 
 		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
-
+		if (hero == null)
+			return;
 		if (hero.transform.position.x < transform.position.x)
 			enemy.LookAt (true);
 		else

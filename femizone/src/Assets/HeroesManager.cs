@@ -23,8 +23,23 @@ public class HeroesManager : MonoBehaviour {
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-4,0,0);
 		all.Add (hero);
+		Events.OnHeroDie += OnHeroDie;
 	}
 
+	void OnHeroDie(int id)
+	{
+		Hero hero = GetHero(id);
+		all.Remove (hero);
+		hero.Die ();
+	}
+	Hero GetHero(int id)
+	{
+		foreach (Hero hero in all) {
+			if (hero.id == id)
+				return hero;
+		}
+		return null;
+	}
 	public Vector3 CheckIfHeroIsClose(Character character)
 	{
 		Hero closestHero = GetClosestHero(character);

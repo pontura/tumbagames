@@ -27,7 +27,7 @@ public class CharacterHitsManager : MonoBehaviour {
 	}
 	public void SetOn(types type)
 	{
-		if (character.state == Character.states.HITTING || character.state == Character.states.HITTED)
+		if (character.state == Character.states.DEAD || character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return;
 		
 		AttackStyle attackStyle = character.stats.GetAttackByType (type);
@@ -47,6 +47,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		Invoke ("Reset", 0.2f);
 	}
 	void Reset(){
+		if (character.state == Character.states.DEAD || character.state == Character.states.HITTED)
+			return;
 		character.Idle ();
 	}
 }

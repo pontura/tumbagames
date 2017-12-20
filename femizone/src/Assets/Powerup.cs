@@ -12,7 +12,6 @@ public class Powerup : SceneObject {
 
 		HitArea otherHitArea = col.gameObject.GetComponent<HitArea> ();
 
-		print (otherHitArea.character);
 
 		if (otherHitArea == null)
 			return;

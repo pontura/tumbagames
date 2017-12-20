@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class CharacterUI : MonoBehaviour {
 
-	public int life = 100;
+	public int life;
 	public Text scoreField;
 	public Image image;
 	public Image bar;
 	public int heroID;
 
 	void Start () {
-		Events.OnCharacterDie += OnCharacterDie;
+		life = Data.Instance.settings.totalLife;
 		Events.OnHeroHitted += OnHeroHitted;
 		Events.GrabPowerUp += GrabPowerUp;
 	}
@@ -20,30 +20,21 @@ public class CharacterUI : MonoBehaviour {
 	{
 		if (hero.id != heroID)
 			return;
-		life += 50;
-		if (life >100) {
-			life = 100;
+		life += Data.Instance.settings.totalLife/2;
+		if (life >Data.Instance.settings.totalLife) {
+			life = Data.Instance.settings.totalLife;
 		} 
-		bar.fillAmount = ((float)life)/100;
-	}
-	void OnCharacterDie(Character character)
-	{
-		Hero hero = character.GetComponent<Hero> ();
-		if (hero == null)
-			return;
-		
-		if (hero.id == heroID)
-			print ("DIE");
+		bar.fillAmount = ((float)life)/(float)Data.Instance.settings.totalLife;
 	}
 	public void OnHeroHitted(int _heroID, int force)
 	{
-		//print ("OnHeroHitted" + _heroID + " force" + force +  "  life  " + life);
 		if (heroID != _heroID)
 			return;
 		life -= force;
 		if (life < 0) {
 			life = 0;
+			Events.OnHeroDie (_heroID);
 		} 
-		bar.fillAmount = ((float)life)/100;
+		bar.fillAmount = ((float)life)/(float)Data.Instance.settings.totalLife;
 	}
 }

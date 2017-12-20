@@ -37,6 +37,8 @@ public class Character : SceneObject {
 		OnStart ();
 	}
 	void Update () {
+		if (state == states.DEAD)
+			return;
 		if (state == states.HITTED || state == states.DEFENDING)
 			Retrocede ();
 		else
@@ -79,7 +81,8 @@ public class Character : SceneObject {
 		if (state == states.DEAD)
 			return;
 		state = states.DEAD;
-		Events.OnCharacterDie (this);
+		anim.Play ("death");
+		OnDie ();
 	}
 	public void Idle()
 	{
@@ -102,7 +105,7 @@ public class Character : SceneObject {
 		StartHit(hitArea);
 		OnReceiveHit (hitArea,force);
 	}
-
+	public virtual void OnDie() { }
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }
 	public virtual void OnReceiveHit(HitArea hitArea,  int force) { }
