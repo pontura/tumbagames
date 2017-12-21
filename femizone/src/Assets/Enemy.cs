@@ -47,7 +47,9 @@ public class Enemy : Character {
 
 	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
-
+		if (ia == null)
+			return;
+		
 		if(!progressBar.isOn)
 			progressBar.Show ();
 
