@@ -13,17 +13,21 @@ public class HeroesManager : MonoBehaviour {
 	public List<Hero> all;
 
 	void Start () {
+
+		Events.OnHeroDie += OnHeroDie;
+
 		Hero hero;
 		hero = Instantiate (hero1);
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-8,0,0);
 		all.Add (hero);
 
+		return;
 		hero = Instantiate (hero2);
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-4,0,0);
 		all.Add (hero);
-		Events.OnHeroDie += OnHeroDie;
+
 	}
 
 	void OnHeroDie(int id)

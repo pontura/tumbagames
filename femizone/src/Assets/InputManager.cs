@@ -18,7 +18,8 @@ public class InputManager : MonoBehaviour {
 
 	float timeOut = 0.1f;
 	void Update () {
-		
+		if (hero.state == Character.states.DEAD)
+			return;
 
 		if (Input.GetAxis("Vertical" +hero.id) == -1) 
 			VerticalDirection = -1;

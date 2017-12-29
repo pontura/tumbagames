@@ -57,8 +57,11 @@ public class HitArea : MonoBehaviour {
 			if (otherHitArea.character == character)
 				return;
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
-				if(type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD)
+				if (type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD) {
 					otherHitArea.character.ReceiveHit (this, force);
+					character.OnFreeze ();
+				}
+				
 			}
 		}
 	}

@@ -43,6 +43,13 @@ public class Character : SceneObject {
 			Retrocede ();
 		else
 			OnUpdate ();
+
+		if (isVibrating) {
+			Vector3 pos = transform.localPosition;
+			vibratingDirection *= -1;
+			pos.x += vibratingDirection;
+			transform.localPosition = pos;
+		}
 	}
 	public void MoveTo(int horizontal, int vertical)
 	{
@@ -137,4 +144,17 @@ public class Character : SceneObject {
 		pos.x += (_hittedPower * Time.deltaTime ) * hittedDirection;
 		transform.position = pos;
 	}
+	public virtual void OnFreeze()
+	{
+		anim.speed = 0f;
+		isVibrating = true;
+		Invoke ("ResetFreeze", 0.22f);
+	}
+	bool isVibrating = false;
+	void ResetFreeze()
+	{
+		isVibrating = false;
+		anim.speed = 1f;
+	}
+	float vibratingDirection = 0.3f;
 }
