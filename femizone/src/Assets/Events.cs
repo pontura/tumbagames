@@ -26,4 +26,8 @@ public static class Events {
 	public static System.Action<Hero, Powerup> GrabPowerUp = delegate { };
 
 	public static System.Action<Character> OnCharacterDie = delegate { };
+
+	public static System.Action<CharacterHitsManager.types, Character> OnAttack = delegate { };
+	public static System.Action<CharacterHitsManager.types, Character> OnReceiveit = delegate { };
+
 }

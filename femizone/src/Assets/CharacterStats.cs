@@ -12,6 +12,14 @@ public class CharacterStats : MonoBehaviour {
 	public Vector2 time_to_GoTo_Target = new Vector2 (0.5f, 3);
 	public Vector2 time_to_Punch = new Vector2 (0.2f, 2);
 	public float hittedPower; // 5;
+	public types type;
+	public enum types
+	{
+		HERO,
+		PUSSY,
+		MACHO,
+		POLI
+	}
 
 	public void ReceiveHit(int force)
 	{

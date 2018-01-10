@@ -46,8 +46,10 @@ public class HitArea : MonoBehaviour {
 			(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
 		)
 		{
-			if(otherHitArea.character.GetComponent<Enemy>().progressBar.bar.fillAmount == 1)
+			if (otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
 				otherHitArea.character.ReceiveHit (this, 1);
+				Events.OnReceiveit (type, otherHitArea.character);
+			}
 			return;
 		}
 
@@ -60,6 +62,7 @@ public class HitArea : MonoBehaviour {
 				if (type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD) {
 					otherHitArea.character.ReceiveHit (this, force);
 					character.OnFreeze ();
+					Events.OnReceiveit (type, otherHitArea.character);
 				}
 				
 			}

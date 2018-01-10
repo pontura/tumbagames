@@ -45,6 +45,8 @@ public class CharacterHitsManager : MonoBehaviour {
 
 		character.state = Character.states.HITTING;
 		Invoke ("Reset", 0.2f);
+
+		Events.OnAttack (attackStyle.type, character);
 	}
 	void Reset(){
 		if (character.state == Character.states.DEAD || character.state == Character.states.HITTED)

@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour {
        
 	public void Init () {
 
-        volume = PlayerPrefs.GetFloat("MusicVol", 1);
+       // volume = PlayerPrefs.GetFloat("MusicVol", 1);
         if (volume == 0) disabled = true;
         audioSource.loop = true;
         OnMusicVolumeChanged(volume);
@@ -20,9 +20,9 @@ public class MusicManager : MonoBehaviour {
         Events.OnMusicOff += OnMusicOff;
 
 #if UNITY_STANDALONE
-        disabled = false;
-        volume = 1;
-        OnMusicVolumeChanged(volume);
+        //disabled = false;
+     //   volume = 1;
+     //   OnMusicVolumeChanged(volume);
 #endif
 	}
     void OnDestroy()
