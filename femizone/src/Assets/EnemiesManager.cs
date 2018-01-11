@@ -54,5 +54,6 @@ public class EnemiesManager : MonoBehaviour {
         data.pos.y = 0;
         enemy.transform.localPosition = data.pos;
 		all.Add (enemy);
+		Events.OnMansPlaining (enemy, true);
     }
 }

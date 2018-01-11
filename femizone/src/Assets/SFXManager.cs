@@ -10,6 +10,7 @@ public class SFXManager : MonoBehaviour {
 	public AudioClips balls_hit;
 	public AudioClips punches_hit;
 	public AudioClips hits;
+	public AudioClips mansplaining;
 
 	[Serializable]
 	public class AudioClips
@@ -24,10 +25,50 @@ public class SFXManager : MonoBehaviour {
 	public AudioSource AudioS_kicks;
 	public AudioSource AudioS_hit_balls;
 	public AudioSource AudioS_hit_punches;
+	public GameObject mansplaining_container;
+
+	public List<ClipByCharacter> clipsByCharacter;
+	[Serializable]
+	public class ClipByCharacter
+	{
+		public AudioSource audioSource;
+		public Character character;
+	}
+
 
 	void Start () {
 		Events.OnAttack += OnAttack;
 		Events.OnReceiveit += OnReceiveit;
+		Events.OnMansPlaining += OnMansPlaining;
+	}
+	int rand = 0;
+	void OnMansPlaining(Character character, bool isOn)
+	{
+		if (isOn) {
+			ClipByCharacter clipByCharacter = new ClipByCharacter ();
+			AudioClip[] arr = GetArrClip (mansplaining, character.stats.type);
+			rand++;
+			if (rand > arr.Length - 1)
+				rand = 0;
+			AudioClip audioClip = arr [rand];
+			clipByCharacter.audioSource = gameObject.AddComponent<AudioSource> ();
+			clipByCharacter.audioSource.clip = audioClip;
+			clipByCharacter.audioSource.loop = true;
+			clipByCharacter.audioSource.Play ();
+			clipByCharacter.character = character;
+			clipsByCharacter.Add (clipByCharacter);
+		} else {
+			ClipByCharacter cToRemove = null;
+			foreach (ClipByCharacter c in clipsByCharacter) {
+				if (c.character.stats.type == character.stats.type)
+					cToRemove = c;
+			}
+			if (cToRemove != null) {				
+				cToRemove.audioSource.Stop ();
+				clipsByCharacter.Remove (cToRemove);
+				Destroy (cToRemove.audioSource);
+			}
+		}
 	}
 	void OnReceiveit(CharacterHitsManager.types type, Character character)
 	{

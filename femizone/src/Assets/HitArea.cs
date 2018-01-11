@@ -40,13 +40,16 @@ public class HitArea : MonoBehaviour {
 		if (otherHitArea.character.GetComponent<Hero>()  && character.GetComponent<Hero>())
 			return;
 
-		//primer golpecito
+		//primer golpecito con el pecho
 		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT			
 			&&
 			(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
 		)
 		{
+			
 			if (otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
+				
+				Events.OnMansPlaining (otherHitArea.character, false);
 				otherHitArea.character.ReceiveHit (this, 1);
 				Events.OnReceiveit (type, otherHitArea.character);
 			}
@@ -58,6 +61,9 @@ public class HitArea : MonoBehaviour {
 		{
 			if (otherHitArea.character == character)
 				return;
+			if (otherHitArea.character.GetComponent<Enemy> () && otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
+				Events.OnMansPlaining (otherHitArea.character, false);
+			}
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
 				if (type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD) {
 					otherHitArea.character.ReceiveHit (this, force);
