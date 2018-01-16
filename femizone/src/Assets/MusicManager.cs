@@ -4,26 +4,43 @@ using System.Collections;
 public class MusicManager : MonoBehaviour {
 
     public AudioSource audioSource;
+
+	public AudioClip musicHard;
+	public AudioClip musicCalm;
+
     public float volume;
     public bool disabled;
        
+	void Start()
+	{
+		Events.OnMansPlaining += OnMansPlaining;
+		Events.OnStageClear += OnStageClear;
+
+		audioSource = gameObject.AddComponent<AudioSource> ();
+
+		OnStageClear ();
+	}
+	void OnMansPlaining(Character c, bool isOn)
+	{
+		if (!isOn) {
+			audioSource.clip = musicHard;		
+			audioSource.Play ();
+		}
+	}
+	void OnStageClear()
+	{
+		audioSource.clip = musicCalm;		
+		audioSource.Play ();
+	}
 	public void Init () {
 
-       // volume = PlayerPrefs.GetFloat("MusicVol", 1);
-        if (volume == 0) disabled = true;
-        audioSource.loop = true;
+
         OnMusicVolumeChanged(volume);
 
         Events.OnGamePaused += OnGamePaused;
         Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
         Events.OnMusicChange += OnMusicChange;
         Events.OnMusicOff += OnMusicOff;
-
-#if UNITY_STANDALONE
-        //disabled = false;
-     //   volume = 1;
-     //   OnMusicVolumeChanged(volume);
-#endif
 	}
     void OnDestroy()
     {

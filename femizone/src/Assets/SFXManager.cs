@@ -34,12 +34,32 @@ public class SFXManager : MonoBehaviour {
 		public AudioSource audioSource;
 		public Character character;
 	}
-
+	int distanceToManPlanning = 26;
 
 	void Start () {
 		Events.OnAttack += OnAttack;
 		Events.OnReceiveit += OnReceiveit;
 		Events.OnMansPlaining += OnMansPlaining;
+	}
+	void Update()
+	{
+		if (clipsByCharacter.Count == 0)
+			return;
+		float dist = 1;
+		float pos_cam_x = World.Instance.worldCamera.transform.localPosition.x;
+		float pos_char = clipsByCharacter [0].character.transform.position.x;
+		dist = distanceToManPlanning - (pos_char - pos_cam_x-5);
+		dist /= distanceToManPlanning*1.5f;
+
+		if (dist < 0)
+			dist = 0;
+		else if (dist > 1)
+			dist = 1;
+
+		print ("dist " + dist);
+		foreach (ClipByCharacter clip in clipsByCharacter) {
+			clip.audioSource.volume = dist;
+		}
 	}
 	int rand = 0;
 	void OnMansPlaining(Character character, bool isOn)

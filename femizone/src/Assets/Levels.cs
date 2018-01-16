@@ -17,6 +17,7 @@ public class Levels : MonoBehaviour {
 		activeLevelID++;
 		AddNewLevel ();
 		World.Instance.LevelClear ();
+		Events.OnStageClear ();
 	}
 	void AddNewLevel()
 	{

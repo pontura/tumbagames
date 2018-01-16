@@ -61,7 +61,7 @@ public class HitArea : MonoBehaviour {
 		{
 			if (otherHitArea.character == character)
 				return;
-			if (otherHitArea.character.GetComponent<Enemy> () && otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
+			if (character.GetComponent<Hero> () && otherHitArea.character.GetComponent<Enemy> () && otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
 				Events.OnMansPlaining (otherHitArea.character, false);
 			}
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {

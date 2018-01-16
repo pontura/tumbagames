@@ -6,7 +6,6 @@ public static class Events {
     //The game:
     public static System.Action StartGame = delegate { };
     public static System.Action Restart = delegate { };
-    public static System.Action OnLevelComplete = delegate { };    
 
     public static System.Action<float, float> OnSaveVolumes = delegate { };
     public static System.Action<float> OnMusicVolumeChanged = delegate { };
@@ -30,5 +29,5 @@ public static class Events {
 	public static System.Action<CharacterHitsManager.types, Character> OnAttack = delegate { };
 	public static System.Action<CharacterHitsManager.types, Character> OnReceiveit = delegate { };
 	public static System.Action<Character, bool> OnMansPlaining = delegate { };
-
+	public static System.Action OnStageClear = delegate { };
 }

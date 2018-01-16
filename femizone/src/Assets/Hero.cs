@@ -34,6 +34,8 @@ public class Hero : Character {
 	}
 	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
+		if (state == states.DEAD  || state == states.HITTED)
+			return;
 		string hitName = "hit_punch";
 
 		switch (hitArea.type) {
