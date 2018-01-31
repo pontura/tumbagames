@@ -41,6 +41,12 @@ public class SFXManager : MonoBehaviour {
 		Events.OnReceiveit += OnReceiveit;
 		Events.OnMansPlaining += OnMansPlaining;
 	}
+	void OnDestroy()
+	{
+		Events.OnAttack -= OnAttack;
+		Events.OnReceiveit -= OnReceiveit;
+		Events.OnMansPlaining -= OnMansPlaining;
+	}
 	void Update()
 	{
 		if (clipsByCharacter.Count == 0)
@@ -56,7 +62,6 @@ public class SFXManager : MonoBehaviour {
 		else if (dist > 1)
 			dist = 1;
 
-		print ("dist " + dist);
 		foreach (ClipByCharacter clip in clipsByCharacter) {
 			clip.audioSource.volume = dist;
 		}

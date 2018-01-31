@@ -15,13 +15,14 @@ public class Enemy : Character {
 	{
 		totalLife = stats.life;
 		enemyAttackManager = GetComponent<EnemyAttackManager> ();
-		ia = GetComponent<IA> ();
+		//ia = GetComponent<IA> ();
 	}
 
 	public void Init(GameObject theAsset)
 	{		
 		asset = Instantiate (theAsset);
-
+		ia = asset.GetComponent<IA> ();
+		ia.Init (this);
 		anim = asset.GetComponent<Animator> ();
 		stats = asset.GetComponent<CharacterStats> ();
 

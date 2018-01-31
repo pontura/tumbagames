@@ -9,6 +9,7 @@ public class EnemiesManager : MonoBehaviour {
 	public GameObject opusMan;
     public GameObject cop;
 	public GameObject cop_gun;
+	public GameObject boss1;
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
@@ -19,6 +20,10 @@ public class EnemiesManager : MonoBehaviour {
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
     }
+	void OnDestroy () {
+		Events.OnCharacterDie -= OnCharacterDie;
+	}
+
 	void OnCharacterDie(Character character)
 	{
 		Enemy enemy = character.GetComponent<Enemy> ();
@@ -51,6 +56,9 @@ public class EnemiesManager : MonoBehaviour {
                 break;
 			case SceneObjectData.types.COP_GUN:
 				so = cop_gun;
+				break;
+			case SceneObjectData.types.BOSS:
+				so = boss1;
 				break;
         }
         Enemy enemy = Instantiate(enemy_to_instantiate);

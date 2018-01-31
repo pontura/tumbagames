@@ -44,6 +44,9 @@ public class MusicManager : MonoBehaviour {
 	}
     void OnDestroy()
     {
+		Events.OnMansPlaining -= OnMansPlaining;
+		Events.OnStageClear -= OnStageClear;
+
         Events.OnGamePaused -= OnGamePaused;
         Events.OnMusicVolumeChanged -= OnMusicVolumeChanged;
         Events.OnMusicChange -= OnMusicChange;
@@ -51,9 +54,7 @@ public class MusicManager : MonoBehaviour {
     }
     public void OnMusicOff(bool off)
     {
-        disabled = off;
-        if (off) OnMusicVolumeChanged(0);
-        else OnMusicVolumeChanged(0.2f);
+		audioSource.Stop ();
     }
     void OnMusicChange(string soundName)
     {

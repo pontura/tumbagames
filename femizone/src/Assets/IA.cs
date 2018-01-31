@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IA : MonoBehaviour {
 
-	Enemy enemy;
+	public Enemy enemy;
 	public states state;
 	public Vector3 destination;
 	public enum states
@@ -18,8 +18,8 @@ public class IA : MonoBehaviour {
 		DEFENDING
 	}
 
-	void Start () {
-		enemy = GetComponent<Character> ().GetComponent<Enemy>();
+	public void Init (Enemy _enemy) {
+		this.enemy = _enemy;
 	}
 	public bool CheckForDefense()
 	{
@@ -42,7 +42,6 @@ public class IA : MonoBehaviour {
 		state = states.IDLE;
 	}
 	void Update() {
-		
 		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
@@ -71,10 +70,7 @@ public class IA : MonoBehaviour {
 	float recalculateDelay = 0.8f;
 	float recalculateTime;
 	void LOOKING_FOR_TARGET()
-	{
-		//if (state != states.LOOKING_FOR_TARGET)
-		//	return;
-		
+	{		
 		recalculateTime = 0;
 		LookToTarget ();
 
@@ -131,7 +127,7 @@ public class IA : MonoBehaviour {
 		if (state != states.READY_FOR_FIGHT)
 			return;
 		LookToTarget ();
-		enemy.GetComponent<Enemy>().Attack();
+		enemy.Attack();
 		Invoke ("Idle", 1f);
 	}
 

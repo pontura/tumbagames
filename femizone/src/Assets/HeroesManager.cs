@@ -22,19 +22,23 @@ public class HeroesManager : MonoBehaviour {
 		hero.transform.localPosition = new Vector3(-8,0,0);
 		all.Add (hero);
 
-		return;
+
 		hero = Instantiate (hero2);
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-4,0,0);
 		all.Add (hero);
 
 	}
-
+	void OnDestroy () {
+		Events.OnHeroDie -= OnHeroDie;
+	}
 	void OnHeroDie(int id)
 	{
 		Hero hero = GetHero(id);
 		all.Remove (hero);
 		hero.Die ();
+		if (all.Count == 0)
+			World.Instance.GameOver ();
 	}
 	Hero GetHero(int id)
 	{

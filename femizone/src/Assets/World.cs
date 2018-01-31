@@ -43,6 +43,10 @@ public class World : MonoBehaviour
 		state = states.LEVEL_CLEAR;
 		newXLimit = (levels.activeLevelID * Data.Instance.settings.LevelsWidth);
 	}
+	public void GameOver()
+	{
+		SceneManager.LoadScene ("Summary");
+	}
 	void Update()
 	{
 		if (state == states.FIGHTING)

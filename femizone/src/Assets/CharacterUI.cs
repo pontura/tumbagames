@@ -16,6 +16,11 @@ public class CharacterUI : MonoBehaviour {
 		Events.OnHeroHitted += OnHeroHitted;
 		Events.GrabPowerUp += GrabPowerUp;
 	}
+	void OnDestroy()
+	{
+		Events.OnHeroHitted -= OnHeroHitted;
+		Events.GrabPowerUp -= GrabPowerUp;
+	}
 	void GrabPowerUp(Hero hero, Powerup powerup)
 	{
 		if (hero.id != heroID)
