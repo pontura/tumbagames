@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IA : MonoBehaviour {
-
+	
+	[HideInInspector]
 	public Enemy enemy;
+
 	public states state;
 	public Vector3 destination;
 	public enum states
@@ -15,12 +17,16 @@ public class IA : MonoBehaviour {
 		READY_FOR_FIGHT,
 		MOVEING,
 		HITTED,
-		DEFENDING
+		DEFENDING,
+		STOP_IA
 	}
 
 	public void Init (Enemy _enemy) {
 		this.enemy = _enemy;
+		OnInit ();
 	}
+	public virtual void OnInit() {}
+
 	public bool CheckForDefense()
 	{
 		if (Random.Range (0, 10) < 3) {
@@ -42,6 +48,8 @@ public class IA : MonoBehaviour {
 		state = states.IDLE;
 	}
 	void Update() {
+		if (state == states.STOP_IA)
+			return;
 		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
@@ -85,7 +93,7 @@ public class IA : MonoBehaviour {
 	void LookToTarget()
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
-
+		destination += enemy.stats.offset;
 		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
 		if (hero == null)
 			return;
@@ -134,5 +142,11 @@ public class IA : MonoBehaviour {
 	float GetRandom(Vector2 v)
 	{
 		return Random.Range(v.x,v.y);
+	}
+
+	public void StopIA()
+	{
+		CancelInvoke ();
+		state = states.STOP_IA;
 	}
 }
