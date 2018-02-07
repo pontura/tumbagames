@@ -26,6 +26,7 @@ public class EnemiesManager : MonoBehaviour {
 
 	void OnCharacterDie(Character character)
 	{
+		print ("OnCharacterDie" + character);
 		Enemy enemy = character.GetComponent<Enemy> ();
 		if (enemy == null)
 			return;

@@ -11,20 +11,17 @@ public class Enemy : Character {
 	public HitArea hitArea;
 	int totalLife;
 
-	void Start()
-	{
-		totalLife = stats.life;
-		enemyAttackManager = GetComponent<EnemyAttackManager> ();
-		//ia = GetComponent<IA> ();
-	}
-
 	public void Init(GameObject theAsset)
 	{		
 		asset = Instantiate (theAsset);
-		ia = asset.GetComponent<IA> ();
-		ia.Init (this);
+
 		anim = asset.GetComponent<Animator> ();
 		stats = asset.GetComponent<CharacterStats> ();
+		totalLife = stats.life;
+		enemyAttackManager = GetComponent<EnemyAttackManager> ();
+
+		ia = asset.GetComponent<IA> ();
+		ia.Init (this);
 
 		asset.transform.SetParent (transform);
 		asset.transform.localPosition = stats.offset;
@@ -45,7 +42,18 @@ public class Enemy : Character {
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 		progressBar.Hide ();
 	}
-
+	public void Reset()
+	{
+		Die();
+		Events.OnCharacterDie (this);
+		GameObject.Destroy (progressBar.gameObject);
+		GameObject.Destroy(this.gameObject);
+		ia = null;
+		bar = null;
+		hitArea = null;
+		enemyAttackManager = null;
+		Events.OnMansPlaining (this, false);
+	}
 	public override void OnReceiveHit(HitArea hitArea, int force)
 	{
 		if (ia == null)
