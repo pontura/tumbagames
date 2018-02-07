@@ -10,6 +10,7 @@ public class Enemy : Character {
 	public IA ia;
 	public HitArea hitArea;
 	int totalLife;
+	public bool isOverPickable;
 
 	public void Init(GameObject theAsset)
 	{		
@@ -88,8 +89,5 @@ public class Enemy : Character {
 			Destroy (this.gameObject);
 		}
 	}
-	public override void OnAttack() 
-	{
-		enemyAttackManager.Attack ();
-	}
+
 }

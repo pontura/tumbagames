@@ -6,10 +6,12 @@ public class Hero : Character {
 
 	public int id;
 	private InputManager inputManager;
-
+	public WeaponPickable weaponPickable;
+	public HeroWeapons weapons;
 
 	public override void OnStart() {
 		inputManager = GetComponent<InputManager> ();
+		weapons = GetComponent<HeroWeapons> ();
 	}
 	public override void OnUpdate () {
 		if (state == states.DEAD  || state == states.HITTING || state == states.HITTED)
@@ -22,6 +24,25 @@ public class Hero : Character {
 			Idle ();
 
 		ChekToMove ();
+	}
+	public override void Idle()
+	{
+		state = states.IDLE;
+		if(!weapons.HasWeapon())
+			anim.Play ("idle");
+		else 
+			anim.Play ("gun_idle");
+		OnIdle();
+	}
+	public override void Walk()
+	{
+		if (state == states.HITTING)
+			return;
+		state = states.WALK;
+		if(!weapons.HasWeapon())
+			anim.Play ("walk");
+		else 
+			anim.Play ("gun_walk");
 	}
 	void ChekToMove()
 	{
@@ -70,5 +91,16 @@ public class Hero : Character {
 		if (state == states.DEAD)
 			return;
 		Idle ();
+	}
+	public void IsOverPickable(WeaponPickable _weaponPickable)
+	{
+		weaponPickable = _weaponPickable;
+	}
+	public void OnPick() 
+	{
+		anim.Play ("pick_gun");
+		weapons.GetWeapon (weaponPickable.type);
+		weaponPickable.GotIt();
+		weaponPickable = null;
 	}
 }

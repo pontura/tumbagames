@@ -12,7 +12,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		HIT_UPPER,
 		KICK_FOWARD,
 		KICK_BACK,
-		KICK_DOWN
+		KICK_DOWN,
+		GUN_FIRE
 	}
 	Character character;
 
@@ -25,11 +26,20 @@ public class CharacterHitsManager : MonoBehaviour {
 		character = GetComponent<Character> ();
 		hitArea.character = character;
 	}
-	public void SetOn(types type)
+	bool AttakEnabled()
 	{
 		if (character.state == Character.states.DEAD || character.state == Character.states.HITTING || character.state == Character.states.HITTED)
+			return false;
+		return true;
+	}
+
+	public void SetOn(types type)
+	{
+		if (!AttakEnabled ())
 			return;
 		
+
+
 		AttackStyle attackStyle = character.stats.GetAttackByType (type);
 		string clipName = attackStyle.animClip.name;
 
@@ -47,6 +57,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		Invoke ("Reset", 0.2f);
 
 		Events.OnAttack (attackStyle.type, character);
+
+		print (type + " " + clipName);
 	}
 	void Reset(){
 		if (character.state == Character.states.DEAD || character.state == Character.states.HITTED)

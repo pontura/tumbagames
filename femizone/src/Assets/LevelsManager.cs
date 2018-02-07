@@ -6,6 +6,7 @@ public class LevelsManager : MonoBehaviour {
 
     EnemiesManager enemiesManager;
 	PowerupsManager powerupsManager;
+	WeaponsManager weaponsManager;
 
 	BackgroundsManager backgroundsManager;
 	Levels levels;
@@ -18,6 +19,7 @@ public class LevelsManager : MonoBehaviour {
         enemiesManager = GetComponent<EnemiesManager>();
 		backgroundsManager = GetComponent<BackgroundsManager> ();
 		powerupsManager = GetComponent<PowerupsManager> ();
+		weaponsManager = GetComponent<WeaponsManager> ();
 		levelsWidth = Data.Instance.settings.LevelsWidth;
     }
 	public void AddNewLevel (int id) {
@@ -31,7 +33,9 @@ public class LevelsManager : MonoBehaviour {
         {
 			data.pos = data.transform.position + offset;
 
-			if (data.type == SceneObjectData.types.ENERGY)
+			if (data.type == SceneObjectData.types.WEAPON_1)
+				weaponsManager.InstantiateSceneOject(data);
+			else if (data.type == SceneObjectData.types.ENERGY)
 				powerupsManager.InstantiateSceneOject(data);
 			else
 				enemiesManager.InstantiateSceneOject(data);

@@ -30,7 +30,11 @@ public class InputManager : MonoBehaviour {
 
 		if (Input.GetButtonDown("Hit" +hero.id)) 
 		{
-			if(justTurnedHorizontal)
+			if (hero.weaponPickable != null)
+				hero.OnPick ();
+			else if (hero.weapons.HasWeapon ())
+				hero.hitsManager.SetOn (CharacterHitsManager.types.GUN_FIRE);
+			else if(justTurnedHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
 			else if(justForwardHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_UPPER);

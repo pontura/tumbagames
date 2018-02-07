@@ -76,7 +76,7 @@ public class Character : SceneObject {
 				pos.x = limitX + limit_to_walk;
 		return pos;			
 	}
-	public void Walk()
+	public virtual void Walk()
 	{
 		if (state == states.HITTING)
 			return;
@@ -91,7 +91,7 @@ public class Character : SceneObject {
 		anim.Play ("death");
 		OnDie ();
 	}
-	public void Idle()
+	public virtual void Idle()
 	{
 		state = states.IDLE;
 		anim.Play ("idle");
