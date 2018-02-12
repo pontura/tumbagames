@@ -57,20 +57,20 @@ public class Hero : Character {
 	{
 		if (state == states.DEAD  || state == states.HITTED)
 			return;
-		string hitName = "hit_punch";
+		string hitName = "hit_punch_front";
 
 		switch (hitArea.type) {
 		case CharacterHitsManager.types.HIT_FORWARD:
-			hitName = "hit_punch";
+			hitName = "hit_punch_front";
 			break;
 		case CharacterHitsManager.types.KICK_BACK:
-			hitName = "hit_punch";
+			hitName = "hit_punch_back";
 			break;
 		case CharacterHitsManager.types.HIT_BACK:
 			hitName = "hit_punch_back";
 			break;
 		case CharacterHitsManager.types.HIT_UPPER:
-			hitName = "hit_upper";
+			hitName = "hit_upper_front";
 			break;
 		}
 

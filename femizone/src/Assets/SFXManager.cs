@@ -53,6 +53,10 @@ public class SFXManager : MonoBehaviour {
 			return;
 		float dist = 1;
 		float pos_cam_x = World.Instance.worldCamera.transform.localPosition.x;
+		if (clipsByCharacter [0].character == null) {
+			clipsByCharacter.RemoveAt (0);
+			return;
+		}
 		float pos_char = clipsByCharacter [0].character.transform.position.x;
 		dist = distanceToManPlanning - (pos_char - pos_cam_x-5);
 		dist /= distanceToManPlanning*1.5f;

@@ -43,6 +43,10 @@ public class Enemy : Character {
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 		progressBar.Hide ();
 	}
+	public override void OnAttack ()
+	{
+		enemyAttackManager.Attack ();
+	}
 	public void Reset()
 	{
 		Die();
@@ -84,6 +88,7 @@ public class Enemy : Character {
 		progressBar.SetProgress ((float)stats.life/totalLife);
 		if (stats.life <= 0) {
 			Die ();
+			print (transform.localPosition);
 			Events.OnCharacterDie (this);
 			Destroy (progressBar.gameObject);
 			Destroy (this.gameObject);

@@ -15,8 +15,6 @@ public class EnemiesManager : MonoBehaviour {
 	public Transform container;
 	public List<Enemy> all;
 
-	public GameObject deathFX;
-
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
     }
@@ -26,7 +24,6 @@ public class EnemiesManager : MonoBehaviour {
 
 	void OnCharacterDie(Character character)
 	{
-		print ("OnCharacterDie" + character);
 		Enemy enemy = character.GetComponent<Enemy> ();
 		if (enemy == null)
 			return;
@@ -34,9 +31,6 @@ public class EnemiesManager : MonoBehaviour {
 		if (all.Count == 0) {
 			World.Instance.levels.StageClear ();
 		}
-		GameObject go = Instantiate (deathFX);
-		go.transform.localPosition = character.transform.localPosition;
-		go.transform.localScale = Vector2.one;
 	}
     public void InstantiateSceneOject(SceneObjectData data)
     {

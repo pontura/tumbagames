@@ -82,7 +82,7 @@ public class IA : MonoBehaviour {
 		recalculateTime = 0;
 		LookToTarget ();
 
-		if (destination.x > transform.position.x)
+		if (destination.x > enemy.transform.position.x)
 			destination.x -= 3f;
 		else
 			destination.x += 3f;
@@ -93,11 +93,11 @@ public class IA : MonoBehaviour {
 	void LookToTarget()
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
-		destination += enemy.stats.offset;
+	//	destination += enemy.stats.offset;
 		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
 		if (hero == null)
 			return;
-		if (hero.transform.position.x < transform.position.x)
+		if (hero.transform.position.x < enemy.transform.position.x)
 			enemy.LookAt (true);
 		else
 			enemy.LookAt (false);
@@ -110,7 +110,7 @@ public class IA : MonoBehaviour {
 			LOOKING_FOR_TARGET ();
 			return;
 		}
-		Vector3 pos = transform.position;
+		Vector3 pos = enemy.transform.position;
 		float _x = Mathf.Abs(pos.x - destination.x);
 		float _z = Mathf.Abs(pos.z - destination.z);
 		if (_x < 0.2f && _z < 0.2f) {
@@ -127,7 +127,7 @@ public class IA : MonoBehaviour {
 		else if (pos.z > destination.z)
 			pos.z -= speed;
 
-		transform.position = pos;	
+		enemy.transform.position = pos;	
 	}
 
 	void READY_FOR_FIGHT()
