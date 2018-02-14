@@ -8,10 +8,12 @@ public class Hero : Character {
 	private InputManager inputManager;
 	public WeaponPickable weaponPickable;
 	public HeroWeapons weapons;
+	Rigidbody rb;
 
 	public override void OnStart() {
 		inputManager = GetComponent<InputManager> ();
 		weapons = GetComponent<HeroWeapons> ();
+		rb = GetComponent<Rigidbody> ();
 	}
 	public override void OnUpdate () {
 		if (state == states.DEAD  || state == states.HITTING || state == states.HITTED)
@@ -24,6 +26,7 @@ public class Hero : Character {
 			Idle ();
 
 		ChekToMove ();
+		rb.velocity = Vector3.zero;
 	}
 	public override void Idle()
 	{

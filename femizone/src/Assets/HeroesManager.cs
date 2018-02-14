@@ -22,9 +22,21 @@ public class HeroesManager : MonoBehaviour {
 		hero.transform.localPosition = new Vector3(-8,0,0);
 		all.Add (hero);
 
+		return;
+
 		hero = Instantiate (hero2);
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(-4,0,0);
+		all.Add (hero);
+
+		hero = Instantiate (hero3);
+		hero.transform.SetParent (container);
+		hero.transform.localPosition = new Vector3(0,0,0);
+		all.Add (hero);
+
+		hero = Instantiate (hero4);
+		hero.transform.SetParent (container);
+		hero.transform.localPosition = new Vector3(4,0,0);
 		all.Add (hero);
 
 	}

@@ -18,6 +18,8 @@ public class HitArea : MonoBehaviour {
 	}
 	void OnHeroDie(int id)
 	{
+		if (character == null)
+			return;
 		Hero hero = character.GetComponent<Hero>();
 		if (hero == null || hero.id != id)
 			return;
