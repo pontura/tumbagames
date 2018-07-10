@@ -32,6 +32,9 @@ public class AreasManager : MonoBehaviour {
 	void Start () {
         Events.OnLoadCurrentAreas += OnLoadCurrentAreas;
         Events.OnHeroDie += OnHeroDie;
+
+		Events.OnLoadCurrentAreas ();
+
     }
     void OnDestroy()
     {
@@ -65,7 +68,7 @@ public class AreasManager : MonoBehaviour {
     AreaSet areaSet;
     public AreaSet GetActiveAreaSet()
     {
-        if (areasToAdd == areasType.SECCIONAL_ID && activeAreaID == moodAreas[seccionalActiveIDArray].areaSets.Count)
+		if (moodAreas.Count>0 && areasToAdd == areasType.SECCIONAL_ID && activeAreaID == moodAreas[seccionalActiveIDArray].areaSets.Count)
         {
           //  print("GO TO GENERICS " + activeAreaID + " seccionalActiveIDArray: " + seccionalActiveIDArray);
             areasToAdd = areasType.GENERIC;

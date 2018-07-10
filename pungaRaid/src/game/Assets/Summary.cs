@@ -48,6 +48,7 @@ public class Summary : MonoBehaviour {
     }
     public void Init()
     {        
+		print("OnPoolAllItemsInScene");
         yourHiscoreField.text = Utils.IntToMoney(SocialManager.Instance.userHiscore.GetCurrentHiscore());
         Ranking.LevelData levelData = SocialManager.Instance.ranking.GetCurrentRanking();
         if(levelData != null && levelData.data.Count>0)

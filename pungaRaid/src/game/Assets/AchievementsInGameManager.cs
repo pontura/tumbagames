@@ -10,6 +10,10 @@ public class AchievementsInGameManager : MonoBehaviour {
 	bool closing;
 
 	void Start () {
+		
+		if (Data.Instance.isArcade)
+			return;
+		
 		Events.OnHeroDie += OnHeroDie;
 		Events.OnCloseSharePopup += OnCloseSharePopup;
 		AchievementsEvents.OnAchievementReady += OnAchievementReady;

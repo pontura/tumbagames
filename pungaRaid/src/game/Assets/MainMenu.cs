@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
         Events.OnLoginAdvisor();
     }
 	public void GotoGame () {
-		//print ("tutorialReady =  " + PlayerPrefs.GetString ("tutorialReady"));
+		print ("tutorialReady =  " + PlayerPrefs.GetString ("tutorialReady"));
 		if (PlayerPrefs.GetString ("tutorialReady") == "true")
 			Data.Instance.LoadLevel ("02_Main");
 		else {
@@ -35,6 +35,10 @@ public class MainMenu : MonoBehaviour {
         PlayerPrefs.SetString("tutorialReady", "true");
         Events.OnHeroDie += OnHeroDie;
     }
+	void OnDestroy()
+	{
+		Events.OnHeroDie -= OnHeroDie;
+	}
     void OnHeroDie()
     {
         isDead = true;
@@ -43,11 +47,11 @@ public class MainMenu : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
+			print ("SSSSSSSSS" + isDead);
             if (isDead)
             {
                 SaveNew();
-            }
-
+            } else
             if (Data.Instance.currentLevel == "02_Intro")
             {
                 Data.Instance.LoadLevel("03_PreloadingGame");
@@ -56,24 +60,34 @@ public class MainMenu : MonoBehaviour {
     }
     public void SaveNew()
     {
-        Events.OnLoadingPanel();
-        isDead = false;
+		Events.OnLoadingPanel();
+		isDead = false;
+
+		if (Game.Instance.gameManager.score < 1000)
+		{
+			print ("SI");
+			Data.Instance.LoadLevel ("02_Intro");
+			return;
+		}
+       
         string[] content = new string[] { "PR_" + Game.Instance.gameManager.score };
         File.WriteAllLines("C:\\tumbagames\\hiscores\\data.txt", content);
         Invoke("timeOut1", 2);
     }
     void timeOut1()
     {
-        Process foo = new Process();
-        foo.StartInfo.FileName = "openHiscores.bat";
+		timeOut2 ();
+
+        //Process foo = new Process();
+      //  foo.StartInfo.FileName = "openHiscores.bat";
         //  foo.StartInfo.Arguments = "put your arguments here";
         // foo.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        foo.Start();
-        Invoke("timeOut2", 2);
+      //  foo.Start();
+       // Invoke("timeOut2", 2);
     }
     void timeOut2()
     {
-        Application.Quit();
+		Data.Instance.LoadLevel ("11_Hiscores");
     }
 #endif
 }

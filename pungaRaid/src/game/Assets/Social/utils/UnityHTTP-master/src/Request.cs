@@ -95,10 +95,10 @@ namespace HTTP
                 this.AddHeader( entry.Key, entry.Value );
             }
 #else
-            foreach ( DictionaryEntry entry in form.headers )
-            {
-                this.AddHeader( (string)entry.Key, (string)entry.Value );
-            }
+          //  foreach ( DictionaryEntry entry in form.headers )
+          //  {
+          //      this.AddHeader( (string)entry.Key, (string)entry.Value );
+          //  }
 #endif
         }
 
