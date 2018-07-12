@@ -38,23 +38,21 @@ public class GenericVictim : Enemy
                 of.gameObject.SetActive(false);
         }
 
-        if (newArray.Count > 0)
-        {
-            int rand = Random.Range(0, newArray.Count);
-            int id = 0;
-            foreach (GameObject go in newArray)
-            {
-                if (id == rand)
-                {
-                    anim = go.GetComponentInChildren<Animator>();
-                    anim.Play("idle", 0, 0);
-                    go.SetActive(true);
-                }
-                else
-                    go.SetActive(false);
-                id++;
-            }
-        }
+		if (newArray.Count > 0) {
+			int rand = Random.Range (0, newArray.Count);
+			int id = 0;
+			foreach (GameObject go in newArray) {
+				if (id == rand) {
+					anim = go.GetComponentInChildren<Animator> ();
+					anim.Play ("idle", 0, 0);
+					go.SetActive (true);
+				} else
+					go.SetActive (false);
+				id++;
+			}
+		} else {
+			Pool ();
+		}
         
 
     }

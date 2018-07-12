@@ -17,6 +17,8 @@ public class SharePopup : MonoBehaviour {
 
 	void Start()
 	{
+		if (Data.Instance.isArcade)
+			return;
 		Events.OnShowAchievementSignal += OnShowAchievementSignal;
 		Events.OnScreenShotReady += OnScreenShotReady;
 		popup.SetActive (false);

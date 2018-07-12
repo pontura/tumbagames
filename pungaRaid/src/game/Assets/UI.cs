@@ -12,6 +12,8 @@ public class UI : MonoBehaviour {
 
     public Animator anim;
 
+	public GameObject settingButton;
+
     void Awake()
     {
         anim.gameObject.SetActive(true);
@@ -19,6 +21,9 @@ public class UI : MonoBehaviour {
     }
    public void Init()
     {
+		if (Data.Instance.isArcade)
+			settingButton.SetActive (false);
+		
         Events.OnLevelComplete += OnLevelComplete;
         
         anim.Play("startGameRedPanel",0,0);

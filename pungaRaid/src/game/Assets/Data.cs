@@ -8,7 +8,7 @@ public class Data : MonoBehaviour
     public GameData gameData;
     public bool ResetGame;
     public bool isArcade;
-
+	public bool dontExitOnESC;
     //malisimo
     public bool MainMenuPopupOn;
 

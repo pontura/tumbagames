@@ -17,35 +17,21 @@ public class MainHiscores : MonoBehaviour {
     public Text puestoField;
     public Text field;
 
-    public Data data;
     public LeterChanger[] letters;
     public int lettersID;
     public LeterChanger letterActive;
     public int puesto;
 
-    string fileName_data = "C:\\tumbagames\\hiscores\\data.txt";
-    string fileName_ss = "C:\\tumbagames\\hiscores\\SS.txt";
-    string fileName_iid = "C:\\tumbagames\\hiscores\\IID.txt";
-    string fileName_bb = "C:\\tumbagames\\hiscores\\BB.txt";
-    string fileName_sd = "C:\\tumbagames\\hiscores\\SD.txt";
-    string fileName_pr = "C:\\tumbagames\\hiscores\\PR.txt";
-    string fileName_mr = "C:\\tumbagames\\hiscores\\MR.txt";
+    string fileName_pr_1 = "C:\\tumbagames\\hiscores\\PR_1.txt";
+	string fileName_pr_2 = "C:\\tumbagames\\hiscores\\PR_2.txt";
+	string fileName_pr_3 = "C:\\tumbagames\\hiscores\\PR_3.txt";
+	string fileName_pr_4 = "C:\\tumbagames\\hiscores\\PR_4.txt";
+	string fileName_pr_5 = "C:\\tumbagames\\hiscores\\PR_5.txt";
+	string fileName_pr_6 = "C:\\tumbagames\\hiscores\\PR_6.txt";
 
-    public GameObject poster_ss;
-    public GameObject poster_iid;
-    public GameObject poster_bb;
-    public GameObject poster_sd;
-    public GameObject poster_pr;
-    public GameObject poster_mr;
+	string fileName_pr;
 
-    [Serializable]
-    public class Data
-    {
-        public string prefix;
-        public string title;
-        public int hiscore;
-        public string url;
-    }
+	int _hiscore = 0;
 
     public List<Hiscore> arrengedHiscores;
     public List<Hiscore> hiscores;
@@ -56,41 +42,26 @@ public class MainHiscores : MonoBehaviour {
         public int hiscore;       
     }
 	void Start () {
-        Cursor.visible = false;
-        poster_ss.SetActive(false);
-        poster_iid.SetActive(false);
-        poster_bb.SetActive(false);
-        poster_sd.SetActive(false);
-        poster_pr.SetActive(false);
-        poster_mr.SetActive(false);
+		_hiscore = Game.Instance.gameManager.score;
 
+		if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.BELGRANO && Data.Instance.areasManager.seccionalActiveID == 1)
+			fileName_pr = fileName_pr_1;
+		else if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.BELGRANO && Data.Instance.areasManager.seccionalActiveID == 2)
+			fileName_pr = fileName_pr_2;
+		else if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.BELGRANO && Data.Instance.areasManager.seccionalActiveID == 3)
+			fileName_pr = fileName_pr_3;
+		else if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.MADERO && Data.Instance.areasManager.seccionalActiveID == 1)
+			fileName_pr = fileName_pr_4;
+		else if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.MADERO && Data.Instance.areasManager.seccionalActiveID == 2)
+			fileName_pr = fileName_pr_5;
+		else if(Data.Instance.moodsManager.currentMood == MoodsManager.moods.MADERO && Data.Instance.areasManager.seccionalActiveID == 3)
+			fileName_pr = fileName_pr_6;
+		
         puesto = 1;
         Screen.fullScreen = true;
-        var sr = new StreamReader(fileName_data);
-        var fileContents = sr.ReadToEnd();
-        sr.Close(); 
-        string[] lines = fileContents.Split("_"[0]);
-
-        data.hiscore = int.Parse(lines[1]);
-        data.prefix = lines[0];
-        switch ( data.prefix )
-        {
-            case "SS": data.title = "SUICIDE SNIPER"; data.url = fileName_ss;               poster_ss.SetActive(true); break;
-            case "IID": data.title = "INSANE IMBECILE DANCING"; data.url = fileName_iid;    poster_iid.SetActive(true); break;
-            case "BB": data.title = "BRUTAL BATTLE"; data.url = fileName_bb;                poster_bb.SetActive(true); break;
-            case "SD": data.title = "SUBWAY DOMINATOR"; data.url = fileName_sd;             poster_sd.SetActive(true); break;
-            case "PR": data.title = "PUNGA RAID"; data.url = fileName_pr;                   poster_pr.SetActive(true); break;
-            case "MR": data.title = "MAD ROLLERS TRASH!"; data.url = fileName_mr;           poster_mr.SetActive(true); break;
-        }        
-
-        //gameField.text = data.title;
-        field.text = data.hiscore.ToString();
-
-        //////////////va a la primer letra:
-        lettersID = -1;  SetLetterActive(true);
-
-        LoadHiscores(data.url);
+		LoadHiscores(fileName_pr);
         puestoField.text = "PUESTO " + puesto;
+		field.text = _hiscore.ToString ();
 	}
     void Update()
     {
@@ -114,7 +85,7 @@ public class MainHiscores : MonoBehaviour {
         else lettersID--;
         if (lettersID < 0)
         {
-            Application.Quit();
+			grabaEnd ();
             return;
         }
         if (lettersID > letters.Length - 1)
@@ -141,14 +112,14 @@ public class MainHiscores : MonoBehaviour {
                 hiscore.hiscore = int.Parse(lines[1]);
                 hiscores.Add(hiscore);
 
-                if (hiscore.hiscore < data.hiscore && !yaAgrego)
+                if (hiscore.hiscore < _hiscore && !yaAgrego)
                 {
                     yaAgrego = true;
                     puesto = num;
                     if (num < 16)
                     {
                         ScoreLine newScoreLine = Instantiate(scoreLineNewHiscore);
-                        newScoreLine.Init(num, "XXXXX", data.hiscore);
+						newScoreLine.Init(num, "XXXXX", _hiscore);
                         newScoreLine.transform.SetParent(container);
                         newScoreLine.transform.localScale = Vector3.one;
                         num++;
@@ -175,7 +146,7 @@ public class MainHiscores : MonoBehaviour {
             if (letra == "_") letra = " ";
             username += letra;
         }
-        SaveNew(data.url, username, data.hiscore);
+		SaveNew(fileName_pr, username, _hiscore);
     }
     public void SaveNew(string fileName, string username, int newHiscoreToSave)
     {

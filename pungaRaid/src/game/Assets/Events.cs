@@ -96,6 +96,7 @@ public static class Events {
     //zones:
     public static System.Action<int> OnUnlockZone = delegate { };
     public static System.Action OnLoadingPanel = delegate { };
+	public static System.Action OnExit = delegate { };
 
     public static System.Action<int, bool> OnSetSpecialItem = delegate { };
 

@@ -19,5 +19,6 @@ public class LoadingPanel : MonoBehaviour {
     void OnLoadingPanel()
     {
         panel.SetActive(true);
+		panel.GetComponent<Animator> ().Play ("loadingAsset");
 	}
 }

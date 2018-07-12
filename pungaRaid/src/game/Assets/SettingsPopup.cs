@@ -15,6 +15,8 @@ public class SettingsPopup : MonoBehaviour {
     public Button connectButton;
 
 	void Start () {
+		if (Data.Instance.isArcade)
+			return;
      //   panel.transform.localScale = Data.Instance.screenManager.scale;
 
         

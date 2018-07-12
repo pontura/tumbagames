@@ -8,6 +8,10 @@ public class NewRecordSignal : MonoBehaviour {
 
 	void Start () {
 		button.SetActive (false);
+
+		if (Data.Instance.isArcade)
+			return;
+		
 		Events.OnHeroDie += OnHeroDie;
 	}
 	void OnDestroy () {
