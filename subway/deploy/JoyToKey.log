@@ -1,23 +1,33 @@
-2014/10/11 19:11:40.806 Info   Starting JoyToKey Ver5.6
-2014/10/11 19:11:40.806 Info   ExeFile=D:\_projects\tumbagames\subway\deploy\JoyToKey.exe
-2014/10/11 19:11:40.806 Info   ConfigDir=D:\_projects\tumbagames\subway\deploy\
-2014/10/11 19:11:40.806 Info   IniFile=D:\_projects\tumbagames\subway\deploy\JoyToKey.ini
-2014/10/11 19:11:40.806 Info   Windows Version = 6.2
-2014/10/11 19:11:40.807 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#199)
-2014/10/11 19:11:40.807 Info   LicenseKey "" is not valid
-2014/10/11 19:11:40.903 Info   Found a joystick: {C7BD7180-408B-11E3-8001-444553540000}, 4-Axis,12-Button with POV, 4-Axis,12-Button with POV
-2014/10/11 19:11:40.904 Info   Preferred number = -1
-2014/10/11 19:11:40.904 Info   numAxis = 4
-2014/10/11 19:11:40.904 Info   numPOVs = 1
-2014/10/11 19:11:40.904 Info   numButtons = 12
-2014/10/11 19:11:40.904 Info   EnumDeviceObject: Axis offset=0 type=202 name=Dial
-2014/10/11 19:11:40.904 Info   EnumDeviceObject: Axis offset=4 type=502 name=Z Rotation
-2014/10/11 19:11:40.904 Info   EnumDeviceObject: Axis offset=8 type=102 name=Y Axis
-2014/10/11 19:11:40.904 Info   EnumDeviceObject: Axis offset=12 type=2 name=X Axis
-2014/10/11 19:11:40.906 Info   DetectJoysticks: Detected 1 joystick(s)
-2014/10/11 19:11:40.910 Info   Joystick 1: 4-Axis,12-Button with POV
-2014/10/11 19:11:40.910 Info   1 joysticks are detected (Joystick.cpp#109)
-2014/10/11 19:11:40.910 Info   ConfigDir=D:\_projects\tumbagames\subway\deploy\*.cfg (ConfigFileManager.cpp#43)
-2014/10/11 19:11:40.911 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
-2014/10/11 19:11:40.922 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
-2014/10/11 19:31:08.415 Info   Application terminated (Utils\LogFile.cpp#20)
+2019/01/29 17:16:49.141 Info   Starting JoyToKey Ver5.6
+2019/01/29 17:16:49.141 Info   ExeFile=D:\tumba\subway\deploy\JoyToKey.exe
+2019/01/29 17:16:49.141 Info   ConfigDir=D:\tumba\subway\deploy\
+2019/01/29 17:16:49.141 Info   IniFile=D:\tumba\subway\deploy\JoyToKey.ini
+2019/01/29 17:16:49.141 Info   Windows Version = 6.2
+2019/01/29 17:16:49.176 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#199)
+2019/01/29 17:16:49.181 Info   LicenseKey "" is not valid
+2019/01/29 17:16:49.366 Info   Found a joystick: {A919E730-23E9-11E9-8001-444553540000}, ROF Joystick, ROF Joystick
+2019/01/29 17:16:49.366 Info   Preferred number = -1
+2019/01/29 17:16:49.367 Info   numAxis = 4
+2019/01/29 17:16:49.367 Info   numPOVs = 1
+2019/01/29 17:16:49.367 Info   numButtons = 11
+2019/01/29 17:16:49.367 Info   EnumDeviceObject: Axis offset=0 type=102 name=Eje Y
+2019/01/29 17:16:49.367 Info   EnumDeviceObject: Axis offset=4 type=2 name=Eje X
+2019/01/29 17:16:49.367 Info   EnumDeviceObject: Axis offset=8 type=502 name=Rotación Z
+2019/01/29 17:16:49.367 Info   EnumDeviceObject: Axis offset=12 type=202 name=Eje Z
+2019/01/29 17:16:49.368 Info   Found a joystick: {A91BE300-23E9-11E9-8002-444553540000}, ROF Joystick, ROF Joystick
+2019/01/29 17:16:49.368 Info   Preferred number = -1
+2019/01/29 17:16:49.368 Info   numAxis = 4
+2019/01/29 17:16:49.368 Info   numPOVs = 1
+2019/01/29 17:16:49.368 Info   numButtons = 11
+2019/01/29 17:16:49.368 Info   EnumDeviceObject: Axis offset=0 type=102 name=Eje Y
+2019/01/29 17:16:49.368 Info   EnumDeviceObject: Axis offset=4 type=2 name=Eje X
+2019/01/29 17:16:49.368 Info   EnumDeviceObject: Axis offset=8 type=502 name=Rotación Z
+2019/01/29 17:16:49.368 Info   EnumDeviceObject: Axis offset=12 type=202 name=Eje Z
+2019/01/29 17:16:49.368 Info   DetectJoysticks: Detected 2 joystick(s)
+2019/01/29 17:16:49.371 Info   Joystick 1: ROF Joystick
+2019/01/29 17:16:49.371 Info   Joystick 2: ROF Joystick
+2019/01/29 17:16:49.371 Info   2 joysticks are detected (Joystick.cpp#109)
+2019/01/29 17:16:49.377 Info   ConfigDir=D:\tumba\subway\deploy\*.cfg (ConfigFileManager.cpp#43)
+2019/01/29 17:16:49.394 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
+2019/01/29 17:16:49.417 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2019/01/29 19:12:14.022 Info   Received WM_QUERYENDSESSION.  Exiting... (Main.cpp#207)
