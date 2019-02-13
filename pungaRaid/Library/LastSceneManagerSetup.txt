@@ -1,4 +1,0 @@
-sceneSetups:
-- path: src/game/Assets/Scenes/art.unity
-  isLoaded: 1
-  isActive: 1
