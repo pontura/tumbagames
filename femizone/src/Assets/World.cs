@@ -53,14 +53,13 @@ public class World : MonoBehaviour
 			return;
 		
 		if (state == states.LEVEL_CLEAR) {
-			//sprint(heroesManager.GetMostAdvancedPosition () + " newXLimit: " + newXLimit);
-			float pos = heroesManager.GetMostAdvancedPosition ();
-			float globalPos = pos - worldCamera.transform.position.x;
+			float percentPosition = heroesManager.GetPercentPosition ();
+			float globalPos = percentPosition - worldCamera.transform.position.x;
 
 			float limit = Data.Instance.settings.limit_to_walk - 10;
 
 			if (worldCamera.transform.position.x >= newXLimit) {
-				pos = newXLimit;
+				percentPosition = newXLimit;
 				state = states.FIGHTING;
 			} else if(globalPos>limit){
 				worldCamera.UpdatePosition (1);

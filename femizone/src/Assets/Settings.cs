@@ -8,5 +8,6 @@ public class Settings : MonoBehaviour {
 	public Vector2 limits_z;
 	public int LevelsWidth = 100;
 	public int limit_to_walk = 12;
+	public Color[] colors;
 
 }

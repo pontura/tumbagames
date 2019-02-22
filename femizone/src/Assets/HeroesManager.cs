@@ -13,35 +13,34 @@ public class HeroesManager : MonoBehaviour {
 	public List<Hero> all;
 
 	void Start () {
-
 		Events.OnHeroDie += OnHeroDie;
-
+		Events.AddHero += AddHero;
+	}
+	public void AddHero(int characterID)
+	{
+		print ("#add" + characterID);
 		Hero hero;
-		hero = Instantiate (hero1);
-		hero.transform.SetParent (container);
-		hero.transform.localPosition = new Vector3(-8,0,0);
-		all.Add (hero);
-
-		return;
-
-		hero = Instantiate (hero2);
-		hero.transform.SetParent (container);
-		hero.transform.localPosition = new Vector3(-4,0,0);
-		all.Add (hero);
-
-		hero = Instantiate (hero3);
+		switch (characterID) {
+		case 1:
+			hero = Instantiate (hero1);
+			break;	
+		case 2:
+			hero = Instantiate (hero2);
+			break;	
+		case 3:
+			hero = Instantiate (hero3);
+			break;	
+		default:
+			hero = Instantiate (hero4);
+			break;	
+		}
 		hero.transform.SetParent (container);
 		hero.transform.localPosition = new Vector3(0,0,0);
 		all.Add (hero);
-
-		hero = Instantiate (hero4);
-		hero.transform.SetParent (container);
-		hero.transform.localPosition = new Vector3(4,0,0);
-		all.Add (hero);
-
 	}
 	void OnDestroy () {
 		Events.OnHeroDie -= OnHeroDie;
+		Events.AddHero -= AddHero;
 	}
 	void OnHeroDie(int id)
 	{
@@ -121,19 +120,13 @@ public class HeroesManager : MonoBehaviour {
 		}
 		return pos;
 	}
-	public float GetMostAdvancedPosition()
+	public float GetPercentPosition()
 	{
-		float biggest_x = 0;
-		float lowest_x = 1000;
+		float totalPosition = 0;
 		foreach (Hero hero in all) {
-			if (hero.transform.position.x > biggest_x)
-				biggest_x = hero.transform.position.x;
-			else
-				if (hero.transform.position.x < lowest_x)
-					lowest_x = hero.transform.position.x;
+			totalPosition += hero.transform.position.x;
 		}
-		if (biggest_x - lowest_x > 5)
-			return 0;
-		return biggest_x;
+		totalPosition/=all.Count;
+		return totalPosition;
 	}
 }

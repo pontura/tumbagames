@@ -32,8 +32,10 @@ public class InputManager : MonoBehaviour {
 		{
 			if (hero.weaponPickable != null)
 				hero.OnPick ();
-			else if (hero.weapons.HasWeapon ())
+			else if (hero.weapons.HasWeapon ()) {
 				hero.hitsManager.SetOn (CharacterHitsManager.types.GUN_FIRE);
+				hero.weapons.Use ();
+			}
 			else if(justTurnedHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
 			else if(justForwardHorizontal)
@@ -82,7 +84,6 @@ public class InputManager : MonoBehaviour {
 	}
 	void ResetJustTurned()
 	{
-
 		if (newHorizontalDirection != 0) {
 			HorizontalDirection = newHorizontalDirection;
 			hero.transform.localScale = new Vector3 (newHorizontalDirection, 1, 1);

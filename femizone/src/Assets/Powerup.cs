@@ -9,9 +9,7 @@ public class Powerup : SceneObject {
 	}
 	void OnTriggerEnter(Collider col)
 	{
-
 		HitArea otherHitArea = col.gameObject.GetComponent<HitArea> ();
-
 
 		if (otherHitArea == null)
 			return;

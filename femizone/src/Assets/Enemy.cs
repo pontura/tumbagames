@@ -59,7 +59,7 @@ public class Enemy : Character {
 		enemyAttackManager = null;
 		Events.OnMansPlaining (this, false);
 	}
-	public override void OnReceiveHit(HitArea hitArea, int force)
+	public override void OnReceiveHit(HitArea hitArea, float force)
 	{
 		if (ia == null)
 			return;

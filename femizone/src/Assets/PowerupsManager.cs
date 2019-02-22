@@ -20,5 +20,6 @@ public class PowerupsManager : MonoBehaviour {
 		data.pos.y = 0;
 		asset.transform.localPosition = data.pos;
 		all.Add (asset);
+		asset.transform.localEulerAngles = Vector3.zero;
 	}
 }

@@ -5,7 +5,15 @@ using UnityEngine;
 public class HeroWeapons : MonoBehaviour {
 
 	public WeaponPickable.types type;
+	public int totalUses;
 
+	public void Use()
+	{
+		totalUses--;
+		if (totalUses <= 0) {
+			Reset ();
+		}
+	}
 	public bool HasWeapon()
 	{
 		if (type ==  WeaponPickable.types.NONE)
@@ -14,6 +22,7 @@ public class HeroWeapons : MonoBehaviour {
 	}
 	public void GetWeapon(WeaponPickable.types _type)
 	{
+		totalUses = 3;
 		type = _type;
 	}
 	public void Reset()

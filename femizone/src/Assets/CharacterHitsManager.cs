@@ -58,7 +58,6 @@ public class CharacterHitsManager : MonoBehaviour {
 
 		Events.OnAttack (attackStyle.type, character);
 
-		print (type + " " + clipName);
 	}
 	void Reset(){
 		if (character.state == Character.states.DEAD || character.state == Character.states.HITTED)

@@ -107,7 +107,7 @@ public class Character : SceneObject {
 		state = states.HITTING;
 		OnAttack ();
 	}
-	public void ReceiveHit(HitArea hitArea,  int force) 
+	public void ReceiveHit(HitArea hitArea,  float force) 
 	{ 
 		StartHit(hitArea);
 		OnReceiveHit (hitArea,force);
@@ -115,7 +115,7 @@ public class Character : SceneObject {
 	public virtual void OnDie() { }
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }
-	public virtual void OnReceiveHit(HitArea hitArea,  int force) { }
+	public virtual void OnReceiveHit(HitArea hitArea,  float force) { }
 	public void LookAt(bool left)
 	{
 		if(left)

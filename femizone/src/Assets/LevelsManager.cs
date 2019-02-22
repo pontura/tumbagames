@@ -1,20 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LevelsManager : MonoBehaviour {
 
     EnemiesManager enemiesManager;
 	PowerupsManager powerupsManager;
 	WeaponsManager weaponsManager;
-
 	BackgroundsManager backgroundsManager;
+
+	public List<LevelsByDificulty> levelsByDificulty;
+	[Serializable]
+	public class LevelsByDificulty
+	{
+		public List<Level> all;
+		public int total;
+	}
+
 	Levels levels;
-    public Level[] all;
+	public List<Level> all;
 	int levelsWidth;
 	Vector3 offset;
 
 	void Start () {
+		
+		foreach (LevelsByDificulty l in levelsByDificulty) {
+			Shuffle (l.all);
+			int id = 0;
+			foreach (Level level in l.all) {
+				if(id<l.total)
+					all.Add (level);
+				id++;
+			}
+		}
+		
 		levels = GetComponent<Levels> ();
         enemiesManager = GetComponent<EnemiesManager>();
 		backgroundsManager = GetComponent<BackgroundsManager> ();
@@ -50,5 +70,17 @@ public class LevelsManager : MonoBehaviour {
 	void StageClearDelay()
 	{
 		World.Instance.levels.StageClear ();
+	}
+
+	void Shuffle(List<Level> all)
+	{
+		for(int a = 0; a<30; a++)
+		{
+			Level l1 = all [0];
+			int num = UnityEngine.Random.Range (0, all.Count);
+			Level l2 = all [num];
+			all [0] = l2;
+			all [num] = l1;
+		}
 	}
 }

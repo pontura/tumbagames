@@ -7,7 +7,7 @@ public class SceneObject : MonoBehaviour {
 	Camera camera;
 
 	void Start () {
-		camera = World.Instance.camera;
-		transform.LookAt (camera.transform);
+//		camera = World.Instance.camera;
+//		transform.LookAt (camera.transform);
 	}
 }

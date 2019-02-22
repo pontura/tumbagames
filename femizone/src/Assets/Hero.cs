@@ -56,7 +56,7 @@ public class Hero : Character {
 		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
 	}
-	public override void OnReceiveHit(HitArea hitArea, int force)
+	public override void OnReceiveHit(HitArea hitArea, float force)
 	{
 		if (state == states.DEAD  || state == states.HITTED)
 			return;
@@ -79,9 +79,9 @@ public class Hero : Character {
 
 		state = states.HITTED;
 		anim.Play (hitName);
-		Invoke ("GotoIdleAfterBeingHitted", 0.7f);
+		Invoke ("GotoIdleAfterBeingHitted", stats.mana);
 
-		Events.OnHeroHitted (id, force);
+		Events.OnHeroHitted (id, (int)(force*2)/stats.defense);
 		//stats.ReceiveHit (force);
 	}
 	public override void OnDie ()
