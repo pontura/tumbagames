@@ -17,6 +17,7 @@ public class SceneObjectData : MonoBehaviour {
 		COP_GUN,
 		ENERGY,
 		BOSS,
-		WEAPON_1
+		WEAPON_1,
+		FIRE
     }
 }
