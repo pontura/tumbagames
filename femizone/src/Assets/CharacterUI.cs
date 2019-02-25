@@ -50,7 +50,11 @@ public class CharacterUI : MonoBehaviour {
 	}
 	public void GrabPowerUp(Powerup powerup)
 	{
-		life += Data.Instance.settings.totalLife/2;
+		if (powerup.type == Powerup.types.BIRRA)
+			life += Data.Instance.settings.totalLife/3;
+		else if (powerup.type == Powerup.types.BIRRA_BIG)
+			life += Data.Instance.settings.totalLife/2;
+		
 		if (life >Data.Instance.settings.totalLife) {
 			life = Data.Instance.settings.totalLife;
 		} 

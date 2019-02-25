@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerupsManager : MonoBehaviour {
 
 	public Powerup energyAsset;
+	public Powerup energyAssetBig;
 
 	public Transform container;
 	public List<Powerup> all;
@@ -14,7 +15,13 @@ public class PowerupsManager : MonoBehaviour {
 	}
 	public void InstantiateSceneOject(SceneObjectData data)
 	{
-		Powerup asset = Instantiate(energyAsset);
+		int rand = Random.Range (0, 10);
+		Powerup asset;
+		if(rand >5)
+			asset = Instantiate(energyAsset);
+		else
+			asset = Instantiate(energyAssetBig);
+		
 		asset.transform.SetParent(container);
 		asset.Init();
 		data.pos.y = 0;

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Powerup : SceneObject {
 
+	public types type;
+	public enum types
+	{
+		BIRRA,
+		BIRRA_BIG
+	}
 	public void Init () {
 		
 	}
