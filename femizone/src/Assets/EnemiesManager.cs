@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour {
-
+	public GameObject hipster;
 	public GameObject warnesMan;
 	public GameObject ceoMan;
 	public GameObject opusMan;
@@ -40,6 +40,9 @@ public class EnemiesManager : MonoBehaviour {
             case SceneObjectData.types.WARNES_MAN:
                 so = warnesMan;
                 break;
+			case SceneObjectData.types.HIPSTER:
+				so = hipster;
+				break;
             case SceneObjectData.types.CEO:
                 so = ceoMan;
                 break;
