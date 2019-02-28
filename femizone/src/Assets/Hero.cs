@@ -58,31 +58,35 @@ public class Hero : Character {
 	}
 	public override void OnReceiveHit(HitArea hitArea, float force)
 	{
+		print ("hitted " + force + " state:  " + state);
 		if (state == states.DEAD  || state == states.HITTED)
 			return;
-		string hitName = "hit_punch_front";
+		
+		if (state == states.DEFENDING) {
+			force /= 2;
+		} else {
+			string hitName = "hit_punch_front";
 
-		switch (hitArea.type) {
-		case CharacterHitsManager.types.HIT_FORWARD:
-			hitName = "hit_punch_front";
-			break;
-		case CharacterHitsManager.types.KICK_BACK:
-			hitName = "hit_punch_back";
-			break;
-		case CharacterHitsManager.types.HIT_BACK:
-			hitName = "hit_punch_back";
-			break;
-		case CharacterHitsManager.types.HIT_UPPER:
-			hitName = "hit_upper_front";
-			break;
+			switch (hitArea.type) {
+			case CharacterHitsManager.types.HIT_FORWARD:
+				hitName = "hit_punch_front";
+				break;
+			case CharacterHitsManager.types.KICK_BACK:
+				hitName = "hit_punch_back";
+				break;
+			case CharacterHitsManager.types.HIT_BACK:
+				hitName = "hit_punch_back";
+				break;
+			case CharacterHitsManager.types.HIT_UPPER:
+				hitName = "hit_upper_front";
+				break;
+			}
+			state = states.HITTED;
+			anim.Play (hitName);
+			Invoke ("GotoIdleAfterBeingHitted", stats.mana);
 		}
 
-		state = states.HITTED;
-		anim.Play (hitName);
-		Invoke ("GotoIdleAfterBeingHitted", stats.mana);
-
-		Events.OnHeroHitted (id, (int)(force*2)/stats.defense);
-		//stats.ReceiveHit (force);
+		Events.OnHeroHitted (id, (force*2)/stats.defense);
 	}
 	public override void OnDie ()
 	{

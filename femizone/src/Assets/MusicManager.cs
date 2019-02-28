@@ -39,7 +39,7 @@ public class MusicManager : MonoBehaviour {
 
         Events.OnGamePaused += OnGamePaused;
         Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
-        Events.OnMusicChange += OnMusicChange;
+      //  Events.OnMusicChange += OnMusicChange;
         Events.OnMusicOff += OnMusicOff;
 	}
     void OnDestroy()
@@ -49,25 +49,25 @@ public class MusicManager : MonoBehaviour {
 
         Events.OnGamePaused -= OnGamePaused;
         Events.OnMusicVolumeChanged -= OnMusicVolumeChanged;
-        Events.OnMusicChange -= OnMusicChange;
+     //   Events.OnMusicChange -= OnMusicChange;
         Events.OnMusicOff -= OnMusicOff;
     }
     public void OnMusicOff(bool off)
     {
 		audioSource.Stop ();
     }
-    void OnMusicChange(string soundName)
-    {
-        if (soundName == "") audioSource.Stop();
-        if (audioSource.clip && audioSource.clip.name == soundName) return;
-        audioSource.clip = Resources.Load("sonidos/" + soundName) as AudioClip;
-        audioSource.Play();
-
-        if (soundName == "victoryMusic" || soundName == "gameOverTemp")
-            audioSource.loop = false;
-        else
-            audioSource.loop = true;
-    }
+//    void OnMusicChange(string soundName)
+//    {
+//        if (soundName == "") audioSource.Stop();
+//        if (audioSource.clip && audioSource.clip.name == soundName) return;
+//        audioSource.clip = Resources.Load("sonidos/" + soundName) as AudioClip;
+//        audioSource.Play();
+//
+//        if (soundName == "victoryMusic" || soundName == "gameOverTemp")
+//            audioSource.loop = false;
+//        else
+//            audioSource.loop = true;
+//    }
     void OnSoundsFadeTo(float to)
     {
         if (to > 0) to = volume;

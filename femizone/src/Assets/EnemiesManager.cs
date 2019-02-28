@@ -32,7 +32,7 @@ public class EnemiesManager : MonoBehaviour {
 			World.Instance.levels.StageClear ();
 		}
 	}
-    public void InstantiateSceneOject(SceneObjectData data)
+	public Enemy InstantiateSceneOject(SceneObjectData data)
     {
         GameObject so = ceoMan;
         switch (data.type)
@@ -66,5 +66,6 @@ public class EnemiesManager : MonoBehaviour {
         enemy.transform.localPosition = data.pos;
 		all.Add (enemy);
 		Events.OnMansPlaining (enemy, true);
+		return enemy;
     }
 }

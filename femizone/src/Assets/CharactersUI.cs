@@ -33,6 +33,7 @@ public class CharactersUI : MonoBehaviour
 	}
 	void OnHeroHitted(int characterID, float force)
 	{
+		print ("OnHeroHitted " + force);
 		CharacterUI cui = GetUI (characterID);
 		cui.OnHeroHitted (force);
 	}

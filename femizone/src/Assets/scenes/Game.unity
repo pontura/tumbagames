@@ -1322,12 +1322,12 @@ PrefabInstance:
     - target: {fileID: 224448106079172968, guid: fffb6cc4c988cfc4b8ffdba66d121339,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -512
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224448106079172968, guid: fffb6cc4c988cfc4b8ffdba66d121339,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -384
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224448106079172968, guid: fffb6cc4c988cfc4b8ffdba66d121339,
         type: 3}
@@ -1619,6 +1619,7 @@ MonoBehaviour:
     total: 1
   - all:
     - {fileID: 114652140778638348, guid: e54bb61cc3f3b224bbc3a567a0451d7f, type: 3}
+    - {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a, type: 3}
     total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece, type: 3}
@@ -1627,6 +1628,8 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
     - {fileID: 5045129668361686577, guid: 1e281a3729828264cbfdb374ec6f2d2a, type: 3}
     - {fileID: 114169596687558326, guid: 6436e9df977747d4286e79c35cc5aa01, type: 3}
+    - {fileID: 114652140778638348, guid: e54bb61cc3f3b224bbc3a567a0451d7f, type: 3}
+    - {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a, type: 3}
     total: 2
   - all:
     - {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f, type: 3}
@@ -1682,6 +1685,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyAsset: {fileID: 114538683894200776, guid: aedc1d314fb2c534a99a80454dc5b2c4,
+    type: 3}
+  energyAssetBig: {fileID: 114538683894200776, guid: 82d63384cb3b12d4b996a239371b447b,
     type: 3}
   container: {fileID: 1571614642}
   all: []

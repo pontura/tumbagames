@@ -108,8 +108,11 @@ public class Character : SceneObject {
 		OnAttack ();
 	}
 	public void ReceiveHit(HitArea hitArea,  float force) 
-	{ 
+	{ 		
 		StartHit(hitArea);
+		if (state == states.DEFENDING) {
+			_hittedPower /= 4;
+		}
 		OnReceiveHit (hitArea,force);
 	}
 	public virtual void OnDie() { }

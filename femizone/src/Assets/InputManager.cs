@@ -27,7 +27,12 @@ public class InputManager : MonoBehaviour {
 			VerticalDirection = 1;
 		else
 			VerticalDirection = 0;
-
+		
+		if (Input.GetButtonDown ("Defense" + hero.id)) {
+			hero.Defense ();
+		} else if (Input.GetButtonUp ("Defense" + hero.id)) {
+			hero.Idle ();
+		} else
 		if (Input.GetButtonDown("Hit" +hero.id)) 
 		{
 			if (hero.weaponPickable != null)
@@ -43,7 +48,7 @@ public class InputManager : MonoBehaviour {
 			else
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_FORWARD);
 			newHorizontalDirection = 0;
-		}
+		}else
 		if (Input.GetButtonDown("Kick" +hero.id)) 
 		{
 			if(justTurnedHorizontal)
