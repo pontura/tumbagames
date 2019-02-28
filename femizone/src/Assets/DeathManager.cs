@@ -10,12 +10,14 @@ public class DeathManager : MonoBehaviour {
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
 	}
+	void OnDestroy () {
+		Events.OnCharacterDie -= OnCharacterDie;
+	}
 	void OnCharacterDie(Character ch)
 	{
 		GameObject go = Instantiate (deaths);
 		go.transform.SetParent (container);
 		go.transform.localPosition = ch.transform.localPosition;
 		go.transform.localScale = Vector3.one;
-		print ("_____________" + ch.transform.localPosition);
 	}
 }

@@ -25,6 +25,8 @@ public class CharactersUI : MonoBehaviour
 	}
 	void OnKeyPress(int characterID)
 	{
+		if (World.Instance.state == World.states.GAME_OVER)
+			return;
 		CharacterUI cui = GetUI (characterID);
 		if (cui.id == characterID && cui.state == CharacterUI.states.WAITING) {
 			cui.SetState (CharacterUI.states.PLAYING);

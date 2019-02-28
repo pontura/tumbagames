@@ -10,7 +10,7 @@ public class InputManagerGeneral : MonoBehaviour
 				Events.OnKeyPress (a);
 			} else if (Input.GetButtonDown ("Kick" + a)) {
 				Events.OnKeyPress (a);
-			}
+			} 
 		}
 	}
 }

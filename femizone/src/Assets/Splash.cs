@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Splash : MonoBehaviour {
 
 	void Update () {
-		if (Input.GetButtonDown("Hit1")) 
-		{
-			SceneManager.LoadScene ("Game");
-		}
-			
+		for (int a = 1; a < 5; a++) {
+			if (Input.GetButtonDown ("Hit" + a) || Input.GetButtonDown ("Kick" + a) || Input.GetButtonDown ("Defense" + a)) {
+				SceneManager.LoadScene ("Game");
+			}
+		}			
 	}
 }

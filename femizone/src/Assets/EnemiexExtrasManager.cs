@@ -6,14 +6,16 @@ public class EnemiexExtrasManager : MonoBehaviour
 {
 	public bool canAdd;
 	EnemiesManager enemiesManager;
-	int maxToAdd = 2;
+	int maxToAdd = 1;
 	int added;
+	int stagesClear;
+
     void Start()
     {
 		enemiesManager = GetComponent<EnemiesManager> ();
 		Events.OnStageClear += OnStageClear;
 		Events.OnMansPlaining += OnMansPlaining;
-		Loop ();
+		Invoke ("Loop", 5);
     }
 
     void OnDestroy()
@@ -28,23 +30,22 @@ public class EnemiexExtrasManager : MonoBehaviour
 	void OnStageClear()
 	{
 		canAdd = false;
+		added = 0;
+		maxToAdd += stagesClear;
+		stagesClear++;
 	}
 
 	void Loop()
 	{
-		Invoke ("Loop", 1);
+		Invoke ("Loop", 5);
 		CheckToAdd ();
 	}
 	Enemy enemy;
 	void CheckToAdd()
 	{
-		if (!canAdd)
+		if (!canAdd ||  GetComponent<HeroesManager> ().all.Count == 0)
 			return;
-		if (enemy != null) {
-			Events.OnMansPlaining (enemy, false);
-			HitArea ha = GetComponent<HeroesManager> ().all [0].hitsManager.hitArea;
-			enemy.ReceiveHit (ha, 1);
-		}
+		
 		if(added >= maxToAdd)
 		{
 			canAdd = false;
@@ -53,14 +54,27 @@ public class EnemiexExtrasManager : MonoBehaviour
 
 		SceneObjectData data = new SceneObjectData ();
 		data.type = SceneObjectData.types.WARNES_MAN;
-		Vector3 pos = enemiesManager.all [0].transform.position;
-		pos.x += 8;
-		pos.z += Random.Range(0,7);
+		Vector3 pos = World.Instance.worldCamera.transform.position;
+
+		if(Random.Range(0,10)<5)
+			pos.x += 12 + Random.Range(0,4);
+		else
+			pos.x -= 12 + Random.Range(0,4);
+		
+		pos.z = Random.Range(-1,10);
 		data.pos = pos;
 		enemy = enemiesManager.InstantiateSceneOject (data);
 		enemy.Idle ();
 
 		added++;
-
+		Invoke ("Delayed", 0.5f);
+	}
+	void Delayed()
+	{
+		if (enemy != null) {
+			Events.OnMansPlaining (enemy, false);
+			HitArea ha = GetComponent<HeroesManager> ().all [0].hitsManager.hitArea;
+			enemy.ReceiveHit (ha, 1);
+		}
 	}
 }

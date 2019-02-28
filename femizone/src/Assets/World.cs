@@ -9,7 +9,8 @@ public class World : MonoBehaviour
 	public enum states
 	{
 		FIGHTING,
-		LEVEL_CLEAR
+		LEVEL_CLEAR,
+		GAME_OVER
 	}
 	static World mInstance = null;
 	public Camera camera;
@@ -19,6 +20,7 @@ public class World : MonoBehaviour
 
 	public WorldCamera worldCamera;
 	public Levels levels;
+	public GameObject gameOver;
 
 	public static World Instance
 	{
@@ -36,6 +38,19 @@ public class World : MonoBehaviour
 		heroesManager = GetComponent<HeroesManager>();
 		enemiesManager = GetComponent<EnemiesManager>();
 		levels = GetComponent<Levels> ();
+		gameOver.SetActive (false);
+
+		Events.OnKeyPress += OnKeyPress;
+	}
+	void OnDestroy()
+	{
+		Events.OnKeyPress -= OnKeyPress;
+	}
+	void OnKeyPress(int characterID)
+	{
+		if (state == states.GAME_OVER &&  Time.time > timeGameOver+5) {
+			SceneManager.LoadScene ("Game");
+		}
 	}
 	public int newXLimit;
 	public void LevelClear()
@@ -43,9 +58,13 @@ public class World : MonoBehaviour
 		state = states.LEVEL_CLEAR;
 		newXLimit = (levels.activeLevelID * Data.Instance.settings.LevelsWidth);
 	}
+	float timeGameOver;
 	public void GameOver()
 	{
-		SceneManager.LoadScene ("Summary");
+		timeGameOver = Time.time;
+		gameOver.SetActive (true);
+		state = states.GAME_OVER;
+		//SceneManager.LoadScene ("Summary");
 	}
 	void Update()
 	{
