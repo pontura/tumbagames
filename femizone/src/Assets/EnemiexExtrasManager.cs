@@ -57,9 +57,9 @@ public class EnemiexExtrasManager : MonoBehaviour
 		Vector3 pos = World.Instance.worldCamera.transform.position;
 
 		if(Random.Range(0,10)<5)
-			pos.x += 12 + Random.Range(0,4);
+			pos.x += 14 + Random.Range(0,4);
 		else
-			pos.x -= 12 + Random.Range(0,4);
+			pos.x -= 14 + Random.Range(0,4);	
 		
 		pos.z = Random.Range(-1,10);
 		data.pos = pos;

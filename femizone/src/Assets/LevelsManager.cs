@@ -59,7 +59,12 @@ public class LevelsManager : MonoBehaviour {
 				weaponsManager.InstantiateSceneOject(data);
 			else if (data.type == SceneObjectData.types.ENERGY)
 				powerupsManager.InstantiateSceneOject(data);
-			else if (data.type == SceneObjectData.types.FIRE)
+			else if (
+				data.type == SceneObjectData.types.FIRE
+				|| data.type == SceneObjectData.types.FAROL
+				|| data.type == SceneObjectData.types.ARBUSTO
+				|| data.type == SceneObjectData.types.BANCO
+			)
 				genericObjectsManager.InstantiateSceneOject(data);
 			else
 				enemiesManager.InstantiateSceneOject(data);

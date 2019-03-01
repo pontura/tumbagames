@@ -58,13 +58,13 @@ public class Character : SceneObject {
 		pos = CheckPositionPosible (pos);
 		pos.z += vertical * Time.deltaTime * speed;
 
-		if (pos.z > limits_Z [1])
-			pos.z = limits_Z [1];
-		else
-		if (pos.z < limits_Z [0])
-			pos.z = limits_Z [0];
-		
-		transform.localPosition = pos;
+		if (pos.z > limits_Z [1] && vertical > 0)
+			return;
+		else if (pos.z < limits_Z [0] && vertical < 0)
+			return;
+
+		transform.Translate (new Vector3(horizontal* Time.deltaTime * speed, 0, vertical* Time.deltaTime * speed));
+		//transform.localPosition = pos;
 	}
 	Vector3 CheckPositionPosible(Vector3 pos)
 	{

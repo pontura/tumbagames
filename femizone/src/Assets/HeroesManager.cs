@@ -35,7 +35,11 @@ public class HeroesManager : MonoBehaviour {
 			break;	
 		}
 		hero.transform.SetParent (container);
-		hero.transform.localPosition = new Vector3(0,0,0);
+		Vector3 pos = World.Instance.worldCamera.transform.localPosition;
+		pos.x += Random.Range (-4, 4);
+		pos.y = 0;
+		pos.z =  Random.Range (2, 6);
+		hero.transform.localPosition = pos;
 		all.Add (hero);
 	}
 	void OnDestroy () {
