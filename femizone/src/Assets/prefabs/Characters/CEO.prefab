@@ -487,7 +487,7 @@ MonoBehaviour:
   colors:
   - {r: 0, g: 0, b: 0, a: 1}
   - {r: 0.36078432, g: 0.2, b: 0.08627451, a: 1}
-  - {r: 0.126, g: 0.126, b: 0.126, a: 1}
+  - {r: 0.79, g: 0.79, b: 0.79, a: 1}
 --- !u!114 &1254436164
 MonoBehaviour:
   m_ObjectHideFlags: 0
