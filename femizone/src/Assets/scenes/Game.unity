@@ -1929,9 +1929,6 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 1
   - all:
-    - {fileID: 5045129668361686577, guid: d0d87b9bdc3305048b08bb339fa51613, type: 3}
-    total: 1
-  - all:
     - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
     - {fileID: 5045129668361686577, guid: 1e281a3729828264cbfdb374ec6f2d2a, type: 3}
     - {fileID: 114169596687558326, guid: 6436e9df977747d4286e79c35cc5aa01, type: 3}
