@@ -2045,7 +2045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6e5c86f8d975843a52a3e4a6e9729d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  all: []
+  all:
+  - {fileID: 457323536466602083, guid: 3dfb681132518a04b82e36bf6e7fbce5, type: 3}
+  - {fileID: 1925157850079376436, guid: 5494ac7418d62b14597ffb1295ef9ac0, type: 3}
+  - {fileID: 4248532507396347344, guid: 6009c83d6b08b6549a2a16711d845830, type: 3}
+  - {fileID: 2430, guid: 0487c558396fe134f865fd15c58dacaf, type: 3}
   container: {fileID: 1571614642}
 --- !u!114 &1571614653
 MonoBehaviour:

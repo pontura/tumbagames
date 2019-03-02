@@ -11,9 +11,11 @@ public class Enemy : Character {
 	public HitArea hitArea;
 	int totalLife;
 	public bool isOverPickable;
+	Rigidbody rb;
 
 	public void Init(GameObject theAsset)
 	{		
+		rb = GetComponent<Rigidbody> ();
 		asset = Instantiate (theAsset);
 
 		anim = asset.GetComponent<Animator> ();
@@ -42,6 +44,13 @@ public class Enemy : Character {
 		
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 		progressBar.Hide ();
+		Loop ();
+
+	}
+	void Loop()
+	{
+		StartCoroutine (CancelPhysics());
+		Invoke ("Loop", 0.5f);
 	}
 	public override void OnAttack ()
 	{
@@ -49,6 +58,8 @@ public class Enemy : Character {
 	}
 	public void Reset()
 	{
+		CancelInvoke ();
+		StopAllCoroutines ();
 		Die();
 		Events.OnCharacterDie (this);
 		GameObject.Destroy (progressBar.gameObject);
@@ -93,6 +104,15 @@ public class Enemy : Character {
 			Destroy (progressBar.gameObject);
 			Destroy (this.gameObject);
 		}
+	}
+	IEnumerator CancelPhysics()
+	{
+		yield return new WaitForSeconds (0.7f);
+		if (rb != null)
+			rb.isKinematic = true;
+		yield return new WaitForSeconds (0.1f);
+		if (rb != null)
+			rb.isKinematic = false;
 	}
 
 }
