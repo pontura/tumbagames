@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 274, y: 154}
+  resolution: {x: 121, y: 76}
   pixelSize: 7
   dither: 0.15
   opacity: 1
@@ -1877,10 +1877,12 @@ MonoBehaviour:
   cop: {fileID: 1627021349044234, guid: fe31136b19d94094c8555c26b885a945, type: 3}
   cop_gun: {fileID: 1155408836593240, guid: f360ca21c56d9284fab2497e5749a664, type: 3}
   boss1: {fileID: 1230476605993888, guid: f047ecf76177f604dbaa09e542ec88b3, type: 3}
+  moderno: {fileID: 2501991898776472785, guid: ca1cd94a6121cec4384ea20dd80a5ac9, type: 3}
   enemy_to_instantiate: {fileID: 114345901904562116, guid: badf1226d7e3b864498e163a792f9c1d,
     type: 3}
   container: {fileID: 1571614642}
   all: []
+  cam: {fileID: 0}
 --- !u!114 &1571614645
 MonoBehaviour:
   m_ObjectHideFlags: 0

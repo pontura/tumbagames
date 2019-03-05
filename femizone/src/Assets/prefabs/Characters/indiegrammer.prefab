@@ -9863,10 +9863,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2e6d2bdd7b95a4c82a65594db6c159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0.41, z: 6.92}
-  life: 50
+  offset: {x: 0, y: 0.41, z: 0}
+  life: 35
   force: 1
-  speed: 4
+  speed: 10
   defense: 1
   mana: 0
   time_to_GoTo_Target: {x: 0.12, y: 0.6}
@@ -9874,30 +9874,24 @@ MonoBehaviour:
   hittedPower: 15
   type: 2
   attacks:
-  - type: 4
-    animClip: {fileID: 7400000, guid: 0abe60d80436b354bafd8a388e82519e, type: 2}
-    force: 5
-  - type: 6
-    animClip: {fileID: 7400000, guid: 9b37a9d3216f9804f869fffc47415d2d, type: 2}
+  - type: 1
+    animClip: {fileID: 7400000, guid: 0f789c800e91e034a9b352179be0851a, type: 2}
     force: 5
   receivedAttacks:
   - type: 1
-    animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
+    animClip: {fileID: 7400000, guid: 37b439f83eb4696469ea18213b4b83bf, type: 2}
     force: 0
   - type: 2
-    animClip: {fileID: 7400000, guid: a6f13e936eccf9e438ead09b2f0f12c2, type: 2}
+    animClip: {fileID: 7400000, guid: e0bd57c87d00e054d91c35023ec0ca9a, type: 2}
     force: 0
   - type: 3
-    animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
+    animClip: {fileID: 7400000, guid: 37b439f83eb4696469ea18213b4b83bf, type: 2}
     force: 0
   - type: 4
-    animClip: {fileID: 7400000, guid: b80c0bbacd12407459dc66711a78caf1, type: 2}
+    animClip: {fileID: 7400000, guid: 142938ab13939b649a1784e6195b0696, type: 2}
     force: 0
   - type: 5
-    animClip: {fileID: 7400000, guid: 913298afe82fe39478a3cd6c2d66ee65, type: 2}
-    force: 0
-  - type: 6
-    animClip: {fileID: 7400000, guid: 18656f9035e430a49ad1a097565a326b, type: 2}
+    animClip: {fileID: 7400000, guid: bbd86b6dd21f2e648986e56d37e870bc, type: 2}
     force: 0
 --- !u!114 &1349855662007653303
 MonoBehaviour:
@@ -9906,7 +9900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501991898776472785}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec0deb7028a04804e9d8a37d13fac3df, type: 3}
   m_Name: 

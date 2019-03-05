@@ -10,10 +10,12 @@ public class EnemiesManager : MonoBehaviour {
     public GameObject cop;
 	public GameObject cop_gun;
 	public GameObject boss1;
+	public GameObject moderno;
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
 	public List<Enemy> all;
+	public WorldCamera cam;
 
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
@@ -57,6 +59,9 @@ public class EnemiesManager : MonoBehaviour {
 				break;
 			case SceneObjectData.types.BOSS:
 				so = boss1;
+				break;
+			case SceneObjectData.types.MODERNO:
+				so = moderno;
 				break;
         }
         Enemy enemy = Instantiate(enemy_to_instantiate);

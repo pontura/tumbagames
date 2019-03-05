@@ -12,9 +12,11 @@ public class Enemy : Character {
 	int totalLife;
 	public bool isOverPickable;
 	Rigidbody rb;
+	WorldCamera worldCamera;
 
 	public void Init(GameObject theAsset)
 	{		
+		worldCamera = World.Instance.worldCamera;
 		rb = GetComponent<Rigidbody> ();
 		asset = Instantiate (theAsset);
 
@@ -49,7 +51,10 @@ public class Enemy : Character {
 	}
 	void Loop()
 	{
-		StartCoroutine (CancelPhysics());
+		if(state != states.SLEEP)
+			StartCoroutine (CancelPhysics());
+		else
+			rb.isKinematic = true;
 		Invoke ("Loop", 0.5f);
 	}
 	public override void OnAttack ()
@@ -107,12 +112,28 @@ public class Enemy : Character {
 	}
 	IEnumerator CancelPhysics()
 	{
-		yield return new WaitForSeconds (0.7f);
+		yield return new WaitForSeconds (0.5f);
 		if (rb != null)
 			rb.isKinematic = true;
 		yield return new WaitForSeconds (0.1f);
-		if (rb != null)
+		if (rb != null) 
 			rb.isKinematic = false;
+		
+		Vector3 pos = transform.localPosition;
+
+		if (transform.localPosition.z < -1)
+			pos.z = -1;
+		else if (transform.localPosition.z > 10f)
+			pos.z = 10f; 
+
+		float limitX = 9;
+		if(transform.localPosition.x>worldCamera.transform.localPosition.x+limitX)
+			pos.x = worldCamera.transform.localPosition.x+limitX;
+		else if(transform.localPosition.x<worldCamera.transform.localPosition.x-limitX)
+			pos.x = worldCamera.transform.localPosition.x-limitX;
+		
+		transform.localPosition = pos;				
+
 	}
 
 }
