@@ -16,6 +16,7 @@ public class HeroesManager : MonoBehaviour {
 		Events.OnHeroDie += OnHeroDie;
 		Events.AddHero += AddHero;
 	}
+
 	public void AddHero(int characterID)
 	{
 		print ("#add" + characterID);

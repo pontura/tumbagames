@@ -9864,13 +9864,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0.41, z: 0}
-  life: 35
+  life: 25
   force: 1
   speed: 10
   defense: 1
   mana: 0
-  time_to_GoTo_Target: {x: 0.12, y: 0.6}
-  time_to_Punch: {x: 0.12, y: 0.6}
+  time_to_GoTo_Target: {x: 0.3, y: 0.8}
+  time_to_Punch: {x: 0.3, y: 0.8}
   hittedPower: 15
   type: 2
   attacks:
