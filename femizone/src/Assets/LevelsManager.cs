@@ -55,7 +55,7 @@ public class LevelsManager : MonoBehaviour {
         {
 			data.pos = data.transform.position + offset;
 
-			if (data.type == SceneObjectData.types.WEAPON_1)
+			if (data.type == SceneObjectData.types.WEAPON)
 				weaponsManager.InstantiateSceneOject(data);
 			else if (data.type == SceneObjectData.types.ENERGY)
 				powerupsManager.InstantiateSceneOject(data);

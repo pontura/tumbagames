@@ -13,7 +13,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		KICK_FOWARD,
 		KICK_BACK,
 		KICK_DOWN,
-		GUN_FIRE
+		GUN_FIRE,
+		MELEE
 	}
 	Character character;
 

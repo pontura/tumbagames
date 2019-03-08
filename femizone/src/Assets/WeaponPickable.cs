@@ -9,7 +9,8 @@ public class WeaponPickable : SceneObject {
 	public enum types
 	{
 		NONE,
-		WEAPON1
+		WEAPON1,
+		WEAPON2
 	}
 	public void Init () {
 

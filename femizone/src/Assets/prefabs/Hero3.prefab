@@ -92,6 +92,7 @@ MonoBehaviour:
   speed: 0
   defense: 4.5
   mana: 0.8
+  scoreByBeingHit: 50
   time_to_GoTo_Target: {x: 0.2, y: 1.5}
   time_to_Punch: {x: 0.2, y: 2}
   hittedPower: 10
@@ -121,6 +122,9 @@ MonoBehaviour:
   - type: 7
     animClip: {fileID: 7400000, guid: 088109569b2b43d439778cb6520c0525, type: 2}
     force: 20
+  - type: 8
+    animClip: {fileID: 7400000, guid: 2bc2970f57335234d8c3d271cd8a0962, type: 2}
+    force: 12
   receivedAttacks: []
 --- !u!114 &114794619835727158
 MonoBehaviour:

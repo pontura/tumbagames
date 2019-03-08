@@ -92,6 +92,7 @@ MonoBehaviour:
   speed: 0
   defense: 3
   mana: 0.55
+  scoreByBeingHit: 50
   time_to_GoTo_Target: {x: 0.2, y: 1.5}
   time_to_Punch: {x: 0.2, y: 2}
   hittedPower: 10
@@ -121,6 +122,9 @@ MonoBehaviour:
   - type: 7
     animClip: {fileID: 7400000, guid: dc59865a5258f6e4f9cc05771c642b77, type: 2}
     force: 20
+  - type: 8
+    animClip: {fileID: 7400000, guid: c9273363976f80e47a3e55c4e3f46d57, type: 2}
+    force: 12
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -238,11 +242,6 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 7608950241323683670, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character

@@ -29,7 +29,7 @@ public class HitArea : MonoBehaviour {
 	{
 		
 		HitArea otherHitArea = col.gameObject.GetComponent<HitArea> ();
-
+		
 		if (otherHitArea == null)
 			return;
 
@@ -39,18 +39,20 @@ public class HitArea : MonoBehaviour {
 		if (otherHitArea.character == character)
 			return;
 
+		Hero hero = character.GetComponent<Hero>();
+		Enemy otherEnemy = otherHitArea.character.GetComponent<Enemy>();
+
 		if (otherHitArea.character.GetComponent<Hero>()  && character.GetComponent<Hero>())
 			return;
 
 		//primer golpecito con el pecho
 		if (type == CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT			
 			&&
-			(otherHitArea.character.GetComponent<Enemy>() && character.GetComponent<Hero>())
+			(otherEnemy != null && hero != null)
 		)
 		{
-			
-			if (otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
-				
+			if (otherEnemy.progressBar.bar.fillAmount == 1) {
+				Events.OnAddScore(hero.id, 100);
 				Events.OnMansPlaining (otherHitArea.character, false);
 				otherHitArea.character.ReceiveHit (this, 1);
 				Events.OnReceiveit (type, otherHitArea.character);
@@ -63,11 +65,15 @@ public class HitArea : MonoBehaviour {
 		{
 			if (otherHitArea.character == character)
 				return;
-			if (character.GetComponent<Hero> () && otherHitArea.character.GetComponent<Enemy> () && otherHitArea.character.GetComponent<Enemy> ().progressBar.bar.fillAmount == 1) {
+			if (hero != null && otherEnemy != null && otherEnemy.progressBar.bar.fillAmount == 1) {
 				Events.OnMansPlaining (otherHitArea.character, false);
 			}
 			if (otherHitArea.type == CharacterHitsManager.types.RECEIVE_HIT) {
 				if (type != CharacterHitsManager.types.RECEIVE_HIT && otherHitArea.character.state != Character.states.DEAD) {
+
+					if( hero != null && otherEnemy != null)
+						Events.OnAddScore(hero.id, otherEnemy.stats.scoreByBeingHit);
+
 					otherHitArea.character.ReceiveHit (this, force);
 					character.OnFreeze ();
 					Events.OnReceiveit (type, otherHitArea.character);

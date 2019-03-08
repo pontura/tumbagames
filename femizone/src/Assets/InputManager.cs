@@ -37,8 +37,7 @@ public class InputManager : MonoBehaviour {
 		{
 			if (hero.weaponPickable != null)
 				hero.OnPick ();
-			else if (hero.weapons.HasWeapon ()) {
-				hero.hitsManager.SetOn (CharacterHitsManager.types.GUN_FIRE);
+			else if (hero.weapons.HasWeapon ()) {				
 				hero.weapons.Use ();
 			}
 			else if(justTurnedHorizontal)

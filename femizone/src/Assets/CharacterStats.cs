@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour {
 	public float speed;
 	public float defense;
 	public float mana;
+	public int scoreByBeingHit = 50;
 	public Vector2 time_to_GoTo_Target = new Vector2 (0.5f, 3);
 	public Vector2 time_to_Punch = new Vector2 (0.2f, 2);
 	public float hittedPower; // 5;
