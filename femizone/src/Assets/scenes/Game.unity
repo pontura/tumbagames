@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 124, y: 76}
+  resolution: {x: 274, y: 154}
   pixelSize: 7
   dither: 0.15
   opacity: 1
@@ -1931,6 +1931,9 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 1
   - all:
+    - {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173, type: 3}
+    total: 1
+  - all:
     - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
     - {fileID: 5045129668361686577, guid: 1e281a3729828264cbfdb374ec6f2d2a, type: 3}
     - {fileID: 114169596687558326, guid: 6436e9df977747d4286e79c35cc5aa01, type: 3}
@@ -2016,6 +2019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon1: {fileID: 114211874702408334, guid: 1c75a342fab09d84b8e5550089921779, type: 3}
+  weapon2: {fileID: 114211874702408334, guid: 7ba6589798ca7b14a8136b6cb01e86c7, type: 3}
   container: {fileID: 1571614642}
   all: []
 --- !u!114 &1571614651
