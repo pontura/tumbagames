@@ -56,7 +56,7 @@ public class Hero : Character
         else if (weapons.type == WeaponPickable.types.WEAPON1)
             anim.Play("gun_walk");
         else if (weapons.type == WeaponPickable.types.WEAPON2)
-            anim.Play("walk");
+            anim.Play("melee_walk");
     }
     void ChekToMove()
     {

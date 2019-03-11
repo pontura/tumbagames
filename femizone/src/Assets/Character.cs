@@ -102,6 +102,11 @@ public class Character : SceneObject {
 		state = states.DEFENDING;
 		anim.Play ("defense");
 	}
+	public void OnSpecial1()
+	{
+		state = states.HITTING;
+		anim.Play ("special1");
+	}
 	public void Attack()
 	{
 		state = states.HITTING;

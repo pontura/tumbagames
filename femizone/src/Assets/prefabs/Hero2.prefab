@@ -121,10 +121,10 @@ MonoBehaviour:
     force: 7
   - type: 7
     animClip: {fileID: 7400000, guid: 798c4ad8be5668049abd3f5a1d0687a6, type: 2}
-    force: 20
+    force: 25
   - type: 8
     animClip: {fileID: 7400000, guid: d33c296287beb5c449edbb7015068b2c, type: 2}
-    force: 12
+    force: 16
   receivedAttacks: []
 --- !u!114 &114427765078039442
 MonoBehaviour:

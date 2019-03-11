@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class InputManager : MonoBehaviour {
 
@@ -35,12 +36,13 @@ public class InputManager : MonoBehaviour {
 		} else
 		if (Input.GetButtonDown("Hit" +hero.id)) 
 		{
-			if (hero.weaponPickable != null)
+			if (CheckForSpecialAttack (1)) {
+				hero.hitsManager.SetOn (CharacterHitsManager.types.SPECIAL);
+			} else if (hero.weaponPickable != null)
 				hero.OnPick ();
 			else if (hero.weapons.HasWeapon ()) {				
 				hero.weapons.Use ();
-			}
-			else if(justTurnedHorizontal)
+			} else if(justTurnedHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_BACK);
 			else if(justForwardHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.HIT_UPPER);
@@ -50,7 +52,9 @@ public class InputManager : MonoBehaviour {
 		}else
 		if (Input.GetButtonDown("Kick" +hero.id)) 
 		{
-			if(justTurnedHorizontal)
+			if (CheckForSpecialAttack (2)) {
+				hero.hitsManager.SetOn (CharacterHitsManager.types.SPECIAL);
+			} else if(justTurnedHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.KICK_BACK);
 			else if(justForwardHorizontal)
 				hero.hitsManager.SetOn (CharacterHitsManager.types.KICK_FOWARD);
@@ -61,8 +65,10 @@ public class InputManager : MonoBehaviour {
 
 		if (justTurnedHorizontal || justForwardHorizontal)
 			return;
-		
-		if (Input.GetAxis("Horizontal" +hero.id) == -1 && newHorizontalDirection != -1)  {
+
+		int _x = (int)Input.GetAxis ("Horizontal" + hero.id);
+
+		if ( _x == -1 && newHorizontalDirection != -1)  {
 			if (hero.transform.localScale.x > 0 && HorizontalDirection == 0) {				
 				justTurnedHorizontal = true;
 				Invoke ("ResetJustTurned", timeOut);
@@ -71,7 +77,7 @@ public class InputManager : MonoBehaviour {
 				Invoke ("ResetJustTurned", timeOut);
 			}
 			newHorizontalDirection = -1;
-		} else if (Input.GetAxis("Horizontal" +hero.id) == 1 && newHorizontalDirection != 1)  {
+		} else if (_x == 1 && newHorizontalDirection != 1)  {
 			if (hero.transform.localScale.x < 0 && HorizontalDirection == 0) {
 				justTurnedHorizontal = true;
 				CancelInvoke ();
@@ -95,6 +101,21 @@ public class InputManager : MonoBehaviour {
 		newHorizontalDirection = 0;
 		justTurnedHorizontal = false;
 		justForwardHorizontal = false;
+	}
+	public List<int> buttonsID;
+	bool CheckForSpecialAttack(int buttonID)
+	{
+		buttonsID.Add (buttonID);
+		Invoke ("ResetAtatcks", 0.2f);
+		if (buttonsID.Count == 2) {
+			if (buttonsID [0] == 1 && buttonsID [1] == 2)
+				return true;
+		}
+		return false;
+	}
+	void ResetAtatcks()
+	{
+		buttonsID.Clear ();
 	}
 
 }

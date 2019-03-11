@@ -14,7 +14,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		KICK_BACK,
 		KICK_DOWN,
 		GUN_FIRE,
-		MELEE
+		MELEE,
+		SPECIAL
 	}
 	Character character;
 
@@ -36,10 +37,11 @@ public class CharacterHitsManager : MonoBehaviour {
 
 	public void SetOn(types type)
 	{
-		if (!AttakEnabled ())
+		if (!AttakEnabled () && type != types.SPECIAL)
 			return;
 		
-
+		CancelInvoke ();
+		print ("type " + type);
 
 		AttackStyle attackStyle = character.stats.GetAttackByType (type);
 		string clipName = attackStyle.animClip.name;
@@ -55,7 +57,7 @@ public class CharacterHitsManager : MonoBehaviour {
 		hitArea.SetType (type, attackStyle.force);
 
 		character.state = Character.states.HITTING;
-		Invoke ("Reset", 0.2f);
+		Invoke ("Reset", attackStyle.timeToReset);
 
 		Events.OnAttack (attackStyle.type, character);
 
