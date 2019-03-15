@@ -53,6 +53,8 @@ public class Character : SceneObject {
 	}
 	public void MoveTo(int horizontal, int vertical)
 	{
+		if(horizontal ==0 && vertical == 0)
+			return;
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
 		pos = CheckPositionPosible (pos);

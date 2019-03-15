@@ -10,29 +10,36 @@ public class Hero : Character
     public WeaponPickable weaponPickable;
     public HeroWeapons weapons;
     Rigidbody rb;
-    WorldCamera worldCamera;
+    public WorldCamera worldCamera;
     int offsetMoveX = 10;
+    HeroMove move;
 
     public override void OnStart()
     {
         worldCamera = World.Instance.worldCamera;
+        move = GetComponent<HeroMove>();
         inputManager = GetComponent<InputManager>();
         weapons = GetComponent<HeroWeapons>();
         rb = GetComponent<Rigidbody>();
+
+        move.Init(this);
     }
-    public override void OnUpdate()
+    public void OnUpdateByInput(int HorizontalDirection, int VerticalDirection)
     {
         if (state == states.DEAD || state == states.HITTING || state == states.HITTED)
             return;
-        if ((inputManager.HorizontalDirection != 0 || inputManager.VerticalDirection != 0))
+        if ((HorizontalDirection != 0 || VerticalDirection != 0))
         {
+            move.ChekToMove(HorizontalDirection, VerticalDirection);
+
             if (state != states.WALK)
                 Walk();
+           
         }
         else if (state == states.WALK)
             Idle();
 
-        ChekToMove();
+       
         rb.velocity = Vector3.zero;
     }
     public override void Idle()
@@ -45,39 +52,34 @@ public class Hero : Character
         else if (weapons.type == WeaponPickable.types.WEAPON2)
             anim.Play("melee_idle");
         OnIdle();
+        move.OnIdle();
     }
     public override void Walk()
     {
         if (state == states.HITTING)
             return;
-        state = states.WALK;
-        if (!weapons.HasWeapon())
-            anim.Play("walk");
-        else if (weapons.type == WeaponPickable.types.WEAPON1)
-            anim.Play("gun_walk");
-        else if (weapons.type == WeaponPickable.types.WEAPON2)
-            anim.Play("melee_walk");
-    }
-    void ChekToMove()
-    {
-        if (inputManager.HorizontalDirection < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-            if (transform.localPosition.x < worldCamera.transform.localPosition.x - offsetMoveX)
-                return;
-        }
-        else if (inputManager.HorizontalDirection > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-            if (transform.localPosition.x > worldCamera.transform.localPosition.x + offsetMoveX)
-                return;
-        }
-        MoveTo(inputManager.HorizontalDirection, inputManager.VerticalDirection);
 
+        state = states.WALK;
+        if (move.type == HeroMove.types.NORMAL)
+        {           
+            if (!weapons.HasWeapon())
+                anim.Play("walk");
+            else if (weapons.type == WeaponPickable.types.WEAPON1)
+                anim.Play("gun_walk");
+            else if (weapons.type == WeaponPickable.types.WEAPON2)
+                anim.Play("melee_walk");
+        } else{
+              if (!weapons.HasWeapon())
+                anim.Play("run");
+            else if (weapons.type == WeaponPickable.types.WEAPON1)
+                anim.Play("gun_run");
+            else if (weapons.type == WeaponPickable.types.WEAPON2)
+                anim.Play("melee_run");
+        }
     }
     public override void OnReceiveHit(HitArea hitArea, float force)
     {
-        print("hitted " + force + " state:  " + state);
+        //print("hitted " + force + " state:  " + state);
         if (state == states.DEAD || state == states.HITTED)
             return;
 
