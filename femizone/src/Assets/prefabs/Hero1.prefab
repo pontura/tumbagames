@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalDirection: 0
   VerticalDirection: 0
+  combo: 
   buttonsID: 
 --- !u!114 &114399287392630978
 MonoBehaviour:
@@ -76,6 +77,8 @@ MonoBehaviour:
   id: 1
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
+  worldCamera: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &114461472510602836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.4
   m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!54 &54236877402612652
 Rigidbody:
@@ -209,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e30fc0d59f02f241b77818dfe720483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &8341576576336515105
 PrefabInstance:
   m_ObjectHideFlags: 0

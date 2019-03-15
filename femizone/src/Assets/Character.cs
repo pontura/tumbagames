@@ -122,6 +122,7 @@ public class Character : SceneObject {
 		}
 		OnReceiveHit (hitArea,force);
 	}
+	public virtual void OnFire(bool isOver) { }
 	public virtual void OnDie() { }
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }

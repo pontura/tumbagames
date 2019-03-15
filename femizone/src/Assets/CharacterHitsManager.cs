@@ -15,7 +15,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		KICK_DOWN,
 		GUN_FIRE,
 		MELEE,
-		SPECIAL
+		SPECIAL,
+		FIRE
 	}
 	Character character;
 

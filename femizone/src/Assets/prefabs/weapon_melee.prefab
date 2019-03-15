@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 65878747366268102}
   - component: {fileID: 114211874702408334}
   m_Layer: 0
-  m_Name: weapon_2
+  m_Name: weapon_melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  uses: 10
 --- !u!1 &8137429478467535297
 GameObject:
   m_ObjectHideFlags: 0

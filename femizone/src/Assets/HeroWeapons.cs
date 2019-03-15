@@ -28,10 +28,10 @@ public class HeroWeapons : MonoBehaviour {
 			return false;
 		return true;
 	}
-	public void GetWeapon(WeaponPickable.types _type)
+	public void GetWeapon(WeaponPickable weapon)
 	{
-		totalUses = 3;
-		type = _type;
+		totalUses = weapon.uses;
+		type = weapon.type;
 	}
 	public void Reset()
 	{

@@ -31,7 +31,6 @@ public class InputManager : MonoBehaviour
 
         hero.OnUpdateByInput(HorizontalDirection, VerticalDirection);
 
-
         if (Input.GetAxis("Vertical" + hero.id) == -1)
             VerticalDirection = -1;
         else if (Input.GetAxis("Vertical" + hero.id) == 1)
@@ -51,7 +50,7 @@ public class InputManager : MonoBehaviour
         {
             if (CheckForSpecialAttack(1))
             {
-                hero.hitsManager.SetOn(CharacterHitsManager.types.SPECIAL);
+                OnAttack(CharacterHitsManager.types.SPECIAL);
             }
             else if (hero.weaponPickable != null)
                 hero.OnPick();
@@ -60,11 +59,11 @@ public class InputManager : MonoBehaviour
                 hero.weapons.Use();
             }
             else if (justTurnedHorizontal)
-                hero.hitsManager.SetOn(CharacterHitsManager.types.HIT_BACK);
+                OnAttack(CharacterHitsManager.types.HIT_BACK);
             else if (justForwardHorizontal)
-                hero.hitsManager.SetOn(CharacterHitsManager.types.HIT_UPPER);
+                OnAttack(CharacterHitsManager.types.HIT_UPPER);
             else
-                hero.hitsManager.SetOn(CharacterHitsManager.types.HIT_FORWARD);
+                OnAttack(CharacterHitsManager.types.HIT_FORWARD);
             newHorizontalDirection = 0;
         }
         else
@@ -72,14 +71,14 @@ public class InputManager : MonoBehaviour
         {
             if (CheckForSpecialAttack(2))
             {
-                hero.hitsManager.SetOn(CharacterHitsManager.types.SPECIAL);
+                OnAttack(CharacterHitsManager.types.SPECIAL);
             }
             else if (justTurnedHorizontal)
-                hero.hitsManager.SetOn(CharacterHitsManager.types.KICK_BACK);
+                OnAttack(CharacterHitsManager.types.KICK_BACK);
             else if (justForwardHorizontal)
-                hero.hitsManager.SetOn(CharacterHitsManager.types.KICK_FOWARD);
+                OnAttack(CharacterHitsManager.types.KICK_FOWARD);
             else
-                hero.hitsManager.SetOn(CharacterHitsManager.types.KICK_DOWN);
+                OnAttack(CharacterHitsManager.types.KICK_DOWN);
             newHorizontalDirection = 0;
         }
 
@@ -116,7 +115,7 @@ public class InputManager : MonoBehaviour
 
     }
     void ResetJustTurned()
-    {     
+    {
         if (newHorizontalDirection != 0)
         {
             HorizontalDirection = newHorizontalDirection;
@@ -141,6 +140,11 @@ public class InputManager : MonoBehaviour
     void ResetAtatcks()
     {
         buttonsID.Clear();
+    }
+    void OnAttack(CharacterHitsManager.types type)
+    {
+        hero.hitsManager.SetOn(type);
+		hero.move.ResetMove();
     }
 
 }

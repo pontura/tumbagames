@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponPickable : SceneObject {
 	
 	public types type;
-
+	public int uses;
 	public enum types
 	{
 		NONE,

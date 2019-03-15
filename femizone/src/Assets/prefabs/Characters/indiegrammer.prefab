@@ -9877,23 +9877,29 @@ MonoBehaviour:
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 0f789c800e91e034a9b352179be0851a, type: 2}
-    force: 5
+    force: 2
+    timeToReset: 0.3
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 37b439f83eb4696469ea18213b4b83bf, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: e0bd57c87d00e054d91c35023ec0ca9a, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 3
     animClip: {fileID: 7400000, guid: 37b439f83eb4696469ea18213b4b83bf, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 4
     animClip: {fileID: 7400000, guid: 142938ab13939b649a1784e6195b0696, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 5
     animClip: {fileID: 7400000, guid: bbd86b6dd21f2e648986e56d37e870bc, type: 2}
     force: 0
+    timeToReset: 0.2
 --- !u!114 &1349855662007653303
 MonoBehaviour:
   m_ObjectHideFlags: 0

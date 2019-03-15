@@ -12,7 +12,7 @@ public class Hero : Character
     Rigidbody rb;
     public WorldCamera worldCamera;
     int offsetMoveX = 10;
-    HeroMove move;
+    public HeroMove move;
 
     public override void OnStart()
     {
@@ -31,15 +31,12 @@ public class Hero : Character
         if ((HorizontalDirection != 0 || VerticalDirection != 0))
         {
             move.ChekToMove(HorizontalDirection, VerticalDirection);
-
             if (state != states.WALK)
                 Walk();
-           
         }
         else if (state == states.WALK)
             Idle();
 
-       
         rb.velocity = Vector3.zero;
     }
     public override void Idle()
@@ -61,15 +58,17 @@ public class Hero : Character
 
         state = states.WALK;
         if (move.type == HeroMove.types.NORMAL)
-        {           
+        {
             if (!weapons.HasWeapon())
                 anim.Play("walk");
             else if (weapons.type == WeaponPickable.types.WEAPON1)
                 anim.Play("gun_walk");
             else if (weapons.type == WeaponPickable.types.WEAPON2)
                 anim.Play("melee_walk");
-        } else{
-              if (!weapons.HasWeapon())
+        }
+        else
+        {
+            if (!weapons.HasWeapon())
                 anim.Play("run");
             else if (weapons.type == WeaponPickable.types.WEAPON1)
                 anim.Play("gun_run");
@@ -79,7 +78,7 @@ public class Hero : Character
     }
     public override void OnReceiveHit(HitArea hitArea, float force)
     {
-        //print("hitted " + force + " state:  " + state);
+        move.ResetMove();
         if (state == states.DEAD || state == states.HITTED)
             return;
 
@@ -113,6 +112,27 @@ public class Hero : Character
 
         Events.OnHeroHitted(id, (force * 2) / stats.defense);
     }
+    public override void OnFire(bool isOver)
+    {
+        if (isOver)
+        {
+            LoopInFire();
+            foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+                sr.color = Color.red;
+        }
+        else
+        {
+            CancelInvoke();
+            foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+                sr.color = Color.white;
+        }
+
+    }
+    void LoopInFire()
+    {
+        Events.OnHeroHitted(id, 1);
+        Invoke("LoopInFire", 0.2f);
+    }
     public override void OnDie()
     {
         base.OnDie();
@@ -132,8 +152,7 @@ public class Hero : Character
     }
     public void OnPick()
     {
-
-        weapons.GetWeapon(weaponPickable.type);
+        weapons.GetWeapon(weaponPickable);
         if (weaponPickable.type == WeaponPickable.types.WEAPON1)
             anim.Play("pick_gun");
         else if (weaponPickable.type == WeaponPickable.types.WEAPON2)
