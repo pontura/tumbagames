@@ -42,7 +42,7 @@ public class World : MonoBehaviour
 	}
     public void OnRestart()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Intro");
     }
     public int newXLimit;
     public void LevelClear()
