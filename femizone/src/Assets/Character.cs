@@ -13,7 +13,7 @@ public class Character : SceneObject {
 	public CharacterHitsManager hitsManager;
 	private Vector2 limits_Z;
 	private int limit_to_walk;
-	WorldCamera worldCamera;
+	public WorldCamera worldCamera;
 
 	public enum states
 	{

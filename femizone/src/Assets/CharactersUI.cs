@@ -28,7 +28,7 @@ public class CharactersUI : MonoBehaviour
     }
     void OnAddScore(int characterID, int score)
     {
-				GetUI(characterID).SetScore(score);
+        GetUI(characterID).SetScore(score);
     }
 
     void OnKeyPress(int characterID)
@@ -44,7 +44,6 @@ public class CharactersUI : MonoBehaviour
     }
     void OnHeroHitted(int characterID, float force)
     {
-        print("OnHeroHitted " + force);
         CharacterUI cui = GetUI(characterID);
         cui.OnHeroHitted(force);
     }
@@ -59,6 +58,14 @@ public class CharactersUI : MonoBehaviour
             if (cui.id == characterID)
                 return cui;
         return null;
+    }
+    public CharacterUI GetHiscoreCharacterUI()
+    {
+        CharacterUI cuiWinner = all[0];
+        foreach (CharacterUI cui in all)
+            if (cui.score > cuiWinner.score)
+                cuiWinner = cui;
+        return cuiWinner;
     }
 
 }

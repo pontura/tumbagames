@@ -64,7 +64,6 @@ public class HeroMove : MonoBehaviour
     void CheckType()
     {
         float lastTimeWalkDiff = Time.time - lastTimeWalk;
-        print(lastTimeWalkDiff);
         lastTimeWalk = Time.time;
 
         if (lastTimeWalkDiff < delayToRun)

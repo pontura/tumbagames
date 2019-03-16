@@ -12,6 +12,7 @@ public class Data : MonoBehaviour
     
     static Data mInstance = null;
 	public Settings settings;
+    public ArcadeRanking arcadeRanking;
 
     public static Data Instance
     {
@@ -56,7 +57,7 @@ public class Data : MonoBehaviour
        
         GetComponent<MusicManager>().Init();
 		settings = GetComponent<Settings> ();
-
+        arcadeRanking = GetComponent<ArcadeRanking>();
     }
     void Update()
     {

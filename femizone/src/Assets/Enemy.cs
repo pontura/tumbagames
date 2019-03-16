@@ -12,11 +12,9 @@ public class Enemy : Character {
 	int totalLife;
 	public bool isOverPickable;
 	Rigidbody rb;
-	WorldCamera worldCamera;
 
 	public void Init(GameObject theAsset)
 	{		
-		worldCamera = World.Instance.worldCamera;
 		rb = GetComponent<Rigidbody> ();
 		asset = Instantiate (theAsset);
 

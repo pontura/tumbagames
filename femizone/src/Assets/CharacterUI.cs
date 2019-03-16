@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterUI : MonoBehaviour {
 	
-	int score;
+	public int score;
 	public states state;
 	public enum states
 	{

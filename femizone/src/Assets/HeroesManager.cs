@@ -48,10 +48,10 @@ public class HeroesManager : MonoBehaviour {
 		Events.AddHero -= AddHero;
 	}
 	void OnHeroDie(int id)
-	{
+	{		
 		Hero hero = GetHero(id);
-		all.Remove (hero);
 		hero.Die ();
+		all.Remove (hero);		
 		if (all.Count == 0)
 			World.Instance.GameOver ();
 	}

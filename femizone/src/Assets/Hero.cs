@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Hero : Character
 {
-
     public int id;
     private InputManager inputManager;
     public WeaponPickable weaponPickable;
     public HeroWeapons weapons;
     Rigidbody rb;
-    public WorldCamera worldCamera;
     int offsetMoveX = 10;
     public HeroMove move;
 
     public override void OnStart()
     {
-        worldCamera = World.Instance.worldCamera;
         move = GetComponent<HeroMove>();
         inputManager = GetComponent<InputManager>();
         weapons = GetComponent<HeroWeapons>();
@@ -114,6 +111,8 @@ public class Hero : Character
     }
     public override void OnFire(bool isOver)
     {
+        if (state == states.DEAD || state == states.HITTED)
+            return;
         if (isOver)
         {
             LoopInFire();
@@ -130,6 +129,8 @@ public class Hero : Character
     }
     void LoopInFire()
     {
+        if (state == states.DEAD || state == states.HITTED)
+            return;
         Events.OnHeroHitted(id, 1);
         Invoke("LoopInFire", 0.2f);
     }

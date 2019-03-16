@@ -15323,26 +15323,33 @@ MonoBehaviour:
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 796d20f62f659934eae8d8af45e5f3ae, type: 2}
-    force: 5
+    force: 20
+    timeToReset: 0.2
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 08fef7735ec1ae84cbf9d706523c129f, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: ea6a58fd498a6d241993a4d4427f22f3, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 3
     animClip: {fileID: 7400000, guid: 94c40f0a7ed5e354eb5cffb70547f7d6, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 4
     animClip: {fileID: 7400000, guid: 08fef7735ec1ae84cbf9d706523c129f, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 5
     animClip: {fileID: 7400000, guid: f6fd8c59b8c07094c9520a1eb1aee46c, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 6
     animClip: {fileID: 7400000, guid: 67eeeacca17b4864593dfb972fb95e23, type: 2}
     force: 0
+    timeToReset: 0.2
 --- !u!114 &114773709220104118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20233,7 +20240,7 @@ Transform:
   m_GameObject: {fileID: 1668367363179814}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.67, y: 3.71, z: -5.96}
-  m_LocalScale: {x: 0.78, y: 0.78, z: 2}
+  m_LocalScale: {x: 4.55, y: 0.78, z: 2}
   m_Children: []
   m_Father: {fileID: 4310654943341872}
   m_RootOrder: 1

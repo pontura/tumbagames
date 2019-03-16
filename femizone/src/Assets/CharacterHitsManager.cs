@@ -42,7 +42,6 @@ public class CharacterHitsManager : MonoBehaviour {
 			return;
 		
 		CancelInvoke ();
-		print ("type " + type);
 
 		AttackStyle attackStyle = character.stats.GetAttackByType (type);
 		string clipName = attackStyle.animClip.name;
