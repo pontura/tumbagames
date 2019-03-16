@@ -74,10 +74,10 @@ MonoBehaviour:
   HorizontalDirection: 0
   stats: {fileID: 114676354775924872}
   hitsManager: {fileID: 0}
+  worldCamera: {fileID: 0}
   id: 3
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
-  worldCamera: {fileID: 0}
   move: {fileID: 0}
 --- !u!114 &114676354775924872
 MonoBehaviour:
