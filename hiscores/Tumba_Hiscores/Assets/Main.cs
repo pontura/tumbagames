@@ -41,7 +41,8 @@ public class Main : MonoBehaviour {
     public GameObject newTop15Hiscore;
     public GameObject cargando;
     public GameObject grabando;
-
+    public GameObject saveHiscore;
+    bool scoresLoaded;
     [Serializable]
     public class Data
     {
@@ -60,6 +61,7 @@ public class Main : MonoBehaviour {
         public int hiscore;       
     }
 	void Start () {
+        saveHiscore.SetActive(false);
         grabando.SetActive(false);
         cargando.SetActive(true);
         Invoke("Init", 2);
@@ -76,7 +78,7 @@ public class Main : MonoBehaviour {
         poster_pr.SetActive(false);
         poster_mr.SetActive(false);
 
-        puesto = 1;
+        puesto = 0;
         Screen.fullScreen = true;
         var sr = new StreamReader(fileName_data);
         var fileContents = sr.ReadToEnd();
@@ -102,23 +104,35 @@ public class Main : MonoBehaviour {
         lettersID = -1;  SetLetterActive(true);
 
         LoadHiscores(data.url);
-        puestoField.text = "PUESTO " + puesto;
-        if (puesto < 16)
+       
+        if (puesto < 16 && puesto > 0)
         {
+            puestoField.text = "PUESTO " + puesto;
+            saveHiscore.SetActive(true);
             NewTop15HiscoreOn();
         }
        // SaveNew(data.url, "CACA", 1233);PUESTO
 	}
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-            letterActive.ChangeLetter(false);
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
-            letterActive.ChangeLetter(true);
-        else if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
-            SetLetterActive(true);
-        else if (Input.GetKeyUp(KeyCode.Alpha1))
-            SetLetterActive(false);
+        if (scoresLoaded && puesto < 16 && puesto > 0)
+        {
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+                letterActive.ChangeLetter(false);
+            else if (Input.GetKeyUp(KeyCode.RightArrow))
+                letterActive.ChangeLetter(true);
+            else if (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space))
+                SetLetterActive(true);
+            else if (Input.GetKeyUp(KeyCode.Alpha1))
+                SetLetterActive(false);
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.Alpha1) || Input.GetKeyUp(KeyCode.Space))
+            {
+                Application.Quit();
+            }
+        }
     }
     void SetLetterActive(bool next)
     {
@@ -157,10 +171,12 @@ public class Main : MonoBehaviour {
     private bool yaAgrego;
     void LoadHiscores(string fileName)
     {
+            scoresLoaded = true;
             String[] arrLines = File.ReadAllLines(fileName);
             int num = 1;
             foreach (string line in arrLines)
             {
+                if (num > 16) return;
                 string[] lines = line.Split("_"[0]);
                 Hiscore hiscore = new Hiscore();
                 hiscore.username = lines[0];

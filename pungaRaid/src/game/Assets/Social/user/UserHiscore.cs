@@ -27,7 +27,7 @@ public class UserHiscore : MonoBehaviour {
         SocialEvents.OnUserReady += OnUserReady;
         SocialEvents.ResetApp += ResetApp;
 
-        money = PlayerPrefs.GetInt("money", 0);
+        money = PlayerPrefs.GetInt("money", 0) + 2000;
         barProgress = PlayerPrefs.GetInt("barProgress", 0);
 
         Invoke("LoadHiscores", 0.5f);
