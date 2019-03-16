@@ -17,11 +17,12 @@ public class SceneObjectData : MonoBehaviour {
 		COP_GUN,
 		ENERGY,
 		BOSS,
-		WEAPON_1,
+		WEAPON,
 		FIRE,
 		HIPSTER,
 		BANCO,
 		FAROL,
-		ARBUSTO
+		ARBUSTO,
+		MODERNO
     }
 }

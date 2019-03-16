@@ -374,6 +374,7 @@ MonoBehaviour:
   speed: 4
   defense: 1
   mana: 0
+  scoreByBeingHit: 60
   time_to_GoTo_Target: {x: 0.12, y: 0.6}
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15

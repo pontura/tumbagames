@@ -2,112 +2,163 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : Character {
+public class Hero : Character
+{
+    public int id;
+    private InputManager inputManager;
+    public WeaponPickable weaponPickable;
+    public HeroWeapons weapons;
+    Rigidbody rb;
+    int offsetMoveX = 10;
+    public HeroMove move;
 
-	public int id;
-	private InputManager inputManager;
-	public WeaponPickable weaponPickable;
-	public HeroWeapons weapons;
-	Rigidbody rb;
+    public override void OnStart()
+    {
+        move = GetComponent<HeroMove>();
+        inputManager = GetComponent<InputManager>();
+        weapons = GetComponent<HeroWeapons>();
+        rb = GetComponent<Rigidbody>();
 
-	public override void OnStart() {
-		inputManager = GetComponent<InputManager> ();
-		weapons = GetComponent<HeroWeapons> ();
-		rb = GetComponent<Rigidbody> ();
-	}
-	public override void OnUpdate () {
-		if (state == states.DEAD  || state == states.HITTING || state == states.HITTED)
-			return;
-		if ((inputManager.HorizontalDirection != 0 || inputManager.VerticalDirection != 0)) {			
-			if(state != states.WALK)
-				Walk ();
-		}
-		else if (state == states.WALK)
-			Idle ();
+        move.Init(this);
+    }
+    public void OnUpdateByInput(int HorizontalDirection, int VerticalDirection)
+    {
+        if (state == states.DEAD || state == states.HITTING || state == states.HITTED)
+            return;
+        if ((HorizontalDirection != 0 || VerticalDirection != 0))
+        {
+            move.ChekToMove(HorizontalDirection, VerticalDirection);
+            if (state != states.WALK)
+                Walk();
+        }
+        else if (state == states.WALK)
+            Idle();
 
-		ChekToMove ();
-		rb.velocity = Vector3.zero;
-	}
-	public override void Idle()
-	{
-		state = states.IDLE;
-		if(!weapons.HasWeapon())
-			anim.Play ("idle");
-		else 
-			anim.Play ("gun_idle");
-		OnIdle();
-	}
-	public override void Walk()
-	{
-		if (state == states.HITTING)
-			return;
-		state = states.WALK;
-		if(!weapons.HasWeapon())
-			anim.Play ("walk");
-		else 
-			anim.Play ("gun_walk");
-	}
-	void ChekToMove()
-	{
-		if (inputManager.HorizontalDirection < 0)
-			transform.localScale = new Vector3 (-1, 1, 1);
-		else if (inputManager.HorizontalDirection > 0)
-			transform.localScale = new Vector3 (1, 1, 1);
-		MoveTo (inputManager.HorizontalDirection, inputManager.VerticalDirection);
+        rb.velocity = Vector3.zero;
+    }
+    public override void Idle()
+    {
+        state = states.IDLE;
+        if (!weapons.HasWeapon())
+            anim.Play("idle");
+        else if (weapons.type == WeaponPickable.types.WEAPON1)
+            anim.Play("idle_gun");
+        else if (weapons.type == WeaponPickable.types.WEAPON2)
+            anim.Play("melee_idle");
+        OnIdle();
+        move.OnIdle();
+    }
+    public override void Walk()
+    {
+        if (state == states.HITTING)
+            return;
 
-	}
-	public override void OnReceiveHit(HitArea hitArea, float force)
-	{
-		print ("hitted " + force + " state:  " + state);
-		if (state == states.DEAD  || state == states.HITTED)
-			return;
-		
-		if (state == states.DEFENDING) {
-			force /= 2;
-		} else {
-			string hitName = "hit_punch_front";
+        state = states.WALK;
+        if (move.type == HeroMove.types.NORMAL)
+        {
+            if (!weapons.HasWeapon())
+                anim.Play("walk");
+            else if (weapons.type == WeaponPickable.types.WEAPON1)
+                anim.Play("gun_walk");
+            else if (weapons.type == WeaponPickable.types.WEAPON2)
+                anim.Play("melee_walk");
+        }
+        else
+        {
+            if (!weapons.HasWeapon())
+                anim.Play("run");
+            else if (weapons.type == WeaponPickable.types.WEAPON1)
+                anim.Play("gun_run");
+            else if (weapons.type == WeaponPickable.types.WEAPON2)
+                anim.Play("melee_run");
+        }
+    }
+    public override void OnReceiveHit(HitArea hitArea, float force)
+    {
+        move.ResetMove();
+        if (state == states.DEAD || state == states.HITTED)
+            return;
 
-			switch (hitArea.type) {
-			case CharacterHitsManager.types.HIT_FORWARD:
-				hitName = "hit_punch_front";
-				break;
-			case CharacterHitsManager.types.KICK_BACK:
-				hitName = "hit_punch_back";
-				break;
-			case CharacterHitsManager.types.HIT_BACK:
-				hitName = "hit_punch_back";
-				break;
-			case CharacterHitsManager.types.HIT_UPPER:
-				hitName = "hit_upper_front";
-				break;
-			}
-			state = states.HITTED;
-			anim.Play (hitName);
-			Invoke ("GotoIdleAfterBeingHitted", stats.mana);
-		}
+        if (state == states.DEFENDING)
+        {
+            force /= 2;
+        }
+        else
+        {
+            string hitName = "hit_punch_front";
 
-		Events.OnHeroHitted (id, (force*2)/stats.defense);
-	}
-	public override void OnDie ()
-	{
-		base.OnDie ();
-		CancelInvoke ();
-	}
-	void GotoIdleAfterBeingHitted()
-	{
-		if (state == states.DEAD)
-			return;
-		Idle ();
-	}
-	public void IsOverPickable(WeaponPickable _weaponPickable)
-	{
-		weaponPickable = _weaponPickable;
-	}
-	public void OnPick() 
-	{
-		anim.Play ("pick_gun");
-		weapons.GetWeapon (weaponPickable.type);
-		weaponPickable.GotIt();
-		weaponPickable = null;
-	}
+            switch (hitArea.type)
+            {
+                case CharacterHitsManager.types.HIT_FORWARD:
+                    hitName = "hit_punch_front";
+                    break;
+                case CharacterHitsManager.types.KICK_BACK:
+                    hitName = "hit_punch_back";
+                    break;
+                case CharacterHitsManager.types.HIT_BACK:
+                    hitName = "hit_punch_back";
+                    break;
+                case CharacterHitsManager.types.HIT_UPPER:
+                    hitName = "hit_upper_front";
+                    break;
+            }
+            state = states.HITTED;
+            anim.Play(hitName);
+            Invoke("GotoIdleAfterBeingHitted", stats.mana);
+        }
+
+        Events.OnHeroHitted(id, (force * 2) / stats.defense);
+    }
+    public override void OnFire(bool isOver)
+    {
+        if (state == states.DEAD || state == states.HITTED)
+            return;
+        if (isOver)
+        {
+            LoopInFire();
+            foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+                sr.color = Color.red;
+        }
+        else
+        {
+            CancelInvoke();
+            foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+                sr.color = Color.white;
+        }
+
+    }
+    void LoopInFire()
+    {
+        if (state == states.DEAD || state == states.HITTED)
+            return;
+        Events.OnHeroHitted(id, 1);
+        Invoke("LoopInFire", 0.2f);
+    }
+    public override void OnDie()
+    {
+        base.OnDie();
+        rb.isKinematic = true;
+        GetComponent<Collider>().enabled = false;
+        CancelInvoke();
+    }
+    void GotoIdleAfterBeingHitted()
+    {
+        if (state == states.DEAD)
+            return;
+        Idle();
+    }
+    public void IsOverPickable(WeaponPickable _weaponPickable)
+    {
+        weaponPickable = _weaponPickable;
+    }
+    public void OnPick()
+    {
+        weapons.GetWeapon(weaponPickable);
+        if (weaponPickable.type == WeaponPickable.types.WEAPON1)
+            anim.Play("pick_gun");
+        else if (weaponPickable.type == WeaponPickable.types.WEAPON2)
+            anim.Play("pick_melee");
+        weaponPickable.GotIt();
+        weaponPickable = null;
+    }
 }

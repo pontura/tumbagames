@@ -5304,6 +5304,7 @@ MonoBehaviour:
   speed: 4
   defense: 1
   mana: 0
+  scoreByBeingHit: 80
   time_to_GoTo_Target: {x: 0.05, y: 0.25}
   time_to_Punch: {x: 0.05, y: 0.25}
   hittedPower: 40
@@ -5311,26 +5312,33 @@ MonoBehaviour:
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 356d2e660734d644fb2ede96f70f8385, type: 2}
-    force: 5
+    force: 50
+    timeToReset: 0.2
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 08fef7735ec1ae84cbf9d706523c129f, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: ea6a58fd498a6d241993a4d4427f22f3, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 3
     animClip: {fileID: 7400000, guid: 94c40f0a7ed5e354eb5cffb70547f7d6, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 4
     animClip: {fileID: 7400000, guid: 08fef7735ec1ae84cbf9d706523c129f, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 5
     animClip: {fileID: 7400000, guid: f6fd8c59b8c07094c9520a1eb1aee46c, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 6
     animClip: {fileID: 7400000, guid: 67eeeacca17b4864593dfb972fb95e23, type: 2}
     force: 0
+    timeToReset: 0.2
 --- !u!95 &95273157436302352
 Animator:
   serializedVersion: 3

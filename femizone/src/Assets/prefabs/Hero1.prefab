@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 135736350858664410}
   - component: {fileID: 54236877402612652}
   - component: {fileID: 114466762823592298}
+  - component: {fileID: 601811003445080524}
   m_Layer: 0
   m_Name: Hero1
   m_TagString: Untagged
@@ -52,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalDirection: 0
   VerticalDirection: 0
+  combo: 
+  buttonsID: 
 --- !u!114 &114399287392630978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +77,8 @@ MonoBehaviour:
   id: 1
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
+  worldCamera: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &114461472510602836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +97,7 @@ MonoBehaviour:
   speed: 0
   defense: 3
   mana: 0.55
+  scoreByBeingHit: 50
   time_to_GoTo_Target: {x: 0.2, y: 1.5}
   time_to_Punch: {x: 0.2, y: 2}
   hittedPower: 10
@@ -100,27 +106,43 @@ MonoBehaviour:
   - type: 1
     animClip: {fileID: 7400000, guid: 293925f9338ece04787d88f46c769a10, type: 2}
     force: 6
+    timeToReset: 0.2
   - type: 1
     animClip: {fileID: 7400000, guid: 1667d108ace2a20458d7b510b6d3cb11, type: 2}
     force: 6
+    timeToReset: 0.2
   - type: 3
     animClip: {fileID: 7400000, guid: 8b6be769ae923414f9d53a4f79344960, type: 2}
     force: 6
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: e344dba6dbfc38242bbcc33840157757, type: 2}
     force: 8
+    timeToReset: 0.2
   - type: 4
     animClip: {fileID: 7400000, guid: 8fa9867a48a9fc44098a1077315adb27, type: 2}
     force: 5
+    timeToReset: 0.2
   - type: 5
     animClip: {fileID: 7400000, guid: c3ca5dc797ba4114fa358a4cf5c5bcc3, type: 2}
     force: 6
+    timeToReset: 0.2
   - type: 6
     animClip: {fileID: 7400000, guid: f455bf6b2af534544819be1f81db81e2, type: 2}
     force: 5
+    timeToReset: 0.2
   - type: 7
     animClip: {fileID: 7400000, guid: dc59865a5258f6e4f9cc05771c642b77, type: 2}
-    force: 20
+    force: 25
+    timeToReset: 0.2
+  - type: 8
+    animClip: {fileID: 7400000, guid: c9273363976f80e47a3e55c4e3f46d57, type: 2}
+    force: 16
+    timeToReset: 0.2
+  - type: 9
+    animClip: {fileID: 7400000, guid: 3ffe159ba028c354590fd55dc8e62b9d, type: 2}
+    force: 12
+    timeToReset: 0.8
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -146,7 +168,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.4
   m_Center: {x: 0, y: 0.44, z: 0}
 --- !u!54 &54236877402612652
 Rigidbody:
@@ -178,6 +200,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   totalUses: 0
+--- !u!114 &601811003445080524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e30fc0d59f02f241b77818dfe720483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &8341576576336515105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,11 +273,6 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 7608950241323683670, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character

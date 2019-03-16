@@ -6,6 +6,7 @@ public class UI : MonoBehaviour {
 
 	static UI mInstance = null;
 	public UIProgressBarManager progressBarManager;
+	public MainHiscores mainHiscores;
 
 	public static UI Instance
 	{
@@ -24,5 +25,6 @@ public class UI : MonoBehaviour {
 			return;
 		}
 		progressBarManager = GetComponent<UIProgressBarManager> ();
+		mainHiscores = GetComponent<MainHiscores>();
 	}
 }

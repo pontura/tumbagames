@@ -9,5 +9,6 @@ public class AttackStyle {
 	public CharacterHitsManager.types type;
 	public AnimationClip animClip;
 	public int force;
+	public float timeToReset = 0.2f;
 
 }

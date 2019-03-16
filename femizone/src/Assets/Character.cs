@@ -13,7 +13,7 @@ public class Character : SceneObject {
 	public CharacterHitsManager hitsManager;
 	private Vector2 limits_Z;
 	private int limit_to_walk;
-	WorldCamera worldCamera;
+	public WorldCamera worldCamera;
 
 	public enum states
 	{
@@ -53,6 +53,8 @@ public class Character : SceneObject {
 	}
 	public void MoveTo(int horizontal, int vertical)
 	{
+		if(horizontal ==0 && vertical == 0)
+			return;
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
 		pos = CheckPositionPosible (pos);
@@ -102,6 +104,11 @@ public class Character : SceneObject {
 		state = states.DEFENDING;
 		anim.Play ("defense");
 	}
+	public void OnSpecial1()
+	{
+		state = states.HITTING;
+		anim.Play ("special1");
+	}
 	public void Attack()
 	{
 		state = states.HITTING;
@@ -115,6 +122,7 @@ public class Character : SceneObject {
 		}
 		OnReceiveHit (hitArea,force);
 	}
+	public virtual void OnFire(bool isOver) { }
 	public virtual void OnDie() { }
 	public virtual void OnIdle() { }
 	public virtual void OnAttack() { }

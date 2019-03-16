@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterUI : MonoBehaviour {
 	
+	public int score;
 	public states state;
 	public enum states
 	{
@@ -24,6 +25,7 @@ public class CharacterUI : MonoBehaviour {
 	void Start()
 	{
 		state = states.WAITING;
+		SetScore(0);
 		SetState (state);
 	}
 	public void SetState(states _state)
@@ -68,5 +70,19 @@ public class CharacterUI : MonoBehaviour {
 			Events.OnHeroDie (id);
 		} 
 		bar.fillAmount = ((float)life)/(float)Data.Instance.settings.totalLife;
+	}
+	public void SetScore(int value)
+	{
+		score += value;
+		string s = score.ToString();
+		if(score<10)
+		s = "0000" + score;
+		else if(score<100)
+		s = "000" + score;
+		else if(score<1000)
+		s = "00" + score;
+		else if(score<10000)
+		s = "0" + score;
+		scoreField.text = s;
 	}
 }

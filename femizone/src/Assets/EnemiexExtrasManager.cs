@@ -53,7 +53,15 @@ public class EnemiexExtrasManager : MonoBehaviour
 		}
 
 		SceneObjectData data = new SceneObjectData ();
-		data.type = SceneObjectData.types.WARNES_MAN;
+		int rand = Random.Range(0,10);
+
+		if(rand<5)
+			data.type = SceneObjectData.types.WARNES_MAN;
+		else if(rand<7)
+			data.type = SceneObjectData.types.CEO;
+		else
+			data.type = SceneObjectData.types.MODERNO;
+		
 		Vector3 pos = World.Instance.worldCamera.transform.position;
 
 		if(Random.Range(0,10)<5)

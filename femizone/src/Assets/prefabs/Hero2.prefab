@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 54267127698252930}
   - component: {fileID: 114162742909864940}
   - component: {fileID: 135285378232476650}
+  - component: {fileID: 4251275893454635780}
   m_Layer: 0
   m_Name: Hero2
   m_TagString: Untagged
@@ -52,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HorizontalDirection: 0
   VerticalDirection: 0
+  combo: 
+  buttonsID: 
 --- !u!114 &114626248156638434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +77,8 @@ MonoBehaviour:
   id: 2
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
+  worldCamera: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &114059951849104330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +97,7 @@ MonoBehaviour:
   speed: 0
   defense: 4
   mana: 0.7
+  scoreByBeingHit: 50
   time_to_GoTo_Target: {x: 0.2, y: 1.5}
   time_to_Punch: {x: 0.2, y: 2}
   hittedPower: 10
@@ -100,27 +106,39 @@ MonoBehaviour:
   - type: 1
     animClip: {fileID: 7400000, guid: 1f163ac04dcb3b84c8b4ae428643e966, type: 2}
     force: 7
+    timeToReset: 0.2
   - type: 1
     animClip: {fileID: 7400000, guid: a7d6e1e1f7052154fb4583eb8c47bcd0, type: 2}
     force: 7
+    timeToReset: 0.2
   - type: 3
     animClip: {fileID: 7400000, guid: e20ef46ac397ed54f91e202b4c54b9f4, type: 2}
     force: 8
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: fb7845ca61b78bd428c06e723340d7c8, type: 2}
     force: 8
+    timeToReset: 0.2
   - type: 4
     animClip: {fileID: 7400000, guid: 18370ee3c899392479a1724650642cad, type: 2}
     force: 7
+    timeToReset: 0.2
   - type: 5
     animClip: {fileID: 7400000, guid: 6db4850e54e4e174d9363f2b8597ab98, type: 2}
     force: 8
+    timeToReset: 0.2
   - type: 6
     animClip: {fileID: 7400000, guid: 18370ee3c899392479a1724650642cad, type: 2}
     force: 7
+    timeToReset: 0.2
   - type: 7
     animClip: {fileID: 7400000, guid: 798c4ad8be5668049abd3f5a1d0687a6, type: 2}
-    force: 20
+    force: 25
+    timeToReset: 0.2
+  - type: 8
+    animClip: {fileID: 7400000, guid: d33c296287beb5c449edbb7015068b2c, type: 2}
+    force: 16
+    timeToReset: 0.2
   receivedAttacks: []
 --- !u!114 &114427765078039442
 MonoBehaviour:
@@ -176,8 +194,21 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.4
   m_Center: {x: 0, y: 0.44, z: 0}
+--- !u!114 &4251275893454635780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826638190532688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e30fc0d59f02f241b77818dfe720483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &8028809885610145967
 PrefabInstance:
   m_ObjectHideFlags: 0

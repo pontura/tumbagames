@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 65878747366268102}
   - component: {fileID: 114211874702408334}
   m_Layer: 0
-  m_Name: weapon_1
+  m_Name: weapon_melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f406062d5262b834b84048086c5faf57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
+  uses: 10
 --- !u!1 &8137429478467535297
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 2793255881076665366}
   - component: {fileID: 3534550750786910023}
   m_Layer: 0
-  m_Name: chumbo
+  m_Name: MELE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 22ffa84d8dae23a44b3d24f137aded1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b2b9e844d3ba98419a73992ea4cf0bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
