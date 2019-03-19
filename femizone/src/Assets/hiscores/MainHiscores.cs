@@ -20,12 +20,8 @@ public class MainHiscores : MonoBehaviour
     public LeterChanger letterActive;
     public int puesto;
 
-
-
     public List<Hiscore> arrengedHiscores;
     public List<Hiscore> hiscores;
-
-    bool done;
 
     public CharactersUI charactersUI;
     public int playerID;
@@ -43,8 +39,11 @@ public class MainHiscores : MonoBehaviour
     {
         OFF,
         ADDING_NEW,
+        SAVING,
         DONE
     }
+    public AvatarFaceCreator avatarFaceCreator;
+
     void Start()
     {
         panel.SetActive(false);
@@ -64,7 +63,9 @@ public class MainHiscores : MonoBehaviour
         if (characterUI.score > Data.Instance.arcadeRanking.all[0].hiscore)
         {
             Init();
-        }else{
+        }
+        else
+        {
             yield return new WaitForSeconds(2);
             state = states.DONE;
         }
@@ -74,8 +75,7 @@ public class MainHiscores : MonoBehaviour
         World.Instance.OnRestart();
         state = states.OFF;
 
-        Events.OnKeyPress -= OnKeyPress;
-        Events.OnAxisChange -= OnAxisChange;
+        OnDestroy();
     }
     void OnDestroy()
     {
@@ -83,7 +83,8 @@ public class MainHiscores : MonoBehaviour
         Events.OnAxisChange -= OnAxisChange;
     }
     void Init()
-    {        
+    {
+        avatarFaceCreator.Init(playerID);
         LoadHiscores(Data.Instance.arcadeRanking.path);
 
         state = states.ADDING_NEW;
@@ -96,8 +97,6 @@ public class MainHiscores : MonoBehaviour
 
 
         _hiscore = characterUI.score;
-
-        done = false;
 
         puesto = 1;
         Screen.fullScreen = true;
@@ -112,11 +111,16 @@ public class MainHiscores : MonoBehaviour
         letters[0].SetActivate(true);
         letters[0].GetComponent<Animation>().Play("letterOn");
     }
+    float lastChangeTime;
     void OnAxisChange(int _playerID, int value)
     {
         if (playerID != _playerID)
             return;
-        if (value < 1)
+
+        if (Time.time < lastChangeTime + 0.3f)
+            return;
+        lastChangeTime = Time.time;
+        if (value > 0)
             letterActive.ChangeLetter(false);
         else
             letterActive.ChangeLetter(true);
@@ -200,12 +204,11 @@ public class MainHiscores : MonoBehaviour
         }
     }
     void Save()
-    {
+    {       
 
-        if (done)
+        if (state == states.SAVING)
             return;
-
-        done = true;
+         state = states.SAVING;
 
         string username = "";
         foreach (LeterChanger letterChanger in letters)
@@ -237,8 +240,13 @@ public class MainHiscores : MonoBehaviour
     }
     void grabaEnd()
     {
-        state = states.DONE;
+        Invoke("DelayedSaved", 2);
         Events.RefreshHiscores();
+        panel.SetActive(false);        
+    }
+    void DelayedSaved()
+    {
+        state = states.DONE;
     }
     List<Hiscore> OrderByHiscore(List<Hiscore> hs)
     {

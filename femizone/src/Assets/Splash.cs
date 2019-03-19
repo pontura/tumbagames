@@ -19,18 +19,29 @@ public class Splash : MonoBehaviour {
     public List<Hiscore> hiscores;
 	//public Camera cam;
 	public ScoreLine scoreLine;
+    bool isReady;
+    String[] arrLines;
 
-	void Start () {
-		 Events.OnKeyPress += OnKeyPress;	
-		// LoopCameraColors();	
-		LoadHiscores(Data.Instance.arcadeRanking.path);
+	void Start () {		 		
+        StartCoroutine(Delays());
 	}
+    IEnumerator Delays()
+    {
+        yield return new WaitForSeconds(0.25f);
+        arrLines = File.ReadAllLines(Data.Instance.arcadeRanking.path);
+        yield return new WaitForSeconds(1);
+        LoadHiscores(Data.Instance.arcadeRanking.path);
+        yield return new WaitForSeconds(2);
+        Events.OnKeyPress += OnKeyPress;	
+        isReady = true;
+    }
 	void OnDestroy () {
 		 Events.OnKeyPress -= OnKeyPress;		
 	}
 	void OnKeyPress(int a)
 	{
-		SceneManager.LoadScene("Game");
+        if(isReady)
+		    SceneManager.LoadScene("Game");
 	}
 	/* void LoopCameraColors()
 	{
@@ -42,7 +53,7 @@ public class Splash : MonoBehaviour {
 	} */
 	 void LoadHiscores(string fileName)
     {
-        String[] arrLines = File.ReadAllLines(fileName);
+       
         int num = 1;
         foreach (string line in arrLines)
         {
