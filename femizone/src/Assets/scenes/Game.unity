@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 158, y: 98}
+  resolution: {x: 274, y: 154}
   pixelSize: 7
   dither: 0.15
   opacity: 1
@@ -3633,13 +3633,9 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 1
   - all:
-    - {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3, type: 3}
-    - {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df, type: 3}
-    total: 1
-  - all:
-    - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
-    - {fileID: 5045129668361686577, guid: 1e281a3729828264cbfdb374ec6f2d2a, type: 3}
-    - {fileID: 114169596687558326, guid: 6436e9df977747d4286e79c35cc5aa01, type: 3}
+    - {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece, type: 3}
+    - {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989, type: 3}
+    - {fileID: 5045129668361686577, guid: d0d87b9bdc3305048b08bb339fa51613, type: 3}
     total: 2
   - all:
     - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
@@ -3648,6 +3644,9 @@ MonoBehaviour:
     - {fileID: 114652140778638348, guid: e54bb61cc3f3b224bbc3a567a0451d7f, type: 3}
     - {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a, type: 3}
     - {fileID: 114651090706524686, guid: ce9ce53d830e6fb48bbf8e2118b4a4f9, type: 3}
+    - {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989, type: 3}
+    - {fileID: 5045129668361686577, guid: 85b7653287934f64281b5e19f47a9aa0, type: 3}
+    - {fileID: 5045129668361686577, guid: 34c007014e201cd498853158fd782f29, type: 3}
     total: 2
   - all:
     - {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f, type: 3}
@@ -3658,6 +3657,10 @@ MonoBehaviour:
     - {fileID: 114652140778638348, guid: 4b25db180178a0b40a5845536fc969a8, type: 3}
     - {fileID: 114169596687558326, guid: 823d61ed0e2ec6b4fbb806eb8b018e08, type: 3}
     - {fileID: 114120519703974376, guid: 21d64d9c35770584c9b665839549ec89, type: 3}
+    total: 1
+  - all:
+    - {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3, type: 3}
+    - {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df, type: 3}
     total: 1
   - all:
     - {fileID: 114365795418882454, guid: 724013791808b694ea014abe9c6f6a81, type: 3}
@@ -3676,7 +3679,8 @@ MonoBehaviour:
     - {fileID: 114147816371024642, guid: 8e503f12dcbe01343a8f3287521ffa20, type: 3}
     - {fileID: 2418968211494619019, guid: 00c80db912be6dd498493fbb91102990, type: 3}
     - {fileID: 2418968211494619019, guid: c90bdeb65a537934ab44e65cfc40bba4, type: 3}
-    total: 10
+    - {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128, type: 3}
+    total: 100
   all: []
 --- !u!114 &1571614648
 MonoBehaviour:
@@ -4711,7 +4715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 1110, y: 686}
+  resolution: {x: 1920, y: 1080}
   pixelSize: 1
   dither: 0.15
   opacity: 1

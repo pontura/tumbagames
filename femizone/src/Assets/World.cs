@@ -54,6 +54,8 @@ public class World : MonoBehaviour
     public void GameOver()
     {
         timeGameOver = Time.time;
+        if(timeGameOver == 1)
+            this.timeGameOver = 0;
         gameOver.SetActive(true);
         state = states.GAME_OVER;
 		UI.Instance.mainHiscores.GameOver();

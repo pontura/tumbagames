@@ -69,11 +69,12 @@ public class InputManager : MonoBehaviour
         else
      if (Input.GetButtonDown("Kick" + hero.id))
         {
-            if (CheckForSpecialAttack(2))
-            {
-                OnAttack(CharacterHitsManager.types.SPECIAL);
-            }
-            else if (justTurnedHorizontal)
+            //if (CheckForSpecialAttack(2))
+            //{
+            //    OnAttack(CharacterHitsManager.types.SPECIAL);
+            //}
+            //else 
+            if (justTurnedHorizontal)
                 OnAttack(CharacterHitsManager.types.KICK_BACK);
             else if (justForwardHorizontal)
                 OnAttack(CharacterHitsManager.types.KICK_FOWARD);

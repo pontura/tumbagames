@@ -75,6 +75,7 @@ public class Enemy : Character {
 	}
 	public override void OnReceiveHit(HitArea hitArea, float force)
 	{
+        print("OnReceiveHit ");
 		if (ia == null)
 			return;
 		

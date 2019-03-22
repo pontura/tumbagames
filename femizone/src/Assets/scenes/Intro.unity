@@ -50069,8 +50069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 158, y: 98}
-  pixelSize: 7
+  resolution: {x: 147, y: 83}
+  pixelSize: 13
   dither: 0.15
   opacity: 1
   colormap: {fileID: 11400000, guid: 30a8ec7f3ca3cfd478eff58fb3b47652, type: 2}

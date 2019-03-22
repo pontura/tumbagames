@@ -5173,6 +5173,7 @@ MonoBehaviour:
   speed: 4
   defense: 1
   mana: 0
+  scoreByBeingHit: 50
   time_to_GoTo_Target: {x: 0.12, y: 0.6}
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15
@@ -5181,13 +5182,16 @@ MonoBehaviour:
   - type: 4
     animClip: {fileID: 7400000, guid: 104055a4bbc0cb042ab94aec4eaa7c4c, type: 2}
     force: 100
+    timeToReset: 0.2
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 46e459412036ca042a0ad40d114437f2, type: 2}
     force: 0
+    timeToReset: 0.2
   - type: 2
     animClip: {fileID: 7400000, guid: 0d46458137883424ca4c847b6cc53d23, type: 2}
     force: 0
+    timeToReset: 0.2
 --- !u!114 &114500042910892150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5219,7 +5223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance_to_active: 10
-  state: 0
+  state: 1
 --- !u!1 &1239914962902258
 GameObject:
   m_ObjectHideFlags: 0
@@ -24858,7 +24862,7 @@ Transform:
   m_GameObject: {fileID: 1600003485112476}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94129634, y: 0.9412963, z: 3.620371}
+  m_LocalScale: {x: 0.13, y: 0.9412963, z: 3.620371}
   m_Children: []
   m_Father: {fileID: 4916888072908676}
   m_RootOrder: 1

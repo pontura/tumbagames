@@ -66,9 +66,9 @@ public class HeroMove : MonoBehaviour
         float lastTimeWalkDiff = Time.time - lastTimeWalk;
         lastTimeWalk = Time.time;
 
-        if (lastTimeWalkDiff < delayToRun)
-            ChangeType(types.RUN);
-        else
+       // if (lastTimeWalkDiff < delayToRun)
+         //   ChangeType(types.RUN);
+       // else
             ChangeType(types.NORMAL);
     }
     public void OnIdle()
