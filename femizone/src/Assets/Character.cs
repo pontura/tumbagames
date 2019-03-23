@@ -120,7 +120,7 @@ public class Character : SceneObject {
 		if (state == states.DEFENDING) {
 			_hittedPower /= 4;
 		}
-		OnReceiveHit (hitArea,force);
+        OnReceiveHit (hitArea,force);
 	}
 	public virtual void OnFire(bool isOver) { }
 	public virtual void OnDie() { }

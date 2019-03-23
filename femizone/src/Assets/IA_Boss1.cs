@@ -12,7 +12,7 @@ public class IA_Boss1 : IA {
 	public float startPosX;
 
 	public override void OnInit() {
-		//enemy.Idle ();
+		enemy.Idle ();
 	}
 	void ToLeft()
 	{
@@ -35,7 +35,6 @@ public class IA_Boss1 : IA {
 	}
 	public enum Boss1_states
 	{
-        SLEEP,
 		IDLE,
 		TO_LEFT,
 		TO_RIGHT,
@@ -49,7 +48,7 @@ public class IA_Boss1 : IA {
 	}
 	void Update()
 	{
-		if (boss1_states == Boss1_states.SLEEP || boss1_states == Boss1_states.IDLE)
+		if (boss1_states == Boss1_states.IDLE)
 			return;
 		
 		Vector3 pos = enemy.transform.position;

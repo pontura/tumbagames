@@ -79,10 +79,12 @@ public class EnemiexExtrasManager : MonoBehaviour
 	}
 	void Delayed()
 	{
-		if (enemy != null && World.Instance.state == World.states.FIGHTING) {
+        print("Delayed");
+        if (enemy != null && World.Instance.state != World.states.GAME_OVER) {
 			Events.OnMansPlaining (enemy, false);
 			HitArea ha = GetComponent<HeroesManager> ().all [0].hitsManager.hitArea;
 			enemy.ReceiveHit (ha, 1);
-		}
+           
+        }
 	}
 }
