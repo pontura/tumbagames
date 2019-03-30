@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class World : MonoBehaviour
 {
@@ -42,7 +41,7 @@ public class World : MonoBehaviour
 	}
     public void OnRestart()
     {
-        SceneManager.LoadScene("Intro");
+        Data.Instance.LoadScene("Intro");
     }
     public int newXLimit;
     public void LevelClear()
@@ -59,6 +58,7 @@ public class World : MonoBehaviour
         gameOver.SetActive(true);
         state = states.GAME_OVER;
 		UI.Instance.mainHiscores.GameOver();
+        Events.GameOver();
         //SceneManager.LoadScene ("Summary");
     }
     void Update()

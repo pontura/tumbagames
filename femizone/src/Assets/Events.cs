@@ -22,6 +22,7 @@ public static class Events
 
     public static System.Action<int, float> OnHeroHitted = delegate { };
 
+    public static System.Action<string> OnChangeScene = delegate { };
     public static System.Action<int> AddHero = delegate { };
 
     public static System.Action<int> OnHeroDie = delegate { };

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Summary : MonoBehaviour {
 
@@ -11,6 +10,6 @@ public class Summary : MonoBehaviour {
 	}
 	
 	void Done () {
-		SceneManager.LoadScene ("Intro");
+		Data.Instance.LoadScene ("Intro");
 	}
 }

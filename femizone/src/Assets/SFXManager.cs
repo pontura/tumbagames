@@ -5,14 +5,22 @@ using System;
 
 public class SFXManager : MonoBehaviour {
 
-	public AudioClips punch;
+    
+    public AudioClips punch;
 	public AudioClips kick;
 	public AudioClips balls_hit;
 	public AudioClips punches_hit;
 	public AudioClips hits;
 	public AudioClips mansplaining;
+    public AudioclipsUI audioclipsUI;
 
-	[Serializable]
+    [Serializable]
+    public class AudioclipsUI
+    {
+        public AudioClip insertCoin;
+    }
+
+        [Serializable]
 	public class AudioClips
 	{
 		public AudioClip[] hero;
@@ -21,7 +29,8 @@ public class SFXManager : MonoBehaviour {
 		public AudioClip[] pussy;
 	}
 
-	public AudioSource AudioS_punches;
+    public AudioSource uiAudioSource;
+    public AudioSource AudioS_punches;
 	public AudioSource AudioS_kicks;
 	public AudioSource AudioS_hit_balls;
 	public AudioSource AudioS_hit_punches;
@@ -40,14 +49,41 @@ public class SFXManager : MonoBehaviour {
 		Events.OnAttack += OnAttack;
 		Events.OnReceiveit += OnReceiveit;
 		Events.OnMansPlaining += OnMansPlaining;
-	}
+        Events.GameOver += GameOver;
+        Events.AddHero += AddHero;
+        Loop();
+
+    }
 	void OnDestroy()
 	{
 		Events.OnAttack -= OnAttack;
 		Events.OnReceiveit -= OnReceiveit;
 		Events.OnMansPlaining -= OnMansPlaining;
-	}
-	void Update()
+        Events.GameOver -= GameOver;
+        Events.AddHero -= AddHero;
+    }
+    void AddHero(int id)
+    {
+        uiAudioSource.clip = audioclipsUI.insertCoin;
+        uiAudioSource.Play();
+    }
+    void Loop()
+    {
+        Invoke("Loop", 1);
+        AdjustVolume();
+    }
+    void GameOver()
+    {
+        print("GameOver audios: " + clipsByCharacter.Count);
+        foreach (ClipByCharacter c in clipsByCharacter)
+        {
+            c.audioSource.Stop();
+            Destroy(c.audioSource);
+        }
+        clipsByCharacter.Clear();
+    }
+
+    void AdjustVolume()
 	{
 		if (clipsByCharacter.Count == 0)
 			return;

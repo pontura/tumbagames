@@ -19,7 +19,6 @@ public class HeroesManager : MonoBehaviour {
 
 	public void AddHero(int characterID)
 	{
-		print ("#add" + characterID);
 		Hero hero;
 		switch (characterID) {
 		case 1:

@@ -34,6 +34,7 @@ public class Data : MonoBehaviour
     public string currentLevel;
     public void LoadScene(string aLevelName)
     {
+        Events.OnChangeScene(aLevelName);
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
         SceneManager.LoadScene(aLevelName);

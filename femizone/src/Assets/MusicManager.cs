@@ -13,61 +13,81 @@ public class MusicManager : MonoBehaviour {
        
 	void Start()
 	{
-		Events.OnMansPlaining += OnMansPlaining;
-		Events.OnStageClear += OnStageClear;
+		
+        
 
-		audioSource = gameObject.AddComponent<AudioSource> ();
+        audioSource = gameObject.AddComponent<AudioSource> ();
 
 		OnStageClear ();
-	}
+        OnChangeScene("Intro");
+
+    }
 	void OnMansPlaining(Character c, bool isOn)
 	{
-		if (!isOn) {
+		if (!isOn && audioSource.clip != musicHard) {
 			audioSource.clip = musicHard;		
 			audioSource.Play ();
 		}
 	}
 	void OnStageClear()
 	{
-		audioSource.clip = musicCalm;		
-		audioSource.Play ();
+        if (audioSource.clip != musicCalm)
+        {
+            audioSource.clip = musicCalm;
+            audioSource.Play();
+        }
 	}
 	public void Init () {
 
-
         OnMusicVolumeChanged(volume);
 
+        Events.OnMansPlaining += OnMansPlaining;
+        Events.OnStageClear += OnStageClear;
         Events.OnGamePaused += OnGamePaused;
         Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
-      //  Events.OnMusicChange += OnMusicChange;
         Events.OnMusicOff += OnMusicOff;
-	}
+        Events.GameOver += GameOver;
+        Events.OnChangeScene += OnChangeScene;
+        Events.AddHero += AddHero;
+    }
     void OnDestroy()
     {
 		Events.OnMansPlaining -= OnMansPlaining;
 		Events.OnStageClear -= OnStageClear;
-
         Events.OnGamePaused -= OnGamePaused;
         Events.OnMusicVolumeChanged -= OnMusicVolumeChanged;
-     //   Events.OnMusicChange -= OnMusicChange;
         Events.OnMusicOff -= OnMusicOff;
+        Events.GameOver -= GameOver;
+        Events.OnChangeScene -= OnChangeScene;
+        Events.AddHero -= AddHero;
+    }
+    void AddHero(int id)
+    {
+        if (audioSource.pitch == 1)
+            return;
+
+        audioSource.pitch = 1;
+        audioSource.Play();
+    }
+    void GameOver()
+    {
+        audioSource.pitch = 1.5f;
+    }
+    void OnChangeScene(string sceneName)
+    {
+        switch(sceneName)
+        {
+            case "Intro":
+                audioSource.pitch = 0.2f;
+                break;
+        }
+        
     }
     public void OnMusicOff(bool off)
     {
 		audioSource.Stop ();
+        audioSource.pitch = 1;
     }
-//    void OnMusicChange(string soundName)
-//    {
-//        if (soundName == "") audioSource.Stop();
-//        if (audioSource.clip && audioSource.clip.name == soundName) return;
-//        audioSource.clip = Resources.Load("sonidos/" + soundName) as AudioClip;
-//        audioSource.Play();
-//
-//        if (soundName == "victoryMusic" || soundName == "gameOverTemp")
-//            audioSource.loop = false;
-//        else
-//            audioSource.loop = true;
-//    }
     void OnSoundsFadeTo(float to)
     {
         if (to > 0) to = volume;

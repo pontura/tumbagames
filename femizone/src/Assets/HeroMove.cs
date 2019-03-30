@@ -55,7 +55,6 @@ public class HeroMove : MonoBehaviour
     }
     void CheckIfRecenter()
     {
-        print("CheckIfRecenter");
         if (transform.localPosition.x < hero.worldCamera.transform.localPosition.x - offsetMoveX)
             transform.localPosition = new Vector3(hero.worldCamera.transform.localPosition.x - offsetMoveX, transform.localPosition.y, transform.localPosition.z);
         else if (transform.localPosition.x > hero.worldCamera.transform.localPosition.x + offsetMoveX)
@@ -66,9 +65,9 @@ public class HeroMove : MonoBehaviour
         float lastTimeWalkDiff = Time.time - lastTimeWalk;
         lastTimeWalk = Time.time;
 
-       // if (lastTimeWalkDiff < delayToRun)
-         //   ChangeType(types.RUN);
-       // else
+        if (lastTimeWalkDiff < delayToRun)
+            ChangeType(types.RUN);
+        else
             ChangeType(types.NORMAL);
     }
     public void OnIdle()
