@@ -74,7 +74,6 @@ public class SFXManager : MonoBehaviour {
     }
     void GameOver()
     {
-        print("GameOver audios: " + clipsByCharacter.Count);
         foreach (ClipByCharacter c in clipsByCharacter)
         {
             c.audioSource.Stop();

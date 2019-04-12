@@ -6,14 +6,27 @@ public class IA_Boss1 : IA {
 
 	public Boss1_states boss1_states;
 	public float speed;
-	int rightPaths = 0;
+    public int rightPaths = 0;
 	int totalRightPaths = 1;
 	[HideInInspector]
 	public float startPosX;
+    public IAAlertDistance iaAlertDistance;
 
-	public override void OnInit() {
-		enemy.Idle ();
-	}
+    public AnimationClip preAttack;
+
+    public enum Boss1_states
+    {
+        IDLE,
+        TO_LEFT,
+        TO_RIGHT,
+    }
+
+    public override void OnInit() {
+        iaAlertDistance = GetComponent<IAAlertDistance>();
+        iaAlertDistance.state = global::IAAlertDistance.states.ON;
+        GetComponent<Animator>().Play("idle");
+        //enemy.Idle ();
+    }
 	void ToLeft()
 	{
 		boss1_states = Boss1_states.TO_LEFT;
@@ -33,23 +46,27 @@ public class IA_Boss1 : IA {
 		boss1_states = Boss1_states.IDLE;
 		enemy.Reset ();
 	}
-	public enum Boss1_states
-	{
-		IDLE,
-		TO_LEFT,
-		TO_RIGHT,
-	}
+	
 	public void IAAlertDistance()
 	{
+        print("ALERTA");
+        GetComponent<Animator>().Play(preAttack.name);
+        enemy.SetMoveOutsideScree(true);
 		startPosX = enemy.transform.position.x;
-		StopIA ();
-		ToLeft ();
-		enemy.Attack ();
+        Invoke("AttackDelayed", 1);
 	}
-	void Update()
+    void AttackDelayed()
+    {
+        StopIA();
+        ToLeft();
+        enemy.Attack();
+    }
+	public override void OnUpdated()
 	{
 		if (boss1_states == Boss1_states.IDLE)
 			return;
+
+       
 		
 		Vector3 pos = enemy.transform.position;
 
@@ -65,6 +82,8 @@ public class IA_Boss1 : IA {
 		}
 
 		enemy.transform.position = pos;
-	}
+
+        print(boss1_states + " " +  pos);
+    }
 
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class IAAlertDistance : MonoBehaviour {
 	
 	public int distance_to_active;
+
 	public states state;
 	public enum states
 	{
@@ -12,6 +13,7 @@ public class IAAlertDistance : MonoBehaviour {
 		OFF
 	}
 	IA ia;
+
 	void Start()
 	{
 		ia = GetComponent<IA> ();
@@ -20,6 +22,8 @@ public class IAAlertDistance : MonoBehaviour {
 		if (state == states.OFF)
 			return;
 		Vector3 dist = World.Instance.heroesManager.CheckIfHeroIsClose (ia.enemy);
+        if (dist == Vector3.zero)
+            return;
 		if (transform.position.x - dist.x <= distance_to_active) {
 			SendMessage ("IAAlertDistance");
 			state = states.OFF;

@@ -11,7 +11,6 @@ public class WorldCamera : MonoBehaviour
         int total = Screen.height + Screen.width;
 
         int pizelSize = (total * 7) / (1920 + 1080);
-        print("(" + total + "*7 /3000) = " + pizelSize);
         GetComponent<RetroPixelPro>().pixelSize = pizelSize;
     }
     public void UpdatePosition(float _x)

@@ -48,7 +48,8 @@ public class IA : MonoBehaviour {
 		state = states.IDLE;
 	}
 	void Update() {
-		if (state == states.STOP_IA)
+        OnUpdated();
+        if (state == states.STOP_IA)
 			return;
 		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
@@ -60,8 +61,9 @@ public class IA : MonoBehaviour {
 				LookTarget ();
 		} else if (state == states.MOVEING)
 			Move ();
-	}
-	void Fight()
+    }
+    public virtual void OnUpdated() { }
+    void Fight()
 	{
 		state = states.READY_FOR_FIGHT;
 		enemy.Idle ();
