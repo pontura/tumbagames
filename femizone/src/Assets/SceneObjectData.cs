@@ -23,6 +23,7 @@ public class SceneObjectData : MonoBehaviour {
 		BANCO,
 		FAROL,
 		ARBUSTO,
-		MODERNO
+		MODERNO,
+        CAR
     }
 }

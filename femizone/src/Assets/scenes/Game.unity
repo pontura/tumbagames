@@ -3694,6 +3694,7 @@ MonoBehaviour:
   - {fileID: 1925157850079376436, guid: 5494ac7418d62b14597ffb1295ef9ac0, type: 3}
   - {fileID: 4248532507396347344, guid: 6009c83d6b08b6549a2a16711d845830, type: 3}
   - {fileID: 2430, guid: 0487c558396fe134f865fd15c58dacaf, type: 3}
+  - {fileID: 4687062978464579146, guid: 068c1c9596638d84f8114a133dfca169, type: 3}
   container: {fileID: 1571614642}
 --- !u!114 &1571614653
 MonoBehaviour:

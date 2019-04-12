@@ -14,7 +14,7 @@ public class GenericObject : SceneObject
     {
         IsOverObject(false, other);
     }
-    void IsOverObject(bool isOver, Collider other)
+    public virtual void IsOverObject(bool isOver, Collider other)
     {
         if (sceneObjectData.type != SceneObjectData.types.FIRE)
             return;
