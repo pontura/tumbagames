@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Levels : MonoBehaviour {
 
-    LevelsManager levelsManager;
+    LevelsData levelsData;
 
 	public int activeLevelID;
 
 	void Start () {
-		levelsManager = GetComponent<LevelsManager> ();
-		AddNewLevel();
+        levelsData = GetComponent<LevelsData> ();
+        levelsData.Init();
+
+        AddNewLevel();
     }
 	public void StageClear()
 	{		
@@ -21,6 +23,6 @@ public class Levels : MonoBehaviour {
 	}
 	void AddNewLevel()
 	{
-		levelsManager.AddNewLevel (activeLevelID);
+        levelsData.AddNewLevel (activeLevelID);
 	}
 }
