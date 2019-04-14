@@ -5,7 +5,6 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class MainHiscores : MonoBehaviour
 {

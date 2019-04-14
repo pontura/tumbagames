@@ -14,6 +14,7 @@ public class Data : MonoBehaviour
 	public Settings settings;
     public ArcadeRanking arcadeRanking;
     public LevelsManager levelsManager;
+    public LoadingAsset loadingAsset;
 
 
     public static Data Instance
@@ -35,11 +36,16 @@ public class Data : MonoBehaviour
     }
     public string currentLevel;
     public void LoadScene(string aLevelName)
-    {
-        Events.OnChangeScene(aLevelName);
+    {       
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
-        SceneManager.LoadScene(aLevelName);
+        loadingAsset.SetOn(OnLoaded);
+    }
+    void OnLoaded()
+    {
+        Events.OnChangeScene(currentLevel);
+        SceneManager.LoadScene(currentLevel);
+        loadingAsset.SetOff();
     }
     void Awake()
     {

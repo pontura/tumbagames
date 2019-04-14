@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 using System;
 using System.IO;
 using System.Linq;
@@ -41,7 +41,7 @@ public class Splash : MonoBehaviour {
 	void OnKeyPress(int a)
 	{
         if(isReady)
-		    SceneManager.LoadScene("Game");
+		    Data.Instance.LoadScene("Game");
 	}
 	/* void LoopCameraColors()
 	{
