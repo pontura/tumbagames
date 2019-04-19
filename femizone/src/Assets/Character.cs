@@ -139,7 +139,9 @@ public class Character : SceneObject {
 	float _hittedPower;
 	float hittedDirection = 1;
 	public void StartHit(HitArea hitArea) 
-	{ 
+	{
+        if (hitArea.character == null)
+            return;
 		if (hitArea.character.transform.position.x > transform.position.x)
 			hittedDirection = -1;
 		else

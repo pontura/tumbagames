@@ -6888,6 +6888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PerraforceLogo
       objectReference: {fileID: 0}
+    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3000492712942568811, guid: 6d9500249426a09478c1843ea58971ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6992,6 +6997,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000492712683846467, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.307495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000492712683846467, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.307495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000492712420242498, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
@@ -34717,7 +34737,7 @@ PrefabInstance:
     - target: {fileID: 114018480516767238, guid: 4a0a24e632820324480881e117bed187,
         type: 3}
       propertyPath: LevelsWidth
-      value: 29
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6353812048055231196, guid: 4a0a24e632820324480881e117bed187,
         type: 3}
@@ -59596,6 +59616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a48a268069d16248a24061c5a8faaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pixelSize: 4
 --- !u!20 &1795946815
 Camera:
   m_ObjectHideFlags: 0
@@ -59665,7 +59686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 137, y: 77}
+  resolution: {x: 62, y: 42}
   pixelSize: 14
   dither: 0.15
   opacity: 1

@@ -16,6 +16,8 @@ public class SceneObjectCar : GenericObject
         if (character == null)
             return;
 
+        speed += sceneObjectData.aditionalSpeed;
+
         HitArea hitArea = new HitArea();
         hitArea.type = CharacterHitsManager.types.SPECIAL;
         hitArea.force = 100;
@@ -37,10 +39,18 @@ public class SceneObjectCar : GenericObject
             return;
         Vector3 pos = transform.localPosition;
         pos.z -= speed * Time.deltaTime;
-      
+
         if (pos.z < to.z)
+        {
             pos.z = from.z;
+            gameObject.SetActive(false);
+            Invoke("Restart", 1);
+        }
 
         transform.localPosition = pos;
+    }
+    void Restart()
+    {
+        transform.localPosition = from;
     }
 }

@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 14
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 5
 --- !u!1 &5157718404929103367
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,3 +231,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 14
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0

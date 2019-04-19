@@ -26,4 +26,6 @@ public class SceneObjectData : MonoBehaviour {
 		MODERNO,
         CAR
     }
+
+    public float aditionalSpeed;
 }

@@ -40,8 +40,11 @@ public class Splash : MonoBehaviour {
 	}
 	void OnKeyPress(int a)
 	{
-        if(isReady)
-		    Data.Instance.LoadScene("Game");
+        if (isReady)
+        {
+            Data.Instance.LoadScene("Game");
+            isReady = false;
+        }
 	}
 	/* void LoopCameraColors()
 	{

@@ -16,7 +16,9 @@ public class GenericObjectsManager : MonoBehaviour
 			data.pos.y = 0;
 			asset.transform.localPosition = data.pos;
 			asset.transform.localEulerAngles = new Vector3 (30, 0, 0);
-		}
+            asset.Init(data);
+
+        }
 	}
 	GenericObject GetObject(SceneObjectData data)
 	{

@@ -5,13 +5,14 @@ using AlpacaSound.RetroPixelPro;
 
 public class WorldCamera : MonoBehaviour
 {
+    public int pixelSize;
 
     void Start()
     {
         int total = Screen.height + Screen.width;
 
-        int pizelSize = (total * 7) / (1920 + 1080);
-        GetComponent<RetroPixelPro>().pixelSize = pizelSize;
+        int pizelSizeByScreen = (total * 7) / (1920 + 1080);
+        GetComponent<RetroPixelPro>().pixelSize = pizelSizeByScreen + pixelSize;
     }
     public void UpdatePosition(float _x)
     {
