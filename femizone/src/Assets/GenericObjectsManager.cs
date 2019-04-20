@@ -12,11 +12,11 @@ public class GenericObjectsManager : MonoBehaviour
 		GenericObject go = GetObject (data);
 		if (go != null) {
 			GenericObject asset = Instantiate (go);
-			asset.transform.SetParent (container);
+            asset.Init(data);
+            asset.transform.SetParent (container);
 			data.pos.y = 0;
 			asset.transform.localPosition = data.pos;
-			asset.transform.localEulerAngles = new Vector3 (30, 0, 0);
-            asset.Init(data);
+			asset.transform.localEulerAngles = new Vector3 (30, 0, 0);           
 
         }
 	}

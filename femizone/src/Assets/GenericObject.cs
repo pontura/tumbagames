@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GenericObject : SceneObject
 {
-    public SceneObjectData sceneObjectData;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,7 +15,7 @@ public class GenericObject : SceneObject
     }
     public virtual void IsOverObject(bool isOver, Collider other)
     {
-        if (sceneObjectData.type != SceneObjectData.types.FIRE)
+        if (data.type != SceneObjectData.types.FIRE)
             return;
 
         Character character = other.GetComponent<Character>();

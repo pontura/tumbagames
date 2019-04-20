@@ -14,14 +14,16 @@ public class SceneObjectCar : GenericObject
     {
         Character character = other.GetComponent<Character>();
         if (character == null)
-            return;
-
-        speed += sceneObjectData.aditionalSpeed;
+            return;      
 
         HitArea hitArea = new HitArea();
         hitArea.type = CharacterHitsManager.types.SPECIAL;
         hitArea.force = 100;
         character.OnReceiveHit(hitArea, 100);
+    }
+    public override void OnInit()
+    {
+        speed += data.aditionalSpeed;
     }
     void OnEnable()
     {
@@ -51,6 +53,7 @@ public class SceneObjectCar : GenericObject
     }
     void Restart()
     {
+        gameObject.SetActive(true);
         transform.localPosition = from;
     }
 }

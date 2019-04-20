@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class SceneObject : MonoBehaviour {
 
-    SceneObjectData data;
+    [HideInInspector]
+    public SceneObjectData data;
 
     public void Init(SceneObjectData data)
     {
         this.data = data;
+        OnInit();
+    }
+    public virtual void OnInit()
+    {
+
     }
 }
