@@ -11,14 +11,22 @@ public class GoSignal : MonoBehaviour
 		panel.SetActive (false);
 		Events.OnStageClear += OnStageClear;
 		Events.OnMansPlaining += OnMansPlaining;
-	}
+        Events.GameOver += GameOver;
+
+    }
 
 	void OnDestroy()
 	{
 		Events.OnStageClear -= OnStageClear;
 		Events.OnMansPlaining -= OnMansPlaining;
-	}
-	void SetOff()
+        Events.GameOver -= GameOver;
+    }
+    void GameOver()
+    {
+        Destroy(gameObject);
+    }
+
+    void SetOff()
 	{
 		CancelInvoke ();
 		panel.SetActive (false);

@@ -8,7 +8,24 @@ public class UIProgressBarManager : MonoBehaviour {
 	public Transform container;
 	public List<ProgressBar> all;
 
-	public ProgressBar CreateProgressBar(Character character) {
+    void Start()
+    {
+        Events.GameOver += GameOver;
+    }
+
+    void OnDestroy()
+    {
+        Events.GameOver -= GameOver;
+    }
+    void GameOver()
+    {
+        foreach (ProgressBar pb in all)
+        {
+            if(pb != null )
+                pb.gameObject.SetActive(false);
+        }
+    }
+    public ProgressBar CreateProgressBar(Character character) {
 		ProgressBar progressBar = Instantiate( progressBarToInstantiate);
 		progressBar.transform.SetParent (container);
 		progressBar.Init (character.GetComponent<Enemy>());

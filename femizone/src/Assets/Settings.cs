@@ -9,5 +9,6 @@ public class Settings : MonoBehaviour {
 	public int LevelsWidth = 100;
 	public int limit_to_walk = 12;
 	public Color[] colors;
+    public int cutsceneFinalID;
 
 }
