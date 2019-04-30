@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 114, y: 85}
+  resolution: {x: 101, y: 67}
   pixelSize: 7
   dither: 0.15
   opacity: 1
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 995040028}
   - component: {fileID: 995040029}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: newHiore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 800, y: 600}
+  resolution: {x: 709, y: 470}
   pixelSize: 1
   dither: 0.15
   opacity: 1
