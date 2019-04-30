@@ -14,7 +14,9 @@ public class MusicManager : MonoBehaviour {
 	void Start()
 	{
         audioSource = gameObject.AddComponent<AudioSource> ();
-		OnStageClear ();
+        audioSource.loop = true;
+
+        OnStageClear ();
         OnChangeScene("Intro");
     }
 	void OnMansPlaining(Character c, bool isOn)
