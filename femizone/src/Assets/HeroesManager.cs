@@ -130,6 +130,7 @@ public class HeroesManager : MonoBehaviour {
 		foreach (Hero hero in all) {
 			totalPosition += hero.transform.position.x;
 		}
+        if (totalPosition == 0)  return 0;
 		totalPosition/=all.Count;
 		return totalPosition;
 	}

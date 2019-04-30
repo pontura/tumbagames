@@ -7,20 +7,15 @@ public class MusicManager : MonoBehaviour {
 
 	public AudioClip musicHard;
 	public AudioClip musicCalm;
+    public AudioClip musicDeath;
 
     public float volume;
-    public bool disabled;
        
 	void Start()
 	{
-		
-        
-
         audioSource = gameObject.AddComponent<AudioSource> ();
-
 		OnStageClear ();
         OnChangeScene("Intro");
-
     }
 	void OnMansPlaining(Character c, bool isOn)
 	{
@@ -71,14 +66,19 @@ public class MusicManager : MonoBehaviour {
     }
     void GameOver()
     {
-        audioSource.pitch = 1.5f;
+        audioSource.clip = musicDeath;
+        audioSource.Play();
+       // audioSource.pitch = 1.5f;
     }
     void OnChangeScene(string sceneName)
     {
         switch(sceneName)
         {
             case "Intro":
+                audioSource.clip = musicCalm;
                 audioSource.pitch = 0.2f;
+                audioSource.Play();
+                OnMusicVolumeChanged(1);
                 break;
         }
         
@@ -97,13 +97,9 @@ public class MusicManager : MonoBehaviour {
     }
     void OnMusicVolumeChanged(float value)
     {
-        if (disabled) value = 0;
-
+        print("vol : " + value);
         audioSource.volume = value;
         volume = value;
-
-        if (value == 0 || value == 1)
-            PlayerPrefs.SetFloat("MusicVol", value);
     }
     void OnGamePaused(bool paused)
     {

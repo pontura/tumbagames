@@ -39,6 +39,7 @@ public class Data : MonoBehaviour
     {       
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
+        Events.OnMusicVolumeChanged(0f);
         loadingAsset.SetOn(OnLoaded);
     }
     void OnLoaded()
@@ -46,6 +47,7 @@ public class Data : MonoBehaviour
         Events.OnChangeScene(currentLevel);
         SceneManager.LoadScene(currentLevel);
         loadingAsset.SetOff();
+        Events.OnMusicVolumeChanged(1);
     }
     void Awake()
     {

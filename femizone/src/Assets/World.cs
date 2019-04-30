@@ -19,7 +19,6 @@ public class World : MonoBehaviour
 
     public WorldCamera worldCamera;
     public Levels levels;
-    public GameObject gameOver;
 
     public static World Instance
     {
@@ -37,7 +36,6 @@ public class World : MonoBehaviour
         heroesManager = GetComponent<HeroesManager>();
         enemiesManager = GetComponent<EnemiesManager>();
         levels = GetComponent<Levels>();
-        gameOver.SetActive(false);
 	}
     public void OnRestart()
     {
@@ -55,7 +53,7 @@ public class World : MonoBehaviour
         timeGameOver = Time.time;
         if(timeGameOver == 1)
             this.timeGameOver = 0;
-        gameOver.SetActive(true);
+
         state = states.GAME_OVER;
 		UI.Instance.mainHiscores.GameOver();
         Events.GameOver();

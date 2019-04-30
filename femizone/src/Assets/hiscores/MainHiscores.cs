@@ -57,7 +57,7 @@ public class MainHiscores : MonoBehaviour
         characterUI = charactersUI.GetHiscoreCharacterUI();
         this.playerID = characterUI.id;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         Events.OnKeyPress += OnKeyPress;
         if (characterUI.score > Data.Instance.arcadeRanking.all[0].hiscore)
         {

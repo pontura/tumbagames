@@ -18,6 +18,7 @@ public class SFXManager : MonoBehaviour {
     public class AudioclipsUI
     {
         public AudioClip insertCoin;
+        public AudioClip gameOver;
     }
 
         [Serializable]
@@ -34,7 +35,7 @@ public class SFXManager : MonoBehaviour {
 	public AudioSource AudioS_kicks;
 	public AudioSource AudioS_hit_balls;
 	public AudioSource AudioS_hit_punches;
-	public GameObject mansplaining_container;
+    public GameObject mansplaining_container;
 
 	public List<ClipByCharacter> clipsByCharacter;
 	[Serializable]
@@ -80,6 +81,9 @@ public class SFXManager : MonoBehaviour {
             Destroy(c.audioSource);
         }
         clipsByCharacter.Clear();
+
+        uiAudioSource.clip = audioclipsUI.gameOver;
+        uiAudioSource.Play();
     }
 
     void AdjustVolume()
