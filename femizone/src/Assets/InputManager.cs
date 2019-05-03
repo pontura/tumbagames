@@ -14,13 +14,14 @@ public class InputManager : MonoBehaviour
     bool justTurnedHorizontal;
     bool justForwardHorizontal;
     int newHorizontalDirection;
-    int direction;
+    public int direction;
 
     void Start()
     {
         hero = GetComponent<Hero>();
     }
-
+    public float timeSinceStopped = 0;
+    public float _x;
     float timeOut = 0.1f;
     void Update()
     {
@@ -69,11 +70,6 @@ public class InputManager : MonoBehaviour
         else
      if (Input.GetButtonDown("Kick" + hero.id))
         {
-            //if (CheckForSpecialAttack(2))
-            //{
-            //    OnAttack(CharacterHitsManager.types.SPECIAL);
-            //}
-            //else 
             if (justTurnedHorizontal)
                 OnAttack(CharacterHitsManager.types.KICK_BACK);
             else if (justForwardHorizontal)
@@ -83,45 +79,69 @@ public class InputManager : MonoBehaviour
             newHorizontalDirection = 0;
         }
 
-        if (justTurnedHorizontal || justForwardHorizontal)
-            return;
+       _x = (int)Input.GetAxis("Horizontal" + hero.id);
 
-        int _x = (int)Input.GetAxis("Horizontal" + hero.id);
-
-        if (_x == -1 && newHorizontalDirection != -1)
+        if (_x < 0 )
         {
-            if (direction > 0 && HorizontalDirection == 0)
-                justTurnedHorizontal = true;
-            else
-                justForwardHorizontal = true;
-
-            Invoke("ResetJustTurned", timeOut);
+            if (!justTurnedHorizontal && !justForwardHorizontal)
+            {
+                timeSinceStopped = 0;
+                if (direction > 0)
+                    justTurnedHorizontal = true;
+                else
+                    justForwardHorizontal = true;
+            }
             newHorizontalDirection = -1;
         }
-        else if (_x == 1 && newHorizontalDirection != 1)
+        else if (_x > 0)
         {
-            if (direction < 0 && HorizontalDirection == 0)
-                justTurnedHorizontal = true;
-            else
-                justForwardHorizontal = true;
-
+            if (!justTurnedHorizontal && !justForwardHorizontal)
+            {
+                timeSinceStopped = 0;
+                if (direction < 0)
+                    justTurnedHorizontal = true;
+                else
+                    justForwardHorizontal = true;
+            }
             newHorizontalDirection = 1;
-            Invoke("ResetJustTurned", timeOut);
         }
-        else
+        else if(_x == 0)
         {
+            if (newHorizontalDirection != 0)
+            {
+                if (justTurnedHorizontal)
+                {
+                    print("justTurnedHorizontal");
+                }
+                else if (justForwardHorizontal)
+                {
+                    print("justForwardHorizontal");
+                }
+            }
+            HorizontalDirection = newHorizontalDirection;
             newHorizontalDirection = 0;
-            HorizontalDirection = 0;
         }
-
+        if((justTurnedHorizontal || justForwardHorizontal) && timeSinceStopped < timeOut)
+        {
+            timeSinceStopped += Time.deltaTime;
+        }
+        if (timeSinceStopped > timeOut)
+        {
+            timeSinceStopped = 0;
+            ResetJustTurned();
+        }
     }
-    void ResetJustTurned()
+    void UpdateOrientation()
     {
         if (newHorizontalDirection != 0)
         {
             HorizontalDirection = newHorizontalDirection;
             hero.transform.localScale = new Vector3(newHorizontalDirection, 1, 1);
         }
+    }
+    void ResetJustTurned()
+    {
+        UpdateOrientation();
         newHorizontalDirection = 0;
         justTurnedHorizontal = false;
         justForwardHorizontal = false;

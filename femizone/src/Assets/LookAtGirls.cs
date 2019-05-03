@@ -14,7 +14,6 @@ public class LookAtGirls : MonoBehaviour
         float girlsXPos = World.Instance.heroesManager.GetPercentPosition();
         if (girlsXPos == 0)
             return;
-        print("loop " + girlsXPos + "  " + transform.position.x);
 
         Vector2 scale = transform.localScale;
         if (girlsXPos > transform.position.x)
