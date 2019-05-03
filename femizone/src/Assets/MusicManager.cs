@@ -99,7 +99,6 @@ public class MusicManager : MonoBehaviour {
     }
     void OnMusicVolumeChanged(float value)
     {
-        print("vol : " + value);
         audioSource.volume = value;
         volume = value;
     }

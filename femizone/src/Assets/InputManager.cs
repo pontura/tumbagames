@@ -10,9 +10,9 @@ public class InputManager : MonoBehaviour
     Hero hero;
 
     public List<int> combo;
-
-    bool justTurnedHorizontal;
-    bool justForwardHorizontal;
+    public bool checkingCombos;
+    public bool justTurnedHorizontal;
+    public bool justForwardHorizontal;
     int newHorizontalDirection;
     public int direction;
 
@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
     }
     public float timeSinceStopped = 0;
     public float _x;
-    float timeOut = 0.1f;
+    float timeOut = 0.08f;
     void Update()
     {
         if (hero.state == Character.states.DEAD)
@@ -83,27 +83,28 @@ public class InputManager : MonoBehaviour
 
         if (_x < 0 )
         {
-            if (!justTurnedHorizontal && !justForwardHorizontal)
+            if (newHorizontalDirection != -1)
             {
-                timeSinceStopped = 0;
+                checkingCombos = true;
                 if (direction > 0)
                     justTurnedHorizontal = true;
                 else
                     justForwardHorizontal = true;
-            }
-            newHorizontalDirection = -1;
+                newHorizontalDirection = -1;
+            }            
         }
         else if (_x > 0)
         {
-            if (!justTurnedHorizontal && !justForwardHorizontal)
+            if (newHorizontalDirection != 1)
             {
-                timeSinceStopped = 0;
+                checkingCombos = true;
                 if (direction < 0)
                     justTurnedHorizontal = true;
                 else
                     justForwardHorizontal = true;
+                newHorizontalDirection = 1;
             }
-            newHorizontalDirection = 1;
+           
         }
         else if(_x == 0)
         {
@@ -111,24 +112,28 @@ public class InputManager : MonoBehaviour
             {
                 if (justTurnedHorizontal)
                 {
-                    print("justTurnedHorizontal");
+                    OnAttack(CharacterHitsManager.types.HEAD);
                 }
                 else if (justForwardHorizontal)
                 {
-                    print("justForwardHorizontal");
+                    //un palancaso para adelante.
                 }
             }
             HorizontalDirection = newHorizontalDirection;
             newHorizontalDirection = 0;
         }
-        if((justTurnedHorizontal || justForwardHorizontal) && timeSinceStopped < timeOut)
+        if (checkingCombos)
         {
-            timeSinceStopped += Time.deltaTime;
-        }
-        if (timeSinceStopped > timeOut)
-        {
-            timeSinceStopped = 0;
-            ResetJustTurned();
+            if (timeSinceStopped < timeOut)
+            {
+                timeSinceStopped += Time.deltaTime;
+            }
+            else
+            {
+                checkingCombos = false;
+                timeSinceStopped = 0;
+                ResetJustTurned();
+            }
         }
     }
     void UpdateOrientation()
@@ -142,7 +147,6 @@ public class InputManager : MonoBehaviour
     void ResetJustTurned()
     {
         UpdateOrientation();
-        newHorizontalDirection = 0;
         justTurnedHorizontal = false;
         justForwardHorizontal = false;
     }

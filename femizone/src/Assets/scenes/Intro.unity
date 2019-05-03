@@ -34531,10 +34531,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: m_Name
-      value: Data
-      objectReference: {fileID: 0}
     - target: {fileID: 40, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -34578,6 +34574,10 @@ PrefabInstance:
     - target: {fileID: 40, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: m_Name
+      value: Data
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
@@ -59252,7 +59252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 137, y: 77}
+  resolution: {x: 58, y: 33}
   pixelSize: 14
   dither: 0.15
   opacity: 1

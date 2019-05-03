@@ -54,6 +54,12 @@ MonoBehaviour:
   HorizontalDirection: 0
   VerticalDirection: 0
   combo: 
+  checkingCombos: 0
+  justTurnedHorizontal: 0
+  justForwardHorizontal: 0
+  direction: 0
+  timeSinceStopped: 0
+  _x: 0
   buttonsID: 
 --- !u!114 &114405565323117312
 MonoBehaviour:
@@ -67,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0385ef59e16545853a239fa6d72fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   asset: {fileID: 341268675736558490}
   anim: {fileID: 427058549044135678}
   speed: 15
@@ -74,10 +81,10 @@ MonoBehaviour:
   HorizontalDirection: 0
   stats: {fileID: 114868452578581000}
   hitsManager: {fileID: 0}
+  worldCamera: {fileID: 0}
   id: 4
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
-  worldCamera: {fileID: 0}
   move: {fileID: 0}
 --- !u!114 &114868452578581000
 MonoBehaviour:
@@ -139,6 +146,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: eed371a3f2f5d0041ac9223d1227a31d, type: 2}
     force: 16
     timeToReset: 0.2
+  - type: 11
+    animClip: {fileID: 7400000, guid: 738537958a7ca474b8aed4c85aa59773, type: 2}
+    force: 8
+    timeToReset: 0.4
   receivedAttacks: []
 --- !u!114 &114645941766145134
 MonoBehaviour:

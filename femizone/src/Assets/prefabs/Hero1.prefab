@@ -54,6 +54,12 @@ MonoBehaviour:
   HorizontalDirection: 0
   VerticalDirection: 0
   combo: 
+  checkingCombos: 0
+  justTurnedHorizontal: 0
+  justForwardHorizontal: 0
+  direction: 0
+  timeSinceStopped: 0
+  _x: 0
   buttonsID: 
 --- !u!114 &114399287392630978
 MonoBehaviour:
@@ -67,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0385ef59e16545853a239fa6d72fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   asset: {fileID: 8342403998780335707}
   anim: {fileID: 8255658346721147837}
   speed: 12
@@ -74,10 +81,10 @@ MonoBehaviour:
   HorizontalDirection: 0
   stats: {fileID: 114461472510602836}
   hitsManager: {fileID: 0}
+  worldCamera: {fileID: 0}
   id: 1
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
-  worldCamera: {fileID: 0}
   move: {fileID: 0}
 --- !u!114 &114461472510602836
 MonoBehaviour:
@@ -138,11 +145,15 @@ MonoBehaviour:
   - type: 8
     animClip: {fileID: 7400000, guid: c9273363976f80e47a3e55c4e3f46d57, type: 2}
     force: 16
-    timeToReset: 0.2
+    timeToReset: 0.3
   - type: 9
     animClip: {fileID: 7400000, guid: 3ffe159ba028c354590fd55dc8e62b9d, type: 2}
     force: 12
     timeToReset: 0.8
+  - type: 11
+    animClip: {fileID: 7400000, guid: 4fb20edf572c9df42a720ed967dbac9f, type: 2}
+    force: 8
+    timeToReset: 0.4
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -268,12 +279,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
+    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
+    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character
       value: 
