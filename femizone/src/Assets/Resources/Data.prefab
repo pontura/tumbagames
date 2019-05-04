@@ -491,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c04da710688424fa960f50438ebf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxContainer: {fileID: 4}
   punch:
     hero:
     - {fileID: 8300000, guid: 639288bcbc0f0404b9811ad05a7ad555, type: 3}
@@ -1313,11 +1314,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 110}
     m_Modifications:
-    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
-        type: 3}
-      propertyPath: m_Name
-      value: PerraforceLogo
-      objectReference: {fileID: 0}
     - target: {fileID: 3000492712942568811, guid: 6d9500249426a09478c1843ea58971ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1423,10 +1419,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1650565177}
+    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_Name
+      value: PerraforceLogo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
 --- !u!224 &3000492712596912495 stripped
@@ -1447,9 +1444,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a0d2f49ae09d443b365e00270ae74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!111 &1650565177 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 1292508221, guid: 6d9500249426a09478c1843ea58971ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 795589636}
-  m_PrefabAsset: {fileID: 0}

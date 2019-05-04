@@ -5,7 +5,7 @@ using System;
 
 public class SFXManager : MonoBehaviour {
 
-    
+    public GameObject sfxContainer;
     public AudioClips punch;
 	public AudioClips kick;
 	public AudioClips balls_hit;
@@ -75,6 +75,10 @@ public class SFXManager : MonoBehaviour {
     }
     void GameOver()
     {
+        foreach(AudioSource aus in sfxContainer.GetComponents<AudioSource>())
+        {
+            aus.Stop();
+        }
         foreach (ClipByCharacter c in clipsByCharacter)
         {
             c.audioSource.Stop();
@@ -119,7 +123,7 @@ public class SFXManager : MonoBehaviour {
 			if (rand > arr.Length - 1)
 				rand = 0;
 			AudioClip audioClip = arr [rand];
-			clipByCharacter.audioSource = gameObject.AddComponent<AudioSource> ();
+			clipByCharacter.audioSource = sfxContainer.AddComponent<AudioSource> ();
 			clipByCharacter.audioSource.clip = audioClip;
 			clipByCharacter.audioSource.loop = true;
 			clipByCharacter.audioSource.Play ();
