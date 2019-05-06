@@ -38,7 +38,9 @@ public class Hero : Character
     }
     public override void Idle()
     {
-        state = states.IDLE;
+        if (state == states.DEAD)
+            return;
+       state = states.IDLE;
         if (!weapons.HasWeapon())
             anim.Play("idle");
         else if (weapons.type == WeaponPickable.types.WEAPON1)
@@ -50,7 +52,7 @@ public class Hero : Character
     }
     public override void Walk()
     {
-        if (state == states.HITTING)
+        if (state == states.DEAD || state == states.HITTING)
             return;
 
         state = states.WALK;
@@ -75,9 +77,11 @@ public class Hero : Character
     }
     public override void OnReceiveHit(HitArea hitArea, float force)
     {
-        move.ResetMove();
+        
         if (state == states.DEAD || state == states.HITTED)
             return;
+
+        move.ResetMove();
 
         if (state == states.DEFENDING)
         {

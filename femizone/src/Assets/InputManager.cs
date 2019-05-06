@@ -22,7 +22,8 @@ public class InputManager : MonoBehaviour
     }
     public float timeSinceStopped = 0;
     public float _x;
-    float timeOut = 0.08f;
+    float timeOut = 0.1f;
+
     void Update()
     {
         if (hero.state == Character.states.DEAD)

@@ -82,8 +82,6 @@ public class IA_Boss1 : IA {
 		}
 
 		enemy.transform.position = pos;
-
-        print(boss1_states + " " +  pos);
     }
 
 }
