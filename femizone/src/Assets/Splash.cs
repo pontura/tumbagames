@@ -42,7 +42,7 @@ public class Splash : MonoBehaviour {
 	{
         if (isReady)
         {
-            Data.Instance.LoadScene("Game");
+            Data.Instance.LoadScene("IntroCutscenes");
             isReady = false;
         }
 	}

@@ -15,7 +15,7 @@ public class Data : MonoBehaviour
     public ArcadeRanking arcadeRanking;
     public LevelsManager levelsManager;
     public LoadingAsset loadingAsset;
-
+    public TextsManager textsManager;
 
     public static Data Instance
     {
@@ -70,6 +70,7 @@ public class Data : MonoBehaviour
 		settings = GetComponent<Settings> ();
         arcadeRanking = GetComponent<ArcadeRanking>();
         levelsManager = GetComponent<LevelsManager>();
+        textsManager = GetComponent<TextsManager>();
     }
     void Update()
     {

@@ -66,7 +66,7 @@ public class MusicManager : MonoBehaviour {
         audioSource.pitch = 1;
         audioSource.Play();
     }
-    void GameOver()
+    public void GameOver()
     {
         audioSource.clip = musicDeath;
         audioSource.Play();
@@ -77,6 +77,7 @@ public class MusicManager : MonoBehaviour {
         switch(sceneName)
         {
             case "Intro":
+            case "IntroCutscenes":
                 audioSource.clip = musicCalm;
                 audioSource.pitch = 0.2f;
                 audioSource.Play();
