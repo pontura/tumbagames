@@ -30,7 +30,7 @@ public class IntroCutscene : MonoBehaviour
             isReady = true;
 
         id++;
-        float delay = 2 + (text.Length * 0.25f);
+        float delay = 1.2f + (text.Length * 0.1f);
 
         if (id > allTexts.texts.Length-1)
             Invoke("WaitAndExit", delay);

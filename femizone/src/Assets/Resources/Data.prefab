@@ -69,7 +69,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 123}
   - component: {fileID: 124}
   - component: {fileID: 96}
+  - component: {fileID: 1539394853}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -439,6 +440,7 @@ MonoBehaviour:
   arcadeRanking: {fileID: 0}
   levelsManager: {fileID: 0}
   loadingAsset: {fileID: 1042307831}
+  textsManager: {fileID: 0}
   currentLevel: 
 --- !u!114 &119
 MonoBehaviour:
@@ -602,7 +604,15 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 1
   - all:
+    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
+    total: 1
+  - all:
+    - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
+    - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
+    total: 1
+  - all:
+    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
     total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
@@ -642,6 +652,9 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
+    total: 3
+  - all:
+    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
     total: 3
   - all:
     - {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3, type: 3}
@@ -762,6 +775,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1539394853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26de136249b916469507eed7143bc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro:
+    all: []
 --- !u!1 &8
 GameObject:
   m_ObjectHideFlags: 0
