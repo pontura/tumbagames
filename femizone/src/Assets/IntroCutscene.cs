@@ -13,9 +13,9 @@ public class IntroCutscene : MonoBehaviour
     void Start()
     {
         field.text = "";
-        allTexts = Data.Instance.textsManager.intro.all[UnityEngine.Random.Range(0, Data.Instance.textsManager.intro.all.Length)];
+        allTexts = Data.Instance.textsManager.GetNextIntro();
         Events.OnKeyPress += OnKeyPress;
-        Invoke("Loop", 2);
+        Invoke("Loop", 1.5f);
     }
     void OnDestroy()
     {
@@ -32,18 +32,26 @@ public class IntroCutscene : MonoBehaviour
         id++;
         float delay = 1.2f + (text.Length * 0.1f);
 
-        if (id > allTexts.texts.Length-1)
+        if (id > allTexts.texts.Length - 1)
             Invoke("WaitAndExit", delay);
         else
             Invoke("Loop", delay);
-        
+
+    }
+    void Next()
+    {
+        CancelInvoke();
+        Loop();
     }
     void OnKeyPress(int a)
     {
         if (!isReady)
             return;
-        
-        Done();
+
+        if (id < allTexts.texts.Length)
+            Next();
+        else
+            Done();
     }
     void WaitAndExit()
     {

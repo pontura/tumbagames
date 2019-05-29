@@ -5,6 +5,7 @@ using System;
 
 public class TextsManager : MonoBehaviour
 {
+    public int introID = 0;
     public Intro intro;
 
     [Serializable]
@@ -22,6 +23,13 @@ public class TextsManager : MonoBehaviour
     {
         TextAsset file = Resources.Load<TextAsset>("intro");
         intro = JsonUtility.FromJson<Intro>(file.text);
-      
+        introID = UnityEngine.Random.Range(0, intro.all.Length);
+    }
+    public TextsContent GetNextIntro()
+    {
+        introID++;
+        if (introID >= intro.all.Length)
+            introID = 0;
+        return intro.all[introID];        
     }
 }
