@@ -34962,6 +34962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Data
       objectReference: {fileID: 0}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[0].total
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
 --- !u!1 &1053445760
@@ -59907,7 +59911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 65, y: 41}
+  resolution: {x: 57, y: 42}
   pixelSize: 14
   dither: 0.15
   opacity: 1

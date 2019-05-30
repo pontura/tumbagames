@@ -602,14 +602,11 @@ MonoBehaviour:
   levelsByDificulty:
   - all:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
-    total: 1
+    total: 2
   - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
-    total: 1
-  - all:
-    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
     total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
