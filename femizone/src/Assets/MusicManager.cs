@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour {
 	public AudioClip musicHard;
 	public AudioClip musicCalm;
     public AudioClip musicDeath;
+    public AudioClip hiphop;
 
     public float volume;
        
@@ -64,6 +65,11 @@ public class MusicManager : MonoBehaviour {
             return;
 
         audioSource.pitch = 1;
+        audioSource.Play();
+    }
+    public void ForceHiphop()
+    {
+        audioSource.clip = hiphop;
         audioSource.Play();
     }
     public void GameOver()

@@ -26,6 +26,8 @@ public class CutScenesFinalManager : MonoBehaviour
     }
     IEnumerator GameOverRoutine()
     {
+        if (Data.Instance.settings.cutsceneFinalID == 0)
+            Data.Instance.GetComponent<MusicManager>().ForceHiphop();
         gameOverSignal.SetActive(true);
         yield return new WaitForSeconds(2.5f);
        // Events.OnMusicVolumeChanged(0.7f);
