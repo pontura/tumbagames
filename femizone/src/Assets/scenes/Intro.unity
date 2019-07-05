@@ -34962,18 +34962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Data
       objectReference: {fileID: 0}
-    - target: {fileID: 119, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: cutsceneFinalID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 120, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: hiphop
-      value: 
-      objectReference: {fileID: 8300000, guid: a30218392ace70c46b1b17766734ad55, type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[0].total
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
 --- !u!1 &1053445760
@@ -59848,7 +59836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a48a268069d16248a24061c5a8faaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixelSize: 4
+  factor: 2
 --- !u!20 &1795946815
 Camera:
   m_ObjectHideFlags: 0

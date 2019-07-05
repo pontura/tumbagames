@@ -69,11 +69,13 @@ public class MusicManager : MonoBehaviour {
     }
     public void ForceHiphop()
     {
+        OnMusicVolumeChanged(1);
         audioSource.clip = hiphop;
         audioSource.Play();
     }
     public void GameOver()
     {
+        OnMusicVolumeChanged(1);
         audioSource.clip = musicDeath;
         audioSource.Play();
        // audioSource.pitch = 1.5f;

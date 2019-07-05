@@ -9,6 +9,8 @@ public static class Events
     public static System.Action StartGame = delegate { };
     public static System.Action Restart = delegate { };
 
+    public static System.Action PixelSizeChange = delegate { };
+
     public static System.Action<int, int> OnAddScore = delegate { };
     public static System.Action<int> OnKeyPress = delegate { };
     public static System.Action<int, int> OnAxisChange = delegate { };
