@@ -11,15 +11,18 @@ public class Hero : Character
     Rigidbody rb;
     int offsetMoveX = 10;
     public HeroMove move;
+    public HeroJump jump;
 
     public override void OnStart()
     {
         move = GetComponent<HeroMove>();
+        jump = GetComponent<HeroJump>();
         inputManager = GetComponent<InputManager>();
         weapons = GetComponent<HeroWeapons>();
         rb = GetComponent<Rigidbody>();
 
         move.Init(this);
+        jump.Init(this);
     }
     public void OnUpdateByInput(int HorizontalDirection, int VerticalDirection)
     {
@@ -41,7 +44,9 @@ public class Hero : Character
         if (state == states.DEAD)
             return;
        state = states.IDLE;
-        if (!weapons.HasWeapon())
+        if (jump.state != HeroJump.states.NONE)
+            print("jumping");
+        else if (!weapons.HasWeapon())
             anim.Play("idle");
         else if (weapons.type == WeaponPickable.types.WEAPON1)
             anim.Play("idle_gun");
@@ -56,6 +61,9 @@ public class Hero : Character
             return;
 
         state = states.WALK;
+
+        if (jump.state != HeroJump.states.NONE)
+            return;
         if (move.type == HeroMove.types.NORMAL)
         {
             if (!weapons.HasWeapon())
@@ -164,5 +172,10 @@ public class Hero : Character
             anim.Play("pick_melee");
         weaponPickable.GotIt();
         weaponPickable = null;
+    }
+    public void Jump()
+    {
+        if (state == states.WALK || state == states.IDLE)
+            jump.Jump();
     }
 }

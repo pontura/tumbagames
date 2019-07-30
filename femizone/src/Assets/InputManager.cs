@@ -42,11 +42,12 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Defense" + hero.id))
         {
-            hero.Defense();
+            // hero.Defense();
+            hero.Jump();
         }
         else if (Input.GetButtonUp("Defense" + hero.id))
         {
-            hero.Idle();
+           // hero.Idle();
         }
         else if (Input.GetButtonDown("Hit" + hero.id))
         {

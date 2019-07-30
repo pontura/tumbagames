@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 114162742909864940}
   - component: {fileID: 135285378232476650}
   - component: {fileID: 4251275893454635780}
+  - component: {fileID: 6242408805710400686}
   m_Layer: 0
   m_Name: Hero2
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
   move: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!114 &114059951849104330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +152,14 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 706bde21cd33f1944b7bc47ff0f52116, type: 2}
     force: 8
     timeToReset: 0.3
+  - type: 12
+    animClip: {fileID: 7400000, guid: 4dbfee6c6419ce644b9db6f63999441a, type: 2}
+    force: 7
+    timeToReset: 0.3
+  - type: 13
+    animClip: {fileID: 7400000, guid: 9eea2eee999a7cc42850fca6375e1360, type: 2}
+    force: 10
+    timeToReset: 0.3
   receivedAttacks: []
 --- !u!114 &114427765078039442
 MonoBehaviour:
@@ -164,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitArea: {fileID: 7996728260510614779}
+  hitAreaReceiver: {fileID: 7996439968213551173}
 --- !u!54 &54267127698252930
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -220,6 +231,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &6242408805710400686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826638190532688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12f2262161974547a16fc70cb99c4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1001 &8028809885610145967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,6 +329,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8028809885610145967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7996439968213551173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114032299992232170, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,
+    type: 3}
+  m_PrefabInstance: {fileID: 8028809885610145967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01c4a0a30643f4389ee12305ad0bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7996728260510614779 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114285375169494100, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,

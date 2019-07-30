@@ -13,29 +13,38 @@ public class CharacterHitsManager : MonoBehaviour {
 		KICK_FOWARD,
 		KICK_BACK,
 		KICK_DOWN,
-		GUN_FIRE,
+        GUN_FIRE,
 		MELEE,
 		SPECIAL,
 		FIRE,
-        HEAD
+        HEAD,
+        KICK_JUMP,
+        HIT_JUMP
 	}
 	Character character;
 
 	int punchHitID =1;
 
 	public HitArea hitArea;
+    public HitArea hitAreaReceiver;
+    HeroJump heroJump;
 
-	void Start()
-	{
-		character = GetComponent<Character> ();
+    void Start()
+	{       
+        character = GetComponent<Character> ();
 		hitArea.character = character;
-	}
+        heroJump = character.GetComponent<HeroJump>();
+    }
 	bool AttakEnabled()
 	{
 		if (character.state == Character.states.DEAD || character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return false;
 		return true;
 	}
+    public void SetStateForReceiver(bool isOn)
+    {
+        hitAreaReceiver.enabled = isOn;
+    }
 
 	public void SetOn(types type)
 	{
@@ -44,7 +53,20 @@ public class CharacterHitsManager : MonoBehaviour {
 		
 		CancelInvoke ();
 
-		AttackStyle attackStyle = character.stats.GetAttackByType (type);
+        if (heroJump != null)
+        {
+            if (type == types.KICK_DOWN || type == types.KICK_FOWARD)
+            {
+                if (heroJump.state != HeroJump.states.NONE)
+                    type = types.KICK_JUMP;
+            } else if (type == types.HIT_FORWARD || type == types.HIT_UPPER)
+            {
+                if (heroJump.state != HeroJump.states.NONE)
+                    type = types.HIT_JUMP;
+            }
+        }
+
+        AttackStyle attackStyle = character.stats.GetAttackByType (type);
 		string clipName = attackStyle.animClip.name;
 
 		if (type == types.HIT_FORWARD) {
@@ -53,7 +75,7 @@ public class CharacterHitsManager : MonoBehaviour {
 				punchHitID = 1;
 			clipName = "punch_" + punchHitID;
 		}
-
+       
 		character.anim.Play (clipName);
 		hitArea.SetType (type, attackStyle.force);
 

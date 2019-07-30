@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 114479281473666808}
   - component: {fileID: 135452430702272690}
   - component: {fileID: 4924504078474726394}
+  - component: {fileID: 34750225897777926}
   m_Layer: 0
   m_Name: Hero3
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
   move: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!114 &114676354775924872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +152,14 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 6d6928a7964076342979dce8a827ecc7, type: 2}
     force: 8
     timeToReset: 0.2
+  - type: 12
+    animClip: {fileID: 7400000, guid: 29176ba0963d83f41a0c887018bee256, type: 2}
+    force: 8
+    timeToReset: 0.2
+  - type: 13
+    animClip: {fileID: 7400000, guid: 9489bea4b035a054ca4dd46648f09cc6, type: 2}
+    force: 10
+    timeToReset: 0.2
   receivedAttacks: []
 --- !u!114 &114794619835727158
 MonoBehaviour:
@@ -164,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitArea: {fileID: 1813798132353612141}
+  hitAreaReceiver: {fileID: 1811732916599437079}
 --- !u!54 &54730510673171646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -220,6 +231,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &34750225897777926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635605372683266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12f2262161974547a16fc70cb99c4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1001 &1779881047030004459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +315,12 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 114888795560156206}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114672647371208466, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
+    - {fileID: 114600300818574436, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
+    - {fileID: 114534527862720996, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
+    - {fileID: 114996982260632846, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
+    - {fileID: 114075192657883510, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 924dc2c11657c8e4183c27160ff8b93a, type: 3}
 --- !u!1 &1780608647829105221 stripped
 GameObject:
@@ -311,6 +340,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1779881047030004459}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1811732916599437079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114834217789476348, guid: 924dc2c11657c8e4183c27160ff8b93a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779881047030004459}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01c4a0a30643f4389ee12305ad0bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1813798132353612141 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114999756502614918, guid: 924dc2c11657c8e4183c27160ff8b93a,

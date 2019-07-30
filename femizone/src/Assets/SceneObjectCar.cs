@@ -12,9 +12,12 @@ public class SceneObjectCar : GenericObject
 
     public override void IsOverObject(bool isOver, Collider other)
     {
+       
         Character character = other.GetComponent<Character>();
         if (character == null)
-            return;      
+            return;
+
+        print(other.name);
 
         HitArea hitArea = new HitArea();
         hitArea.type = CharacterHitsManager.types.SPECIAL;

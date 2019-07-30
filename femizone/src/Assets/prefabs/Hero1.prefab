@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 54236877402612652}
   - component: {fileID: 114466762823592298}
   - component: {fileID: 601811003445080524}
+  - component: {fileID: 6291619707316304122}
   m_Layer: 0
   m_Name: Hero1
   m_TagString: Untagged
@@ -86,6 +87,7 @@ MonoBehaviour:
   weaponPickable: {fileID: 0}
   weapons: {fileID: 0}
   move: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!114 &114461472510602836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +156,14 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 4fb20edf572c9df42a720ed967dbac9f, type: 2}
     force: 8
     timeToReset: 0.4
+  - type: 12
+    animClip: {fileID: 7400000, guid: bdada3e664862854d986414dd055bccd, type: 2}
+    force: 7
+    timeToReset: 0.4
+  - type: 13
+    animClip: {fileID: 7400000, guid: 21d54a783edb6394780cb224276f895d, type: 2}
+    force: 10
+    timeToReset: 0.4
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -168,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitArea: {fileID: 3601113641601632614}
+  hitAreaReceiver: {fileID: 7294580163777704284}
 --- !u!135 &135736350858664410
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -224,6 +235,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &6291619707316304122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12f2262161974547a16fc70cb99c4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1001 &8341576576336515105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,12 +303,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
+    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
+    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
         type: 3}
       propertyPath: character
       value: 
@@ -309,6 +333,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8341576576336515105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7294580163777704284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8341576576336515105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01c4a0a30643f4389ee12305ad0bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3601113641601632614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,

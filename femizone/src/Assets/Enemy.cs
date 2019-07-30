@@ -97,8 +97,10 @@ public class Enemy : Character {
 			if (attackStyle.type == hitArea.type)
 				hitName = attackStyle.animClip.name;
 		}
+        if (hitName == "" && stats.receivedAttacks.Count > 0)
+            hitName = stats.receivedAttacks[0].animClip.name;
 
-		state = states.HITTED;
+        state = states.HITTED;
 		anim.Play (hitName);
 		Invoke ("Idle", 0.5f);
 		stats.ReceiveHit (force);
