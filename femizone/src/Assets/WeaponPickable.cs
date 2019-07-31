@@ -10,7 +10,8 @@ public class WeaponPickable : SceneObject {
 	{
 		NONE,
 		WEAPON1,
-		WEAPON2
+		WEAPON2,
+        CINTURONGA
 	}
 	public void Init () {
 

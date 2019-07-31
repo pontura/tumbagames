@@ -164,6 +164,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 21d54a783edb6394780cb224276f895d, type: 2}
     force: 10
     timeToReset: 0.4
+  - type: 14
+    animClip: {fileID: 7400000, guid: 12f214d43ccd34c46a2d6587ee966e9a, type: 2}
+    force: 10
+    timeToReset: 0.5
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -222,6 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   totalUses: 0
+  wearable_cinturonga: {fileID: 9054142342104690105, guid: 1834a85c9361eec4995a4c2e86f369f0,
+    type: 3}
 --- !u!114 &601811003445080524
 MonoBehaviour:
   m_ObjectHideFlags: 0

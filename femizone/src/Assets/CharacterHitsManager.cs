@@ -19,7 +19,8 @@ public class CharacterHitsManager : MonoBehaviour {
 		FIRE,
         HEAD,
         KICK_JUMP,
-        HIT_JUMP
+        HIT_JUMP,
+        CINTURONGA
 	}
 	Character character;
 

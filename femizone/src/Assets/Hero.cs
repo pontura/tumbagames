@@ -46,12 +46,12 @@ public class Hero : Character
        state = states.IDLE;
         if (jump.state != HeroJump.states.NONE)
             print("jumping");
-        else if (!weapons.HasWeapon())
-            anim.Play("idle");
         else if (weapons.type == WeaponPickable.types.WEAPON1)
             anim.Play("idle_gun");
         else if (weapons.type == WeaponPickable.types.WEAPON2)
             anim.Play("melee_idle");
+        else
+            anim.Play("idle");
         OnIdle();
         move.OnIdle();
     }
@@ -66,12 +66,12 @@ public class Hero : Character
             return;
         if (move.type == HeroMove.types.NORMAL)
         {
-            if (!weapons.HasWeapon())
-                anim.Play("walk");
-            else if (weapons.type == WeaponPickable.types.WEAPON1)
+            if (weapons.type == WeaponPickable.types.WEAPON1)
                 anim.Play("gun_walk");
             else if (weapons.type == WeaponPickable.types.WEAPON2)
                 anim.Play("melee_walk");
+            else
+                anim.Play("walk");
         }
         else
         {
@@ -166,16 +166,20 @@ public class Hero : Character
     public void OnPick()
     {
         weapons.GetWeapon(weaponPickable);
+
         if (weaponPickable.type == WeaponPickable.types.WEAPON1)
             anim.Play("pick_gun");
         else if (weaponPickable.type == WeaponPickable.types.WEAPON2)
             anim.Play("pick_melee");
+        else if (weaponPickable.type == WeaponPickable.types.CINTURONGA)
+            anim.Play("pick");
+
         weaponPickable.GotIt();
         weaponPickable = null;
     }
     public void Jump()
     {
-        if (state == states.WALK || state == states.IDLE)
+        if (state == states.WALK || state == states.IDLE )
             jump.Jump();
     }
 }

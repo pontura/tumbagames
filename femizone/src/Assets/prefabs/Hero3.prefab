@@ -160,6 +160,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 9489bea4b035a054ca4dd46648f09cc6, type: 2}
     force: 10
     timeToReset: 0.2
+  - type: 14
+    animClip: {fileID: 7400000, guid: e9a22f512336c3d46a88c20902a3d1aa, type: 2}
+    force: 13
+    timeToReset: 0.5
   receivedAttacks: []
 --- !u!114 &114794619835727158
 MonoBehaviour:
@@ -205,6 +209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   totalUses: 0
+  wearable_cinturonga: {fileID: 9054142342104690105, guid: 1834a85c9361eec4995a4c2e86f369f0,
+    type: 3}
 --- !u!135 &135452430702272690
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -305,12 +311,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 43541322098128336, guid: fa2d973567b0a1140b453a5a4888ded2,
         type: 2}
-    - target: {fileID: 114999756502614918, guid: 924dc2c11657c8e4183c27160ff8b93a,
+    - target: {fileID: 114834217789476348, guid: 924dc2c11657c8e4183c27160ff8b93a,
         type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 114888795560156206}
-    - target: {fileID: 114834217789476348, guid: 924dc2c11657c8e4183c27160ff8b93a,
+    - target: {fileID: 114999756502614918, guid: 924dc2c11657c8e4183c27160ff8b93a,
         type: 3}
       propertyPath: character
       value: 
