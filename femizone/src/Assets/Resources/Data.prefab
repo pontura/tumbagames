@@ -481,7 +481,7 @@ MonoBehaviour:
   musicHard: {fileID: 8300000, guid: 7d98bd2b4ef415a45bca7bb2959783a5, type: 3}
   musicCalm: {fileID: 8300000, guid: 96689754fac2e0c4cac013729af7a3ff, type: 3}
   musicDeath: {fileID: 8300000, guid: 9c4e398a9f023984c9bc458546a0de56, type: 3}
-  hiphop: {fileID: 8300000, guid: a30218392ace70c46b1b17766734ad55, type: 3}
+  hiphop: {fileID: 8300000, guid: 299f5011c4029f64bbac373de828a17a, type: 3}
   volume: 0.4
 --- !u!114 &122
 MonoBehaviour:
@@ -495,6 +495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c04da710688424fa960f50438ebf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunShot: {fileID: 8300000, guid: 3c5eb970f08b1dd499d9566aca8e6b49, type: 3}
+  jump: {fileID: 8300000, guid: 5462c821d2b682843a34b0338bb8856b, type: 3}
+  whip: {fileID: 8300000, guid: 14f62fdf7832b144a96b2206763d4727, type: 3}
   sfxContainer: {fileID: 4}
   punch:
     hero:
@@ -606,12 +609,6 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 2
   - all:
-    - {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf, type: 3}
-    total: 2
-  - all:
-    - {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf, type: 3}
-    total: 2
-  - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
@@ -622,7 +619,12 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
     - {fileID: 5045129668361686577, guid: d0d87b9bdc3305048b08bb339fa51613, type: 3}
     - {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989, type: 3}
-    - {fileID: 5045129668361686577, guid: d0d87b9bdc3305048b08bb339fa51613, type: 3}
+    - {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff, type: 3}
+    total: 1
+  - all:
+    - {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf, type: 3}
+    - {fileID: 114651090706524686, guid: 85bf31adba2595744a9db1cf25e353eb, type: 3}
+    - {fileID: 114651090706524686, guid: dc84e86352817c94da8629c373b6db8a, type: 3}
     total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece, type: 3}
@@ -663,6 +665,13 @@ MonoBehaviour:
     - {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df, type: 3}
     total: 1
   - all:
+    - {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf, type: 3}
+    - {fileID: 114651090706524686, guid: 85bf31adba2595744a9db1cf25e353eb, type: 3}
+    - {fileID: 114651090706524686, guid: dc84e86352817c94da8629c373b6db8a, type: 3}
+    - {fileID: 114890024941958344, guid: 735ee044579de1d4993484be4d7629b7, type: 3}
+    - {fileID: 114890024941958344, guid: 4a30c3ba0579fa94785c759fc6e1957e, type: 3}
+    total: 1
+  - all:
     - {fileID: 114365795418882454, guid: 724013791808b694ea014abe9c6f6a81, type: 3}
     - {fileID: 114913801823397682, guid: d7e32a65c500f5a438aa4cabc6eebc88, type: 3}
     - {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128, type: 3}
@@ -680,6 +689,7 @@ MonoBehaviour:
     - {fileID: 2418968211494619019, guid: 00c80db912be6dd498493fbb91102990, type: 3}
     - {fileID: 2418968211494619019, guid: c90bdeb65a537934ab44e65cfc40bba4, type: 3}
     - {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128, type: 3}
+    - {fileID: 114913801823397682, guid: b9005aa7bd6a54342b7e45d91888762d, type: 3}
     total: 100
 --- !u!82 &96
 AudioSource:

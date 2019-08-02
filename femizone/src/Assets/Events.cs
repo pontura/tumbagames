@@ -38,6 +38,7 @@ public static class Events
 
     public static System.Action<Character> OnCharacterDie = delegate { };
 
+    public static System.Action<Character> OnJump = delegate { };
     public static System.Action<CharacterHitsManager.types, Character> OnAttack = delegate { };
     public static System.Action<CharacterHitsManager.types, Character> OnReceiveit = delegate { };
     public static System.Action<Character, bool> OnMansPlaining = delegate { };

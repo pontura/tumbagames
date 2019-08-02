@@ -5,6 +5,10 @@ using System;
 
 public class SFXManager : MonoBehaviour {
 
+    public AudioClip gunShot;
+    public AudioClip jump;
+    public AudioClip whip;
+
     public GameObject sfxContainer;
     public AudioClips punch;
 	public AudioClips kick;
@@ -47,7 +51,8 @@ public class SFXManager : MonoBehaviour {
 	int distanceToManPlanning = 26;
 
 	void Start () {
-		Events.OnAttack += OnAttack;
+        Events.OnJump += OnJump;
+        Events.OnAttack += OnAttack;
 		Events.OnReceiveit += OnReceiveit;
 		Events.OnMansPlaining += OnMansPlaining;
         Events.GameOver += GameOver;
@@ -57,7 +62,8 @@ public class SFXManager : MonoBehaviour {
     }
 	void OnDestroy()
 	{
-		Events.OnAttack -= OnAttack;
+        Events.OnJump -= OnJump;
+        Events.OnAttack -= OnAttack;
 		Events.OnReceiveit -= OnReceiveit;
 		Events.OnMansPlaining -= OnMansPlaining;
         Events.GameOver -= GameOver;
@@ -148,11 +154,15 @@ public class SFXManager : MonoBehaviour {
 		AudioClip[] arr;
 		AudioClip audioClip;
 		switch (type) {
+        case CharacterHitsManager.types.MELEE:
+        case CharacterHitsManager.types.GUN_FIRE:
+        case CharacterHitsManager.types.CINTURONGA:
 
-		case CharacterHitsManager.types.HIT_BACK:
+        case CharacterHitsManager.types.HIT_BACK:
 		case CharacterHitsManager.types.HIT_FORWARD:
 		case CharacterHitsManager.types.HIT_UPPER:
-			arr = GetArrClip (punches_hit, character.stats.type);
+        case CharacterHitsManager.types.HIT_JUMP:
+            arr = GetArrClip (punches_hit, character.stats.type);
 			audioClip = GetRandom (arr);
 			AudioS_hit_punches.clip = audioClip;
 			AudioS_hit_punches.Play ();
@@ -161,7 +171,8 @@ public class SFXManager : MonoBehaviour {
 		case CharacterHitsManager.types.KICK_BACK:
 		case CharacterHitsManager.types.KICK_DOWN:
 		case CharacterHitsManager.types.KICK_FOWARD:
-			arr = GetArrClip (balls_hit, character.stats.type);
+        case CharacterHitsManager.types.KICK_JUMP:
+            arr = GetArrClip (balls_hit, character.stats.type);
 			audioClip = GetRandom (arr);
 			AudioS_hit_balls.clip = audioClip;
 			AudioS_hit_balls.Play ();
@@ -170,26 +181,40 @@ public class SFXManager : MonoBehaviour {
 		}
 
 	}
-	void OnAttack(CharacterHitsManager.types type, Character character)
+    void OnJump(Character character)
+    {
+        AudioS_punches.clip = jump;
+        AudioS_punches.Play();
+    }
+    void OnAttack(CharacterHitsManager.types type, Character character)
 	{
-
 		AudioClip[] arr;
 		AudioClip audioClip;
 		switch (type) {
-
-		case CharacterHitsManager.types.HIT_BACK:
+            case CharacterHitsManager.types.CINTURONGA:
+            case CharacterHitsManager.types.MELEE:
+                AudioS_punches.clip = whip;
+                AudioS_punches.Play();
+                break;
+        case CharacterHitsManager.types.HIT_BACK:
 		case CharacterHitsManager.types.HIT_FORWARD:
 		case CharacterHitsManager.types.HIT_UPPER:
-			arr = GetArrClip (punch, character.stats.type);
+        case CharacterHitsManager.types.HIT_JUMP:
+            arr = GetArrClip (punch, character.stats.type);
 			audioClip = GetRandom (arr);
 			AudioS_punches.clip = audioClip;
 			AudioS_punches.Play ();
 			break;
-
-		case CharacterHitsManager.types.KICK_BACK:
+        case CharacterHitsManager.types.GUN_FIRE:
+            audioClip = gunShot;
+            AudioS_punches.clip = audioClip;
+            AudioS_punches.Play();
+            break;
+        case CharacterHitsManager.types.KICK_BACK:
 		case CharacterHitsManager.types.KICK_DOWN:
 		case CharacterHitsManager.types.KICK_FOWARD:
-			arr = GetArrClip (kick, character.stats.type);
+        case CharacterHitsManager.types.KICK_JUMP:
+                arr = GetArrClip (kick, character.stats.type);
 			audioClip = GetRandom (arr);
 			AudioS_kicks.clip = audioClip;
 			AudioS_kicks.Play ();

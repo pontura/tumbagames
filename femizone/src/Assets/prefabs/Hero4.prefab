@@ -162,8 +162,8 @@ MonoBehaviour:
     timeToReset: 0.4
   - type: 14
     animClip: {fileID: 7400000, guid: 9902f036a6cec7e4388537bee399ea50, type: 2}
-    force: 13
-    timeToReset: 0.4
+    force: 25
+    timeToReset: 1
   receivedAttacks: []
 --- !u!114 &114645941766145134
 MonoBehaviour:

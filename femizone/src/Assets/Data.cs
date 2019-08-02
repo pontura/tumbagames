@@ -47,7 +47,7 @@ public class Data : MonoBehaviour
         Events.OnChangeScene(currentLevel);
         SceneManager.LoadScene(currentLevel);
         loadingAsset.SetOff();
-        Events.OnMusicVolumeChanged(1);
+        Events.OnMusicVolumeChanged(0.6f);
     }
     void Awake()
     {

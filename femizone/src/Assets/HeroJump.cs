@@ -28,7 +28,7 @@ public class HeroJump : MonoBehaviour
     {
         if (state != states.NONE)
             return;
-
+        Events.OnJump(hero);
         hero.anim.Play("jump");
         state = states.JUMPING_UP;
         hero.hitsManager.SetStateForReceiver(false);

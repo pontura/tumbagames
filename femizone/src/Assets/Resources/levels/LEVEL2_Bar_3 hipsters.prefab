@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420451912553382}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.63, y: -0, z: 8.01}
+  m_LocalPosition: {x: -1.63, y: -0, z: 9.5}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4476753523613144}
@@ -66,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -92,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 9
   pos: {x: 24.36, y: 0, z: 7.2053304}
+  aditionalSpeed: 0
 --- !u!1 &1468120260502766
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563750036349048}
   m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.27, y: 0, z: 7.85}
+  m_LocalPosition: {x: 6.75, y: 0, z: 8.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4476753523613144}
@@ -207,6 +209,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -233,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 9
   pos: {x: 30.29, y: 0, z: 2.0871208}
+  aditionalSpeed: 0
 --- !u!1 &1886281983222938
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +303,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -325,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 9
   pos: {x: 28.380001, y: 0, z: 6.131459}
+  aditionalSpeed: 0
 --- !u!1 &3664936669251592002
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +397,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -417,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 12
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
 --- !u!1 &6251739671443164178
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +491,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -509,3 +518,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 12
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0

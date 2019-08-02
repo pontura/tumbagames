@@ -10035,6 +10035,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 142938ab13939b649a1784e6195b0696, type: 2}
     force: 0
     timeToReset: 0.2
+  - type: 10
+    animClip: {fileID: 7400000, guid: bbd86b6dd21f2e648986e56d37e870bc, type: 2}
+    force: 0
+    timeToReset: 0.2
 --- !u!114 &1349855662007653303
 MonoBehaviour:
   m_ObjectHideFlags: 0

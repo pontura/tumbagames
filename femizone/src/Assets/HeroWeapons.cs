@@ -27,6 +27,8 @@ public class HeroWeapons : MonoBehaviour {
     }
 	public void Use()
 	{
+        if (hero.state == Character.states.HITTING)
+            return;
 		totalUses--;
 		if (totalUses <= 0) {
 			Invoke("Reset", 1);
@@ -41,7 +43,8 @@ public class HeroWeapons : MonoBehaviour {
             cinturonga.Attack(1);
         }
     }
-	public bool HasWeapon()
+
+    public bool HasWeapon()
 	{
 		if (type ==  WeaponPickable.types.NONE)
 			return false;
@@ -49,6 +52,7 @@ public class HeroWeapons : MonoBehaviour {
 	}
 	public void GetWeapon(WeaponPickable weapon)
 	{
+        CancelInvoke();
 		totalUses = weapon.uses;
 		type = weapon.type;
         if(weapon.type == WeaponPickable.types.CINTURONGA)

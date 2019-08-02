@@ -16,7 +16,6 @@ public class MusicManager : MonoBehaviour {
 	{
         audioSource = gameObject.AddComponent<AudioSource> ();
         audioSource.loop = true;
-
         OnStageClear ();
         OnChangeScene("Intro");
     }
