@@ -29,7 +29,7 @@ public class HeroWeapons : MonoBehaviour {
 	{
 		totalUses--;
 		if (totalUses <= 0) {
-			Reset ();
+			Invoke("Reset", 1);
 		}
         if (type == WeaponPickable.types.WEAPON1)
             hero.hitsManager.SetOn(CharacterHitsManager.types.GUN_FIRE);
