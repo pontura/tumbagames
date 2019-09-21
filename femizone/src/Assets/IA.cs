@@ -41,7 +41,7 @@ public class IA : MonoBehaviour {
 		state = states.HITTED;
 		Invoke ("Idle", 0.5f);
 	}
-	void Idle()
+    public void Idle()
 	{
 		CancelInvoke ();
 		enemy.Idle ();
@@ -138,8 +138,8 @@ public class IA : MonoBehaviour {
 			return;
 		LookToTarget ();
 		enemy.Attack();
-		Invoke ("Idle", 1f);
-	}
+		Invoke ("Idle", enemy.enemyAttackManager.attackStyle.timeToReset);
+    }
 
 	float GetRandom(Vector2 v)
 	{

@@ -11,6 +11,8 @@ public class EnemiesManager : MonoBehaviour {
 	public GameObject cop_gun;
 	public GameObject boss1;
 	public GameObject moderno;
+    public GameObject exhibicionista;
+    public GameObject trapper;
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
@@ -63,6 +65,12 @@ public class EnemiesManager : MonoBehaviour {
 			case SceneObjectData.types.MODERNO:
 				so = moderno;
 				break;
+            case SceneObjectData.types.EXHIBICIONISTA:
+                so = exhibicionista;
+                break;
+            case SceneObjectData.types.TRAPPER:
+                so = trapper;
+                break;
         }
         Enemy enemy = Instantiate(enemy_to_instantiate);
         enemy.transform.SetParent(container);

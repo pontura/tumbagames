@@ -81,6 +81,7 @@ public class CharacterHitsManager : MonoBehaviour {
 		hitArea.SetType (type, attackStyle.force);
 
 		character.state = Character.states.HITTING;
+
 		Invoke ("Reset", attackStyle.timeToReset);
 
 		Events.OnAttack (attackStyle.type, character);

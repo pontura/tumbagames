@@ -57,8 +57,14 @@ public class Enemy : Character {
 	}
 	public override void OnAttack ()
 	{
-		enemyAttackManager.Attack ();
-	}
+        enemyAttackManager.Attack ();
+        print(enemyAttackManager.attackStyle + " time: " + enemyAttackManager.attackStyle.timeToReset);
+        Invoke("Idle", enemyAttackManager.attackStyle.timeToReset);
+    }
+    void AttackDone()
+    {
+        ia.Idle();
+    }
 	public void Reset()
 	{
 		CancelInvoke ();

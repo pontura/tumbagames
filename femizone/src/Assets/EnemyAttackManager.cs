@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyAttackManager : MonoBehaviour {
 
 	Enemy enemy;
-	void Start()
+    public AttackStyle attackStyle;
+
+    void Start()
 	{
 		enemy = GetComponent<Enemy> ();
 	}
@@ -13,10 +15,11 @@ public class EnemyAttackManager : MonoBehaviour {
 	{
 		int attacksQty = enemy.stats.attacks.Count;
 
-		AttackStyle attack = enemy.stats.attacks [Random.Range (0, attacksQty)];
-		enemy.hitArea.SetType(attack.type, attack.force);
-		enemy.anim.Play (attack.animClip.name);
+        attackStyle = enemy.stats.attacks [Random.Range (0, attacksQty)];
+		enemy.hitArea.SetType(attackStyle.type, attackStyle.force);
+		enemy.anim.Play (attackStyle.animClip.name);
 
-		Events.OnAttack (attack.type, enemy);
+
+		Events.OnAttack (attackStyle.type, enemy);
 	}
 }
