@@ -1976,10 +1976,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hipster
       objectReference: {fileID: 0}
-    - target: {fileID: 1405464266223164, guid: ec207fb0942efb440997c93c2157cf9c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4469245338358502, guid: ec207fb0942efb440997c93c2157cf9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.31
