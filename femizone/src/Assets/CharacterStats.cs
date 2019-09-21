@@ -27,8 +27,8 @@ public class CharacterStats : MonoBehaviour {
 	{
 		life -= (int)force;
 	}
-
-	public List<AttackStyle> attacks;
+    public List<AnimationClip>  idle_clips;
+    public List<AttackStyle> attacks;
 
 	public List<AttackStyle> receivedAttacks;
 

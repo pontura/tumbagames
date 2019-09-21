@@ -45,9 +45,18 @@ public class Enemy : Character {
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 		progressBar.Hide ();
 		Loop ();
+        OnIdle();
 
-	}
-	void Loop()
+    }
+    public override void OnIdle()
+    {
+        if(stats.idle_clips.Count>0)
+        {
+            anim.Play(stats.idle_clips[Random.Range(0, stats.idle_clips.Count)].name);
+        }
+    }
+
+    void Loop()
 	{
 		if(state != states.SLEEP)
 			StartCoroutine (CancelPhysics());
@@ -58,7 +67,6 @@ public class Enemy : Character {
 	public override void OnAttack ()
 	{
         enemyAttackManager.Attack ();
-        print(enemyAttackManager.attackStyle + " time: " + enemyAttackManager.attackStyle.timeToReset);
         Invoke("Idle", enemyAttackManager.attackStyle.timeToReset);
     }
     void AttackDone()

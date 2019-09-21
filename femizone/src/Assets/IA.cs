@@ -65,9 +65,12 @@ public class IA : MonoBehaviour {
     public virtual void OnUpdated() { }
     void Fight()
 	{
-		state = states.READY_FOR_FIGHT;
-		enemy.Idle ();
-		Invoke ("READY_FOR_FIGHT",GetRandom(enemy.stats.time_to_Punch));
+        if (enemy.stats.attacks.Count > 0)
+        {
+            state = states.READY_FOR_FIGHT;
+            enemy.Idle();
+            Invoke("READY_FOR_FIGHT", GetRandom(enemy.stats.time_to_Punch));
+        }   
 	}
 	void LookTarget()
 	{
@@ -137,6 +140,7 @@ public class IA : MonoBehaviour {
 		if (state != states.READY_FOR_FIGHT)
 			return;
 		LookToTarget ();
+
 		enemy.Attack();
 		Invoke ("Idle", enemy.enemyAttackManager.attackStyle.timeToReset);
     }

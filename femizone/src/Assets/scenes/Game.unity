@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 94, y: 64}
+  resolution: {x: 98, y: 68}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -3925,7 +3925,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].total
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[3].all.Array.data[0]
@@ -4213,7 +4213,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[2].total
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[4].all.Array.data[3]
@@ -5602,7 +5602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 941, y: 647}
+  resolution: {x: 980, y: 683}
   pixelSize: 1
   dither: 0.15
   opacity: 1

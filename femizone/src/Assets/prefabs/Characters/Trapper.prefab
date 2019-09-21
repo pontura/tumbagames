@@ -48521,6 +48521,9 @@ MonoBehaviour:
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15
   type: 1
+  idle_clips:
+  - {fileID: 7400000, guid: 20bd07f42f557404fba7b8d32e644e5c, type: 2}
+  - {fileID: 7400000, guid: b23876d6f5b6ed64286aca5d9e41be9e, type: 2}
   attacks: []
   receivedAttacks:
   - type: 1

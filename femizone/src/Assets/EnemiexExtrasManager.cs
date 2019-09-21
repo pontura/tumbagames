@@ -25,7 +25,6 @@ public class EnemiexExtrasManager : MonoBehaviour
     }
 	void OnMansPlaining(Character c, bool isOn)
 	{
-        if(stagesClear>0)
 		canAdd = true;
 	}
 	void OnStageClear()
@@ -44,7 +43,7 @@ public class EnemiexExtrasManager : MonoBehaviour
 	Enemy enemy;
 	void CheckToAdd()
 	{
-		if (!canAdd ||  GetComponent<HeroesManager> ().all.Count == 0)
+        if (stagesClear < 2 || !canAdd ||  GetComponent<HeroesManager> ().all.Count == 0)
 			return;
 		
 		if(added >= maxToAdd)
