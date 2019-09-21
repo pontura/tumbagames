@@ -25,6 +25,7 @@ public class EnemiexExtrasManager : MonoBehaviour
     }
 	void OnMansPlaining(Character c, bool isOn)
 	{
+        if(stagesClear>0)
 		canAdd = true;
 	}
 	void OnStageClear()

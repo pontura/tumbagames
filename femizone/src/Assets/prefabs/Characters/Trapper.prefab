@@ -48521,54 +48521,46 @@ MonoBehaviour:
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15
   type: 1
-  attacks:
-  - type: 4
-    animClip: {fileID: 7400000, guid: 0abe60d80436b354bafd8a388e82519e, type: 2}
-    force: 5
-    timeToReset: 0.2
-  - type: 6
-    animClip: {fileID: 7400000, guid: 9b37a9d3216f9804f869fffc47415d2d, type: 2}
-    force: 5
-    timeToReset: 0.2
+  attacks: []
   receivedAttacks:
   - type: 1
-    animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
+    animClip: {fileID: 7400000, guid: 03bc482d144af1243a0cd4575c5d0432, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 2
-    animClip: {fileID: 7400000, guid: a6f13e936eccf9e438ead09b2f0f12c2, type: 2}
+    animClip: {fileID: 7400000, guid: 38148890738e19447a4667c11f27e427, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 3
-    animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
+    animClip: {fileID: 7400000, guid: 38148890738e19447a4667c11f27e427, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 4
-    animClip: {fileID: 7400000, guid: b80c0bbacd12407459dc66711a78caf1, type: 2}
+    animClip: {fileID: 7400000, guid: 03bc482d144af1243a0cd4575c5d0432, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 5
-    animClip: {fileID: 7400000, guid: 913298afe82fe39478a3cd6c2d66ee65, type: 2}
+    animClip: {fileID: 7400000, guid: b186e8887535e1c46ac908eb9e917e4e, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 6
-    animClip: {fileID: 7400000, guid: 18656f9035e430a49ad1a097565a326b, type: 2}
+    animClip: {fileID: 7400000, guid: b186e8887535e1c46ac908eb9e917e4e, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 11
-    animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
+    animClip: {fileID: 7400000, guid: 03bc482d144af1243a0cd4575c5d0432, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 12
-    animClip: {fileID: 7400000, guid: b80c0bbacd12407459dc66711a78caf1, type: 2}
+    animClip: {fileID: 7400000, guid: b186e8887535e1c46ac908eb9e917e4e, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 13
-    animClip: {fileID: 7400000, guid: b80c0bbacd12407459dc66711a78caf1, type: 2}
+    animClip: {fileID: 7400000, guid: 38148890738e19447a4667c11f27e427, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 14
-    animClip: {fileID: 7400000, guid: 18656f9035e430a49ad1a097565a326b, type: 2}
+    animClip: {fileID: 7400000, guid: b186e8887535e1c46ac908eb9e917e4e, type: 2}
     force: 0
     timeToReset: 0.2
 --- !u!114 &4822945195734409303

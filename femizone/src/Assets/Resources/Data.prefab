@@ -609,6 +609,12 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 2
   - all:
+    - {fileID: 5045129668361686577, guid: bdb551aef41f848449b2b53ebde61f3c, type: 3}
+    total: 1
+  - all:
+    - {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c, type: 3}
+    total: 1
+  - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
@@ -1359,7 +1365,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.743
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1559,11 +1565,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PerraforceLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
       propertyPath: clip1
