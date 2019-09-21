@@ -5373,7 +5373,7 @@ MonoBehaviour:
   - type: 1
     animClip: {fileID: 7400000, guid: 356d2e660734d644fb2ede96f70f8385, type: 2}
     force: 50
-    timeToReset: 0.2
+    timeToReset: 1
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 6adc25d6b20b6b34ba7f5631ccc79868, type: 2}

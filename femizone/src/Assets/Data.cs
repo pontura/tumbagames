@@ -74,9 +74,9 @@ public class Data : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Application.Quit();
-        }
+       // if (Input.GetKeyDown(KeyCode.Alpha1))
+       // {
+       //     Application.Quit();
+       // }
     }
 }

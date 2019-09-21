@@ -27,7 +27,7 @@ public class LevelsData : MonoBehaviour
             int id = 0;
             foreach (Level level in l.all)
             {
-                if (id < l.total)
+                if (id <= l.total)
                     all.Add(level);
                 id++;
             }

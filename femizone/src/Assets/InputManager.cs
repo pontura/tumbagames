@@ -22,7 +22,8 @@ public class InputManager : MonoBehaviour
     }
     public float timeSinceStopped = 0;
     public float _x;
-    float timeOut = 0.1f;
+
+    float timeOut = 0.15f;
 
     void Update()
     {

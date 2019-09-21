@@ -31,7 +31,7 @@ public class EnemiexExtrasManager : MonoBehaviour
 	{
 		canAdd = false;
 		added = 0;
-		maxToAdd += stagesClear;
+		maxToAdd += stagesClear-1;
 		stagesClear++;
 	}
 
@@ -55,19 +55,25 @@ public class EnemiexExtrasManager : MonoBehaviour
 		SceneObjectData data = new SceneObjectData ();
 		int rand = Random.Range(0,10);
 
-		if(rand<5)
-			data.type = SceneObjectData.types.WARNES_MAN;
-		else if(rand<7)
-			data.type = SceneObjectData.types.CEO;
-		else
-			data.type = SceneObjectData.types.MODERNO;
+        List < SceneObjectData.types > all =  new List<SceneObjectData.types>();
+
+        all.Add(SceneObjectData.types.WARNES_MAN);
+        all.Add(SceneObjectData.types.CEO);
+        all.Add(SceneObjectData.types.MODERNO);
+
+        if (stagesClear > 4)
+            all.Add(SceneObjectData.types.COP);
+        if (stagesClear > 7)
+            all.Add(SceneObjectData.types.COP_GUN);
+
+        data.type = GetRandomBetween(all);
 		
 		Vector3 pos = World.Instance.worldCamera.transform.position;
 
 		if(Random.Range(0,10)<5)
-			pos.x += 14 + Random.Range(0,4);
+			pos.x += 15 + Random.Range(0,4);
 		else
-			pos.x -= 14 + Random.Range(0,4);	
+			pos.x -= 15 + Random.Range(0,4);	
 		
 		pos.z = Random.Range(-1,10);
 		data.pos = pos;
@@ -85,4 +91,8 @@ public class EnemiexExtrasManager : MonoBehaviour
 			enemy.ReceiveHit (ha, 1);
         }
 	}
+    SceneObjectData.types GetRandomBetween(List<SceneObjectData.types> all)
+    {
+        return all[Random.Range(0, all.Count)];
+    }
 }

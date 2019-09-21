@@ -10202,14 +10202,10 @@ MonoBehaviour:
   hittedPower: 15
   type: 1
   attacks:
-  - type: 4
-    animClip: {fileID: 7400000, guid: 0abe60d80436b354bafd8a388e82519e, type: 2}
-    force: 5
-    timeToReset: 0.2
-  - type: 6
-    animClip: {fileID: 7400000, guid: 9b37a9d3216f9804f869fffc47415d2d, type: 2}
-    force: 5
-    timeToReset: 0.2
+  - type: 3
+    animClip: {fileID: 7400000, guid: 84d623e0dee5b244f95b5238ccfc241c, type: 2}
+    force: 8
+    timeToReset: 0.3
   receivedAttacks:
   - type: 1
     animClip: {fileID: 7400000, guid: bd1327b151c4f9c4ba9fc161f748a97e, type: 2}
