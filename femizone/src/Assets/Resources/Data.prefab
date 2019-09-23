@@ -498,6 +498,7 @@ MonoBehaviour:
   gunShot: {fileID: 8300000, guid: 3c5eb970f08b1dd499d9566aca8e6b49, type: 3}
   jump: {fileID: 8300000, guid: 5462c821d2b682843a34b0338bb8856b, type: 3}
   whip: {fileID: 8300000, guid: 14f62fdf7832b144a96b2206763d4727, type: 3}
+  carCrash: {fileID: 8300000, guid: a20ae74b8ac91254a8f455000d51904a, type: 3}
   sfxContainer: {fileID: 4}
   punch:
     hero:

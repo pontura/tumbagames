@@ -11,6 +11,7 @@ public static class Events
 
     public static System.Action PixelSizeChange = delegate { };
 
+    public static System.Action OnCarCrashEnemy = delegate { };
     public static System.Action<int, int> OnAddScore = delegate { };
     public static System.Action<int> OnKeyPress = delegate { };
     public static System.Action<int, int> OnAxisChange = delegate { };
