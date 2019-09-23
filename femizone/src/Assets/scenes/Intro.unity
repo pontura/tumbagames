@@ -56518,7 +56518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 47, y: 32}
+  resolution: {x: 30, y: 24}
   pixelSize: 20
   dither: 0.15
   opacity: 1

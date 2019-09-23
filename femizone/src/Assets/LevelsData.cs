@@ -48,7 +48,6 @@ public class LevelsData : MonoBehaviour
     }
     void Load(Level level)
     {
-
         SceneObjectData[] allSceneObjectData = level.GetComponentsInChildren<SceneObjectData>();
         foreach (SceneObjectData data in allSceneObjectData)
         {
