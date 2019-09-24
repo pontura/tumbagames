@@ -8,6 +8,7 @@ public class SFXManager : MonoBehaviour {
     public AudioClip gunShot;
     public AudioClip jump;
     public AudioClip whip;
+    public AudioClip carCrash;
 
     public GameObject sfxContainer;
     public AudioClips punch;
@@ -57,6 +58,7 @@ public class SFXManager : MonoBehaviour {
 		Events.OnMansPlaining += OnMansPlaining;
         Events.GameOver += GameOver;
         Events.AddHero += AddHero;
+        Events.OnCarCrashEnemy += OnCarCrashEnemy;
         Loop();
 
     }
@@ -68,6 +70,12 @@ public class SFXManager : MonoBehaviour {
 		Events.OnMansPlaining -= OnMansPlaining;
         Events.GameOver -= GameOver;
         Events.AddHero -= AddHero;
+        Events.OnCarCrashEnemy -= OnCarCrashEnemy;
+    }
+    void OnCarCrashEnemy()
+    {
+        uiAudioSource.clip = carCrash;
+        uiAudioSource.Play();
     }
     void AddHero(int id)
     {

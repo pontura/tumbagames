@@ -11,18 +11,17 @@ public class SceneObjectCar : GenericObject
     Vector3 to;
 
     public override void IsOverObject(bool isOver, Collider other)
-    {
-       
+    {       
         Character character = other.GetComponent<Character>();
         if (character == null)
             return;
-
-        print(other.name);
 
         HitArea hitArea = new HitArea();
         hitArea.type = CharacterHitsManager.types.SPECIAL;
         hitArea.force = 100;
         character.OnReceiveHit(hitArea, 100);
+        if(!character.GetComponent<Hero>())
+            Events.OnCarCrashEnemy();
     }
     public override void OnInit()
     {
