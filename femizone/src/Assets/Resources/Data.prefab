@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 124}
   - component: {fileID: 96}
   - component: {fileID: 1539394853}
+  - component: {fileID: 423249261}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -441,6 +442,7 @@ MonoBehaviour:
   levelsManager: {fileID: 0}
   loadingAsset: {fileID: 1042307831}
   textsManager: {fileID: 0}
+  sequenceData: {fileID: 0}
   currentLevel: 
 --- !u!114 &119
 MonoBehaviour:
@@ -481,6 +483,7 @@ MonoBehaviour:
   musicHard: {fileID: 8300000, guid: 7d98bd2b4ef415a45bca7bb2959783a5, type: 3}
   musicCalm: {fileID: 8300000, guid: 96689754fac2e0c4cac013729af7a3ff, type: 3}
   musicDeath: {fileID: 8300000, guid: 9c4e398a9f023984c9bc458546a0de56, type: 3}
+  luisAguile: {fileID: 8300000, guid: 63aa49355e642074bae3a7eb81941a11, type: 3}
   hiphop: {fileID: 8300000, guid: 299f5011c4029f64bbac373de828a17a, type: 3}
   volume: 0.4
 --- !u!114 &122
@@ -610,9 +613,6 @@ MonoBehaviour:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
     total: 2
   - all:
-    - {fileID: 5045129668361686577, guid: bdb551aef41f848449b2b53ebde61f3c, type: 3}
-    total: 1
-  - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
@@ -634,6 +634,11 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece, type: 3}
     - {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989, type: 3}
     - {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c, type: 3}
+    total: 2
+  - all:
+    - {fileID: 5045129668361686577, guid: bdb551aef41f848449b2b53ebde61f3c, type: 3}
+    - {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c, type: 3}
+    - {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f, type: 3}
     total: 2
   - all:
     - {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8, type: 3}
@@ -661,10 +666,10 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
-    total: 3
+    total: 2
   - all:
     - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
-    total: 3
+    total: 1
   - all:
     - {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3, type: 3}
     - {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df, type: 3}
@@ -687,6 +692,7 @@ MonoBehaviour:
     - {fileID: 114890024941958344, guid: 9a32f1d056111dd499dcc8c2711879f0, type: 3}
     - {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173, type: 3}
     - {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128, type: 3}
+    - {fileID: 5045129668361686577, guid: b9bced6add1dad2419fc5955e58bdcb2, type: 3}
     total: 1
   - all:
     - {fileID: 114147816371024642, guid: 6e126142d0093b5459161222bef0f47d, type: 3}
@@ -806,7 +812,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introID: 0
   intro:
-    all: []
+    intro1: []
+    intro2: []
+    intro3: []
+--- !u!114 &423249261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6786bcf9575184fa997fb17f742e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all: []
 --- !u!1 &8
 GameObject:
   m_ObjectHideFlags: 0

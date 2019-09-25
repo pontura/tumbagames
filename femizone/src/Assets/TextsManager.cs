@@ -11,25 +11,18 @@ public class TextsManager : MonoBehaviour
     [Serializable]
     public class Intro
     {
-        public TextsContent[] all;
+        public TextsContent[] intro1;
+        public TextsContent[] intro2;
+        public TextsContent[] intro3;
     }
     [Serializable]
     public class TextsContent
     {
         public string[] texts;
     }
-
     void Start()
     {
         TextAsset file = Resources.Load<TextAsset>("intro");
         intro = JsonUtility.FromJson<Intro>(file.text);
-        introID = UnityEngine.Random.Range(0, intro.all.Length);
-    }
-    public TextsContent GetNextIntro()
-    {
-        introID++;
-        if (introID >= intro.all.Length)
-            introID = 0;
-        return intro.all[introID];        
     }
 }

@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1627971267673229937}
   - component: {fileID: 4813759165166167039}
   m_Layer: 0
-  m_Name: banco
+  m_Name: arbol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2711327377491467210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 2.8000002, z: 16.28}
+  m_LocalPosition: {x: -0, y: 2.8000002, z: 17.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4084216759891654}
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 10
+  type: 18
   pos: {x: 28.32, y: 0, z: -0.17024374}
   aditionalSpeed: 0
 --- !u!1 &3034996374834150244
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 4111850706037120214}
   - component: {fileID: 1888129401278580265}
   m_Layer: 0
-  m_Name: banco
+  m_Name: arbol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3034996374834150244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.9, y: 2.8000002, z: 16.28}
+  m_LocalPosition: {x: 7.9, y: 2.8000002, z: 17.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4084216759891654}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 10
+  type: 18
   pos: {x: 28.32, y: 0, z: -0.17024374}
   aditionalSpeed: 0
 --- !u!1 &3514805791308636533

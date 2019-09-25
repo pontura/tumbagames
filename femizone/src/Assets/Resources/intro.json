@@ -1,5 +1,5 @@
 {
-"all":
+"intro1":
 	[
 		{
 			"texts":
@@ -38,6 +38,42 @@
 				"La verdad no escuché nada de lo que dijiste los últimos...",
 				"7 MINUTOS",
 				"...pero la respuesta es HOY NO."
+			]
+		}
+	],
+	"intro2":
+	[
+		{
+			"texts":
+			[
+				"Empujá a los FACHIRULOS a la calle para que los autos los hagan estallar."
+			]
+		},
+		{
+			"texts":
+			[
+				"Cuando los FACHIRULOS se enojan se ponen re violentos. Hacé enojar un grupo y dejalos agredirse entre ellos."
+			]
+		},
+		{
+			"texts":
+			[
+				"Para pegar cabezazo da un rápido toque de palanca hacia atrás."
+			]
+		},
+		{
+			"texts":
+			[
+				"Probá salto+piña y salto+patada y me contás."
+			]
+		}
+	],
+	"intro3":
+	[
+		{
+			"texts":
+			[
+				"Hacé fotos y videos y compartilos con el hashtag #PERRAFORCE\n Tarántula, CEO de Tumba Games"
 			]
 		}
 	]
