@@ -26,7 +26,9 @@ public class CutScenesFinalManager : MonoBehaviour
     }
     IEnumerator GameOverRoutine()
     {
-        if (Data.Instance.settings.cutsceneFinalID == 2)
+        if (Data.Instance.settings.cutsceneFinalID == 3)
+            Data.Instance.GetComponent<MusicManager>().ForceDancers();
+        else if (Data.Instance.settings.cutsceneFinalID == 2)
             Data.Instance.GetComponent<MusicManager>().ForceLuisAguile();
         else if (Data.Instance.settings.cutsceneFinalID == 0)
             Data.Instance.GetComponent<MusicManager>().ForceHiphop();

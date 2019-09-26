@@ -484,6 +484,7 @@ MonoBehaviour:
   musicCalm: {fileID: 8300000, guid: 96689754fac2e0c4cac013729af7a3ff, type: 3}
   musicDeath: {fileID: 8300000, guid: 9c4e398a9f023984c9bc458546a0de56, type: 3}
   luisAguile: {fileID: 8300000, guid: 63aa49355e642074bae3a7eb81941a11, type: 3}
+  dancers: {fileID: 8300000, guid: 1d8f8bd8c5447f740ba33b89e219f300, type: 3}
   hiphop: {fileID: 8300000, guid: 299f5011c4029f64bbac373de828a17a, type: 3}
   volume: 0.4
 --- !u!114 &122
@@ -611,7 +612,10 @@ MonoBehaviour:
   levelsByDificulty:
   - all:
     - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
-    total: 2
+    total: 1
+  - all:
+    - {fileID: 114169596687558326, guid: f6c1779df67c7544d9cd9bdfa1e9983c, type: 3}
+    total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
     - {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4, type: 3}

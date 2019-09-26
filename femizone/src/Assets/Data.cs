@@ -53,7 +53,7 @@ public class Data : MonoBehaviour
     void Awake()
     {
 		QualitySettings.vSyncCount = 1;
-
+        Screen.fullScreen = true;
         if (!mInstance)
             mInstance = this;
         else

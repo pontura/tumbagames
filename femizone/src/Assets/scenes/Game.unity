@@ -358,7 +358,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0
+  near clip plane: -100
   far clip plane: 1000
   field of view: 78
   orthographic: 1
@@ -4701,7 +4701,7 @@ PrefabInstance:
     - target: {fileID: 380742532085901349, guid: 83b600af1fddd6641b18a4dd5771da2e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -49
+      value: -63.7
       objectReference: {fileID: 0}
     - target: {fileID: 380742532085901349, guid: 83b600af1fddd6641b18a4dd5771da2e,
         type: 3}
@@ -4761,7 +4761,37 @@ PrefabInstance:
     - target: {fileID: 5146775931945533055, guid: 83b600af1fddd6641b18a4dd5771da2e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 87
+      value: 64.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954151137770889055, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954151137770889055, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602582805203641605, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602582805203641605, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899946082672818619, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899946082672818619, guid: 83b600af1fddd6641b18a4dd5771da2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b600af1fddd6641b18a4dd5771da2e, type: 3}

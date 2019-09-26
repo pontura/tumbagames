@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour {
 	public AudioClip musicCalm;
     public AudioClip musicDeath;
     public AudioClip luisAguile;
+    public AudioClip dancers;
 
     public AudioClip hiphop;
 
@@ -66,6 +67,12 @@ public class MusicManager : MonoBehaviour {
             return;
 
         audioSource.pitch = 1;
+        audioSource.Play();
+    }
+    public void ForceDancers()
+    {
+        OnMusicVolumeChanged(1);
+        audioSource.clip = dancers;
         audioSource.Play();
     }
     public void ForceLuisAguile()
