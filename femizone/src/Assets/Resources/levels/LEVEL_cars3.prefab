@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1948147406877988811}
   - component: {fileID: 8143955625245799800}
   m_Layer: 0
-  m_Name: warnes
+  m_Name: ceo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4256961461743619936}
   m_LocalRotation: {x: -0.00000004470348, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 2.8, z: 8.74}
+  m_LocalPosition: {x: -4.27, y: 2.8, z: 9.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5159191524684172307}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   pos: {x: 28.32, y: 0, z: -0.17024374}
   aditionalSpeed: 0
 --- !u!1 &4740943449907404817
@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740943449907404817}
   m_LocalRotation: {x: -0.000000014901159, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.88, y: 2.8, z: 7.56}
+  m_LocalPosition: {x: 1.45, y: 2.8, z: 8.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5159191524684172307}

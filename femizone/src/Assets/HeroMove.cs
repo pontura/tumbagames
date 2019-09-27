@@ -23,6 +23,8 @@ public class HeroMove : MonoBehaviour
     }
     public void ChangeType(types type)
     {
+        if (hero.state == Character.states.DEAD)
+            return;
         this.type = type;
         switch (type)
         {
@@ -40,6 +42,8 @@ public class HeroMove : MonoBehaviour
     }
     public void ChekToMove(int dirX, int dirY)
     {
+        if (hero.state == Hero.states.DEAD)
+            return;
         if (hero.state == Hero.states.IDLE)
         {
             CheckType();

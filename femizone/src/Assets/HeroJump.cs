@@ -26,6 +26,8 @@ public class HeroJump : MonoBehaviour
     }
     public void Jump()
     {
+        if (hero.state == Character.states.DEAD)
+            return;
         if (state != states.NONE)
             return;
         Events.OnJump(hero);
@@ -63,6 +65,8 @@ public class HeroJump : MonoBehaviour
 
     void ResetJump()
     {
+        if (hero.state == Character.states.DEAD)
+            return;
         state = states.NONE;
         hero.asset.transform.localPosition = Vector3.zero;
         hero.Idle();

@@ -45,7 +45,7 @@ public class IntroCutscene : MonoBehaviour
         field = all[introID].GetComponentInChildren<Text>();
         field.text = "";
         Events.OnKeyPress += OnKeyPress;
-        Invoke("Loop", 1.5f);
+        Invoke("Loop", 2f);
     }
     void OnDestroy()
     {
@@ -56,7 +56,8 @@ public class IntroCutscene : MonoBehaviour
         string text = allTexts.texts[id];
         field.text = text;
 
-       isReady = true;
+        if(id == 0)
+            isReady = true;
 
         id++;
         float delay = 1.2f + (text.Length * 0.1f);

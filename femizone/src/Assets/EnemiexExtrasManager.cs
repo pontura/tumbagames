@@ -51,7 +51,7 @@ public class EnemiexExtrasManager : MonoBehaviour
 			canAdd = false;
 			return;
 		}
-
+        print("EnemiexExtrasManager Add new");
 		SceneObjectData data = new SceneObjectData ();
 		int rand = Random.Range(0,10);
 

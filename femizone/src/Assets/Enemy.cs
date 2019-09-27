@@ -89,6 +89,7 @@ public class Enemy : Character {
 	}
 	public override void OnReceiveHit(HitArea hitArea, float force)
 	{
+        
         if (World.Instance.state == World.states.GAME_OVER)
             return;
 

@@ -90,7 +90,8 @@ public class Character : SceneObject {
 		if (state == states.DEAD)
 			return;
 		state = states.DEAD;
-		anim.Play ("death");
+        anim.speed = 1;
+        anim.Play ("death");        
 		OnDie ();
 	}
 	public virtual void Idle()
@@ -103,17 +104,23 @@ public class Character : SceneObject {
 	}
 	public void Defense()
 	{
-		state = states.DEFENDING;
+        if (state == states.DEAD)
+            return;
+        state = states.DEFENDING;
 		anim.Play ("defense");
 	}
 	public void OnSpecial1()
 	{
-		state = states.HITTING;
+        if (state == states.DEAD)
+            return;
+        state = states.HITTING;
 		anim.Play ("special1");
 	}
 	public void Attack()
 	{
-		state = states.HITTING;
+        if (state == states.DEAD)
+            return;
+        state = states.HITTING;
 		OnAttack ();
 	}
 	public void ReceiveHit(HitArea hitArea,  float force) 
@@ -163,14 +170,16 @@ public class Character : SceneObject {
 	}
 	public virtual void OnFreeze()
 	{
-		anim.speed = 0f;
+        if (state == states.DEAD)
+            return;
+        anim.speed = 0f;
 		isVibrating = true;
 		Invoke ("ResetFreeze", 0.22f);
 	}
 	bool isVibrating = false;
 	void ResetFreeze()
 	{
-		isVibrating = false;
+        isVibrating = false;
 		anim.speed = 1f;
 	}
 	float vibratingDirection = 0.3f;

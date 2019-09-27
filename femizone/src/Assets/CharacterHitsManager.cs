@@ -49,7 +49,10 @@ public class CharacterHitsManager : MonoBehaviour {
 
 	public void SetOn(types type)
 	{
-		if (!AttakEnabled () && type != types.SPECIAL)
+        if (character.state == Character.states.DEAD)
+            return;
+
+        if (!AttakEnabled () && type != types.SPECIAL)
 			return;
 		
 		CancelInvoke ();

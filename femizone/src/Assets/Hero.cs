@@ -84,8 +84,7 @@ public class Hero : Character
         }
     }
     public override void OnReceiveHit(HitArea hitArea, float force)
-    {
-        
+    {        
         if (state == states.DEAD || state == states.HITTED)
             return;
 
@@ -165,6 +164,8 @@ public class Hero : Character
     }
     public void OnPick()
     {
+        if (state == states.DEAD)
+            return;
         weapons.GetWeapon(weaponPickable);
 
         if (weaponPickable.type == WeaponPickable.types.WEAPON1)
@@ -179,6 +180,8 @@ public class Hero : Character
     }
     public void Jump()
     {
+        if (state == states.DEAD)
+            return;
         if (state == states.WALK || state == states.IDLE )
             jump.Jump();
     }
