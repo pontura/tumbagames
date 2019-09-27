@@ -10225,11 +10225,11 @@ MonoBehaviour:
     force: 0
     timeToReset: 0.2
   - type: 5
-    animClip: {fileID: 7400000, guid: d1f9ed3dfc31d9348bb9dd06399f1a2b, type: 2}
+    animClip: {fileID: 7400000, guid: 6a8bbda60ef0546429ada6e915682844, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 6
-    animClip: {fileID: 7400000, guid: 07d8de844e79e9f459afd626346d17e7, type: 2}
+    animClip: {fileID: 7400000, guid: 6a8bbda60ef0546429ada6e915682844, type: 2}
     force: 0
     timeToReset: 0.2
   - type: 11
@@ -10245,6 +10245,10 @@ MonoBehaviour:
     force: 0
     timeToReset: 0.2
   - type: 14
+    animClip: {fileID: 7400000, guid: d1f9ed3dfc31d9348bb9dd06399f1a2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 13
     animClip: {fileID: 7400000, guid: d1f9ed3dfc31d9348bb9dd06399f1a2b, type: 2}
     force: 0
     timeToReset: 0.2
