@@ -5,6 +5,7 @@ using System;
 
 public class SFXManager : MonoBehaviour {
 
+    public bool isOff;
     public AudioClip gunShot;
     public AudioClip jump;
     public AudioClip whip;
@@ -59,6 +60,7 @@ public class SFXManager : MonoBehaviour {
         Events.GameOver += GameOver;
         Events.AddHero += AddHero;
         Events.OnCarCrashEnemy += OnCarCrashEnemy;
+        Events.Restart += Restart;
         Loop();
 
     }
@@ -69,8 +71,13 @@ public class SFXManager : MonoBehaviour {
 		Events.OnReceiveit -= OnReceiveit;
 		Events.OnMansPlaining -= OnMansPlaining;
         Events.GameOver -= GameOver;
-        Events.AddHero -= AddHero;
+        Events.AddHero -= AddHero;        
         Events.OnCarCrashEnemy -= OnCarCrashEnemy;
+        Events.Restart -= Restart;
+    }
+    void Restart()
+    {
+        isOff = false;
     }
     void OnCarCrashEnemy()
     {
@@ -89,7 +96,8 @@ public class SFXManager : MonoBehaviour {
     }
     void GameOver()
     {
-        foreach(AudioSource aus in sfxContainer.GetComponents<AudioSource>())
+        isOff = true;
+        foreach (AudioSource aus in sfxContainer.GetComponents<AudioSource>())
         {
             aus.Stop();
         }
@@ -158,8 +166,9 @@ public class SFXManager : MonoBehaviour {
 	}
 	void OnReceiveit(CharacterHitsManager.types type, Character character)
 	{
-
-		AudioClip[] arr;
+        if (isOff)
+            return;
+        AudioClip[] arr;
 		AudioClip audioClip;
 		switch (type) {
         case CharacterHitsManager.types.MELEE:
@@ -196,6 +205,8 @@ public class SFXManager : MonoBehaviour {
     }
     void OnAttack(CharacterHitsManager.types type, Character character)
 	{
+        if (isOff)
+            return;
 		AudioClip[] arr;
 		AudioClip audioClip;
 		switch (type) {

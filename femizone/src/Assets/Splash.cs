@@ -24,7 +24,9 @@ public class Splash : MonoBehaviour {
 
 	void Start () {		 		
         StartCoroutine(Delays());
-	}
+        Events.Restart();
+
+    }
     IEnumerator Delays()
     {
         yield return new WaitForSeconds(0.25f);

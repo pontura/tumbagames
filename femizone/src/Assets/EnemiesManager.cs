@@ -24,9 +24,9 @@ public class EnemiesManager : MonoBehaviour {
     }
 	void OnDestroy () {
 		Events.OnCharacterDie -= OnCharacterDie;
-	}
+    }
 
-	void OnCharacterDie(Character character)
+    void OnCharacterDie(Character character)
 	{
 		Enemy enemy = character.GetComponent<Enemy> ();
 		if (enemy == null)

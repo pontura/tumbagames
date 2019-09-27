@@ -15,7 +15,7 @@ public class EnemiexExtrasManager : MonoBehaviour
 		enemiesManager = GetComponent<EnemiesManager> ();
 		Events.OnStageClear += OnStageClear;
 		Events.OnMansPlaining += OnMansPlaining;
-		Invoke ("Loop", 5);
+        Invoke ("Loop", 5);
     }
 
     void OnDestroy()

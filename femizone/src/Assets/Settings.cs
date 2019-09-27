@@ -24,8 +24,12 @@ public class Settings : MonoBehaviour {
             ChangePixelSize(-1);
     }
     void ChangePixelSize(int value)
-    {       
+    {        
         pixelSize += value;
+
+        if (pixelSize < 0)
+            pixelSize = 0;
+
         PlayerPrefs.SetInt("pixelSize", pixelSize);
         Events.PixelSizeChange();
     }
