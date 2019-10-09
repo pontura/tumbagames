@@ -10191,12 +10191,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 4.23, z: 0}
-  life: 45
+  life: 140
   force: 3
-  speed: 4
+  speed: 5
   defense: 1
   mana: 1
-  scoreByBeingHit: 30
+  scoreByBeingHit: 40
   time_to_GoTo_Target: {x: 0.12, y: 0.6}
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15

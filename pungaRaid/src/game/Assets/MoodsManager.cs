@@ -100,7 +100,7 @@ public class MoodsManager : MonoBehaviour {
         print("UnlockSeccional saver: " + saver);
         
         PlayerPrefs.SetInt(saver, 1);
-        StatsManager.TrackEvent("Unlock_" + seccional_name, moodID);
+       // StatsManager.TrackEvent("Unlock_" + seccional_name, moodID);
     }
     public GameObject GetCurrentMoodAsset()
     {

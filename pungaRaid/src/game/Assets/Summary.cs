@@ -150,12 +150,12 @@ public class Summary : MonoBehaviour {
     }
     public void Restart()
     {
-        StatsManager.TrackEvent("Summary_Restart");
+       // StatsManager.TrackEvent("Summary_Restart");
         Data.Instance.LoadLevel("04_Game");
     }
     public void Map()
     {
-        StatsManager.TrackEvent("Summary_toMap");
+       // StatsManager.TrackEvent("Summary_toMap");
         Data.Instance.LoadLevel("02_Main");
     }
     public void LoginAdvisor()

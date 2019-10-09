@@ -8,10 +8,10 @@ public class LoginAdvisor : MonoBehaviour {
     private GraphicRaycaster graphicRaycaster;
 
 	void Start () {
-     //   panel.transform.localScale = Data.Instance.screenManager.scale;
+       // panel.transform.localScale = Data.Instance.screenManager.scale;
         panel.SetActive(false);
         Events.OnLoginAdvisor += OnLoginAdvisor;
-        //SocialEvents.OnFacebookLoginCanceled += OnFacebookLoginCanceled;
+       // SocialEvents.OnFacebookLoginCanceled += OnFacebookLoginCanceled;
 	}
     void OnLoginAdvisor()
     {
@@ -22,13 +22,13 @@ public class LoginAdvisor : MonoBehaviour {
         panel.GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         panel.GetComponent<Animator>().Play("PopupOn");
 
-        StatsManager.TrackEvent("Register_advisor_open");
+        //StatsManager.TrackEvent("Register_advisor_open");
     }
     public void LoginToFacebook()
     {
-        StatsManager.TrackEvent("FB_Login_done");
+       // StatsManager.TrackEvent("FB_Login_done");
         SocialManager.Instance.loginManager.OnFacebookLoginPressed();
-       // SocialManager.Instance.loginManager.FBLogin();
+       //// SocialManager.Instance.loginManager.FBLogin();
         Data.Instance.LoadLevel("03_Connecting");
         Close();
         

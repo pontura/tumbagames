@@ -5230,7 +5230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
-  life: 100
+  life: 150
   force: 2
   speed: 6
   defense: 2
@@ -5240,6 +5240,7 @@ MonoBehaviour:
   time_to_Punch: {x: 0.12, y: 0.6}
   hittedPower: 15
   type: 2
+  idle_clips: []
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 8d493af702a95ce49af857b8009f5b90, type: 2}
@@ -30580,8 +30581,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 9bbf879850776da4a8e3fbf57c969869, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -30591,6 +30590,7 @@ MonoBehaviour:
   m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1914287635380308
 GameObject:
   m_ObjectHideFlags: 0

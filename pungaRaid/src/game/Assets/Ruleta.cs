@@ -41,7 +41,7 @@ public class Ruleta : MonoBehaviour {
     private Animator anim;
 
 	public void Init () {
-        StatsManager.TrackEvent("Ruleta");
+      //  StatsManager.TrackEvent("Ruleta");
         rulaAnimator.Play("rula_idle");
         anim = GetComponent<Animator>();
         offsetY = container.transform.localPosition.y;

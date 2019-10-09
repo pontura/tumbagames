@@ -58,14 +58,14 @@ public class FacebookFriends : MonoBehaviour {
         var data = Facebook.MiniJSON.Json.Deserialize(result.RawResult) as Dictionary<string, object>;
         IDictionary dict = Facebook.MiniJSON.Json.Deserialize(result.RawResult) as IDictionary;
         var friends = dict["friends"] as Dictionary<string, object>;
-        System.Collections.Generic.List<object> ff = friends["data"] as System.Collections.Generic.List<object>;
+        //System.Collections.Generic.List<object> ff = friends["data"] as System.Collections.Generic.List<object>;
 
-        Debug.Log("___________ ff Count: " + ff.Count);
-        foreach (var obj in ff)
-        {
-            Dictionary<string, object> facebookFriendData = obj as Dictionary<string, object>;
-            SocialEvents.AddFacebookFriend(facebookFriendData["id"].ToString(), facebookFriendData["name"].ToString());
-        }
+        //Debug.Log("___________ ff Count: " + ff.Count);
+        //foreach (var obj in ff)
+        //{
+        //    Dictionary<string, object> facebookFriendData = obj as Dictionary<string, object>;
+        //    SocialEvents.AddFacebookFriend(facebookFriendData["id"].ToString(), facebookFriendData["name"].ToString());
+        //}
         Invoke("Delay", 2);
     }
     void Delay()
