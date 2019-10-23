@@ -7,6 +7,7 @@ public class UI : MonoBehaviour {
 	static UI mInstance = null;
 	public UIProgressBarManager progressBarManager;
 	public MainHiscores mainHiscores;
+    public LifesManager lifesManager;
 
 	public static UI Instance
 	{

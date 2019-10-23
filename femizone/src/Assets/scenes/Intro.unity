@@ -37949,6 +37949,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Data
       objectReference: {fileID: 0}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].total
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[0]
+      value: 
+      objectReference: {fileID: 5045129668361686577, guid: bb278cd998c0fd243a31fc32d2d233c5,
+        type: 3}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[1]
+      value: 
+      objectReference: {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff,
+        type: 3}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[2]
+      value: 
+      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
+        type: 3}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[3]
+      value: 
+      objectReference: {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
 --- !u!1 &1061321097
@@ -56763,7 +56787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 43, y: 29}
+  resolution: {x: 54, y: 33}
   pixelSize: 20
   dither: 0.15
   opacity: 1

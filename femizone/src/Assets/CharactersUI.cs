@@ -36,7 +36,11 @@ public class CharactersUI : MonoBehaviour
         if (World.Instance.state == World.states.GAME_OVER)
             return;
         CharacterUI cui = GetUI(characterID);
-        if (cui.id == characterID && cui.state == CharacterUI.states.WAITING)
+        if (cui.id == characterID && (
+            cui.state == CharacterUI.states.WAITING ||
+             (cui.state == CharacterUI.states.DEAD &&
+            UI.Instance.lifesManager.GetLifes()>0))
+            )
         {
             cui.SetState(CharacterUI.states.PLAYING);
             Events.AddHero(characterID);

@@ -10,7 +10,8 @@ public class CharacterUI : MonoBehaviour {
 	public enum states
 	{
 		WAITING,
-		PLAYING
+		PLAYING,
+        DEAD
 	}
 	public GameObject[] statesGO;
 	public int id;
@@ -27,14 +28,31 @@ public class CharacterUI : MonoBehaviour {
 		state = states.WAITING;
 		SetScore(0);
 		SetState (state);
-	}
-	public void SetState(states _state)
+        Events.OnHeroDie += OnHeroDie;
+    }
+    void SetInitialState()
+    {
+        bar.fillAmount = 1;
+        life = Data.Instance.settings.totalLife;
+    }
+    void OnHeroDie(int avatarID)
+    {
+        if (id != avatarID)
+            return;
+        state = states.DEAD;
+    }
+    private void OnDestroy()
+    {
+        Events.OnHeroDie -= OnHeroDie;
+    }
+    public void SetState(states _state)
 	{
 		foreach (GameObject go in statesGO)
 			go.SetActive (false);
 		switch (_state) {
 		case states.PLAYING:
-			statesGO [0].SetActive (true);
+            SetInitialState();
+            statesGO [0].SetActive (true);
 			break;
 		case states.WAITING:
 			statesGO [1].SetActive (true);
@@ -48,8 +66,8 @@ public class CharacterUI : MonoBehaviour {
 		color = Data.Instance.settings.colors [id-1];
 		playerField.color = color;
 		bar.color = color;
-		life = Data.Instance.settings.totalLife;
-	}
+        SetInitialState();
+    }
 	public void GrabPowerUp(Powerup powerup)
 	{
 		if (powerup.type == Powerup.types.BIRRA)
