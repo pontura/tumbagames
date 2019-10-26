@@ -9989,6 +9989,7 @@ MonoBehaviour:
   time_to_Punch: {x: 0.3, y: 0.8}
   hittedPower: 15
   type: 2
+  idle_clips: []
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 0f789c800e91e034a9b352179be0851a, type: 2}
@@ -30919,7 +30920,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2.6
-      minScalar: 2.55
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36168,7 +36169,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2.6
-      minScalar: 2.55
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -46032,7 +46033,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 5
-      minScalar: 8
+      minScalar: 11
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -55470,7 +55471,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 5
-      minScalar: 20
+      minScalar: 11
       maxCurve:
         serializedVersion: 2
         m_Curve:
