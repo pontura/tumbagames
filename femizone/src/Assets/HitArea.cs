@@ -75,7 +75,7 @@ public class HitArea : MonoBehaviour {
 						Events.OnAddScore(hero.id, otherEnemy.stats.scoreByBeingHit);
 
 					otherHitArea.character.ReceiveHit (this, force);
-					character.OnFreeze ();
+                    otherHitArea.character.OnFreeze ();
 					Events.OnReceiveit (type, otherHitArea.character);
 				}
 				

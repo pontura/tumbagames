@@ -47,7 +47,9 @@ public class Character : SceneObject {
 		if (isVibrating) {
 			Vector3 pos = transform.localPosition;
 			vibratingDirection *= -1;
-			pos.x += vibratingDirection;
+            vibratingDirection /= 1.02f;
+
+            pos.x += vibratingDirection;
 			transform.localPosition = pos;
 		}
 	}
@@ -173,8 +175,10 @@ public class Character : SceneObject {
         if (state == states.DEAD)
             return;
         anim.speed = 0f;
-		isVibrating = true;
-		Invoke ("ResetFreeze", 0.22f);
+        vibratingDirection = 0.5f;
+
+        isVibrating = true;
+		Invoke ("ResetFreeze", 0.25f);
 	}
 	bool isVibrating = false;
 	void ResetFreeze()
@@ -182,5 +186,5 @@ public class Character : SceneObject {
         isVibrating = false;
 		anim.speed = 1f;
 	}
-	float vibratingDirection = 0.3f;
+	float vibratingDirection;
 }
