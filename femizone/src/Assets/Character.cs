@@ -23,7 +23,8 @@ public class Character : SceneObject {
 		HITTING,
 		HITTED,
 		DEAD,
-		DEFENDING
+		DEFENDING,
+        STRESS
 	}
 
 	public virtual void OnStart() { }
@@ -37,7 +38,7 @@ public class Character : SceneObject {
 		OnStart ();
 	}
 	void Update () {
-		if (state == states.DEAD)
+        if (state == states.STRESS || state == states.DEAD)
 			return;
 		if (state == states.HITTED || state == states.DEFENDING)
 			Retrocede ();
@@ -55,7 +56,7 @@ public class Character : SceneObject {
 	}
 	public void MoveTo(int horizontal, int vertical)
 	{
-        if (state == states.DEAD || horizontal ==0 && vertical == 0)
+        if (state == states.STRESS || state == states.DEAD || horizontal ==0 && vertical == 0)
 			return;
 		Vector3 pos = transform.localPosition;
 		pos.x += horizontal * Time.deltaTime * speed;
@@ -82,7 +83,7 @@ public class Character : SceneObject {
 	}
 	public virtual void Walk()
 	{
-        if (state == states.DEAD || state == states.HITTING)
+        if (state == states.STRESS || state == states.DEAD || state == states.HITTING)
 			return;
 		state = states.WALK;
 		anim.Play ("walk");
@@ -98,6 +99,8 @@ public class Character : SceneObject {
 	}
 	public virtual void Idle()
 	{
+        if (state == states.STRESS)
+            return;
         if (state == states.DEAD)
             return;
         state = states.IDLE;

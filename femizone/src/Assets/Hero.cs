@@ -12,6 +12,7 @@ public class Hero : Character
     int offsetMoveX = 10;
     public HeroMove move;
     public HeroJump jump;
+    HeroPowerManager heroPowerManager;
 
     public override void OnStart()
     {
@@ -20,12 +21,15 @@ public class Hero : Character
         inputManager = GetComponent<InputManager>();
         weapons = GetComponent<HeroWeapons>();
         rb = GetComponent<Rigidbody>();
+        heroPowerManager = GetComponent<HeroPowerManager>();
 
         move.Init(this);
         jump.Init(this);
     }
     public void OnUpdateByInput(int HorizontalDirection, int VerticalDirection)
     {
+         if (state == states.STRESS)
+            return;
         if (state == states.DEAD || state == states.HITTING || state == states.HITTED)
             return;
         if ((HorizontalDirection != 0 || VerticalDirection != 0))
@@ -41,6 +45,8 @@ public class Hero : Character
     }
     public override void Idle()
     {
+        if (state == states.STRESS)
+            return;
         if (state == states.DEAD)
             return;
        state = states.IDLE;
@@ -57,6 +63,7 @@ public class Hero : Character
     }
     public override void Walk()
     {
+       
         if (state == states.DEAD || state == states.HITTING)
             return;
 
@@ -82,6 +89,18 @@ public class Hero : Character
             else if (weapons.type == WeaponPickable.types.WEAPON2)
                 anim.Play("melee_run");
         }
+    }
+    public void Stress()
+    {
+        state = states.STRESS;
+        anim.Play("stress");
+        Invoke("ResetStress", 2);
+    }
+    void ResetStress()
+    {
+        if (state == states.STRESS)
+            state = states.WALK;
+        Idle();
     }
     public override void OnReceiveHit(HitArea hitArea, float force)
     {        
@@ -154,6 +173,8 @@ public class Hero : Character
     }
     void GotoIdleAfterBeingHitted()
     {
+        if (state == states.STRESS)
+            return;
         if (state == states.DEAD)
             return;
         Idle();
@@ -180,6 +201,8 @@ public class Hero : Character
     }
     public void Jump()
     {
+        if (state == states.STRESS)
+             return;
         if (state == states.DEAD)
             return;
         if (state == states.WALK || state == states.IDLE )

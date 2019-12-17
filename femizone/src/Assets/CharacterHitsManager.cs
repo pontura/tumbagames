@@ -29,16 +29,20 @@ public class CharacterHitsManager : MonoBehaviour {
 	public HitArea hitArea;
     public HitArea hitAreaReceiver;
     HeroJump heroJump;
+    HeroPowerManager powerManager;
 
     void Start()
 	{       
         character = GetComponent<Character> ();
 		hitArea.character = character;
         heroJump = character.GetComponent<HeroJump>();
+        powerManager = GetComponent<HeroPowerManager>();
     }
 	bool AttakEnabled()
 	{
-		if (character.state == Character.states.DEAD || character.state == Character.states.HITTING || character.state == Character.states.HITTED)
+        if (character.state == Character.states.STRESS)
+            return false;
+        if (character.state == Character.states.DEAD || character.state == Character.states.HITTING || character.state == Character.states.HITTED)
 			return false;
 		return true;
 	}
@@ -49,6 +53,11 @@ public class CharacterHitsManager : MonoBehaviour {
 
 	public void SetOn(types type)
 	{
+        float attackPowerLess = 0;
+
+        if (powerManager != null)
+            attackPowerLess = powerManager.CalculateStress();
+
         if (character.state == Character.states.DEAD)
             return;
 
