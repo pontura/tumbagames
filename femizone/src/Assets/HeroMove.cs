@@ -6,7 +6,7 @@ public class HeroMove : MonoBehaviour
 {
     float delayToRun = 0.4f;
     float lastTimeWalk;
-    int offsetMoveX = 10;
+    int offsetMoveX = 14;
     Hero hero;
     float normalSpeed;
     public types type;

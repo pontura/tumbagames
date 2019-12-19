@@ -494,6 +494,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2433898385298521016}
   - component: {fileID: 2433898385298521017}
+  - component: {fileID: 8285690010462757855}
+  - component: {fileID: 6947260620311206261}
   m_Layer: 0
   m_Name: klansman
   m_TagString: Untagged
@@ -543,6 +545,95 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8285690010462757855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433898385298521019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e6d2bdd7b95a4c82a65594db6c159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0.6, z: 6.64}
+  life: 50
+  force: 1
+  speed: 4
+  defense: 1
+  mana: 0
+  scoreByBeingHit: 90
+  time_to_GoTo_Target: {x: 0.05, y: 0.25}
+  time_to_Punch: {x: 0.05, y: 0.25}
+  hittedPower: 40
+  type: 1
+  idle_clips: []
+  attacks:
+  - type: 1
+    animClip: {fileID: 7400000, guid: 12c775c661128dd4d8a39dbe26e056cf, type: 2}
+    force: 15
+    timeToReset: 0.2
+  receivedAttacks:
+  - type: 1
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 2
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 3
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 4
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 5
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 6
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 10
+    animClip: {fileID: 7400000, guid: 2988e8bc783ddd5459dd8bcc23ba4f2b, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 11
+    animClip: {fileID: 7400000, guid: 6a79b26ad7681804f820e19e372c7384, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 12
+    animClip: {fileID: 7400000, guid: 6a79b26ad7681804f820e19e372c7384, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 13
+    animClip: {fileID: 7400000, guid: 6a79b26ad7681804f820e19e372c7384, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 14
+    animClip: {fileID: 7400000, guid: 6a79b26ad7681804f820e19e372c7384, type: 2}
+    force: 0
+    timeToReset: 0.2
+--- !u!114 &6947260620311206261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433898385298521019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0deb7028a04804e9d8a37d13fac3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  state: 0
+  destination: {x: 0, y: 0, z: 0}
 --- !u!1 &2433898385316868593
 GameObject:
   m_ObjectHideFlags: 0

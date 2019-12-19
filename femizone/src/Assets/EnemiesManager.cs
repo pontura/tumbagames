@@ -13,6 +13,7 @@ public class EnemiesManager : MonoBehaviour {
 	public GameObject moderno;
     public GameObject exhibicionista;
     public GameObject trapper;
+    public GameObject klansman;
 
     public Enemy enemy_to_instantiate;
 	public Transform container;
@@ -70,6 +71,9 @@ public class EnemiesManager : MonoBehaviour {
                 break;
             case SceneObjectData.types.TRAPPER:
                 so = trapper;
+                break;
+            case SceneObjectData.types.KKK:
+                so = klansman;
                 break;
         }
         Enemy enemy = Instantiate(enemy_to_instantiate);

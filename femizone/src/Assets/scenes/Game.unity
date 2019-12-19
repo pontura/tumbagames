@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 80, y: 60}
+  resolution: {x: 107, y: 60}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -362,7 +362,7 @@ Camera:
   far clip plane: 1000
   field of view: 78
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3791,8 +3791,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401853188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: 1.92, y: -0.57, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 1758027964}
   - {fileID: 1943629204}
@@ -4681,6 +4681,8 @@ MonoBehaviour:
   exhibicionista: {fileID: 4486808687397075547, guid: ad9c73a0d468ab546a791b93ef2896ce,
     type: 3}
   trapper: {fileID: 4862972739399992477, guid: f143ef915851a6748902b807badaad19, type: 3}
+  klansman: {fileID: 2433898385298521019, guid: 691dd11396b662442be3d225c7d77bc2,
+    type: 3}
   enemy_to_instantiate: {fileID: 114345901904562116, guid: badf1226d7e3b864498e163a792f9c1d,
     type: 3}
   container: {fileID: 1571614642}
@@ -5988,7 +5990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 800, y: 600}
+  resolution: {x: 1072, y: 605}
   pixelSize: 1
   dither: 0.15
   opacity: 1
