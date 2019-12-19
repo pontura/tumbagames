@@ -140,12 +140,12 @@ public class Enemy : Character {
 		Vector3 pos = transform.localPosition;
         if (!canMoveOutsideScreen)
         {
-            if (transform.localPosition.z < -1)
-                pos.z = -1;
+            if (transform.localPosition.z < -11)
+                pos.z = -11;
             else if (transform.localPosition.z > 10f)
                 pos.z = 10f;
 
-            float limitX = 9;
+            float limitX = 13;
             if (transform.localPosition.x > worldCamera.transform.localPosition.x + limitX)
                 pos.x = worldCamera.transform.localPosition.x + limitX;
             else if (transform.localPosition.x < worldCamera.transform.localPosition.x - limitX)
