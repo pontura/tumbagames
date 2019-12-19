@@ -29,7 +29,8 @@ public class SceneObjectData : MonoBehaviour {
         EXHIBICIONISTA,
         TRAPPER,
         ARBOL,
-        KKK
+        KKK,
+        ESVASTICA
     }
 
     public float aditionalSpeed;

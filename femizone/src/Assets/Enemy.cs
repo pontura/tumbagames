@@ -142,8 +142,8 @@ public class Enemy : Character {
         {
             if (transform.localPosition.z < -11)
                 pos.z = -11;
-            else if (transform.localPosition.z > 10f)
-                pos.z = 10f;
+            else if (transform.localPosition.z > 12f)
+                pos.z = 12f;
 
             float limitX = 13;
             if (transform.localPosition.x > worldCamera.transform.localPosition.x + limitX)

@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 107, y: 60}
+  resolution: {x: 102, y: 76}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -362,7 +362,7 @@ Camera:
   far clip plane: 1000
   field of view: 78
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 10.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -386,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39458921}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 12.49, z: -9.79}
+  m_LocalPosition: {x: 0, y: 12, z: -9.79}
   m_LocalScale: {x: 1.2189293, y: 1.2189295, z: 1.2189295}
   m_Children:
   - {fileID: 1354825528}
@@ -4819,6 +4819,7 @@ MonoBehaviour:
   - {fileID: 2430, guid: 0487c558396fe134f865fd15c58dacaf, type: 3}
   - {fileID: 4687062978464579146, guid: 068c1c9596638d84f8114a133dfca169, type: 3}
   - {fileID: 4248532507396347344, guid: 0ad34318cfc66a447bdab04fb498ee28, type: 3}
+  - {fileID: 2430, guid: 0ac757ba36602ad4383927104215e15d, type: 3}
   container: {fileID: 1571614642}
 --- !u!114 &1571614653
 MonoBehaviour:
@@ -5990,7 +5991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 1072, y: 605}
+  resolution: {x: 1024, y: 768}
   pixelSize: 1
   dither: 0.15
   opacity: 1

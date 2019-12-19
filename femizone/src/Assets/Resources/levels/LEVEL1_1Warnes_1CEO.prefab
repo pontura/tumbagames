@@ -66,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -92,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 10
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
 --- !u!1 &5156639331599088753
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +160,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -184,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +199,7 @@ GameObject:
   - component: {fileID: 5159191524684172307}
   - component: {fileID: 5045129668361686577}
   m_Layer: 0
-  m_Name: LEVEL1_2_warnes1
+  m_Name: LEVEL1_1Warnes_1CEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6684222887396053348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.8, y: 2.8, z: 0.62}
+  m_LocalPosition: {x: -7.8, y: 2.8, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5159191524684172307}
@@ -299,6 +303,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -325,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 11
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
 --- !u!1 &8580679079280975750
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +397,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -417,6 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
 --- !u!1 &8982379259918629124
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +491,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -509,3 +518,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 10
   pos: {x: 28.32, y: 0, z: -0.17024374}
+  aditionalSpeed: 0
