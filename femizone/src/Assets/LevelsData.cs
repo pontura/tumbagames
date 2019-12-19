@@ -21,16 +21,21 @@ public class LevelsData : MonoBehaviour
     public void Init()
     {
         levelsManager = Data.Instance.levelsManager;
-        foreach (LevelsManager.LevelsByDificulty l in levelsManager.levelsByDificulty)
+        int a = 0;
+        foreach (LevelsManager.LevelsByDificulty l in levelsManager.All)
         {
-            Shuffle(l.all);
-            int id = 0;
+            //Shuffle(l.all);
+            int id = 1;
             foreach (Level level in l.all)
             {
                 if (id <= l.total)
+                {
                     all.Add(level);
+                    print(a + " id: " + id + "      total: " + l.total + "        Count: " + l.all.Count + "   name: " + level.name);
+                }
                 id++;
             }
+            a++;
         }
 
         levels = GetComponent<Levels>();

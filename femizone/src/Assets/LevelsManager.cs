@@ -4,11 +4,16 @@ using UnityEngine;
 using System;
 
 public class LevelsManager : MonoBehaviour {
-	public List<LevelsByDificulty> levelsByDificulty;
+	[SerializeField] private List<LevelsByDificulty> levelsByDificulty;
 	[Serializable]
 	public class LevelsByDificulty
 	{
 		public List<Level> all;
 		public int total;
 	}
+
+    public List<LevelsByDificulty> All
+    {
+        get { return levelsByDificulty; }
+    }
 }
