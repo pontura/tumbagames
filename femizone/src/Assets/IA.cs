@@ -95,7 +95,7 @@ public class IA : MonoBehaviour {
 		state = states.MOVEING;
 		enemy.Walk ();
 	}
-	void LookToTarget()
+	public void LookToTarget()
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 	//	destination += enemy.stats.offset;
@@ -135,7 +135,7 @@ public class IA : MonoBehaviour {
 		enemy.transform.position = pos;	
 	}
 
-	void READY_FOR_FIGHT()
+	public virtual void READY_FOR_FIGHT()
 	{
 		if (state != states.READY_FOR_FIGHT)
 			return;

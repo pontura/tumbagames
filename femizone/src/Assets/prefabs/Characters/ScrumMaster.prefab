@@ -61811,7 +61811,7 @@ Transform:
   m_GameObject: {fileID: 1031145680344087574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 5.53, z: 0.06}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 3954168613482926179}
   m_RootOrder: 9
@@ -83192,6 +83192,7 @@ GameObject:
   - component: {fileID: 6287017539091139011}
   - component: {fileID: 4610494893901252488}
   - component: {fileID: 8242310551755890902}
+  - component: {fileID: 259028135364935673}
   m_Layer: 0
   m_Name: ScrumMaster
   m_TagString: Untagged
@@ -83206,7 +83207,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3954168613482926178}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -83222,7 +83223,7 @@ Transform:
   - {fileID: 2658512048478456181}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &194980619
 Animator:
   serializedVersion: 3
@@ -83255,7 +83256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flip: 1
-  offset: {x: 0, y: 3.45, z: 0}
+  offset: {x: 0, y: 3.45, z: 1.75}
   life: 120
   force: 1
   speed: 4
@@ -83271,8 +83272,8 @@ MonoBehaviour:
   attacks:
   - type: 3
     animClip: {fileID: 7400000, guid: 49068023ffeacd14d8ba866e734d6098, type: 2}
-    force: 5
-    timeToReset: 5
+    force: 20
+    timeToReset: 5.5
   receivedAttacks:
   - type: 1
     animClip: {fileID: 0}
@@ -83365,6 +83366,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal: {fileID: 7387972397218970930}
   receiveHitArea: {fileID: 6765902952047545662}
+--- !u!114 &259028135364935673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954168613482926178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d428d3ac0c3894aa9fea148090992f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBodyMass: 2000
+  colliderRadius: 1.5
 --- !u!1 &3954168613516314927
 GameObject:
   m_ObjectHideFlags: 0
