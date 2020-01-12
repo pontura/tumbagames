@@ -6,7 +6,24 @@ public class HitPartSignal : MonoBehaviour
 {
     public GameObject signal;
     public GameObject receiveHitArea;
+
+    void Start()
+    {
+        Loop();
+    }
     
+    void Loop()
+    {
+        if(receiveHitArea.activeSelf)
+        {
+            signal.SetActive(true);
+        }
+        else
+        {
+            signal.SetActive(false);
+        }
+        Invoke("Loop", 0.25f);
+    }
     public void SetParentTo(GameObject container)
     {
         signal.transform.SetParent(container.transform);

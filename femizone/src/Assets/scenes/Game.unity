@@ -3198,6 +3198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Data (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.size
       value: 17

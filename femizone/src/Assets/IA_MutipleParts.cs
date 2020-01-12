@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class IA_MutipleParts : IA
 {
@@ -14,6 +15,10 @@ public class IA_MutipleParts : IA
     public int id = 0;
     int totalLife;
     int totalParts;
+
+    Vector3 origin;
+    float offsetRun;
+    float runDuration = 1.5f;
 
     public override void OnInit()
     {
@@ -55,5 +60,34 @@ public class IA_MutipleParts : IA
         yield return new WaitForSeconds(5);
         if(enemy != null)
         Destroy(enemy);
+    }
+    public override void READY_FOR_FIGHT()
+    {
+        if (state != states.READY_FOR_FIGHT)
+            return;
+        CancelInvoke();
+        LookToTarget();
+        enemy.Attack();
+        Invoke("Run", 1.25f);
+    }
+    
+    void Run()
+    {
+        enemy.anim.Play("attack");
+        CancelInvoke();
+        if (transform.localScale.x < 0)
+            offsetRun = -25;
+        else
+            offsetRun = 25;
+        origin = transform.position;
+        Vector3 dest = transform.position;
+        dest.x -= offsetRun;
+        this.transform.DOMove(dest, runDuration).OnComplete(RunBack).SetEase(Ease.Linear);
+    }
+    void RunBack()
+    {
+        enemy.anim.Play("attack");
+        transform.position = new Vector3(origin.x+offsetRun, origin.y, origin.z);
+        this.transform.DOMove(origin, runDuration).OnComplete(Idle).SetEase(Ease.Linear);
     }
 }
