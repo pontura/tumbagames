@@ -10,7 +10,8 @@ public class EnemiesManager : MonoBehaviour {
     public GameObject cop;
 	public GameObject cop_gun;
 	public GameObject boss1;
-	public GameObject moderno;
+    public GameObject scrumMaster;
+    public GameObject moderno;
     public GameObject exhibicionista;
     public GameObject trapper;
     public GameObject klansman;
@@ -63,7 +64,10 @@ public class EnemiesManager : MonoBehaviour {
 			case SceneObjectData.types.BOSS:
 				so = boss1;
 				break;
-			case SceneObjectData.types.MODERNO:
+            case SceneObjectData.types.SCRUM_MASTER:
+                so = scrumMaster;
+                break;
+            case SceneObjectData.types.MODERNO:
 				so = moderno;
 				break;
             case SceneObjectData.types.EXHIBICIONISTA:

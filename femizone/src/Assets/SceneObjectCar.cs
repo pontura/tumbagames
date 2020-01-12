@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneObjectCar : GenericObject
 {
     bool isOn;
+    bool inDistance;
     float speed = 10;
 
     Vector3 from;
@@ -32,15 +33,30 @@ public class SceneObjectCar : GenericObject
         from = new Vector3(transform.localPosition.x, transform.localPosition.y, 30);
         to = new Vector3(transform.localPosition.x, transform.localPosition.y, -10);
         isOn = true;
+        inDistance = false;
     }
     void OnDisable()
     {
         isOn = false;
     }
+    void IsInsideDistance()
+    {
+        float percentGirlsPosition = World.Instance.heroesManager.GetPercentPosition();
+        if (percentGirlsPosition == 0) return;
+        float distance = transform.position.x - percentGirlsPosition;
+        if (distance < 10)
+            inDistance = true;
+    }
     void Update()
     {
         if (!isOn)
             return;
+        if (!inDistance)
+        {
+            IsInsideDistance();
+            return;
+        }         
+
         Vector3 pos = transform.localPosition;
         pos.z -= speed * Time.deltaTime;
 

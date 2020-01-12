@@ -5369,10 +5369,11 @@ MonoBehaviour:
   time_to_Punch: {x: 0.05, y: 0.25}
   hittedPower: 40
   type: 3
+  idle_clips: []
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 356d2e660734d644fb2ede96f70f8385, type: 2}
-    force: 50
+    force: 26
     timeToReset: 1
   receivedAttacks:
   - type: 1

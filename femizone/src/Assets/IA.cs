@@ -36,7 +36,7 @@ public class IA : MonoBehaviour {
 		} else
 			return false;
 	}
-	public void ReceiveHit()
+	public virtual void ReceiveHit()
 	{
 		state = states.HITTED;
 		Invoke ("Idle", 0.5f);
@@ -99,7 +99,7 @@ public class IA : MonoBehaviour {
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 	//	destination += enemy.stats.offset;
-		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
+		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy.transform);
 		if (hero == null)
 			return;
 		if (hero.transform.position.x < enemy.transform.position.x)
@@ -155,4 +155,9 @@ public class IA : MonoBehaviour {
 		CancelInvoke ();
 		state = states.STOP_IA;
 	}
+
+    public virtual void OnDie()
+    {
+        Destroy(enemy.gameObject);
+    }
 }
