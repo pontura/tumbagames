@@ -7926,5 +7926,15 @@ PrefabInstance:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: bc8174f1fcc1b5f488555117ffea0604, type: 2}
+    - target: {fileID: 7563348111217141326, guid: b0c4e8927eeafeb449d1982abc989bd7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 255.62718
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563348110932945791, guid: b0c4e8927eeafeb449d1982abc989bd7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c4e8927eeafeb449d1982abc989bd7, type: 3}
