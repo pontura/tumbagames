@@ -51,7 +51,7 @@ public class IA : MonoBehaviour {
         OnUpdated();
         if (state == states.STOP_IA)
 			return;
-		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
+		if (enemy == null || enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
 			Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);

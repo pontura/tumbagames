@@ -9,6 +9,8 @@ public class Boss : MonoBehaviour
     void Start()
     {
         IA ia =  GetComponent<IA>();
+        if (ia.enemy == null)
+            return;
         Rigidbody rb = ia.enemy.GetComponent<Rigidbody>();
         rb.mass = rigidBodyMass;
         SphereCollider col = ia.enemy.GetComponent<SphereCollider>();

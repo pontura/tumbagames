@@ -34,6 +34,8 @@ public class CharacterStats : MonoBehaviour {
 	public List<AttackStyle> receivedAttacks;
     private void Start()
     {
+        if (transform.parent == null)
+            return;
         if (flip)
         {
             Vector3 sc = transform.parent.localScale;
