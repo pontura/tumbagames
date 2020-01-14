@@ -31,7 +31,8 @@ public class SceneObjectData : MonoBehaviour {
         ARBOL,
         KKK,
         ESVASTICA,
-        SCRUM_MASTER
+        SCRUM_MASTER,
+        RUGBIER
     }
 
     public float aditionalSpeed;

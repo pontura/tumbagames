@@ -16,4 +16,14 @@ public class LevelsManager : MonoBehaviour {
     {
         get { return levelsByDificulty; }
     }
+    public void ForceLevel(Level[] levels)
+    {
+        levelsByDificulty[1].all.Clear();
+        foreach (Level l in levels)
+        {
+            Level level = Resources.Load<Level>("levels/" + l.name);
+            levelsByDificulty[1].all.Add(level);
+        }
+       
+    }
 }

@@ -14,6 +14,8 @@ public class Swapper : MonoBehaviour
 		GameObject go;
 
 		foreach (GameObject _go in parts) {
+            if (_go == null)
+                return;
 			_go.SetActive (false);
 		}
 
