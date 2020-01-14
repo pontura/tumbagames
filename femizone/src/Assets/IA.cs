@@ -27,7 +27,7 @@ public class IA : MonoBehaviour {
 	}
 	public virtual void OnInit() {}
 
-	public bool CheckForDefense()
+    public bool CheckForDefense()
 	{
 		if (Random.Range (0, 10) < 3) {
 			enemy.Defense ();
@@ -95,7 +95,7 @@ public class IA : MonoBehaviour {
 		state = states.MOVEING;
 		enemy.Walk ();
 	}
-	public void LookToTarget()
+	public virtual void LookToTarget()
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 	//	destination += enemy.stats.offset;

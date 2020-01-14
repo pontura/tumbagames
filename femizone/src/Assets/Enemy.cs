@@ -29,9 +29,9 @@ public class Enemy : Character {
 		asset.transform.SetParent (transform);
 		asset.transform.localPosition = stats.offset;
 		asset.transform.localScale = Vector3.one;
-		asset.transform.localEulerAngles = new Vector3 (30, 0, 0);	
+		asset.transform.localEulerAngles = new Vector3 (30, 0, 0);
 
-		foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>()) {
+        foreach (HitArea ha in asset.gameObject.GetComponentsInChildren<HitArea>()) {
 			if (ha.name == "HitArea")
 				hitArea = ha;
 			ha.character = this;

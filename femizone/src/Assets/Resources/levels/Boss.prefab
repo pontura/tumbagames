@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4493550077893494}
   - component: {fileID: 114948723651366536}
   m_Layer: 0
-  m_Name: LEVEL3_BOSS_Presenta
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571329808073238}
-  m_LocalRotation: {x: -0.25881907, y: -0, z: -0, w: 0.9659259}
+  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: -4.7800007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653cd3574b7240e45973ea18c8ba9e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 1178444909172838, guid: e0aacb4b198ec9d40a04a2b32519004d, type: 3}
+  background: {fileID: 1434848613062838, guid: 5bd6bb681d1238f4f83673708cbf2b21, type: 3}
 --- !u!1 &1857888943879582
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857888943879582}
   m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 4.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493550077893494}
@@ -111,6 +111,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -136,4 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
-  pos: {x: 30.303, y: 0, z: -6.388307}
+  pos: {x: 44, y: 0, z: 1.7320509}
+  scaleX: 1
+  aditionalSpeed: 0
