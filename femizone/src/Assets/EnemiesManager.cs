@@ -89,6 +89,7 @@ public class EnemiesManager : MonoBehaviour {
         enemy.Init(so);
         data.pos.y = 0;
         enemy.transform.localPosition = data.pos;
+        enemy.asset.transform.localScale = new Vector3(data.scaleX, 1, 1);
 		all.Add (enemy);
 		Events.OnMansPlaining (enemy, true);
 		return enemy;

@@ -8,6 +8,7 @@ public class SceneObjectData : MonoBehaviour {
 
     [HideInInspector]
     public Vector3 pos;
+    public float scaleX = 1;
     public enum types
     {
         WARNES_MAN,

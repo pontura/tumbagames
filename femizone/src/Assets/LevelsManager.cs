@@ -23,7 +23,10 @@ public class LevelsManager : MonoBehaviour {
         {
             Level level = Resources.Load<Level>("levels/" + l.name);
             levelsByDificulty[1].all.Add(level);
+
         }
-       
+        levelsByDificulty[1].total = levels.Length;
+
+
     }
 }

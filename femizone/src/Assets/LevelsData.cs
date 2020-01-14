@@ -56,7 +56,7 @@ public class LevelsData : MonoBehaviour
         foreach (SceneObjectData data in allSceneObjectData)
         {
             data.pos = data.transform.position + offset;
-
+            data.scaleX = data.transform.localScale.x;
             if (data.type == SceneObjectData.types.WEAPON || data.type == SceneObjectData.types.CINTURONGA)
                 weaponsManager.InstantiateSceneOject(data);
             else if (data.type == SceneObjectData.types.ENERGY)

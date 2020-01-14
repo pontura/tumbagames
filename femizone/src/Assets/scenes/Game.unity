@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 102, y: 76}
+  resolution: {x: 107, y: 68}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -3200,7 +3200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.size
@@ -3208,7 +3208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].all.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[2].all.Array.size
@@ -3281,7 +3281,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].total
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[2].all.Array.data[0]
@@ -3775,6 +3775,11 @@ PrefabInstance:
       propertyPath: levelsByDificulty.Array.data[17].total
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
+      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[1]
+      value: 
+      objectReference: {fileID: 114948723651366536, guid: 281750b97936af543a173e980a593e7f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
 --- !u!1001 &1083456068
@@ -6077,7 +6082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 1024, y: 768}
+  resolution: {x: 1077, y: 689}
   pixelSize: 1
   dither: 0.15
   opacity: 1

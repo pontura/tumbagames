@@ -99124,11 +99124,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1740710349353527552}
+  - component: {fileID: 5985670579822003798}
   - component: {fileID: 726762655}
   - component: {fileID: 4688848107758009232}
   - component: {fileID: 723031850}
   - component: {fileID: 2062163225754870599}
-  - component: {fileID: 5985670579822003798}
   - component: {fileID: 2452433431908720683}
   m_Layer: 0
   m_Name: rugbier
@@ -99155,6 +99155,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &5985670579822003798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740710349353527555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e6d2bdd7b95a4c82a65594db6c159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flip: 1
+  offset: {x: 0, y: 0, z: 0}
+  life: 20
+  force: 1
+  speed: 4
+  defense: 1
+  mana: 0
+  scoreByBeingHit: 50
+  time_to_GoTo_Target: {x: 0.05, y: 0.25}
+  time_to_Punch: {x: 0.05, y: 0.25}
+  hittedPower: 10
+  type: 1
+  idle_clips: []
+  attacks:
+  - type: 3
+    animClip: {fileID: 7400000, guid: 0c9f4d0287e9eed4181e6d38247cb560, type: 2}
+    force: 5
+    timeToReset: 0.2
+  receivedAttacks:
+  - type: 1
+    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 2
+    animClip: {fileID: 7400000, guid: cc21fedf40867514ca7eacf6f8f537f8, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 3
+    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 4
+    animClip: {fileID: 7400000, guid: e02bc6ee3441da24587dca7c3d714b4e, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 5
+    animClip: {fileID: 7400000, guid: e64000a841e221648bd5d78663567c3a, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 6
+    animClip: {fileID: 7400000, guid: 55a6d3afdc5ef7c4d838455b8427f92d, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 10
+    animClip: {fileID: 7400000, guid: 55a6d3afdc5ef7c4d838455b8427f92d, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 11
+    animClip: {fileID: 7400000, guid: e64000a841e221648bd5d78663567c3a, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 12
+    animClip: {fileID: 7400000, guid: e02bc6ee3441da24587dca7c3d714b4e, type: 2}
+    force: 0
+    timeToReset: 0.2
+  - type: 13
+    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
+    force: 0
+    timeToReset: 0.2
 --- !u!114 &726762655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99230,77 +99301,6 @@ MonoBehaviour:
   - {fileID: 137748239}
   - {fileID: 1358133051}
   - {fileID: 216706133}
---- !u!114 &5985670579822003798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740710349353527555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f2e6d2bdd7b95a4c82a65594db6c159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flip: 1
-  offset: {x: 0, y: 0, z: 0}
-  life: 50
-  force: 1
-  speed: 4
-  defense: 1
-  mana: 0
-  scoreByBeingHit: 50
-  time_to_GoTo_Target: {x: 0.05, y: 0.25}
-  time_to_Punch: {x: 0.05, y: 0.25}
-  hittedPower: 10
-  type: 1
-  idle_clips: []
-  attacks:
-  - type: 3
-    animClip: {fileID: 7400000, guid: 0c9f4d0287e9eed4181e6d38247cb560, type: 2}
-    force: 5
-    timeToReset: 0.2
-  receivedAttacks:
-  - type: 1
-    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 2
-    animClip: {fileID: 7400000, guid: cc21fedf40867514ca7eacf6f8f537f8, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 3
-    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 4
-    animClip: {fileID: 7400000, guid: e02bc6ee3441da24587dca7c3d714b4e, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 5
-    animClip: {fileID: 7400000, guid: e64000a841e221648bd5d78663567c3a, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 6
-    animClip: {fileID: 7400000, guid: 55a6d3afdc5ef7c4d838455b8427f92d, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 10
-    animClip: {fileID: 7400000, guid: 55a6d3afdc5ef7c4d838455b8427f92d, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 11
-    animClip: {fileID: 7400000, guid: e64000a841e221648bd5d78663567c3a, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 12
-    animClip: {fileID: 7400000, guid: e02bc6ee3441da24587dca7c3d714b4e, type: 2}
-    force: 0
-    timeToReset: 0.2
-  - type: 13
-    animClip: {fileID: 7400000, guid: 1826e2c21ecff2a4881095fff641fa2a, type: 2}
-    force: 0
-    timeToReset: 0.2
 --- !u!114 &2452433431908720683
 MonoBehaviour:
   m_ObjectHideFlags: 0
