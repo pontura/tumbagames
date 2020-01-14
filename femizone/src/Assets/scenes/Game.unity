@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 102, y: 76}
+  resolution: {x: 80, y: 60}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -2161,6 +2161,26 @@ PrefabInstance:
       value: 'JOIN
 
         RIOT'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114641041647099298, guid: a98184d88ae985f4aa38e699b577a07b,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.636
+      objectReference: {fileID: 0}
+    - target: {fileID: 224435188479130548, guid: a98184d88ae985f4aa38e699b577a07b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224468533255934442, guid: a98184d88ae985f4aa38e699b577a07b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074952278410389845, guid: a98184d88ae985f4aa38e699b577a07b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98184d88ae985f4aa38e699b577a07b, type: 3}
@@ -6077,7 +6097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 1024, y: 768}
+  resolution: {x: 800, y: 600}
   pixelSize: 1
   dither: 0.15
   opacity: 1
