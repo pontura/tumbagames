@@ -64,7 +64,7 @@ public class HeroesManager : MonoBehaviour {
 	}
 	public Vector3 CheckIfHeroIsClose(Character character)
 	{
-		Hero closestHero = GetClosestHero(character);
+		Hero closestHero = GetClosestHero(character.transform);
 		if (closestHero != null) {
 
 			if (closestHero.transform.position.x < character.transform.position.x)
@@ -89,13 +89,13 @@ public class HeroesManager : MonoBehaviour {
 		}
 		return Vector3.zero;
 	}
-	public Hero GetClosestHero(Character character)
+	public Hero GetClosestHero(Transform t)
 	{
 		float distance = 1000;
 		Hero closestHero = null;
 		foreach (Hero hero in all) {
-			float distance_x = Mathf.Abs(hero.transform.position.x -character.transform.position.x);
-			float distance_z = Mathf.Abs(hero.transform.position.z -character.transform.position.z);
+			float distance_x = Mathf.Abs(hero.transform.position.x -t.position.x);
+			float distance_z = Mathf.Abs(hero.transform.position.z -t.position.z);
 			float realDistance = distance_x+(distance_z*2);
 			if (realDistance < distance) {
 				closestHero = hero;
@@ -127,11 +127,16 @@ public class HeroesManager : MonoBehaviour {
 	public float GetPercentPosition()
 	{
 		float totalPosition = 0;
+        int totalActiveGirls = 0;
 		foreach (Hero hero in all) {
-			totalPosition += hero.transform.position.x;
-		}
+            if (hero.state != Character.states.DEAD)
+            {
+                totalPosition += hero.transform.position.x;
+                totalActiveGirls++;
+            }
+        }
         if (totalPosition == 0)  return 0;
-		totalPosition/=all.Count;
+		totalPosition/= totalActiveGirls;
 		return totalPosition;
 	}
 }

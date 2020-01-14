@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
+    public bool flip;
 	public Vector3 offset;
 	public int life;
 	public float force;
@@ -31,8 +32,18 @@ public class CharacterStats : MonoBehaviour {
     public List<AttackStyle> attacks;
 
 	public List<AttackStyle> receivedAttacks;
-
-	public AttackStyle GetAttackByType(CharacterHitsManager.types type)
+    private void Start()
+    {
+        if (transform.parent == null)
+            return;
+        if (flip)
+        {
+            Vector3 sc = transform.parent.localScale;
+            sc.x = 1;
+            transform.parent.localScale = sc;
+        }
+    }
+    public AttackStyle GetAttackByType(CharacterHitsManager.types type)
 	{
 		foreach (AttackStyle attack in attacks) {
 			if (attack.type == type)
@@ -40,4 +51,13 @@ public class CharacterStats : MonoBehaviour {
 		}
 		return null;
 	}
+    public string GetIdle()
+    {
+        if (idle_clips.Count > 0)
+            return idle_clips[Random.Range(0, idle_clips.Count)].name;
+        else if (idle_clips.Count >0)
+            return idle_clips[0].name;
+        else return "idle";
+
+    }
 }

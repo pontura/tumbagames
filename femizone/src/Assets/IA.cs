@@ -36,7 +36,7 @@ public class IA : MonoBehaviour {
 		} else
 			return false;
 	}
-	public void ReceiveHit()
+	public virtual void ReceiveHit()
 	{
 		state = states.HITTED;
 		Invoke ("Idle", 0.5f);
@@ -51,7 +51,7 @@ public class IA : MonoBehaviour {
         OnUpdated();
         if (state == states.STOP_IA)
 			return;
-		if (enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
+		if (enemy == null || enemy.state == Character.states.DEFENDING || enemy.state == Character.states.HITTED ||  enemy.state == Character.states.SLEEP || enemy.state == Character.states.DEAD) 
 			return;
 		if (state == states.IDLE) {
 			Vector3 newPos = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
@@ -95,11 +95,11 @@ public class IA : MonoBehaviour {
 		state = states.MOVEING;
 		enemy.Walk ();
 	}
-	void LookToTarget()
+	public void LookToTarget()
 	{
 		destination = World.Instance.heroesManager.CheckIfHeroIsClose (enemy);
 	//	destination += enemy.stats.offset;
-		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy);
+		Hero hero = World.Instance.heroesManager.GetClosestHero (enemy.transform);
 		if (hero == null)
 			return;
 		if (hero.transform.position.x < enemy.transform.position.x)
@@ -135,7 +135,7 @@ public class IA : MonoBehaviour {
 		enemy.transform.position = pos;	
 	}
 
-	void READY_FOR_FIGHT()
+	public virtual void READY_FOR_FIGHT()
 	{
 		if (state != states.READY_FOR_FIGHT)
 			return;
@@ -155,4 +155,9 @@ public class IA : MonoBehaviour {
 		CancelInvoke ();
 		state = states.STOP_IA;
 	}
+
+    public virtual void OnDie()
+    {
+        Destroy(enemy.gameObject);
+    }
 }

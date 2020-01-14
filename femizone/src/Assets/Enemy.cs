@@ -50,10 +50,7 @@ public class Enemy : Character {
     }
     public override void OnIdle()
     {
-        if(stats.idle_clips.Count>0)
-        {
-            anim.Play(stats.idle_clips[Random.Range(0, stats.idle_clips.Count)].name);
-        }
+        anim.Play(stats.GetIdle());
     }
 
     void Loop()
@@ -125,8 +122,9 @@ public class Enemy : Character {
 			print (transform.localPosition);
 			Events.OnCharacterDie (this);
 			Destroy (progressBar.gameObject);
-			Destroy (this.gameObject);
-		}
+            ia.OnDie();
+
+        }
 	}
 	IEnumerator CancelPhysics()
 	{
