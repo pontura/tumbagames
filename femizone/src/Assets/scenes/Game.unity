@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 80, y: 60}
+  resolution: {x: 100, y: 65}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -2950,7 +2950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 24.590027, y: 13.299988}
+  m_AnchoredPosition: {x: 24.590088, y: 13.299988}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &952828351
@@ -3217,583 +3217,6 @@ PrefabInstance:
     - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: m_Name
       value: Data (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.size
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[1].all.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].all.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].all.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[11].all.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[12].all.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[5].all.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[1].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114948723651366536, guid: 928715c68d2ff174fb2b0109f80f52d0,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[1].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114948723651366536, guid: 281750b97936af543a173e980a593e7f,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[2].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: bb278cd998c0fd243a31fc32d2d233c5,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[5].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[5].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: 85bf31adba2595744a9db1cf25e353eb,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[5].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: dc84e86352817c94da8629c373b6db8a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[5].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 34c007014e201cd498853158fd782f29,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1140d9d435e2e7b43b1ac0c5c935fece,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 34c007014e201cd498853158fd782f29,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[6].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: bdb551aef41f848449b2b53ebde61f3c,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 8115992363595613011, guid: 5f532a28054fd984aac378db1bb4841a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: ce9ce53d830e6fb48bbf8e2118b4a4f9,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[6]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[7]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 85b7653287934f64281b5e19f47a9aa0,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].all.Array.data[8]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 34c007014e201cd498853158fd782f29,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[7].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: eca0439e0fd02a64ab0ae72e8e268df8,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1e281a3729828264cbfdb374ec6f2d2a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 329fa32357a278a4ea127b60670ba470,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114169596687558326, guid: 823d61ed0e2ec6b4fbb806eb8b018e08,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114120519703974376, guid: 21d64d9c35770584c9b665839549ec89,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[9].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1169d34aca8daf341a5ac7e49c554424,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: 4b25db180178a0b40a5845536fc969a8,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114169596687558326, guid: 823d61ed0e2ec6b4fbb806eb8b018e08,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[11].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[12].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[12].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 80b382a2cfffcb544be792c11b20f3df,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: dc84e86352817c94da8629c373b6db8a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 735ee044579de1d4993484be4d7629b7,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[13].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 4a30c3ba0579fa94785c759fc6e1957e,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: dc6f29acde2fb1049803e1cfe68ba9cf,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: 85bf31adba2595744a9db1cf25e353eb,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: dc84e86352817c94da8629c373b6db8a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114365795418882454, guid: 724013791808b694ea014abe9c6f6a81,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: d7e32a65c500f5a438aa4cabc6eebc88,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: b9bced6add1dad2419fc5955e58bdcb2,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[15].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 735ee044579de1d4993484be4d7629b7,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 4a30c3ba0579fa94785c759fc6e1957e,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 9a32f1d056111dd499dcc8c2711879f0,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: b9bced6add1dad2419fc5955e58bdcb2,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[6]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: b9bced6add1dad2419fc5955e58bdcb2,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[7]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].all.Array.data[8]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 889ac107523dc1a4fbc2c05b9dc24493,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[16].total
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[3].total
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: bb278cd998c0fd243a31fc32d2d233c5,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[4].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: e8580147869ebcb4890bdd2e73e1ceff,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 114169596687558326, guid: 6436e9df977747d4286e79c35cc5aa01,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: e54bb61cc3f3b224bbc3a567a0451d7f,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: ce9ce53d830e6fb48bbf8e2118b4a4f9,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[6]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: ae8480cdb8197724fbba66b13179c989,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[7]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 85b7653287934f64281b5e19f47a9aa0,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].all.Array.data[8]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 34c007014e201cd498853158fd782f29,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[8].total
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114120519703974376, guid: 21d64d9c35770584c9b665839549ec89,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[10].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 1169d34aca8daf341a5ac7e49c554424,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[11].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 301441734e435ba40ad6ff71d61a8ac4,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[11].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 735ee044579de1d4993484be4d7629b7,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[14].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114890024941958344, guid: 4a30c3ba0579fa94785c759fc6e1957e,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[0]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 6e126142d0093b5459161222bef0f47d,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[1]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 8e503f12dcbe01343a8f3287521ffa20,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[2]
-      value: 
-      objectReference: {fileID: 2418968211494619019, guid: 00c80db912be6dd498493fbb91102990,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[3]
-      value: 
-      objectReference: {fileID: 2418968211494619019, guid: c90bdeb65a537934ab44e65cfc40bba4,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[4]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: 1099fe5b60e946f4abca23a134782128,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[5]
-      value: 
-      objectReference: {fileID: 114913801823397682, guid: b9005aa7bd6a54342b7e45d91888762d,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[6]
-      value: 
-      objectReference: {fileID: 5045129668361686577, guid: b9bced6add1dad2419fc5955e58bdcb2,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[7]
-      value: 
-      objectReference: {fileID: 114651090706524686, guid: b80cd831a9b16c2429d0fe2237d41173,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].all.Array.data[8]
-      value: 
-      objectReference: {fileID: 114147816371024642, guid: 889ac107523dc1a4fbc2c05b9dc24493,
-        type: 3}
-    - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
-      propertyPath: levelsByDificulty.Array.data[17].total
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a0a24e632820324480881e117bed187, type: 3}
@@ -4714,6 +4137,7 @@ GameObject:
   - component: {fileID: 1571614653}
   - component: {fileID: 1571614654}
   - component: {fileID: 1571614647}
+  - component: {fileID: 1571614655}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -4755,6 +4179,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   worldCamera: {fileID: 39458928}
   levels: {fileID: 0}
+  objectsManager: {fileID: 1571614655}
   newXLimit: 0
 --- !u!114 &1571614644
 MonoBehaviour:
@@ -4820,6 +4245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 120656302}
+  all: []
 --- !u!114 &1571614647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4947,6 +4373,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23634aa4ccffe4747b9aedb951f213b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  all: []
+--- !u!114 &1571614655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571614641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e791d0b955753f4c976c38103ab77fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 1571614642}
   all: []
 --- !u!1 &1619695795
 GameObject:
@@ -5812,6 +5252,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1895399170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1942426634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1942426635}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942426635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942426634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 114.24821, y: -22.805393, z: 45.977676}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1943629203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9046947789702494597, guid: 83b600af1fddd6641b18a4dd5771da2e,
@@ -6097,7 +5567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 800, y: 600}
+  resolution: {x: 1005, y: 657}
   pixelSize: 1
   dither: 0.15
   opacity: 1

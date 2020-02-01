@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4322505616270484}
   - component: {fileID: 114169596687558326}
   m_Layer: 0
-  m_Name: LEVEL0_Start
+  m_Name: 0_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653cd3574b7240e45973ea18c8ba9e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 1178444909172838, guid: e0aacb4b198ec9d40a04a2b32519004d, type: 3}
+  background: {fileID: 1049514206938788, guid: 3dc6bfc368d85654f8a6d416fbcbcb1e, type: 3}

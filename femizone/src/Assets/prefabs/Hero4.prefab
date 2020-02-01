@@ -4923,6 +4923,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 9902f036a6cec7e4388537bee399ea50, type: 2}
     force: 25
     timeToReset: 1
+  - type: 15
+    animClip: {fileID: 7400000, guid: d7117744930cb124d813d76fd6dad751, type: 2}
+    force: 25
+    timeToReset: 1
   receivedAttacks: []
 --- !u!114 &114645941766145134
 MonoBehaviour:
@@ -5169,6 +5173,21 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 114405565323117312}
+    - target: {fileID: 2507046976098033557, guid: 06cdf9e1d80d83346a3080762639cd87,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507046976098033557, guid: 06cdf9e1d80d83346a3080762639cd87,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507046976098033557, guid: 06cdf9e1d80d83346a3080762639cd87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.71
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cdf9e1d80d83346a3080762639cd87, type: 3}
 --- !u!1 &341268675736558490 stripped

@@ -16,8 +16,8 @@ public class DeathManager : MonoBehaviour {
 	void OnCharacterDie(Character ch)
 	{
 		GameObject go = Instantiate (deaths);
-		go.transform.SetParent (container);
-		go.transform.localPosition = ch.transform.localPosition;
-		go.transform.localScale = Vector3.one;
+        World.Instance.objectsManager.AddObject(go.gameObject, ch.transform.localPosition);
+
+    
 	}
 }

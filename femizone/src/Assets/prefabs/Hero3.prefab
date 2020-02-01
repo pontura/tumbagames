@@ -4923,6 +4923,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: e9a22f512336c3d46a88c20902a3d1aa, type: 2}
     force: 25
     timeToReset: 1
+  - type: 15
+    animClip: {fileID: 7400000, guid: ab4f70242c0f90846bc0470fee9aa54d, type: 2}
+    force: 25
+    timeToReset: 1
   receivedAttacks: []
 --- !u!114 &114794619835727158
 MonoBehaviour:

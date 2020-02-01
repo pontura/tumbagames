@@ -19,6 +19,7 @@ public class World : MonoBehaviour
 
     public WorldCamera worldCamera;
     public Levels levels;
+    public ObjectsManager objectsManager;
 
     public static World Instance
     {

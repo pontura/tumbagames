@@ -4923,6 +4923,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 11bd6003b61d2984aa3145a108da589e, type: 2}
     force: 25
     timeToReset: 1
+  - type: 15
+    animClip: {fileID: 7400000, guid: a3c7d886d2ae86d4eadbbc84bb7adff7, type: 2}
+    force: 25
+    timeToReset: 1
   receivedAttacks: []
 --- !u!114 &114427765078039442
 MonoBehaviour:
@@ -5246,12 +5250,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114285375169494100, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,
+    - target: {fileID: 114032299992232170, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,
         type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 114626248156638434}
-    - target: {fileID: 114032299992232170, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,
+    - target: {fileID: 114285375169494100, guid: 7b9fd314dbbd3f84d8bc1b8bcb98b838,
         type: 3}
       propertyPath: character
       value: 

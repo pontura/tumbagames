@@ -174,6 +174,10 @@ MonoBehaviour:
     animClip: {fileID: 7400000, guid: 12f214d43ccd34c46a2d6587ee966e9a, type: 2}
     force: 25
     timeToReset: 1
+  - type: 15
+    animClip: {fileID: 7400000, guid: 016cd4ffe3633624d83a176940732e63, type: 2}
+    force: 15
+    timeToReset: 1
   receivedAttacks: []
 --- !u!114 &114992872195201544
 MonoBehaviour:
@@ -5206,6 +5210,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: chica1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 114399287392630978}
+    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 114399287392630978}
     - target: {fileID: 4296923418597652, guid: 473254f1999c0d54293d30123805a4fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5250,16 +5264,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 114399287392630978}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473254f1999c0d54293d30123805a4fe, type: 3}
 --- !u!1 &8342403998780335707 stripped

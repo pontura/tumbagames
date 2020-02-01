@@ -20,7 +20,8 @@ public class CharacterHitsManager : MonoBehaviour {
         HEAD,
         KICK_JUMP,
         HIT_JUMP,
-        CINTURONGA
+        CINTURONGA,
+        HIT_DASH
 	}
 	Character character;
 
@@ -30,11 +31,14 @@ public class CharacterHitsManager : MonoBehaviour {
     public HitArea hitAreaReceiver;
     HeroJump heroJump;
     HeroPowerManager powerManager;
+    Hero hero;
 
     void Start()
 	{       
         character = GetComponent<Character> ();
-		hitArea.character = character;
+        hero = character.GetComponent<Hero>();
+
+        hitArea.character = character;
         heroJump = character.GetComponent<HeroJump>();
         powerManager = GetComponent<HeroPowerManager>();
     }
@@ -78,18 +82,23 @@ public class CharacterHitsManager : MonoBehaviour {
                     type = types.HIT_JUMP;
             }
         }
+        if (hero != null && hero.move.type == HeroMove.types.RUN)
+        {
+            hero.move.ChangeType(HeroMove.types.NORMAL);
+            type = types.HIT_DASH;
+        }
 
         AttackStyle attackStyle = character.stats.GetAttackByType (type);
 		string clipName = attackStyle.animClip.name;
-
+      
 		if (type == types.HIT_FORWARD) {
 			punchHitID++;
 			if (punchHitID > 2) 				
 				punchHitID = 1;
 			clipName = "punch_" + punchHitID;
 		}
-       
-		character.anim.Play (clipName);
+        character.anim.Play (clipName);
+
 		hitArea.SetType (type, attackStyle.force);
 
 		character.state = Character.states.HITTING;
