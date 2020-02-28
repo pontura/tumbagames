@@ -642,7 +642,6 @@ MonoBehaviour:
   - all:
     - {fileID: 5045129668361686577, guid: bdb551aef41f848449b2b53ebde61f3c, type: 3}
     - {fileID: 5045129668361686577, guid: c87dc6dbef9cffc4d8ae51058c426f4c, type: 3}
-    - {fileID: 114890024941958344, guid: e953d15c8fb772640bc1c73abccdd33f, type: 3}
     - {fileID: 8115992363595613011, guid: 5f532a28054fd984aac378db1bb4841a, type: 3}
     total: 1
   - all:
@@ -667,6 +666,7 @@ MonoBehaviour:
     - {fileID: 114120519703974376, guid: 21d64d9c35770584c9b665839549ec89, type: 3}
     - {fileID: 114652140778638348, guid: 521ff4c58fe00584b813c1dc128b972a, type: 3}
     - {fileID: 5045129668361686577, guid: 1169d34aca8daf341a5ac7e49c554424, type: 3}
+    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
     total: 1
   - all:
     - {fileID: 5045129668361686577, guid: 516c496fdab11934d94bde9d4f6feb11, type: 3}
@@ -674,7 +674,10 @@ MonoBehaviour:
     - {fileID: 5045129668361686577, guid: 81249dedd9dc26346bcea46ce8da8370, type: 3}
     total: 1
   - all:
-    - {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee, type: 3}
+    - {fileID: 114948723651366536, guid: 928715c68d2ff174fb2b0109f80f52d0, type: 3}
+    total: 1
+  - all:
+    - {fileID: 114948723651366536, guid: 281750b97936af543a173e980a593e7f, type: 3}
     total: 1
   - all:
     - {fileID: 114147816371024642, guid: acb4ae10249fe8246b204f5fadb927e3, type: 3}
@@ -1485,6 +1488,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 110}
     m_Modifications:
+    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
+        type: 3}
+      propertyPath: m_Name
+      value: PerraforceLogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
+      propertyPath: clip1
+      value: 
+      objectReference: {fileID: 8300000, guid: c23b608a60da6504bbe61ddf5fb010bf, type: 3}
+    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 8300000, guid: 57086f6420ad99e47bc4ffb991f26cf5, type: 3}
+    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 6743087334335730209}
     - target: {fileID: 3000492712942568811, guid: 6d9500249426a09478c1843ea58971ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1590,23 +1610,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3000492712942568812, guid: 6d9500249426a09478c1843ea58971ae,
-        type: 3}
-      propertyPath: m_Name
-      value: PerraforceLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
-      propertyPath: clip1
-      value: 
-      objectReference: {fileID: 8300000, guid: c23b608a60da6504bbe61ddf5fb010bf, type: 3}
-    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
-      propertyPath: clip2
-      value: 
-      objectReference: {fileID: 8300000, guid: 57086f6420ad99e47bc4ffb991f26cf5, type: 3}
-    - target: {fileID: 290186995, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 6743087334335730209}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d9500249426a09478c1843ea58971ae, type: 3}
 --- !u!1 &3000492712596912488 stripped
