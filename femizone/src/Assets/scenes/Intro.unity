@@ -56779,7 +56779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 40, y: 30}
+  resolution: {x: 51, y: 29}
   pixelSize: 20
   dither: 0.15
   opacity: 1

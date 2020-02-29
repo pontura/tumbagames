@@ -195,7 +195,14 @@ public class SFXManager : MonoBehaviour {
 			AudioS_hit_balls.Play ();
 			break;
 
-		}
+        default:
+            arr = GetArrClip(punches_hit, character.stats.type);
+            audioClip = GetRandom(arr);
+            AudioS_hit_punches.clip = audioClip;
+            AudioS_hit_punches.Play();
+            break;
+
+        }
 
 	}
     void OnJump(Character character)

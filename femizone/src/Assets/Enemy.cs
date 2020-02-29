@@ -45,7 +45,7 @@ public class Enemy : Character {
 		progressBar = UI.Instance.progressBarManager.CreateProgressBar (this);
 		progressBar.Hide ();
 		Loop ();
-        OnIdle();
+      //  OnIdle();
 
     }
     public override void OnIdle()
