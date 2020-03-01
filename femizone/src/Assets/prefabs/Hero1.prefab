@@ -5210,16 +5210,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: chica1 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 114399287392630978}
-    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 114399287392630978}
     - target: {fileID: 4296923418597652, guid: 473254f1999c0d54293d30123805a4fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5262,6 +5252,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4296923418597652, guid: 473254f1999c0d54293d30123805a4fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655272638845903229, guid: 473254f1999c0d54293d30123805a4fe,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 114399287392630978}
+    - target: {fileID: 4772270191226345799, guid: 473254f1999c0d54293d30123805a4fe,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 114399287392630978}
+    - target: {fileID: 1017511599986640, guid: 473254f1999c0d54293d30123805a4fe, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
