@@ -19,7 +19,7 @@ public class CutsceneActivator : MonoBehaviour
         Hero hero = World.Instance.heroesManager.GetClosestHero(transform);
         if (hero == null) return;
 
-        if (hero.transform.localPosition.x >= transform.parent.transform.localPosition.x - 6)
+        if (hero.transform.localPosition.x >= transform.parent.transform.localPosition.x - 8)
         {
             done = true;
             Events.OnCutscene(type);

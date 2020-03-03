@@ -20,6 +20,7 @@ public class CutScenesFinalManager : MonoBehaviour
     int id;
     int textsID;
     TextsManager.TextsContent allTexts;
+    CutsceneInGame cutscene;
 
     void Start()
     {
@@ -57,7 +58,7 @@ public class CutScenesFinalManager : MonoBehaviour
         SetTexts();
         id = 0;
         Reset();
-        CutsceneInGame cutscene = GetCutsceneForBoss(type);
+        cutscene = GetCutsceneForBoss(type);
         cutscene.gameObject.SetActive(true);
         
         Invoke("Delayed", 2);
@@ -81,14 +82,20 @@ public class CutScenesFinalManager : MonoBehaviour
         }
         else
         {
+            cutscene.Off();
             state = states.DONE;
-            Reset();
-            Events.OnCutsceneDone();
+            Invoke("DelayedOff", 2);
+            Events.OnKeyPress -= OnKeyPress;
         }
+       
+    }
+    void DelayedOff()
+    {
+        Reset();
+        Events.OnCutsceneDone();
     }
     void SetTexts()
     {
-        print(allTexts.texts[id]);
         subtitles.text = allTexts.texts[id];
     }
     CutsceneInGame GetCutsceneForBoss(CutsceneInGame.types type)

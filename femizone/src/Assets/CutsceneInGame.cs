@@ -11,4 +11,8 @@ public class CutsceneInGame : MonoBehaviour
         RUGBIERS,
         FETO
     }
+    public void Off()
+    {
+        GetComponent<Animator>().Play("off");
+    }
 }
