@@ -83193,6 +83193,7 @@ GameObject:
   - component: {fileID: 4610494893901252488}
   - component: {fileID: 8242310551755890902}
   - component: {fileID: 259028135364935673}
+  - component: {fileID: 386338381359265827}
   m_Layer: 0
   m_Name: ScrumMaster
   m_TagString: Untagged
@@ -83380,6 +83381,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBodyMass: 2000
   colliderRadius: 1.5
+--- !u!114 &386338381359265827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3954168613482926178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e662c9c9da40d484a8fbd81a24c745b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &3954168613516314927
 GameObject:
   m_ObjectHideFlags: 0

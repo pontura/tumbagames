@@ -34,7 +34,7 @@ public static class Events
 
     public static System.Action<bool> OnGamePaused = delegate { };
     public static System.Action GameOver = delegate { };
-
+    public static System.Action<CutsceneInGame.types> OnCutscene = delegate { };
     public static System.Action<Hero, Powerup> GrabPowerUp = delegate { };
 
     public static System.Action<Character> OnCharacterDie = delegate { };
@@ -44,4 +44,5 @@ public static class Events
     public static System.Action<CharacterHitsManager.types, Character> OnReceiveit = delegate { };
     public static System.Action<Character, bool> OnMansPlaining = delegate { };
     public static System.Action OnStageClear = delegate { };
+    public static System.Action OnCutsceneDone = delegate { };
 }

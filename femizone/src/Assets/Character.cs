@@ -24,7 +24,8 @@ public class Character : SceneObject {
 		HITTED,
 		DEAD,
 		DEFENDING,
-        STRESS
+        STRESS,
+        FREEZED
 	}
 
 	public virtual void OnStart() { }
@@ -36,8 +37,25 @@ public class Character : SceneObject {
 		limit_to_walk = Data.Instance.settings.limit_to_walk;
 		hitsManager = GetComponent<CharacterHitsManager> ();
 		OnStart ();
-	}
-	void Update () {
+        Events.OnCutscene += OnCutscene;
+        Events.OnCutsceneDone += OnCutsceneDone;
+    }
+    private void OnDestroy()
+    {
+        Events.OnCutscene -= OnCutscene;
+        Events.OnCutsceneDone -= OnCutsceneDone;
+    }
+    void OnCutsceneDone()
+    {
+        state = states.IDLE;
+    }
+    void OnCutscene(CutsceneInGame.types type)
+    {
+        state = states.FREEZED;
+    }
+    void Update () {
+        if (state == states.FREEZED)
+            return;
         if (state == states.STRESS || state == states.DEAD)
 			return;
 		if (state == states.HITTED || state == states.DEFENDING)

@@ -14,6 +14,7 @@ public class TextsManager : MonoBehaviour
         public TextsContent[] intro1;
         public TextsContent[] intro2;
         public TextsContent[] intro3;
+        public TextsContent[] rugbiers;
     }
     [Serializable]
     public class TextsContent
