@@ -117,7 +117,6 @@ public class Character : SceneObject {
 	}
 	public virtual void Idle()
 	{
-        print("IDLE");
         if (state == states.STRESS)
             return;
         if (state == states.DEAD)
