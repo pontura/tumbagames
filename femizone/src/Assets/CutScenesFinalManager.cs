@@ -21,6 +21,7 @@ public class CutScenesFinalManager : MonoBehaviour
     int textsID;
     TextsManager.TextsContent allTexts;
     CutsceneInGame cutscene;
+    CutsceneInGame.types type;
 
     void Start()
     {
@@ -50,17 +51,27 @@ public class CutScenesFinalManager : MonoBehaviour
     }
     void OnCutscene(CutsceneInGame.types type)
     {
+        this.type = type;
         state = states.STARTING;
         print("OnCutscene");
-        textsID = Data.Instance.sequenceData.GetIdFor("rugbiers");
-        allTexts = Data.Instance.textsManager.intro.rugbiers[textsID];
+        if (type == CutsceneInGame.types.RUGBIERS)
+        {
+            textsID = Data.Instance.sequenceData.GetIdFor("rugbiers");
+            allTexts = Data.Instance.textsManager.intro.rugbiers[textsID];
+        }
+        else if (type == CutsceneInGame.types.FETO)
+        {
+            textsID = Data.Instance.sequenceData.GetIdFor("feto");
+            allTexts = Data.Instance.textsManager.intro.feto[textsID];
+        }
 
         SetTexts();
         id = 0;
         Reset();
         cutscene = GetCutsceneForBoss(type);
         cutscene.gameObject.SetActive(true);
-        
+
+      
         Invoke("Delayed", 2);
     }
     void Delayed()
@@ -84,7 +95,14 @@ public class CutScenesFinalManager : MonoBehaviour
         {
             cutscene.Off();
             state = states.DONE;
-            Invoke("DelayedOff", 2);
+
+            int timeToReset = 2;
+            if (type == CutsceneInGame.types.RUGBIERS)
+                timeToReset = 2;
+            else if (type == CutsceneInGame.types.FETO)
+                timeToReset = 4;
+
+            Invoke("DelayedOff", timeToReset);
             Events.OnKeyPress -= OnKeyPress;
         }
        

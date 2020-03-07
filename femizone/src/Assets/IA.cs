@@ -8,7 +8,9 @@ public class IA : MonoBehaviour {
 	public Enemy enemy;
 
 	public states state;
-	public Vector3 destination;
+
+    [HideInInspector]
+    public Vector3 destination;
 	public enum states
 	{
 		SLEEP,	
@@ -41,7 +43,7 @@ public class IA : MonoBehaviour {
 		state = states.HITTED;
 		Invoke ("Idle", 0.5f);
 	}
-    public void Idle()
+    public virtual void Idle()
 	{
 		CancelInvoke ();
 		enemy.Idle ();

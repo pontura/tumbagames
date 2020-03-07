@@ -125,6 +125,10 @@ public class Character : SceneObject {
 		anim.Play ("idle");
 		OnIdle();
 	}
+    public void AnimateSpecificAction(string animName)
+    {
+        anim.Play(animName);
+    }
 	public void Defense()
 	{
         if (state == states.DEAD)

@@ -32,7 +32,8 @@ public class SceneObjectData : MonoBehaviour {
         KKK,
         ESVASTICA,
         SCRUM_MASTER,
-        RUGBIER
+        RUGBIER,
+        FETO
     }
 
     public float aditionalSpeed;
