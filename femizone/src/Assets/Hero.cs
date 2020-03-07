@@ -16,6 +16,8 @@ public class Hero : Character
 
     public override void OnStart()
     {
+        Events.OnCutscene += OnCutscene;
+
         move = GetComponent<HeroMove>();
         jump = GetComponent<HeroJump>();
         inputManager = GetComponent<InputManager>();
@@ -26,6 +28,18 @@ public class Hero : Character
         move.Init(this);
         jump.Init(this);
     }
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        Events.OnCutscene -= OnCutscene;
+    }    
+    void OnCutscene(CutsceneInGame.types type)
+    {
+        state = states.FREEZED;
+        anim.Play("run");
+        move.ForceScreenCenter();
+    }
+    
     public void OnUpdateByInput(int HorizontalDirection, int VerticalDirection)
     {
          if (state == states.STRESS)

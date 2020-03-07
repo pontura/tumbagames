@@ -29,6 +29,8 @@ public class InputManager : MonoBehaviour
     {
         if (hero.state == Character.states.DEAD)
             return;
+        if (hero.state == Character.states.FREEZED)
+            return;
 
         direction = (int)hero.transform.localScale.x;
 

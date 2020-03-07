@@ -3950,7 +3950,7 @@ PrefabInstance:
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].all.Array.data[0]
       value: 
-      objectReference: {fileID: 114948723651366536, guid: 1143ddfeefdb5c841b8e2b0831e6e028,
+      objectReference: {fileID: 114948723651366536, guid: 281750b97936af543a173e980a593e7f,
         type: 3}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[2].all.Array.data[0]
@@ -7078,6 +7078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: intro_Feto
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482547578059503816, guid: 90108e7185e9c9d48ae59794092cc3e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4482547578059503819, guid: 90108e7185e9c9d48ae59794092cc3e4,
         type: 3}

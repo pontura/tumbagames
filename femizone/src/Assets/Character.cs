@@ -36,23 +36,19 @@ public class Character : SceneObject {
 		limits_Z = Data.Instance.settings.limits_z;
 		limit_to_walk = Data.Instance.settings.limit_to_walk;
 		hitsManager = GetComponent<CharacterHitsManager> ();
-		OnStart ();
-        Events.OnCutscene += OnCutscene;
+		OnStart ();        
         Events.OnCutsceneDone += OnCutsceneDone;
     }
-    private void OnDestroy()
+    public virtual void OnDestroy()
     {
-        Events.OnCutscene -= OnCutscene;
         Events.OnCutsceneDone -= OnCutsceneDone;
     }
     void OnCutsceneDone()
     {
         state = states.IDLE;
+        anim.Play("idle");
     }
-    void OnCutscene(CutsceneInGame.types type)
-    {
-        state = states.FREEZED;
-    }
+    
     void Update () {
         if (state == states.FREEZED)
             return;

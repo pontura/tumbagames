@@ -51,9 +51,8 @@ public class CutScenesFinalManager : MonoBehaviour
     }
     void OnCutscene(CutsceneInGame.types type)
     {
+        cutscene = GetCutsceneForBoss(type);
         this.type = type;
-        state = states.STARTING;
-        print("OnCutscene");
         if (type == CutsceneInGame.types.RUGBIERS)
         {
             textsID = Data.Instance.sequenceData.GetIdFor("rugbiers");
@@ -64,11 +63,17 @@ public class CutScenesFinalManager : MonoBehaviour
             textsID = Data.Instance.sequenceData.GetIdFor("feto");
             allTexts = Data.Instance.textsManager.intro.feto[textsID];
         }
+        
+        Invoke("DelayedStart", 3);
+    }
+    void DelayedStart()
+    {         
+        state = states.STARTING;
 
         SetTexts();
         id = 0;
         Reset();
-        cutscene = GetCutsceneForBoss(type);
+        
         cutscene.gameObject.SetActive(true);
 
       

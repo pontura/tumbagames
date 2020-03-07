@@ -13,13 +13,48 @@ public class HeroMove : MonoBehaviour
     public enum types
     {
         NORMAL,
-        RUN
+        RUN,
+        AUTOMATIC
     }
 
     public void Init(Hero hero)
     {
         normalSpeed = hero.speed;
         this.hero = hero;
+    }
+    Vector3 forcePos;
+    public void ForceScreenCenter()
+    {
+        forcePos = new Vector3(World.Instance.newXLimit, transform.position.y, -6);
+        print("forcePos: " + forcePos);
+        type = types.AUTOMATIC;
+        hero.speed = normalSpeed;
+    }
+    private void Update()
+    {            
+        if (type != types.AUTOMATIC)
+            return;
+        float distance = Vector3.Distance(transform.position, forcePos);
+        print("distance: " + distance + " transform.position, forcePos " + transform.position + " " +  forcePos);
+        if (Mathf.Abs(distance) > 1)
+        {
+            int _z = 0;
+            int _x = 0;
+            if (transform.position.z < forcePos.z)
+                _z = 1;
+            else
+                _z = -1;
+            if (transform.position.x < forcePos.x)
+                _x = 1;
+            else
+                _x = 0;
+            ChekToMove(_x, _z);
+        }
+        else
+        {
+            type = types.NORMAL;
+            hero.AnimateSpecificAction("idle");
+        }
     }
     public void ChangeType(types type)
     {
