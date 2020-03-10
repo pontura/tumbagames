@@ -63,7 +63,12 @@ public class CutScenesFinalManager : MonoBehaviour
             textsID = Data.Instance.sequenceData.GetIdFor("feto");
             allTexts = Data.Instance.textsManager.intro.feto[textsID];
         }
-        
+        else if (type == CutsceneInGame.types.TRUMP)
+        {
+            textsID = Data.Instance.sequenceData.GetIdFor("trump");
+            allTexts = Data.Instance.textsManager.intro.trump[textsID];
+        }
+
         Invoke("DelayedStart", 3);
     }
     void DelayedStart()

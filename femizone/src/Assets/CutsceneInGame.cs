@@ -9,7 +9,8 @@ public class CutsceneInGame : MonoBehaviour
     {
         GAME_OVER,
         RUGBIERS,
-        FETO
+        FETO,
+        TRUMP
     }
     public void Off()
     {

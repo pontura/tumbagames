@@ -5167,6 +5167,7 @@ GameObject:
   - component: {fileID: 95588609567193260}
   - component: {fileID: 114194148601223096}
   - component: {fileID: 3617750627662569739}
+  - component: {fileID: 3914590481732190465}
   m_Layer: 0
   m_Name: DickPetrol
   m_TagString: Untagged
@@ -5312,6 +5313,19 @@ MonoBehaviour:
   hitPartSignal: {fileID: 0}
   id: 0
   originalPos: {x: 0, y: 0, z: 0}
+--- !u!114 &3914590481732190465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230476605993888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e662c9c9da40d484a8fbd81a24c745b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
 --- !u!1 &1239914962902258
 GameObject:
   m_ObjectHideFlags: 0
