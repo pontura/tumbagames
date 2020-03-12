@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 4790210244755787861}
   - component: {fileID: 4891183222481818231}
   m_Layer: 0
-  m_Name: LEVEL1_1_Ceo-trappers+2
+  m_Name: LEVEL1_1_Ceo-trappers+2birra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653cd3574b7240e45973ea18c8ba9e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 1178444909172838, guid: e0aacb4b198ec9d40a04a2b32519004d, type: 3}
+  background: {fileID: 68648769318435247, guid: 9b198ddaa9171404791a7d4396acb353,
+    type: 3}
 --- !u!1 &6184881667320942204
 GameObject:
   m_ObjectHideFlags: 0

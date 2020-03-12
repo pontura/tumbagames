@@ -292,7 +292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parts:
   - {fileID: 1454564474006179778}
-  - {fileID: 0}
+  - {fileID: 2187301528746985403}
+  - {fileID: 6062985825426829878}
 --- !u!1 &1476385894870929027
 GameObject:
   m_ObjectHideFlags: 0
