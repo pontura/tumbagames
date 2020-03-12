@@ -4,92 +4,114 @@ using UnityEngine;
 
 public class EnemiexExtrasManager : MonoBehaviour
 {
-	public bool canAdd;
-	EnemiesManager enemiesManager;
-	int maxToAdd = 1;
-	int added;
-	int stagesClear;
+    public bool canAdd;
+    EnemiesManager enemiesManager;
+    int maxToAdd = 1;
+    int added;
+    int stagesClear;
+    public EnemiesXtrasData enmiesXtraData;
+    int sec;
 
     void Start()
     {
-		enemiesManager = GetComponent<EnemiesManager> ();
-		Events.OnStageClear += OnStageClear;
-		Events.OnMansPlaining += OnMansPlaining;
-        Invoke ("Loop", 5);
+        enemiesManager = GetComponent<EnemiesManager>();
+        Events.OnStageClear += OnStageClear;
+        Events.OnInitFight += OnInitFight;
+        //  Invoke ("Loop", 5);
+        Loop();
     }
 
     void OnDestroy()
     {
-		Events.OnStageClear -= OnStageClear;
-		Events.OnMansPlaining -= OnMansPlaining;
+        Events.OnStageClear -= OnStageClear;
+        Events.OnInitFight -= OnInitFight;
     }
-	void OnMansPlaining(Character c, bool isOn)
-	{
-		canAdd = true;
-	}
-	void OnStageClear()
-	{
-		canAdd = false;
-		added = 0;
-		maxToAdd += stagesClear-1;
-		stagesClear++;
-	}
+    void OnInitFight()
+    {
+        canAdd = true;
+        enmiesXtraData = World.Instance.levels.levelsData.level.GetComponent<EnemiesXtrasData>();
+        if (enmiesXtraData == null)
+            return;
+        sec = 0;
+    }
+    void OnStageClear()
+    {
+        canAdd = false;
+        //added = 0;
+        //maxToAdd += stagesClear-1;
+        stagesClear++;
+    }
+    void Loop()
+    {
+        Invoke("Loop", 1);
+        CheckToAdd();
+    }
+    //void Loop()
+    //{
+    //	Invoke ("Loop", 5);
+    //	CheckToAdd ();
+    //}
+    Enemy enemy;
+    void CheckToAdd()
+    {
+        if (enmiesXtraData == null)
+            return;
+        if (//stagesClear < 2 || 
+            !canAdd ||  
+            GetComponent<HeroesManager>().all.Count == 0)
+            return;
 
-	void Loop()
-	{
-		Invoke ("Loop", 5);
-		CheckToAdd ();
-	}
-	Enemy enemy;
-	void CheckToAdd()
-	{
-        if (stagesClear < 2 || !canAdd ||  GetComponent<HeroesManager> ().all.Count == 0)
-			return;
-		
-		if(added >= maxToAdd)
-		{
-			canAdd = false;
-			return;
-		}
-        print("EnemiexExtrasManager Add new");
-		SceneObjectData data = new SceneObjectData ();
-		int rand = Random.Range(0,10);
+        sec++;
 
-        List < SceneObjectData.types > all =  new List<SceneObjectData.types>();
+        //if(added >= maxToAdd)
+        //{
+        //	canAdd = false;
+        //	return;
+        //}    
 
-        all.Add(SceneObjectData.types.WARNES_MAN);
-        all.Add(SceneObjectData.types.CEO);
-        all.Add(SceneObjectData.types.MODERNO);
+       // print("EnemiexExtrasManager Add new");
+       // SceneObjectData data = new SceneObjectData();
+        //int rand = Random.Range(0, 10);
+        //List<SceneObjectData.types> all = new List<SceneObjectData.types>();
+        foreach(EnemiesXtrasData.Config c in enmiesXtraData.all)
+        {
+            if(c.delay == sec)
+            {
+                print(c.delay + "    sec: " + sec);
+                SceneObjectData d = new SceneObjectData();
+                d.type = c.type;
+                AddEnemy(d, c.positionData);
+            }
+        }
+        
+    }
+    void AddEnemy(SceneObjectData data, EnemiesXtrasData.Config.PositionData posData)
+    {
+        print("ADDDDDDD " + data.type + "   posData : " + posData + "   sec " + sec );
+        //all.Add(SceneObjectData.types.WARNES_MAN);
+        //all.Add(SceneObjectData.types.CEO);
+        //all.Add(SceneObjectData.types.MODERNO);
 
-        if (stagesClear > 4)
-            all.Add(SceneObjectData.types.COP);
-        if (stagesClear > 7)
-            all.Add(SceneObjectData.types.COP_GUN);
+        //if (stagesClear > 4)
+        //    all.Add(SceneObjectData.types.COP);
+        //if (stagesClear > 7)
+        //    all.Add(SceneObjectData.types.COP_GUN);
 
-        data.type = GetRandomBetween(all);
+        //data.type = GetRandomBetween(all);
 		
 		Vector3 pos = World.Instance.worldCamera.transform.position;
 
-		if(Random.Range(0,10)<5)
-			pos.x += 15 + Random.Range(0,4);
+		if(posData == EnemiesXtrasData.Config.PositionData.LEFT)
+			pos.x += 16 + Random.Range(0,4);
 		else
-			pos.x -= 15 + Random.Range(0,4);	
+			pos.x -= 16 + Random.Range(0,4);	
 		
 		pos.z = Random.Range(-1,10);
 		data.pos = pos;
 		enemy = enemiesManager.InstantiateSceneOject (data);
 		enemy.Idle ();
-
-		added++;
-		Invoke ("Delayed", 0.5f);
-	}
-	void Delayed()
-	{
-        if (enemy != null && World.Instance.state != World.states.GAME_OVER) {
-			Events.OnMansPlaining (enemy, false);
-			HitArea ha = GetComponent<HeroesManager> ().all [0].hitsManager.hitArea;
-			enemy.ReceiveHit (ha, 1);
-        }
+        enemy.ActivateToFight();
+       
 	}
     SceneObjectData.types GetRandomBetween(List<SceneObjectData.types> all)
     {

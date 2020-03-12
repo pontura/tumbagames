@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 102, y: 76}
+  resolution: {x: 56, y: 37}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -3960,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].all.Array.data[0]
       value: 
-      objectReference: {fileID: 114948723651366536, guid: b0786e3ccd63dc54a8bce938eed3e9ee,
+      objectReference: {fileID: 5045129668361686577, guid: bb278cd998c0fd243a31fc32d2d233c5,
         type: 3}
     - target: {fileID: 124, guid: 4a0a24e632820324480881e117bed187, type: 3}
       propertyPath: levelsByDificulty.Array.data[1].total
@@ -5609,6 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f8a57ad3d82c34e8c8afa570194268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelsData: {fileID: 0}
   activeLevelID: 0
 --- !u!114 &1571614649
 MonoBehaviour:
@@ -5694,6 +5695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAdd: 0
+  enmiesXtraData: {fileID: 0}
 --- !u!114 &1571614654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5707,6 +5709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   all: []
+  level: {fileID: 0}
 --- !u!114 &1571614655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6986,7 +6989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 1024, y: 768}
+  resolution: {x: 561, y: 377}
   pixelSize: 1
   dither: 0.15
   opacity: 1

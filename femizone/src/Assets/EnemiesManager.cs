@@ -25,11 +25,13 @@ public class EnemiesManager : MonoBehaviour {
 
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
+        Events.OnInitFight += OnInitFight;
     }
 	void OnDestroy () {
 		Events.OnCharacterDie -= OnCharacterDie;
+        Events.OnInitFight -= OnInitFight;
     }
-
+    
     void OnCharacterDie(Character character)
 	{
 		Enemy enemy = character.GetComponent<Enemy> ();
@@ -96,5 +98,26 @@ public class EnemiesManager : MonoBehaviour {
 		all.Add (enemy);
 		Events.OnMansPlaining (enemy, true);
 		return enemy;
+    }
+    void OnInitFight()
+    {
+        CancelInvoke();
+        Invoke("Loop", 2);
+    }
+    void Loop()
+    {
+        if (World.Instance.state != World.states.FIGHTING)
+            return;
+        RandomlyActivateEnemy();
+        Invoke("Loop", 2);
+    }
+    void RandomlyActivateEnemy()
+    {
+        foreach(Enemy enemy in all)
+        {
+            if (enemy.state == Character.states.SLEEP && Random.Range(0,10)>7)
+                enemy.ActivateToFight();
+
+        }
     }
 }

@@ -574,6 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8157808451734853293}
   - component: {fileID: 8115992363595613011}
+  - component: {fileID: 7772582352597527609}
   m_Layer: 0
   m_Name: klansman1
   m_TagString: Untagged
@@ -616,6 +617,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 470917285526597422, guid: ed5a13c2e95568640b0699797b6c3b71,
     type: 3}
+--- !u!114 &7772582352597527609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159458545640705997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 3
+    type: 19
+    positionData: 0
+  - delay: 6
+    type: 19
+    positionData: 1
+  - delay: 12
+    type: 19
+    positionData: 1
+  - delay: 20
+    type: 19
+    positionData: 0
 --- !u!1 &8160299262965561413
 GameObject:
   m_ObjectHideFlags: 0

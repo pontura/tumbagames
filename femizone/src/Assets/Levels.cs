@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Levels : MonoBehaviour {
 
-    LevelsData levelsData;
-
+    public LevelsData levelsData;
 	public int activeLevelID;
 
 	void Start () {

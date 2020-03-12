@@ -22,9 +22,9 @@ public class MusicManager : MonoBehaviour {
         OnStageClear ();
         OnChangeScene("Intro");
     }
-	void OnMansPlaining(Character c, bool isOn)
+	void OnInitFight()
 	{
-		if (!isOn && audioSource.clip != musicHard) {
+		if (audioSource.clip != musicHard) {
 			audioSource.clip = musicHard;		
 			audioSource.Play ();
 		}
@@ -41,7 +41,7 @@ public class MusicManager : MonoBehaviour {
 
         OnMusicVolumeChanged(volume);
 
-        Events.OnMansPlaining += OnMansPlaining;
+        Events.OnInitFight += OnInitFight;
         Events.OnStageClear += OnStageClear;
         Events.OnGamePaused += OnGamePaused;
         Events.OnMusicVolumeChanged += OnMusicVolumeChanged;
@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour {
     }
     void OnDestroy()
     {
-		Events.OnMansPlaining -= OnMansPlaining;
+		Events.OnInitFight -= OnInitFight;
 		Events.OnStageClear -= OnStageClear;
         Events.OnGamePaused -= OnGamePaused;
         Events.OnMusicVolumeChanged -= OnMusicVolumeChanged;

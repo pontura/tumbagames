@@ -46,4 +46,5 @@ public static class Events
     public static System.Action<Character, bool> OnMansPlaining = delegate { };
     public static System.Action OnStageClear = delegate { };
     public static System.Action OnCutsceneDone = delegate { };
+    public static System.Action OnInitFight = delegate { };
 }

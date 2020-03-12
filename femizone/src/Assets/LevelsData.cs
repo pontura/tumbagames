@@ -50,8 +50,11 @@ public class LevelsData : MonoBehaviour
         offset = new Vector3(id * levelsWidth, 0, 0);
         Load(all[id]);
     }
+    public Level level;
     void Load(Level level)
     {
+        this.level = level;
+        
         SceneObjectData[] allSceneObjectData = level.GetComponentsInChildren<SceneObjectData>();
         foreach (SceneObjectData data in allSceneObjectData)
         {

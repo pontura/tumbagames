@@ -158,5 +158,18 @@ public class Enemy : Character {
     {
         this.canMoveOutsideScreen = _canMoveOutsideScreen;
     }
+    public void ActivateToFight()
+    {
+        StartCoroutine(ActivateToFight(0.1f));
+    }
+    public IEnumerator ActivateToFight(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (World.Instance.state == World.states.FIGHTING)
+        {
+            Events.OnMansPlaining(this, false);
+            ReceiveHit(hitArea, 1);
+        }
+    }
 
 }

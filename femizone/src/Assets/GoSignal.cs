@@ -42,7 +42,7 @@ public class GoSignal : MonoBehaviour
 	}
 	void Loop()
 	{
-		if (World.Instance.state == World.states.FIGHTING) {
+		if (World.Instance.state == World.states.FIGHTING ||  World.Instance.state == World.states.AWAITING) {
 			SetOff ();
 			return;
 		}

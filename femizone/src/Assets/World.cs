@@ -9,6 +9,7 @@ public class World : MonoBehaviour
     {
         FIGHTING,
         LEVEL_CLEAR,
+        AWAITING,
         GAME_OVER
     }
     static World mInstance = null;
@@ -38,13 +39,33 @@ public class World : MonoBehaviour
         enemiesManager = GetComponent<EnemiesManager>();
         levels = GetComponent<Levels>();
 	}
+    private void Start()
+    {
+        Events.OnReceiveit += OnReceiveit;
+    }
+    private void OnDestroy()
+    {
+        Events.OnReceiveit -= OnReceiveit;
+    }
+    void OnReceiveit(CharacterHitsManager.types t, Character ch)
+    {
+
+        if (state != states.FIGHTING && (worldCamera.transform.position.x >= newXLimit-10))
+        {
+            print("OnInitFight");
+            Events.OnInitFight();
+            state = states.FIGHTING;
+        }
+    }
     public void OnRestart()
     {
         Data.Instance.LoadScene("Intro");
     }
     public int newXLimit;
+    float levelStartedTime;
     public void LevelClear()
     {
+        levelStartedTime = Time.time;
         state = states.LEVEL_CLEAR;
         newXLimit = (levels.activeLevelID * Data.Instance.settings.LevelsWidth);
     }
@@ -62,7 +83,7 @@ public class World : MonoBehaviour
     }
     void Update()
     {
-        if (state == states.FIGHTING)
+        if (state == states.FIGHTING || state == states.AWAITING)
             return;
 
         if (state == states.LEVEL_CLEAR)
@@ -75,7 +96,7 @@ public class World : MonoBehaviour
             if (worldCamera.transform.position.x >= newXLimit)
             {
                 percentPosition = newXLimit;
-                state = states.FIGHTING;
+                state = states.AWAITING;
             }
             else if (globalPos > limit)
             {
@@ -83,4 +104,5 @@ public class World : MonoBehaviour
             }
         }
     }
+
 }
