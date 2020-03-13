@@ -72,6 +72,7 @@ public class LevelsData : MonoBehaviour
                 || data.type == SceneObjectData.types.CAR
                  || data.type == SceneObjectData.types.ARBOL
                  || data.type == SceneObjectData.types.ESVASTICA
+                  || data.type == SceneObjectData.types.TACHO
             )
                 genericObjectsManager.InstantiateSceneOject(data);
             else

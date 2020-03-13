@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 6123491865078418051}
   - component: {fileID: 2600650689713542975}
   m_Layer: 0
-  m_Name: FAROL (1)
+  m_Name: tacho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 11
+  type: 24
   pos: {x: 140.2, y: 0, z: -6.1487803}
   aditionalSpeed: 0
 --- !u!1 &8580679079280975750
@@ -264,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580679079280975750}
   m_LocalRotation: {x: -0.00000004470348, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: -3.5, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5159191524684172307}

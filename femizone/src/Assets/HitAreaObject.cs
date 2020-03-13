@@ -33,7 +33,7 @@ public class HitAreaObject : MonoBehaviour
        
         id++;
         if (id >= parts.Count)
-            id = parts.Count-1;
+            return;
 
         SetState();
 
