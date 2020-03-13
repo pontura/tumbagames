@@ -36,6 +36,9 @@ public class InputManager : MonoBehaviour
 
         hero.OnUpdateByInput(HorizontalDirection, VerticalDirection);
 
+        if (Input.GetKeyDown(KeyCode.P))
+            Events.KillEverybody();
+
         if (Input.GetAxis("Vertical" + hero.id) == -1)
             VerticalDirection = -1;
         else if (Input.GetAxis("Vertical" + hero.id) == 1)

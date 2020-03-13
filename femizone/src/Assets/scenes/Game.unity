@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 56, y: 37}
+  resolution: {x: 59, y: 37}
   pixelSize: 10
   dither: 0.15
   opacity: 1
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionMode: 1
-  resolution: {x: 561, y: 377}
+  resolution: {x: 594, y: 377}
   pixelSize: 1
   dither: 0.15
   opacity: 1

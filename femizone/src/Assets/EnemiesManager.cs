@@ -26,10 +26,12 @@ public class EnemiesManager : MonoBehaviour {
 	void Start () {
 		Events.OnCharacterDie += OnCharacterDie;
         Events.OnInitFight += OnInitFight;
+        Events.KillEverybody += KillEverybody;
     }
 	void OnDestroy () {
 		Events.OnCharacterDie -= OnCharacterDie;
         Events.OnInitFight -= OnInitFight;
+        Events.KillEverybody -= KillEverybody;
     }
     
     void OnCharacterDie(Character character)
@@ -119,5 +121,15 @@ public class EnemiesManager : MonoBehaviour {
                 enemy.ActivateToFight();
 
         }
+    }
+    void KillEverybody()
+    {
+        int i = all.Count;
+           while(i>0)
+            {
+             all[i - 1].Idle();
+               all[i - 1].OnReceiveHit(new HitArea(), 1000);
+                i--;
+            }
     }
 }

@@ -27,7 +27,7 @@ public static class Events
 
     public static System.Action<string> OnChangeScene = delegate { };
     public static System.Action<int> AddHero = delegate { };
-
+    public static System.Action KillEverybody = delegate { };
     public static System.Action<int> OnHeroDie = delegate { };
     public static System.Action OnHeroComido = delegate { };
     public static System.Action OnHeroCelebrate = delegate { };
