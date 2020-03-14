@@ -52,6 +52,9 @@ public class CutScenesFinalManager : MonoBehaviour
     void OnCutscene(CutsceneInGame.types type)
     {
         cutscene = GetCutsceneForBoss(type);
+        if (cutscene == null)
+            return;
+
         this.type = type;
         if (type == CutsceneInGame.types.RUGBIERS)
         {
