@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  pos: {x: 37.2, y: 0, z: 6.9282036}
+  pos: {x: 381.56, y: 0, z: 4.823762}
   aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
@@ -104,8 +104,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5159191524684172307}
   - component: {fileID: 5045129668361686577}
+  - component: {fileID: 265866621405283822}
   m_Layer: 0
-  m_Name: LEVEL1_2_warnes_x2
+  m_Name: LEVEL1_3_warnes_x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +144,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 1454591530247721604, guid: ce2d2229bb29d63438328e1daac81dba,
     type: 3}
+--- !u!114 &265866621405283822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157718404929103367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 1
+    type: 0
+    positionData: 0
 --- !u!1 &6684222887396053348
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 24
-  pos: {x: 30.2, y: 0, z: -6.9282036}
+  pos: {x: 372.2, y: 0, z: -6.9282036}
   aditionalSpeed: 0
 --- !u!1 &7865512004172432575
 GameObject:
@@ -329,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 24
-  pos: {x: 46.2, y: 0, z: -6.9282036}
+  pos: {x: 388.2, y: 0, z: -6.9282036}
   aditionalSpeed: 0
 --- !u!1 &8580679079280975750
 GameObject:
@@ -423,5 +440,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  pos: {x: 37.3, y: 0, z: -7.794229}
+  pos: {x: 377.02, y: 0, z: -6.7896395}
   aditionalSpeed: 0

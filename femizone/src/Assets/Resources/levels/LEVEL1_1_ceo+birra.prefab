@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 38.2, y: 0, z: -5.80237}
+  pos: {x: 190.2, y: 0, z: -5.80237}
   aditionalSpeed: 0
 --- !u!1 &1264734912557817626
 GameObject:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  pos: {x: 45.9, y: 0, z: 6.3133254}
+  pos: {x: 182.9, y: 0, z: 6.3133254}
   aditionalSpeed: 0
 --- !u!1 &4240844303873987384
 GameObject:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 47.9, y: 0, z: -5.80237}
+  pos: {x: 199.9, y: 0, z: -5.80237}
   aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5159191524684172307}
   - component: {fileID: 5045129668361686577}
+  - component: {fileID: -405865749188148722}
   m_Layer: 0
   m_Name: LEVEL1_1_ceo+birra
   m_TagString: Untagged
@@ -333,6 +334,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 68648769318435247, guid: 9b198ddaa9171404791a7d4396acb353,
     type: 3}
+--- !u!114 &-405865749188148722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157718404929103367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 2
+    type: 2
+    positionData: 0
 --- !u!1 &7388136889053808515
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  pos: {x: 38.1, y: 0, z: -1.2990382}
+  pos: {x: 190.1, y: 0, z: -1.2990382}
   aditionalSpeed: 0
 --- !u!1 &7889187297380854725
 GameObject:
@@ -519,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  pos: {x: 31.7, y: 0, z: 7.621024}
+  pos: {x: 197.7, y: 0, z: 7.621024}
   aditionalSpeed: 0
 --- !u!1 &8173254820981732042
 GameObject:
@@ -613,5 +630,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 28.1, y: 0, z: -5.80237}
+  pos: {x: 180.1, y: 0, z: -5.80237}
   aditionalSpeed: 0

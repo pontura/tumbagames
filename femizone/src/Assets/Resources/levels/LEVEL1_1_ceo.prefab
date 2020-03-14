@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 81.07, y: 0, z: -9.5}
+  pos: {x: 157.07, y: 0, z: -8.2272415}
   aditionalSpeed: 0
 --- !u!1 &1874307164000384431
 GameObject:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  pos: {x: 71.4, y: 0, z: -3.5}
+  pos: {x: 147.4, y: 0, z: -3.031089}
   aditionalSpeed: 0
 --- !u!1 &3287522417069765295
 GameObject:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
-  pos: {x: 86.7, y: 0, z: -8.9}
+  pos: {x: 162.7, y: 0, z: -7.707626}
   aditionalSpeed: 0
 --- !u!1 &4805174003842332399
 GameObject:
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 66, y: 0, z: -9.5}
+  pos: {x: 142, y: 0, z: -8.2272415}
   aditionalSpeed: 0
 --- !u!1 &5156639331599088753
 GameObject:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  pos: {x: 77.2, y: 0, z: 1.7}
+  pos: {x: 153.2, y: 0, z: 1.4722433}
   aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
@@ -537,16 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   all:
   - delay: 3
-    type: 0
-    positionData: 0
-  - delay: 3
-    type: 0
-    positionData: 1
-  - delay: 6
-    type: 0
-    positionData: 1
-  - delay: 8
-    type: 0
+    type: 2
     positionData: 0
 --- !u!1 &5494703081331527753
 GameObject:
@@ -640,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
-  pos: {x: 75.7, y: 0, z: 9.1}
+  pos: {x: 151.7, y: 0, z: 7.8808317}
   aditionalSpeed: 0
 --- !u!1 &8173254820981732042
 GameObject:
@@ -734,5 +725,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 84, y: 0, z: 9}
+  pos: {x: 160, y: 0, z: 7.794229}
   aditionalSpeed: 0

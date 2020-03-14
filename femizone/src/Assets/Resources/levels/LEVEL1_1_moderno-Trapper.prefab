@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 17
-  pos: {x: 33.9, y: 0, z: -2.857884}
+  pos: {x: 148.9, y: 0, z: -1.9918585}
   aditionalSpeed: 0
 --- !u!1 &3287522417069765295
 GameObject:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
-  pos: {x: 47.7, y: 0, z: -8.6602545}
+  pos: {x: 161.7, y: 0, z: -8.6602545}
   aditionalSpeed: 0
 --- !u!1 &4585104210116823677
 GameObject:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 13
-  pos: {x: 43.2, y: 0, z: -7.188011}
+  pos: {x: 157.2, y: 0, z: -7.188011}
   aditionalSpeed: 0
 --- !u!1 &5156639331599088753
 GameObject:
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 13
-  pos: {x: 42.2, y: 0, z: 5.80237}
+  pos: {x: 156.2, y: 0, z: 5.80237}
   aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5159191524684172307}
   - component: {fileID: 5045129668361686577}
+  - component: {fileID: 3419027928898789059}
   m_Layer: 0
   m_Name: LEVEL1_1_moderno-Trapper
   m_TagString: Untagged
@@ -427,6 +428,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1178444909172838, guid: e0aacb4b198ec9d40a04a2b32519004d, type: 3}
+--- !u!114 &3419027928898789059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157718404929103367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 2
+    type: 17
+    positionData: 1
+  - delay: 3
+    type: 13
+    positionData: 0
 --- !u!1 &5993879089069095959
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
-  pos: {x: 26.9, y: 0, z: -8.6602545}
+  pos: {x: 140.9, y: 0, z: -8.6602545}
   aditionalSpeed: 0
 --- !u!1 &7919314164269824798
 GameObject:
@@ -613,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 32.4, y: 0, z: 1.125833}
+  pos: {x: 146.4, y: 0, z: 1.125833}
   aditionalSpeed: 0
 --- !u!1 &8173254820981732042
 GameObject:
@@ -707,5 +727,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 10
-  pos: {x: 45.4, y: 0, z: 1.125833}
+  pos: {x: 159.4, y: 0, z: 1.125833}
   aditionalSpeed: 0

@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 12
-  pos: {x: 42.2, y: 0, z: 0.7794229}
+  pos: {x: 421.2, y: 0, z: 0.7794229}
   aditionalSpeed: 0
 --- !u!1 &5156639331599088753
 GameObject:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  pos: {x: 41, y: 0, z: 6.9282036}
+  pos: {x: 421, y: 0, z: 6.9282036}
   aditionalSpeed: 0
 --- !u!1 &5157718404929103367
 GameObject:
@@ -198,8 +198,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5159191524684172307}
   - component: {fileID: 5045129668361686577}
+  - component: {fileID: -8274343843491794824}
   m_Layer: 0
-  m_Name: LEVEL1_5_warnes
+  m_Name: LEVEL1_3_warnes2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,6 +240,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 1454591530247721604, guid: ce2d2229bb29d63438328e1daac81dba,
     type: 3}
+--- !u!114 &-8274343843491794824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157718404929103367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 3
+    type: 0
+    positionData: 1
 --- !u!1 &6294722958672956761
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
-  pos: {x: 26.2, y: 0, z: -6.1487803}
+  pos: {x: 406.2, y: 0, z: -6.1487803}
   aditionalSpeed: 0
 --- !u!1 &6311522802052580270
 GameObject:
@@ -425,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  pos: {x: 44, y: 0, z: -5.1961527}
+  pos: {x: 424, y: 0, z: -5.1961527}
   aditionalSpeed: 0
 --- !u!1 &8580679079280975750
 GameObject:
@@ -519,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  pos: {x: 32, y: 0, z: 0.86602545}
+  pos: {x: 413, y: 0, z: 0.86602545}
   aditionalSpeed: 0
 --- !u!1 &9051323020740490752
 GameObject:
@@ -613,5 +630,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 24
-  pos: {x: 50.2, y: 0, z: 7.707626}
+  pos: {x: 429.3, y: 0, z: 7.0840883}
   aditionalSpeed: 0

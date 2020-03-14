@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4790210244755787861}
   - component: {fileID: 4891183222481818231}
+  - component: {fileID: -2568438635447950176}
   m_Layer: 0
   m_Name: LEVEL1_1_Ceo-trappers+2birra
   m_TagString: Untagged
@@ -429,6 +430,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 68648769318435247, guid: 9b198ddaa9171404791a7d4396acb353,
     type: 3}
+--- !u!114 &-2568438635447950176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787601410287057473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 1
+    type: 2
+    positionData: 0
+  - delay: 2
+    type: 17
+    positionData: 1
 --- !u!1 &6184881667320942204
 GameObject:
   m_ObjectHideFlags: 0

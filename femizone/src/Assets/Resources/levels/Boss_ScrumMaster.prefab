@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4493550077893494}
   - component: {fileID: 114948723651366536}
+  - component: {fileID: -1850723272249884758}
   m_Layer: 0
   m_Name: Boss_ScrumMaster
   m_TagString: Untagged
@@ -49,6 +50,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1178444909172838, guid: 98437e9e4f94c6e4c939fe35342d550f, type: 3}
+--- !u!114 &-1850723272249884758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571329808073238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34ba8a4c80576a46806f1e31635e254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  all:
+  - delay: 3
+    type: 22
+    positionData: 0
+  - delay: 3
+    type: 22
+    positionData: 1
+  - delay: 8
+    type: 22
+    positionData: 1
+  - delay: 8
+    type: 22
+    positionData: 0
+  - delay: 13
+    type: 22
+    positionData: 0
+  - delay: 13
+    type: 22
+    positionData: 0
+  - delay: 13
+    type: 22
+    positionData: 0
+  - delay: 13
+    type: 22
+    positionData: 0
 --- !u!1 &1857888943879582
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 21
-  pos: {x: 44, y: 0, z: 8.487049}
+  pos: {x: 956, y: 0, z: 8.487049}
   aditionalSpeed: 0
 --- !u!1 &2925581947050845737
 GameObject:
@@ -235,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  pos: {x: 36.45, y: 0, z: -2.2430058}
+  pos: {x: 948.45, y: 0, z: -2.2430058}
   aditionalSpeed: 0
 --- !u!1 &3101826723959901974
 GameObject:
@@ -264,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3101826723959901974}
   m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.19, y: 0, z: -0.17}
+  m_LocalPosition: {x: 9.4, y: 0, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493550077893494}
@@ -329,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
-  pos: {x: 46.19, y: 0, z: -0.14722432}
+  pos: {x: 959.4, y: 0, z: -0.14722432}
   aditionalSpeed: 0
 --- !u!1 &4866861124653013786
 GameObject:
@@ -358,7 +396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866861124653013786}
   m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.4, y: -0, z: -6.8}
+  m_LocalPosition: {x: -8.9, y: -0, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493550077893494}
@@ -422,8 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
-  pos: {x: 36.45, y: 0, z: -2.2430058}
+  type: 7
+  pos: {x: 941.1, y: 0, z: -6.841601}
   aditionalSpeed: 0
 --- !u!1 &8693177019124355165
 GameObject:
@@ -452,7 +490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8693177019124355165}
   m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7, y: -0, z: -4.4}
+  m_LocalPosition: {x: -5.7, y: -0, z: 8.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4493550077893494}
@@ -516,6 +554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba14bb681817394b8a6a8cbd8e0c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
-  pos: {x: 46.19, y: 0, z: -0.14722432}
+  type: 7
+  pos: {x: 944.3, y: 0, z: 7.1014085}
   aditionalSpeed: 0
