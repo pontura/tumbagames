@@ -607,7 +607,7 @@ MonoBehaviour:
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: f71137bfab88daa479224a10c28ae37c, type: 2}
-    force: 15
+    force: 10
     timeToReset: 3
   receivedAttacks:
   - type: 1

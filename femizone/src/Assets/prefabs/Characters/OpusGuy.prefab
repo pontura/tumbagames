@@ -25339,6 +25339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2e6d2bdd7b95a4c82a65594db6c159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flip: 0
   offset: {x: 0, y: 0.6, z: 6.64}
   life: 50
   force: 1
@@ -25350,10 +25351,11 @@ MonoBehaviour:
   time_to_Punch: {x: 0.05, y: 0.25}
   hittedPower: 40
   type: 1
+  idle_clips: []
   attacks:
   - type: 1
     animClip: {fileID: 7400000, guid: 952bb26460fe52c4e89fc71930a0da02, type: 2}
-    force: 15
+    force: 7
     timeToReset: 0.2
   receivedAttacks:
   - type: 1
