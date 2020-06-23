@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/02_Main.unity
     guid: dcb2e961b1268e644848ef8621726624
   - enabled: 1
+    path: Assets/Scenes/02_Registration.unity
+    guid: 2a323887dcad79f47b40da639598dd91
+  - enabled: 1
     path: Assets/Scenes/03_Connecting.unity
     guid: 81ac63656ce4a8746b3d57407ec802ef
   - enabled: 1

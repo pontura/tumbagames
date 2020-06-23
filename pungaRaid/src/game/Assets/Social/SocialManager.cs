@@ -21,7 +21,8 @@ public class SocialManager : MonoBehaviour
     public ChallengeData challengeData;
     [HideInInspector]
     public UserHiscore userHiscore;
-
+    [HideInInspector]
+    public AvatarImages avatarImages;
     public static SocialManager Instance
     {
         get
@@ -60,7 +61,8 @@ public class SocialManager : MonoBehaviour
         challengesManager = GetComponent<ChallengersManager>();
         challengeData = GetComponent<ChallengeData>();
         userHiscore = GetComponent<UserHiscore>();
-        userData.Init();
+        avatarImages = GetComponent<AvatarImages>();
+      //  userData.Init();
 
     }
 

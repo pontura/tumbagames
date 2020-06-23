@@ -14,7 +14,8 @@ public class MainMenu : MonoBehaviour {
     {
         Events.OnLoginAdvisor();
     }
-	public void GotoGame () {
+   
+    public void GotoGame () {
 		print ("tutorialReady =  " + PlayerPrefs.GetString ("tutorialReady"));
 		if (PlayerPrefs.GetString ("tutorialReady") == "true")
 			Data.Instance.LoadLevel ("02_Main");
@@ -28,7 +29,7 @@ public class MainMenu : MonoBehaviour {
         if (Time.timeScale == 0) return;
         Events.OnSettings();
     }
-//#if UNITY_STANDALONE
+#if UNITY_STANDALONE
     private bool isDead;
     void Start()
     {
@@ -84,5 +85,5 @@ public class MainMenu : MonoBehaviour {
 			Data.Instance.LoadLevel ("02_Intro");
 		}
     }
-//#endif
+#endif
 }

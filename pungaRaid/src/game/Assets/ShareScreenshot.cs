@@ -39,11 +39,11 @@ public class ShareScreenshot : MonoBehaviour {
 
 		File.WriteAllBytes(destination, bytes);
 
-		# if UNITY_ANDROID
-		Data.Instance.GetComponent<NativeShare>().Share(shareText + gameLink_Android, destination, destination, "");
-		#elif UNITY_IPHONE
-		Data.Instance.GetComponent<NativeShare>().Share(shareText, destination, destination, "");
-		#endif
+		//# if UNITY_ANDROID
+		//Data.Instance.GetComponent<NativeShare>().Share(shareText + gameLink_Android, destination, destination, "");
+		//#elif UNITY_IPHONE
+		//Data.Instance.GetComponent<NativeShare>().Share(shareText, destination, destination, "");
+		//#endif
 		isProcessing = false;
 		Events.OnScreenShotReady();
 

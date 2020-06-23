@@ -34,7 +34,7 @@ public class RankingMood : MonoBehaviour {
             RankingButton newButton = Instantiate(button);
                
             newButton.transform.SetParent(container.transform);
-            newButton.Init(data.facebookID, data.score, data.playerName, firstPlayer);
+            newButton.Init(data, firstPlayer);
 
             newButton.transform.localScale = Vector2.one;
 

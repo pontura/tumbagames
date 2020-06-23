@@ -4,36 +4,39 @@ using System.Collections;
 
 public class RankingButton : MonoBehaviour {
 
-    public ProfilePicture profilePicture;
     public Text scoreField;
     public Text usernameField;
-    public Image background;
+    public AvatarThumb avatarThumb;
     public Color firstColorBG;
     public GameObject coronita;
+    Ranking.RankingData data;
 
-    public void Init(string facebookID, int score, string username, bool isFirst) {
+    public void Init(Ranking.RankingData data, bool isFirst) {
 
+        this.data = data;
         if (isFirst)
         {
-            background.color = firstColorBG;
             coronita.SetActive(true);
         }
         else
             coronita.SetActive(false);
 
         if (scoreField)
-        scoreField.text = Utils.IntToMoney(score);
+        scoreField.text = Utils.IntToMoney(data.score);
 
         if (usernameField)
-            usernameField.text = username.ToUpper();
+            usernameField.text = data.username.ToUpper();
 
-        profilePicture.setPicture(facebookID);
-
-		GetComponent<Button>().onClick.AddListener(() => { 
-			Vector3 pos = Input.mousePosition;
-			Events.OnAvatarSignal(pos, username);
-		});
+        if(data.facebookID != "")
+            avatarThumb.SetFacebookPicture(data.facebookID);
+        else
+            avatarThumb.Init(data.userID);
 	}
+    public void Clicked()
+    {
+        Vector3 pos = Input.mousePosition;
+        Events.OnAvatarSignal(pos, data.username);
+    }
     public void IsYou()
     {
         if (scoreField) scoreField.color = Color.red;

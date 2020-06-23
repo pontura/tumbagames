@@ -39,27 +39,27 @@ public class ChallengerCreator : MonoBehaviour {
     }
     public void CreateList()
     {
-        foreach ( FacebookFriends.Friend data in SocialManager.Instance.facebookFriends.all)
-        {
-            ChallengerCreatorButton newButton = Instantiate(button) as ChallengerCreatorButton;
-            newButton.transform.SetParent(container.transform);
+        //foreach ( FacebookFriends.Friend data in SocialManager.Instance.facebookFriends.all)
+        //{
+        //    ChallengerCreatorButton newButton = Instantiate(button) as ChallengerCreatorButton;
+        //    newButton.transform.SetParent(container.transform);
 
-            string facebookID = data.id;
-            bool done = false;
+        //    string facebookID = data.id;
+        //    bool done = false;
 
-            //si es un recien elegido...
-            if (facebookID == lastSelectedFacebookId)
-                done = true;
-            else
-            {
-                foreach (ChallengersManager.PlayerData challengesMadeFBId in SocialManager.Instance.challengesManager.made)
-                {
-                    if (challengesMadeFBId.facebookID == facebookID)
-                        done = true;
-                }
-            }
-            newButton.Init(this, data.username, facebookID, done);
-        }
+        //    //si es un recien elegido...
+        //    if (facebookID == lastSelectedFacebookId)
+        //        done = true;
+        //    else
+        //    {
+        //        foreach (ChallengersManager.PlayerData challengesMadeFBId in SocialManager.Instance.challengesManager.made)
+        //        {
+        //            if (challengesMadeFBId.facebookID == facebookID)
+        //                done = true;
+        //        }
+        //    }
+        //    newButton.Init(this, data.username, facebookID, done);
+        //}
     }
 
 

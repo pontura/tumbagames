@@ -17,7 +17,7 @@ public class RankingUI : MonoBehaviour {
 
         if (!SocialManager.Instance.userHiscore.isLoaded) return;
 
-        if (SocialManager.Instance.facebookFriends.all.Count==0) return;
+       // if (SocialManager.Instance.facebookFriends.all.Count==0) return;
 
         //if (SocialManager.Instance.ranking.data.Count > 0)
         //{

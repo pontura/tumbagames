@@ -62,7 +62,7 @@ public class Menu : MonoBehaviour {
         if (inputText.text == "56")
         {
             inputText.text = "";
-            Data.Instance.GetComponent<UserData>().Reset();
+            //SocialManager.Instance.userData.Reset();
             confirmCanvas.SetActive(false);
             Close();
         }

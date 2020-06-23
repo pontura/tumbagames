@@ -93,7 +93,6 @@ public class Data : MonoBehaviour
 
         GetComponent<MusicManager>().Init();
         GetComponent<SoundManager>().Init();
-        moodsManager.Init();
 
 		if (ResetGame) {
 			print ("<<<<<<<<<<<<<< Reset ALL >>>>>>>>>>>>>>>>");

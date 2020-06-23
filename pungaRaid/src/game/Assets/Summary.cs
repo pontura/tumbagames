@@ -28,7 +28,7 @@ public class Summary : MonoBehaviour {
     private int total_bar_to;
     private bool ready;
 
-    public ProfilePicture winnerProfilePicture;
+    public AvatarThumb avatarThumb;
     public Text winnerScoreField;
     public Text winnerNameField;
     public GameObject buttons;
@@ -47,18 +47,22 @@ public class Summary : MonoBehaviour {
         panel.SetActive(false);
     }
     public void Init()
-    {        
-		print("OnPoolAllItemsInScene");
+    {
+        panel.SetActive(true);
+        print("OnPoolAllItemsInScene");
         yourHiscoreField.text = Utils.IntToMoney(SocialManager.Instance.userHiscore.GetCurrentHiscore());
         Ranking.LevelData levelData = SocialManager.Instance.ranking.GetCurrentRanking();
         if(levelData != null && levelData.data.Count>0)
         {
             Ranking.RankingData data = levelData.data[0];
-            string winnerFacebookID = data.facebookID;
-            string winnerName = data.playerName;
+            string winnerName = data.username;
             int winnerScore = data.score;
 
-            winnerProfilePicture.setPicture(winnerFacebookID);
+            if(data.facebookID != "")
+                avatarThumb.SetFacebookPicture(data.facebookID);
+            else
+                avatarThumb.Init(data.userID);
+
             winnerNameField.text = winnerName;
             winnerScoreField.text = Utils.IntToMoney((int)winnerScore);
         }     
@@ -77,7 +81,7 @@ public class Summary : MonoBehaviour {
         //    ranking.gameObject.SetActive(false);
         //    challengeButton.SetActive(true);
         //}
-        panel.SetActive(true);
+        
        // panel.GetComponent<Animator>().Play("PopupOn");
         score = Game.Instance.gameManager.score;
 

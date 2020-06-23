@@ -86,22 +86,6 @@ public class UserHiscore : MonoBehaviour {
                 _levelsHiscore.hiscore = score;
         }
     }
-    void SetDB_ID(int levelID, string dbID)
-    {
-        //foreach (LevelScore data in levelsHiscore)
-        //    if (data.id == levelID)
-        //    {
-        //        data.dbID = dbID;
-        //        return;
-        //    }
-    }
-    //public LevelScore GetLevelScore(int levelID)
-    //{
-    //    foreach (LevelScore data in levelsHiscore)
-    //        if (data.id == levelID)
-    //            return data;
-    //    return null;
-    //}
     public int GetCurrentHiscore()
     {
         int levelID = Data.Instance.moodsManager.GetCurrentMoodID();

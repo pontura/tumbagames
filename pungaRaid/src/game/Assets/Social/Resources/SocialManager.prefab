@@ -10,14 +10,17 @@ GameObject:
   m_Component:
   - component: {fileID: 433704}
   - component: {fileID: 11480038}
+  - component: {fileID: 8890404638188389714}
   - component: {fileID: 11440624}
-  - component: {fileID: 11474772}
   - component: {fileID: 11481336}
   - component: {fileID: 11489408}
   - component: {fileID: 11429514}
   - component: {fileID: 11411754}
   - component: {fileID: 11488672}
   - component: {fileID: 11441490}
+  - component: {fileID: 4936306767217238399}
+  - component: {fileID: 2156816300224208911}
+  - component: {fileID: 2462249373521423137}
   m_Layer: 0
   m_Name: SocialManager
   m_TagString: Untagged
@@ -58,6 +61,36 @@ MonoBehaviour:
   challengesManager: {fileID: 0}
   challengeData: {fileID: 0}
   userHiscore: {fileID: 0}
+  avatarImages: {fileID: 0}
+--- !u!114 &8890404638188389714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc85cbb60c35483448f38d975c1c92a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URL: http://pontura.com/punga_raid/
+  setUserURL: setUser.php
+  setUserURLUpload: updateUser.php
+  imageURLUploader: uploadPhoto.php
+  setUserDataURL: setUserData.php
+  imagesURL: users/
+  userID: 
+  facebookID: 
+  username: 
+  score: 0
+  lastScoreWon: 0
+  path: 
+  hiscoresByMissions: {fileID: 0}
+  avatarImages: {fileID: 0}
+  serverConnect: {fileID: 0}
+  playerID: 0
+  logged: 0
 --- !u!114 &11440624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,26 +98,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdb9fcb5b1b67364181a8093351afdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11474772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba49646e779f3fa429ab33453ab3fdd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logged: 0
-  facebookID: 
-  username: 
 --- !u!114 &11481336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ace234c90427324b8c0f51b55a364d7, type: 3}
   m_Name: 
@@ -138,7 +156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d69746c60c294419ea5c07583948b5, type: 3}
   m_Name: 
@@ -160,8 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ebda58dbfb8524db6758c1d44c7a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  all: []
-  notFriends: []
 --- !u!114 &11441490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +190,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b32b9f250b86c45a0601e7181c7299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4936306767217238399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386ec45f899bd164587951d250097a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTexture: {fileID: 2800000, guid: 7d1b3d0beb8dc164a9c7612855cfabcb, type: 3}
+  all: []
+--- !u!114 &2156816300224208911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5aef2d7a088ec4c9e39cd75f1c7689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loaded: 0
+  all: []
+--- !u!114 &2462249373521423137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7d4c5706da1884c8c2734910363dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loaded: 0

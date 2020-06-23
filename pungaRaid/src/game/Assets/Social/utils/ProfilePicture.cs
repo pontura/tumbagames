@@ -15,20 +15,23 @@ public class ProfilePicture : MonoBehaviour
     {
         GetComponent<Image>().sprite = defaultSprite;
     }
-    public void setPicture(string facebookID)
+    public void setPicture(string userID, bool fromFacebook = false)
     {
-        Texture2D texture = SocialManager.Instance.facebookFriends.GetProfilePicture(facebookID);
-        if (texture != null)
+        if (fromFacebook)
         {
-            SetPicture(texture);
+            //Texture2D texture = SocialManager.Instance.facebookFriends.GetProfilePicture(userID);
+            //if (texture != null)
+            //    SetPicture(texture);
+            //else if (isActiveAndEnabled)
+                    coroutine = StartCoroutine(GetPictureFromFacebook(userID));
         }
         else
         {
-			if(isActiveAndEnabled)
-            coroutine = StartCoroutine(GetPicture(facebookID));
+            SocialManager.Instance.avatarImages.GetImageFor(userID, SetPicture);
         }
     }
-    IEnumerator GetPicture(string facebookID)
+
+    IEnumerator GetPictureFromFacebook(string facebookID)
     {
         if (facebookID == "")
             yield break;
@@ -40,7 +43,6 @@ public class ProfilePicture : MonoBehaviour
         if (receivedData.error == null)
         {
             SetPicture(receivedData.texture);
-            SocialManager.Instance.facebookFriends.SetProfilePicture(facebookID, receivedData.texture);
         }
         else
         {

@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 public class DataController : MonoBehaviour
 {
     private string secretKey = "ranlogic2008";
-    const string URL = "http://www.pontura.com/pungaRaid/";
-    private string getUserIdByFacebookID_URL = URL + "getUserIdByFacebookID.php?";
+    const string URL = "http://www.pontura.com/punga_raid/";
+    private string getUserIdByFacebookID_URL = URL + "getUser.php?";
     private string createUser_URL = URL + "createUser.php?";
     private string updateUser_URL = URL + "updateUser.php?";
     private string updatePeleas_URL = URL + "updatePeleas.php?";
@@ -143,15 +143,15 @@ public class DataController : MonoBehaviour
 
     void OnSaveNewHiscore(int moodID, int seccionalID, int score)
     {
-        if (SocialManager.Instance.userData.facebookID == null || SocialManager.Instance.userData.facebookID == "") return;
+        if (SocialManager.Instance.userData.userID == null || SocialManager.Instance.userData.userID == "") return;
 
-        string facebookID = SocialManager.Instance.userData.facebookID;
+        string userID = SocialManager.Instance.userData.userID;
         string username = SocialManager.Instance.userData.username;
         string level = moodID + "_" + seccionalID;
 
         string hash = Md5Test.Md5Sum(score + secretKey);
-        string post_url = saveHiscore_URL + "username=" + WWW.EscapeURL(username) + "&facebookID=" + facebookID + "&level=" + level + "&score=" + score + "&hash=" + hash;
-        print("SaveNewHiscore : " + post_url);
+        string post_url = saveHiscore_URL + "username=" + WWW.EscapeURL(username) + "&userID=" + userID + "&level=" + level + "&score=" + score + "&hash=" + hash;
+        print("OnSaveNewHiscore : " + post_url);
         StartCoroutine(OnSaveData(post_url));
     }
 
@@ -192,12 +192,12 @@ public class DataController : MonoBehaviour
     IEnumerator GetUsersByScoreRoutine(int min, int max, bool onlyFriends)
     {
         string post_url = "";
-        if (onlyFriends)
-        {
-            string ids = SocialManager.Instance.facebookFriends.GetAllFriendsString();
-            post_url = getUsersByScore_URL + "ids=" + ids;
-        }
-        else
+        //if (onlyFriends)
+        //{
+        //    string ids = SocialManager.Instance.facebookFriends.GetAllFriendsString();
+        //    post_url = getUsersByScore_URL + "ids=" + ids;
+        //}
+        //else
             post_url = getUsersByScore_URL + "min=" + min + "&max=" + max;
 
         print("OnGetUsersByScore : " + post_url);
@@ -296,7 +296,7 @@ public class DataController : MonoBehaviour
     }
     IEnumerator OnGetRankingRoutine(int moodID, int seccionalID)
     {
-        string post_url = getRanking_URL + "level=" + moodID + "_" + seccionalID;
+        string post_url = getRanking_URL + "level=" + moodID + "_" + seccionalID + "&limit=60";
         print("OnGetRankingRoutine : " + post_url);
         WWW hs_post = new WWW(post_url);
         yield return hs_post;

@@ -21,10 +21,10 @@ public class Ranking : MonoBehaviour {
     public class RankingData
     {        
         public int score;
+        public string userID;
         public string facebookID;
-        public string playerName;
+        public string username;
         public bool isYou;
-        public Sprite asset;
     }
     void Start()
     {
@@ -68,20 +68,25 @@ public class Ranking : MonoBehaviour {
 
     void RankingReady(string result, int moodID, int seccionalID)
     {
-        LevelData levelData = new LevelData();
-        levelData.id = moodID + "_" + seccionalID;
-        string[] allData = Regex.Split(result, "</n>");
-        levelData.data = new List<RankingData>();
-        for (var i = 0; i < allData.Length - 1; i++)
-        {
-            RankingData rankingData = new RankingData();
-            string[] userData = allData[i].Split(":"[0]);
+        Debug.Log("RankingReady "  + moodID + " :" + seccionalID + "     :"  + result);
+      //  RankingData rd = JsonUtility.FromJson<RankingData>(result);
 
-            rankingData.facebookID = userData[1];
-            rankingData.playerName = userData[2];
-            rankingData.score = int.Parse(userData[3]);
-            levelData.data.Add(rankingData);
-        }
+
+        LevelData levelData = JsonUtility.FromJson<LevelData>(result);
+        levelData.id = moodID + "_" + seccionalID;
+
+        //string[] allData = Regex.Split(result, "</n>");
+        //levelData.data = new List<RankingData>();
+        //for (var i = 0; i < allData.Length - 1; i++)
+        //{
+        //    RankingData rankingData = new RankingData();
+        //    string[] userData = allData[i].Split(":"[0]);
+
+        //    rankingData.facebookID = userData[1];
+        //    rankingData.user = userData[2];
+        //    rankingData.score = int.Parse(userData[3]);
+        //    levelData.data.Add(rankingData);
+        //}
         levels.Add(levelData);
     }
     void OnRefreshRanking()
@@ -137,7 +142,7 @@ public class Ranking : MonoBehaviour {
                 RankingData newData = new RankingData();
                 newData.facebookID = SocialManager.Instance.userData.facebookID;
                 newData.isYou = true;
-                newData.playerName = SocialManager.Instance.userData.username;
+                newData.username = SocialManager.Instance.userData.username;
                 newData.score = score;
                 currentLevelData.Add(newData);
                 levelData.data = OrderByScore(currentLevelData);

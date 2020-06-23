@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - lane0
+  - lane1
+  - lane2
+  - lane3
+  - lane4
   - 
   - 
   - 
@@ -41,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: lane4
+    uniqueID: 1981753159
+    locked: 0
+  - name: lane3
+    uniqueID: 3438495577
+    locked: 0
+  - name: lane2
+    uniqueID: 1774089285
+    locked: 0
+  - name: lane1
+    uniqueID: 3708194111
+    locked: 0
+  - name: lane0
+    uniqueID: 1933878561
     locked: 0
