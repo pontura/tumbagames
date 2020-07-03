@@ -7,7 +7,6 @@ using System;
 
 public class AvatarImages : MonoBehaviour
 {
-    public Texture2D defaultTexture;
     public List<Data> all;
     [Serializable]
     public class Data
@@ -66,7 +65,7 @@ public class AvatarImages : MonoBehaviour
         if (request.isNetworkError || request.isHttpError)
         {
             if(OnLoaded != null)
-            OnLoaded(defaultTexture);
+            OnLoaded(null);
         } 
         else
         {

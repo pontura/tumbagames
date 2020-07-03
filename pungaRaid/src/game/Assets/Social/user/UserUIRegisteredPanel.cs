@@ -12,7 +12,7 @@ public class UserUIRegisteredPanel : MonoBehaviour
     public void Init(UserDataUI userDataUI, string userID, string _username)
     {
         this.userDataUI = userDataUI;
-        avatarThumb.Init(userID );
+        avatarThumb.Init(userID, SocialManager.Instance.userData.profilePhotoID);
         field.text = _username;
     }
     public void OnEditUserData()

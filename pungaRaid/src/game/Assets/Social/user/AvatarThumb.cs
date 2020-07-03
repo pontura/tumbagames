@@ -14,16 +14,25 @@ public class AvatarThumb : MonoBehaviour
         destroyed = true;
         StopAllCoroutines();
     }
-    public void Init(string userID)
+    int profilePhotoID;
+    public void Init(string userID, int profilePhotoID)
     {
+        this.profilePhotoID = profilePhotoID;
         SocialManager.Instance.userData.avatarImages.GetImageFor(userID, OnLoaded);      
+    }
+    public void SetProfileDefaultPhoto(int profilePhotoID)
+    {
+        image.sprite = Data.Instance.profilePictures.GetSprite(profilePhotoID);
+        image.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
     }
     public void OnLoaded(Texture2D texture2d)
     {
         if (destroyed)
             return;
-
-        if(image != null && texture2d != null)
+        
+        if (image == null || texture2d == null || texture2d.width < 10)
+            SetProfileDefaultPhoto(profilePhotoID);
+        else
             image.sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f));
     }
     public void Reset()
@@ -31,34 +40,34 @@ public class AvatarThumb : MonoBehaviour
         image.sprite = null;
     }
 
-    //Facebook:
-    public void SetFacebookPicture(string userID)
-    {
-            coroutine = StartCoroutine(GetPictureFromFacebook(userID));
-    }
-    IEnumerator GetPictureFromFacebook(string facebookID)
-    {
-        if (facebookID == "")
-            yield break;
+    ////Facebook:
+    //public void SetFacebookPicture(string userID)
+    //{
+    //        coroutine = StartCoroutine(GetPictureFromFacebook(userID));
+    //}
+    //IEnumerator GetPictureFromFacebook(string facebookID)
+    //{
+    //    if (facebookID == "")
+    //        yield break;
 
-        WWW receivedData = new WWW("https" + "://graph.facebook.com/" + facebookID + "/picture?width=128&height=128");
-        yield return receivedData;
-        if (receivedData.error == null)
-            SetPicture(receivedData.texture);
-        else
-            Debug.Log("ERROR trayendo imagen");
+    //    WWW receivedData = new WWW("https" + "://graph.facebook.com/" + facebookID + "/picture?width=128&height=128");
+    //    yield return receivedData;
+    //    if (receivedData.error == null)
+    //        SetPicture(receivedData.texture);
+    //    else
+    //        Debug.Log("ERROR trayendo imagen");
 
-    }
-    void SetPicture(Texture2D texture)
-    {
-        try
-        {
-            image.sprite = Sprite.Create(texture, new Rect(0, 0, 128, 128), Vector2.zero);
-            image.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
-        }
-        catch
-        {
-            Debug.Log("otro tamanio de imagen de FB");
-        }
-    }
+    //}
+    //void SetPicture(Texture2D texture)
+    //{
+    //    try
+    //    {
+    //        image.sprite = Sprite.Create(texture, new Rect(0, 0, 128, 128), Vector2.zero);
+    //        image.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
+    //    }
+    //    catch
+    //    {
+    //        Debug.Log("otro tamanio de imagen de FB");
+    //    }
+    //}
 }

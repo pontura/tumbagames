@@ -51,7 +51,7 @@ public class UserHiscore : MonoBehaviour {
             levelID++;
         }
     }
-    void OnUserReady(string facebookID, string username, string email)
+    void OnUserReady(string username, string email)
     {
 
     }

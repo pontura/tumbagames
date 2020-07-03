@@ -27,10 +27,10 @@ public class RankingButton : MonoBehaviour {
         if (usernameField)
             usernameField.text = data.username.ToUpper();
 
-        if(data.facebookID != "")
-            avatarThumb.SetFacebookPicture(data.facebookID);
-        else
-            avatarThumb.Init(data.userID);
+        //if(data.facebookID != "")
+        //    avatarThumb.SetFacebookPicture(data.facebookID);
+        //else
+            avatarThumb.Init(data.userID, data.profilePhotoID);
 	}
     public void Clicked()
     {

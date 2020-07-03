@@ -14,6 +14,7 @@ public class UserData : MonoBehaviour
     const string PREFAB_PATH = "UserData";
     public string userID;
     public string facebookID;
+    public int profilePhotoID;
     public string username;
     [SerializeField] private int score;
     [SerializeField] private int lastScoreWon; //solo para hacer la animacion en el levelSelector
@@ -94,6 +95,7 @@ public class UserData : MonoBehaviour
             userID = dataLoaded.userID;
             username = dataLoaded.username;
             score = dataLoaded.score;
+            profilePhotoID = dataLoaded.profilePhotoID;
             int level_1_1 = dataLoaded.level_1_1;
             int level_1_2 = dataLoaded.level_1_2;
             int level_1_3 = dataLoaded.level_1_3;

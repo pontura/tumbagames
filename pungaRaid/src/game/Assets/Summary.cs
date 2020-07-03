@@ -58,10 +58,7 @@ public class Summary : MonoBehaviour {
             string winnerName = data.username;
             int winnerScore = data.score;
 
-            if(data.facebookID != "")
-                avatarThumb.SetFacebookPicture(data.facebookID);
-            else
-                avatarThumb.Init(data.userID);
+            avatarThumb.Init(data.userID, data.profilePhotoID);
 
             winnerNameField.text = winnerName;
             winnerScoreField.text = Utils.IntToMoney((int)winnerScore);

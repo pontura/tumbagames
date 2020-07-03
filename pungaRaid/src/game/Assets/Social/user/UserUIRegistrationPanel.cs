@@ -15,6 +15,7 @@ public class UserUIRegistrationPanel : MonoBehaviour
     public GameObject PhotoTakenPanel;
     public GameObject[] hideOnScreenshot;
     bool userExists;
+    public GameObject buttonsProfilePicture;
 
     public void Init(UserDataUI userDataUI, string _username)
     {
@@ -52,7 +53,13 @@ public class UserUIRegistrationPanel : MonoBehaviour
     {
         PhotoPanel.SetActive(false);
         PhotoTakenPanel.SetActive(true);
-        avatarThumb.Init( SocialManager.Instance.userData.userID );
+        avatarThumb.Init( SocialManager.Instance.userData.userID, SocialManager.Instance.userData.profilePhotoID);
+        SocialManager.Instance.userData.avatarImages.GetImageFor(SocialManager.Instance.userData.userID, OnLoaded);
+    }
+    public void OnLoaded(Texture2D texture2d)
+    {
+        if (texture2d != null)
+            buttonsProfilePicture.SetActive(false);
     }
     public void TakeSnapshot()
     {
@@ -113,5 +120,26 @@ public class UserUIRegistrationPanel : MonoBehaviour
     public void Back()
     {
         ShowEditPanel();
+    }
+    int thumbID;
+    public void ChangeThumb(bool next)
+    {
+        if (next)
+            thumbID++;
+        else
+            thumbID--;
+
+        if (thumbID < 0)
+            thumbID = Data.Instance.profilePictures.all.Length - 1;
+        else if (thumbID > Data.Instance.profilePictures.all.Length - 1)
+            thumbID = 0;
+
+        SocialManager.Instance.userData.profilePhotoID = thumbID;
+
+        avatarThumb.SetProfileDefaultPhoto(thumbID);
+    }
+    public void Cancel()
+    {
+        Data.Instance.LoadLevel("02_Main");
     }
 }

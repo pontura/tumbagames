@@ -37,6 +37,8 @@ public class Data : MonoBehaviour
     public MoodsManager moodsManager;
     [HideInInspector]
     public Texts texts;
+    [HideInInspector]
+    public ProfilePictures profilePictures;
 
     public static Data Instance
     {
@@ -90,6 +92,7 @@ public class Data : MonoBehaviour
         moodsManager = GetComponent<MoodsManager>();
 		clothItemsManager = GetComponent<ClothItemsManager> ();
         texts = GetComponent<Texts>();
+        profilePictures = GetComponent<ProfilePictures>();
 
         GetComponent<MusicManager>().Init();
         GetComponent<SoundManager>().Init();

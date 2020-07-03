@@ -35,10 +35,10 @@ public class SettingsPopup : MonoBehaviour {
     }
     void OnSettings()
     {
-        if(SocialManager.Instance.userData.facebookID != "")
-        {
-            connectButton.interactable = false;
-        }
+        //if(SocialManager.Instance.userData.facebookID != "")
+        //{
+        //    connectButton.interactable = false;
+        //}
         if (Application.loadedLevelName == "04_Game")
             tutorialButton.SetActive(false);
 
@@ -75,7 +75,7 @@ public class SettingsPopup : MonoBehaviour {
     {
         //if (!FB.IsLoggedIn)
         //{
-            OnFacebookNotConnected();
+         //   OnFacebookNotConnected();
             SetLoginField(false);
         //}
         //else

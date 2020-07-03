@@ -6,7 +6,7 @@ public class DataController : MonoBehaviour
 {
     private string secretKey = "ranlogic2008";
     const string URL = "http://www.pontura.com/punga_raid/";
-    private string getUserIdByFacebookID_URL = URL + "getUser.php?";
+   // private string getUserIdByFacebookID_URL = URL + "getUser.php?";
     private string createUser_URL = URL + "createUser.php?";
     private string updateUser_URL = URL + "updateUser.php?";
     private string updatePeleas_URL = URL + "updatePeleas.php?";
@@ -14,7 +14,7 @@ public class DataController : MonoBehaviour
     private string saveHiscore_URL = URL + "saveHiscore.php?";
     private string saveStyles_URL = URL + "saveStyles.php?";
     private string saveNewPelea_URL = URL + "saveNewPelea.php?";
-    private string getPeleas_URL = URL + "getPeleasByFacebookID.php?";
+  //  private string getPeleas_URL = URL + "getPeleasByFacebookID.php?";
     private string getRanking_URL = URL + "getRanking.php?";
     private string getHistorialPeleas_URL = URL + "getHistorialPeleas.php?";
     
@@ -26,94 +26,94 @@ public class DataController : MonoBehaviour
         //Events.OnSaveNewPelea += OnSaveNewPelea;
         //Events.OnSaveStyles += OnSaveStyles;
 
-        SocialEvents.OnFacebookLogin += OnFacebookLogin;
+     //   SocialEvents.OnFacebookLogin += OnFacebookLogin;
         SocialEvents.OnGetUsersByScore += OnGetUsersByScore;
         SocialEvents.OnGetFights += OnGetFights;
         SocialEvents.OnGetHistorial += OnGetHistorial;
         SocialEvents.OnSaveNewHiscore += OnSaveNewHiscore;
         SocialEvents.OnGetRanking += OnGetRanking;
     }
-    void OnFacebookLogin(string facebookID, string username, string email)
-    {
-        StartCoroutine(CheckIfUserExistsOnLocalDB(facebookID, username, email));
-    }
+    //void OnFacebookLogin(string facebookID, string username, string email)
+    //{
+    //    StartCoroutine(CheckIfUserExistsOnLocalDB(facebookID, username, email));
+    //}
     public void LoadDataForExistingUser(string _facebookID)
     {
-        StartCoroutine(LoadDataForExistingUserRoutine(_facebookID));
+       // StartCoroutine(LoadDataForExistingUserRoutine(_facebookID));
     }
-    IEnumerator LoadDataForExistingUserRoutine(string _facebookID)
-    {
-        string post_url = getUserIdByFacebookID_URL + "facebookID=" + _facebookID;
+    //IEnumerator LoadDataForExistingUserRoutine(string _facebookID)
+    //{
+    //    string post_url = getUserIdByFacebookID_URL + "facebookID=" + _facebookID;
 
-        print(post_url);
+    //    print(post_url);
 
-        WWW receivedData = new WWW(post_url);
-        yield return receivedData;
-        if (receivedData.error != null)
-            print("There was an error in CheckIfUserExistsOnLocalDB: " + receivedData.error);
-        else
-        {
-            string[] userData = Regex.Split(receivedData.text, ":");
-            int userID = System.Int32.Parse(userData[1]);
-            string username = userData[2];
+    //    WWW receivedData = new WWW(post_url);
+    //    yield return receivedData;
+    //    if (receivedData.error != null)
+    //        print("There was an error in CheckIfUserExistsOnLocalDB: " + receivedData.error);
+    //    else
+    //    {
+    //        string[] userData = Regex.Split(receivedData.text, ":");
+    //        int userID = System.Int32.Parse(userData[1]);
+    //        string username = userData[2];
 
-            //Data.Instance.playerSettings.heroData.stats.Power = System.Int32.Parse(userData[3]);
-            //Data.Instance.playerSettings.heroData.stats.Resistence = System.Int32.Parse(userData[4]);
-            //Data.Instance.playerSettings.heroData.stats.Defense = System.Int32.Parse(userData[5]);
-            //Data.Instance.playerSettings.heroData.stats.Speed = System.Int32.Parse(userData[6]);
-            //Data.Instance.playerSettings.heroData.stats.score = System.Int32.Parse(userData[7]);
+    //        //Data.Instance.playerSettings.heroData.stats.Power = System.Int32.Parse(userData[3]);
+    //        //Data.Instance.playerSettings.heroData.stats.Resistence = System.Int32.Parse(userData[4]);
+    //        //Data.Instance.playerSettings.heroData.stats.Defense = System.Int32.Parse(userData[5]);
+    //        //Data.Instance.playerSettings.heroData.stats.Speed = System.Int32.Parse(userData[6]);
+    //        //Data.Instance.playerSettings.heroData.stats.score = System.Int32.Parse(userData[7]);
 
-            //Data.Instance.playerSettings.heroData.peleas.peleas_g = System.Int32.Parse(userData[8]);
-            //Data.Instance.playerSettings.heroData.peleas.peleas_p = System.Int32.Parse(userData[9]);
-            //Data.Instance.playerSettings.heroData.peleas.retos_g = System.Int32.Parse(userData[10]);
-            //Data.Instance.playerSettings.heroData.peleas.retos_p = System.Int32.Parse(userData[11]);
+    //        //Data.Instance.playerSettings.heroData.peleas.peleas_g = System.Int32.Parse(userData[8]);
+    //        //Data.Instance.playerSettings.heroData.peleas.peleas_p = System.Int32.Parse(userData[9]);
+    //        //Data.Instance.playerSettings.heroData.peleas.retos_g = System.Int32.Parse(userData[10]);
+    //        //Data.Instance.playerSettings.heroData.peleas.retos_p = System.Int32.Parse(userData[11]);
 
-            string nick = userData[12];
-        }
-    }
-    IEnumerator CheckIfUserExistsOnLocalDB(string _facebookID, string _username, string _email)
-    {
-        if (_facebookID == "")
-            yield break;
+    //        string nick = userData[12];
+    //    }
+    //}
+    //IEnumerator CheckIfUserExistsOnLocalDB(string _facebookID, string _username, string _email)
+    //{
+    //    if (_facebookID == "")
+    //        yield break;
 
-        string post_url = getUserIdByFacebookID_URL + "facebookID=" + _facebookID;
+    //    string post_url = getUserIdByFacebookID_URL + "facebookID=" + _facebookID;
 
-        print(post_url);
+    //    print(post_url);
 
-        WWW receivedData = new WWW(post_url);
-        yield return receivedData;
-        if (receivedData.error != null)
-            print("There was an error in CheckIfUserExistsOnLocalDB: " + receivedData.error);
-        else
-        {
-            try
-            {
-                string[] userData = Regex.Split(receivedData.text, ":");
-                int userID = System.Int32.Parse(userData[1]);
-                string username = userData[2];
+    //    WWW receivedData = new WWW(post_url);
+    //    yield return receivedData;
+    //    if (receivedData.error != null)
+    //        print("There was an error in CheckIfUserExistsOnLocalDB: " + receivedData.error);
+    //    else
+    //    {
+    //        try
+    //        {
+    //            string[] userData = Regex.Split(receivedData.text, ":");
+    //            int userID = System.Int32.Parse(userData[1]);
+    //            string username = userData[2];
 
-                //Data.Instance.playerSettings.heroData.stats.Power = System.Int32.Parse(userData[3]);
-                //Data.Instance.playerSettings.heroData.stats.Resistence = System.Int32.Parse(userData[4]);
-                //Data.Instance.playerSettings.heroData.stats.Defense = System.Int32.Parse(userData[5]);
-                //Data.Instance.playerSettings.heroData.stats.Speed = System.Int32.Parse(userData[6]);
-                //Data.Instance.playerSettings.heroData.stats.score = System.Int32.Parse(userData[7]);
+    //            //Data.Instance.playerSettings.heroData.stats.Power = System.Int32.Parse(userData[3]);
+    //            //Data.Instance.playerSettings.heroData.stats.Resistence = System.Int32.Parse(userData[4]);
+    //            //Data.Instance.playerSettings.heroData.stats.Defense = System.Int32.Parse(userData[5]);
+    //            //Data.Instance.playerSettings.heroData.stats.Speed = System.Int32.Parse(userData[6]);
+    //            //Data.Instance.playerSettings.heroData.stats.score = System.Int32.Parse(userData[7]);
                 
-                //Data.Instance.playerSettings.heroData.peleas.peleas_g = System.Int32.Parse(userData[8]);
-                //Data.Instance.playerSettings.heroData.peleas.peleas_p = System.Int32.Parse(userData[9]);
-                //Data.Instance.playerSettings.heroData.peleas.retos_g = System.Int32.Parse(userData[10]);
-                //Data.Instance.playerSettings.heroData.peleas.retos_p = System.Int32.Parse(userData[11]);
+    //            //Data.Instance.playerSettings.heroData.peleas.peleas_g = System.Int32.Parse(userData[8]);
+    //            //Data.Instance.playerSettings.heroData.peleas.peleas_p = System.Int32.Parse(userData[9]);
+    //            //Data.Instance.playerSettings.heroData.peleas.retos_g = System.Int32.Parse(userData[10]);
+    //            //Data.Instance.playerSettings.heroData.peleas.retos_p = System.Int32.Parse(userData[11]);
 
-                string nick = userData[12];
+    //            string nick = userData[12];
 
-                SocialEvents.OnUserReady(_facebookID, _username, nick);
-            }
-            catch
-            {
-                Debug.Log("new user!");
-                CreateUser(_facebookID, _username, _email);
-            }
-        }
-    }
+    //            SocialEvents.OnUserReady(_username, nick);
+    //        }
+    //        catch
+    //        {
+    //            Debug.Log("new user!");
+    //            CreateUser(_facebookID, _username, _email);
+    //        }
+    //    }
+    //}
     public void CreateUser(string _facebookID, string _username, string _email)
     {
         //Stats stats = new Stats();
@@ -137,7 +137,7 @@ public class DataController : MonoBehaviour
         {
             print("user agregado: " + hs_post.text);
             int userId = int.Parse(hs_post.text);
-            SocialEvents.OnUserReady(_facebookID, _username, _email);
+            SocialEvents.OnUserReady(_username, _email);
         }
     }
 
@@ -258,17 +258,17 @@ public class DataController : MonoBehaviour
     public void OnGetFights(System.Action<string> OnGetFightsListener)
     {
         this.OnGetFightsListener = OnGetFightsListener;
-        StartCoroutine(OnGetFightsRoutine());
+       // StartCoroutine(OnGetFightsRoutine());
     }
-    IEnumerator OnGetFightsRoutine()
-    {
-        string facebookID = SocialManager.Instance.userData.facebookID;
-        string post_url = getPeleas_URL + "facebookID=" + facebookID;
-        print("OnGetFightsRoutine : " + post_url);
-        WWW hs_post = new WWW(post_url);
-        yield return hs_post;
-        if (hs_post.error != null) print("Error con: OnGetFightsRoutine: " + hs_post.error); else { OnGetFightsListener(hs_post.text); }
-    }
+    //IEnumerator OnGetFightsRoutine()
+    //{
+    //    string facebookID = SocialManager.Instance.userData.facebookID;
+    //    string post_url = getPeleas_URL + "facebookID=" + facebookID;
+    //    print("OnGetFightsRoutine : " + post_url);
+    //    WWW hs_post = new WWW(post_url);
+    //    yield return hs_post;
+    //    if (hs_post.error != null) print("Error con: OnGetFightsRoutine: " + hs_post.error); else { OnGetFightsListener(hs_post.text); }
+    //}
 
     private System.Action<string> OnGetHistorialListener;
     public void OnGetHistorial(System.Action<string> OnGetHistorialListener, string facebookID, string facebookID2)

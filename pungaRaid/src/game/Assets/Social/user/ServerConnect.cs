@@ -15,6 +15,7 @@ public class ServerConnect : MonoBehaviour
     {
         public string username;
         public string userID;
+        public int profilePhotoID;
         public int score;
         public int level_1_1;
         public int level_1_2;

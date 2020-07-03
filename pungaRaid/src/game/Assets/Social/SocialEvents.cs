@@ -14,7 +14,7 @@ public static class SocialEvents {
     public static System.Action ResetApp = delegate { };
 
     //facebookID, id
-    public static System.Action<string, string, string> OnUserReady = delegate { };
+    public static System.Action<string, string> OnUserReady = delegate { };
     public static System.Action OnFacebookLoginPressed = delegate { };
     public static System.Action OnFacebookFriends = delegate { };
     public static System.Action OnFacebookInviteFriends = delegate { };

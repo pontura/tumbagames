@@ -75,7 +75,11 @@ public class UserRegistrationForm : MonoBehaviour
     IEnumerator SendData(string username)
     {
         string hash = Utils.Md5Sum(SocialManager.Instance.userData.userID + username + secretKey);
-        string post_url = userData.URL + userData.setUserURL + "?userID=" + WWW.EscapeURL(SocialManager.Instance.userData.userID) + "&username=" + username + "&hash=" + hash;
+        string post_url = userData.URL + userData.setUserURL + 
+            "?userID=" + WWW.EscapeURL(SocialManager.Instance.userData.userID) + 
+            "&username=" + username +
+            "&profilePhotoID=" + SocialManager.Instance.userData.profilePhotoID +
+            "&hash=" + hash;
         print(post_url);
         WWW www = new WWW(post_url);
         yield return www;
@@ -100,7 +104,7 @@ public class UserRegistrationForm : MonoBehaviour
     IEnumerator UploadData(string username)
     {
         string hash = Utils.Md5Sum(SocialManager.Instance.userData.userID + username + secretKey);
-        string post_url = userData.URL + userData.setUserURLUpload + "?userID=" + WWW.EscapeURL(SocialManager.Instance.userData.userID) + "&username=" + username + "&hash=" + hash;
+        string post_url = userData.URL + userData.setUserURLUpload + "?userID=" + WWW.EscapeURL(SocialManager.Instance.userData.userID) + "&username=" + username + "&profilePhotoID=" + SocialManager.Instance.userData.profilePhotoID + "&hash=" + hash;
         print(post_url);
         WWW www = new WWW(post_url);
         yield return www;

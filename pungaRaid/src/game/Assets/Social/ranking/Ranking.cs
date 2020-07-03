@@ -22,7 +22,7 @@ public class Ranking : MonoBehaviour {
     {        
         public int score;
         public string userID;
-        public string facebookID;
+        public int profilePhotoID;
         public string username;
         public bool isYou;
     }
@@ -48,9 +48,6 @@ public class Ranking : MonoBehaviour {
                 return data;
         }
         return null;
-    }
-    public void OnUserReady(string facebookID, string username, string email)
-    {
     }
     int moodID;
     int seccionalID;
@@ -132,18 +129,19 @@ public class Ranking : MonoBehaviour {
 
                 foreach (RankingData rankingData in currentLevelData)
                 {
-                    if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
-                    {
-                        rankingData.score = score;
-                        levelData.data = OrderByScore(currentLevelData);
-                        return;
-                    }
+                    //if (rankingData.facebookID == SocialManager.Instance.userData.facebookID)
+                    //{
+                    //    rankingData.score = score;
+                    //    levelData.data = OrderByScore(currentLevelData);
+                    //    return;
+                    //}
                 }
                 RankingData newData = new RankingData();
-                newData.facebookID = SocialManager.Instance.userData.facebookID;
+              //  newData.facebookID = SocialManager.Instance.userData.facebookID;
                 newData.isYou = true;
                 newData.username = SocialManager.Instance.userData.username;
                 newData.score = score;
+                newData.profilePhotoID = SocialManager.Instance.userData.profilePhotoID;
                 currentLevelData.Add(newData);
                 levelData.data = OrderByScore(currentLevelData);
 

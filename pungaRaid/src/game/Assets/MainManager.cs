@@ -21,8 +21,6 @@ public class MainManager : MonoBehaviour {
 
         Events.OnMoneyUpated += OnMoneyUpated;
 
-        print(SocialManager.Instance.userData.logged);
-
         if (SocialManager.Instance.userData.logged)
             SocialManager.Instance.avatarImages.GetImageFor(SocialManager.Instance.userData.userID, OnLoaded);
         else
@@ -40,7 +38,6 @@ public class MainManager : MonoBehaviour {
 	}
     void OnLoaded(Texture2D t)
     {
-        print("CARGO : " + gameObject.activeSelf + "  textura: "+  t);
         if (gameObject.activeSelf)
             avatarThumb.OnLoaded(t);
     }
